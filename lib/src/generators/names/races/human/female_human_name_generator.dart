@@ -4,20 +4,20 @@ import 'package:radnpg/src/generators/base/seed_generator.dart';
 import 'package:radnpg/src/generators/base/weighted_generator.dart';
 import 'package:radnpg/src/generators/names/races/human/human_name_data.dart';
 
-/// A class used to generate male human names
-class MaleHumanNameGenerator implements IGenerator<String> {
+/// A class used to generate female human names
+class FemaleHumanNameGenerator implements IGenerator<String> {
   late int _seed;
 
-  MaleHumanNameGenerator() {
+  FemaleHumanNameGenerator() {
     _seed = SeedGenerator.generate();
   }
 
   static final List<IGenerator<String>> generatorsTemplate = [
-    ListItemGenerator(humanMaleNamePrefix),
-    WeightedGenerator(humanMaleVowel),
-    ListItemGenerator(humanMaleNameMiddle),
-    WeightedGenerator(humanMaleVowel),
-    ListItemGenerator(humanMaleNameSuffix),
+    ListItemGenerator(humanFemaleNamePrefix),
+    ListItemGenerator(humanFemaleVowel),
+    ListItemGenerator(humanFemaleNameMiddle),
+    ListItemGenerator(humanFemaleVowel),
+    WeightedGenerator(humanFemaleNameSuffix),
     ListItemGenerator([" "]),
     ListItemGenerator(humanSurnamePrefix),
     ListItemGenerator(humanSurnameSuffix)
