@@ -15,9 +15,9 @@ class WeightedGenerator<T> implements IGenerator<T> {
   T generate() {
     int sum = pool.values.toList().reduce((value, element) => value + element);
     int choice = random.nextInt(sum) + 1;
-
+    print(choice);
     for (var pair in pool.entries) {
-      if (pair.value <= choice) {
+      if (choice <= pair.value) {
         return pair.key;
       }
       choice -= pair.value;
