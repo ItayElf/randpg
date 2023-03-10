@@ -1,16 +1,20 @@
+/// An enum representing the available races
 enum Race {
-  human("human", "humans"),
   dragonborn("dragonborn", "dragonborns"),
   dwarf("dwarf", "dwarves"),
   elf("elf", "elves"),
-  halfElf("half-elf", "half-elves"),
   gnome("gnome", "gnomes"),
+  halfElf("half-elf", "half-elves"),
   halfling("halfling", "halflings"),
+  human("human", "humans"),
   orc("orc", "orcs"),
   tiefling("tiefling", "tieflings");
 
   const Race(this.name, this.pluralName);
 
+  /// The singular name of the race, like "human" or "elf"
   final String name;
+
+  /// The plural name of the race, like "humans" or "elves"
   final String pluralName;
 }
