@@ -29,8 +29,8 @@ class MaleHumanNameGenerator implements IGenerator<String> {
   String generate() {
     List<IGenerator<String>> generators = List.from(generatorsTemplate);
 
-    for (var generator in generators) {
-      generator.seed(_seed);
+    for (int i = 0; i < generators.length; i++) {
+      generators[i].seed((_seed + i) % SeedGenerator.maxSeed);
     }
     return generators.map((generator) => generator.generate()).toList().join();
   }
