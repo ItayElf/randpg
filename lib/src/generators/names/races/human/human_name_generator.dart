@@ -6,16 +6,16 @@ import '../../../base/seed_generator.dart';
 
 class HumanNameGenerator implements IGenerator<String> {
   late int _seed;
-  final bool isMale;
+  final bool _isMale;
 
-  HumanNameGenerator(this.isMale) {
+  HumanNameGenerator(this._isMale) {
     _seed = SeedGenerator.generate();
   }
 
   @override
   String generate() {
     var generator =
-        isMale ? MaleHumanNameGenerator() : FemaleHumanNameGenerator();
+        _isMale ? MaleHumanNameGenerator() : FemaleHumanNameGenerator();
     generator.seed(_seed);
     return generator.generate();
   }

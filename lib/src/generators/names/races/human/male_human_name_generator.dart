@@ -12,7 +12,7 @@ class MaleHumanNameGenerator implements IGenerator<String> {
     _seed = SeedGenerator.generate();
   }
 
-  static final List<IGenerator<String>> generatorsTemplate = [
+  static final List<IGenerator<String>> _generatorsTemplate = [
     ListItemGenerator(humanMaleNamePrefix),
     WeightedGenerator(humanMaleVowel),
     ListItemGenerator(humanMaleNameMiddle),
@@ -25,7 +25,7 @@ class MaleHumanNameGenerator implements IGenerator<String> {
 
   @override
   String generate() {
-    List<IGenerator<String>> generators = List.from(generatorsTemplate);
+    List<IGenerator<String>> generators = List.from(_generatorsTemplate);
 
     for (int i = 0; i < generators.length; i++) {
       generators[i].seed((_seed + i) % SeedGenerator.maxSeed);
