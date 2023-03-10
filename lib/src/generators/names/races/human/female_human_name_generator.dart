@@ -1,8 +1,8 @@
-import 'package:radnpg/src/generators/base/generator.dart';
-import 'package:radnpg/src/generators/base/list_item_genrator.dart';
-import 'package:radnpg/src/generators/base/seed_generator.dart';
-import 'package:radnpg/src/generators/base/weighted_generator.dart';
-import 'package:radnpg/src/generators/names/races/human/human_name_data.dart';
+import '../../../base/generator.dart';
+import '../../../base/list_item_genrator.dart';
+import '../../../base/seed_generator.dart';
+import '../../../base/weighted_generator.dart';
+import 'human_name_data.dart';
 
 /// A class used to generate female human names
 class FemaleHumanNameGenerator implements IGenerator<String> {

@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:radnpg/src/generators/base/generator.dart';
+import 'generator.dart';
 
 class WeightedGenerator<T> implements IGenerator<T> {
   /// A map containing the values with their respective probabilities as integers

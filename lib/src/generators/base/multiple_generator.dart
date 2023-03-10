@@ -1,6 +1,6 @@
-import 'package:radnpg/src/generators/base/generator.dart';
-import 'package:radnpg/src/generators/base/list_item_genrator.dart';
-import 'package:radnpg/src/generators/base/seed_generator.dart';
+import 'generator.dart';
+import 'list_item_genrator.dart';
+import 'seed_generator.dart';
 
 class MultipleGenerator<T> implements IGenerator<T> {
   /// A list of generators to generate from
