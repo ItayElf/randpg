@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'generator.dart';
 
-class ListItemGenerator<T> implements IGenerator {
+class ListItemGenerator<T> implements IGenerator<T> {
   /// The list to generate an item from
   final List<T> pool;
 

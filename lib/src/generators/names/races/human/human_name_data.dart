@@ -449,9 +449,9 @@ const humanSurnameSuffix = [
   "wood",
 ];
 
-const humanName4 = ["a", "e", "i", "o"];
+const humanFemaleVowel = ["a", "e", "i", "o"];
 
-const humanName5 = [
+const humanFemaleNamePrefix = [
   "",
   "",
   "b",
@@ -468,7 +468,7 @@ const humanName5 = [
   "z"
 ];
 
-const humanName6 = [
+const humanFemaleNameMiddle = [
   "fn",
   "fl",
   "fr",
@@ -488,9 +488,19 @@ const humanName6 = [
   "vr",
 ];
 
-const humanName7 = ["", "", "", "", "y"];
+const humanFemaleNameSuffix = {"": 4, "y": 1};
 
-const humanName8 = [
+const humanMaleVowel = {
+  "a": 4,
+  "e": 4,
+  "i": 4,
+  "o": 4,
+  "oo": 1,
+  "ou": 1,
+  "au": 1
+};
+
+const humanMaleNamePrefix = [
   "b",
   "br",
   "d",
@@ -508,29 +518,7 @@ const humanName8 = [
   "z",
 ];
 
-const humanName9 = [
-  "a",
-  "e",
-  "i",
-  "o",
-  "a",
-  "e",
-  "i",
-  "o",
-  "a",
-  "e",
-  "i",
-  "o",
-  "a",
-  "e",
-  "i",
-  "o",
-  "oo",
-  "ou",
-  "au",
-];
-
-const humanName10 = [
+const humanMaleNameMiddle = [
   "d",
   "dj",
   "j",
@@ -560,4 +548,4 @@ const humanName10 = [
   "z",
 ];
 
-const humanName11 = ["c", "d", "k", "r", "s", "sk", "t"];
+const humanMaleNameSuffix = ["c", "d", "k", "r", "s", "sk", "t"];
