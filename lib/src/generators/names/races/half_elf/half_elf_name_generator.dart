@@ -7,11 +7,11 @@ import '../human/female_human_name_generator.dart';
 import '../human/male_human_name_generator.dart';
 
 /// A generator for half-elf names
-class GnomeNameGenerator implements IGenerator<String> {
+class HalfElfNameGenerator implements IGenerator<String> {
   late int _seed;
   final bool _isMale;
 
-  GnomeNameGenerator(this._isMale) {
+  HalfElfNameGenerator(this._isMale) {
     _seed = SeedGenerator.generate();
   }
 

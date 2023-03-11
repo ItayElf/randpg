@@ -5,6 +5,7 @@
     - Dragonborns
     - Elves
     - Gnomes
+    - Half-Elves
     - Humans
 
 ## 0.0.0
