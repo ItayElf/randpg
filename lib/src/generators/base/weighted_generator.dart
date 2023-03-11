@@ -11,6 +11,7 @@ class WeightedGenerator<T> implements IGenerator<T> {
 
   WeightedGenerator(this._pool);
 
+  /// Generates a value according to the given weights
   @override
   T generate() {
     int sum = _pool.values.toList().reduce((value, element) => value + element);

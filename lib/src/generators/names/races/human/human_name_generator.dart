@@ -11,6 +11,7 @@ class HumanNameGenerator implements IGenerator<String> {
     _seed = SeedGenerator.generate();
   }
 
+  /// Generates a name for a human based on its gender
   @override
   String generate() {
     var generator =

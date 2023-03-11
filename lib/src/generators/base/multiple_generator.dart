@@ -12,6 +12,7 @@ class MultipleGenerator<T> implements IGenerator<T> {
     _seed = SeedGenerator.generate();
   }
 
+  /// Generates a value from one of the given generators
   @override
   T generate() {
     for (int i = 0; i < _pool.length; i++) {

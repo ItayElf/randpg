@@ -11,6 +11,7 @@ class DragonbornNameGenerator implements IGenerator<String> {
     _seed = SeedGenerator.generate();
   }
 
+  /// Generates a dragonborn name based on its gender
   @override
   String generate() {
     var generator = _isMale

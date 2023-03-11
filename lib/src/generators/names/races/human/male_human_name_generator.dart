@@ -23,6 +23,7 @@ class MaleHumanNameGenerator implements IGenerator<String> {
     ListItemGenerator(humanSurnameSuffix)
   ];
 
+  /// Generates a name of a male human
   @override
   String generate() {
     List<IGenerator<String>> generators = List.from(_generatorsTemplate);

@@ -11,6 +11,7 @@ class ListItemGenerator<T> implements IGenerator<T> {
 
   ListItemGenerator(this._pool);
 
+  /// Generates a random item from the list
   @override
   T generate() => _pool[_random.nextInt(_pool.length)];
 

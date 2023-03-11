@@ -23,6 +23,7 @@ class FemaleDragonbornNameGenerator implements IGenerator<String> {
     ListItemGenerator(dragonbornSurnameSuffix)
   ];
 
+  /// Generates a name for a female dragonborn
   @override
   String generate() {
     List<IGenerator<String>> generators = List.from(_generatorsTemplate);
