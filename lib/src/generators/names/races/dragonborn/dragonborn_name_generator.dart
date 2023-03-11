@@ -1,20 +1,21 @@
 import '../../../base/generator.dart';
 import '../../../base/seed_generator.dart';
-import 'female_human_name_generator.dart';
-import 'male_human_name_generator.dart';
+import 'female_dragonborn_name_generator.dart';
+import 'male_dragonborn_name_generator.dart';
 
-class HumanNameGenerator implements IGenerator<String> {
+class DragonbornNameGenerator implements IGenerator<String> {
   late int _seed;
   final bool _isMale;
 
-  HumanNameGenerator(this._isMale) {
+  DragonbornNameGenerator(this._isMale) {
     _seed = SeedGenerator.generate();
   }
 
   @override
   String generate() {
-    var generator =
-        _isMale ? MaleHumanNameGenerator() : FemaleHumanNameGenerator();
+    var generator = _isMale
+        ? MaleDragonbornNameGenerator()
+        : FemaleDragonbornNameGenerator();
     generator.seed(_seed);
     return generator.generate();
   }
