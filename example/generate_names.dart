@@ -6,5 +6,6 @@ void main() {
   for (int i = 0; i < 5; i++) {
     print(HumanNameGenerator(Random().nextBool()).generate());
     print(DragonbornNameGenerator(Random().nextBool()).generate());
+    print(DwarfNameGenerator(Random().nextBool()).generate());
   }
 }

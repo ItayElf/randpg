@@ -1,8 +1,9 @@
 ## 0.0.1
 
 - Added name generation for:
-    - dragonborns
-    - humans
+    - Dwarfs
+    - Dragonborns
+    - Humans
 
 ## 0.0.0
 

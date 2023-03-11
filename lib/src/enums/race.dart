@@ -1,7 +1,7 @@
 /// An enum representing the available races
 enum Race {
   dragonborn("dragonborn", "dragonborns"),
-  dwarf("dwarf", "dwarves"),
+  dwarf("dwarf", "dwarfs"),
   elf("elf", "elves"),
   gnome("gnome", "gnomes"),
   halfElf("half-elf", "half-elves"),
