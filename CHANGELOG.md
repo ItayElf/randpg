@@ -3,6 +3,7 @@
 - Added name generation for:
     - Dwarfs
     - Dragonborns
+    - Elves
     - Humans
 
 ## 0.0.0
