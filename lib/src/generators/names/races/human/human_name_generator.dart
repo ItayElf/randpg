@@ -3,6 +3,7 @@ import '../../../base/seed_generator.dart';
 import 'female_human_name_generator.dart';
 import 'male_human_name_generator.dart';
 
+/// A generator for human names
 class HumanNameGenerator implements IGenerator<String> {
   late int _seed;
   final bool _isMale;

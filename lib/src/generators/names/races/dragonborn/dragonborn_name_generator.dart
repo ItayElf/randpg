@@ -3,6 +3,7 @@ import '../../../base/seed_generator.dart';
 import 'female_dragonborn_name_generator.dart';
 import 'male_dragonborn_name_generator.dart';
 
+/// A generator for dragonborn names
 class DragonbornNameGenerator implements IGenerator<String> {
   late int _seed;
   final bool _isMale;

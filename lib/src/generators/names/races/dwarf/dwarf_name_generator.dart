@@ -3,6 +3,7 @@ import '../../../base/seed_generator.dart';
 import 'female_dwarf_name_generator.dart';
 import 'male_dwarf_name_generator.dart';
 
+/// A generator for dwarf names
 class DwarfNameGenerator implements IGenerator<String> {
   late int _seed;
   final bool _isMale;
