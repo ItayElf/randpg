@@ -6,6 +6,7 @@
     - Elves
     - Gnomes
     - Half-Elves
+    - Halflings
     - Humans
 
 ## 0.0.0

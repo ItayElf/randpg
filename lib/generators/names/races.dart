@@ -13,5 +13,8 @@ export '../../src/generators/names/races/gnome/gnome_name_generator.dart'
 export '../../src/generators/names/races/half_elf/half_elf_name_generator.dart'
     show HalfElfNameGenerator;
 
+export '../../src/generators/names/races/halfling/halfling_name_generator.dart'
+    show HalflingNameGenerator;
+
 export '../../src/generators/names/races/human/human_name_generator.dart'
     show HumanNameGenerator;

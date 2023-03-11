@@ -8,5 +8,6 @@ void main() {
   print(ElfNameGenerator(Random().nextBool()).generate());
   print(GnomeNameGenerator(Random().nextBool()).generate());
   print(HalfElfNameGenerator(Random().nextBool()).generate());
+  print(HalflingNameGenerator(Random().nextBool()).generate());
   print(HumanNameGenerator(Random().nextBool()).generate());
 }
