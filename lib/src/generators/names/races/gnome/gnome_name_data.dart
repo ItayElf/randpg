@@ -1,4 +1,4 @@
-const gnomeName1 = [
+const gnomeMaleNamePrefix = [
   "b",
   "c",
   "cl",
@@ -24,7 +24,7 @@ const gnomeName1 = [
   "z",
 ];
 
-const gnomeName2 = {
+const gnomeNameVowel = {
   'a': 10,
   'e': 10,
   'i': 10,
@@ -38,7 +38,7 @@ const gnomeName2 = {
   'ai': 1
 };
 
-const gnomeName3 = [
+const gnomeMaleNameMiddle = [
   "bbn",
   "bk",
   "bn",
@@ -87,9 +87,20 @@ const gnomeName3 = [
   "v",
 ];
 
-const gnomeName4 = ["c", "ck", "g", "m", "p", "r", "rt", "ss", "st", "t"];
+const gnomeMaleNameSuffix = [
+  "c",
+  "ck",
+  "g",
+  "m",
+  "p",
+  "r",
+  "rt",
+  "ss",
+  "st",
+  "t"
+];
 
-const gnomeName5 = [
+const gnomeFemaleNamePrefix = [
   "",
   "",
   "",
@@ -118,7 +129,7 @@ const gnomeName5 = [
   "w",
 ];
 
-const gnomeName6 = [
+const gnomeFemaleNameMiddle = [
   "bbl",
   "bbn",
   "bn",
@@ -167,7 +178,7 @@ const gnomeName6 = [
   "v",
 ];
 
-const gnomeName7 = [
+const gnomeFemaleNameSuffix = [
   "",
   "",
   "",
