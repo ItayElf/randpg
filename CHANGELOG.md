@@ -4,6 +4,7 @@
     - Dwarfs
     - Dragonborns
     - Elves
+    - Gnomes
     - Humans
 
 ## 0.0.0

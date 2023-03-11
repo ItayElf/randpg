@@ -7,4 +7,5 @@ void main() {
   print(DwarfNameGenerator(Random().nextBool()).generate());
   print(ElfNameGenerator(Random().nextBool()).generate());
   print(HumanNameGenerator(Random().nextBool()).generate());
+  print(GnomeNameGenerator(Random().nextBool()).generate());
 }
