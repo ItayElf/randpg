@@ -1,4 +1,4 @@
-import '../../../../../enums/gender.dart';
+import '../../../../../enteties/npcs/hair.dart';
 import '../../../../base/generator.dart';
 import '../../../../base/list_item_generator.dart';
 import '../../../../base/seed_generator.dart';
@@ -6,7 +6,7 @@ import '../../../../base/weighted_generator.dart';
 import 'elf_hair_data.dart';
 
 /// A class that generates elven hair style based on gender
-class GenericHairGenerator implements IGenerator<String> {
+class GenericHairGenerator implements IGenerator<Hair> {
   late int _seed;
 
   GenericHairGenerator() {
@@ -15,12 +15,11 @@ class GenericHairGenerator implements IGenerator<String> {
 
   /// Generates elven hair style
   @override
-  String generate() {
+  Hair generate() {
     final generators = [
       WeightedGenerator(elfHairLength),
       WeightedGenerator(elfHairType),
       WeightedGenerator(elfHairColor),
-      ListItemGenerator(["hair"])
     ];
 
     for (int i = 0; i < generators.length; i++) {
@@ -28,10 +27,12 @@ class GenericHairGenerator implements IGenerator<String> {
     }
     final generatedHairStyle =
         generators.map((generator) => generator.generate()).toList();
-    if (generatedHairStyle.first == "bald") {
-      return "bald hair";
-    }
-    return generatedHairStyle.join(" ");
+
+    return Hair(
+      length: generatedHairStyle[0],
+      type: generatedHairStyle[1],
+      color: generatedHairStyle[2],
+    );
   }
 
   @override

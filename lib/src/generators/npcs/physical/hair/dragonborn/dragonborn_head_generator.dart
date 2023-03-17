@@ -1,9 +1,10 @@
+import '../../../../../enteties/npcs/hair.dart';
 import '../../../../base/generator.dart';
 import '../../../../base/list_item_generator.dart';
 import '../../../../base/seed_generator.dart';
 
 /// A class that generates dragonborns head style
-class DragonbornHeadGenerator implements IGenerator<String> {
+class DragonbornHeadGenerator implements IGenerator<Hair> {
   late int _seed;
 
   static const _dragonbornHeadShapes = [
@@ -22,10 +23,10 @@ class DragonbornHeadGenerator implements IGenerator<String> {
 
   /// Generates head shape for dragonborns
   @override
-  String generate() {
+  Hair generate() {
     final generator = ListItemGenerator(_dragonbornHeadShapes);
     generator.seed(_seed);
-    return "${generator.generate()} head";
+    return Hair(length: generator.generate(), type: "scales", color: "");
   }
 
   @override
