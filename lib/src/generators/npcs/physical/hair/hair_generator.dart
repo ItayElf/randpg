@@ -7,6 +7,7 @@ import '../../../base/seed_generator.dart';
 import 'dragonborn/dragonborn_head_generator.dart';
 import 'elf/elf_hair_generator.dart';
 import 'generic/generic_hair_generator.dart';
+import 'tiefling/tiefling_hair_generator.dart';
 
 /// A class that generates hair based on gender and race
 class HairGenerator implements IGenerator<Hair> {
@@ -38,6 +39,8 @@ class HairGenerator implements IGenerator<Hair> {
           ElfHairGenerator(),
           GenericHairGenerator(gender),
         ]);
+      case Race.tiefling:
+        return TieflingHairGenerator(gender);
       default:
         return GenericHairGenerator(gender);
     }
