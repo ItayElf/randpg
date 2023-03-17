@@ -15,3 +15,11 @@ class RaceNotSupportedException extends RandpgException {
   @override
   String toString() => msg ?? "RaceNotSupportedException";
 }
+
+/// An exception that is thrown when a not supported gender is being used
+class GenderNotSupportedException extends RandpgException {
+  const GenderNotSupportedException([super.msg]);
+
+  @override
+  String toString() => msg ?? "GenderNotSupportedException";
+}
