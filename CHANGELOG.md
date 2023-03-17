@@ -2,11 +2,11 @@
 
 ## Table of Contents <!-- omit in toc -->
 
-- [0.0.1](#001)
+- [0.1.0](#010)
 - [0.0.0](#000)
 
 
-## 0.0.1
+## 0.1.0
 
 - Added name generation for:
     - Dwarfs
