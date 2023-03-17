@@ -1,4 +1,4 @@
-import '../../../../../enteties/npcs/hair.dart';
+import '../../../../../entities/npcs/hair.dart';
 import '../../../../../enums/gender.dart';
 import '../../../../../randpg_exceptions.dart';
 import '../../../../base/generator.dart';

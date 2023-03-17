@@ -1,4 +1,4 @@
-import '../../../../../enteties/npcs/hair.dart';
+import '../../../../../entities/npcs/hair.dart';
 import '../../../../base/generator.dart';
 import '../../../../base/list_item_generator.dart';
 import '../../../../base/seed_generator.dart';
