@@ -1,15 +1,14 @@
 import '../../../../../enteties/npcs/hair.dart';
 import '../../../../base/generator.dart';
-import '../../../../base/list_item_generator.dart';
 import '../../../../base/seed_generator.dart';
 import '../../../../base/weighted_generator.dart';
 import 'elf_hair_data.dart';
 
 /// A class that generates elven hair style based on gender
-class GenericHairGenerator implements IGenerator<Hair> {
+class ElfHairGenerator implements IGenerator<Hair> {
   late int _seed;
 
-  GenericHairGenerator() {
+  ElfHairGenerator() {
     _seed = SeedGenerator.generate();
   }
 
