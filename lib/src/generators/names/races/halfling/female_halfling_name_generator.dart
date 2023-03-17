@@ -1,5 +1,5 @@
 import '../../../base/generator.dart';
-import '../../../base/list_item_genrator.dart';
+import '../../../base/list_item_generator.dart';
 import '../../../base/seed_generator.dart';
 import 'halfling_name_data.dart';
 

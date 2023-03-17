@@ -1,5 +1,5 @@
 import '../../../base/generator.dart';
-import '../../../base/list_item_genrator.dart';
+import '../../../base/list_item_generator.dart';
 import '../../../base/seed_generator.dart';
 import '../../../base/weighted_generator.dart';
 import 'gnome_name_data.dart';

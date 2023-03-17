@@ -1,5 +1,5 @@
 import 'generator.dart';
-import 'list_item_genrator.dart';
+import 'list_item_generator.dart';
 import 'seed_generator.dart';
 
 class MultipleGenerator<T> implements IGenerator<T> {
