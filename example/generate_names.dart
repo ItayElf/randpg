@@ -10,4 +10,5 @@ void main() {
   print(HalfElfNameGenerator(Random().nextBool()).generate());
   print(HalflingNameGenerator(Random().nextBool()).generate());
   print(HumanNameGenerator(Random().nextBool()).generate());
+  print(OrcNameGenerator(Random().nextBool()).generate());
 }

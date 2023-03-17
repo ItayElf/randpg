@@ -8,6 +8,7 @@
     - Half-Elves
     - Halflings
     - Humans
+    - Orcs
 
 ## 0.0.0
 

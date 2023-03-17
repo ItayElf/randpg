@@ -18,3 +18,6 @@ export '../../src/generators/names/races/halfling/halfling_name_generator.dart'
 
 export '../../src/generators/names/races/human/human_name_generator.dart'
     show HumanNameGenerator;
+
+export '../../src/generators/names/races/orc/orc_name_generator.dart'
+    show OrcNameGenerator;
