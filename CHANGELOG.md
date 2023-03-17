@@ -9,6 +9,7 @@
     - Halflings
     - Humans
     - Orcs
+    - Tieflings
 
 ## 0.0.0
 
