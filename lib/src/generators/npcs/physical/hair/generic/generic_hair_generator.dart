@@ -1,9 +1,9 @@
-import '../../../../enums/gender.dart';
-import '../../../../randpg_exceptions.dart';
-import '../../../base/generator.dart';
-import '../../../base/list_item_genrator.dart';
-import '../../../base/seed_generator.dart';
-import '../../../base/weighted_generator.dart';
+import '../../../../../enums/gender.dart';
+import '../../../../../randpg_exceptions.dart';
+import '../../../../base/generator.dart';
+import '../../../../base/list_item_genrator.dart';
+import '../../../../base/seed_generator.dart';
+import '../../../../base/weighted_generator.dart';
 import 'generic_hair_data.dart';
 
 /// A class that generates generic hair style based on gender
