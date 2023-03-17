@@ -1,4 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
 import 'package:collection/collection.dart';
@@ -25,6 +24,9 @@ class PhysicalDescription {
   /// The face of this npc
   final String face;
 
+  /// The beard of this npc (if has)
+  final Hair? beard;
+
   /// List of special features this npc has
   final List<String> specialFeatures;
 
@@ -35,6 +37,7 @@ class PhysicalDescription {
     required this.height,
     required this.build,
     required this.face,
+    this.beard,
     required this.specialFeatures,
   });
 
@@ -46,6 +49,7 @@ class PhysicalDescription {
       'height': height,
       'build': build,
       'face': face,
+      'beard': beard?.toMap(),
       'specialFeatures': specialFeatures,
     };
   }
@@ -58,6 +62,9 @@ class PhysicalDescription {
       height: map['height'] as int,
       build: map['build'] as String,
       face: map['face'] as String,
+      beard: map['beard'] != null
+          ? Hair.fromMap(map['beard'] as Map<String, dynamic>)
+          : null,
       specialFeatures: List<String>.from(
         (map['specialFeatures'] as List<String>),
       ),
@@ -71,7 +78,7 @@ class PhysicalDescription {
 
   @override
   String toString() {
-    return 'PhysicalDescription(hairStyle: $hairStyle, eyes: $eyes, skin: $skin, height: $height, build: $build, face: $face, specialFeatures: $specialFeatures)';
+    return 'PhysicalDescription(hairStyle: $hairStyle, eyes: $eyes, skin: $skin, height: $height, build: $build, face: $face, beard: $beard, specialFeatures: $specialFeatures)';
   }
 
   @override
@@ -85,6 +92,7 @@ class PhysicalDescription {
         other.height == height &&
         other.build == build &&
         other.face == face &&
+        other.beard == beard &&
         listEquals(other.specialFeatures, specialFeatures);
   }
 
@@ -96,6 +104,7 @@ class PhysicalDescription {
         height.hashCode ^
         build.hashCode ^
         face.hashCode ^
+        beard.hashCode ^
         specialFeatures.hashCode;
   }
 }
