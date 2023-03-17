@@ -1,15 +1,13 @@
 import 'dart:math';
 
+import 'package:radnpg/enums/race.dart';
 import 'package:radnpg/generators/names/races.dart';
 
 void main() {
-  print(DragonbornNameGenerator(Random().nextBool()).generate());
-  print(DwarfNameGenerator(Random().nextBool()).generate());
-  print(ElfNameGenerator(Random().nextBool()).generate());
-  print(GnomeNameGenerator(Random().nextBool()).generate());
-  print(HalfElfNameGenerator(Random().nextBool()).generate());
-  print(HalflingNameGenerator(Random().nextBool()).generate());
-  print(HumanNameGenerator(Random().nextBool()).generate());
-  print(OrcNameGenerator(Random().nextBool()).generate());
-  print(TieflingNameGenerator(Random().nextBool()).generate());
+  // Generate names for races:
+  for (Race race in Race.values) {
+    bool isMale = Random().nextBool();
+    String name = RaceNameGenerator(isMale, race).generate();
+    print("Race: ${race.name}, is male: $isMale, name: $name");
+  }
 }
