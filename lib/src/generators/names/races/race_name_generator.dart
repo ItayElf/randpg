@@ -1,3 +1,4 @@
+import '../../../enums/gender.dart';
 import '../../../enums/race.dart';
 import '../../../randpg_exceptions.dart';
 import '../../base/generator.dart';
@@ -16,41 +17,41 @@ import 'tiefling/tiefling_name_generator.dart';
 class RaceNameGenerator implements IGenerator<String> {
   late int _seed;
   final Race _race;
-  final bool _isMale;
+  final Gender _gender;
 
-  RaceNameGenerator(this._isMale, this._race) {
+  RaceNameGenerator(this._gender, this._race) {
     _seed = SeedGenerator.generate();
   }
 
   /// Generates a name for based on a gender and a race
   @override
   String generate() {
-    var generator = _getGenerator(_isMale, _race);
+    var generator = _getGenerator(_gender, _race);
     generator.seed(_seed);
     return generator.generate();
   }
 
   /// Returns the correct name generator for the given gender and race
-  static IGenerator<String> _getGenerator(bool isMale, Race race) {
+  static IGenerator<String> _getGenerator(Gender gender, Race race) {
     switch (race) {
       case Race.dragonborn:
-        return DragonbornNameGenerator(isMale);
+        return DragonbornNameGenerator(gender);
       case Race.dwarf:
-        return DwarfNameGenerator(isMale);
+        return DwarfNameGenerator(gender);
       case Race.elf:
-        return ElfNameGenerator(isMale);
+        return ElfNameGenerator(gender);
       case Race.gnome:
-        return GnomeNameGenerator(isMale);
+        return GnomeNameGenerator(gender);
       case Race.halfElf:
-        return HalfElfNameGenerator(isMale);
+        return HalfElfNameGenerator(gender);
       case Race.halfling:
-        return HalflingNameGenerator(isMale);
+        return HalflingNameGenerator(gender);
       case Race.human:
-        return HumanNameGenerator(isMale);
+        return HumanNameGenerator(gender);
       case Race.orc:
-        return OrcNameGenerator(isMale);
+        return OrcNameGenerator(gender);
       case Race.tiefling:
-        return TieflingNameGenerator(isMale);
+        return TieflingNameGenerator(gender);
     }
     // ignore: dead_code
     throw RaceNotSupportedException("Race ${race.name} is not supported");
