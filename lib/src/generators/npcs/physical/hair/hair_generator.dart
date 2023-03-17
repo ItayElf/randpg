@@ -3,6 +3,7 @@ import '../../../../enums/gender.dart';
 import '../../../../enums/race.dart';
 import '../../../base/generator.dart';
 import '../../../base/multiple_generator.dart';
+import '../../../base/seed_generator.dart';
 import 'dragonborn/dragonborn_head_generator.dart';
 import 'elf/elf_hair_generator.dart';
 import 'generic/generic_hair_generator.dart';
@@ -13,7 +14,9 @@ class HairGenerator implements IGenerator<Hair> {
   final Gender _gender;
   final Race _race;
 
-  HairGenerator(this._gender, this._race);
+  HairGenerator(this._gender, this._race) {
+    _seed = SeedGenerator.generate();
+  }
 
   /// Generates hair based on the gender and race
   @override

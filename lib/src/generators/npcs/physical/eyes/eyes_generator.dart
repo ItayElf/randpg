@@ -1,9 +1,14 @@
 import '../../../base/generator.dart';
+import '../../../base/seed_generator.dart';
 import '../../../base/weighted_generator.dart';
 
 /// A generator for eye color
 class EyesGenerator implements IGenerator<String> {
   late int _seed;
+
+  EyesGenerator() {
+    _seed = SeedGenerator.generate();
+  }
 
   static const _eyeColors = {
     'brown': 4,
