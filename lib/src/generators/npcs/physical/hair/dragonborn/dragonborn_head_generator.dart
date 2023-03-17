@@ -1,6 +1,6 @@
-import '../../../../../base/generator.dart';
-import '../../../../../base/list_item_generator.dart';
-import '../../../../../base/seed_generator.dart';
+import '../../../../base/generator.dart';
+import '../../../../base/list_item_generator.dart';
+import '../../../../base/seed_generator.dart';
 
 /// A class that generates dragonborns head style
 class DragonbornHeadGenerator implements IGenerator<String> {
@@ -20,6 +20,7 @@ class DragonbornHeadGenerator implements IGenerator<String> {
     _seed = SeedGenerator.generate();
   }
 
+  /// Generates head shape for dragonborns
   @override
   String generate() {
     final generator = ListItemGenerator(_dragonbornHeadShapes);

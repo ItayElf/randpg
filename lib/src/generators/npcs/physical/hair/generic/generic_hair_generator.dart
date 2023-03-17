@@ -15,6 +15,7 @@ class GenericHairGenerator implements IGenerator<String> {
     _seed = SeedGenerator.generate();
   }
 
+  /// Generates generic hair style
   @override
   String generate() {
     final generators = [
