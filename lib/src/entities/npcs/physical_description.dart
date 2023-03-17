@@ -19,7 +19,7 @@ class PhysicalDescription {
   /// The height of this npc in centimeters
   final int height;
 
-  /// The physical build of this npc (musular, lean, etc.)
+  /// The physical build of this npc (muscular, lean, etc.)
   final String build;
 
   /// The face of this npc
