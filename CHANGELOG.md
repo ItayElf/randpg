@@ -1,3 +1,11 @@
+# Changelog <!-- omit in toc -->
+
+## Table of Contents <!-- omit in toc -->
+
+- [0.0.1](#001)
+- [0.0.0](#000)
+
+
 ## 0.0.1
 
 - Added name generation for:
