@@ -1,11 +1,14 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
 import 'package:collection/collection.dart';
 
+import 'hair.dart';
+
 /// A class that represents the physical description of an npc
 class PhysicalDescription {
   /// The hair style of this npc. For some races it might be head shape or something else
-  final String hairStyle;
+  final Hair hairStyle;
 
   /// The eye color of this npc
   final String eyes;
@@ -37,7 +40,7 @@ class PhysicalDescription {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'hairStyle': hairStyle,
+      'hairStyle': hairStyle.toMap(),
       'eyes': eyes,
       'skin': skin,
       'height': height,
@@ -49,7 +52,7 @@ class PhysicalDescription {
 
   factory PhysicalDescription.fromMap(Map<String, dynamic> map) {
     return PhysicalDescription(
-      hairStyle: map['hairStyle'] as String,
+      hairStyle: Hair.fromMap(map['hairStyle'] as Map<String, dynamic>),
       eyes: map['eyes'] as String,
       skin: map['skin'] as String,
       height: map['height'] as int,
@@ -74,7 +77,7 @@ class PhysicalDescription {
   @override
   bool operator ==(covariant PhysicalDescription other) {
     if (identical(this, other)) return true;
-    final listEquals = DeepCollectionEquality().equals;
+    final listEquals = const DeepCollectionEquality().equals;
 
     return other.hairStyle == hairStyle &&
         other.eyes == eyes &&
