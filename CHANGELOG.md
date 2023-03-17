@@ -2,9 +2,13 @@
 
 ## Table of Contents <!-- omit in toc -->
 
+- [0.1.1](#011)
 - [0.1.0](#010)
 - [0.0.0](#000)
 
+## 0.1.1
+
+- Changed gender from bool to enum
 
 ## 0.1.0
 
