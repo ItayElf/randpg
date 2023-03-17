@@ -1,7 +1,7 @@
-import 'package:radnpg/enums/gender.dart';
-import 'package:radnpg/enums/race.dart';
-import 'package:radnpg/generators/generators.dart';
-import 'package:radnpg/generators/names/races.dart';
+import 'package:randpg/enums/gender.dart';
+import 'package:randpg/enums/race.dart';
+import 'package:randpg/generators/generators.dart';
+import 'package:randpg/generators/names/races.dart';
 
 void main() {
   // Generate names for races:

@@ -1,6 +1,5 @@
-import 'package:radnpg/src/generators/base/list_item_generator.dart';
-
 import '../../../../base/generator.dart';
+import '../../../../base/list_item_generator.dart';
 import '../../../../base/seed_generator.dart';
 
 /// A class that generates scales colors and texture

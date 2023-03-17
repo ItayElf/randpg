@@ -1,4 +1,4 @@
-name: radnpg
+name: randpg
 description: A library for generating random rpg entities.
 version: 0.1.1
 repository: https://github.com/ItayElf/randpg
