@@ -1,6 +1,6 @@
-import '../../../base/generator.dart';
-import '../../../base/list_item_generator.dart';
-import '../../../base/seed_generator.dart';
+import '../../../../base/generator.dart';
+import '../../../../base/list_item_generator.dart';
+import '../../../../base/seed_generator.dart';
 
 /// A class that generates generic skin tones
 class GenericSkinGenerator implements IGenerator<String> {
