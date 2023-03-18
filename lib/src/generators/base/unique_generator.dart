@@ -2,7 +2,7 @@ import 'generator.dart';
 import 'list_item_generator.dart';
 import 'seed_generator.dart';
 
-/// A class that generates [n] unique items from [pool]
+/// A class that generates [_n] unique items from [_pool]
 class UniqueGenerator<T> implements IGenerator<List<T>> {
   late int _seed;
   final List<T> _pool;
@@ -12,7 +12,7 @@ class UniqueGenerator<T> implements IGenerator<List<T>> {
     _seed = SeedGenerator.generate();
   }
 
-  /// Generates [n] unique items from [pool]
+  /// Generates [_n] unique items from [_pool]
   @override
   List<T> generate() {
     final generator = ListItemGenerator(_pool);

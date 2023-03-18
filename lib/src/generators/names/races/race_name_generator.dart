@@ -16,8 +16,8 @@ import 'tiefling/tiefling_name_generator.dart';
 /// A class that generates names based on gender and race
 class RaceNameGenerator implements IGenerator<String> {
   late int _seed;
-  final Race _race;
   final Gender _gender;
+  final Race _race;
 
   RaceNameGenerator(this._gender, this._race) {
     _seed = SeedGenerator.generate();
