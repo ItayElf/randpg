@@ -2,9 +2,14 @@
 
 ## Table of Contents <!-- omit in toc -->
 
+- [0.2.0](#020)
 - [0.1.1](#011)
 - [0.1.0](#010)
 - [0.0.0](#000)
+
+## 0.2.0
+
+- Added physical description generator
 
 ## 0.1.1
 

@@ -1,6 +1,6 @@
 # Randpg <!-- omit in toc -->
 
-[![version](https://img.shields.io/badge/version-0.1.1-green.svg)](https://semver.org)
+[![version](https://img.shields.io/badge/version-0.2.0-green.svg)](https://semver.org)
 
 Randpg is a library for generating random rpg entities like npcs, settlements and even worlds.
 
@@ -18,6 +18,8 @@ Follow the installation instructions on dart packages.
 ## Features
 
 * Generating names for various races
+* Generate npc data:
+  * Physical description
 
 ## Usage
 
