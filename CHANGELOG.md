@@ -10,6 +10,7 @@
 ## 0.2.0
 
 - Added physical description generator
+- Added personality generator
 
 ## 0.1.1
 

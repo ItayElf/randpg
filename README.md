@@ -8,6 +8,7 @@ Randpg is a library for generating random rpg entities like npcs, settlements an
 
 - [Installation](#installation)
 - [Features](#features)
+- [Goals](#goals)
 - [Usage](#usage)
   - [Generating names](#generating-names)
 
@@ -20,6 +21,15 @@ Follow the installation instructions on dart packages.
 * Generating names for various races
 * Generate npc data:
   * Physical description
+  * Personality generator
+
+## Goals
+
+-  Npc generator
+- Settlement generator
+- Landscape generator
+- Gods generator
+- World generator
 
 ## Usage
 
