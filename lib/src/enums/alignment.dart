@@ -6,6 +6,12 @@ enum EthicalAlignment {
 
   const EthicalAlignment(this.name);
 
+  factory EthicalAlignment.fromName(String name) {
+    return EthicalAlignment.values
+        .where((element) => element.name == name)
+        .first;
+  }
+
   final String name;
 }
 
@@ -16,6 +22,10 @@ enum MoralAlignment {
   evil("evil");
 
   const MoralAlignment(this.name);
+
+  factory MoralAlignment.fromName(String name) {
+    return MoralAlignment.values.where((element) => element.name == name).first;
+  }
 
   final String name;
 }

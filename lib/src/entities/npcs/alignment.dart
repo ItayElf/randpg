@@ -31,8 +31,8 @@ class Alignment {
 
   factory Alignment.fromMap(Map<String, dynamic> map) {
     return Alignment(
-      ethical: EthicalAlignment.values.byName(map['ethical']),
-      moral: MoralAlignment.values.byName(map['moral']),
+      ethical: EthicalAlignment.fromName(map['ethical']),
+      moral: MoralAlignment.fromName(map['moral']),
     );
   }
 

@@ -26,7 +26,15 @@ class AlignmentGenerator implements IGenerator<Alignment> {
       "moral": WeightedGenerator(moralMap),
     });
     generator.seed(_seed);
-    return Alignment.fromMap(generator.generate());
+    final generatedAlignment = generator.generate();
+
+    return Alignment.fromMap(
+      Map.fromEntries(
+        generatedAlignment.entries.map(
+          (entry) => MapEntry(entry.key, entry.value.name),
+        ),
+      ),
+    );
   }
 
   /// Returns the ethical pool of [race]
