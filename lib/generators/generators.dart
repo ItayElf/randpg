@@ -1,3 +1,4 @@
+export '../src/generators/base/batch_generator.dart' show BatchGenerator;
 export '../src/generators/base/generator.dart' show IGenerator;
 export '../src/generators/base/list_item_generator.dart' show ListItemGenerator;
 export '../src/generators/base/multiple_generator.dart' show MultipleGenerator;
