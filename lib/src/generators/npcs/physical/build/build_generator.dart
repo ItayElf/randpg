@@ -7,7 +7,7 @@ import 'build_data.dart';
 /// A class that generates a build from a given race
 class BuildGenerator implements IGenerator<String> {
   late int _seed;
-  Race _race;
+  final Race _race;
 
   BuildGenerator(this._race) {
     _seed = SeedGenerator.generate();
