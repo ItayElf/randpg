@@ -1,21 +1,26 @@
 import 'dart:math';
 
 import 'generator.dart';
+import 'seed_generator.dart';
 
+/// A class that generates random value based on a probability map
 class WeightedGenerator<T> implements IGenerator<T> {
+  late int _seed;
+
   /// A map containing the values with their respective probabilities as integers
   ///
   /// For example, a map {"a": 3, "b": 1} means "a" has a probability of 3/4 while "b" has a probability of 1/4
   final Map<T, int> _pool;
-  Random _random = Random();
 
-  WeightedGenerator(this._pool);
+  WeightedGenerator(this._pool) {
+    _seed = SeedGenerator.generate();
+  }
 
   /// Generates a value according to the given weights
   @override
   T generate() {
     int sum = _pool.values.toList().reduce((value, element) => value + element);
-    int choice = _random.nextInt(sum) + 1;
+    int choice = Random(_seed).nextInt(sum) + 1;
 
     for (var pair in _pool.entries) {
       if (choice <= pair.value) {
@@ -29,6 +34,6 @@ class WeightedGenerator<T> implements IGenerator<T> {
 
   @override
   void seed(int seed) {
-    _random = Random(seed);
+    _seed = seed;
   }
 }

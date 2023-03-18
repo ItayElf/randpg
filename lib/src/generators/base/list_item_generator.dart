@@ -1,22 +1,23 @@
 import 'dart:math';
 
 import 'generator.dart';
+import 'seed_generator.dart';
 
+/// A class that generates a random item from a list
 class ListItemGenerator<T> implements IGenerator<T> {
-  /// The list to generate an item from
+  late int _seed;
   final List<T> _pool;
 
-  /// The random object used for generation
-  Random _random = Random();
-
-  ListItemGenerator(this._pool);
+  ListItemGenerator(this._pool) {
+    _seed = SeedGenerator.generate();
+  }
 
   /// Generates a random item from the list
   @override
-  T generate() => _pool[_random.nextInt(_pool.length)];
+  T generate() => _pool[Random(_seed).nextInt(_pool.length)];
 
   @override
   void seed(int seed) {
-    _random = Random(seed);
+    _seed = seed;
   }
 }
