@@ -1,8 +1,7 @@
-import 'package:randpg/generators/generators.dart';
-
 import '../../../../entities/npcs/hair.dart';
 import '../../../../enums/gender.dart';
 import '../../../../enums/race.dart';
+import '../../../base/batch_generator.dart';
 import '../../../base/generator.dart';
 import '../../../base/list_item_generator.dart';
 import '../../../base/seed_generator.dart';
