@@ -5,8 +5,15 @@ import 'package:randpg/generators/npcs.dart';
 
 void main() {
   // Generate male half-elf physical description:
-  final generator = PhysicalDescriptionGenerator(Gender.male, Race.halfElf);
+  final physicalGenerator =
+      PhysicalDescriptionGenerator(Gender.male, Race.halfElf);
 
-  PhysicalDescription description = generator.generate();
+  PhysicalDescription description = physicalGenerator.generate();
   print(description.toJson());
+
+  // Generate personality of an orc:
+  final personalityGenerator = PersonalityGenerator(Race.orc);
+
+  Personality personality = personalityGenerator.generate();
+  print(personality.toJson());
 }
