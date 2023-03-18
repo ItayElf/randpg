@@ -1,6 +1,7 @@
 import '../../../../../entities/npcs/hair.dart';
 import '../../../../../enums/gender.dart';
 import '../../../../../randpg_exceptions.dart';
+import '../../../../base/batch_generator.dart';
 import '../../../../base/generator.dart';
 import '../../../../base/list_item_generator.dart';
 import '../../../../base/seed_generator.dart';
@@ -19,27 +20,19 @@ class GenericHairGenerator implements IGenerator<Hair> {
   /// Generates generic hair style
   @override
   Hair generate() {
-    final generators = [
-      _getHairLengthGenerator(_gender),
-      ListItemGenerator(genericHairType),
-      WeightedGenerator(genericHairColor),
-    ];
+    final generator = BatchGenerator({
+      "length": _getHairLengthGenerator(_gender),
+      "type": ListItemGenerator(genericHairType),
+      "color": WeightedGenerator(genericHairColor),
+    });
 
-    for (int i = 0; i < generators.length; i++) {
-      generators[i].seed((_seed + i) % SeedGenerator.maxSeed);
-    }
+    generator.seed(_seed);
+    final generatedHairStyle = generator.generate();
 
-    final generatedHairStyle =
-        generators.map((generator) => generator.generate()).toList();
-
-    if (generatedHairStyle.first == "bald") {
+    if (generatedHairStyle["length"] == "bald") {
       return Hair(length: "bald", type: "", color: "");
     }
-    return Hair(
-      length: generatedHairStyle[0],
-      type: generatedHairStyle[1],
-      color: generatedHairStyle[2],
-    );
+    return Hair.fromMap(generatedHairStyle);
   }
 
   /// Returns a hair length generator based on the gender

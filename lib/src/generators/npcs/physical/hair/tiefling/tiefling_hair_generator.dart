@@ -1,3 +1,5 @@
+import 'package:randpg/generators/generators.dart';
+
 import '../../../../../entities/npcs/hair.dart';
 import '../../../../../enums/gender.dart';
 import '../../../../../randpg_exceptions.dart';
@@ -27,27 +29,19 @@ class TieflingHairGenerator implements IGenerator<Hair> {
   /// Generates tiefling hair style
   @override
   Hair generate() {
-    final generators = [
-      _getHairLengthGenerator(_gender),
-      ListItemGenerator(genericHairType),
-      ListItemGenerator(_tieflingHairColors),
-    ];
+    final generator = BatchGenerator({
+      "length": _getHairLengthGenerator(_gender),
+      "type": ListItemGenerator(genericHairType),
+      "color": ListItemGenerator(_tieflingHairColors),
+    });
 
-    for (int i = 0; i < generators.length; i++) {
-      generators[i].seed((_seed + i) % SeedGenerator.maxSeed);
-    }
+    generator.seed(_seed);
+    final generatedHairStyle = generator.generate();
 
-    final generatedHairStyle =
-        generators.map((generator) => generator.generate()).toList();
-
-    if (generatedHairStyle.first == "bald") {
+    if (generatedHairStyle["length"] == "bald") {
       return Hair(length: "bald", type: "", color: "");
     }
-    return Hair(
-      length: generatedHairStyle[0],
-      type: generatedHairStyle[1],
-      color: generatedHairStyle[2],
-    );
+    return Hair.fromMap(generatedHairStyle);
   }
 
   /// Returns a hair length generator based on the gender

@@ -1,3 +1,5 @@
+import 'package:randpg/generators/generators.dart';
+
 import '../../../../entities/npcs/hair.dart';
 import '../../../../enums/gender.dart';
 import '../../../../enums/race.dart';
@@ -23,33 +25,33 @@ class BeardGenerator implements IGenerator<Hair?> {
       return null;
     }
 
-    List<String> pool = beardLength;
-    for (var entry in beardMap.entries) {
-      if (entry.key.contains(_race)) {
-        pool = List.from(entry.value);
-      }
-    }
+    List<String> pool = _getPool(_race);
 
-    final generators = [
-      ListItemGenerator(pool),
-      ListItemGenerator(beardShape),
-    ];
+    final generator = BatchGenerator({
+      "length": ListItemGenerator(pool),
+      "type": ListItemGenerator(beardShape),
+      "color": ListItemGenerator([""]),
+    });
 
-    for (int i = 0; i < generators.length; i++) {
-      generators[i].seed((_seed + i) % SeedGenerator.maxSeed);
-    }
-    final generatedBeard =
-        generators.map((generator) => generator.generate()).toList();
+    generator.seed(_seed);
+    final generatedBeard = generator.generate();
 
-    if (generatedBeard.first.isEmpty) {
+    if (generatedBeard["length"].isEmpty) {
       return null;
     }
 
-    return Hair(
-      length: generatedBeard[0],
-      type: generatedBeard[1],
-      color: "",
-    );
+    return Hair.fromMap(generatedBeard);
+  }
+
+  /// Generates the pool to choose the beard from
+  static List<String> _getPool(Race race) {
+    List<String> pool = beardLength;
+    for (var entry in beardMap.entries) {
+      if (entry.key.contains(race)) {
+        pool = List.from(entry.value);
+      }
+    }
+    return List.from(pool);
   }
 
   @override
