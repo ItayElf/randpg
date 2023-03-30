@@ -1,14 +1,14 @@
-import '../../../../base/generator.dart';
-import '../../../../base/list_item_generator.dart';
-import '../../../../base/seed_generator.dart';
+import '../../../base/generator.dart';
+import '../../../base/list_item_generator.dart';
+import '../../../base/seed_generator.dart';
 
 /// A class that generates generic skin tones
-class GenericSkinGenerator implements IGenerator<String> {
+class BaseSkinGenerator implements IGenerator<String> {
   late int _seed;
 
   static const _skinTones = ['white', 'pale', 'brown', 'dark'];
 
-  GenericSkinGenerator() {
+  BaseSkinGenerator() {
     _seed = SeedGenerator.generate();
   }
 

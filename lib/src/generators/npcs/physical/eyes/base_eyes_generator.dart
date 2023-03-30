@@ -3,10 +3,10 @@ import '../../../base/seed_generator.dart';
 import '../../../base/weighted_generator.dart';
 
 /// A generator for eye color
-class EyesGenerator implements IGenerator<String> {
+class BaseEyesGenerator implements IGenerator<String> {
   late int _seed;
 
-  EyesGenerator() {
+  BaseEyesGenerator() {
     _seed = SeedGenerator.generate();
   }
 

@@ -12,7 +12,7 @@ const genericFemaleHairLength = {
   "short": 2,
   "medium": 3,
   "long": 4,
-  "extremly long": 2
+  "extremely long": 2
 };
 
 const genericHairType = ['straight', 'wavy', 'curled', 'braided'];

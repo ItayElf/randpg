@@ -22,7 +22,7 @@ class PersonalityGenerator implements IGenerator<Personality> {
   Personality generate() {
     final generator = BatchGenerator({
       "alignment": AlignmentGenerator(_race),
-      "traits": PersonalityTraitsGenerator(_race),
+      "traits": BasePersonalityTraitsGenerator(_race),
       "quirks": PersonalityQuirksGenerator(_race),
     });
     generator.seed(_seed);

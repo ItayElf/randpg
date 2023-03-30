@@ -1,37 +1,29 @@
-import '../../../../../entities/npcs/hair.dart';
-import '../../../../../enums/gender.dart';
-import '../../../../../randpg_exceptions.dart';
-import '../../../../base/batch_generator.dart';
-import '../../../../base/generator.dart';
-import '../../../../base/list_item_generator.dart';
-import '../../../../base/seed_generator.dart';
-import '../../../../base/weighted_generator.dart';
-import '../generic/generic_hair_data.dart';
+import '../../../../entities/npcs/hair.dart';
+import '../../../../enums/gender.dart';
+import '../../../../randpg_exceptions.dart';
+import '../../../base/batch_generator.dart';
+import '../../../base/generator.dart';
+import '../../../base/list_item_generator.dart';
+import '../../../base/seed_generator.dart';
+import '../../../base/weighted_generator.dart';
+import 'generic_hair_data.dart';
 
-/// A class that generates tiefling hair style based on gender
-class TieflingHairGenerator implements IGenerator<Hair> {
+/// A class that generates generic hair style based on gender
+class BaseHairGenerator implements IGenerator<Hair> {
   late int _seed;
   final Gender _gender;
 
-  static const _tieflingHairColors = [
-    "red",
-    "brown",
-    "black",
-    "dark blue",
-    "purple"
-  ];
-
-  TieflingHairGenerator(this._gender) {
+  BaseHairGenerator(this._gender) {
     _seed = SeedGenerator.generate();
   }
 
-  /// Generates tiefling hair style
+  /// Generates generic hair style
   @override
   Hair generate() {
     final generator = BatchGenerator({
       "length": _getHairLengthGenerator(_gender),
       "type": ListItemGenerator(genericHairType),
-      "color": ListItemGenerator(_tieflingHairColors),
+      "color": WeightedGenerator(genericHairColor),
     });
 
     generator.seed(_seed);

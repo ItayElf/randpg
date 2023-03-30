@@ -7,7 +7,7 @@ import '../../base/generator.dart';
 import '../../base/seed_generator.dart';
 import 'beard/beard_generator.dart';
 import 'build/build_generator.dart';
-import 'eyes/eyes_generator.dart';
+import 'eyes/base_eyes_generator.dart';
 import 'face/face_generator.dart';
 import 'hair/hair_generator.dart';
 import 'height/height_generator.dart';
@@ -39,13 +39,13 @@ class PhysicalDescriptionGenerator implements IGenerator<PhysicalDescription> {
 
   static Map<String, IGenerator> _getBatch(Gender gender, Race race) => {
         "hairStyle": HairGenerator(gender, race),
-        "eyes": EyesGenerator(),
+        "eyes": BaseEyesGenerator(),
         "skin": SkinGenerator(race),
         "height": HeightGenerator(race),
         "build": BuildGenerator(race),
-        "face": FaceGenerator(race),
+        "face": BaseFaceGenerator(race),
         "beard": BeardGenerator(gender, race),
-        "specialFeatures": SpecialFeaturesGenerator(race),
+        "specialFeatures": BaseSpecialFeaturesGenerator(race),
       };
 
   @override

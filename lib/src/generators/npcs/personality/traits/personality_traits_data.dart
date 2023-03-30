@@ -1,5 +1,3 @@
-import '../../../../enums/race.dart';
-
 const genericPersonalityTraits = [
   'acts on impulse',
   'has an even temper',
@@ -71,5 +69,3 @@ const genericPersonalityTraits = [
   "can't keep a secret.",
   'is very good at keeping secrets'
 ];
-
-const Map<List<Race>, List<String>> personalityTraitsMap = {};
