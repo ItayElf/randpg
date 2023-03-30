@@ -20,12 +20,14 @@ import 'names/human_name_generator.dart';
 class Human implements Race {
   const Human();
 
-  static const maxAge = 90;
-  static const minHeight = 148;
-  static const maxHeight = 192;
+  static const _raceName = "Human";
+  static const _pluralRaceName = "Humans";
+  static const _maxAge = 90;
+  static const _minHeight = 148;
+  static const _maxHeight = 192;
 
   @override
-  IGenerator<int> getAgeGenerator(Gender gender) => NumberGenerator(1, maxAge);
+  IGenerator<int> getAgeGenerator(Gender gender) => NumberGenerator(1, _maxAge);
 
   @override
   IGenerator<Alignment> getAlignmentGenerator() => BaseAlignmentGenerator();
@@ -48,7 +50,10 @@ class Human implements Race {
 
   @override
   IGenerator<int> getHeightGenerator(Gender gender) =>
-      NumberGenerator(minHeight, maxHeight);
+      NumberGenerator(_minHeight, _maxHeight);
+
+  @override
+  String getName() => _raceName;
 
   @override
   IGenerator<String> getNameGenerator(Gender gender) =>
@@ -61,6 +66,9 @@ class Human implements Race {
   @override
   IGenerator<List<String>> getPersonalityTraitsGenerator() =>
       BasePersonalityTraitsGenerator();
+
+  @override
+  String getPluralName() => _pluralRaceName;
 
   @override
   IGenerator<String> getSkinGenerator(Gender gender) => BaseSkinGenerator();

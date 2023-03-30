@@ -5,6 +5,12 @@ import '../generators/base/generator.dart';
 
 /// An interface for races
 abstract class Race {
+  /// A method that returns the name of the race
+  String getName();
+
+  /// A method that returns the plural name of the race
+  String getPluralName();
+
   /// A method that returns a generator that generates a name for a character from this race
   IGenerator<String> getNameGenerator(Gender gender);
 
