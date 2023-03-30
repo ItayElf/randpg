@@ -1,5 +1,5 @@
 import 'human/human.dart';
 
-const races = [
+const availableRaces = [
   Human(),
 ];
