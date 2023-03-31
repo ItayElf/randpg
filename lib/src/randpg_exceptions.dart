@@ -9,11 +9,11 @@ class RandpgException implements Exception {
 }
 
 /// An exception that is thrown when a not supported race is being used
-class RaceNotSupportedException extends RandpgException {
-  const RaceNotSupportedException([super.msg]);
+class RaceNotFoundException extends RandpgException {
+  const RaceNotFoundException([super.msg]);
 
   @override
-  String toString() => msg ?? "RaceNotSupportedException";
+  String toString() => msg ?? "RaceNotFoundException";
 }
 
 /// An exception that is thrown when a not supported gender is being used
