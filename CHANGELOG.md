@@ -12,6 +12,7 @@
 - Added physical description generator
 - Added personality generator
 - Made races an interface rather than an enum
+- Added an npc generator
 
 ## 0.1.1
 

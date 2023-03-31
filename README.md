@@ -13,6 +13,7 @@ Randpg is a package for generating random rpg entities like npcs, settlements an
 - [Goals](#goals)
 - [Usage](#usage)
   - [Generating names](#generating-names)
+  - [Generating npcs](#generating-npcs)
 
 ## Installation
 
@@ -27,13 +28,16 @@ Follow the installation instructions on dart packages.
 
 ## Goals
 
--  Npc generator
+- ~~Npc generator~~ (Done in 0.2.0)
 - Settlement generator
 - Landscape generator
 - Gods generator
 - World generator
+- Companion Generator
 
 ## Usage
+
+*For detailed examples check the [examples folder](./examples/)*
 
 ### Generating names
 
@@ -50,3 +54,13 @@ nameGenerator.seed(1234);
 print(nameGenerator.generate()); // expected output: "cormin shadowheart"
 ```
 *output might be different since dart random seed is different on different machines* 
+
+### Generating npcs
+
+Generating an elf npc as an example:
+```dart
+final Race race = Elf();
+final npcGenerator = NpcGenerator(race);
+
+print(npcGenerator.generate());
+```
