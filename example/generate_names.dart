@@ -4,7 +4,7 @@ import 'package:randpg/races.dart';
 
 void main() {
   // Generate names for races:
-  for (Race race in availableRaces) {
+  for (Race race in RaceManager.activeRaces) {
     // Generate a random gender
     Gender gender = ListItemGenerator(Gender.values).generate();
 

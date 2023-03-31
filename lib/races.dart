@@ -1,5 +1,5 @@
 export './src/races/race.dart' show Race;
-export './src/races/races.dart' show availableRaces;
+export './src/races/race_manager.dart' show RaceManager;
 
 export './src/races/dragonborn/dragonborn.dart' show Dragonborn;
 export './src/races/dwarf/dwarf.dart' show Dwarf;
