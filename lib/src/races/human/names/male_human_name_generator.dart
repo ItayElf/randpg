@@ -12,7 +12,7 @@ class MaleHumanNameGenerator implements IGenerator<String> {
     _seed = SeedGenerator.generate();
   }
 
-  static final List<IGenerator<String>> _generatorsTemplate = [
+  static final List<IGenerator<String>> _classicSurnameTemplate = [
     ListItemGenerator(humanMaleNamePrefix),
     WeightedGenerator(humanMaleVowel),
     ListItemGenerator(humanMaleNameMiddle),
@@ -23,10 +23,29 @@ class MaleHumanNameGenerator implements IGenerator<String> {
     ListItemGenerator(humanSurnameSuffix)
   ];
 
+  static final List<IGenerator<String>> _uniqueSurnameTemplate = [
+    ListItemGenerator(humanMaleNamePrefix),
+    WeightedGenerator(humanMaleVowel),
+    ListItemGenerator(humanMaleNameMiddle),
+    WeightedGenerator(humanMaleVowel),
+    ListItemGenerator(humanMaleNameSuffix),
+    ListItemGenerator([" "]),
+    ListItemGenerator(humanFemaleNamePrefix),
+    ListItemGenerator(humanFemaleVowel),
+    ListItemGenerator(humanFemaleNameMiddle),
+    ListItemGenerator(humanFemaleVowel),
+    WeightedGenerator(humanFemaleNameSuffix),
+  ];
+
   /// Generates a name of a male human
   @override
   String generate() {
-    List<IGenerator<String>> generators = List.from(_generatorsTemplate);
+    final templateGenerator =
+        ListItemGenerator([_classicSurnameTemplate, _uniqueSurnameTemplate]);
+    templateGenerator.seed(_seed);
+    final template = templateGenerator.generate();
+
+    List<IGenerator<String>> generators = List.from(template);
 
     for (int i = 0; i < generators.length; i++) {
       generators[i].seed((_seed + i) % SeedGenerator.maxSeed);
