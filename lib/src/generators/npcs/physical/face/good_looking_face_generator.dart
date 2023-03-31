@@ -3,11 +3,11 @@ import '../../../base/list_item_generator.dart';
 import '../../../base/seed_generator.dart';
 import 'face_data.dart';
 
-/// A class that generates good looking faces
-class BaseFaceGenerator implements IGenerator<String> {
+/// A class that generates good looking
+class GoodLookingFaceGenerator implements IGenerator<String> {
   late int _seed;
 
-  BaseFaceGenerator() {
+  GoodLookingFaceGenerator() {
     _seed = SeedGenerator.generate();
   }
 
@@ -15,7 +15,7 @@ class BaseFaceGenerator implements IGenerator<String> {
   @override
   String generate() {
     final generators = [
-      ListItemGenerator(faceAttributes),
+      ListItemGenerator(goodLookingFaceAttributes),
       ListItemGenerator(faceShape),
     ];
 

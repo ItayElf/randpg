@@ -7,7 +7,21 @@ const faceShape = [
   'square',
 ];
 
+const goodLookingFaceAttributes = [
+  'cute',
+  'attractive',
+  'beautiful',
+  'glamorous',
+  'innocent',
+  'stunning',
+  'fanciable',
+  'pretty',
+  'magnificent',
+  'sightly',
+];
+
 const faceAttributes = [
+  ...goodLookingFaceAttributes,
   'average',
   'bland',
   'unremarkable',
@@ -20,14 +34,4 @@ const faceAttributes = [
   'disfigured',
   'disgusting',
   'creepy',
-  'cute',
-  'attractive',
-  'beautiful',
-  'glamorous',
-  'innocent',
-  'stunning',
-  'fanciable',
-  'pretty',
-  'magnificent',
-  'sightly'
 ];
