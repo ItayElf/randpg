@@ -1,20 +1,20 @@
 import '../../../base/generator.dart';
 import '../../../base/list_item_generator.dart';
 import '../../../base/seed_generator.dart';
-import 'special_features_data.dart';
+import 'personality_quirks_data.dart';
 
-/// A class that generates a special feature
-class BaseSpecialFeatureGenerator implements IGenerator<String> {
+/// A class that generates a personality quirk
+class BasePersonalityQuirkGenerator implements IGenerator<String> {
   late int _seed;
 
-  BaseSpecialFeatureGenerator() {
+  BasePersonalityQuirkGenerator() {
     _seed = SeedGenerator.generate();
   }
 
-  /// Generates a special features
+  /// Generates a personality quirk
   @override
   String generate() {
-    final generator = ListItemGenerator(genericSpecialFeatures);
+    final generator = ListItemGenerator(genericPersonalityQuirks);
     generator.seed(_seed);
     return generator.generate();
   }

@@ -4,8 +4,8 @@ import '../../enums/gender.dart';
 import '../../generators/base/generator.dart';
 import '../../generators/base/number_generator.dart';
 import '../../generators/npcs/personality/alignment/base_alignment_generator.dart';
-import '../../generators/npcs/personality/quirks/base_personality_quirks_generator.dart';
-import '../../generators/npcs/personality/traits/personality_traits_generator.dart';
+import '../../generators/npcs/personality/quirks/base_personality_quirk_generator.dart';
+import '../../generators/npcs/personality/traits/personality_trait_generator.dart';
 import '../../generators/npcs/physical/beard/base_beard_generator.dart';
 import '../../generators/npcs/physical/build/base_build_generator.dart';
 import '../../generators/npcs/physical/eyes/base_eyes_generator.dart';
@@ -60,12 +60,12 @@ class Human implements Race {
       HumanNameGenerator(gender);
 
   @override
-  IGenerator<List<String>> getPersonalityQuirksGenerator() =>
-      BasePersonalityQuirksGenerator();
+  IGenerator<String> getPersonalityQuirkGenerator() =>
+      BasePersonalityQuirkGenerator();
 
   @override
-  IGenerator<List<String>> getPersonalityTraitsGenerator() =>
-      BasePersonalityTraitsGenerator();
+  IGenerator<String> getPersonalityTraitGenerator() =>
+      BasePersonalityTraitGenerator();
 
   @override
   String getPluralName() => _pluralRaceName;
@@ -74,6 +74,6 @@ class Human implements Race {
   IGenerator<String> getSkinGenerator(Gender gender) => BaseSkinGenerator();
 
   @override
-  IGenerator<List<String>> getSpecialFeaturesGenerator(Gender gender) =>
-      BaseSpecialFeaturesGenerator();
+  IGenerator<String> getSpecialFeatureGenerator(Gender gender) =>
+      BaseSpecialFeatureGenerator();
 }

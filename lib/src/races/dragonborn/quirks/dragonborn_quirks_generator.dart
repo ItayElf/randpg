@@ -1,12 +1,10 @@
 import '../../../generators/base/generator.dart';
+import '../../../generators/base/list_item_generator.dart';
 import '../../../generators/base/seed_generator.dart';
-import '../../../generators/base/unique_generator.dart';
 
-/// A class that generates personality quirks
-class DragonbornPersonalityQuirksGenerator implements IGenerator<List<String>> {
+/// A class that generates a dragonborn personality quirk
+class DragonbornPersonalityQuirkGenerator implements IGenerator<String> {
   late int _seed;
-
-  static const _numberOfQuirks = 2;
 
   static const _dragonbornQuirks = [
     'never asks for help',
@@ -20,14 +18,14 @@ class DragonbornPersonalityQuirksGenerator implements IGenerator<List<String>> {
     'values the clan above anything else'
   ];
 
-  DragonbornPersonalityQuirksGenerator() {
+  DragonbornPersonalityQuirkGenerator() {
     _seed = SeedGenerator.generate();
   }
 
   /// Generates personality quirks for the given race
   @override
-  List<String> generate() {
-    final generator = UniqueGenerator(_dragonbornQuirks, _numberOfQuirks);
+  String generate() {
+    final generator = ListItemGenerator(_dragonbornQuirks);
     generator.seed(_seed);
     return generator.generate();
   }

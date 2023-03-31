@@ -4,11 +4,15 @@ import '../../../races/race.dart';
 import '../../base/batch_generator.dart';
 import '../../base/generator.dart';
 import '../../base/seed_generator.dart';
+import '../../base/unique_generator.dart';
 
 /// A class that generates personalities
 class PersonalityGenerator implements IGenerator<Personality> {
   late int _seed;
   final Race _race;
+
+  static const _numberOfTraits = 2;
+  static const _numberOfQuirks = 2;
 
   PersonalityGenerator(this._race) {
     _seed = SeedGenerator.generate();
@@ -19,8 +23,14 @@ class PersonalityGenerator implements IGenerator<Personality> {
   Personality generate() {
     final generator = BatchGenerator({
       "alignment": _race.getAlignmentGenerator(),
-      "traits": _race.getPersonalityTraitsGenerator(),
-      "quirks": _race.getPersonalityQuirksGenerator(),
+      "traits": UniqueGenerator(
+        _race.getPersonalityTraitGenerator(),
+        _numberOfTraits,
+      ),
+      "quirks": UniqueGenerator(
+        _race.getPersonalityQuirkGenerator(),
+        _numberOfQuirks,
+      ),
     });
     generator.seed(_seed);
 

@@ -38,15 +38,15 @@ abstract class Race {
   /// A method that returns a generator for a beard for a character from this race
   IGenerator<Hair?> getBeardGenerator(Gender gender);
 
-  /// A method that returns a generator for special features for a character from this race
-  IGenerator<List<String>> getSpecialFeaturesGenerator(Gender gender);
+  /// A method that returns a generator for a special feature for a character from this race
+  IGenerator<String> getSpecialFeatureGenerator(Gender gender);
 
   /// A method that returns a generator for an alignment for a character from this race
   IGenerator<Alignment> getAlignmentGenerator();
 
-  /// A method that returns a generator for personality traits for a character from this race
-  IGenerator<List<String>> getPersonalityTraitsGenerator();
+  /// A method that returns a generator for a personality trait for a character from this race
+  IGenerator<String> getPersonalityTraitGenerator();
 
-  /// A method that returns a generator for personality quirks for a character from this race
-  IGenerator<List<String>> getPersonalityQuirksGenerator();
+  /// A method that returns a generator for a personality quirk for a character from this race
+  IGenerator<String> getPersonalityQuirkGenerator();
 }

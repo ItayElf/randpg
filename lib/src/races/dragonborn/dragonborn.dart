@@ -4,8 +4,8 @@ import '../../entities/npcs/alignment.dart';
 import '../../entities/npcs/hair.dart';
 import '../../enums/gender.dart';
 import '../../generators/npcs/personality/alignment/base_alignment_generator.dart';
-import '../../generators/npcs/personality/quirks/base_personality_quirks_generator.dart';
-import '../../generators/npcs/personality/traits/personality_traits_generator.dart';
+import '../../generators/npcs/personality/quirks/base_personality_quirk_generator.dart';
+import '../../generators/npcs/personality/traits/personality_trait_generator.dart';
 import '../../generators/npcs/physical/build/strong_build_generator.dart';
 import '../../generators/npcs/physical/eyes/base_eyes_generator.dart';
 import '../../generators/npcs/physical/face/base_face_generator.dart';
@@ -60,15 +60,14 @@ class Dragonborn implements Race {
       DragonbornNameGenerator(gender);
 
   @override
-  IGenerator<List<String>> getPersonalityQuirksGenerator() =>
-      MultipleGenerator([
-        BasePersonalityQuirksGenerator(),
-        DragonbornPersonalityQuirksGenerator(),
+  IGenerator<String> getPersonalityQuirkGenerator() => MultipleGenerator([
+        BasePersonalityQuirkGenerator(),
+        DragonbornPersonalityQuirkGenerator(),
       ]);
 
   @override
-  IGenerator<List<String>> getPersonalityTraitsGenerator() =>
-      BasePersonalityTraitsGenerator();
+  IGenerator<String> getPersonalityTraitGenerator() =>
+      BasePersonalityTraitGenerator();
 
   @override
   String getPluralName() => _pluralRaceName;
@@ -77,6 +76,6 @@ class Dragonborn implements Race {
   IGenerator<String> getSkinGenerator(Gender gender) => ScalesSkinGenerator();
 
   @override
-  IGenerator<List<String>> getSpecialFeaturesGenerator(Gender gender) =>
-      BaseSpecialFeaturesGenerator();
+  IGenerator<String> getSpecialFeatureGenerator(Gender gender) =>
+      BaseSpecialFeatureGenerator();
 }
