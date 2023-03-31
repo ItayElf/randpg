@@ -6,6 +6,7 @@ import 'halfling/halfling.dart';
 import 'human/human.dart';
 import 'hybrid/hybrid.dart';
 import 'orc/orc.dart';
+import 'tiefling/tiefling.dart';
 
 const availableRaces = [
   Dragonborn(),
@@ -27,4 +28,5 @@ const availableRaces = [
   Halfling(),
   Human(),
   Orc(),
+  Tiefling(),
 ];
