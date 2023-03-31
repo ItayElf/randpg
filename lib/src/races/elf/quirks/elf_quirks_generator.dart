@@ -1,11 +1,7 @@
-import '../../../generators/base/generator.dart';
 import '../../../generators/base/list_item_generator.dart';
-import '../../../generators/base/seed_generator.dart';
 
 /// A class that generates an elven personality quirk
-class ElfPersonalityQuirkGenerator implements IGenerator<String> {
-  late int _seed;
-
+class ElfPersonalityQuirkGenerator extends ListItemGenerator<String> {
   static const _elfQuirks = [
     'is disgusted by human architecture',
     'feels more comfortable while surrounded by nature',
@@ -22,20 +18,5 @@ class ElfPersonalityQuirkGenerator implements IGenerator<String> {
     'is deeply xenophobic'
   ];
 
-  ElfPersonalityQuirkGenerator() {
-    _seed = SeedGenerator.generate();
-  }
-
-  /// Generates a personality quirk
-  @override
-  String generate() {
-    final generator = ListItemGenerator(_elfQuirks);
-    generator.seed(_seed);
-    return generator.generate();
-  }
-
-  @override
-  void seed(int seed) {
-    _seed = seed;
-  }
+  ElfPersonalityQuirkGenerator() : super(_elfQuirks);
 }

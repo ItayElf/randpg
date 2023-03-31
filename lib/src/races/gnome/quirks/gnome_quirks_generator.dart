@@ -1,11 +1,7 @@
-import '../../../generators/base/generator.dart';
 import '../../../generators/base/list_item_generator.dart';
-import '../../../generators/base/seed_generator.dart';
 
 /// A class that generates a gnomish personality quirk
-class GnomePersonalityQuirkGenerator implements IGenerator<String> {
-  late int _seed;
-
+class GnomePersonalityQuirkGenerator extends ListItemGenerator<String> {
   static const _gnomeQuirks = [
     'makes the best out of any situation',
     'is always tinkering in the free time',
@@ -24,20 +20,5 @@ class GnomePersonalityQuirkGenerator implements IGenerator<String> {
     'talks so fast that it is very difficult to understand'
   ];
 
-  GnomePersonalityQuirkGenerator() {
-    _seed = SeedGenerator.generate();
-  }
-
-  /// Generates a personality quirk
-  @override
-  String generate() {
-    final generator = ListItemGenerator(_gnomeQuirks);
-    generator.seed(_seed);
-    return generator.generate();
-  }
-
-  @override
-  void seed(int seed) {
-    _seed = seed;
-  }
+  GnomePersonalityQuirkGenerator() : super(_gnomeQuirks);
 }

@@ -1,11 +1,7 @@
-import '../../../generators/base/generator.dart';
 import '../../../generators/base/list_item_generator.dart';
-import '../../../generators/base/seed_generator.dart';
 
 /// A class that generates a halfling personality quirk
-class HalflingPersonalityQuirkGenerator implements IGenerator<String> {
-  late int _seed;
-
+class HalflingPersonalityQuirkGenerator extends ListItemGenerator<String> {
   static const _halflingQuirks = [
     'tries to stay home as much as possible',
     'usually tries not to get noticed',
@@ -20,20 +16,5 @@ class HalflingPersonalityQuirkGenerator implements IGenerator<String> {
     'values the community very highly'
   ];
 
-  HalflingPersonalityQuirkGenerator() {
-    _seed = SeedGenerator.generate();
-  }
-
-  /// Generates a personality quirk
-  @override
-  String generate() {
-    final generator = ListItemGenerator(_halflingQuirks);
-    generator.seed(_seed);
-    return generator.generate();
-  }
-
-  @override
-  void seed(int seed) {
-    _seed = seed;
-  }
+  HalflingPersonalityQuirkGenerator() : super(_halflingQuirks);
 }

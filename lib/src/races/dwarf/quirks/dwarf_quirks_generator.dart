@@ -1,11 +1,7 @@
-import '../../../generators/base/generator.dart';
 import '../../../generators/base/list_item_generator.dart';
-import '../../../generators/base/seed_generator.dart';
 
 /// A class that generates a dwarf personality quirk
-class DwarfPersonalityQuirkGenerator implements IGenerator<String> {
-  late int _seed;
-
+class DwarfPersonalityQuirkGenerator extends ListItemGenerator<String> {
   static const _dwarfQuirks = [
     'always has a good ale at hand',
     'feels ill at ease in open spaces',
@@ -24,20 +20,5 @@ class DwarfPersonalityQuirkGenerator implements IGenerator<String> {
     'is secretly captivated by elves'
   ];
 
-  DwarfPersonalityQuirkGenerator() {
-    _seed = SeedGenerator.generate();
-  }
-
-  /// Generates a personality quirk
-  @override
-  String generate() {
-    final generator = ListItemGenerator(_dwarfQuirks);
-    generator.seed(_seed);
-    return generator.generate();
-  }
-
-  @override
-  void seed(int seed) {
-    _seed = seed;
-  }
+  DwarfPersonalityQuirkGenerator() : super(_dwarfQuirks);
 }
