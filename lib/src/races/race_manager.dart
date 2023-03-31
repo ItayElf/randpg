@@ -12,6 +12,8 @@ import 'orc/orc.dart';
 import 'tiefling/tiefling.dart';
 
 /// A class that handles the available races and using them
+///
+/// When making a custom race, make sure to register it or else some features might not work
 abstract class RaceManager {
   static final Set<Race> _races = {
     Dragonborn(),
