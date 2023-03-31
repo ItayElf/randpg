@@ -1,13 +1,13 @@
-import '../../entities/npcs/npc.dart';
-import '../../entities/settlements/goods.dart';
-import '../../entities/settlements/location.dart';
-import '../../subtypes/locations/location_type.dart';
-import '../../subtypes/races/race.dart';
-import '../base/batch_generator.dart';
-import '../base/generator.dart';
-import '../base/list_item_generator.dart';
-import '../base/seed_generator.dart';
-import '../npcs/npc_generator.dart';
+import '../../../entities/npcs/npc.dart';
+import '../../../entities/settlements/goods.dart';
+import '../../../entities/settlements/location.dart';
+import '../../../subtypes/locations/location_type.dart';
+import '../../../subtypes/races/race.dart';
+import '../../base/batch_generator.dart';
+import '../../base/generator.dart';
+import '../../base/list_item_generator.dart';
+import '../../base/seed_generator.dart';
+import '../../npcs/npc_generator.dart';
 
 /// A class that generates locations based on [_locationType]
 class LocationGenerator implements IGenerator<Location> {
