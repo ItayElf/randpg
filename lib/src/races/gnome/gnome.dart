@@ -29,7 +29,8 @@ class Gnome implements Race {
   static const _maxHeight = 134;
 
   @override
-  IGenerator<int> getAgeGenerator(Gender gender) => NumberGenerator(1, _maxAge);
+  IGenerator<int> getAgeGenerator(Gender gender) =>
+      NumberGenerator(14, _maxAge);
 
   @override
   IGenerator<Alignment> getAlignmentGenerator() => GnomeAlignmentGenerator();

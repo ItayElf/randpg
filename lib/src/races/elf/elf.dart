@@ -29,7 +29,8 @@ class Elf implements Race {
   static const _maxHeight = 192;
 
   @override
-  IGenerator<int> getAgeGenerator(Gender gender) => NumberGenerator(1, _maxAge);
+  IGenerator<int> getAgeGenerator(Gender gender) =>
+      NumberGenerator(74, _maxAge);
 
   @override
   IGenerator<Alignment> getAlignmentGenerator() => ElvenAlignmentGenerator();
