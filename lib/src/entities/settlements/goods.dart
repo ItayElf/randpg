@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
 /// A class that represents goods that can be found in various locations
@@ -6,16 +7,28 @@ class Goods {
   final String name;
 
   /// The description of the goods
-  final String description;
+  final String? description;
 
   /// The price of the goods, null if there is no price
-  final double? price;
+  final String? price;
 
   const Goods({
     required this.name,
-    required this.description,
+    this.description,
     this.price,
   });
+
+  Goods copyWith({
+    String? name,
+    String? description,
+    String? price,
+  }) {
+    return Goods(
+      name: name ?? this.name,
+      description: description ?? this.description,
+      price: price ?? this.price,
+    );
+  }
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
@@ -28,8 +41,9 @@ class Goods {
   factory Goods.fromMap(Map<String, dynamic> map) {
     return Goods(
       name: map['name'] as String,
-      description: map['description'] as String,
-      price: map['price'] != null ? map['price'] as double : null,
+      description:
+          map['description'] != null ? map['description'] as String : null,
+      price: map['price'] != null ? map['price'] as String : null,
     );
   }
 

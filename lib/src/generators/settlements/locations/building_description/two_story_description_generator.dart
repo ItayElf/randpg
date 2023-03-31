@@ -1,9 +1,9 @@
-import 'package:randpg/generators/generators.dart';
-import 'package:randpg/src/generators/settlements/locations/building_description/building_description_data.dart';
-
 import '../../../base/generator.dart';
+import '../../../base/list_item_generator.dart';
 import '../../../base/seed_generator.dart';
+import '../../../base/weighted_generator.dart';
 import 'base_description_generator.dart';
+import 'building_description_data.dart';
 
 /// A class that generates a description for two story buildings
 class TwoStoryDescriptionGenerator implements IGenerator<String> {
