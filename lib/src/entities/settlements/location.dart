@@ -82,8 +82,8 @@ class Location {
       buildingDescription: map['buildingDescription'] as String,
       goods: map['goods'] != null
           ? List<Goods>.from(
-              (map['goods'] as List<int>).map<Goods?>(
-                (x) => Goods.fromMap(x as Map<String, dynamic>),
+              (map['goods'] as List<Map<String, dynamic>>).map<Goods?>(
+                (x) => Goods.fromMap(x),
               ),
             )
           : null,

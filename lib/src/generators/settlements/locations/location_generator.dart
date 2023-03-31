@@ -33,11 +33,14 @@ class LocationGenerator implements IGenerator<Location> {
     final generator = BatchGenerator(_getBatch(_locationType, owner));
     generator.seed(_seed);
     final result = generator.generate();
-    if (result["goods"]) {
+
+    if (result["goods"] != null) {
       result["goods"] = (result["goods"] as List<Goods>)
           .map((goods) => goods.toMap())
           .toList();
     }
+    result["owner"] = owner.toMap();
+
     return Location.fromMap(result);
   }
 

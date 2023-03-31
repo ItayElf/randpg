@@ -1,7 +1,6 @@
-import 'package:randpg/src/subtypes/locations/general_store/general_store.dart';
-import 'package:randpg/src/subtypes/locations/location_type.dart';
-
 import '../../randpg_exceptions.dart';
+import 'general_store/general_store.dart';
+import 'location_type.dart';
 
 /// A class that handles the available locations and using them
 ///

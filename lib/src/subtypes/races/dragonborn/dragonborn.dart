@@ -1,5 +1,5 @@
 import '../../../../generators/generators.dart';
-import '../../../../races.dart';
+import '../../../../subtypes/races.dart';
 import '../../../entities/npcs/alignment.dart';
 import '../../../entities/npcs/hair.dart';
 import '../../../enums/gender.dart';
