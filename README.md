@@ -6,6 +6,8 @@ Randpg is a package for generating random rpg entities like npcs, settlements an
 
 *This package is still in development and some versions might not be backwards compatible before v1.0.0.*
 
+To view the changelog, [click here](./CHANGELOG.md)
+
 ## Table of Contents <!-- omit in toc -->
 
 - [Installation](#installation)
@@ -28,7 +30,7 @@ Follow the installation instructions on dart packages.
 
 ## Goals
 
-- ~~Npc generator~~ (Done in 0.2.0)
+- ~~Npc generator~~ (Added in 0.2.0)
 - Settlement generator
 - Landscape generator
 - Gods generator
