@@ -2,7 +2,7 @@ import 'package:randpg/src/generators/npcs/personality/descriptors/descriptor_ge
 
 import '../../../entities/npcs/alignment.dart';
 import '../../../entities/npcs/personality.dart';
-import '../../../races/race.dart';
+import '../../../subtypes/races/race.dart';
 import '../../base/batch_generator.dart';
 import '../../base/generator.dart';
 import '../../base/seed_generator.dart';

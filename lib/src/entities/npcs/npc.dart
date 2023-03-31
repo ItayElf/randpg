@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import '../../enums/gender.dart';
-import '../../races/race.dart';
-import '../../races/race_manager.dart';
+import '../../subtypes/races/race.dart';
+import '../../subtypes/races/race_manager.dart';
 import 'personality.dart';
 import 'physical_description.dart';
 

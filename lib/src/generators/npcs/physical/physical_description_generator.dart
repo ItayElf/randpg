@@ -1,7 +1,7 @@
 import '../../../entities/npcs/hair.dart';
 import '../../../entities/npcs/physical_description.dart';
 import '../../../enums/gender.dart';
-import '../../../races/race.dart';
+import '../../../subtypes/races/race.dart';
 import '../../base/batch_generator.dart';
 import '../../base/generator.dart';
 import '../../base/number_generator.dart';
