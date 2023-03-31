@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
 import 'package:collection/collection.dart';
@@ -19,8 +20,8 @@ class Location {
   /// The zone in the settlement this location appears in
   final String zone;
 
-  /// The description of the street outside the location
-  final String outsideDescription;
+  /// The descriptions of the street outside the location
+  final List<String> outsideDescription;
 
   /// The description of the building itself
   final String buildingDescription;
@@ -43,7 +44,7 @@ class Location {
     Npc? owner,
     String? type,
     String? zone,
-    String? outsideDescription,
+    List<String>? outsideDescription,
     String? buildingDescription,
     List<Goods>? goods,
   }) {
@@ -76,7 +77,8 @@ class Location {
       owner: Npc.fromMap(map['owner'] as Map<String, dynamic>),
       type: map['type'] as String,
       zone: map['zone'] as String,
-      outsideDescription: map['outsideDescription'] as String,
+      outsideDescription:
+          List<String>.from((map['outsideDescription'] as List<String>)),
       buildingDescription: map['buildingDescription'] as String,
       goods: map['goods'] != null
           ? List<Goods>.from(
@@ -107,7 +109,7 @@ class Location {
         other.owner == owner &&
         other.type == type &&
         other.zone == zone &&
-        other.outsideDescription == outsideDescription &&
+        listEquals(other.outsideDescription, outsideDescription) &&
         other.buildingDescription == buildingDescription &&
         listEquals(other.goods, goods);
   }

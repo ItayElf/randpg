@@ -7,6 +7,7 @@ import '../../base/batch_generator.dart';
 import '../../base/generator.dart';
 import '../../base/list_item_generator.dart';
 import '../../base/seed_generator.dart';
+import '../../base/unique_generator.dart';
 import '../../npcs/npc_generator.dart';
 
 /// A class that generates locations based on [_locationType]
@@ -14,6 +15,8 @@ class LocationGenerator implements IGenerator<Location> {
   late int _seed;
   final LocationType _locationType;
   final Race _ownerRace;
+
+  static const _numberOfOutsideDescriptions = 2;
 
   LocationGenerator(this._locationType, this._ownerRace) {
     _seed = SeedGenerator.generate();
@@ -43,7 +46,10 @@ class LocationGenerator implements IGenerator<Location> {
         "owner": ListItemGenerator([owner]),
         "type": ListItemGenerator([locationType.getLocationType()]),
         "zone": locationType.getZoneGenerator(),
-        "outsideDescription": locationType.getOutsideDescription(),
+        "outsideDescription": UniqueGenerator(
+          locationType.getOutsideDescription(),
+          _numberOfOutsideDescriptions,
+        ),
         "buildingDescription":
             locationType.getBuildingDescriptionGenerator(owner),
         "goods": locationType.getGoodsGenerator(),
