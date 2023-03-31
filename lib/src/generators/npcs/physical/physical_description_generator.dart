@@ -42,7 +42,7 @@ class PhysicalDescriptionGenerator implements IGenerator<PhysicalDescription> {
     return {
       "hairStyle": race.getHairGenerator(gender),
       "eyes": race.getEyesGenerator(gender),
-      "skin": race.getEyesGenerator(gender),
+      "skin": race.getSkinGenerator(gender),
       "height": race.getHeightGenerator(gender),
       "build": race.getBuildGenerator(gender),
       "face": race.getFaceGenerator(gender),

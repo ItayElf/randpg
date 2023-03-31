@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import '../../enums/gender.dart';
 import '../../races/race.dart';
 import '../../races/race_manager.dart';
 import 'personality.dart';
@@ -12,6 +13,9 @@ class Npc {
 
   /// The age of the npc
   final int age;
+
+  /// The gender of the npc
+  final Gender gender;
 
   /// The race of the npc
   final Race race;
@@ -31,6 +35,7 @@ class Npc {
   const Npc({
     required this.name,
     required this.age,
+    required this.gender,
     required this.race,
     required this.occupation,
     required this.physicalDescription,
@@ -41,6 +46,7 @@ class Npc {
   Npc copyWith({
     String? name,
     int? age,
+    Gender? gender,
     Race? race,
     String? occupation,
     PhysicalDescription? physicalDescription,
@@ -50,6 +56,7 @@ class Npc {
     return Npc(
       name: name ?? this.name,
       age: age ?? this.age,
+      gender: gender ?? this.gender,
       race: race ?? this.race,
       occupation: occupation ?? this.occupation,
       physicalDescription: physicalDescription ?? this.physicalDescription,
@@ -62,6 +69,7 @@ class Npc {
     return <String, dynamic>{
       'name': name,
       'age': age,
+      'gender': gender.name,
       'race': race.getName(),
       'occupation': occupation,
       'physicalDescription': physicalDescription.toMap(),
@@ -74,6 +82,7 @@ class Npc {
     return Npc(
       name: map['name'] as String,
       age: map['age'] as int,
+      gender: Gender.values.byName(map['gender'] as String),
       race: RaceManager.getRaceByName(map['race'] as String),
       occupation: map['occupation'] as String,
       physicalDescription: PhysicalDescription.fromMap(
@@ -91,7 +100,7 @@ class Npc {
 
   @override
   String toString() {
-    return 'Npc(name: $name, age: $age, race: $race, occupation: $occupation, physicalDescription: $physicalDescription, personality: $personality, goal: $goal)';
+    return 'Npc(name: $name, age: $age, gender: $gender, race: $race, occupation: $occupation, physicalDescription: $physicalDescription, personality: $personality, goal: $goal)';
   }
 
   @override
@@ -100,6 +109,7 @@ class Npc {
 
     return other.name == name &&
         other.age == age &&
+        other.gender == gender &&
         other.race == race &&
         other.occupation == occupation &&
         other.physicalDescription == physicalDescription &&
@@ -111,6 +121,7 @@ class Npc {
   int get hashCode {
     return name.hashCode ^
         age.hashCode ^
+        gender.hashCode ^
         race.hashCode ^
         occupation.hashCode ^
         physicalDescription.hashCode ^
