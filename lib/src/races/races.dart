@@ -1,3 +1,5 @@
+import 'package:randpg/src/races/halfling/halfling.dart';
+
 import 'dragonborn/dragonborn.dart';
 import 'dwarf/dwarf.dart';
 import 'elf/elf.dart';
@@ -16,5 +18,6 @@ const availableRaces = [
     raceName: "Half-elf",
     pluralRaceName: "Half-elves",
   ),
+  Halfling(),
   Human(),
 ];
