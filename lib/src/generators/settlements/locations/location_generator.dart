@@ -50,8 +50,8 @@ class LocationGenerator implements IGenerator<Location> {
           locationType.getOutsideDescription(),
           _numberOfOutsideDescriptions,
         ),
-        "buildingDescription":
-            locationType.getBuildingDescriptionGenerator(owner),
+        "buildingDescription": locationType.getBuildingDescriptionGenerator(
+            _locationType.getLocationType(), owner),
         "goods": locationType.getGoodsGenerator(),
       };
 
