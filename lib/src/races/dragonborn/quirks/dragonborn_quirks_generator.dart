@@ -22,7 +22,7 @@ class DragonbornPersonalityQuirkGenerator implements IGenerator<String> {
     _seed = SeedGenerator.generate();
   }
 
-  /// Generates personality quirks for the given race
+  /// Generates a personality quirk
   @override
   String generate() {
     final generator = ListItemGenerator(_dragonbornQuirks);

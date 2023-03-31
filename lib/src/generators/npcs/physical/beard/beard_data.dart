@@ -6,6 +6,16 @@ const beardLength = [
   "",
 ];
 
+const longBeard = [
+  'medium',
+  'long',
+  'long, braided',
+  'very long',
+  'very long, braided',
+  'enormous',
+  'enormous, braided'
+];
+
 const beardShape = [
   'chinstrap beard',
   'neckbeard',
