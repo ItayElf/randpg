@@ -1,3 +1,5 @@
+import 'package:randpg/src/generators/npcs/personality/descriptors/descriptor_generator.dart';
+
 import '../../../entities/npcs/alignment.dart';
 import '../../../entities/npcs/personality.dart';
 import '../../../races/race.dart';
@@ -13,6 +15,7 @@ class PersonalityGenerator implements IGenerator<Personality> {
 
   static const _numberOfTraits = 2;
   static const _numberOfQuirks = 2;
+  static const _numberOfDescriptors = 2;
 
   PersonalityGenerator(this._race) {
     _seed = SeedGenerator.generate();
@@ -31,6 +34,10 @@ class PersonalityGenerator implements IGenerator<Personality> {
         _race.getPersonalityQuirkGenerator(),
         _numberOfQuirks,
       ),
+      "descriptors": UniqueGenerator(
+        DescriptorGenerator(),
+        _numberOfDescriptors,
+      )
     });
     generator.seed(_seed);
 

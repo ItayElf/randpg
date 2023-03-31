@@ -41,6 +41,28 @@ class PhysicalDescription {
     required this.specialFeatures,
   });
 
+  PhysicalDescription copyWith({
+    Hair? hairStyle,
+    String? eyes,
+    String? skin,
+    int? height,
+    String? build,
+    String? face,
+    Hair? beard,
+    List<String>? specialFeatures,
+  }) {
+    return PhysicalDescription(
+      hairStyle: hairStyle ?? this.hairStyle,
+      eyes: eyes ?? this.eyes,
+      skin: skin ?? this.skin,
+      height: height ?? this.height,
+      build: build ?? this.build,
+      face: face ?? this.face,
+      beard: beard ?? this.beard,
+      specialFeatures: specialFeatures ?? this.specialFeatures,
+    );
+  }
+
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'hairStyle': hairStyle.toMap(),
