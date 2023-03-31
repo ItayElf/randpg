@@ -1,7 +1,6 @@
-import 'package:randpg/generators/generators.dart';
-
 import '../../entities/npcs/npc.dart';
 import '../../entities/settlements/goods.dart';
+import '../../generators/base/generator.dart';
 
 /// A class that represent an abstract location type
 abstract class LocationType {
@@ -9,7 +8,7 @@ abstract class LocationType {
   IGenerator<String> getNameGenerator(Npc owner);
 
   /// Returns the occupation of the owner
-  IGenerator<String> getOwnerOccupation();
+  String getOwnerOccupation();
 
   /// Returns the location type
   String getLocationType();
