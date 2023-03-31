@@ -1,5 +1,3 @@
-import '../../../../enums/race.dart';
-
 const faceShape = [
   'sharp',
   'round',
@@ -9,7 +7,7 @@ const faceShape = [
   'square',
 ];
 
-const goodLookingFace = [
+const goodLookingFaceAttributes = [
   'cute',
   'attractive',
   'beautiful',
@@ -19,10 +17,11 @@ const goodLookingFace = [
   'fanciable',
   'pretty',
   'magnificent',
-  'sightly'
+  'sightly',
 ];
 
-const regularLookingFace = [
+const faceAttributes = [
+  ...goodLookingFaceAttributes,
   'average',
   'bland',
   'unremarkable',
@@ -34,9 +33,5 @@ const regularLookingFace = [
   'hideous',
   'disfigured',
   'disgusting',
-  'creepy'
+  'creepy',
 ];
-
-const faceMap = {
-  [Race.elf]: goodLookingFace,
-};

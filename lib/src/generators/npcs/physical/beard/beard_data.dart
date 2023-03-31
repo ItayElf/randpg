@@ -1,5 +1,3 @@
-import '../../../../enums/race.dart';
-
 const beardLength = [
   'very short',
   'short',
@@ -14,8 +12,8 @@ const longBeard = [
   'long, braided',
   'very long',
   'very long, braided',
-  'gigantic',
-  'gigantic, braided'
+  'enormous',
+  'enormous, braided'
 ];
 
 const beardShape = [
@@ -30,8 +28,3 @@ const beardShape = [
   'fu manchu moustache',
   'moustache'
 ];
-
-const beardMap = {
-  [Race.dwarf]: longBeard,
-  [Race.elf, Race.dragonborn]: [""],
-};

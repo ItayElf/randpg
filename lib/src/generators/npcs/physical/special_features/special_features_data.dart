@@ -1,5 +1,3 @@
-import '../../../../enums/race.dart';
-
 const genericSpecialFeatures = [
   'is very nimble',
   'is very clumsy',
@@ -28,5 +26,3 @@ const genericSpecialFeatures = [
   'has extremely long nails',
   'has an allergy',
 ];
-
-const Map<List<Race>, List<String>> specialFeaturesMap = {};

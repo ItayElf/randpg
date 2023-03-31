@@ -2,7 +2,9 @@
 
 [![version](https://img.shields.io/badge/version-0.2.0-green.svg)](https://semver.org)
 
-Randpg is a library for generating random rpg entities like npcs, settlements and even worlds.
+Randpg is a package for generating random rpg entities like npcs, settlements and even worlds.
+
+*This package is still in development and some versions might not be backwards compatible before v1.0.0.*
 
 ## Table of Contents <!-- omit in toc -->
 
@@ -38,9 +40,9 @@ Follow the installation instructions on dart packages.
 Generating a male halfling name as an example:
 
 ```dart
-final Gender gender = Gender.male; 
-final Race race = Race.halfling; 
-final nameGenerator = RaceNameGenerator(gender, race);
+final Gender gender = Gender.male;
+final Race race = Halfling();
+final nameGenerator = race.getNameGenerator(gender);
 
 // if you want to seed the generator:
 nameGenerator.seed(1234);
