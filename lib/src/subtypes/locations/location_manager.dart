@@ -1,6 +1,7 @@
 import '../../randpg_exceptions.dart';
 import 'general_store/general_store.dart';
 import 'location_type.dart';
+import 'tavern/tavern.dart';
 
 /// A class that handles the available locations and using them
 ///
@@ -8,6 +9,7 @@ import 'location_type.dart';
 abstract class LocationManager {
   static final Set<LocationType> _locationTypes = {
     GeneralStore(),
+    Tavern(),
   };
 
   static final Set<LocationType> _activeLocationTypes = {..._locationTypes};
