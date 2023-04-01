@@ -22,8 +22,8 @@ import 'skin/orc_skin_generator.dart';
 class Orc implements Race {
   const Orc();
 
-  static const _raceName = "Orc";
-  static const _pluralRaceName = "Orcs";
+  static const _raceName = "orc";
+  static const _pluralRaceName = "orcs";
   static const _maxAge = 100;
   static const _minHeight = 163;
   static const _maxHeight = 207;

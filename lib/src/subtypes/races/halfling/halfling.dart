@@ -22,8 +22,8 @@ import 'quirks/halfling_quirks_generator.dart';
 class Halfling implements Race {
   const Halfling();
 
-  static const _raceName = "Halfling";
-  static const _pluralRaceName = "Halflings";
+  static const _raceName = "halfling";
+  static const _pluralRaceName = "halflings";
   static const _maxAge = 150;
   static const _minHeight = 85;
   static const _maxHeight = 129;

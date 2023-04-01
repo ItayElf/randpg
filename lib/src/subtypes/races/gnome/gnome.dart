@@ -22,8 +22,8 @@ import 'skin/gnome_skin_generator.dart';
 class Gnome implements Race {
   const Gnome();
 
-  static const _raceName = "Gnome";
-  static const _pluralRaceName = "Gnomes";
+  static const _raceName = "gnome";
+  static const _pluralRaceName = "gnomes";
   static const _maxAge = 425;
   static const _minHeight = 90;
   static const _maxHeight = 134;

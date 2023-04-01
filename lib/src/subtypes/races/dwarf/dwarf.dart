@@ -22,8 +22,8 @@ import 'quirks/dwarf_quirks_generator.dart';
 class Dwarf implements Race {
   const Dwarf();
 
-  static const _raceName = "Dwarf";
-  static const _pluralRaceName = "Dwarfs";
+  static const _raceName = "dwarf";
+  static const _pluralRaceName = "dwarfs";
   static const _maxAge = 350;
   static const _minHeight = 110;
   static const _maxHeight = 154;
