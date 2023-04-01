@@ -15,6 +15,7 @@
   - Taverns
   - Smithies
   - Temples
+  - Libraries
 
 ## 0.2.0
 
