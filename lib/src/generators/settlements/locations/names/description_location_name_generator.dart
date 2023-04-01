@@ -1,20 +1,20 @@
-import '../../../../generators/base/generator.dart';
-import '../../../../generators/base/list_item_generator.dart';
-import '../../../../generators/base/seed_generator.dart';
-import 'store_names_data.dart';
+import '../../../base/generator.dart';
+import '../../../base/list_item_generator.dart';
+import '../../../base/seed_generator.dart';
+import 'description_names_data.dart';
 
-/// A class that generates a store name by combining an adjective and a noun
-class DescriptionStoreNameGenerator implements IGenerator<String> {
+/// A class that generates a location name by combining an adjective and a noun
+class DescriptionLocationNameGenerator implements IGenerator<String> {
   late int _seed;
 
-  DescriptionStoreNameGenerator() {
+  DescriptionLocationNameGenerator() {
     _seed = SeedGenerator.generate();
   }
 
   static final List<IGenerator<String>> _generatorsTemplate = [
     ListItemGenerator(["the"]),
-    ListItemGenerator(storeNamePrefix),
-    ListItemGenerator(storeNameSuffix),
+    ListItemGenerator(descriptionNamePrefix),
+    ListItemGenerator(descriptionNameSuffix),
   ];
 
   @override

@@ -1,4 +1,4 @@
-const storeNamePrefix = [
+const descriptionNamePrefix = [
   'abiding',
   'acclaimed',
   'acquired',
@@ -276,7 +276,7 @@ const storeNamePrefix = [
   'young'
 ];
 
-const storeNameSuffix = [
+const descriptionNameSuffix = [
   'adventure',
   'anvil',
   'apple',

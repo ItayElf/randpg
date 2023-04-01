@@ -9,7 +9,7 @@ import '../../../generators/settlements/locations/outside_description/base_outsi
 import '../../../generators/settlements/locations/zone/base_zone_generator.dart';
 import '../location_type.dart';
 import 'goods/store_goods_generator.dart';
-import 'names/description_store_name_generator.dart';
+import '../../../generators/settlements/locations/names/description_location_name_generator.dart';
 
 /// A class that represents the general store location type
 class GeneralStore implements LocationType {
@@ -34,7 +34,7 @@ class GeneralStore implements LocationType {
 
   @override
   IGenerator<String> getNameGenerator(Npc owner) => MultipleGenerator([
-        DescriptionStoreNameGenerator(),
+        DescriptionLocationNameGenerator(),
         OwnerBuildingNameGenerator(owner.name, _locationType),
       ]);
 
