@@ -31,11 +31,11 @@ class BeerGenerator implements IGenerator<Goods> {
     return Goods(name: name, description: description, price: "$cost cp");
   }
 
-  double _getCost(String origin) {
+  int _getCost(String origin) {
     final baseCost = tavernBeerOrigin[origin] ?? 0;
     final multiplier = Random(_seed).nextDouble() + 0.5;
 
-    return ((baseCost * multiplier) * 10).toInt() / 10;
+    return max((baseCost * multiplier).toInt(), 1);
   }
 
   Map<String, IGenerator> _getBatch() => {

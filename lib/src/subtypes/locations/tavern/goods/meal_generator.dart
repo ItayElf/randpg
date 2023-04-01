@@ -31,11 +31,11 @@ class MealGenerator implements IGenerator<Goods> {
     return Goods(name: name, description: description, price: "$cost gp");
   }
 
-  double _getCost(String meat) {
+  int _getCost(String meat) {
     final baseCost = tavernMeats[meat] ?? 0;
     final multiplier = Random(_seed).nextDouble() + 0.5;
 
-    return ((baseCost * multiplier) * 10).toInt() / 10;
+    return max((baseCost * multiplier).toInt(), 1);
   }
 
   Map<String, IGenerator> _getBatch() => {

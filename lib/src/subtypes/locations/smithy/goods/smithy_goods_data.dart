@@ -32,7 +32,6 @@ const smithyGoods = {
   'plate heavy armor': '1500 gp',
   'greataxe': '30 gp',
   'light crossbow': '25 gp',
-  'padded': '5 gp',
   'maul': '10 gp',
   'shield': '10 gp',
   'leather': '10 gp',
