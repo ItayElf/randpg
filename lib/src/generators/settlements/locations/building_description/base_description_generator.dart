@@ -20,7 +20,7 @@ class BaseDescriptionGenerator implements IGenerator<String> {
     final results = generator.generate();
 
     final outerDescription =
-        "looks ${results["feeling"]} from outside. it was build with ${results["material"]}. "
+        "looks ${results["feeling"]} from outside. it was built with ${results["material"]}. "
         "${results["windowSize"]}, ${results["windowShape"]} windows ${results["windowEffect"]} "
         "and were added to the building ${results["windowsArrangement"]}. "
         "this $_locationType is ${results["shape"]}.";

@@ -1,17 +1,16 @@
-import 'package:randpg/src/generators/settlements/locations/goods/base_goods_generator.dart';
-
 import '../../../../entities/settlements/goods.dart';
 import '../../../../generators/base/generator.dart';
-import '../../../../generators/base/list_item_generator.dart';
 import '../../../../generators/base/number_generator.dart';
 import '../../../../generators/base/unique_generator.dart';
-import 'store_goods_data.dart';
+import '../../../../generators/settlements/locations/goods/base_goods_generator.dart';
+import 'smithy_goods_data.dart';
 
-class StoreGoodsGenerator implements IGenerator<List<Goods>> {
+/// A class that generates smithy goods
+class SmithyGoodsGenerator implements IGenerator<List<Goods>> {
   late int _seed;
 
-  static const _minGoods = 3;
-  static const _maxGoods = 7;
+  static const _minGoods = 2;
+  static const _maxGoods = 5;
 
   @override
   List<Goods> generate() {
@@ -20,7 +19,7 @@ class StoreGoodsGenerator implements IGenerator<List<Goods>> {
     final quantity = quantityGenerator.generate();
 
     final generatedGoodsEntriesGenerator = UniqueGenerator(
-      BaseGoodsGenerator(storeGoods),
+      BaseGoodsGenerator(smithyGoods),
       quantity,
     );
     generatedGoodsEntriesGenerator.seed(_seed);

@@ -1,3 +1,5 @@
+import 'package:randpg/src/subtypes/locations/smithy/smithy.dart';
+
 import '../../randpg_exceptions.dart';
 import 'general_store/general_store.dart';
 import 'location_type.dart';
@@ -10,6 +12,7 @@ abstract class LocationManager {
   static final Set<LocationType> _locationTypes = {
     GeneralStore(),
     Tavern(),
+    Smithy(),
   };
 
   static final Set<LocationType> _activeLocationTypes = {..._locationTypes};
