@@ -12,6 +12,9 @@
 
 - Added locations
   - General Shops
+  - Taverns
+  - Smithies
+  - Temples
 
 ## 0.2.0
 
