@@ -2,9 +2,9 @@
 import 'dart:convert';
 
 import 'package:collection/collection.dart';
-import 'package:randpg/subtypes/races.dart';
 
 import '../../subtypes/races/race.dart';
+import '../../subtypes/races/race_manager.dart';
 import '../npcs/npc.dart';
 import 'location.dart';
 
@@ -120,7 +120,7 @@ class Settlement {
 
   @override
   String toString() {
-    return 'Settlement(name: $name, settlementType: $settlementType, dominantRace: $dominantRace, locations: $locations, description: $description, domminantOccupation: $dominantOccupation, importantCharacters: $importantCharacters, population: $population, trouble: $trouble)';
+    return 'Settlement(name: $name, settlementType: $settlementType, dominantRace: $dominantRace, locations: $locations, description: $description, dominantOccupation: $dominantOccupation, importantCharacters: $importantCharacters, population: $population, trouble: $trouble)';
   }
 
   @override
