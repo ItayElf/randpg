@@ -16,6 +16,7 @@
   - Smithies
   - Temples
   - Libraries
+  - Monuments
 
 ## 0.2.0
 
