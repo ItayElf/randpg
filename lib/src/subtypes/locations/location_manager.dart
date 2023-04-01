@@ -13,11 +13,11 @@ import 'temple/temple.dart';
 abstract class LocationManager {
   static final Set<LocationType> _locationTypes = {
     GeneralStore(),
-    Tavern(),
-    Smithy(),
-    Temple(),
     Library(),
     Monument(),
+    Smithy(),
+    Tavern(),
+    Temple(),
   };
 
   static final Set<LocationType> _activeLocationTypes = {..._locationTypes};

@@ -16,6 +16,7 @@ To view the changelog, [click here](./CHANGELOG.md)
 - [Usage](#usage)
   - [Generating names](#generating-names)
   - [Generating npcs](#generating-npcs)
+  - [Generating locations\\buildings](#generating-locationsbuildings)
 
 ## Installation
 
@@ -65,4 +66,15 @@ final Race race = Elf();
 final npcGenerator = NpcGenerator(race);
 
 print(npcGenerator.generate());
+```
+
+### Generating locations\buildings
+
+Generating a tavern whose owner is a dwarf as an example:
+```dart
+final LocationType locationType = Tavern();
+final Race ownerRace = Dwarf();
+
+final locationGenerator = LocationGenerator(locationType, ownerRace);
+print(locationGenerator.generate());
 ```
