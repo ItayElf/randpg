@@ -20,8 +20,8 @@ import 'quirks/dragonborn_quirks_generator.dart';
 class Dragonborn implements Race {
   const Dragonborn();
 
-  static const _raceName = "Dragonborn";
-  static const _pluralRaceName = "Dragonborns";
+  static const _raceName = "dragonborn";
+  static const _pluralRaceName = "dragonborns";
   static const _maxAge = 90;
   static const _minHeight = 168;
   static const _maxHeight = 212;

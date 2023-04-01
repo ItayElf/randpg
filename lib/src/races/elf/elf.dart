@@ -22,8 +22,8 @@ import 'skin/elf_skin_generator.dart';
 class Elf implements Race {
   const Elf();
 
-  static const _raceName = "Elf";
-  static const _pluralRaceName = "Elves";
+  static const _raceName = "elf";
+  static const _pluralRaceName = "elves";
   static const _maxAge = 750;
   static const _minHeight = 148;
   static const _maxHeight = 192;

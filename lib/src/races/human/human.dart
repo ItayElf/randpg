@@ -20,8 +20,8 @@ import 'names/human_name_generator.dart';
 class Human implements Race {
   const Human();
 
-  static const _raceName = "Human";
-  static const _pluralRaceName = "Humans";
+  static const _raceName = "human";
+  static const _pluralRaceName = "humans";
   static const _maxAge = 90;
   static const _minHeight = 148;
   static const _maxHeight = 192;

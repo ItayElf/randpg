@@ -19,8 +19,8 @@ import 'skin/tiefling_skin_generator.dart';
 class Tiefling implements Race {
   const Tiefling();
 
-  static const _raceName = "Tiefling";
-  static const _pluralRaceName = "Tieflings";
+  static const _raceName = "tiefling";
+  static const _pluralRaceName = "tieflings";
   static const _maxAge = 100;
   static const _minHeight = 148;
   static const _maxHeight = 192;
