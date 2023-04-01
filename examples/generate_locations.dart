@@ -13,6 +13,6 @@ void main() {
     // generates a random name with the race and the random gender
     Location location = LocationGenerator(locationType, race).generate();
 
-    print(location.toMap());
+    print(location.toJson());
   }
 }

@@ -7,8 +7,9 @@ import 'building_description_data.dart';
 /// A class that generates basic building description
 class BaseDescriptionGenerator implements IGenerator<String> {
   late int _seed;
+  final String _locationType;
 
-  BaseDescriptionGenerator() {
+  BaseDescriptionGenerator(this._locationType) {
     _seed = SeedGenerator.generate();
   }
 
@@ -19,9 +20,10 @@ class BaseDescriptionGenerator implements IGenerator<String> {
     final results = generator.generate();
 
     final outerDescription =
-        "looks ${results["felling"]} from outside. it was build with ${results["material"]}. "
-        "${results["windowSize"]}, ${results["windowShape"]} windows ${results["windowsEffect"]} "
-        "and were added to the building ${results["windowsArrangement"]}.";
+        "looks ${results["feeling"]} from outside. it was build with ${results["material"]}. "
+        "${results["windowSize"]}, ${results["windowShape"]} windows ${results["windowEffect"]} "
+        "and were added to the building ${results["windowsArrangement"]}. "
+        "this $_locationType is ${results["shape"]}.";
 
     final roofDescription =
         "the roof is ${results["roofShape"]} and is covered with ${results["roofMaterials"]}. ${results["chimneys"]}";

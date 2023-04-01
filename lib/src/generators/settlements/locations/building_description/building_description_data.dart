@@ -80,10 +80,10 @@ const windowsArrangement = [
 ];
 
 const buildingShape = [
-  "shaped like a T",
-  "shaped like an L",
-  "shaped like a short U",
-  "shaped like a squared S",
+  "shaped like the letter \"T\"",
+  "shaped like the letter \"L\"",
+  "shaped like a short \"U\"",
+  "shaped like a squared \"S\"",
   "square shaped",
   "rectangular shaped",
   "fairly rounded in shape",

@@ -12,7 +12,9 @@ class OwnerBuildingNameGenerator implements IGenerator<String> {
   }
 
   List<IGenerator<String>> get _generatorsTemplate => [
-        ListItemGenerator(["$_ownerName's"]),
+        ListItemGenerator(
+          _ownerName.split(" ").map((e) => "$e's").toList(),
+        ),
         ListItemGenerator([_locationType]),
       ];
 
