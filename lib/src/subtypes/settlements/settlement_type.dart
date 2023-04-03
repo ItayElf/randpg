@@ -19,7 +19,8 @@ abstract class SettlementType {
   IGenerator<LocationType> getLocationsGenerator();
 
   /// Returns a generator for the settlement description
-  IGenerator<String> getDescriptionGenerator(String settlementName);
+  IGenerator<String> getDescriptionGenerator(
+      String settlementName, Race? dominantRace);
 
   /// Returns a generator for dominant occupations for this settlement type
   IGenerator<String> getDominantOccupationGenerator();
