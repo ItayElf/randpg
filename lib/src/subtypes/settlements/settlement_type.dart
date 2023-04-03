@@ -10,8 +10,10 @@ abstract class SettlementType {
   /// Returns the settlement type
   String getSettlementType();
 
-  /// Returns the available locations, when null means a random type
-  List<LocationType?> getAvailableLocations();
+  /// Returns the settlements locations, when null means a random type
+  ///
+  /// For example, the following list: `[Tavern(), GeneralShop(), null, null]` means that there is always a tavern and a general shop in the location, and two other randomly generated locations
+  List<LocationType?> getSettlementsLocations();
 
   /// Returns a generator for random locations for this settlement type
   IGenerator<LocationType> getLocationsGenerator();
