@@ -1,5 +1,4 @@
 import '../../../entities/npcs/npc.dart';
-import '../../../entities/settlements/goods.dart';
 import '../../../entities/settlements/location.dart';
 import '../../../subtypes/locations/location_type.dart';
 import '../../../subtypes/races/race.dart';

@@ -1,16 +1,18 @@
+import '../../../../generators/base/future_generator.dart';
 import '../../../../generators/base/generator.dart';
+import '../../../../generators/base/list_batch_generator.dart';
 import '../../../../generators/base/list_item_generator.dart';
-import '../../../../generators/base/seed_generator.dart';
 import '../../../../generators/base/weighted_generator.dart';
+import '../../../../strings_manipulations.dart';
 import 'orc_name_data.dart';
 
 /// A class used to generate male orc names
-class MaleOrcNameGenerator implements IGenerator<String> {
-  late int _seed;
-
-  MaleOrcNameGenerator() {
-    _seed = SeedGenerator.generate();
-  }
+class MaleOrcNameGenerator extends FutureGenerator<String, List<String>> {
+  MaleOrcNameGenerator()
+      : super(
+          ListBatchGenerator(_generatorsTemplate),
+          (results) => titledEach(results.join()),
+        );
 
   static final List<IGenerator<String>> _generatorsTemplate = [
     ListItemGenerator(orcMaleNamePrefix),
@@ -21,20 +23,4 @@ class MaleOrcNameGenerator implements IGenerator<String> {
     WeightedGenerator(orcFemaleNameVowel),
     ListItemGenerator(orcFemaleNameSuffix)
   ];
-
-  /// Generates a name of a male orc
-  @override
-  String generate() {
-    List<IGenerator<String>> generators = List.from(_generatorsTemplate);
-
-    for (int i = 0; i < generators.length; i++) {
-      generators[i].seed((_seed + i) % SeedGenerator.maxSeed);
-    }
-    return generators.map((generator) => generator.generate()).toList().join();
-  }
-
-  @override
-  void seed(int seed) {
-    _seed = seed;
-  }
 }

@@ -1,6 +1,4 @@
 import '../../../generators/generators.dart';
-import '../../entities/npcs/npc.dart';
-import '../../entities/settlements/location.dart';
 import '../../entities/settlements/settlement.dart';
 import '../../subtypes/races/race.dart';
 import '../../subtypes/settlements/settlement_type.dart';

@@ -2,6 +2,7 @@ import '../../../../generators/base/generator.dart';
 import '../../../../generators/base/list_item_generator.dart';
 import '../../../../generators/base/seed_generator.dart';
 import '../../../../generators/base/weighted_generator.dart';
+import '../../../../strings_manipulations.dart';
 import 'human_name_data.dart';
 
 /// A class used to generate male human names
@@ -50,7 +51,8 @@ class MaleHumanNameGenerator implements IGenerator<String> {
     for (int i = 0; i < generators.length; i++) {
       generators[i].seed((_seed + i) % SeedGenerator.maxSeed);
     }
-    return generators.map((generator) => generator.generate()).toList().join();
+    return titledEach(
+        generators.map((generator) => generator.generate()).toList().join());
   }
 
   @override
