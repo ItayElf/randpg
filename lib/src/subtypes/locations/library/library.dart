@@ -17,8 +17,8 @@ class Library implements LocationType {
 
   @override
   IGenerator<String> getBuildingDescriptionGenerator(
-          String locationType, Npc owner) =>
-      BaseDescriptionGenerator(_locationType);
+          String locationType, String locationName, Npc owner) =>
+      BaseDescriptionGenerator(_locationType, locationName);
 
   @override
   IGenerator<List<Goods>?> getGoodsGenerator() => LibraryBooksGenerator();

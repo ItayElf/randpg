@@ -8,8 +8,9 @@ import 'building_description_data.dart';
 class BaseDescriptionGenerator implements IGenerator<String> {
   late int _seed;
   final String _locationType;
+  final String _locationName;
 
-  BaseDescriptionGenerator(this._locationType) {
+  BaseDescriptionGenerator(this._locationType, this._locationName) {
     _seed = SeedGenerator.generate();
   }
 
@@ -20,13 +21,14 @@ class BaseDescriptionGenerator implements IGenerator<String> {
     final results = generator.generate();
 
     final outerDescription =
-        "looks ${results["feeling"]} from outside. it was built with ${results["material"]}. "
-        "${results["windowSize"]}, ${results["windowShape"]} windows ${results["windowEffect"]} "
+        "${titled(_locationName)} looks ${results["feeling"]} from outside. It was built with ${results["material"]}. "
+        "${titled(results["windowSize"])}, ${results["windowShape"]} windows ${results["windowEffect"]} "
         "and were added to the building ${results["windowsArrangement"]}. "
-        "this $_locationType is ${results["shape"]}.";
+        "This $_locationType is ${results["shape"]}.";
 
     final roofDescription =
-        "the roof is ${results["roofShape"]} and is covered with ${results["roofMaterials"]}. ${results["chimneys"]}";
+        "The roof is ${results["roofShape"]} and is covered with ${results["roofMaterials"]}. "
+        "${titled(results["chimneys"])}";
 
     return [outerDescription, roofDescription].join("\n");
   }
@@ -43,6 +45,9 @@ class BaseDescriptionGenerator implements IGenerator<String> {
         "roofMaterials": ListItemGenerator(roofMaterials),
         "chimneys": ListItemGenerator(chimneys),
       };
+
+  static String titled(String string) =>
+      string[0].toUpperCase() + string.substring(1).toLowerCase();
 
   @override
   void seed(int seed) {

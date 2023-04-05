@@ -8,8 +8,9 @@ import 'monument_description_data.dart';
 class MonumentDescriptionGenerator implements IGenerator<String> {
   late int _seed;
   final String _ownerName;
+  final String _locationName;
 
-  MonumentDescriptionGenerator(this._ownerName) {
+  MonumentDescriptionGenerator(this._ownerName, this._locationName) {
     _seed = SeedGenerator.generate();
   }
 
@@ -20,7 +21,7 @@ class MonumentDescriptionGenerator implements IGenerator<String> {
     final results = generator.generate();
 
     final purpose =
-        "built ${results["time"]} ago, this monument was built to ${results["purpose"]}. "
+        "Built ${results["time"]} ago, this ${_locationName.toLowerCase()} was built to ${results["purpose"]}. "
         "It represents the ${results["representing"]}";
 
     final design =
@@ -29,7 +30,7 @@ class MonumentDescriptionGenerator implements IGenerator<String> {
         "style to convey their vision in this piece of art";
 
     final materials =
-        "every element was crafted and created with ${results["materials"]} materials from local suppliers, "
+        "Every element was crafted and created with ${results["materials"]} materials from local suppliers, "
         "ensuring this monument will ${results["present"]}";
 
     return [purpose, design, materials].join("\n");

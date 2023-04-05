@@ -239,12 +239,12 @@ const settlementSpecialty = [
 ];
 
 const settlementRaceRelationship = [
-  'The <RACE> oppress the minority races in the <TYPE>',
-  'The <RACE> are conquerors of the other races in the <TYPE>',
-  'There is some tension between the races in the <TYPE>',
-  'The races in the <TYPE> live together mostly in harmony',
-  'There is some tension between the races in the <TYPE>',
-  'The races in the <TYPE> live together mostly in harmony',
-  'There is some tension between the races in the <TYPE>',
-  'The races in the <TYPE> live together mostly in harmony',
+  'the <RACE> oppress the minority races in the <TYPE>',
+  'the <RACE> are conquerors of the other races in the <TYPE>',
+  'there is some tension between the races in the <TYPE>',
+  'the races in the <TYPE> live together mostly in harmony',
+  'there is some tension between the races in the <TYPE>',
+  'the races in the <TYPE> live together mostly in harmony',
+  'there is some tension between the races in the <TYPE>',
+  'the races in the <TYPE> live together mostly in harmony',
 ];

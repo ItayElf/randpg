@@ -16,8 +16,8 @@ class Tavern implements LocationType {
 
   @override
   IGenerator<String> getBuildingDescriptionGenerator(
-          String locationType, Npc owner) =>
-      TwoStoryDescriptionGenerator(locationType);
+          String locationType, String locationName, Npc owner) =>
+      TwoStoryDescriptionGenerator(locationType, locationName);
 
   @override
   IGenerator<List<Goods>?> getGoodsGenerator() => TavernGoodsGenerator();

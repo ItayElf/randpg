@@ -9,14 +9,15 @@ import 'building_description_data.dart';
 class TwoStoryDescriptionGenerator implements IGenerator<String> {
   late int _seed;
   final String _locationType;
+  final String _locationName;
 
-  TwoStoryDescriptionGenerator(this._locationType) {
+  TwoStoryDescriptionGenerator(this._locationType, this._locationName) {
     _seed = SeedGenerator.generate();
   }
 
   @override
   String generate() {
-    final generator = BaseDescriptionGenerator(_locationType);
+    final generator = BaseDescriptionGenerator(_locationType, _locationName);
     generator.seed(_seed);
     final description = generator.generate().split("\n");
 
@@ -33,7 +34,7 @@ class TwoStoryDescriptionGenerator implements IGenerator<String> {
     final floorStyle = floorStyleGenerator.generate();
 
     final secondFloor =
-        "the second floor is $floorSize the first, $floorDescription. this floor $floorStyle the floor below.";
+        "The second floor is $floorSize the first, $floorDescription. This floor $floorStyle the floor below.";
 
     return [
       description.first,

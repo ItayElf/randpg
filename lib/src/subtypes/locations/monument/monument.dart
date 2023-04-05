@@ -16,8 +16,8 @@ class Monument implements LocationType {
 
   @override
   IGenerator<String> getBuildingDescriptionGenerator(
-          String locationType, Npc owner) =>
-      MonumentDescriptionGenerator(owner.name);
+          String locationType, String locationName, Npc owner) =>
+      MonumentDescriptionGenerator(owner.name, locationName);
 
   @override
   IGenerator<List<Goods>?> getGoodsGenerator() => ListItemGenerator([null]);

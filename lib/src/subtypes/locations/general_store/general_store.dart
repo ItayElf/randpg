@@ -20,10 +20,10 @@ class GeneralStore implements LocationType {
 
   @override
   IGenerator<String> getBuildingDescriptionGenerator(
-          String locationType, Npc owner) =>
+          String locationType, String locationName, Npc owner) =>
       MultipleGenerator([
-        BaseDescriptionGenerator(locationType),
-        TwoStoryDescriptionGenerator(locationType),
+        BaseDescriptionGenerator(locationType, locationName),
+        TwoStoryDescriptionGenerator(locationType, locationName),
       ]);
 
   @override

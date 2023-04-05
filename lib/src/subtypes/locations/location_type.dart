@@ -21,7 +21,10 @@ abstract class LocationType {
 
   /// Returns the building description generator
   IGenerator<String> getBuildingDescriptionGenerator(
-      String locationType, Npc owner);
+    String locationType,
+    String locationName,
+    Npc owner,
+  );
 
   /// Returns the goods generator for this location type
   IGenerator<List<Goods>?> getGoodsGenerator();

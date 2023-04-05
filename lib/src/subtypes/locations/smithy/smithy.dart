@@ -17,8 +17,8 @@ class Smithy implements LocationType {
 
   @override
   IGenerator<String> getBuildingDescriptionGenerator(
-          String locationType, Npc owner) =>
-      BaseDescriptionGenerator(locationType);
+          String locationType, String locationName, Npc owner) =>
+      BaseDescriptionGenerator(locationType, locationName);
 
   @override
   IGenerator<List<Goods>?> getGoodsGenerator() => SmithyGoodsGenerator();

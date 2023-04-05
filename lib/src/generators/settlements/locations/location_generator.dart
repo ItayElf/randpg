@@ -31,15 +31,21 @@ class LocationGenerator implements IGenerator<Location> {
           occupation: _locationType.getOwnerOccupation(),
         );
 
-    final generator = BatchGenerator(_getBatch(_locationType, owner));
+    final nameGenerator = _locationType.getNameGenerator(owner);
+    nameGenerator.seed(_seed);
+    final name = nameGenerator.generate();
+
+    final generator = BatchGenerator(_getBatch(_locationType, name, owner));
     generator.seed(_seed);
     final result = generator.generate();
 
     return Location.fromMap(result);
   }
 
-  Map<String, IGenerator> _getBatch(LocationType locationType, Npc owner) => {
-        "name": locationType.getNameGenerator(owner),
+  Map<String, IGenerator> _getBatch(
+          LocationType locationType, String locationName, Npc owner) =>
+      {
+        "name": ListItemGenerator([locationName]),
         "owner": FutureGenerator(
             ListItemGenerator([owner]), (owner) => owner.toMap()),
         "type": ListItemGenerator([locationType.getLocationType()]),
@@ -49,7 +55,7 @@ class LocationGenerator implements IGenerator<Location> {
           _numberOfOutsideDescriptions,
         ),
         "buildingDescription": locationType.getBuildingDescriptionGenerator(
-            _locationType.getLocationType(), owner),
+            _locationType.getLocationType(), locationName, owner),
         "goods": FutureGenerator(locationType.getGoodsGenerator(),
             (goods) => goods?.map((e) => e.toMap()).toList()),
       };

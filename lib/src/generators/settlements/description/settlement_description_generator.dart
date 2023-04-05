@@ -30,14 +30,15 @@ class SettlementDescriptionGenerator implements IGenerator<String> {
     generator.seed(_seed);
     final results = generator.generate();
 
-    final looks =
-        "$_settlementName is ${results["look"]} $_settlementType. It ${results["place"]}. "
-        "Many buildings in $_settlementName have ${results["roof"]} rooftops, "
+    final name = titled(_settlementName);
+
+    final looks = "$name is ${results["look"]} $name. It ${results["place"]}. "
+        "Many buildings in $name have ${results["roof"]} rooftops, "
         "${results["walls"]} walls and ${results["feature"]}, giving it ${results["atmosphere"]} atmosphere.";
 
     final specialty =
-        "$_settlementName is known for ${results["specialty"].join(", in addition to ")}. "
-        "${results["relationship"]}";
+        "$name is known for ${results["specialty"].join(", in addition to ")}. "
+        "${titled(results["relationship"])}";
 
     return [looks, specialty].join("\n");
   }
@@ -61,6 +62,9 @@ class SettlementDescriptionGenerator implements IGenerator<String> {
               .replaceAll("<TYPE>", _settlementType),
         ),
       };
+
+  static String titled(String string) =>
+      string[0].toUpperCase() + string.substring(1).toLowerCase();
 
   @override
   void seed(int seed) {
