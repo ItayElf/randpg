@@ -13,6 +13,7 @@ To view the changelog, [click here](./CHANGELOG.md)
 - [Installation](#installation)
 - [Features](#features)
 - [Goals](#goals)
+  - [In the Future](#in-the-future)
 - [Usage](#usage)
   - [Generating names](#generating-names)
   - [Generating npcs](#generating-npcs)
@@ -38,6 +39,10 @@ Follow the installation instructions on dart packages.
 - Gods generator
 - World generator
 - Companion Generator
+  
+### In the Future
+
+- Holiday Generator
 
 ## Usage
 
