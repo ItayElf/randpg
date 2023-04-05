@@ -3,6 +3,8 @@ import 'dart:convert';
 
 import 'package:collection/collection.dart';
 
+import '../../subtypes/locations/location_manager.dart';
+import '../../subtypes/locations/location_type.dart';
 import '../npcs/npc.dart';
 import 'goods.dart';
 
@@ -15,7 +17,7 @@ class Location {
   final Npc owner;
 
   /// The type of the location (shop, monument, etc.)
-  final String type;
+  final LocationType type;
 
   /// The zone in the settlement this location appears in
   final String zone;
@@ -42,7 +44,7 @@ class Location {
   Location copyWith({
     String? name,
     Npc? owner,
-    String? type,
+    LocationType? type,
     String? zone,
     List<String>? outsideDescription,
     String? buildingDescription,
@@ -63,7 +65,7 @@ class Location {
     return <String, dynamic>{
       'name': name,
       'owner': owner.toMap(),
-      'type': type,
+      'type': type.getLocationType(),
       'zone': zone,
       'outsideDescription': outsideDescription,
       'buildingDescription': buildingDescription,
@@ -75,7 +77,7 @@ class Location {
     return Location(
       name: map['name'] as String,
       owner: Npc.fromMap(map['owner'] as Map<String, dynamic>),
-      type: map['type'] as String,
+      type: LocationManager.getLocationTypeByType(map['type']),
       zone: map['zone'] as String,
       outsideDescription:
           List<String>.from((map['outsideDescription'] as List<String>)),
