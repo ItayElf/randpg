@@ -40,7 +40,7 @@ class SettlementDescriptionGenerator implements IGenerator<String> {
 
     final specialty =
         "$name is known for ${results["specialty"].join(", in addition to ")}. "
-        "${titled(results["relationship"])}";
+        "${titled(results["relationship"])}.";
 
     return [looks, specialty].join("\n");
   }
@@ -61,7 +61,7 @@ class SettlementDescriptionGenerator implements IGenerator<String> {
               .toList()),
           (result) => result
               .replaceAll("<RACE>", _dominantRace?.getPluralName() ?? "")
-              .replaceAll("<TYPE>", _settlementType),
+              .replaceAll("<NAME>", _settlementName),
         ),
       };
 

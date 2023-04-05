@@ -32,7 +32,7 @@ class MonumentDescriptionGenerator implements IGenerator<String> {
 
     final materials =
         "Every element was crafted and created with ${results["materials"]} materials from local suppliers, "
-        "ensuring this monument will ${results["present"]}";
+        "ensuring this monument will ${results["present"]}.";
 
     return [purpose, design, materials].join("\n");
   }

@@ -29,7 +29,7 @@ class BaseDescriptionGenerator implements IGenerator<String> {
 
     final roofDescription =
         "The roof is ${results["roofShape"]} and is covered with ${results["roofMaterials"]}. "
-        "${titled(results["chimneys"])}";
+        "${titled(results["chimneys"])}.";
 
     return [outerDescription, roofDescription].join("\n");
   }
