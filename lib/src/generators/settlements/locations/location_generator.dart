@@ -4,6 +4,7 @@ import '../../../entities/settlements/location.dart';
 import '../../../subtypes/locations/location_type.dart';
 import '../../../subtypes/races/race.dart';
 import '../../base/batch_generator.dart';
+import '../../base/future_generator.dart';
 import '../../base/generator.dart';
 import '../../base/list_item_generator.dart';
 import '../../base/seed_generator.dart';
@@ -34,19 +35,13 @@ class LocationGenerator implements IGenerator<Location> {
     generator.seed(_seed);
     final result = generator.generate();
 
-    if (result["goods"] != null) {
-      result["goods"] = (result["goods"] as List<Goods>)
-          .map((goods) => goods.toMap())
-          .toList();
-    }
-    result["owner"] = owner.toMap();
-
     return Location.fromMap(result);
   }
 
   Map<String, IGenerator> _getBatch(LocationType locationType, Npc owner) => {
         "name": locationType.getNameGenerator(owner),
-        "owner": ListItemGenerator([owner]),
+        "owner": FutureGenerator(
+            ListItemGenerator([owner]), (owner) => owner.toMap()),
         "type": ListItemGenerator([locationType.getLocationType()]),
         "zone": locationType.getZoneGenerator(),
         "outsideDescription": UniqueGenerator(
@@ -55,7 +50,8 @@ class LocationGenerator implements IGenerator<Location> {
         ),
         "buildingDescription": locationType.getBuildingDescriptionGenerator(
             _locationType.getLocationType(), owner),
-        "goods": locationType.getGoodsGenerator(),
+        "goods": FutureGenerator(locationType.getGoodsGenerator(),
+            (goods) => goods?.map((e) => e.toMap()).toList()),
       };
 
   @override
