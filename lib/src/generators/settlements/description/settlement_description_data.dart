@@ -42,7 +42,6 @@ const settlementPlace = [
   'has outlawed worship of traditional gods',
   'is divided by a river',
   'is built on a holy site',
-  'has a huge library containing important archives',
   'is mostly a tangle of alleyways and row houses',
   'is built around a huge tree',
   'has an awful smell',

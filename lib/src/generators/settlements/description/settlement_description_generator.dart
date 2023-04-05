@@ -31,12 +31,12 @@ class SettlementDescriptionGenerator implements IGenerator<String> {
     final results = generator.generate();
 
     final looks =
-        "$_settlementName is ${results["look"]} $_settlementType. It ${results["place"]}."
+        "$_settlementName is ${results["look"]} $_settlementType. It ${results["place"]}. "
         "Many buildings in $_settlementName have ${results["roof"]} rooftops, "
         "${results["walls"]} walls and ${results["feature"]}, giving it ${results["atmosphere"]} atmosphere.";
 
     final specialty =
-        "$_settlementName is known for ${results["specialty"].join(", in addition to")}"
+        "$_settlementName is known for ${results["specialty"].join(", in addition to ")}. "
         "${results["relationship"]}";
 
     return [looks, specialty].join("\n");
