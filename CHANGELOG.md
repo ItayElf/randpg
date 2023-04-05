@@ -10,6 +10,13 @@
 
 ## 0.3.0
 
+- Added settlements
+  - Hamlets
+  - Villages
+  - Towns
+  - Cities
+  - Metropolises
+
 - Added locations
   - General Shops
   - Taverns
@@ -17,6 +24,10 @@
   - Temples
   - Libraries
   - Monuments
+
+- Added base generators
+  - FutureGenerator
+  - ListBatchGenerator
 
 ## 0.2.0
 

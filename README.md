@@ -17,6 +17,7 @@ To view the changelog, [click here](./CHANGELOG.md)
   - [Generating names](#generating-names)
   - [Generating npcs](#generating-npcs)
   - [Generating locations\\buildings](#generating-locationsbuildings)
+  - [Generating settlements](#generating-settlements)
 
 ## Installation
 
@@ -32,7 +33,7 @@ Follow the installation instructions on dart packages.
 ## Goals
 
 - ~~Npc generator~~ (Added in 0.2.0)
-- Settlement generator
+- ~~Settlement generator~~ (Added in 0.3.0)
 - Landscape generator
 - Gods generator
 - World generator
@@ -77,4 +78,15 @@ final Race ownerRace = Dwarf();
 
 final locationGenerator = LocationGenerator(locationType, ownerRace);
 print(locationGenerator.generate());
+```
+
+### Generating settlements
+
+Generating a town of mostly orcs as an example:
+```dart
+final SettlementType settlementType = Town();
+final Race dominantRace = Orc();
+
+final settlementGenerator = SettlementGenerator(settlementType, dominantRace);
+print(settlementGenerator.generate());
 ```
