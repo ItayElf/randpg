@@ -2,11 +2,16 @@
 
 ## Table of Contents <!-- omit in toc -->
 
+- [0.3.1](#031)
 - [0.3.0](#030)
 - [0.2.0](#020)
 - [0.1.1](#011)
 - [0.1.0](#010)
 - [0.0.0](#000)
+
+## 0.3.1
+
+- Fixed two occurrences of races folder due to previous conflicts
 
 ## 0.3.0
 
