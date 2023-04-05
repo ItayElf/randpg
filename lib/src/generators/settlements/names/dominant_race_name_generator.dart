@@ -1,4 +1,5 @@
 import '../../../enums/gender.dart';
+import '../../../strings_manipulations.dart';
 import '../../../subtypes/races/race.dart';
 import '../../../subtypes/races/race_manager.dart';
 import '../../base/generator.dart';
@@ -28,7 +29,7 @@ class DominantRaceNameGenerator implements IGenerator<String> {
 
     final generator = _dominantRace!.getNameGenerator(gender);
     generator.seed((_seed + 2) % SeedGenerator.maxSeed);
-    return generator.generate().split(" ").first;
+    return titledEach(generator.generate().split(" ").first);
   }
 
   @override

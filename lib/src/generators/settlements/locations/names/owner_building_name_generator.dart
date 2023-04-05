@@ -1,39 +1,22 @@
+import '../../../../strings_manipulations.dart';
+import '../../../base/future_generator.dart';
 import '../../../base/generator.dart';
+import '../../../base/list_batch_generator.dart';
 import '../../../base/list_item_generator.dart';
-import '../../../base/seed_generator.dart';
 
-class OwnerBuildingNameGenerator implements IGenerator<String> {
-  late int _seed;
-  final String _ownerName;
-  final String _locationType;
+class OwnerBuildingNameGenerator extends FutureGenerator<String, List<String>> {
+  OwnerBuildingNameGenerator(String ownerName, String locationType)
+      : super(
+          ListBatchGenerator(_generatorsTemplate(ownerName, locationType)),
+          (results) => titledEach(results.join(" ")),
+        );
 
-  OwnerBuildingNameGenerator(this._ownerName, this._locationType) {
-    _seed = SeedGenerator.generate();
-  }
-
-  List<IGenerator<String>> get _generatorsTemplate => [
-        ListItemGenerator(
-          _ownerName.split(" ").map((e) => "$e's").toList(),
-        ),
-        ListItemGenerator([_locationType]),
+  static List<IGenerator<String>> _generatorsTemplate(
+    String ownerName,
+    String locationType,
+  ) =>
+      [
+        ListItemGenerator(ownerName.split(" ").map((e) => "$e's").toList()),
+        ListItemGenerator([locationType]),
       ];
-
-  @override
-  String generate() {
-    List<IGenerator<String>> generators = List.from(_generatorsTemplate);
-
-    for (int i = 0; i < generators.length; i++) {
-      generators[i].seed((_seed + i) % SeedGenerator.maxSeed);
-    }
-
-    return generators
-        .map((generator) => generator.generate())
-        .toList()
-        .join(" ");
-  }
-
-  @override
-  void seed(int seed) {
-    _seed = seed;
-  }
 }

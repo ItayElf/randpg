@@ -1,10 +1,10 @@
-import 'package:randpg/src/generators/settlements/names/settlement_name_data.dart';
-
+import '../../../strings_manipulations.dart';
 import '../../base/batch_generator.dart';
 import '../../base/future_generator.dart';
 import '../../base/generator.dart';
 import '../../base/list_item_generator.dart';
 import '../../base/seed_generator.dart';
+import 'settlement_name_data.dart';
 
 /// A class that generates settlement name from objects and adjectives
 class ObjectSettlementNameGenerator implements IGenerator<String> {
@@ -35,7 +35,7 @@ class ObjectSettlementNameGenerator implements IGenerator<String> {
       (result) => result.values.join(""),
     );
     generator.seed(_seed);
-    return generator.generate();
+    return titledEach(generator.generate());
   }
 
   @override
