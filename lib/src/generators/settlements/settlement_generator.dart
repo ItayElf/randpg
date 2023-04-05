@@ -26,30 +26,33 @@ class SettlementGenerator implements IGenerator<Settlement> {
     generator.seed((_seed + 1) % SeedGenerator.maxSeed);
     final results = generator.generate();
 
-    results["importantCharacters"] =
-        (results["importantCharacters"] as List<Npc>).map((e) => e.toMap());
-
-    results["locations"] =
-        (results["locations"] as List<Location>).map((e) => e.toMap());
-
     return Settlement.fromMap(results);
   }
 
   Map<String, IGenerator> _getBatch(String settlementName) => {
         "name": ListItemGenerator([settlementName]),
-        "settlementType": ListItemGenerator([_settlementType]),
-        "dominantRace": ListItemGenerator([_dominantRace]),
+        "settlementType": FutureGenerator(
+          ListItemGenerator([_settlementType]),
+          (type) => type.getSettlementType(),
+        ),
+        "dominantRace": FutureGenerator(
+            ListItemGenerator([_dominantRace]), (race) => race?.getName()),
         "description": _settlementType.getDescriptionGenerator(
             settlementName, _dominantRace),
         "dominantOccupation": _settlementType.getDominantOccupationGenerator(),
         "population": _settlementType.getPopulationGenerator(),
         "trouble": _settlementType.getTroubleGenerator(),
-        "importantCharacters": UniqueGenerator(
-          ImportantCharacterGenerator(_settlementType, _dominantRace),
-          _settlementType.getImportantPeopleCount(),
+        "importantCharacters": FutureGenerator(
+          UniqueGenerator(
+            ImportantCharacterGenerator(_settlementType, _dominantRace),
+            _settlementType.getImportantPeopleCount(),
+          ),
+          (characters) => characters.map((e) => e.toMap()).toList(),
         ),
-        "locations":
-            SettlementLocationsGenerator(_settlementType, _dominantRace),
+        "locations": FutureGenerator(
+          SettlementLocationsGenerator(_settlementType, _dominantRace),
+          (locations) => locations.map((e) => e.toMap()).toList(),
+        ),
       };
 
   @override

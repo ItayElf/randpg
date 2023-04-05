@@ -10,7 +10,7 @@ void main() {
     // Generate a random race for the owner of the location
     Race race = ListItemGenerator(RaceManager.activeRaces).generate();
 
-    // generates a random name with the race and the random gender
+    // generates a random location with the given type and race
     Location location = LocationGenerator(locationType, race).generate();
 
     print(location.toJson());

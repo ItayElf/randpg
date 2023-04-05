@@ -1,10 +1,11 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
 import 'package:collection/collection.dart';
+import 'package:randpg/src/subtypes/races/race_manager.dart';
+import 'package:randpg/subtypes/settlements.dart';
 
 import '../../subtypes/races/race.dart';
-import '../../subtypes/races/race_manager.dart';
+import '../../subtypes/settlements/settlement_type.dart';
 import '../npcs/npc.dart';
 import 'location.dart';
 
@@ -14,7 +15,7 @@ class Settlement {
   final String name;
 
   /// The type of the settlement
-  final String settlementType;
+  final SettlementType settlementType;
 
   /// The dominant race in the settlement (null if there is no dominant race)
   final Race? dominantRace;
@@ -51,7 +52,7 @@ class Settlement {
 
   Settlement copyWith({
     String? name,
-    String? settlementType,
+    SettlementType? settlementType,
     Race? dominantRace,
     List<Location>? locations,
     String? description,
@@ -76,7 +77,7 @@ class Settlement {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'name': name,
-      'settlementType': settlementType,
+      'settlementType': settlementType.getSettlementType(),
       'dominantRace': dominantRace?.getName(),
       'locations': locations.map((x) => x.toMap()).toList(),
       'description': description,
@@ -90,13 +91,14 @@ class Settlement {
   factory Settlement.fromMap(Map<String, dynamic> map) {
     return Settlement(
       name: map['name'] as String,
-      settlementType: map['settlementType'] as String,
+      settlementType:
+          SettlementManager.getSettlementTypeByType(map['settlementType']),
       dominantRace: map['dominantRace'] != null
-          ? RaceManager.getRaceByName(map['dominantRace'] as String)
+          ? RaceManager.getRaceByName(map['dominantRace'])
           : null,
       locations: List<Location>.from(
-        (map['locations'] as List<int>).map<Location>(
-          (x) => Location.fromMap(x as Map<String, dynamic>),
+        (map['locations'] as List<Map<String, dynamic>>).map<Location>(
+          (x) => Location.fromMap(x),
         ),
       ),
       description: map['description'] as String,
@@ -104,8 +106,8 @@ class Settlement {
           ? map['dominantOccupation'] as String
           : null,
       importantCharacters: List<Npc>.from(
-        (map['importantCharacters'] as List<int>).map<Npc>(
-          (x) => Npc.fromMap(x as Map<String, dynamic>),
+        (map['importantCharacters'] as List<Map<String, dynamic>>).map<Npc>(
+          (x) => Npc.fromMap(x),
         ),
       ),
       population: map['population'] as int,
