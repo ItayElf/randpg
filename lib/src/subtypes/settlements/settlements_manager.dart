@@ -1,4 +1,5 @@
 import '../../randpg_exceptions.dart';
+import 'city/city.dart';
 import 'hamlet/hamlet.dart';
 import 'settlement_type.dart';
 import 'town/town.dart';
@@ -12,6 +13,7 @@ abstract class SettlementManager {
     Hamlet(),
     Village(),
     Town(),
+    City(),
   };
 
   static final Set<SettlementType> _activeSettlementTypes = {
