@@ -1,10 +1,9 @@
-import 'package:randpg/src/strings_manipulations.dart';
-
 import '../../../entities/npcs/npc.dart';
 import '../../../entities/settlements/goods.dart';
 import '../../../generators/base/future_generator.dart';
 import '../../../generators/base/generator.dart';
 import '../../../generators/base/list_item_generator.dart';
+import '../../../strings_manipulations.dart';
 import '../location_type.dart';
 import 'description/monument_description_data.dart';
 import 'description/monument_description_generator.dart';

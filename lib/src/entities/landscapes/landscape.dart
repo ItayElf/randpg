@@ -1,6 +1,9 @@
 import 'dart:convert';
 
 import 'package:collection/collection.dart';
+import 'package:randpg/src/subtypes/landscapes/landscape_manager.dart';
+
+import '../../subtypes/landscapes/landscape_type.dart';
 
 /// A class that represents a landscape
 class Landscape {
@@ -14,7 +17,7 @@ class Landscape {
   final String weather;
 
   /// The type of the landscape
-  final String landscapeType;
+  final LandscapeType landscapeType;
 
   /// A list of features this landscape have
   final List<String> features;
@@ -36,8 +39,7 @@ class Landscape {
 
   /// How often people go through this landscape
   final String travelRate;
-
-  const Landscape({
+  Landscape({
     required this.name,
     required this.location,
     required this.weather,
@@ -55,7 +57,7 @@ class Landscape {
     String? name,
     String? location,
     String? weather,
-    String? landscapeType,
+    LandscapeType? landscapeType,
     List<String>? features,
     List<String>? resources,
     List<String>? encounters,
@@ -84,7 +86,7 @@ class Landscape {
       'name': name,
       'location': location,
       'weather': weather,
-      'landscapeType': landscapeType,
+      'landscapeType': landscapeType.getLandscapeType(),
       'features': features,
       'resources': resources,
       'encounters': encounters,
@@ -100,7 +102,8 @@ class Landscape {
       name: map['name'] as String,
       location: map['location'] as String,
       weather: map['weather'] as String,
-      landscapeType: map['landscapeType'] as String,
+      landscapeType:
+          LandscapeManager.getLandscapeTypeByType(map['landscapeType']),
       features: List<String>.from((map['features'] as List<String>)),
       resources: List<String>.from((map['resources'] as List<String>)),
       encounters: List<String>.from((map['encounters'] as List<String>)),

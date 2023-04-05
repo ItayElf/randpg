@@ -1,6 +1,5 @@
-import 'package:randpg/src/subtypes/landscapes/landscape_type.dart';
-
 import '../../randpg_exceptions.dart';
+import 'landscape_type.dart';
 
 /// A class that handles the available landscapes and using them
 ///
