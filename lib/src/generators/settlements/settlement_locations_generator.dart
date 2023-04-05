@@ -24,14 +24,22 @@ class SettlementLocationsGenerator implements IGenerator<List<Location>> {
 
   @override
   List<Location> generate() {
-    final locationTypes = _settlementType
-        .getSettlementsLocations()
-        .map((locationType) => _getLocationType(_seed, locationType))
-        .toList();
+    final locations = _settlementType.getSettlementsLocations();
+    final locationTypes = List.generate(
+      locations.length,
+      (index) => _getLocationType(
+        (_seed + index) % SeedGenerator.generate(),
+        locations[index],
+      ),
+    );
 
-    return locationTypes
-        .map((locationType) => _generateLocation(_seed, locationType))
-        .toList();
+    return List.generate(
+      locationTypes.length,
+      (index) => _generateLocation(
+        (_seed + index) % SeedGenerator.maxSeed,
+        locationTypes[index],
+      ),
+    );
   }
 
   Location _generateLocation(int seed, LocationType locationType) {
