@@ -214,7 +214,7 @@ const settlementSpecialty = [
   'its patriotism',
   'its gambling',
   'its mines and industry',
-  'its strong drink',
+  'its strong drinks',
   'its potent herbs',
   'its crude populace',
   'its wines',

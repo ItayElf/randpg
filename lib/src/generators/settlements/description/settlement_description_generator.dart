@@ -33,7 +33,8 @@ class SettlementDescriptionGenerator implements IGenerator<String> {
 
     final name = titled(_settlementName);
 
-    final looks = "$name is ${results["look"]} $name. It ${results["place"]}. "
+    final looks =
+        "$name is ${results["look"]} $_settlementType . It ${results["place"]}. "
         "Many buildings in $name have ${results["roof"]} rooftops, "
         "${results["walls"]} walls and ${results["feature"]}, giving it ${results["atmosphere"]} atmosphere.";
 

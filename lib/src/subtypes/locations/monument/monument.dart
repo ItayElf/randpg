@@ -1,5 +1,8 @@
+import 'package:randpg/src/strings_manipulations.dart';
+
 import '../../../entities/npcs/npc.dart';
 import '../../../entities/settlements/goods.dart';
+import '../../../generators/base/future_generator.dart';
 import '../../../generators/base/generator.dart';
 import '../../../generators/base/list_item_generator.dart';
 import '../location_type.dart';
@@ -27,7 +30,7 @@ class Monument implements LocationType {
 
   @override
   IGenerator<String> getNameGenerator(Npc owner) =>
-      ListItemGenerator(monumentType);
+      FutureGenerator(ListItemGenerator(monumentType), titledEach);
 
   @override
   IGenerator<String> getOutsideDescription() =>
