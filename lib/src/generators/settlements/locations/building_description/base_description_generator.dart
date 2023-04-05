@@ -22,14 +22,12 @@ class BaseDescriptionGenerator implements IGenerator<String> {
     final results = generator.generate();
 
     final outerDescription =
-        "${titled(_locationName)} looks ${results["feeling"]} from outside. It was built with ${results["material"]}. "
-        "${titled(results["windowSize"])}, ${results["windowShape"]} windows ${results["windowEffect"]} "
-        "and were added to the building ${results["windowsArrangement"]}. "
+        "${titledEach(_locationName)} presents a${results["feeling"]} appearance with its ${results["material"]} exterior. "
+        "The ${results["windowSize"]}, ${results["windowShape"]} windows ${results["windowEffect"]}, which enhances its overall aesthetic. "
         "This $_locationType is ${results["shape"]}.";
 
     final roofDescription =
-        "The roof is ${results["roofShape"]} and is covered with ${results["roofMaterials"]}. "
-        "${titled(results["chimneys"])}.";
+        "The ${results["roofShape"]} roof, covered in ${results["roofMaterials"]}, has ${results["chimneys"]}.";
 
     return [outerDescription, roofDescription].join("\n");
   }
@@ -40,7 +38,6 @@ class BaseDescriptionGenerator implements IGenerator<String> {
         "windowSize": ListItemGenerator(windowsSize),
         "windowShape": ListItemGenerator(windowsShape),
         "windowEffect": ListItemGenerator(windowsEffect),
-        "windowsArrangement": ListItemGenerator(windowsArrangement),
         "shape": ListItemGenerator(buildingShape),
         "roofShape": ListItemGenerator(roofShape),
         "roofMaterials": ListItemGenerator(roofMaterials),

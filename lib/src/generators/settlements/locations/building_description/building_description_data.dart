@@ -1,22 +1,22 @@
 const buildingFeeling = [
-  "magnificent",
-  "cozy",
-  "warm and cozy",
-  "stylish",
-  "very elegant",
-  "gorgeous",
-  "grandiose",
-  "impressive",
-  "lavish",
-  "luxurious",
-  "posh and extravagant",
-  "nice and traditional",
-  "old, but wonderful",
-  "abandoned",
-  "slightly scary",
-  "strange",
-  "ugly",
-  "unusual"
+  " magnificent",
+  " cozy",
+  " warm and cozy",
+  " stylish",
+  " very elegant",
+  " gorgeous",
+  " grandiose",
+  "n impressive",
+  " lavish",
+  " luxurious",
+  " posh and extravagant",
+  " nice and traditional",
+  "n old but wonderful",
+  "n abandoned",
+  " slightly scary",
+  " strange",
+  "n ugly",
+  "n unusual"
 ];
 
 const buildingMaterial = [
@@ -61,22 +61,13 @@ const windowsShape = [
 ];
 
 const windowsEffect = [
-  "let in plenty of light",
+  "let into the building plenty of light",
   "brighten up the building",
-  "add to the overall style of the building",
-  "add to the overall look of the building",
-  "allow enough light to enter the building",
-  "which cannot light the building properly",
-  "which are always closed"
-];
-
-const windowsArrangement = [
-  "in a very symmetric way",
-  "in a mostly symmetric way",
-  "in a very asymmetric way",
-  "in a mostly asymmetric way",
-  "in a fairly symmetrical pattern",
-  "in a fairly asymmetrical pattern",
+  "add to the style of the building",
+  "add to the look of the building",
+  "barley light the building",
+  "cannot light the building properly",
+  "are always closed"
 ];
 
 const buildingShape = [
@@ -134,17 +125,17 @@ const roofMaterials = [
 ];
 
 const chimneys = [
-  "one large chimney pokes out the center of the roof",
-  "two large chimneys poke out the center of the roof",
-  "one large chimney sits at the side of the building",
-  "two large chimneys sit at the side of the building",
-  "two large chimneys sit at either side of the building",
-  "there are no chimneys",
-  "one small chimney pokes out the center of the roof",
-  "two small chimneys poke out the center of the roof",
-  "one small chimney sits at the side of the building",
-  "two small chimneys sit at the side of the building",
-  "two small chimneys sit at either side of the building",
+  "one large chimney that pokes out the center of the roof",
+  "two large chimneys that poke out the center of the roof",
+  "one large chimney that sits at the side of the building",
+  "two large chimneys that sit at the side of the building",
+  "two large chimneys that sit at either side of the building",
+  "no chimneys",
+  "one small chimney that pokes out the center of the roof",
+  "two small chimneys that poke out the center of the roof",
+  "one small chimney that sits at the side of the building",
+  "two small chimneys that sit at the side of the building",
+  "two small chimneys that sit at either side of the building",
 ];
 
 const secondFloorSize = {
@@ -178,9 +169,9 @@ const sameSizeFloorDescription = [
 ];
 
 const secondFloorStyle = [
-  "follows the same style as",
-  "has a slightly different style than",
-  "has a different style than",
-  "has a very different style than",
-  "has roughly the same style as",
+  "a similar style as",
+  "a slightly different style than",
+  "a different style than",
+  "a very different style than",
+  "roughly the same style as",
 ];

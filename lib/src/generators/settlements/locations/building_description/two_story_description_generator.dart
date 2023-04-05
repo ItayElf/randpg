@@ -34,7 +34,7 @@ class TwoStoryDescriptionGenerator implements IGenerator<String> {
     final floorStyle = floorStyleGenerator.generate();
 
     final secondFloor =
-        "The second floor is $floorSize the first, $floorDescription. This floor $floorStyle the floor below.";
+        "The second floor boasts $floorStyle the first floor. It is $floorSize the first, $floorDescription.";
 
     return [
       description.first,

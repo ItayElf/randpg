@@ -33,16 +33,30 @@ class SettlementDescriptionGenerator implements IGenerator<String> {
 
     final name = titled(_settlementName);
 
+    final looksTemplateGenerator = ListItemGenerator(_getLooks(name, results));
+    looksTemplateGenerator.seed((_seed + 1) % SeedGenerator.maxSeed);
+    final looksTemplate = looksTemplateGenerator.generate();
+
     final looks =
-        "$name is ${results["look"]} $_settlementType . It ${results["place"]}. "
-        "Many buildings in $name have ${results["roof"]} rooftops, "
-        "${results["walls"]} walls and ${results["feature"]}, giving it ${results["atmosphere"]} atmosphere.";
+        "$name is ${results["look"]} $_settlementType . It ${results["place"]}. $looksTemplate";
 
     final specialty =
         "$name is known for ${results["specialty"].join(", in addition to ")}. "
         "${titled(results["relationship"])}.";
 
     return [looks, specialty].join("\n");
+  }
+
+  List<String> _getLooks(String name, Map<String, dynamic> results) {
+    return [
+      "Many buildings in $name have ${results["roof"]} rooftops, ${results["walls"]} walls "
+          "and ${results["feature"]}, giving it ${results["atmosphere"]} atmosphere.",
+      "${titled(results["roof"])} roofs is a common feature among the buildings in $name, "
+          "along with ${results["walls"]} walls and ${results["feature"]}, all contributing to "
+          "${results["atmosphere"]} atmosphere of the $_settlementType.",
+      "With ${results["roof"]} roofs, ${results["walls"]} walls, and ${results["feature"]} as a prominent "
+          "aspect of the town's architecture, $name has ${results["atmosphere"]} mood."
+    ];
   }
 
   Map<String, IGenerator> _getBatch() => {
@@ -57,11 +71,11 @@ class SettlementDescriptionGenerator implements IGenerator<String> {
         "relationship": FutureGenerator(
           ListItemGenerator(settlementRaceRelationship
               .where((element) =>
-                  _dominantRace != null || !element.contains("<Race>"))
+                  _dominantRace != null || !element.contains("<RACE>"))
               .toList()),
           (result) => result
               .replaceAll("<RACE>", _dominantRace?.getPluralName() ?? "")
-              .replaceAll("<NAME>", _settlementName),
+              .replaceAll("<NAME>", titledEach(_settlementName)),
         ),
       };
 

@@ -22,17 +22,17 @@ class MonumentDescriptionGenerator implements IGenerator<String> {
     final results = generator.generate();
 
     final purpose =
-        "Built ${results["time"]} ago, this ${_locationName.toLowerCase()} was built to ${results["purpose"]}. "
-        "It represents the ${results["representing"]}";
+        "Created ${results["time"]} ago, this ${_locationName.toLowerCase()} stands tribute to ${results["purpose"]}. "
+        "It symbolizes the ${results["representing"]}";
 
     final design =
         "This monument was designed by ${results["creator"]} named ${titledEach(_ownerName)} "
-        "who ${results["adjective"]} captured the ${results["captured"]} of the region and used ${results["style"]} "
-        "style to convey their vision in this piece of art";
+        "who ${results["adjective"]} captured the ${results["captured"]} and employed ${results["style"]} "
+        "style to bring their vision to life in this remarkable piece of art";
 
     final materials =
-        "Every element was crafted and created with ${results["materials"]} materials from local suppliers, "
-        "ensuring this monument will ${results["present"]}.";
+        "Each element of the ${_locationName.toLowerCase()} was meticulously crafted using ${results["materials"]} materials, "
+        "As a result, this monument will ${results["present"]}.";
 
     return [purpose, design, materials].join("\n");
   }
