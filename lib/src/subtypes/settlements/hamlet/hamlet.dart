@@ -48,7 +48,7 @@ class Hamlet implements SettlementType {
   int getImportantPeopleCount() => _importantPeopleCount;
 
   @override
-  IGenerator<LocationType> getLocationsGenerator() =>
+  IGenerator<LocationType> getLocationsTypeGenerator() =>
       ListItemGenerator(LocationManager.activeLocationTypes);
 
   @override

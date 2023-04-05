@@ -15,8 +15,8 @@ abstract class SettlementType {
   /// For example, the following list: `[Tavern(), GeneralShop(), null, null]` means that there is always a tavern and a general shop in the location, and two other randomly generated locations
   List<LocationType?> getSettlementsLocations();
 
-  /// Returns a generator for random locations for this settlement type
-  IGenerator<LocationType> getLocationsGenerator();
+  /// Returns a generator for random location types for this settlement type
+  IGenerator<LocationType> getLocationsTypeGenerator();
 
   /// Returns a generator for the settlement description
   IGenerator<String> getDescriptionGenerator(
