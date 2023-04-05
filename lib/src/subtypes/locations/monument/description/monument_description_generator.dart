@@ -2,6 +2,7 @@ import '../../../../generators/base/batch_generator.dart';
 import '../../../../generators/base/generator.dart';
 import '../../../../generators/base/list_item_generator.dart';
 import '../../../../generators/base/seed_generator.dart';
+import '../../../../strings_manipulations.dart';
 import 'monument_description_data.dart';
 
 /// A class that generates monuments descriptions
@@ -25,7 +26,7 @@ class MonumentDescriptionGenerator implements IGenerator<String> {
         "It represents the ${results["representing"]}";
 
     final design =
-        "This monument was designed by ${results["creator"]} named ${titled(_ownerName)} "
+        "This monument was designed by ${results["creator"]} named ${titledEach(_ownerName)} "
         "who ${results["adjective"]} captured the ${results["captured"]} of the region and used ${results["style"]} "
         "style to convey their vision in this piece of art";
 
@@ -35,11 +36,6 @@ class MonumentDescriptionGenerator implements IGenerator<String> {
 
     return [purpose, design, materials].join("\n");
   }
-
-  static String titled(String string) => string
-      .split(" ")
-      .map((e) => e[0].toUpperCase() + e.substring(1).toLowerCase())
-      .join(" ");
 
   Map<String, IGenerator> _getBatch() => {
         "time": ListItemGenerator(monumentBuildTime),

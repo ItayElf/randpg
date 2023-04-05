@@ -1,3 +1,4 @@
+import '../../../../strings_manipulations.dart';
 import '../../../base/batch_generator.dart';
 import '../../../base/generator.dart';
 import '../../../base/list_item_generator.dart';
@@ -45,9 +46,6 @@ class BaseDescriptionGenerator implements IGenerator<String> {
         "roofMaterials": ListItemGenerator(roofMaterials),
         "chimneys": ListItemGenerator(chimneys),
       };
-
-  static String titled(String string) =>
-      string[0].toUpperCase() + string.substring(1).toLowerCase();
 
   @override
   void seed(int seed) {

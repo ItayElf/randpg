@@ -1,3 +1,4 @@
+import '../../../strings_manipulations.dart';
 import '../../../subtypes/races/race.dart';
 import '../../base/batch_generator.dart';
 import '../../base/future_generator.dart';
@@ -62,9 +63,6 @@ class SettlementDescriptionGenerator implements IGenerator<String> {
               .replaceAll("<TYPE>", _settlementType),
         ),
       };
-
-  static String titled(String string) =>
-      string[0].toUpperCase() + string.substring(1).toLowerCase();
 
   @override
   void seed(int seed) {
