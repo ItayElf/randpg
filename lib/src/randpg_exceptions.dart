@@ -31,3 +31,11 @@ class LocationTypeNotFoundException extends RandpgException {
   @override
   String toString() => msg ?? "LocationTypeNotFoundException";
 }
+
+/// An exception that is thrown when a not supported settlementType is being used
+class SettlementTypeNotFoundException extends RandpgException {
+  const SettlementTypeNotFoundException([super.msg]);
+
+  @override
+  String toString() => msg ?? "SettlementTypeNotFoundException";
+}

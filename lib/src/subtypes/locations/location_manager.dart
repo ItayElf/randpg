@@ -9,7 +9,7 @@ import 'temple/temple.dart';
 
 /// A class that handles the available locations and using them
 ///
-/// When making a custom location, make sure to register it or else some features might not work
+/// When making a custom location type, make sure to register it or else some features might not work
 abstract class LocationManager {
   static final Set<LocationType> _locationTypes = {
     GeneralStore(),
@@ -29,11 +29,11 @@ abstract class LocationManager {
   static List<LocationType> get activeLocationTypes =>
       _activeLocationTypes.toList();
 
-  /// Returns the corresponding race from all races called [type]
+  /// Returns the corresponding location type from all races called [type]
   static LocationType getLocationTypeByType(String type) {
     return _locationTypes.firstWhere(
       (locationType) => locationType.getLocationType() == type,
-      orElse: () => throw LocationTypeNotFoundException(
+      orElse: () => throw SettlementTypeNotFoundException(
           "LocationType with type $type was not found"),
     );
   }
@@ -52,8 +52,9 @@ abstract class LocationManager {
 
   /// Removes [locationType] from the active location types and from all location types list
   static void deleteLocationType(LocationType locationType) {
-    final foundRace = getLocationTypeByType(locationType.getLocationType());
-    _locationTypes.remove(foundRace);
-    _activeLocationTypes.remove(foundRace);
+    final foundLocationType =
+        getLocationTypeByType(locationType.getLocationType());
+    _locationTypes.remove(foundLocationType);
+    _activeLocationTypes.remove(foundLocationType);
   }
 }
