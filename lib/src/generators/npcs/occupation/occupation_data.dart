@@ -66,7 +66,7 @@ const simpleOccupations = [
   'rat-catcher',
   'sailor',
   'scout',
-  'sheppard',
+  'shepherd',
   'slaver',
   'smuggler',
   'soldier',

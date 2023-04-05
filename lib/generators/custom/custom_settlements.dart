@@ -10,6 +10,8 @@ export '../../src/generators/settlements/names/objects_settlement_name_generator
 
 export '../../src/generators/settlements/occupations/settlement_occupations_generator.dart'
     show SettlementOccupationsGenerator;
+export '../../src/generators/settlements/occupations/dominant_occupations_generator.dart'
+    show DominantOccupationsGenerator;
 
 export '../../src/generators/settlements/trouble/settlement_trouble_generator.dart'
     show SettlementTroubleGenerator;
