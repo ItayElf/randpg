@@ -15,7 +15,7 @@ class ObjectSettlementNameGenerator implements IGenerator<String> {
   }
 
   static const _prefixPool = [
-    ...landscapeAdjectives,
+    ...natureAdjectives,
     ...wildCreatures,
     ...manMadeFeatures,
   ];
