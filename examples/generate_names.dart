@@ -1,6 +1,6 @@
 import 'package:randpg/enums/gender.dart';
 import 'package:randpg/generators/generators.dart';
-import 'package:randpg/races.dart';
+import 'package:randpg/subtypes/races.dart';
 
 void main() {
   // Generate names for races:
