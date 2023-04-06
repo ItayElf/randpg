@@ -33,7 +33,7 @@ class LandscapeRaceNameGenerator implements IGenerator<String> {
     final generator = FutureGenerator(
       ListBatchGenerator([
         ListItemGenerator([raceName]),
-        ListItemGenerator([_landscapeTitles])
+        ListItemGenerator(_landscapeTitles)
       ]),
       (results) => titledEach(results.join(" ")),
     );

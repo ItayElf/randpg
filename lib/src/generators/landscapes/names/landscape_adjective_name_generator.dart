@@ -13,7 +13,7 @@ class LandscapeAdjectiveNameGenerator
           ListBatchGenerator(
             _getTemplate(landscapeTitles),
           ),
-          (results) => titledEach(results.join()),
+          (results) => titledEach(results.join(" ")),
         );
 
   static List<IGenerator<String>> _getTemplate(List<String> landscapeTitles) =>

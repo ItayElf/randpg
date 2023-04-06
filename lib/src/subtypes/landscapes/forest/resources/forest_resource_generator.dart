@@ -16,7 +16,6 @@ class ForestResourceGenerator extends ListItemGenerator<String> {
     "enchanted wood",
     "magic mushrooms",
     "magical eggs",
-    "eggs",
     "ancient herbs",
     "rare flowers",
     "crystals",

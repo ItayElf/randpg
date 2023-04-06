@@ -9,7 +9,7 @@ class ForestBriefGenerator extends ListItemGenerator<String> {
     "has trees with twisted trunks",
     "has small streams of water",
     "has leafless trees",
-    "has trees that glow softly in the dark.",
+    "has trees that glow softly in the dark",
     "is dense and shadowy, is shrouded in darkness, with little light penetrating through the thick canopy of trees",
     "has twisted, gnarled trees with red sap that seems to drip like blood from the bark",
     "has grown wild and untamed, with thorns and brambles covering the forest floor and vines twisting around tree trunks",
