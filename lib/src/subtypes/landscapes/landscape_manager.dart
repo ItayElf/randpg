@@ -1,11 +1,14 @@
 import '../../randpg_exceptions.dart';
+import 'forest/forest.dart';
 import 'landscape_type.dart';
 
 /// A class that handles the available landscapes and using them
 ///
 /// When making a custom landscape type, make sure to register it or else some features might not work
 abstract class LandscapeManager {
-  static final Set<LandscapeType> _landscapeTypes = {};
+  static final Set<LandscapeType> _landscapeTypes = {
+    Forest(),
+  };
 
   static final Set<LandscapeType> _activeLandscapeTypes = {..._landscapeTypes};
 
