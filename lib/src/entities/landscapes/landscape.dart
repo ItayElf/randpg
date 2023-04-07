@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:collection/collection.dart';
-import 'package:randpg/src/subtypes/landscapes/landscape_manager.dart';
 
+import '../../subtypes/landscapes/landscape_manager.dart';
 import '../../subtypes/landscapes/landscape_type.dart';
 
 /// A class that represents a landscape

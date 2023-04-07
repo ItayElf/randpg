@@ -1,5 +1,6 @@
 import '../../../../generators/base/list_item_generator.dart';
 
+/// A class that generates forest resources
 class ForestResourceGenerator extends ListItemGenerator<String> {
   static const _resources = [
     "woods",

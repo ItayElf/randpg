@@ -1,5 +1,6 @@
 import '../../../../generators/base/list_item_generator.dart';
 
+/// A class that generates forest encounters
 class ForestEncounterGenerator extends ListItemGenerator<String> {
   static const _encounters = [
     'bandits',
