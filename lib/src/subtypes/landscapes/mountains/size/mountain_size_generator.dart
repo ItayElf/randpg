@@ -3,9 +3,9 @@ import '../../../../generators/base/list_item_generator.dart';
 /// A class that generates mountain sizes
 class MountainSizeGenerator extends ListItemGenerator<String> {
   static const _sizes = [
-    'span hundreds of meters in length',
+    'span hundreds of kilometers in length',
     'cover a vast area of the continent',
-    'rise to a towering height of several meters',
+    'rise to a towering height of several kilometers',
     'extend as far as the eye can see in either direction',
     'are one of the highest mountain ranges on the continent',
     'are a relatively low-lying mountain range',
