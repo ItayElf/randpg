@@ -2,6 +2,7 @@ import '../../randpg_exceptions.dart';
 import 'forest/forest.dart';
 import 'landscape_type.dart';
 import 'mountains/mountains.dart';
+import 'river/river.dart';
 import 'swamp/swamp.dart';
 
 /// A class that handles the available landscapes and using them
@@ -12,6 +13,7 @@ abstract class LandscapeManager {
     Forest(),
     Mountains(),
     Swamp(),
+    River(),
   };
 
   static final Set<LandscapeType> _activeLandscapeTypes = {..._landscapeTypes};

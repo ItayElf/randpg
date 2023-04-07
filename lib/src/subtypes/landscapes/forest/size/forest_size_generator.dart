@@ -12,6 +12,12 @@ class ForestSizeGenerator extends ListItemGenerator<String> {
     'is broken up into several smaller sections',
     'extends into multiple neighboring countries',
     'covers only a small area',
+    'is one of the largest forest in the world',
+    'is one of the smallest forests in the world',
+    'is a vast expanse of trees that stretches as far as the eye can see',
+    'is a tiny oasis of green',
+    'is a sprawling forest that spans multiple continents',
+    'is a thick forest that covers the majority of the region',
   ];
 
   ForestSizeGenerator() : super(_sizes);
