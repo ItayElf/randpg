@@ -31,9 +31,6 @@ class Landscape {
   /// The thing this landscape is known for
   final String knownFor;
 
-  /// A brief description of this landscape
-  final String brief;
-
   /// The size of this landscape
   final String size;
 
@@ -48,7 +45,6 @@ class Landscape {
     required this.resources,
     required this.encounters,
     required this.knownFor,
-    required this.brief,
     required this.size,
     required this.travelRate,
   });
@@ -62,7 +58,6 @@ class Landscape {
     List<String>? resources,
     List<String>? encounters,
     String? knownFor,
-    String? brief,
     String? size,
     String? travelRate,
   }) {
@@ -75,7 +70,6 @@ class Landscape {
       resources: resources ?? this.resources,
       encounters: encounters ?? this.encounters,
       knownFor: knownFor ?? this.knownFor,
-      brief: brief ?? this.brief,
       size: size ?? this.size,
       travelRate: travelRate ?? this.travelRate,
     );
@@ -91,7 +85,6 @@ class Landscape {
       'resources': resources,
       'encounters': encounters,
       'knownFor': knownFor,
-      'brief': brief,
       'size': size,
       'travelRate': travelRate,
     };
@@ -108,7 +101,6 @@ class Landscape {
       resources: List<String>.from((map['resources'] as List<String>)),
       encounters: List<String>.from((map['encounters'] as List<String>)),
       knownFor: map['knownFor'] as String,
-      brief: map['brief'] as String,
       size: map['size'] as String,
       travelRate: map['travelRate'] as String,
     );
@@ -121,7 +113,7 @@ class Landscape {
 
   @override
   String toString() {
-    return 'Landscape(name: $name, location: $location, weather: $weather, landscapeType: $landscapeType, features: $features, resources: $resources, encounters: $encounters, knownFor: $knownFor, brief: $brief, size: $size, travelRate: $travelRate)';
+    return 'Landscape(name: $name, location: $location, weather: $weather, landscapeType: $landscapeType, features: $features, resources: $resources, encounters: $encounters, knownFor: $knownFor, size: $size, travelRate: $travelRate)';
   }
 
   @override
@@ -137,7 +129,6 @@ class Landscape {
         listEquals(other.resources, resources) &&
         listEquals(other.encounters, encounters) &&
         other.knownFor == knownFor &&
-        other.brief == brief &&
         other.size == size &&
         other.travelRate == travelRate;
   }
@@ -152,7 +143,6 @@ class Landscape {
         resources.hashCode ^
         encounters.hashCode ^
         knownFor.hashCode ^
-        brief.hashCode ^
         size.hashCode ^
         travelRate.hashCode;
   }

@@ -6,7 +6,6 @@ import '../../../generators/landscapes/names/landscape_adjective_name_generator.
 import '../../../generators/landscapes/names/landscape_race_name_generator.dart';
 import '../../../generators/landscapes/travel_rate/landscape_travel_rate_generator.dart';
 import '../landscape_type.dart';
-import 'brief/forest_brief_generator.dart';
 import 'encounters/forest_encounter_generator.dart';
 import 'features/forest_feature_generator.dart';
 import 'resources/forest_resource_generator.dart';
@@ -23,9 +22,6 @@ class Forest implements LandscapeType {
     "groves",
     "woods",
   ];
-
-  @override
-  IGenerator<String> getBriefGenerator() => ForestBriefGenerator();
 
   @override
   IGenerator<String> getEncounterGenerator() => ForestEncounterGenerator();

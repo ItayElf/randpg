@@ -26,9 +26,6 @@ abstract class LandscapeType {
   /// Returns a generator for something this landscape is known for
   IGenerator<String> getKnownForGenerator();
 
-  /// Returns a generator for a short description of this landscape
-  IGenerator<String> getBriefGenerator();
-
   /// Returns a generator for this landscape's size
   IGenerator<String> getSizeGenerator();
 

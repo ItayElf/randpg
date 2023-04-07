@@ -11,7 +11,7 @@ class LandscapeGenerator implements IGenerator<Landscape> {
   late int _seed;
   final LandscapeType _landscapeType;
 
-  static const _numberOfFeatures = 2;
+  static const _numberOfFeatures = 3;
   static const _numberOfResources = 2;
   static const _numberOfEncounters = 2;
 
@@ -44,7 +44,6 @@ class LandscapeGenerator implements IGenerator<Landscape> {
           _numberOfEncounters,
         ),
         "knownFor": _landscapeType.getKnownForGenerator(),
-        "brief": _landscapeType.getBriefGenerator(),
         "size": _landscapeType.getSizeGenerator(),
         "travelRate": _landscapeType.getTravelRateGenerator(),
       };
