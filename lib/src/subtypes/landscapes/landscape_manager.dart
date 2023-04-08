@@ -3,6 +3,7 @@ import 'desert/desert.dart';
 import 'forest/forest.dart';
 import 'landscape_type.dart';
 import 'mountains/mountains.dart';
+import 'ocean/ocean.dart';
 import 'river/river.dart';
 import 'swamp/swamp.dart';
 
@@ -16,6 +17,7 @@ abstract class LandscapeManager {
     Swamp(),
     River(),
     Desert(),
+    Ocean(),
   };
 
   static final Set<LandscapeType> _activeLandscapeTypes = {..._landscapeTypes};
