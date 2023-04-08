@@ -1,6 +1,6 @@
+import 'package:randpg/entities/settlements.dart';
 import 'package:randpg/generators/generators.dart';
 import 'package:randpg/generators/settlements.dart';
-import 'package:randpg/src/entities/settlements/settlement.dart';
 import 'package:randpg/subtypes/races.dart';
 import 'package:randpg/subtypes/settlements.dart';
 

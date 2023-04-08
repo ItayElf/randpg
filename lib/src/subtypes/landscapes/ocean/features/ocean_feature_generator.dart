@@ -38,7 +38,7 @@ class OceanFeatureGenerator extends ListItemGenerator<String> {
     'has a surface that is covered in strange, glowing algae',
     'is surrounded by a towering wall of icebergs',
     'has a section with underwater geysers that shoot hot water high into the air',
-    'is home to a giant sea serpent that is worshipped as a deity by some cultures',
+    'is home to a giant sea serpent that is worshiped as a deity by some cultures',
     'has a section with underwater caves that are home to schools of exotic fish',
     'has a surface that is covered in a thick layer of floating debris from a recent storm',
     'is home to a clan of rogue pirates who use the ocean as their base of operations',
