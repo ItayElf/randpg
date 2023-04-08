@@ -19,7 +19,7 @@
   - Demon Lords
   - Archangels
 
-- Added Fixable<T> interface that allows fixing an object after generation
+- Added `Fixable<T>` interface that allows fixing an object after generation
 - Exported generators for custom landscape types
 
 ## 0.4.0
