@@ -1,4 +1,5 @@
 import '../../randpg_exceptions.dart';
+import 'desert/desert.dart';
 import 'forest/forest.dart';
 import 'landscape_type.dart';
 import 'mountains/mountains.dart';
@@ -14,6 +15,7 @@ abstract class LandscapeManager {
     Mountains(),
     Swamp(),
     River(),
+    Desert(),
   };
 
   static final Set<LandscapeType> _activeLandscapeTypes = {..._landscapeTypes};

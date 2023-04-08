@@ -13,7 +13,7 @@ class MountainSizeGenerator extends ListItemGenerator<String> {
     'tower over nearby landscapes, dominating the horizon',
     'are incredibly narrow and steep, with little room for foothills',
     'span several different countries or territories',
-    'are home to the tallest mountain in the world',
+    'are home to the tallest mountain in the continent',
     'have a gentle, gradual slope that leads to a plateau at the summit',
     'are split into several distinct sub-ranges or clusters of mountains',
   ];
