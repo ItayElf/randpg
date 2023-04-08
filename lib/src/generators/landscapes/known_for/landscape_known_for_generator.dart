@@ -43,6 +43,7 @@ class LandscapeKnownForGenerator extends ListItemGenerator<String> {
     'being a site where a famous battle was fought, with the ghosts of fallen soldiers still said to haunt the area',
     'being a location that is said to be a gateway to another world, with portals or rifts that lead to alternate dimensions',
     'being a place where ancient rituals and ceremonies are still practiced, passed down through generations of mystics and shamans',
+    'being a home to a mysterious, hooded figure who is rumored to have magical powers',
   ];
 
   LandscapeKnownForGenerator() : super(_knownFor);
