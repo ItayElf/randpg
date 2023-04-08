@@ -1,3 +1,5 @@
+import 'package:collection/collection.dart';
+
 import '../../randpg_exceptions.dart';
 import 'desert/desert.dart';
 import 'forest/forest.dart';
@@ -27,11 +29,13 @@ abstract class LandscapeManager {
   static final Set<LandscapeType> _activeLandscapeTypes = {..._landscapeTypes};
 
   /// Returns all the landscape types
-  static List<LandscapeType> get allLocations => _landscapeTypes.toList();
+  static List<LandscapeType> get allLocations => _landscapeTypes.toList()
+    ..sortBy((landscapeType) => landscapeType.getLandscapeType());
 
   /// Returns all active landscapes
   static List<LandscapeType> get activeLandscapeTypes =>
-      _activeLandscapeTypes.toList();
+      _activeLandscapeTypes.toList()
+        ..sortBy((landscapeType) => landscapeType.getLandscapeType());
 
   /// Returns the corresponding landscape type from all landscapes with type [type]
   static LandscapeType getLandscapeTypeByType(String type) {

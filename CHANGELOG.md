@@ -22,6 +22,8 @@
   - Tundras
   - Steppes
 
+- Made all managers return sorted lists
+
 ## 0.3.1
 
 - Fixed two occurrences of races folder due to previous conflicts
