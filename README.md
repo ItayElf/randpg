@@ -35,7 +35,6 @@ Follow the installation instructions on dart packages.
 
 ## Goals
 
-- Gods generator
 - World generator
 - Waypoint Generator
   
