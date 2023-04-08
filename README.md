@@ -1,6 +1,6 @@
 # Randpg <!-- omit in toc -->
 
-[![version](https://img.shields.io/badge/version-0.5.0-green.svg)](https://semver.org)
+[![pub package](https://img.shields.io/pub/v/randpg.svg)](https://pub.dev/packages/randpg)
 
 Randpg is a package for generating random rpg entities like npcs, settlements and even worlds.
 
