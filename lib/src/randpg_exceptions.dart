@@ -39,3 +39,11 @@ class SettlementTypeNotFoundException extends RandpgException {
   @override
   String toString() => msg ?? "SettlementTypeNotFoundException";
 }
+
+/// An exception that is thrown when a not supported landscapeType is being used
+class LandscapeTypeNotFoundException extends RandpgException {
+  const LandscapeTypeNotFoundException([super.msg]);
+
+  @override
+  String toString() => msg ?? "LandscapeTypeNotFoundException";
+}

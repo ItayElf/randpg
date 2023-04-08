@@ -29,11 +29,11 @@ abstract class LocationManager {
   static List<LocationType> get activeLocationTypes =>
       _activeLocationTypes.toList();
 
-  /// Returns the corresponding location type from all races called [type]
+  /// Returns the corresponding location type from all locations with type [type]
   static LocationType getLocationTypeByType(String type) {
     return _locationTypes.firstWhere(
       (locationType) => locationType.getLocationType() == type,
-      orElse: () => throw SettlementTypeNotFoundException(
+      orElse: () => throw LocationTypeNotFoundException(
           "LocationType with type $type was not found"),
     );
   }

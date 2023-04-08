@@ -1,6 +1,6 @@
 # Randpg <!-- omit in toc -->
 
-[![version](https://img.shields.io/badge/version-0.3.1-green.svg)](https://semver.org)
+[![version](https://img.shields.io/badge/version-0.4.0-green.svg)](https://semver.org)
 
 Randpg is a package for generating random rpg entities like npcs, settlements and even worlds.
 
@@ -19,6 +19,7 @@ To view the changelog, [click here](./CHANGELOG.md)
   - [Generating npcs](#generating-npcs)
   - [Generating locations\\buildings](#generating-locationsbuildings)
   - [Generating settlements](#generating-settlements)
+  - [Generating landscapes](#generating-landscapes)
 
 ## Installation
 
@@ -33,15 +34,13 @@ Follow the installation instructions on dart packages.
 
 ## Goals
 
-- ~~Npc generator~~ (Added in 0.2.0)
-- ~~Settlement generator~~ (Added in 0.3.0)
-- Landscape generator
 - Gods generator
 - World generator
 - Companion Generator
   
 ### In the Future
 
+- Waypoint Generator
 - Holiday Generator
 
 ## Usage
@@ -94,4 +93,14 @@ final Race dominantRace = Orc();
 
 final settlementGenerator = SettlementGenerator(settlementType, dominantRace);
 print(settlementGenerator.generate());
+```
+
+### Generating landscapes
+
+Generating a swamp as an example:
+```dart
+final LandscapeType landscapeType = Swamp();
+
+final landscapeGenerator = LandscapeGenerator(landscapeType);
+print(landscapeGenerator.generate());
 ```

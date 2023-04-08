@@ -29,7 +29,7 @@ abstract class SettlementManager {
   static List<SettlementType> get activeSettlementTypes =>
       _activeSettlementTypes.toList();
 
-  /// Returns the corresponding settlement type from all races called [type]
+  /// Returns the corresponding settlement type from all settlements from type [type]
   static SettlementType getSettlementTypeByType(String type) {
     return _settlementTypes.firstWhere(
       (settlementType) => settlementType.getSettlementType() == type,

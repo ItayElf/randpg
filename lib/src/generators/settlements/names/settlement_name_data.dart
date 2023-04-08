@@ -1,4 +1,4 @@
-const landscapeAdjectives = [
+const natureAdjectives = [
   "high",
   "sharp",
   "last",
