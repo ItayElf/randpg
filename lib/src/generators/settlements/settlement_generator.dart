@@ -1,3 +1,5 @@
+import 'package:randpg/src/generators/fixable.dart';
+
 import '../../../generators/generators.dart';
 import '../../entities/settlements/settlement.dart';
 import '../../subtypes/races/race.dart';
@@ -23,8 +25,13 @@ class SettlementGenerator implements IGenerator<Settlement> {
     final generator = BatchGenerator(_getBatch(name));
     generator.seed((_seed + 1) % SeedGenerator.maxSeed);
     final results = generator.generate();
+    Settlement settlement = Settlement.fromMap(results);
 
-    return Settlement.fromMap(results);
+    if (_settlementType is Fixable<Settlement>) {
+      settlement = (_settlementType as Fixable).getFixed(settlement);
+    }
+
+    return settlement;
   }
 
   Map<String, IGenerator> _getBatch(String settlementName) => {

@@ -1,3 +1,5 @@
+import 'package:randpg/src/generators/fixable.dart';
+
 import '../../../entities/npcs/npc.dart';
 import '../../../entities/settlements/location.dart';
 import '../../../subtypes/locations/location_type.dart';
@@ -38,7 +40,13 @@ class LocationGenerator implements IGenerator<Location> {
     generator.seed(_seed);
     final result = generator.generate();
 
-    return Location.fromMap(result);
+    Location location = Location.fromMap(result);
+
+    if (_locationType is Fixable<Location>) {
+      location = (_locationType as Fixable).getFixed(location);
+    }
+
+    return location;
   }
 
   Map<String, IGenerator> _getBatch(

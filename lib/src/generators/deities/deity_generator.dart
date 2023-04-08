@@ -1,3 +1,5 @@
+import 'package:randpg/src/generators/fixable.dart';
+
 import '../../entities/deities/deity.dart';
 import '../../entities/npcs/alignment.dart';
 import '../../enums/gender.dart';
@@ -44,7 +46,12 @@ class DeityGenerator implements IGenerator<Deity> {
       domainCount,
     ));
     generator.seed((_seed + 3) % SeedGenerator.maxSeed);
-    return Deity.fromMap(generator.generate());
+    Deity deity = Deity.fromMap(generator.generate());
+
+    if (_deityType is Fixable<Deity>) {
+      deity = (_deityType as Fixable).getFixed(deity);
+    }
+    return deity;
   }
 
   Map<String, IGenerator> _getBatch(
