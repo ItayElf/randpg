@@ -1,23 +1,17 @@
 import '../../base/list_item_generator.dart';
 
 /// A class that generates the amount of shrines a deity has
-class DeityShrinesGenerator extends ListItemGenerator<String> {
+class DeityFewShrinesGenerator extends ListItemGenerator<String> {
   static const _shrines = [
-    "spread across the continent",
     "are hard to find",
-    "can be found in the big cities",
     "can only be found in remote places",
     "don't exist",
     "hardly exist",
-    "are common",
     "can be accessed only by worshipers",
-    'are located in every major settlement',
     'are hidden underground',
     'are situated on mountaintops',
     'are inside living trees',
-    'are scattered across the countryside',
     'are built inside caves',
-    "are present in every noble's estate",
     'are floating on clouds',
     'are present only in ruins',
     'are guarded by magical barriers',
@@ -26,12 +20,10 @@ class DeityShrinesGenerator extends ListItemGenerator<String> {
     'are constructed only in underground tunnels',
     'are located inside ancient ruins',
     'are guarded by fierce beasts',
-    'are made of crystal and impossible to miss',
     'are hidden in plain sight',
     'are guarded by priests',
     'are found only in desert oases',
     'are built in underwater caverns',
-    'are located on every trade route',
     'are present only in abandoned fortresses',
     'are built in secret underground tunnels',
     'are accessible only by a secret password or code',
@@ -39,7 +31,6 @@ class DeityShrinesGenerator extends ListItemGenerator<String> {
     'are accessible only by climbing treacherous cliffs',
     'are built on the ruins of other shrines',
     'are present only in deep caverns',
-    'are situated in the heart of major cities',
     'are constructed only on the top of very high mountains',
     "are guarded by the deity's followers",
     'are accessible only by sea',
@@ -53,12 +44,10 @@ class DeityShrinesGenerator extends ListItemGenerator<String> {
     'are made of stone and blend in with the landscape',
     'are accessible only by crossing treacherous swamps',
     "are present only in the underground lairs of the deity's followers",
-    'are situated on the highest points of every island',
     'are hidden inside the ruins of ancient temples',
     'are guarded by powerful magical creatures',
-    'are located inside the hollows of giant mushrooms',
     'are present only in the most remote and desolate places'
   ];
 
-  DeityShrinesGenerator() : super(_shrines);
+  DeityFewShrinesGenerator() : super(_shrines);
 }

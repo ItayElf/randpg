@@ -11,22 +11,20 @@ import '../../../generators/deities/depiction/deity_race_depiction_generator.dar
 import '../../../generators/deities/domains/deity_domain_generator.dart';
 import '../../../generators/deities/names/deity_race_name_generator.dart';
 import '../../../generators/deities/shrines/deity_few_shrines_generator.dart';
-import '../../../generators/deities/shrines/deity_many_shrines_generator.dart';
 import '../../../generators/deities/worshipers/deity_few_worshipers_generator.dart';
-import '../../../generators/deities/worshipers/deity_many_worshipers_generator.dart';
 import '../../../randpg_exceptions.dart';
 import '../../races/race.dart';
 import '../../races/race_manager.dart';
 import '../deity_type.dart';
 
-/// A class that represents the god deity type
-class God implements DeityType {
-  const God();
+/// A class that represents the demigod deity type
+class Demigod implements DeityType {
+  const Demigod();
 
-  static const _deityType = "god";
+  static const _deityType = "demigod";
   static const _deityTitles = {
-    Gender.male: "god",
-    Gender.female: "goddess",
+    Gender.male: "demigod",
+    Gender.female: "demigoddess",
   };
 
   @override
@@ -43,7 +41,6 @@ class God implements DeityType {
   @override
   IGenerator<String> getDepictionGenerator(Race? worshipedBy) =>
       MultipleGenerator([
-        DeityAnimalDepictionGenerator(),
         DeityFigureDepictionGenerator(worshipedBy),
         if (worshipedBy != null) DeityRaceDepictionGenerator(worshipedBy),
       ]);
@@ -68,10 +65,7 @@ class God implements DeityType {
       DeityPositiveAttributeGenerator();
 
   @override
-  IGenerator<String> getShrinesRarityGenerator() => MultipleGenerator([
-        DeityFewShrinesGenerator(),
-        DeityManyShrinesGenerator(),
-      ]);
+  IGenerator<String> getShrinesRarityGenerator() => DeityFewShrinesGenerator();
 
   @override
   IGenerator<Race?> getWorshipedByGenerator() => ListItemGenerator([
@@ -80,8 +74,5 @@ class God implements DeityType {
       ]);
 
   @override
-  IGenerator<String> getWorshipersGenerator() => MultipleGenerator([
-        DeityFewWorshipersGenerator(),
-        DeityManyWorshipersGenerator(),
-      ]);
+  IGenerator<String> getWorshipersGenerator() => DeityFewWorshipersGenerator();
 }
