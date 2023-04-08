@@ -1,10 +1,12 @@
 import 'dart:convert';
 
 import 'package:collection/collection.dart';
-import 'package:randpg/src/subtypes/races/race_manager.dart';
+import 'package:randpg/src/subtypes/deities/deity_manager.dart';
 
 import '../../enums/gender.dart';
+import '../../subtypes/deities/deity_type.dart';
 import '../../subtypes/races/race.dart';
+import '../../subtypes/races/race_manager.dart';
 import '../npcs/alignment.dart';
 
 /// A class that represents the deity entity
@@ -16,7 +18,7 @@ class Deity {
   final Gender gender;
 
   /// The type of the deity (god, angel, demon, etc.)
-  final String deityType;
+  final DeityType deityType;
 
   /// A list of domains related to this deity
   final List<String> domains;
@@ -55,7 +57,7 @@ class Deity {
   Deity copyWith({
     String? name,
     Gender? gender,
-    String? deityType,
+    DeityType? deityType,
     List<String>? domains,
     Alignment? alignment,
     String? depiction,
@@ -82,7 +84,7 @@ class Deity {
     return <String, dynamic>{
       'name': name,
       'gender': gender.name,
-      'deityType': deityType,
+      'deityType': deityType.getDeityType(),
       'domains': domains,
       'alignment': alignment.toMap(),
       'depiction': depiction,
@@ -97,7 +99,7 @@ class Deity {
     return Deity(
       name: map['name'] as String,
       gender: Gender.values.byName(map['gender']),
-      deityType: map['deityType'] as String,
+      deityType: DeityManager.getDeityTypeByType(map['deityType']),
       domains: List<String>.from((map['domains'] as List<String>)),
       alignment: Alignment.fromMap(map['alignment'] as Map<String, dynamic>),
       depiction: map['depiction'] as String,
