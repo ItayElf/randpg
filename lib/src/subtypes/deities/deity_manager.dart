@@ -2,12 +2,15 @@ import 'package:collection/collection.dart';
 
 import '../../randpg_exceptions.dart';
 import 'deity_type.dart';
+import 'gods/god.dart';
 
 /// A class that handles the available deities and using them
 ///
 /// When making a custom deity type, make sure to register it or else some features might not work
 abstract class DeityManager {
-  static final Set<DeityType> _deityTypes = {};
+  static final Set<DeityType> _deityTypes = {
+    God(),
+  };
 
   static final Set<DeityType> _activeDeityTypes = {..._deityTypes};
 
@@ -15,7 +18,7 @@ abstract class DeityManager {
   static List<DeityType> get allLocations =>
       _deityTypes.toList()..sortBy((deityType) => deityType.getDeityType());
 
-  /// Returns all active deitys
+  /// Returns all active deities
   static List<DeityType> get activeDeityTypes => _activeDeityTypes.toList()
     ..sortBy((deityType) => deityType.getDeityType());
 
