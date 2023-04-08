@@ -36,11 +36,11 @@ Follow the installation instructions on dart packages.
 
 - Gods generator
 - World generator
-- Companion Generator
+- Waypoint Generator
   
 ### In the Future
 
-- Waypoint Generator
+- Companion Generator
 - Holiday Generator
 
 ## Usage
