@@ -20,6 +20,7 @@ To view the changelog, [click here](./CHANGELOG.md)
   - [Generating locations\\buildings](#generating-locationsbuildings)
   - [Generating settlements](#generating-settlements)
   - [Generating landscapes](#generating-landscapes)
+  - [Generating deities](#generating-deities)
 
 ## Installation
 
@@ -103,4 +104,18 @@ final LandscapeType landscapeType = Swamp();
 
 final landscapeGenerator = LandscapeGenerator(landscapeType);
 print(landscapeGenerator.generate());
+```
+
+### Generating deities
+
+Generating a lawful good god/goddess as an example:
+```dart
+final Alignment alignment = Alignment(
+  ethical: EthicalAlignment.lawful,
+  moral: MoralAlignment.good,
+);
+final DeityType deityType = God();
+
+final deityGenerator = DeityGenerator(deityType, alignment);
+print(deityGenerator.generate());
 ```
