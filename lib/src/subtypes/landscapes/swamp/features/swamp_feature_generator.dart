@@ -40,8 +40,8 @@ class SwampFeatureGenerator extends ListItemGenerator<String> {
     'is home to a type of fly that lays eggs in living flesh, causing painful infections',
     'is filled with the sounds of buzzing insects, like swarms of flies and bees',
     'has a layer of mist that seems to glow in the moonlight, giving the swamp an ethereal feel',
-    'is a maze of twisting channels and hidden bays that are difficult to navigate.',
-    'is an irregularly-shaped mass of wetland that is constantly shifting and changing over time.',
+    'is a maze of twisting channels and hidden bays that are difficult to navigate',
+    'is an irregularly-shaped mass of wetland that is constantly shifting and changing over time',
   ];
 
   SwampFeatureGenerator() : super(_features);

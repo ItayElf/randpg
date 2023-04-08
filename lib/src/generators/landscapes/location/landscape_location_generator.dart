@@ -1,6 +1,4 @@
-import 'package:randpg/generators/generators.dart';
-
-import '../../base/weighted_generator.dart';
+import '../../base/list_item_generator.dart';
 
 /// A class that generates landscape locations
 class LandscapeLocationGenerator extends ListItemGenerator<String> {

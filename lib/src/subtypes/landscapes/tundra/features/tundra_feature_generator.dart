@@ -1,0 +1,52 @@
+import '../../../../generators/base/list_item_generator.dart';
+
+/// A class that generates tundra features
+class TundraFeatureGenerator extends ListItemGenerator<String> {
+  static const _features = [
+    'has icy, barren landscapes that stretch for kilometers',
+    'is home to a rare species of snow owl that hunts at night',
+    'is riddled with deep crevasses that can be treacherous to cross',
+    'is dotted with frozen ponds',
+    'has a sparse, scrubby vegetation that struggles to survive in the frigid climate',
+    'is often cloaked in a layer of frost that sparkles in the sunlight',
+    'is home to nomadic tribes of reindeer herders who roam the tundra with their herds',
+    'has patches of permafrost that never thaw, even in the summer months',
+    'is populated by large herds of reindeers that migrate through the region each year',
+    'has an almost complete lack of trees, with only the occasional stunted pine or spruce',
+    'is home to a rare type of arctic flower that blooms in the summer months',
+    'has small, winding streams that are teeming with fish during the summer thaw',
+    'is home to a variety of small mammals, like arctic foxes and hares, that survive by burrowing in the snow',
+    'has a series of underground hot springs that provide a refuge for life during the frigid winters',
+    'has a treacherous, shifting permafrost layer that can swallow up unsuspecting travelers',
+    'has a constant eerie silence that is only broken by the howl of the wind',
+    'has a network of hidden caves that are carved into the rock by melting ice',
+    'is populated by fierce tribes of barbarians who have adapted to the harsh climate',
+    'has a series of towering cliffs that are constantly eroded by wind and ice',
+    'is home to a breed of hardy horses that can survive in even the harshest of conditions',
+    'is surrounded by jagged mountains that rise up out of the tundra like giants',
+    'is filled with dangerous crevasses and hidden sinkholes that can trap the unwary',
+    'is marked by vast fields of snow that stretch as far as the eye can see',
+    'has a strange, otherworldly beauty that can be both awe-inspiring and intimidating at the same time',
+    'has a thin layer of ice that cracks and shifts as the temperature changes',
+    'has a low, rolling landscape that is covered in a patchwork of moss and lichens',
+    'is constantly swept by bitter winds that can drop the temperature to dangerous levels',
+    'is home to a variety of scavengers, like ravens and foxes, that feed on the remains of dead animals',
+    'is filled with small, crystal-clear streams that flow through the landscape',
+    'has a rocky, barren terrain that is punctuated by sudden, towering cliffs',
+    'is home to rare and endangered species',
+    'is filled with the sounds of howling wolves and other predators on the hunt',
+    'has a variety of delicate and beautiful wildflowers that bloom in the brief summer months',
+    'is home to a type of musk ox that has adapted to survive in the harsh environment',
+    'has a sky that is often filled with swirling auroras and other celestial displays',
+    'is surrounded by vast, icy seas that are home to a variety of marine life',
+    'is filled with a network of underground tunnels and dens, created by burrowing animals',
+    'has a landscape that is sculpted by glaciers and ice sheets that constantly shape the land',
+    'is home to a variety of migratory birds that make their way across the tundra each year',
+    'is dotted with small, icy ponds and lakes that are home to unique aquatic life',
+    'has a stunning, otherworldly beauty that is difficult to capture in words or images',
+    'is a place of extreme isolation and solitude, where only the hardiest of creatures can survive.',
+    'is often shrouded in a thick blanket of snow, making movement difficult and dangerous',
+  ];
+
+  TundraFeatureGenerator() : super(_features);
+}
