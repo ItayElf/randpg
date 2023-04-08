@@ -1,8 +1,8 @@
 import 'package:collection/collection.dart';
-
 import '../../randpg_exceptions.dart';
 import 'deity_type.dart';
 import 'demigods/demigod.dart';
+import 'demon_lords/demon_lord.dart';
 import 'gods/god.dart';
 
 /// A class that handles the available deities and using them
@@ -12,6 +12,7 @@ abstract class DeityManager {
   static final Set<DeityType> _deityTypes = {
     God(),
     Demigod(),
+    DemonLord(),
   };
 
   static final Set<DeityType> _activeDeityTypes = {..._deityTypes};
