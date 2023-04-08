@@ -1,6 +1,4 @@
 import '../../entities/npcs/npc.dart';
-import '../../entities/npcs/personality.dart';
-import '../../entities/npcs/physical_description.dart';
 import '../../enums/gender.dart';
 import '../../subtypes/races/race.dart';
 import '../base/batch_generator.dart';

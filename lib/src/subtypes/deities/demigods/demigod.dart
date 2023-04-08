@@ -5,7 +5,6 @@ import '../../../generators/base/list_item_generator.dart';
 import '../../../generators/base/multiple_generator.dart';
 import '../../../generators/deities/attributes/deity_negative_attribute_generator.dart';
 import '../../../generators/deities/attributes/deity_positive_attribute_generator.dart';
-import '../../../generators/deities/depiction/deity_animal_depiction_generator.dart';
 import '../../../generators/deities/depiction/deity_figure_depiction_generator.dart';
 import '../../../generators/deities/depiction/deity_race_depiction_generator.dart';
 import '../../../generators/deities/domains/deity_domain_generator.dart';

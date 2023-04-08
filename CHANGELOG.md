@@ -2,6 +2,7 @@
 
 ## Table of Contents <!-- omit in toc -->
 
+- [0.5.1](#051)
 - [0.5.0](#050)
 - [0.4.0](#040)
 - [0.3.1](#031)
@@ -10,6 +11,12 @@
 - [0.1.1](#011)
 - [0.1.0](#010)
 - [0.0.0](#000)
+
+## 0.5.1
+
+- Made changes in order to upload the package
+  - Changes examples to example
+  - Removed unused imports
 
 ## 0.5.0
 
