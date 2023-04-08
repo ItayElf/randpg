@@ -1,3 +1,5 @@
+import 'package:collection/collection.dart';
+
 import '../../randpg_exceptions.dart';
 import 'general_store/general_store.dart';
 import 'library/library.dart';
@@ -23,17 +25,19 @@ abstract class LocationManager {
   static final Set<LocationType> _activeLocationTypes = {..._locationTypes};
 
   /// Returns all the location types
-  static List<LocationType> get allLocations => _locationTypes.toList();
+  static List<LocationType> get allLocations => _locationTypes.toList()
+    ..sortBy((locationType) => locationType.getLocationType());
 
   /// Returns all active locations
   static List<LocationType> get activeLocationTypes =>
-      _activeLocationTypes.toList();
+      _activeLocationTypes.toList()
+        ..sortBy((locationType) => locationType.getLocationType());
 
-  /// Returns the corresponding location type from all races called [type]
+  /// Returns the corresponding location type from all locations with type [type]
   static LocationType getLocationTypeByType(String type) {
     return _locationTypes.firstWhere(
       (locationType) => locationType.getLocationType() == type,
-      orElse: () => throw SettlementTypeNotFoundException(
+      orElse: () => throw LocationTypeNotFoundException(
           "LocationType with type $type was not found"),
     );
   }

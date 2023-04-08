@@ -1,3 +1,5 @@
+import 'package:collection/collection.dart';
+
 import '../../randpg_exceptions.dart';
 import 'city/city.dart';
 import 'hamlet/hamlet.dart';
@@ -23,13 +25,15 @@ abstract class SettlementManager {
   };
 
   /// Returns all the settlement types
-  static List<SettlementType> get allSettlements => _settlementTypes.toList();
+  static List<SettlementType> get allSettlements => _settlementTypes.toList()
+    ..sortBy((settlementType) => settlementType.getSettlementType());
 
   /// Returns all active settlements
   static List<SettlementType> get activeSettlementTypes =>
-      _activeSettlementTypes.toList();
+      _activeSettlementTypes.toList()
+        ..sortBy((settlementType) => settlementType.getSettlementType());
 
-  /// Returns the corresponding settlement type from all races called [type]
+  /// Returns the corresponding settlement type from all settlements from type [type]
   static SettlementType getSettlementTypeByType(String type) {
     return _settlementTypes.firstWhere(
       (settlementType) => settlementType.getSettlementType() == type,

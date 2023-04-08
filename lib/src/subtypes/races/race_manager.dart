@@ -1,3 +1,5 @@
+import 'package:collection/collection.dart';
+
 import '../../randpg_exceptions.dart';
 import 'race.dart';
 import 'dragonborn/dragonborn.dart';
@@ -31,10 +33,12 @@ abstract class RaceManager {
   static final Set<Race> _activeRaces = {..._races};
 
   /// Returns all the races
-  static List<Race> get allRaces => _races.toList();
+  static List<Race> get allRaces =>
+      _races.toList()..sortBy((race) => race.getName());
 
   /// Returns all active races
-  static List<Race> get activeRaces => _activeRaces.toList();
+  static List<Race> get activeRaces =>
+      _activeRaces.toList()..sortBy((race) => race.getName());
 
   /// Returns the corresponding race from all races called [name]
   static Race getRaceByName(String name) {

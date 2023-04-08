@@ -2,12 +2,27 @@
 
 ## Table of Contents <!-- omit in toc -->
 
+- [0.4.0](#040)
 - [0.3.1](#031)
 - [0.3.0](#030)
 - [0.2.0](#020)
 - [0.1.1](#011)
 - [0.1.0](#010)
 - [0.0.0](#000)
+
+## 0.4.0
+
+- Added landscapes
+  - Forests
+  - Mountains
+  - Swamps
+  - Rivers
+  - Deserts
+  - Oceans
+  - Tundras
+  - Steppes
+
+- Made all managers return sorted lists
 
 ## 0.3.1
 
