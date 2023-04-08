@@ -26,6 +26,9 @@ abstract class DeityType {
   /// Returns a generator for the race that worship this being
   IGenerator<Race?> getWorshipedByGenerator();
 
+  /// Returns a generator for a description of how many worshippers this deity has
+  IGenerator<String> getWorshipersGenerator();
+
   /// Returns a generator for how rare are shrines for this being
   IGenerator<String> getShrinesRarityGenerator();
 

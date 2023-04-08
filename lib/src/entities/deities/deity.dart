@@ -1,9 +1,9 @@
 import 'dart:convert';
 
 import 'package:collection/collection.dart';
-import 'package:randpg/src/subtypes/deities/deity_manager.dart';
 
 import '../../enums/gender.dart';
+import '../../subtypes/deities/deity_manager.dart';
 import '../../subtypes/deities/deity_type.dart';
 import '../../subtypes/races/race.dart';
 import '../../subtypes/races/race_manager.dart';
@@ -32,6 +32,9 @@ class Deity {
   /// The race who worship this deity, null if this deity is worshiped by many races
   final Race? worshipedBy;
 
+  /// A description of how many worshippers this deity has
+  final String worshipers;
+
   /// How rare are shrines for this deity
   final String shrinesRarity;
 
@@ -40,8 +43,7 @@ class Deity {
 
   /// A negative attribute of this deity, often how their nonbelievers believe they are
   final String negativeAttribute;
-
-  const Deity({
+  Deity({
     required this.name,
     required this.gender,
     required this.deityType,
@@ -49,6 +51,7 @@ class Deity {
     required this.alignment,
     required this.depiction,
     this.worshipedBy,
+    required this.worshipers,
     required this.shrinesRarity,
     required this.positiveAttribute,
     required this.negativeAttribute,
@@ -62,6 +65,7 @@ class Deity {
     Alignment? alignment,
     String? depiction,
     Race? worshipedBy,
+    String? worshipers,
     String? shrinesRarity,
     String? positiveAttribute,
     String? negativeAttribute,
@@ -74,6 +78,7 @@ class Deity {
       alignment: alignment ?? this.alignment,
       depiction: depiction ?? this.depiction,
       worshipedBy: worshipedBy ?? this.worshipedBy,
+      worshipers: worshipers ?? this.worshipers,
       shrinesRarity: shrinesRarity ?? this.shrinesRarity,
       positiveAttribute: positiveAttribute ?? this.positiveAttribute,
       negativeAttribute: negativeAttribute ?? this.negativeAttribute,
@@ -89,6 +94,7 @@ class Deity {
       'alignment': alignment.toMap(),
       'depiction': depiction,
       'worshipedBy': worshipedBy?.getName(),
+      'worshipers': worshipers,
       'shrinesRarity': shrinesRarity,
       'positiveAttribute': positiveAttribute,
       'negativeAttribute': negativeAttribute,
@@ -106,6 +112,7 @@ class Deity {
       worshipedBy: map['worshipedBy'] != null
           ? RaceManager.getRaceByName(map['worshipedBy'])
           : null,
+      worshipers: map['worshipers'] as String,
       shrinesRarity: map['shrinesRarity'] as String,
       positiveAttribute: map['positiveAttribute'] as String,
       negativeAttribute: map['negativeAttribute'] as String,
@@ -119,7 +126,7 @@ class Deity {
 
   @override
   String toString() {
-    return 'Deity(name: $name, gender: $gender, deityType: $deityType, domains: $domains, alignment: $alignment, depiction: $depiction, worshipedBy: $worshipedBy, shrinesRarity: $shrinesRarity, positiveAttribute: $positiveAttribute, negativeAttribute: $negativeAttribute)';
+    return 'Deity(name: $name, gender: $gender, deityType: $deityType, domains: $domains, alignment: $alignment, depiction: $depiction, worshipedBy: $worshipedBy, worshipers: $worshipers, shrinesRarity: $shrinesRarity, positiveAttribute: $positiveAttribute, negativeAttribute: $negativeAttribute)';
   }
 
   @override
@@ -134,6 +141,7 @@ class Deity {
         other.alignment == alignment &&
         other.depiction == depiction &&
         other.worshipedBy == worshipedBy &&
+        other.worshipers == worshipers &&
         other.shrinesRarity == shrinesRarity &&
         other.positiveAttribute == positiveAttribute &&
         other.negativeAttribute == negativeAttribute;
@@ -148,6 +156,7 @@ class Deity {
         alignment.hashCode ^
         depiction.hashCode ^
         worshipedBy.hashCode ^
+        worshipers.hashCode ^
         shrinesRarity.hashCode ^
         positiveAttribute.hashCode ^
         negativeAttribute.hashCode;
