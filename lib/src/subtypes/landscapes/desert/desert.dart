@@ -3,6 +3,7 @@ import '../../../generators/base/multiple_generator.dart';
 import '../../../generators/landscapes/known_for/landscape_known_for_generator.dart';
 import '../../../generators/landscapes/location/landscape_location_generator.dart';
 import '../../../generators/landscapes/names/landscape_adjective_name_generator.dart';
+import '../../../generators/landscapes/names/landscape_generic_name_generator.dart';
 import '../../../generators/landscapes/names/landscape_race_name_generator.dart';
 import '../../../generators/landscapes/travel_rate/landscape_travel_rate_generator.dart';
 import '../landscape_type.dart';
@@ -46,6 +47,7 @@ class Desert implements LandscapeType {
   IGenerator<String> getNameGenerator() => MultipleGenerator([
         LandscapeAdjectiveNameGenerator(_adjectiveLandscapeTitles),
         LandscapeRaceNameGenerator(_landscapeTitles),
+        LandscapeGenericNameGenerator(),
       ]);
 
   @override
