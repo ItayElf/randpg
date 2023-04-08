@@ -45,10 +45,7 @@ class DemonLord implements DeityType, Fixable<Deity> {
 
   @override
   IGenerator<String> getDepictionGenerator(Race? worshipedBy) =>
-      MultipleGenerator([
-        DeityAnimalDepictionGenerator(),
-        DeityFigureDepictionGenerator(null),
-      ]);
+      DeityFigureDepictionGenerator(null);
 
   @override
   IGenerator<String> getDomainGenerator(Alignment alignment) =>
