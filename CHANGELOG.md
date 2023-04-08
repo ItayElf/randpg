@@ -16,6 +16,7 @@
 
 - Made changes in order to upload the package
   - Changes examples to example
+  - Removed unused imports
 
 ## 0.5.0
 
