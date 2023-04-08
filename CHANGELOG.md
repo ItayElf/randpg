@@ -13,6 +13,13 @@
 
 ## 0.5.0
 
+- Added deities
+  - Gods
+  - Demigods
+  - Demon Lords
+  - Archangels
+
+- Added `Fixable<T>` interface that allows fixing an object after generation
 - Exported generators for custom landscape types
 
 ## 0.4.0

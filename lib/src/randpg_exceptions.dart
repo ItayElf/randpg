@@ -47,3 +47,11 @@ class LandscapeTypeNotFoundException extends RandpgException {
   @override
   String toString() => msg ?? "LandscapeTypeNotFoundException";
 }
+
+/// An exception that is thrown when a not supported deityType is being used
+class DeityTypeNotFoundException extends RandpgException {
+  const DeityTypeNotFoundException([super.msg]);
+
+  @override
+  String toString() => msg ?? "DeityTypeNotFoundException";
+}

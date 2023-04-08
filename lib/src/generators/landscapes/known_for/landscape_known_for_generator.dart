@@ -16,7 +16,7 @@ class LandscapeKnownForGenerator extends ListItemGenerator<String> {
     "strange and powerful magical energies that permeate the area, making it a hub for magical activity or experimentation",
     "a legend or prophecy that revolves around the landscape, leading many adventurers to seek out its secrets",
     "an ancient civilization or race that once inhabited the area, leaving behind ruins, artifacts, and secrets to uncover",
-    "the presence of a powerful deity or other divine being, worshipped by the inhabitants of the area or feared by those who enter",
+    "the presence of a powerful deity or other divine being, worshiped by the inhabitants of the area or feared by those who enter",
     "a unique or rare type of natural phenomenon",
     "the malevolent spirits or undead creatures that roam its grounds",
     "rare or powerful magical creature",

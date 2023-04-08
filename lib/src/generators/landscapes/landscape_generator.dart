@@ -1,3 +1,5 @@
+import 'package:randpg/src/generators/fixable.dart';
+
 import '../../entities/landscapes/landscape.dart';
 import '../../subtypes/landscapes/landscape_type.dart';
 import '../base/batch_generator.dart';
@@ -23,7 +25,12 @@ class LandscapeGenerator implements IGenerator<Landscape> {
   Landscape generate() {
     final generator = BatchGenerator(_getBatch());
     generator.seed(_seed);
-    return Landscape.fromMap(generator.generate());
+    Landscape landscape = Landscape.fromMap(generator.generate());
+
+    if (_landscapeType is Fixable<Landscape>) {
+      landscape = (_landscapeType as Fixable).getFixed(landscape);
+    }
+    return landscape;
   }
 
   Map<String, IGenerator> _getBatch() => {
