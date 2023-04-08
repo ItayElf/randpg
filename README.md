@@ -45,7 +45,7 @@ Follow the installation instructions on dart packages.
 
 ## Usage
 
-*For detailed examples check the [examples folder](./examples/)*
+*For detailed examples check the [examples folder](./example/)*
 
 ### Generating names
 
