@@ -43,7 +43,8 @@ class Deity {
 
   /// A negative attribute of this deity, often how their nonbelievers believe they are
   final String negativeAttribute;
-  Deity({
+
+  const Deity({
     required this.name,
     required this.gender,
     required this.deityType,

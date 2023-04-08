@@ -69,8 +69,10 @@ class God implements DeityType {
   IGenerator<String> getShrinesRarityGenerator() => DeityShrinesGenerator();
 
   @override
-  IGenerator<Race?> getWorshipedByGenerator() =>
-      ListItemGenerator(RaceManager.activeRaces);
+  IGenerator<Race?> getWorshipedByGenerator() => ListItemGenerator([
+        ...RaceManager.activeRaces,
+        null,
+      ]);
 
   @override
   IGenerator<String> getWorshipersGenerator() => DeityWorshipersGenerator();
