@@ -2,6 +2,7 @@
 
 ## Table of Contents <!-- omit in toc -->
 
+- [0.5.0](#050)
 - [0.4.0](#040)
 - [0.3.1](#031)
 - [0.3.0](#030)
@@ -9,6 +10,17 @@
 - [0.1.1](#011)
 - [0.1.0](#010)
 - [0.0.0](#000)
+
+## 0.5.0
+
+- Added deities
+  - Gods
+  - Demigods
+  - Demon Lords
+  - Archangels
+
+- Added `Fixable<T>` interface that allows fixing an object after generation
+- Exported generators for custom landscape types
 
 ## 0.4.0
 

@@ -1,6 +1,6 @@
 # Randpg <!-- omit in toc -->
 
-[![version](https://img.shields.io/badge/version-0.4.0-green.svg)](https://semver.org)
+[![version](https://img.shields.io/badge/version-0.5.0-green.svg)](https://semver.org)
 
 Randpg is a package for generating random rpg entities like npcs, settlements and even worlds.
 
@@ -20,6 +20,7 @@ To view the changelog, [click here](./CHANGELOG.md)
   - [Generating locations\\buildings](#generating-locationsbuildings)
   - [Generating settlements](#generating-settlements)
   - [Generating landscapes](#generating-landscapes)
+  - [Generating deities](#generating-deities)
 
 ## Installation
 
@@ -34,13 +35,12 @@ Follow the installation instructions on dart packages.
 
 ## Goals
 
-- Gods generator
 - World generator
-- Companion Generator
+- Waypoint Generator
   
 ### In the Future
 
-- Waypoint Generator
+- Companion Generator
 - Holiday Generator
 
 ## Usage
@@ -103,4 +103,18 @@ final LandscapeType landscapeType = Swamp();
 
 final landscapeGenerator = LandscapeGenerator(landscapeType);
 print(landscapeGenerator.generate());
+```
+
+### Generating deities
+
+Generating a lawful good god/goddess as an example:
+```dart
+final Alignment alignment = Alignment(
+  ethical: EthicalAlignment.lawful,
+  moral: MoralAlignment.good,
+);
+final DeityType deityType = God();
+
+final deityGenerator = DeityGenerator(deityType, alignment);
+print(deityGenerator.generate());
 ```

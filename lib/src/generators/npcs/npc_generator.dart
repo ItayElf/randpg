@@ -4,6 +4,7 @@ import '../../entities/npcs/physical_description.dart';
 import '../../enums/gender.dart';
 import '../../subtypes/races/race.dart';
 import '../base/batch_generator.dart';
+import '../base/future_generator.dart';
 import '../base/generator.dart';
 import '../base/list_item_generator.dart';
 import '../base/multiple_generator.dart';
@@ -31,27 +32,26 @@ class NpcGenerator implements IGenerator<Npc> {
     final generator = BatchGenerator(_getBatch(_race, gender));
     generator.seed(_seed);
     final result = generator.generate();
-
-    result["physicalDescription"] =
-        (result["physicalDescription"] as PhysicalDescription).toMap();
-    result["personality"] = (result["personality"] as Personality).toMap();
-    result["gender"] = (result["gender"] as Gender).name;
-    result["race"] = (result["race"] as Race).getName();
-
     return Npc.fromMap(result);
   }
 
   Map<String, IGenerator> _getBatch(Race race, Gender gender) => {
         "name": race.getNameGenerator(gender),
         "age": race.getAgeGenerator(gender),
-        "gender": ListItemGenerator([gender]),
-        "race": ListItemGenerator([race]),
+        "gender": ListItemGenerator([gender.name]),
+        "race": ListItemGenerator([race.getName()]),
         "occupation": MultipleGenerator([
           SimpleOccupationGenerator(),
           AdventurerOccupationGenerator(),
         ]),
-        "physicalDescription": PhysicalDescriptionGenerator(gender, race),
-        "personality": PersonalityGenerator(race),
+        "physicalDescription": FutureGenerator(
+          PhysicalDescriptionGenerator(gender, race),
+          (physicalDescription) => physicalDescription.toMap(),
+        ),
+        "personality": FutureGenerator(
+          PersonalityGenerator(race),
+          (personality) => personality.toMap(),
+        ),
         "goal": GoalGenerator(),
       };
 
