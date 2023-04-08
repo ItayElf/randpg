@@ -8,7 +8,7 @@ on:
 jobs:
   publish:
     permissions:
-      id-token: write
+      id-token: 'write'
     uses: dart-lang/setup-dart/.github/workflows/publish.yml@main
     # with:
     #   working-directory: path/to/package/within/repository
