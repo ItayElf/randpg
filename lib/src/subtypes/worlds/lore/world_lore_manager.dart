@@ -1,13 +1,16 @@
 import 'package:collection/collection.dart';
 
 import '../../../randpg_exceptions.dart';
+import 'default_lore/default_lore.dart';
 import 'world_lore_type.dart';
 
 /// A class that handles the available worldLores and using them
 ///
 /// When making a custom worldLore type, make sure to register it or else some features might not work
 abstract class WorldLoreManager {
-  static final Set<WorldLoreType> _worldLoreTypes = {};
+  static final Set<WorldLoreType> _worldLoreTypes = {
+    DefaultLore(),
+  };
 
   static final Set<WorldLoreType> _activeWorldLoreTypes = {..._worldLoreTypes};
 

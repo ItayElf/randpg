@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:randpg/src/subtypes/worlds/lore/world_lore_type.dart';
-import 'package:randpg/src/subtypes/worlds/lore/world_lore_type_manager.dart';
+import '../../subtypes/worlds/lore/world_lore_type.dart';
+import '../../subtypes/worlds/lore/world_lore_manager.dart';
 
 /// A class that represents the lore of the world
 class WorldLore {

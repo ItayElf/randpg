@@ -1,9 +1,8 @@
-import 'package:randpg/src/generators/fixable.dart';
-
 import '../../../generators/generators.dart';
 import '../../entities/settlements/settlement.dart';
 import '../../subtypes/races/race.dart';
 import '../../subtypes/settlements/settlement_type.dart';
+import '../fixable.dart';
 import 'important_characters/important_character_generator.dart';
 import 'settlement_locations_generator.dart';
 

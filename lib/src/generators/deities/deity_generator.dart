@@ -1,5 +1,3 @@
-import 'package:randpg/src/generators/fixable.dart';
-
 import '../../entities/deities/deity.dart';
 import '../../entities/npcs/alignment.dart';
 import '../../enums/gender.dart';
@@ -11,6 +9,7 @@ import '../base/list_item_generator.dart';
 import '../base/number_generator.dart';
 import '../base/seed_generator.dart';
 import '../base/unique_generator.dart';
+import '../fixable.dart';
 
 /// A class that generates deities
 class DeityGenerator implements IGenerator<Deity> {
