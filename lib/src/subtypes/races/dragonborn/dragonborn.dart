@@ -12,8 +12,10 @@ import '../../../generators/npcs/physical/face/base_face_generator.dart';
 import '../../../generators/npcs/physical/hair/scales_head_generator.dart';
 import '../../../generators/npcs/physical/skin/scales_skin_generator.dart';
 import '../../../generators/npcs/physical/special_features/base_special_feature_generator.dart';
+import '../../../generators/world/opinions/base_opinion_generator.dart';
 import '../race.dart';
 import 'names/dragonborn_name_generator.dart';
+import 'opinions/dragonborn_opinion_generator.dart';
 import 'quirks/dragonborn_quirks_generator.dart';
 
 /// A class that represents the dragonborn race
@@ -79,4 +81,10 @@ class Dragonborn implements Race {
   @override
   IGenerator<String> getSpecialFeatureGenerator(Gender gender) =>
       BaseSpecialFeatureGenerator();
+
+  @override
+  IGenerator<String> getOpinionGenerator() => MultipleGenerator([
+        BaseOpinionGenerator(),
+        DragonbornOpinionGenerator(),
+      ]);
 }

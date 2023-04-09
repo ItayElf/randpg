@@ -2,6 +2,7 @@
 
 ## Table of Contents <!-- omit in toc -->
 
+- [0.6.0](#060)
 - [0.5.2](#052)
 - [0.5.1](#051)
 - [0.5.0](#050)
@@ -12,6 +13,12 @@
 - [0.1.1](#011)
 - [0.1.0](#010)
 - [0.0.0](#000)
+
+## 0.6.0
+
+- Added world entity
+
+- Added opinions to race interface
 
 ## 0.5.2
 
