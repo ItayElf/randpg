@@ -1,7 +1,13 @@
 import 'dart:convert';
 
+import 'package:randpg/src/subtypes/worlds/lore/world_lore_type.dart';
+import 'package:randpg/src/subtypes/worlds/lore/world_lore_type_manager.dart';
+
 /// A class that represents the lore of the world
 class WorldLore {
+  /// The type of this world lore (for backwards compatibility)
+  final WorldLoreType loreType;
+
   /// Something everybody in the world knows
   final String everybodyKnows;
 
@@ -18,62 +24,67 @@ class WorldLore {
   final String nobilityBelieves;
 
   /// Somethings the gods are planning
-  final String godsPlanning;
+  final String godsPlan;
 
   /// Somethings the gods are fearing
-  final String godsFearing;
+  final String godsFear;
 
   const WorldLore({
+    required this.loreType,
     required this.everybodyKnows,
     required this.fewKnow,
     required this.nobodyKnows,
     required this.peasantsBelieve,
     required this.nobilityBelieves,
-    required this.godsPlanning,
-    required this.godsFearing,
+    required this.godsPlan,
+    required this.godsFear,
   });
 
   WorldLore copyWith({
+    WorldLoreType? loreType,
     String? everybodyKnows,
     String? fewKnow,
     String? nobodyKnows,
     String? peasantsBelieve,
     String? nobilityBelieves,
-    String? godsPlanning,
-    String? godsFearing,
+    String? godsPlan,
+    String? godsFear,
   }) {
     return WorldLore(
+      loreType: loreType ?? this.loreType,
       everybodyKnows: everybodyKnows ?? this.everybodyKnows,
       fewKnow: fewKnow ?? this.fewKnow,
       nobodyKnows: nobodyKnows ?? this.nobodyKnows,
       peasantsBelieve: peasantsBelieve ?? this.peasantsBelieve,
       nobilityBelieves: nobilityBelieves ?? this.nobilityBelieves,
-      godsPlanning: godsPlanning ?? this.godsPlanning,
-      godsFearing: godsFearing ?? this.godsFearing,
+      godsPlan: godsPlan ?? this.godsPlan,
+      godsFear: godsFear ?? this.godsFear,
     );
   }
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
+      'loreType': loreType.getLoreType(),
       'everybodyKnows': everybodyKnows,
       'fewKnow': fewKnow,
       'nobodyKnows': nobodyKnows,
       'peasantsBelieve': peasantsBelieve,
       'nobilityBelieves': nobilityBelieves,
-      'godsPlanning': godsPlanning,
-      'godsFearing': godsFearing,
+      'godsPlan': godsPlan,
+      'godsFear': godsFear,
     };
   }
 
   factory WorldLore.fromMap(Map<String, dynamic> map) {
     return WorldLore(
+      loreType: WorldLoreManager.getWorldLoreTypeByType(map['loreType']),
       everybodyKnows: map['everybodyKnows'] as String,
       fewKnow: map['fewKnow'] as String,
       nobodyKnows: map['nobodyKnows'] as String,
       peasantsBelieve: map['peasantsBelieve'] as String,
       nobilityBelieves: map['nobilityBelieves'] as String,
-      godsPlanning: map['godsPlanning'] as String,
-      godsFearing: map['godsFearing'] as String,
+      godsPlan: map['godsPlan'] as String,
+      godsFear: map['godsFear'] as String,
     );
   }
 
@@ -84,30 +95,32 @@ class WorldLore {
 
   @override
   String toString() {
-    return 'WorldLore(everybodyKnows: $everybodyKnows, fewKnow: $fewKnow, nobodyKnows: $nobodyKnows, peasantsBelieve: $peasantsBelieve, nobilityBelieves: $nobilityBelieves, godsPlanning: $godsPlanning, godsFearing: $godsFearing)';
+    return 'WorldLore(loreType: $loreType, everybodyKnows: $everybodyKnows, fewKnow: $fewKnow, nobodyKnows: $nobodyKnows, peasantsBelieve: $peasantsBelieve, nobilityBelieves: $nobilityBelieves, godsPlan: $godsPlan, godsFear: $godsFear)';
   }
 
   @override
   bool operator ==(covariant WorldLore other) {
     if (identical(this, other)) return true;
 
-    return other.everybodyKnows == everybodyKnows &&
+    return other.loreType == loreType &&
+        other.everybodyKnows == everybodyKnows &&
         other.fewKnow == fewKnow &&
         other.nobodyKnows == nobodyKnows &&
         other.peasantsBelieve == peasantsBelieve &&
         other.nobilityBelieves == nobilityBelieves &&
-        other.godsPlanning == godsPlanning &&
-        other.godsFearing == godsFearing;
+        other.godsPlan == godsPlan &&
+        other.godsFear == godsFear;
   }
 
   @override
   int get hashCode {
-    return everybodyKnows.hashCode ^
+    return loreType.hashCode ^
+        everybodyKnows.hashCode ^
         fewKnow.hashCode ^
         nobodyKnows.hashCode ^
         peasantsBelieve.hashCode ^
         nobilityBelieves.hashCode ^
-        godsPlanning.hashCode ^
-        godsFearing.hashCode;
+        godsPlan.hashCode ^
+        godsFear.hashCode;
   }
 }
