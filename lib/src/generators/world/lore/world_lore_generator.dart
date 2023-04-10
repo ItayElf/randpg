@@ -14,52 +14,51 @@ class WorldLoreGenerator implements IGenerator<WorldLore> {
 
   @override
   WorldLore generate() {
-    int tempSeed = _seed;
+    Map<String, dynamic> results = {
+      "loreType": _loreType.getLoreType(),
+    };
 
     final everybodyKnowsGenerator = _loreType.getEverybodyKnowsGenerator();
-    everybodyKnowsGenerator.seed(tempSeed);
-    final everybodyKnows = everybodyKnowsGenerator.generate();
-    tempSeed *= tempSeed;
+    results["everybodyKnows"] =
+        _getUniqueResult(everybodyKnowsGenerator, results, _seed);
 
     final fewKnowGenerator = _loreType.getFewKnowGenerator();
-    fewKnowGenerator.seed(tempSeed);
-    final fewKnow = fewKnowGenerator.generate();
-    tempSeed *= tempSeed;
+    results["fewKnow"] = _getUniqueResult(fewKnowGenerator, results, _seed);
 
     final nobodyKnowsGenerator = _loreType.getNobodyKnowsGenerator();
-    nobodyKnowsGenerator.seed(tempSeed);
-    final nobodyKnows = nobodyKnowsGenerator.generate();
-    tempSeed *= tempSeed;
+    results["nobodyKnows"] =
+        _getUniqueResult(nobodyKnowsGenerator, results, _seed);
 
     final peasantsGenerator = _loreType.getPeasantsBelieveGenerator();
-    peasantsGenerator.seed(tempSeed);
-    final peasantsBelieve = peasantsGenerator.generate();
-    tempSeed *= tempSeed;
+    results["peasantsBelieve"] =
+        _getUniqueResult(peasantsGenerator, results, _seed);
 
     final nobilityGenerator = _loreType.getNobilityBelievesGenerator();
-    nobilityGenerator.seed(tempSeed);
-    final nobilityBelieves = nobilityGenerator.generate();
-    tempSeed *= tempSeed;
+    results["nobilityBelieves"] =
+        _getUniqueResult(nobilityGenerator, results, _seed);
 
     final godsPlanGenerator = _loreType.getGodsPlanGenerator();
-    godsPlanGenerator.seed(tempSeed);
-    final godsPlan = godsPlanGenerator.generate();
-    tempSeed *= tempSeed;
+    results["godsPlan"] = _getUniqueResult(godsPlanGenerator, results, _seed);
 
     final godsFearGenerator = _loreType.getGodsFearGenerator();
-    godsFearGenerator.seed(tempSeed);
-    final godsFear = godsFearGenerator.generate();
+    results["godsFear"] = _getUniqueResult(godsFearGenerator, results, _seed);
 
-    return WorldLore(
-      loreType: _loreType,
-      everybodyKnows: everybodyKnows,
-      fewKnow: fewKnow,
-      nobodyKnows: nobodyKnows,
-      peasantsBelieve: peasantsBelieve,
-      nobilityBelieves: nobilityBelieves,
-      godsPlan: godsPlan,
-      godsFear: godsFear,
-    );
+    return WorldLore.fromMap(results);
+  }
+
+  String _getUniqueResult(
+    IGenerator<String> generator,
+    Map<String, dynamic> map,
+    int seed,
+  ) {
+    String result;
+    do {
+      generator.seed(seed % SeedGenerator.maxSeed);
+      seed = (seed * seed) + 1;
+      result = generator.generate();
+    } while (map.values.contains(result));
+
+    return result;
   }
 
   @override

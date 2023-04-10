@@ -75,6 +75,14 @@ class WorldTruthGenerator extends ListItemGenerator<String> {
     'the stars can be used to predict the future',
     'there is a hidden realm where dreams become reality',
     'the power of the gods can be stolen by mortals',
+    'the war against the dragons is going bad',
+    'the war against the behemoths is going bad',
+    'there used to be more gods',
+    'ships sink during full moons',
+    'the king has a secret army of constructs',
+    'one of the deities is dying',
+    'the local wilderness is growing rapidly',
+    'an ancient god slumbers in the temple crypts',
   ];
 
   WorldTruthGenerator() : super(_truths);
