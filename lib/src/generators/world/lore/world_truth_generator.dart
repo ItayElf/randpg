@@ -11,7 +11,7 @@ class WorldTruthGenerator extends ListItemGenerator<String> {
     'many mysterious artifacts are cursed and possess their own agendas',
     'ships that sail near the wrathful coast are frequently lost to sea',
     'the abyss is bottomless, and home to unspeakable terrors',
-    'the queens army includes a regiment of clockwork soldiers',
+    'the queen\'s army includes a regiment of clockwork soldiers',
     'the forest is said to be inhabited by malevolent spirits',
     'one of the gods is slowly fading into oblivion',
     'the wild hordes seek to dominate all other races',
