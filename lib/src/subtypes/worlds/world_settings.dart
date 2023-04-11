@@ -1,3 +1,5 @@
+import 'package:randpg/src/subtypes/worlds/lore/world_lore_type.dart';
+
 import '../../entities/deities/deity.dart';
 import '../../entities/worlds/world_lore.dart';
 import '../../generators/base/generator.dart';
@@ -39,6 +41,6 @@ abstract class WorldSettings {
   /// Returns a generator for a list of higher deities in this world settings
   IGenerator<List<Deity>> getHigherDeitiesGenerator();
 
-  /// Returns the world lore object for generating a lore for this world settings
-  WorldLore getWorldLore();
+  /// Returns the world lore type object for generating a lore for this world settings
+  WorldLoreType getWorldLore();
 }

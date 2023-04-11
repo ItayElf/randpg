@@ -15,7 +15,7 @@ import '../fixable.dart';
 class DeityGenerator implements IGenerator<Deity> {
   late int _seed;
   final DeityType _deityType;
-  final Alignment _alignment;
+  final Alignment? _alignment;
 
   static const _minDomains = 1;
   static const _maxDomains = 2;
@@ -56,7 +56,7 @@ class DeityGenerator implements IGenerator<Deity> {
   Map<String, IGenerator> _getBatch(
     Gender? gender,
     Race? worshipedBy,
-    Alignment alignment,
+    Alignment? alignment,
     int domainCount,
   ) =>
       {
@@ -67,7 +67,7 @@ class DeityGenerator implements IGenerator<Deity> {
           _deityType.getDomainGenerator(alignment),
           domainCount,
         ),
-        "alignment": ListItemGenerator([alignment.toMap()]),
+        "alignment": ListItemGenerator([alignment?.toMap()]),
         "depiction": _deityType.getDepictionGenerator(worshipedBy),
         "worshipedBy": ListItemGenerator([worshipedBy?.getName()]),
         "worshipers": _deityType.getWorshipersGenerator(),

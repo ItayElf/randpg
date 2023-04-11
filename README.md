@@ -36,6 +36,8 @@ Follow the installation instructions on dart packages.
 ## Goals
 
 - World generator
+- Kingdom Generator
+- Guild Generator
 - Waypoint Generator
   
 ### In the Future
