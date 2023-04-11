@@ -1,3 +1,5 @@
+import 'package:randpg/generators/worlds.dart';
+
 import '../../entities/worlds/world.dart';
 import '../../subtypes/worlds/world_settings.dart';
 import '../base/batch_generator.dart';
@@ -32,11 +34,11 @@ class WorldGenerator implements IGenerator<World> {
         "worldSettings": ListItemGenerator([_worldSettings.getSettingName()]),
         "settlements": FutureGenerator(
           WorldSettlementsGenerator(_worldSettings),
-          (settlements) => settlements.map((e) => e.toMap()),
+          (settlements) => settlements.map((e) => e.toMap()).toList(),
         ),
         "landscapes": FutureGenerator(
           WorldLandscapeGenerator(_worldSettings),
-          (landscapes) => landscapes.map((e) => e.toMap()),
+          (landscapes) => landscapes.map((e) => e.toMap()).toList(),
         ),
         "opinions": FutureGenerator(
           WorldOpinionsGenerator(),
@@ -53,18 +55,20 @@ class WorldGenerator implements IGenerator<World> {
         ),
         "deities": FutureGenerator(
           _worldSettings.getDeitiesGenerator(),
-          (deities) => deities.map((e) => e.toMap()),
+          (deities) => deities.map((e) => e.toMap()).toList(),
         ),
         "lesserDeities": FutureGenerator(
           _worldSettings.getLesserDeitiesGenerator(),
-          (deities) => deities.map((e) => e.toMap()),
+          (deities) => deities.map((e) => e.toMap()).toList(),
         ),
         "higherDeities": FutureGenerator(
           _worldSettings.getHigherDeitiesGenerator(),
-          (deities) => deities.map((e) => e.toMap()),
+          (deities) => deities.map((e) => e.toMap()).toList(),
         ),
-        "worldLore":
-            ListItemGenerator([_worldSettings.getWorldLore().getLoreType()])
+        "worldLore": FutureGenerator(
+          WorldLoreGenerator(_worldSettings.getWorldLore()),
+          (lore) => lore.toMap(),
+        ),
       };
 
   @override

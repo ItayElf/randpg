@@ -1,13 +1,16 @@
 import 'package:collection/collection.dart';
 
 import '../../randpg_exceptions.dart';
+import 'default_settings/default_world_settings.dart';
 import 'world_settings.dart';
 
 /// A class that handles the available world settings and using them
 ///
 /// When making a custom world settings, make sure to register it or else some features might not work
 abstract class WorldSettingsManager {
-  static final Set<WorldSettings> _worldSettingsPool = {};
+  static final Set<WorldSettings> _worldSettingsPool = {
+    DefaultWorldSettings(),
+  };
 
   static final Set<WorldSettings> _activeWorldSettings = {
     ..._worldSettingsPool

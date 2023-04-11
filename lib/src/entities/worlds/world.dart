@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:collection/collection.dart';
+import 'package:randpg/src/subtypes/races/race_manager.dart';
 
 import '../../subtypes/races/race.dart';
 import '../../subtypes/worlds/world_settings.dart';
@@ -88,7 +89,7 @@ class World {
       'worldSettings': worldSettings.getSettingName(),
       'settlements': settlements.map((x) => x.toMap()).toList(),
       'landscapes': landscapes.map((x) => x.toMap()).toList(),
-      'opinions': opinions,
+      'opinions': opinions.map((key, value) => MapEntry(key.getName(), value)),
       'importantPeople': importantPeople.map((x) => x.toMap()).toList(),
       'deities': deities.map((x) => x.toMap()).toList(),
       'lesserDeities': lesserDeities.map((x) => x.toMap()).toList(),
@@ -103,16 +104,18 @@ class World {
       worldSettings:
           WorldSettingsManager.getWorldSettingsByName(map['worldSettings']),
       settlements: List<Settlement>.from(
-        (map['settlements'] as List<int>).map<Settlement>(
-          (x) => Settlement.fromMap(x as Map<String, dynamic>),
+        (map['settlements'] as List<Map<String, dynamic>>).map<Settlement>(
+          (x) => Settlement.fromMap(x),
         ),
       ),
       landscapes: List<Landscape>.from(
-        (map['landscapes'] as List<int>).map<Landscape>(
-          (x) => Landscape.fromMap(x as Map<String, dynamic>),
+        (map['landscapes'] as List<Map<String, dynamic>>).map<Landscape>(
+          (x) => Landscape.fromMap(x),
         ),
       ),
-      opinions: Map<Race, String>.from((map['opinions'] as Map<Race, String>)),
+      opinions: (map['opinions'] as Map<String, String>).map(
+        (key, value) => MapEntry(RaceManager.getRaceByName(key), value),
+      ),
       importantPeople: List<Npc>.from(
         (map['importantPeople'] as List<Map<String, dynamic>>).map<Npc>(
           (x) => Npc.fromMap(x),
