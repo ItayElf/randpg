@@ -23,9 +23,12 @@ Follow the installation instructions on dart packages.
 ## Features
 
 * Generating names for various races
-* Generate npc data:
-  * Physical description
-  * Personality generator
+* Generate npcs
+* Generate locations and buildings inside settlements
+* Generate settlements
+* Generate landscapes
+* Generate deities
+* Generate complete worlds
 
 ## Goals
 
