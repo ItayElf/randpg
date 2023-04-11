@@ -14,7 +14,7 @@ class LibraryBooksGenerator implements IGenerator<List<Goods>> {
 
   @override
   List<Goods> generate() {
-    final quantityGenerator = NumberGenerator(_minBooks, _maxBooks);
+    final quantityGenerator = NumberGenerator(_minBooks, _maxBooks + 1);
     quantityGenerator.seed(_seed);
     final quantity = quantityGenerator.generate();
 

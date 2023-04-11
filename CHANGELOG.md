@@ -20,6 +20,9 @@
 
 - Added opinions to race interface
 
+- Added deities
+  - Primordials
+
 ## 0.5.2
 
 - Added automated publishing

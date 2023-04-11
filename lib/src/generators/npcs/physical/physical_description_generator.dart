@@ -35,7 +35,8 @@ class PhysicalDescriptionGenerator implements IGenerator<PhysicalDescription> {
   }
 
   Map<String, IGenerator> _makeBatch(Gender gender, Race race) {
-    final generator = NumberGenerator(_minSpecialFeatures, _maxSpecialFeatures);
+    final generator =
+        NumberGenerator(_minSpecialFeatures, _maxSpecialFeatures + 1);
     generator.seed(_seed);
     final features = generator.generate();
 

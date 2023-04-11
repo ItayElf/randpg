@@ -14,7 +14,7 @@ class TempleServicesGenerator implements IGenerator<List<Goods>> {
 
   @override
   List<Goods> generate() {
-    final quantityGenerator = NumberGenerator(_minServices, _maxServices);
+    final quantityGenerator = NumberGenerator(_minServices, _maxServices + 1);
     quantityGenerator.seed(_seed);
     final quantity = quantityGenerator.generate();
 

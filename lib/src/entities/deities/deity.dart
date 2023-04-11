@@ -14,8 +14,8 @@ class Deity {
   /// The name of the deity
   final String name;
 
-  /// The gender of the deity
-  final Gender gender;
+  /// The gender of the deity, null for genderless
+  final Gender? gender;
 
   /// The type of the deity (god, angel, demon, etc.)
   final DeityType deityType;
@@ -23,8 +23,8 @@ class Deity {
   /// A list of domains related to this deity
   final List<String> domains;
 
-  /// The alignment of this deity
-  final Alignment alignment;
+  /// The alignment of this deity, null for unaligned
+  final Alignment? alignment;
 
   /// How this deity is depicted
   final String depiction;
@@ -46,10 +46,10 @@ class Deity {
 
   const Deity({
     required this.name,
-    required this.gender,
+    this.gender,
     required this.deityType,
     required this.domains,
-    required this.alignment,
+    this.alignment,
     required this.depiction,
     this.worshipedBy,
     required this.worshipers,
@@ -89,10 +89,10 @@ class Deity {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'name': name,
-      'gender': gender.name,
+      'gender': gender?.name,
       'deityType': deityType.getDeityType(),
       'domains': domains,
-      'alignment': alignment.toMap(),
+      'alignment': alignment?.toMap(),
       'depiction': depiction,
       'worshipedBy': worshipedBy?.getName(),
       'worshipers': worshipers,
@@ -105,10 +105,13 @@ class Deity {
   factory Deity.fromMap(Map<String, dynamic> map) {
     return Deity(
       name: map['name'] as String,
-      gender: Gender.values.byName(map['gender']),
+      gender:
+          map['gender'] != null ? Gender.values.byName(map['gender']) : null,
       deityType: DeityManager.getDeityTypeByType(map['deityType']),
       domains: List<String>.from((map['domains'] as List<String>)),
-      alignment: Alignment.fromMap(map['alignment'] as Map<String, dynamic>),
+      alignment: map['alignment'] != null
+          ? Alignment.fromMap(map['alignment'] as Map<String, dynamic>)
+          : null,
       depiction: map['depiction'] as String,
       worshipedBy: map['worshipedBy'] != null
           ? RaceManager.getRaceByName(map['worshipedBy'])

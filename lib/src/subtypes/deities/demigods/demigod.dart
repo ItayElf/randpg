@@ -5,7 +5,7 @@ import '../../../generators/base/list_item_generator.dart';
 import '../../../generators/base/multiple_generator.dart';
 import '../../../generators/deities/attributes/deity_negative_attribute_generator.dart';
 import '../../../generators/deities/attributes/deity_positive_attribute_generator.dart';
-import '../../../generators/deities/depiction/deity_figure_depiction_generator.dart';
+import '../../../generators/deities/depiction/deity_being_depiction_generator.dart';
 import '../../../generators/deities/depiction/deity_race_depiction_generator.dart';
 import '../../../generators/deities/domains/deity_domain_generator.dart';
 import '../../../generators/deities/names/deity_race_name_generator.dart';
@@ -27,7 +27,7 @@ class Demigod implements DeityType {
   };
 
   @override
-  String getDeityTitle(Gender gender) {
+  String getDeityTitle(Gender? gender) {
     if (_deityTitles.containsKey(gender)) {
       return _deityTitles[gender]!;
     }
@@ -40,19 +40,19 @@ class Demigod implements DeityType {
   @override
   IGenerator<String> getDepictionGenerator(Race? worshipedBy) =>
       MultipleGenerator([
-        DeityFigureDepictionGenerator(worshipedBy),
+        DeityBeingDepictionGenerator(worshipedBy),
         if (worshipedBy != null) DeityRaceDepictionGenerator(worshipedBy),
       ]);
 
   @override
-  IGenerator<String> getDomainGenerator(Alignment alignment) =>
+  IGenerator<String> getDomainGenerator(Alignment? alignment) =>
       DeityDomainGenerator(alignment);
 
   @override
   IGenerator<Gender> getGenderGenerator() => ListItemGenerator(Gender.values);
 
   @override
-  IGenerator<String> getNameGenerator(Gender gender, Race? worshipedBy) =>
+  IGenerator<String> getNameGenerator(Gender? gender, Race? worshipedBy) =>
       DeityRaceNameGenerator(gender, worshipedBy);
 
   @override

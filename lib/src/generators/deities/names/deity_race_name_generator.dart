@@ -8,7 +8,7 @@ import '../../base/seed_generator.dart';
 /// A class that generates deity names based on a race
 class DeityRaceNameGenerator implements IGenerator<String> {
   late int _seed;
-  final Gender _gender;
+  Gender? _gender;
   Race? _worshipedBy;
 
   DeityRaceNameGenerator(this._gender, this._worshipedBy) {
@@ -23,8 +23,14 @@ class DeityRaceNameGenerator implements IGenerator<String> {
       _worshipedBy = raceGenerator.generate();
     }
 
-    final generator = _worshipedBy!.getNameGenerator(_gender);
-    generator.seed((_seed + 1) % SeedGenerator.maxSeed);
+    if (_gender == null) {
+      final genderGenerator = ListItemGenerator(Gender.values);
+      genderGenerator.seed((_seed + 1) % SeedGenerator.maxSeed);
+      _gender = genderGenerator.generate();
+    }
+
+    final generator = _worshipedBy!.getNameGenerator(_gender!);
+    generator.seed((_seed + 2) % SeedGenerator.maxSeed);
     return generator.generate().split(" ").first;
   }
 
