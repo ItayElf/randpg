@@ -1,10 +1,9 @@
-import 'package:randpg/generators/custom/custom_races.dart';
-import 'package:randpg/generators/deities.dart';
-import 'package:randpg/src/generators/base/seed_generator.dart';
-
 import '../../../entities/deities/deity.dart';
 import '../../../subtypes/deities/deity_type.dart';
 import '../../base/generator.dart';
+import '../../base/seed_generator.dart';
+import '../../deities/deity_generator.dart';
+import '../../npcs/personality/alignment/base_alignment_generator.dart';
 
 /// A class that generates world deities by type and count
 class WorldDeitiesBatchGenerator implements IGenerator<List<Deity>> {

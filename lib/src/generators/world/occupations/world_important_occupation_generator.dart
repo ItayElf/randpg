@@ -1,4 +1,4 @@
-import 'package:randpg/src/generators/base/list_item_generator.dart';
+import '../../base/list_item_generator.dart';
 
 class WorldImportantOccupationGenerator extends ListItemGenerator<String> {
   static const _occupations = [

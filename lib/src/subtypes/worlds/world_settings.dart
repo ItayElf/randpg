@@ -1,10 +1,8 @@
-import 'package:randpg/src/subtypes/worlds/lore/world_lore_type.dart';
-
 import '../../entities/deities/deity.dart';
-import '../../entities/worlds/world_lore.dart';
 import '../../generators/base/generator.dart';
 import '../landscapes/landscape_type.dart';
 import '../settlements/settlement_type.dart';
+import 'lore/world_lore_type.dart';
 
 /// A class that represents an abstract world settings
 abstract class WorldSettings {
