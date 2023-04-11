@@ -45,7 +45,7 @@ class Demigod implements DeityType {
       ]);
 
   @override
-  IGenerator<String> getDomainGenerator(Alignment alignment) =>
+  IGenerator<String> getDomainGenerator(Alignment? alignment) =>
       DeityDomainGenerator(alignment);
 
   @override

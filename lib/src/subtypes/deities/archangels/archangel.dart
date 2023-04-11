@@ -36,7 +36,7 @@ class Archangel implements DeityType, Fixable<Deity> {
       DeityBeingDepictionGenerator(null);
 
   @override
-  IGenerator<String> getDomainGenerator(Alignment alignment) =>
+  IGenerator<String> getDomainGenerator(Alignment? alignment) =>
       DeityDomainGenerator(_defaultAlignment);
 
   @override

@@ -18,7 +18,7 @@ abstract class DeityType {
   String getDeityTitle(Gender gender);
 
   /// Returns a generator for one domain this being is related to
-  IGenerator<String> getDomainGenerator(Alignment alignment);
+  IGenerator<String> getDomainGenerator(Alignment? alignment);
 
   /// Returns a generator for how this being is depicted
   IGenerator<String> getDepictionGenerator(Race? worshipedBy);

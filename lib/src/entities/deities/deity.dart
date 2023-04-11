@@ -23,8 +23,8 @@ class Deity {
   /// A list of domains related to this deity
   final List<String> domains;
 
-  /// The alignment of this deity
-  final Alignment alignment;
+  /// The alignment of this deity, null for unaligned
+  final Alignment? alignment;
 
   /// How this deity is depicted
   final String depiction;
@@ -49,7 +49,7 @@ class Deity {
     required this.gender,
     required this.deityType,
     required this.domains,
-    required this.alignment,
+    this.alignment,
     required this.depiction,
     this.worshipedBy,
     required this.worshipers,
@@ -92,7 +92,7 @@ class Deity {
       'gender': gender.name,
       'deityType': deityType.getDeityType(),
       'domains': domains,
-      'alignment': alignment.toMap(),
+      'alignment': alignment?.toMap(),
       'depiction': depiction,
       'worshipedBy': worshipedBy?.getName(),
       'worshipers': worshipers,
@@ -108,7 +108,9 @@ class Deity {
       gender: Gender.values.byName(map['gender']),
       deityType: DeityManager.getDeityTypeByType(map['deityType']),
       domains: List<String>.from((map['domains'] as List<String>)),
-      alignment: Alignment.fromMap(map['alignment'] as Map<String, dynamic>),
+      alignment: map['alignment'] != null
+          ? Alignment.fromMap(map['alignment'] as Map<String, dynamic>)
+          : null,
       depiction: map['depiction'] as String,
       worshipedBy: map['worshipedBy'] != null
           ? RaceManager.getRaceByName(map['worshipedBy'])
