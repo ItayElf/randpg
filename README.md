@@ -15,12 +15,6 @@ To view the changelog, [click here](./CHANGELOG.md)
 - [Goals](#goals)
   - [In the Future](#in-the-future)
 - [Usage](#usage)
-  - [Generating names](#generating-names)
-  - [Generating npcs](#generating-npcs)
-  - [Generating locations\\buildings](#generating-locationsbuildings)
-  - [Generating settlements](#generating-settlements)
-  - [Generating landscapes](#generating-landscapes)
-  - [Generating deities](#generating-deities)
 
 ## Installation
 
@@ -47,76 +41,7 @@ Follow the installation instructions on dart packages.
 
 ## Usage
 
-*For detailed examples check the [examples folder](./example/)*
+For simple examples, [click here](./example/example.md)
 
-### Generating names
+For detailed examples check the [examples folder](./example/)
 
-Generating a male halfling name as an example:
-
-```dart
-final Gender gender = Gender.male;
-final Race race = Halfling();
-final nameGenerator = race.getNameGenerator(gender);
-
-// if you want to seed the generator:
-nameGenerator.seed(1234);
-
-print(nameGenerator.generate()); // expected output: "Cormin Shadowheart"
-```
-*output might be different since dart random seed is different on different machines* 
-
-### Generating npcs
-
-Generating an elf npc as an example:
-```dart
-final Race race = Elf();
-final npcGenerator = NpcGenerator(race);
-
-print(npcGenerator.generate());
-```
-
-### Generating locations\buildings
-
-Generating a tavern whose owner is a dwarf as an example:
-```dart
-final LocationType locationType = Tavern();
-final Race ownerRace = Dwarf();
-
-final locationGenerator = LocationGenerator(locationType, ownerRace);
-print(locationGenerator.generate());
-```
-
-### Generating settlements
-
-Generating a town of mostly orcs as an example:
-```dart
-final SettlementType settlementType = Town();
-final Race dominantRace = Orc();
-
-final settlementGenerator = SettlementGenerator(settlementType, dominantRace);
-print(settlementGenerator.generate());
-```
-
-### Generating landscapes
-
-Generating a swamp as an example:
-```dart
-final LandscapeType landscapeType = Swamp();
-
-final landscapeGenerator = LandscapeGenerator(landscapeType);
-print(landscapeGenerator.generate());
-```
-
-### Generating deities
-
-Generating a lawful good god/goddess as an example:
-```dart
-final Alignment alignment = Alignment(
-  ethical: EthicalAlignment.lawful,
-  moral: MoralAlignment.good,
-);
-final DeityType deityType = God();
-
-final deityGenerator = DeityGenerator(deityType, alignment);
-print(deityGenerator.generate());
-```
