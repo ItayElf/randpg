@@ -2,7 +2,7 @@
 
 [![pub package](https://img.shields.io/pub/v/randpg.svg)](https://pub.dev/packages/randpg)
 
-Randpg is a package for generating random rpg entities like npcs, settlements and even worlds.
+Randpg is a package for generating many random entities for rpg fantasy games, from names and npcs to entire worlds! Many of the features in this package can be expanded, such as adding other races or types of settlements, to add along side the existing types.
 
 *This package is still in development and some versions might not be backwards compatible before v1.0.0.*
 
@@ -32,7 +32,6 @@ Follow the installation instructions on dart packages.
 
 ## Goals
 
-- World generator
 - Kingdom Generator
 - Guild Generator
 - Waypoint Generator
