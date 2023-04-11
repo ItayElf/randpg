@@ -16,7 +16,7 @@
 
 ## 0.6.0
 
-- Added world entity
+- Added world generation
 
 - Added opinions to race interface
 
