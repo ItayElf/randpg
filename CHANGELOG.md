@@ -23,6 +23,8 @@
 - Added deities
   - Primordials
 
+- Improved the seeding of the base generators
+
 ## 0.5.2
 
 - Added automated publishing
