@@ -1,6 +1,6 @@
 name: randpg
-description: A library for generating random rpg entities.
-version: 0.5.2
+description: A package for generating random rpg entities. This package allows generating many random entities for rpg fantasy games, from names and npcs to entire worlds! Many of the features in this package can be expanded, such as adding other races or types of settlements, to add along side the existing types. 
+version: 0.6.0
 repository: https://github.com/ItayElf/randpg
 
 environment:

@@ -24,8 +24,8 @@ class TavernGoodsGenerator implements IGenerator<List<Goods>> {
   @override
   List<Goods> generate() {
     final quantityGenerator = BatchGenerator({
-      "drinks": NumberGenerator(_minNumberOfDrinks, _maxNumberOfDrinks),
-      "meals": NumberGenerator(_minNumberOfMeals, _maxNumberOfMeals),
+      "drinks": NumberGenerator(_minNumberOfDrinks, _maxNumberOfDrinks + 1),
+      "meals": NumberGenerator(_minNumberOfMeals, _maxNumberOfMeals + 1),
     });
     quantityGenerator.seed(_seed);
     final quantities = quantityGenerator.generate();

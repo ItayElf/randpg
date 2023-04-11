@@ -1,5 +1,3 @@
-import 'package:randpg/src/generators/fixable.dart';
-
 import '../../../entities/npcs/npc.dart';
 import '../../../entities/settlements/location.dart';
 import '../../../subtypes/locations/location_type.dart';
@@ -10,6 +8,7 @@ import '../../base/generator.dart';
 import '../../base/list_item_generator.dart';
 import '../../base/seed_generator.dart';
 import '../../base/unique_generator.dart';
+import '../../fixable.dart';
 import '../../npcs/npc_generator.dart';
 
 /// A class that generates locations based on [_locationType]

@@ -15,16 +15,16 @@ class UniqueGenerator<T> implements IGenerator<List<T>> {
   @override
   List<T> generate() {
     final List<T> returnValue = [];
-    int counter = 0;
+    int tempSeed = _seed;
 
     while (returnValue.length < _n) {
-      _generator.seed((_seed + counter) % SeedGenerator.maxSeed);
+      _generator.seed(tempSeed % SeedGenerator.maxSeed);
 
       final item = _generator.generate();
       if (!returnValue.contains(item)) {
         returnValue.add(item);
       }
-      counter++;
+      tempSeed = (tempSeed * tempSeed) + 1;
     }
     return returnValue;
   }

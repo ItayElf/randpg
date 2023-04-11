@@ -14,8 +14,10 @@ import '../../../generators/npcs/physical/face/base_face_generator.dart';
 import '../../../generators/npcs/physical/hair/base_hair_generator.dart';
 import '../../../generators/npcs/physical/skin/base_skin_generator.dart';
 import '../../../generators/npcs/physical/special_features/base_special_feature_generator.dart';
+import '../../../generators/world/opinions/base_opinion_generator.dart';
 import '../race.dart';
 import 'names/dwarf_name_generator.dart';
+import 'opinions/dwarf_opinion_generator.dart';
 import 'quirks/dwarf_quirks_generator.dart';
 
 /// A class that represents the dwarf race
@@ -30,7 +32,7 @@ class Dwarf implements Race {
 
   @override
   IGenerator<int> getAgeGenerator(Gender gender) =>
-      NumberGenerator(14, _maxAge);
+      NumberGenerator(14, _maxAge + 1);
 
   @override
   IGenerator<Alignment> getAlignmentGenerator() => BaseAlignmentGenerator();
@@ -53,7 +55,7 @@ class Dwarf implements Race {
 
   @override
   IGenerator<int> getHeightGenerator(Gender gender) =>
-      NumberGenerator(_minHeight, _maxHeight);
+      NumberGenerator(_minHeight, _maxHeight + 1);
 
   @override
   String getName() => _raceName;
@@ -81,4 +83,10 @@ class Dwarf implements Race {
   @override
   IGenerator<String> getSpecialFeatureGenerator(Gender gender) =>
       BaseSpecialFeatureGenerator();
+
+  @override
+  IGenerator<String> getOpinionGenerator() => MultipleGenerator([
+        BaseOpinionGenerator(),
+        DwarfOpinionGenerator(),
+      ]);
 }

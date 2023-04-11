@@ -12,13 +12,11 @@ class ListBatchGenerator<T> implements IGenerator<List<T>> {
 
   @override
   List<T> generate() {
-    List<IGenerator<T>> generators = List.from(_pool);
-
-    for (int i = 0; i < generators.length; i++) {
-      generators[i].seed((_seed + i) % SeedGenerator.maxSeed);
+    for (int i = 0; i < _pool.length; i++) {
+      _pool[i].seed((_seed + i * i) % SeedGenerator.maxSeed);
     }
 
-    return generators.map((generator) => generator.generate()).toList();
+    return _pool.map((generator) => generator.generate()).toList();
   }
 
   @override

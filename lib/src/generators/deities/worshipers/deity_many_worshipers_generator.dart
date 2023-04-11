@@ -1,4 +1,4 @@
-import 'package:randpg/generators/generators.dart';
+import '../../base/list_item_generator.dart';
 
 /// A class that generates a description for how many worshippers a deity has
 class DeityManyWorshipersGenerator extends ListItemGenerator<String> {

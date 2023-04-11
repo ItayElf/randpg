@@ -1,5 +1,3 @@
-import 'package:randpg/src/generators/fixable.dart';
-
 import '../../entities/landscapes/landscape.dart';
 import '../../subtypes/landscapes/landscape_type.dart';
 import '../base/batch_generator.dart';
@@ -7,6 +5,7 @@ import '../base/generator.dart';
 import '../base/list_item_generator.dart';
 import '../base/seed_generator.dart';
 import '../base/unique_generator.dart';
+import '../fixable.dart';
 
 /// A class that generates landscapes
 class LandscapeGenerator implements IGenerator<Landscape> {
