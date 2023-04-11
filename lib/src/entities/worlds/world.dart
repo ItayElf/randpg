@@ -1,9 +1,9 @@
 import 'dart:convert';
 
 import 'package:collection/collection.dart';
-import 'package:randpg/src/subtypes/races/race_manager.dart';
 
 import '../../subtypes/races/race.dart';
+import '../../subtypes/races/race_manager.dart';
 import '../../subtypes/worlds/world_settings.dart';
 import '../../subtypes/worlds/world_settings_manager.dart';
 import '../deities/deity.dart';

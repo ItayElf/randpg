@@ -1,5 +1,3 @@
-import 'package:randpg/generators/worlds.dart';
-
 import '../../entities/worlds/world.dart';
 import '../../subtypes/worlds/world_settings.dart';
 import '../base/batch_generator.dart';
@@ -10,6 +8,7 @@ import '../base/seed_generator.dart';
 import '../base/unique_generator.dart';
 import 'important_people/world_important_people_generator.dart';
 import 'landscapes/world_landscapes_generator.dart';
+import 'lore/world_lore_generator.dart';
 import 'opinions/world_opinions_generator.dart';
 import 'settlements/world_settlements_generator.dart';
 

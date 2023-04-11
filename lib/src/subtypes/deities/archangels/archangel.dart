@@ -1,5 +1,3 @@
-import 'package:randpg/src/subtypes/deities/archangels/domains/archangels_domains_generator.dart';
-
 import '../../../../entities/deities.dart';
 import '../../../entities/npcs/alignment.dart';
 import '../../../enums/alignment.dart';
@@ -9,13 +7,13 @@ import '../../../generators/base/list_item_generator.dart';
 import '../../../generators/deities/attributes/deity_negative_attribute_generator.dart';
 import '../../../generators/deities/attributes/deity_positive_attribute_generator.dart';
 import '../../../generators/deities/depiction/deity_being_depiction_generator.dart';
-import '../../../generators/deities/domains/deity_domain_generator.dart';
 import '../../../generators/deities/names/deity_race_name_generator.dart';
 import '../../../generators/deities/shrines/deity_few_shrines_generator.dart';
 import '../../../generators/deities/worshipers/deity_few_worshipers_generator.dart';
 import '../../../generators/fixable.dart';
 import '../../races/race.dart';
 import '../deity_type.dart';
+import 'domains/archangels_domains_generator.dart';
 
 /// A class that represents the archangel deity type
 class Archangel implements DeityType, Fixable<Deity> {
