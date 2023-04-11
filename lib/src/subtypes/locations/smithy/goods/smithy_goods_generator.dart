@@ -14,7 +14,7 @@ class SmithyGoodsGenerator implements IGenerator<List<Goods>> {
 
   @override
   List<Goods> generate() {
-    final quantityGenerator = NumberGenerator(_minGoods, _maxGoods);
+    final quantityGenerator = NumberGenerator(_minGoods, _maxGoods + 1);
     quantityGenerator.seed(_seed);
     final quantity = quantityGenerator.generate();
 

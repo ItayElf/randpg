@@ -6,6 +6,7 @@ import 'deity_type.dart';
 import 'demigods/demigod.dart';
 import 'demon_lords/demon_lord.dart';
 import 'gods/god.dart';
+import 'primordials/primordial.dart';
 
 /// A class that handles the available deities and using them
 ///
@@ -16,6 +17,7 @@ abstract class DeityManager {
     Demigod(),
     DemonLord(),
     Archangel(),
+    Primordial(),
   };
 
   static final Set<DeityType> _activeDeityTypes = {..._deityTypes};

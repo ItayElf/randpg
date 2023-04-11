@@ -1,3 +1,4 @@
+import '../../../strings_manipulations.dart';
 import '../../../subtypes/races/race.dart';
 import '../../base/generator.dart';
 import '../../base/list_item_generator.dart';
@@ -19,7 +20,7 @@ class DeityRaceDepictionGenerator implements IGenerator<String> {
     generator.seed(_seed);
     final animal = generator.generate();
 
-    return "${_worshipedBy.getName()} with $animal features";
+    return "${article(_worshipedBy.getName())} with $animal features";
   }
 
   @override

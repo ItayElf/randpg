@@ -66,7 +66,7 @@ class Metropolis implements SettlementType {
 
   @override
   IGenerator<int> getPopulationGenerator() => FutureGenerator(
-        NumberGenerator(_minPopulation, _maxPopulation),
+        NumberGenerator(_minPopulation, _maxPopulation + 1),
         (result) => result ~/ 10 * 10,
       );
 

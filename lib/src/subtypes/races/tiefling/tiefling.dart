@@ -27,7 +27,7 @@ class Tiefling implements Race {
 
   @override
   IGenerator<int> getAgeGenerator(Gender gender) =>
-      NumberGenerator(14, _maxAge);
+      NumberGenerator(14, _maxAge + 1);
 
   @override
   IGenerator<Alignment> getAlignmentGenerator() => TieflingAlignmentGenerator();
@@ -51,7 +51,7 @@ class Tiefling implements Race {
 
   @override
   IGenerator<int> getHeightGenerator(Gender gender) =>
-      NumberGenerator(_minHeight, _maxHeight);
+      NumberGenerator(_minHeight, _maxHeight + 1);
 
   @override
   String getName() => _raceName;

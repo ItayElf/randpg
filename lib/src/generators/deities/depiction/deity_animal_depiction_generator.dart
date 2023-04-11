@@ -1,3 +1,4 @@
+import '../../../strings_manipulations.dart';
 import '../../base/batch_generator.dart';
 import '../../base/generator.dart';
 import '../../base/list_item_generator.dart';
@@ -21,7 +22,7 @@ class DeityAnimalDepictionGenerator implements IGenerator<String> {
     generator.seed(_seed);
     final results = generator.generate();
 
-    return "${results["description"]} ${results["animal"]}";
+    return "${article(results["description"])} ${results["animal"]}";
   }
 
   @override

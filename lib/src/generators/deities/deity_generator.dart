@@ -1,5 +1,3 @@
-import 'package:randpg/src/generators/fixable.dart';
-
 import '../../entities/deities/deity.dart';
 import '../../entities/npcs/alignment.dart';
 import '../../enums/gender.dart';
@@ -11,6 +9,7 @@ import '../base/list_item_generator.dart';
 import '../base/number_generator.dart';
 import '../base/seed_generator.dart';
 import '../base/unique_generator.dart';
+import '../fixable.dart';
 
 /// A class that generates deities
 class DeityGenerator implements IGenerator<Deity> {
@@ -35,7 +34,7 @@ class DeityGenerator implements IGenerator<Deity> {
     raceGenerator.seed((_seed + 1) % SeedGenerator.maxSeed);
     final worshipedBy = raceGenerator.generate();
 
-    final domainCountGenerator = NumberGenerator(_minDomains, _maxDomains);
+    final domainCountGenerator = NumberGenerator(_minDomains, _maxDomains + 1);
     domainCountGenerator.seed((_seed + 2) % SeedGenerator.maxSeed);
     final domainCount = domainCountGenerator.generate();
 
@@ -55,14 +54,14 @@ class DeityGenerator implements IGenerator<Deity> {
   }
 
   Map<String, IGenerator> _getBatch(
-    Gender gender,
+    Gender? gender,
     Race? worshipedBy,
     Alignment alignment,
     int domainCount,
   ) =>
       {
         "name": _deityType.getNameGenerator(gender, worshipedBy),
-        "gender": ListItemGenerator([gender.name]),
+        "gender": ListItemGenerator([gender?.name]),
         "deityType": ListItemGenerator([_deityType.getDeityType()]),
         "domains": UniqueGenerator(
           _deityType.getDomainGenerator(alignment),

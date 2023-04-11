@@ -7,8 +7,8 @@ export '../../src/generators/deities/attributes/deity_positive_attribute_generat
 
 export '../../src/generators/deities/depiction/deity_animal_depiction_generator.dart'
     show DeityAnimalDepictionGenerator;
-export '../../src/generators/deities/depiction/deity_figure_depiction_generator.dart'
-    show DeityFigureDepictionGenerator;
+export '../../src/generators/deities/depiction/deity_being_depiction_generator.dart'
+    show DeityBeingDepictionGenerator;
 export '../../src/generators/deities/depiction/deity_race_depiction_generator.dart'
     show DeityRaceDepictionGenerator;
 
