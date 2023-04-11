@@ -5,7 +5,7 @@ import '../../subtypes/worlds/lore/world_lore_manager.dart';
 
 /// A class that represents the lore of the world
 class WorldLore {
-  /// The type of this world lore (for backwards compatibility)
+  /// The type of this world lore
   final WorldLoreType loreType;
 
   /// Something everybody in the world knows

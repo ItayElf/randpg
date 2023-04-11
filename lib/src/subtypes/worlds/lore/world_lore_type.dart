@@ -2,7 +2,7 @@ import '../../../generators/base/generator.dart';
 
 /// A class that represents a world lore type
 abstract class WorldLoreType {
-  /// Returns the type of the lore (for backwards compatibility)
+  /// Returns the type of the lore
   String getLoreType();
 
   /// Returns a generator for something everybody knows
