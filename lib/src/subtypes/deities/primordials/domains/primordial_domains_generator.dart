@@ -28,7 +28,7 @@ class PrimordialDomainGenerator extends ListItemGenerator<String> {
     'harmony',
     'consciousness',
     'unknowable secrets',
-    'eldritch magics',
+    'eldritch magic',
     'natural disasters',
     'disease',
     'life',

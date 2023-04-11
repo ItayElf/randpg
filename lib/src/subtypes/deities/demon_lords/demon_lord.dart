@@ -1,3 +1,5 @@
+import 'package:randpg/src/subtypes/deities/demon_lords/domains/demon_lord_domain_generator.dart';
+
 import '../../../../entities/deities.dart';
 import '../../../entities/npcs/alignment.dart';
 import '../../../enums/alignment.dart';
@@ -48,7 +50,7 @@ class DemonLord implements DeityType, Fixable<Deity> {
 
   @override
   IGenerator<String> getDomainGenerator(Alignment? alignment) =>
-      DeityDomainGenerator(_defaultAlignment);
+      DemonLordsDomainGenerator();
 
   @override
   IGenerator<Gender> getGenderGenerator() => ListItemGenerator(Gender.values);

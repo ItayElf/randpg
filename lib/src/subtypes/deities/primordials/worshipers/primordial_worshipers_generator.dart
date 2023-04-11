@@ -4,15 +4,15 @@ import '../../../../generators/base/list_item_generator.dart';
 class PrimordialWorshipersGenerator extends ListItemGenerator<String> {
   static const _worshipers = [
     "no",
-    "monsters as",
-    "druids as",
-    "elementals as",
-    "shamans as",
-    "monks as",
+    "monsters",
+    "druids",
+    "elementals",
+    "shamans",
+    "monks",
     "almost no",
     "lost",
-    "lesser deities as",
-    "witches and warlocks as",
+    "lesser deities",
+    "witches and warlocks",
   ];
 
   PrimordialWorshipersGenerator() : super(_worshipers);

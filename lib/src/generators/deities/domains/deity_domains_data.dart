@@ -113,7 +113,6 @@ const deityChaoticDomains = [
   'madness',
   'trickery',
   'deception',
-  'discord',
   'anarchy',
   'violence',
   'destruction',

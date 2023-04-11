@@ -1,3 +1,5 @@
+import 'package:randpg/src/subtypes/deities/archangels/domains/archangels_domains_generator.dart';
+
 import '../../../../entities/deities.dart';
 import '../../../entities/npcs/alignment.dart';
 import '../../../enums/alignment.dart';
@@ -37,7 +39,7 @@ class Archangel implements DeityType, Fixable<Deity> {
 
   @override
   IGenerator<String> getDomainGenerator(Alignment? alignment) =>
-      DeityDomainGenerator(_defaultAlignment);
+      ArchangelsDomainGenerator();
 
   @override
   IGenerator<Gender> getGenderGenerator() => ListItemGenerator(Gender.values);
