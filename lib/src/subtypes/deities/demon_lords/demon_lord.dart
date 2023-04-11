@@ -6,7 +6,7 @@ import '../../../generators/base/generator.dart';
 import '../../../generators/base/list_item_generator.dart';
 import '../../../generators/deities/attributes/deity_negative_attribute_generator.dart';
 import '../../../generators/deities/attributes/deity_positive_attribute_generator.dart';
-import '../../../generators/deities/depiction/deity_figure_depiction_generator.dart';
+import '../../../generators/deities/depiction/deity_being_depiction_generator.dart';
 import '../../../generators/deities/domains/deity_domain_generator.dart';
 import '../../../generators/deities/names/deity_race_name_generator.dart';
 import '../../../generators/deities/shrines/deity_few_shrines_generator.dart';
@@ -43,7 +43,7 @@ class DemonLord implements DeityType, Fixable<Deity> {
 
   @override
   IGenerator<String> getDepictionGenerator(Race? worshipedBy) =>
-      DeityFigureDepictionGenerator(null);
+      DeityBeingDepictionGenerator(null);
 
   @override
   IGenerator<String> getDomainGenerator(Alignment alignment) =>

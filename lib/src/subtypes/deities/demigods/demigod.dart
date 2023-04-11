@@ -5,7 +5,7 @@ import '../../../generators/base/list_item_generator.dart';
 import '../../../generators/base/multiple_generator.dart';
 import '../../../generators/deities/attributes/deity_negative_attribute_generator.dart';
 import '../../../generators/deities/attributes/deity_positive_attribute_generator.dart';
-import '../../../generators/deities/depiction/deity_figure_depiction_generator.dart';
+import '../../../generators/deities/depiction/deity_being_depiction_generator.dart';
 import '../../../generators/deities/depiction/deity_race_depiction_generator.dart';
 import '../../../generators/deities/domains/deity_domain_generator.dart';
 import '../../../generators/deities/names/deity_race_name_generator.dart';
@@ -40,7 +40,7 @@ class Demigod implements DeityType {
   @override
   IGenerator<String> getDepictionGenerator(Race? worshipedBy) =>
       MultipleGenerator([
-        DeityFigureDepictionGenerator(worshipedBy),
+        DeityBeingDepictionGenerator(worshipedBy),
         if (worshipedBy != null) DeityRaceDepictionGenerator(worshipedBy),
       ]);
 
