@@ -63,3 +63,11 @@ class WorldLoreTypeNotFoundException extends RandpgException {
   @override
   String toString() => msg ?? "WorldLoreTypeNotFoundException";
 }
+
+/// An exception that is thrown when a not supported loreType is being used
+class WorldSettingsNotFoundException extends RandpgException {
+  const WorldSettingsNotFoundException([super.msg]);
+
+  @override
+  String toString() => msg ?? "WorldSettingsNotFoundException";
+}
