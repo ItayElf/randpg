@@ -1,3 +1,4 @@
+import '../../../strings_manipulations.dart';
 import '../../../subtypes/races/race.dart';
 import '../../base/generator.dart';
 import '../../base/list_item_generator.dart';
@@ -24,7 +25,7 @@ class DeityBeingDepictionGenerator implements IGenerator<String> {
     );
     generator.seed(_seed);
 
-    return "${generator.generate().join(" and ")} ${(_worshipedBy?.getName() ?? "being")}";
+    return "${article(generator.generate().join(" and "))} ${(_worshipedBy?.getName() ?? "being")}";
   }
 
   @override
