@@ -41,3 +41,7 @@ export '../../src/generators/npcs/personality/quirks/base_personality_quirk_gene
     show BasePersonalityQuirkGenerator;
 export '../../src/generators/npcs/personality/traits/personality_trait_generator.dart'
     show BasePersonalityTraitGenerator;
+
+// ---------------------- Opinions ---------------------
+export '../../src/generators/world/opinions/base_opinion_generator.dart'
+    show BaseOpinionGenerator;

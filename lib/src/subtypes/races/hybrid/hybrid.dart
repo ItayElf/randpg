@@ -110,4 +110,10 @@ class Hybrid implements Race {
         firstRace.getSpecialFeatureGenerator(gender),
         secondRace.getSpecialFeatureGenerator(gender),
       ]);
+
+  @override
+  IGenerator<String> getOpinionGenerator() => MultipleGenerator([
+        firstRace.getOpinionGenerator(),
+        secondRace.getOpinionGenerator(),
+      ]);
 }

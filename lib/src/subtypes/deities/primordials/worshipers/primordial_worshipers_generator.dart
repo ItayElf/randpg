@@ -1,4 +1,4 @@
-import 'package:randpg/generators/generators.dart';
+import '../../../../generators/base/list_item_generator.dart';
 
 /// A class that generates a description for primordials worshipers
 class PrimordialWorshipersGenerator extends ListItemGenerator<String> {
