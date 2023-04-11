@@ -30,7 +30,7 @@ class God implements DeityType {
   };
 
   @override
-  String getDeityTitle(Gender gender) {
+  String getDeityTitle(Gender? gender) {
     if (_deityTitles.containsKey(gender)) {
       return _deityTitles[gender]!;
     }
@@ -56,7 +56,7 @@ class God implements DeityType {
   IGenerator<Gender> getGenderGenerator() => ListItemGenerator(Gender.values);
 
   @override
-  IGenerator<String> getNameGenerator(Gender gender, Race? worshipedBy) =>
+  IGenerator<String> getNameGenerator(Gender? gender, Race? worshipedBy) =>
       DeityRaceNameGenerator(gender, worshipedBy);
 
   @override

@@ -26,7 +26,7 @@ class Archangel implements DeityType, Fixable<Deity> {
   );
 
   @override
-  String getDeityTitle(Gender gender) => _deityType;
+  String getDeityTitle(Gender? gender) => _deityType;
 
   @override
   String getDeityType() => _deityType;
@@ -43,7 +43,7 @@ class Archangel implements DeityType, Fixable<Deity> {
   IGenerator<Gender> getGenderGenerator() => ListItemGenerator(Gender.values);
 
   @override
-  IGenerator<String> getNameGenerator(Gender gender, Race? worshipedBy) =>
+  IGenerator<String> getNameGenerator(Gender? gender, Race? worshipedBy) =>
       DeityRaceNameGenerator(gender, worshipedBy);
 
   @override

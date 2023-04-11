@@ -6,16 +6,16 @@ import '../races/race.dart';
 /// A class that represents a generic deity type
 abstract class DeityType {
   /// Returns a generator for the name of the deity
-  IGenerator<String> getNameGenerator(Gender gender, Race? worshipedBy);
+  IGenerator<String> getNameGenerator(Gender? gender, Race? worshipedBy);
 
   /// Returns a generator for the gender of the deity
-  IGenerator<Gender> getGenderGenerator();
+  IGenerator<Gender?> getGenderGenerator();
 
   /// Returns the name of the type of the deity
   String getDeityType();
 
   /// Returns the title of the deity based on its gender (god and goddess, demon and demoness, etc.)
-  String getDeityTitle(Gender gender);
+  String getDeityTitle(Gender? gender);
 
   /// Returns a generator for one domain this being is related to
   IGenerator<String> getDomainGenerator(Alignment? alignment);

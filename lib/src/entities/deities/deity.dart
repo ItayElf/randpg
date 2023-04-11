@@ -14,8 +14,8 @@ class Deity {
   /// The name of the deity
   final String name;
 
-  /// The gender of the deity
-  final Gender gender;
+  /// The gender of the deity, null for genderless
+  final Gender? gender;
 
   /// The type of the deity (god, angel, demon, etc.)
   final DeityType deityType;
@@ -46,7 +46,7 @@ class Deity {
 
   const Deity({
     required this.name,
-    required this.gender,
+    this.gender,
     required this.deityType,
     required this.domains,
     this.alignment,
@@ -89,7 +89,7 @@ class Deity {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'name': name,
-      'gender': gender.name,
+      'gender': gender?.name,
       'deityType': deityType.getDeityType(),
       'domains': domains,
       'alignment': alignment?.toMap(),
@@ -105,7 +105,8 @@ class Deity {
   factory Deity.fromMap(Map<String, dynamic> map) {
     return Deity(
       name: map['name'] as String,
-      gender: Gender.values.byName(map['gender']),
+      gender:
+          map['gender'] != null ? Gender.values.byName(map['gender']) : null,
       deityType: DeityManager.getDeityTypeByType(map['deityType']),
       domains: List<String>.from((map['domains'] as List<String>)),
       alignment: map['alignment'] != null

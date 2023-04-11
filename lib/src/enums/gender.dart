@@ -1,4 +1,4 @@
-/// An enum for the gender of an npc
+/// An enum for a gender
 enum Gender {
   male,
   female,

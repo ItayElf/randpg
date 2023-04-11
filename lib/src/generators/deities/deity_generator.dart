@@ -54,14 +54,14 @@ class DeityGenerator implements IGenerator<Deity> {
   }
 
   Map<String, IGenerator> _getBatch(
-    Gender gender,
+    Gender? gender,
     Race? worshipedBy,
     Alignment alignment,
     int domainCount,
   ) =>
       {
         "name": _deityType.getNameGenerator(gender, worshipedBy),
-        "gender": ListItemGenerator([gender.name]),
+        "gender": ListItemGenerator([gender?.name]),
         "deityType": ListItemGenerator([_deityType.getDeityType()]),
         "domains": UniqueGenerator(
           _deityType.getDomainGenerator(alignment),
