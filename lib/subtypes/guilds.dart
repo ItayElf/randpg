@@ -5,3 +5,5 @@ export '../src/subtypes/guilds/thieves_guild/thieves_guild.dart'
     show ThievesGuild;
 export '../src/subtypes/guilds/merchants_guild/merchants_guild.dart'
     show MerchantsGuild;
+export '../src/subtypes/guilds/knights_order/knights_order.dart'
+    show KnightsOrder;
