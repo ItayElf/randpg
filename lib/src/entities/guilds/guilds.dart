@@ -2,6 +2,8 @@ import 'dart:convert';
 
 import 'package:collection/collection.dart';
 
+import '../../subtypes/guilds/guild_manager.dart';
+import '../../subtypes/guilds/guild_type.dart';
 import '../npcs/npc.dart';
 
 /// A class that represents a guild
@@ -13,7 +15,7 @@ class Guild {
   final Npc leader;
 
   /// The type of this guild
-  final String guildType;
+  final GuildType guildType;
 
   /// The reputation of this guild
   final String reputation;
@@ -48,7 +50,7 @@ class Guild {
   Guild copyWith({
     String? name,
     Npc? leader,
-    String? guildType,
+    GuildType? guildType,
     String? reputation,
     String? history,
     String? motto,
@@ -73,7 +75,7 @@ class Guild {
     return <String, dynamic>{
       'name': name,
       'leader': leader.toMap(),
-      'guildType': guildType,
+      'guildType': guildType.getGuildType(),
       'reputation': reputation,
       'history': history,
       'motto': motto,
@@ -87,7 +89,7 @@ class Guild {
     return Guild(
       name: map['name'] as String,
       leader: Npc.fromMap(map['leader'] as Map<String, dynamic>),
-      guildType: map['guildType'] as String,
+      guildType: GuildManager.getGuildTypeByType(map['guildType']),
       reputation: map['reputation'] as String,
       history: map['history'] as String,
       motto: map['motto'] as String,
