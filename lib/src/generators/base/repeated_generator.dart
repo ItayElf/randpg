@@ -1,5 +1,5 @@
-import 'package:randpg/src/generators/base/generator.dart';
-import 'package:randpg/src/generators/base/seed_generator.dart';
+import 'generator.dart';
+import 'seed_generator.dart';
 
 /// A class that generates [_count] items from [_generator]
 class RepeatedGenerator<T> implements IGenerator<List<T>> {

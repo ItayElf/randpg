@@ -1,3 +1,4 @@
+import '../../../strings_manipulations.dart';
 import '../../base/future_generator.dart';
 import '../../base/list_batch_generator.dart';
 import '../../base/list_item_generator.dart';
@@ -13,6 +14,6 @@ class GuildAdjectiveNameGenerator
             ListItemGenerator(guildNameAdjective),
             ListItemGenerator(guildNameNoun),
           ]),
-          (results) => results.join(" "),
+          (results) => titledEach(results.join(" ")),
         );
 }

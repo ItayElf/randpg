@@ -1,3 +1,4 @@
+import '../../../strings_manipulations.dart';
 import '../../base/future_generator.dart';
 import '../../base/list_batch_generator.dart';
 import '../../base/list_item_generator.dart';
@@ -12,6 +13,6 @@ class GuildVerbNameGenerator extends FutureGenerator<String, List<String>> {
             ListItemGenerator(guildNameAdjective),
             ListItemGenerator(guildNameVerbs),
           ]),
-          (results) => results.join(" "),
+          (results) => titledEach(results.join(" ")),
         );
 }

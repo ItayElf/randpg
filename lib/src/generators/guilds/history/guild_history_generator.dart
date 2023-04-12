@@ -33,14 +33,14 @@ class GuildHistoryGenerator implements IGenerator<String> {
   }
 
   String _getBaseHistory(Map<String, dynamic> map) =>
-      "${titledEach(_guildName)} is ${article(_guildType)} founded ${map["time"]} ago."
+      "${titledEach(_guildName)} are ${article(_guildType)} founded ${map["time"]} ago. "
       "Over the years, they've faced challenges such as ${map["challenges"].join(" and ")}, "
-      "but they remain ${map["quality"]}. Today, ${titledEach(_guildName)} is ${article(map["importance"])} part of society.";
+      "but they remain ${map["quality"]}. Today, ${titledEach(_guildName)} are ${article(map["importance"])} part of society.";
 
   String _getAlternativeHistory(Map<String, dynamic> map) =>
-      "Established ${map["time"]} ago, ${titledEach(_guildName)} is ${article(_guildType)} "
-      "that has encountered challenges like ${map["challenges"].join(" and ")}. "
-      "Nevertheless, they persists to be ${map["quality"]}. Currently, ${titledEach(_guildName)} plays an ${article(map["importance"])} role in society.";
+      "Established ${map["time"]} ago, ${titledEach(_guildName)} are ${article(_guildType)} "
+      "that have encountered challenges like ${map["challenges"].join(" and ")}. "
+      "Nevertheless, they persists to be ${map["quality"]}. Currently, ${titledEach(_guildName)} play an ${article(map["importance"])} role in society.";
 
   Map<String, IGenerator> _getBatch() => {
         "time": ListItemGenerator(guildFoundTime),

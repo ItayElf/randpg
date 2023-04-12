@@ -34,10 +34,10 @@ class GuildMottoGenerator implements IGenerator<String> {
       "through ${map["traits"].join(" and ")}, we ${map["action"]} to ${map["goal"]}";
 
   String _getAlternativeMotto(Map<String, dynamic> map) =>
-      "${map["action"]}ing with ${map["traits"].join(" and ")} for ${map["goal"].split(" ").first}ing ${map["goal"].split(" ").substring(0).join(" ")}";
+      "${map["action"]}ing with ${map["traits"].join(" and ")} for ${map["goal"].split(" ").first}ing ${map["goal"].split(" ").sublist(1).join(" ")}";
 
   String _getAbstractMotto(Map<String, dynamic> map) =>
-      "${map["goal"].split(" ").first}ing ${map["goal"].split(" ").substring(0).join(" ")} with ${map["traits"].join(" and ")}";
+      "${map["goal"].split(" ").first}ing ${map["goal"].split(" ").sublist(1).join(" ")} with ${map["traits"].join(" and ")}";
 
   Map<String, IGenerator> _getBatch() => {
         "traits": UniqueGenerator(
