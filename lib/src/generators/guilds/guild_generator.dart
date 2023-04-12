@@ -7,6 +7,7 @@ import '../base/list_item_generator.dart';
 import '../base/repeated_generator.dart';
 import '../base/seed_generator.dart';
 import '../base/unique_generator.dart';
+import '../fixable.dart';
 import '../settlements/important_characters/important_character_generator.dart';
 
 /// A class that generates guilds
@@ -30,7 +31,13 @@ class GuildGenerator implements IGenerator<Guild> {
 
     final generator = BatchGenerator(_getBatch(name));
     generator.seed((_seed + 1) % SeedGenerator.maxSeed);
-    return Guild.fromMap(generator.generate());
+    Guild guild = Guild.fromMap(generator.generate());
+
+    if (_guildType is Fixable<Guild>) {
+      guild = (_guildType as Fixable).getFixed(guild);
+    }
+
+    return guild;
   }
 
   Map<String, IGenerator> _getBatch(String guildName) => {
