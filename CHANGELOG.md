@@ -20,6 +20,7 @@
 - Added guilds
   - Thieves guild
   - Merchants guild
+  - Knights order
 
 - Added base generators
   - RepeatedGenerator

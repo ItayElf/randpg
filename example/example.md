@@ -8,6 +8,7 @@
 - [Generating settlements](#generating-settlements)
 - [Generating landscapes](#generating-landscapes)
 - [Generating deities](#generating-deities)
+- [Generating guilds](#generating-guilds)
 - [Generating worlds](#generating-worlds)
 
 ## Generating names
@@ -82,6 +83,24 @@ final deityGenerator = DeityGenerator(deityType, alignment);
 print(deityGenerator.generate());
 ```
 
+## Generating guilds
+
+Generating a thieves guild as an example:
+```dart
+final GuildType guildType = ThievesGuild();
+final guildGenerator = GuildGenerator(guildType);
+
+final Guild guild = guildGenerator.generate();
+print(guild);
+```
+
 ## Generating worlds
 
-See [worlds example](./generate_worlds.dart)
+Generating a world with the default settings
+```dart
+final WorldSettings settings = DefaultWorldSettings();
+final worldGenerator = WorldGenerator(settings);
+
+final World world = worldGenerator.generate();
+print(world);
+```
