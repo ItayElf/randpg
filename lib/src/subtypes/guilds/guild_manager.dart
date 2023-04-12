@@ -1,6 +1,7 @@
 import 'package:collection/collection.dart';
 
 import '../../randpg_exceptions.dart';
+import 'druid_circle/druid_circle.dart';
 import 'guild_type.dart';
 import 'knights_order/knights_order.dart';
 import 'mages_guild/mages_guild.dart';
@@ -16,6 +17,7 @@ abstract class GuildManager {
     MerchantsGuild(),
     KnightsOrder(),
     MagesGuild(),
+    DruidCircle(),
   };
 
   static final Set<GuildType> _activeGuildTypes = {..._guildTypes};

@@ -18,10 +18,11 @@
 ## 0.7.0
 
 - Added guilds
-  - Thieves guild
-  - Merchants guild
-  - Knights order
-  - Mages guild
+  - Thieves guilds
+  - Merchants guilds
+  - Knights orders
+  - Mages guilds
+  - Druid circles
 
 - Added guilds to world entity
 
