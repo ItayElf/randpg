@@ -21,6 +21,7 @@
   - Thieves guild
   - Merchants guild
   - Knights order
+  - Mages guild
 
 - Added guilds to world entity
 

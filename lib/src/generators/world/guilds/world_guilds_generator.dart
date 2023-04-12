@@ -1,11 +1,9 @@
-import 'package:randpg/generators/generators.dart';
-
 import '../../../entities/guilds/guilds.dart';
 import '../../../subtypes/worlds/world_settings.dart';
 import '../../base/generator.dart';
 import '../../base/list_batch_generator.dart';
+import '../../base/repeated_generator.dart';
 import '../../base/seed_generator.dart';
-import '../../base/unique_generator.dart';
 import '../../guilds/guild_generator.dart';
 
 /// A class that generates guilds for worlds

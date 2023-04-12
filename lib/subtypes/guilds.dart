@@ -7,3 +7,4 @@ export '../src/subtypes/guilds/merchants_guild/merchants_guild.dart'
     show MerchantsGuild;
 export '../src/subtypes/guilds/knights_order/knights_order.dart'
     show KnightsOrder;
+export '../src/subtypes/guilds/mages_guild/mages_guild.dart' show MagesGuild;
