@@ -18,9 +18,6 @@ class Guild {
   /// The reputation of this guild
   final String reputation;
 
-  /// A description of the emblem of this guild
-  final String emblem;
-
   /// A short history of this guild
   final String history;
 
@@ -41,7 +38,6 @@ class Guild {
     required this.leader,
     required this.guildType,
     required this.reputation,
-    required this.emblem,
     required this.history,
     required this.motto,
     required this.specialties,
@@ -54,7 +50,6 @@ class Guild {
     Npc? leader,
     String? guildType,
     String? reputation,
-    String? emblem,
     String? history,
     String? motto,
     List<String>? specialties,
@@ -66,7 +61,6 @@ class Guild {
       leader: leader ?? this.leader,
       guildType: guildType ?? this.guildType,
       reputation: reputation ?? this.reputation,
-      emblem: emblem ?? this.emblem,
       history: history ?? this.history,
       motto: motto ?? this.motto,
       specialties: specialties ?? this.specialties,
@@ -81,7 +75,6 @@ class Guild {
       'leader': leader.toMap(),
       'guildType': guildType,
       'reputation': reputation,
-      'emblem': emblem,
       'history': history,
       'motto': motto,
       'specialties': specialties,
@@ -96,7 +89,6 @@ class Guild {
       leader: Npc.fromMap(map['leader'] as Map<String, dynamic>),
       guildType: map['guildType'] as String,
       reputation: map['reputation'] as String,
-      emblem: map['emblem'] as String,
       history: map['history'] as String,
       motto: map['motto'] as String,
       specialties: List<String>.from((map['specialties'] as List<String>)),
@@ -116,7 +108,7 @@ class Guild {
 
   @override
   String toString() {
-    return 'Guild(name: $name, leader: $leader, guildType: $guildType, reputation: $reputation, emblem: $emblem, history: $history, motto: $motto, specialties: $specialties, quests: $quests, notableMembers: $notableMembers)';
+    return 'Guild(name: $name, leader: $leader, guildType: $guildType, reputation: $reputation, history: $history, motto: $motto, specialties: $specialties, quests: $quests, notableMembers: $notableMembers)';
   }
 
   @override
@@ -128,7 +120,6 @@ class Guild {
         other.leader == leader &&
         other.guildType == guildType &&
         other.reputation == reputation &&
-        other.emblem == emblem &&
         other.history == history &&
         other.motto == motto &&
         listEquals(other.specialties, specialties) &&
@@ -142,7 +133,6 @@ class Guild {
         leader.hashCode ^
         guildType.hashCode ^
         reputation.hashCode ^
-        emblem.hashCode ^
         history.hashCode ^
         motto.hashCode ^
         specialties.hashCode ^
