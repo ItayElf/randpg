@@ -23,7 +23,7 @@ class WorldSettlementsGenerator implements IGenerator<List<Settlement>> {
     final settlementTypes = List.generate(
       settlements.length,
       (index) => _getSettlementType(
-        (_seed + index) % SeedGenerator.generate(),
+        (_seed + index) % SeedGenerator.maxSeed,
         settlements[index],
       ),
     );

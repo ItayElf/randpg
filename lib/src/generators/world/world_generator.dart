@@ -6,7 +6,7 @@ import '../base/generator.dart';
 import '../base/list_item_generator.dart';
 import '../base/seed_generator.dart';
 import '../base/unique_generator.dart';
-import 'important_people/world_important_people_generator.dart';
+import '../settlements/important_characters/important_character_generator.dart';
 import 'landscapes/world_landscapes_generator.dart';
 import 'lore/world_lore_generator.dart';
 import 'opinions/world_opinions_generator.dart';
@@ -47,7 +47,10 @@ class WorldGenerator implements IGenerator<World> {
         ),
         "importantPeople": FutureGenerator(
           UniqueGenerator(
-            WorldImportantPeopleGenerator(_worldSettings),
+            ImportantCharacterGenerator(
+              _worldSettings.getImportantOccupationGenerator(),
+              null,
+            ),
             _worldSettings.getImportantPeopleCount(),
           ),
           (people) => people.map((e) => e.toMap()).toList(),
