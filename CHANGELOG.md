@@ -23,6 +23,7 @@
   - Knights orders
   - Mages guilds
   - Druid circles
+  - Artisan guilds
 
 - Added guilds to world entity
 
