@@ -21,6 +21,9 @@
   - Thieves guild
   - Merchants guild
 
+- Added base generators
+  - RepeatedGenerator
+
 ## 0.6.0
 
 - Added world generation
