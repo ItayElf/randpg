@@ -2,12 +2,15 @@ import 'package:collection/collection.dart';
 
 import '../../randpg_exceptions.dart';
 import 'guild_type.dart';
+import 'thieves_guild/thieves_guild.dart';
 
 /// A class that handles the available guilds and using them
 ///
 /// When making a custom guild type, make sure to register it or else some features might not work
 abstract class GuildManager {
-  static final Set<GuildType> _guildTypes = {};
+  static final Set<GuildType> _guildTypes = {
+    ThievesGuild(),
+  };
 
   static final Set<GuildType> _activeGuildTypes = {..._guildTypes};
 

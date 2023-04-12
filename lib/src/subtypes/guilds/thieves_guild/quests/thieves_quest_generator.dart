@@ -1,0 +1,58 @@
+import '../../../../generators/base/list_item_generator.dart';
+
+/// A class that generates quests for thieves guild
+class ThievesQuestGenerator extends ListItemGenerator<String> {
+  static const _quests = [
+    'steal a rare and valuable artifact from a heavily guarded museum',
+    "infiltrate a wealthy merchant's home and rob them blind",
+    'retrieve a valuable stolen item that a rival gang has taken',
+    'set up a distraction at a guard post to enable a heist elsewhere in the city',
+    'kidnap a wealthy merchant for ransom',
+    "plant false evidence to frame a rival gang for a crime they didn't commit",
+    "sabotage a competitor's operation by cutting off their supply lines",
+    'stage a daring robbery at a high-security bank',
+    "infiltrate a noble's ball and steal valuable jewels from the guests",
+    "rescue a captured guild member from a rival gang's hideout",
+    "steal an important document from a government official's office",
+    'rob a wealthy caravan traveling through dangerous territory',
+    'steal an ancient tome from a remote and guarded library',
+    'forge a valuable painting and sell it to a wealthy collector',
+    "plant evidence to incriminate a rival gang in a crime that the player's guild committed",
+    'steal a valuable shipment of goods from a rival gang',
+    "assassinate a corrupt official who is threatening the guild's operations",
+    'infiltrate a religious temple and steal their most valuable relic',
+    "kidnap a wealthy noble's daughter for ransom",
+    'steal the deed to a valuable piece of property from a wealthy landowner',
+    'plant a spy within a rival gang to gather valuable intel',
+    "steal a valuable magical artifact from a powerful mage's tower",
+    'rob a wealthy merchant ship at sea',
+    "disrupt a rival gang's meeting by causing chaos and stealing their valuables in the confusion",
+    "break into a wealthy merchant's warehouse and steal their valuable inventory",
+    "infiltrate a noble's castle and steal their most prized possession",
+    'steal a rare and valuable gem from a museum exhibit',
+    'create a diversion during a public event to allow for a heist',
+    'plant evidence to incriminate a wealthy merchant in a crime',
+    "kidnap a rival gang's leader for ransom",
+    'steal a valuable cargo shipment from a heavily guarded port',
+    "sabotage a rival gang's operation by making it look like they are involved in a larger conspiracy",
+    'break into a wealthy estate and steal their valuable art collection',
+    'steal a powerful magical artifact from a dangerous dungeon',
+    "infiltrate a powerful wizard's tower and steal their valuable spellbooks",
+    "rob a wealthy noble's mansion while they are hosting a lavish party",
+    "plant false evidence to incriminate a government official in a crime they didn't commit",
+    'steal a valuable shipment of arms from a rival gang',
+    "kidnap a rival gang's member and hold them for ransom",
+    "disrupt a powerful noble's event by stealing their valuable possessions in front of their guests",
+    'steal a rare and valuable potion from an apothecary',
+    "infiltrate a wealthy noble's castle and steal their most valuable treasure",
+    "sabotage a competitor's operation by destroying their valuable equipment",
+    "steal a valuable manuscript from a powerful wizard's library",
+    "infiltrate a rival gang's hideout and steal their valuable inventory",
+    'plant evidence to incriminate a rival gang in a larger conspiracy',
+    "kidnap a powerful wizard's apprentice for ransom",
+    "rob a wealthy merchant's home while they are on a long journey",
+    "disrupt a powerful wizard's experiment by stealing their valuable components"
+  ];
+
+  ThievesQuestGenerator() : super(_quests);
+}

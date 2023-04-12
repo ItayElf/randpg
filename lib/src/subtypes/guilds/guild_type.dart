@@ -15,7 +15,7 @@ abstract class GuildType {
   IGenerator<String> getReputationGenerator();
 
   /// Returns a generator for the history of the guild
-  IGenerator<String> getHistoryGenerator();
+  IGenerator<String> getHistoryGenerator(String guildName);
 
   /// Returns a generator for a guild motto
   IGenerator<String> getMottoGenerator();
