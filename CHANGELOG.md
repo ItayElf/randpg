@@ -22,6 +22,8 @@
   - Merchants guild
   - Knights order
 
+- Added guilds to world entity
+
 - Added base generators
   - RepeatedGenerator
 

@@ -1,3 +1,5 @@
+import 'package:randpg/src/generators/world/guilds/world_guilds_generator.dart';
+
 import '../../entities/worlds/world.dart';
 import '../../subtypes/worlds/world_settings.dart';
 import '../base/batch_generator.dart';
@@ -54,6 +56,10 @@ class WorldGenerator implements IGenerator<World> {
             _worldSettings.getImportantPeopleCount(),
           ),
           (people) => people.map((e) => e.toMap()).toList(),
+        ),
+        "guilds": FutureGenerator(
+          WorldGuildsGenerator(_worldSettings),
+          (guilds) => guilds.map((e) => e.toMap()).toList(),
         ),
         "deities": FutureGenerator(
           _worldSettings.getDeitiesGenerator(),
