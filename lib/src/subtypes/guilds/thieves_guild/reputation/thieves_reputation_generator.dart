@@ -1,5 +1,6 @@
-import 'package:randpg/src/generators/base/list_item_generator.dart';
+import '../../../../generators/base/list_item_generator.dart';
 
+/// A class that generates reputation for thieves guilds
 class ThievesReputationGenerator extends ListItemGenerator<String> {
   static const _reputations = [
     'their master pickpockets',

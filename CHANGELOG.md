@@ -19,6 +19,7 @@
 
 - Added guilds
   - Thieves guild
+  - Merchants guild
 
 ## 0.6.0
 

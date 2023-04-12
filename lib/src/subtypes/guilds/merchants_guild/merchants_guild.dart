@@ -6,26 +6,24 @@ import '../../../generators/guilds/mottos/guild_motto_generator.dart';
 import '../../../generators/guilds/names/guild_adjective_name_generator.dart';
 import '../../../generators/guilds/names/guild_verb_name_generator.dart';
 import '../guild_type.dart';
-import 'quests/thieves_quest_generator.dart';
-import 'reputation/thieves_reputation_generator.dart';
-import 'specialties/thieves_specialty_generator.dart';
+import 'quests/merchants_quest_generator.dart';
+import 'reputation/merchants_reputation_generator.dart';
+import 'specialties/merchants_specialty_generator.dart';
 
-/// A class that represents a thieves guild
-class ThievesGuild implements GuildType {
-  const ThievesGuild();
+class MerchantsGuild implements GuildType {
+  const MerchantsGuild();
 
-  static const _guildType = "thieves guild";
-  static const _leaderOccupation = "crime boss";
+  static const _guildType = "merchants guild";
+  static const _leaderOccupation = "trade baron";
   static const _membersOccupations = [
-    "thief",
-    "master thief",
-    "pickpocket",
-    "burglar",
-    "smuggler",
-    "blackmailer",
-    "assassin",
-    "infiltrator",
-    "informant",
+    "merchant",
+    "trader",
+    "caravan trader",
+    "master merchant",
+    "caravan guard",
+    "caravan leader",
+    "ship captain",
+    "tax collector"
   ];
 
   @override
@@ -52,11 +50,11 @@ class ThievesGuild implements GuildType {
       ]);
 
   @override
-  IGenerator<String> getQuestGenerator() => ThievesQuestGenerator();
+  IGenerator<String> getQuestGenerator() => MerchantsQuestGenerator();
 
   @override
-  IGenerator<String> getReputationGenerator() => ThievesReputationGenerator();
+  IGenerator<String> getReputationGenerator() => MerchantsReputationGenerator();
 
   @override
-  IGenerator<String> getSpecialtyGenerator() => ThievesSpecialtyGenerator();
+  IGenerator<String> getSpecialtyGenerator() => MerchantsSpecialtyGenerator();
 }

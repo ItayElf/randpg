@@ -2,6 +2,7 @@ import 'package:collection/collection.dart';
 
 import '../../randpg_exceptions.dart';
 import 'guild_type.dart';
+import 'merchants_guild/merchants_guild.dart';
 import 'thieves_guild/thieves_guild.dart';
 
 /// A class that handles the available guilds and using them
@@ -10,6 +11,7 @@ import 'thieves_guild/thieves_guild.dart';
 abstract class GuildManager {
   static final Set<GuildType> _guildTypes = {
     ThievesGuild(),
+    MerchantsGuild(),
   };
 
   static final Set<GuildType> _activeGuildTypes = {..._guildTypes};

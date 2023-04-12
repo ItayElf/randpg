@@ -3,3 +3,5 @@ export '../src/subtypes/guilds/guild_manager.dart' show GuildManager;
 
 export '../src/subtypes/guilds/thieves_guild/thieves_guild.dart'
     show ThievesGuild;
+export '../src/subtypes/guilds/merchants_guild/merchants_guild.dart'
+    show MerchantsGuild;
