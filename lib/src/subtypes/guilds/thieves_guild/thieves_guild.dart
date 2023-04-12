@@ -4,6 +4,7 @@ import '../../../generators/base/multiple_generator.dart';
 import '../../../generators/guilds/history/guild_history_generator.dart';
 import '../../../generators/guilds/mottos/guild_motto_generator.dart';
 import '../../../generators/guilds/names/guild_adjective_name_generator.dart';
+import '../../../generators/guilds/names/guild_title_name_generator.dart';
 import '../../../generators/guilds/names/guild_verb_name_generator.dart';
 import '../guild_type.dart';
 import 'quests/thieves_quest_generator.dart';
@@ -27,6 +28,11 @@ class ThievesGuild implements GuildType {
     "infiltrator",
     "informant",
   ];
+  static const _guildTitles = [
+    "thieves",
+    "criminals",
+    "bandits",
+  ];
 
   @override
   String getGuildType() => _guildType;
@@ -49,6 +55,7 @@ class ThievesGuild implements GuildType {
   IGenerator<String> getNameGenerator() => MultipleGenerator([
         GuildAdjectiveNameGenerator(),
         GuildVerbNameGenerator(),
+        GuildTitleNameGenerator(ListItemGenerator(_guildTitles)),
       ]);
 
   @override

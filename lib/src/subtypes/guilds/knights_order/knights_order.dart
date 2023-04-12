@@ -7,9 +7,9 @@ import '../../../generators/fixable.dart';
 import '../../../generators/guilds/history/guild_history_generator.dart';
 import '../../../generators/guilds/mottos/guild_motto_generator.dart';
 import '../../../generators/guilds/names/guild_adjective_name_generator.dart';
+import '../../../generators/guilds/names/guild_title_name_generator.dart';
 import '../../../generators/guilds/names/guild_verb_name_generator.dart';
 import '../guild_type.dart';
-import 'names/knights_order_name_generator.dart';
 import 'quests/knights_quest_generator.dart';
 import 'reputation/knights_reputation.dart';
 import 'specialties/knights_specialty_generator.dart';
@@ -27,6 +27,11 @@ class KnightsOrder implements GuildType, Fixable<Guild> {
     "commander",
     "cleric",
     "paladin",
+  ];
+  static const _guildTitles = [
+    "order",
+    "knights",
+    "paladins",
   ];
 
   @override
@@ -53,7 +58,7 @@ class KnightsOrder implements GuildType, Fixable<Guild> {
           (name) => "Knights Of $name",
         ),
         GuildVerbNameGenerator(),
-        KnightsOrderNameGenerator(),
+        GuildTitleNameGenerator(ListItemGenerator(_guildTitles)),
       ]);
 
   @override

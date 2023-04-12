@@ -4,6 +4,7 @@ import '../../../generators/base/multiple_generator.dart';
 import '../../../generators/guilds/history/guild_history_generator.dart';
 import '../../../generators/guilds/mottos/guild_motto_generator.dart';
 import '../../../generators/guilds/names/guild_adjective_name_generator.dart';
+import '../../../generators/guilds/names/guild_title_name_generator.dart';
 import '../../../generators/guilds/names/guild_verb_name_generator.dart';
 import '../guild_type.dart';
 import 'quests/merchants_quest_generator.dart';
@@ -24,6 +25,11 @@ class MerchantsGuild implements GuildType {
     "caravan leader",
     "ship captain",
     "tax collector"
+  ];
+  static const _guildTitles = [
+    "merchants",
+    "traders",
+    "caravan",
   ];
 
   @override
@@ -47,6 +53,7 @@ class MerchantsGuild implements GuildType {
   IGenerator<String> getNameGenerator() => MultipleGenerator([
         GuildAdjectiveNameGenerator(),
         GuildVerbNameGenerator(),
+        GuildTitleNameGenerator(ListItemGenerator(_guildTitles)),
       ]);
 
   @override

@@ -10,3 +10,5 @@ export '../../src/generators/guilds/names/guild_adjective_name_generator.dart'
     show GuildAdjectiveNameGenerator;
 export '../../src/generators/guilds/names/guild_verb_name_generator.dart'
     show GuildVerbNameGenerator;
+export '../../src/generators/guilds/names/guild_title_name_generator.dart'
+    show GuildTitleNameGenerator;

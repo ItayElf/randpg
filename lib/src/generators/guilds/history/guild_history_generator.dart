@@ -40,7 +40,7 @@ class GuildHistoryGenerator implements IGenerator<String> {
   String _getAlternativeHistory(Map<String, dynamic> map) =>
       "Established ${map["time"]} ago, ${titledEach(_guildName)} are ${article(_guildType)} "
       "that have encountered challenges like ${map["challenges"].join(" and ")}. "
-      "Nevertheless, they persists to be ${map["quality"]}. Currently, ${titledEach(_guildName)} play an ${article(map["importance"])} role in society.";
+      "Nevertheless, they persists to be ${map["quality"]}. Currently, ${titledEach(_guildName)} play ${article(map["importance"])} role in society.";
 
   Map<String, IGenerator> _getBatch() => {
         "time": ListItemGenerator(guildFoundTime),
