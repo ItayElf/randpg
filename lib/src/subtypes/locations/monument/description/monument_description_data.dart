@@ -45,14 +45,14 @@ const monumentType = [
   "monolith",
   "obelisk",
   "triumphal arch",
-  "terminating vista",
-  "mound",
-  "eternal flame",
   "column",
   "column arrangement",
   "cenotaph",
   "shrine",
   "fountain",
+  "memorial wall",
+  "bell tower",
+  "clock tower",
 ];
 
 const monumentLocation = [
