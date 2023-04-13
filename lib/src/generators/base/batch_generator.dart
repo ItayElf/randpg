@@ -14,11 +14,11 @@ class BatchGenerator implements IGenerator<Map<String, dynamic>> {
   @override
   Map<String, dynamic> generate() {
     final newPool = Map<String, IGenerator>.from(_pool);
-    int tempSeed = _seed;
 
+    int counter = 0;
     for (final generator in newPool.values) {
-      generator.seed(tempSeed % SeedGenerator.maxSeed);
-      tempSeed = (tempSeed * tempSeed) + 1;
+      generator.seed((_seed + counter * _seed) % SeedGenerator.maxSeed);
+      counter++;
     }
 
     return Map<String, dynamic>.fromEntries(

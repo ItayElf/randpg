@@ -1,6 +1,4 @@
 import 'package:randpg/entities/landscapes.dart';
-import 'package:randpg/generators/landscapes.dart';
-import 'package:randpg/subtypes/landscapes.dart';
 
 void main() {
   // Generating each of the active landscapes

@@ -1,4 +1,4 @@
-import '../../../../entities/deities.dart';
+import '../../../entities/deities/deity.dart';
 import '../../../entities/npcs/alignment.dart';
 import '../../../enums/alignment.dart';
 import '../../../enums/gender.dart';

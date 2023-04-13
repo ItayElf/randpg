@@ -16,6 +16,8 @@ import '../../deities/deity_type.dart';
 import '../../deities/demigods/demigod.dart';
 import '../../deities/demon_lords/demon_lord.dart';
 import '../../deities/primordials/primordial.dart';
+import '../../guilds/guild_manager.dart';
+import '../../guilds/guild_type.dart';
 import '../../landscapes/landscape_manager.dart';
 import '../../landscapes/landscape_type.dart';
 import '../../settlements/city/city.dart';
@@ -107,4 +109,8 @@ class DefaultWorldSettings implements WorldSettings {
 
   @override
   WorldLoreType getWorldLore() => _worldLore;
+
+  @override
+  IGenerator<GuildType> getGuildTypeGenerator() =>
+      ListItemGenerator(GuildManager.activeGuildTypes);
 }

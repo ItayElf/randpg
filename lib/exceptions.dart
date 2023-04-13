@@ -1,1 +1,1 @@
-export './src/randpg_exceptions.dart';
+export 'src/randpg_exceptions.dart';
