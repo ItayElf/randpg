@@ -1,0 +1,52 @@
+import '../../../../generators/base/list_item_generator.dart';
+
+/// A class that generates quests for mages guilds
+class MagesQuestGenerator extends ListItemGenerator<String> {
+  static const _quests = [
+    'assist a powerful mage with a difficult and dangerous experiment',
+    'recover a lost grimoire of powerful spells that was stolen from the guild',
+    'investigate a mysterious cult that is practicing forbidden magic',
+    'protect a group of novice mages on a dangerous journey to their new training facility',
+    'retrieve a valuable magical artifact that was stolen from a wealthy client',
+    'explore an ancient ruin to uncover lost knowledge and artifacts',
+    'negotiate with a rival guild to establish a mutually beneficial trade agreement',
+    'help a member of the guild who has been accused of a serious crime clear their name',
+    'investigate a rash of unexplained magical accidents in a nearby town',
+    "secure a rare and powerful magical creature for the guild's research and study",
+    'assist a wealthy noble with a magical problem that is threatening their estate',
+    'eliminate a dangerous rogue mage who is using their powers for evil',
+    "acquire a rare and expensive magical reagent for the guild's experiments and spells",
+    'retrieve a stolen magical artifact and return it to its rightful owner',
+    'help a member of the guild who has become trapped in a dangerous magical realm',
+    'investigate a powerful magical artifact that has been causing chaos and destruction in a nearby city',
+    'protect a valuable magical item during transport to its new owner',
+    'infiltrate a rival guild to gather information on their operations and secrets',
+    'negotiate with a powerful magical creature to secure its assistance for the guild',
+    'investigate a powerful mage who has gone rogue and is using their powers for personal gain',
+    'help a member of the guild who has become cursed or possessed by a powerful entity',
+    'secure a rare and valuable magical item from a dangerous and well-guarded location',
+    'assist a powerful mage in the creation of a new magical construct or golem',
+    'investigate a powerful magical entity that has been causing chaos and destruction in the region',
+    "protect the guild's library and archives from a group of dangerous thieves",
+    'train a group of novice mages in the art of combat magic and self-defense',
+    'investigate a powerful magical disease that is spreading through the region',
+    "acquire a rare and powerful magical potion for the guild's experiments and healing potions",
+    'help a member of the guild who has been cursed with a dangerous magical affliction',
+    "secure a rare and valuable magical crystal or gemstone for the guild's experiments and enchantments",
+    'infiltrate a dangerous magical organization to gather information and disrupt their operations',
+    'investigate a powerful magical artifact that is said to grant immortality or incredible power',
+    'help a powerful mage who has lost control of their magical powers and is causing chaos and destruction',
+    'protect a group of important magical scholars during a dangerous journey through hostile territory',
+    "acquire a rare and valuable magical weapon for the guild's collection or for use in combat",
+    'investigate a powerful magical being that has taken over a nearby town or city',
+    "secure a rare and valuable magical scroll or tome for the guild's library and research",
+    'help a member of the guild who has become lost in a dangerous and unknown magical realm',
+    'train a group of novice mages in the art of elemental magic and weather manipulation',
+    'investigate a powerful magical storm that is causing chaos and destruction in the region',
+    "acquire a rare and valuable magical artifact for the guild's collection or for use in powerful spells",
+    'protect a group of important political figures during a dangerous journey through hostile territory',
+    'infiltrate a powerful magical academy to gather information and disrupt their operations',
+  ];
+
+  MagesQuestGenerator() : super(_quests);
+}

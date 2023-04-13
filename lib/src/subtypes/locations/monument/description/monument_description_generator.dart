@@ -9,20 +9,23 @@ import 'monument_description_data.dart';
 class MonumentDescriptionGenerator implements IGenerator<String> {
   late int _seed;
   final String _ownerName;
-  final String _locationName;
 
-  MonumentDescriptionGenerator(this._ownerName, this._locationName) {
+  MonumentDescriptionGenerator(this._ownerName) {
     _seed = SeedGenerator.generate();
   }
 
   @override
   String generate() {
+    final typeGenerator = ListItemGenerator(monumentType);
+    typeGenerator.seed(_seed);
+    final type = typeGenerator.generate();
+
     final generator = BatchGenerator(_getBatch());
-    generator.seed(_seed);
+    generator.seed((_seed + 1) % SeedGenerator.maxSeed);
     final results = generator.generate();
 
     final purpose =
-        "Created ${results["time"]} ago, this ${_locationName.toLowerCase()} stands tribute to ${results["purpose"]}. "
+        "Created ${results["time"]} ago, this $type stands tribute to ${results["purpose"]}. "
         "It symbolizes the ${results["representing"]}";
 
     final design =
@@ -31,7 +34,7 @@ class MonumentDescriptionGenerator implements IGenerator<String> {
         "style to bring their vision to life in this remarkable piece of art";
 
     final materials =
-        "Each element of the ${_locationName.toLowerCase()} was meticulously crafted using ${results["materials"]} materials, "
+        "Each element of the $type was meticulously crafted using ${results["materials"]} materials, "
         "As a result, this monument will ${results["present"]}.";
 
     return [purpose, design, materials].join("\n");

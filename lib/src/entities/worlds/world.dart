@@ -7,6 +7,7 @@ import '../../subtypes/races/race_manager.dart';
 import '../../subtypes/worlds/world_settings.dart';
 import '../../subtypes/worlds/world_settings_manager.dart';
 import '../deities/deity.dart';
+import '../guilds/guilds.dart';
 import '../landscapes/landscape.dart';
 import '../npcs/npc.dart';
 import '../settlements/settlement.dart';
@@ -32,6 +33,9 @@ class World {
   /// Notable characters in the world
   final List<Npc> importantPeople;
 
+  /// Guilds that work in a worldwide scale in this world
+  final List<Guild> guilds;
+
   /// The deities of the world
   final List<Deity> deities;
 
@@ -51,6 +55,7 @@ class World {
     required this.landscapes,
     required this.opinions,
     required this.importantPeople,
+    required this.guilds,
     required this.deities,
     required this.lesserDeities,
     required this.higherDeities,
@@ -64,6 +69,7 @@ class World {
     List<Landscape>? landscapes,
     Map<Race, String>? opinions,
     List<Npc>? importantPeople,
+    List<Guild>? guilds,
     List<Deity>? deities,
     List<Deity>? lesserDeities,
     List<Deity>? higherDeities,
@@ -76,6 +82,7 @@ class World {
       landscapes: landscapes ?? this.landscapes,
       opinions: opinions ?? this.opinions,
       importantPeople: importantPeople ?? this.importantPeople,
+      guilds: guilds ?? this.guilds,
       deities: deities ?? this.deities,
       lesserDeities: lesserDeities ?? this.lesserDeities,
       higherDeities: higherDeities ?? this.higherDeities,
@@ -91,6 +98,7 @@ class World {
       'landscapes': landscapes.map((x) => x.toMap()).toList(),
       'opinions': opinions.map((key, value) => MapEntry(key.getName(), value)),
       'importantPeople': importantPeople.map((x) => x.toMap()).toList(),
+      'guilds': guilds.map((x) => x.toMap()).toList(),
       'deities': deities.map((x) => x.toMap()).toList(),
       'lesserDeities': lesserDeities.map((x) => x.toMap()).toList(),
       'higherDeities': higherDeities.map((x) => x.toMap()).toList(),
@@ -121,6 +129,11 @@ class World {
           (x) => Npc.fromMap(x),
         ),
       ),
+      guilds: List<Guild>.from(
+        (map['guilds'] as List<Map<String, dynamic>>).map<Guild>(
+          (x) => Guild.fromMap(x),
+        ),
+      ),
       deities: List<Deity>.from(
         (map['deities'] as List<Map<String, dynamic>>).map<Deity>(
           (x) => Deity.fromMap(x),
@@ -147,7 +160,7 @@ class World {
 
   @override
   String toString() {
-    return 'World(name: $name, worldSettings: $worldSettings, settlements: $settlements, landscapes: $landscapes, opinions: $opinions, importantPeople: $importantPeople, deities: $deities, lesserDeities: $lesserDeities, higherDeities: $higherDeities, worldLore: $worldLore)';
+    return 'World(name: $name, worldSettings: $worldSettings, settlements: $settlements, landscapes: $landscapes, opinions: $opinions, importantPeople: $importantPeople, guilds: $guilds, deities: $deities, lesserDeities: $lesserDeities, higherDeities: $higherDeities, worldLore: $worldLore)';
   }
 
   @override
@@ -161,6 +174,7 @@ class World {
         collectionEquals(other.landscapes, landscapes) &&
         collectionEquals(other.opinions, opinions) &&
         collectionEquals(other.importantPeople, importantPeople) &&
+        collectionEquals(other.guilds, guilds) &&
         collectionEquals(other.deities, deities) &&
         collectionEquals(other.lesserDeities, lesserDeities) &&
         collectionEquals(other.higherDeities, higherDeities) &&
@@ -175,6 +189,7 @@ class World {
         landscapes.hashCode ^
         opinions.hashCode ^
         importantPeople.hashCode ^
+        guilds.hashCode ^
         deities.hashCode ^
         lesserDeities.hashCode ^
         higherDeities.hashCode ^

@@ -1,7 +1,6 @@
 import '../../../entities/npcs/npc.dart';
 import '../../../subtypes/races/race.dart';
 import '../../../subtypes/races/race_manager.dart';
-import '../../../subtypes/settlements/settlement_type.dart';
 import '../../base/batch_generator.dart';
 import '../../base/future_generator.dart';
 import '../../base/generator.dart';
@@ -13,13 +12,13 @@ import '../../npcs/npc_generator.dart';
 /// A class that generates important characters for settlements
 class ImportantCharacterGenerator implements IGenerator<Npc> {
   late int _seed;
-  final SettlementType _settlementType;
+  final IGenerator<String> _occupationGenerator;
   final Race? _dominantRace;
 
   static const _dominantRaceWeight = 7;
   static const _otherRaceWeight = 3;
 
-  ImportantCharacterGenerator(this._settlementType, this._dominantRace) {
+  ImportantCharacterGenerator(this._occupationGenerator, this._dominantRace) {
     _seed = SeedGenerator.generate();
   }
 
@@ -29,7 +28,7 @@ class ImportantCharacterGenerator implements IGenerator<Npc> {
 
     final generator = FutureGenerator(
       BatchGenerator({
-        "occupation": _settlementType.getImportantOccupationGenerator(),
+        "occupation": _occupationGenerator,
         "npc": NpcGenerator(race),
       }),
       (results) => (results["npc"] as Npc).copyWith(

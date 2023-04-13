@@ -1,4 +1,3 @@
-import '../../../../generators/settlements.dart';
 import '../../../entities/settlements/settlement.dart';
 import '../../../subtypes/races/race.dart';
 import '../../../subtypes/races/race_manager.dart';
@@ -7,6 +6,7 @@ import '../../../subtypes/worlds/world_settings.dart';
 import '../../base/generator.dart';
 import '../../base/list_item_generator.dart';
 import '../../base/seed_generator.dart';
+import '../../settlements/settlement_generator.dart';
 
 /// A class that generates settlements for worlds
 class WorldSettlementsGenerator implements IGenerator<List<Settlement>> {
@@ -23,7 +23,7 @@ class WorldSettlementsGenerator implements IGenerator<List<Settlement>> {
     final settlementTypes = List.generate(
       settlements.length,
       (index) => _getSettlementType(
-        (_seed + index) % SeedGenerator.generate(),
+        (_seed + index) % SeedGenerator.maxSeed,
         settlements[index],
       ),
     );

@@ -2,6 +2,7 @@
 
 ## Table of Contents <!-- omit in toc -->
 
+- [0.7.0](#070)
 - [0.6.0](#060)
 - [0.5.2](#052)
 - [0.5.1](#051)
@@ -13,6 +14,26 @@
 - [0.1.1](#011)
 - [0.1.0](#010)
 - [0.0.0](#000)
+
+## 0.7.0
+
+- Added guilds
+  - Thieves guilds
+  - Merchants guilds
+  - Knights orders
+  - Mages guilds
+  - Druid circles
+  - Artisan guilds
+  - Cults
+
+- Made cleaner exports
+
+- Added guilds to world entity
+
+- Added better names for monuments
+
+- Added base generators
+  - RepeatedGenerator
 
 ## 0.6.0
 

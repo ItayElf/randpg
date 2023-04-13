@@ -1,5 +1,6 @@
 import '../../entities/deities/deity.dart';
 import '../../generators/base/generator.dart';
+import '../guilds/guild_type.dart';
 import '../landscapes/landscape_type.dart';
 import '../settlements/settlement_type.dart';
 import 'lore/world_lore_type.dart';
@@ -29,6 +30,9 @@ abstract class WorldSettings {
 
   /// Returns a generator for the occupation of the important people in the world settings
   IGenerator<String> getImportantOccupationGenerator();
+
+  /// Returns a generator for a guild type in the world
+  IGenerator<GuildType> getGuildTypeGenerator();
 
   /// Returns a generator for a list of the main deities in the world
   IGenerator<List<Deity>> getDeitiesGenerator();

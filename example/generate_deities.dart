@@ -1,7 +1,5 @@
+import 'package:randpg/entities/custom/custom_races.dart';
 import 'package:randpg/entities/deities.dart';
-import 'package:randpg/generators/custom/custom_races.dart';
-import 'package:randpg/generators/deities.dart';
-import 'package:randpg/subtypes/deities.dart';
 
 void main() {
   // Generating each of the active deity types

@@ -20,7 +20,7 @@ class WorldLandscapeGenerator implements IGenerator<List<Landscape>> {
     final landscapeTypes = List.generate(
       landscapes.length,
       (index) => _getLandscapeType(
-        (_seed + index) % SeedGenerator.generate(),
+        (_seed + index) % SeedGenerator.maxSeed,
         landscapes[index],
       ),
     );
