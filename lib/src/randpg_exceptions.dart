@@ -71,3 +71,11 @@ class WorldSettingsNotFoundException extends RandpgException {
   @override
   String toString() => msg ?? "WorldSettingsNotFoundException";
 }
+
+/// An exception that is thrown when a not supported guildType is being used
+class GuildTypeNotFoundException extends RandpgException {
+  const GuildTypeNotFoundException([super.msg]);
+
+  @override
+  String toString() => msg ?? "GuildTypeNotFoundException";
+}

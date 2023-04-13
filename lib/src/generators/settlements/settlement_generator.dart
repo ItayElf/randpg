@@ -48,7 +48,10 @@ class SettlementGenerator implements IGenerator<Settlement> {
         "trouble": _settlementType.getTroubleGenerator(),
         "importantCharacters": FutureGenerator(
           UniqueGenerator(
-            ImportantCharacterGenerator(_settlementType, _dominantRace),
+            ImportantCharacterGenerator(
+              _settlementType.getImportantOccupationGenerator(),
+              _dominantRace,
+            ),
             _settlementType.getImportantPeopleCount(),
           ),
           (characters) => characters.map((e) => e.toMap()).toList(),

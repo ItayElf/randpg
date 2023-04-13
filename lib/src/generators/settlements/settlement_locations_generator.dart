@@ -28,11 +28,10 @@ class SettlementLocationsGenerator implements IGenerator<List<Location>> {
     final locationTypes = List.generate(
       locations.length,
       (index) => _getLocationType(
-        (_seed + index) % SeedGenerator.generate(),
+        (_seed + index) % SeedGenerator.maxSeed,
         locations[index],
       ),
     );
-
     return List.generate(
       locationTypes.length,
       (index) => _generateLocation(
