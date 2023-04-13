@@ -7,25 +7,27 @@ import '../../../generators/guilds/names/guild_adjective_name_generator.dart';
 import '../../../generators/guilds/names/guild_title_name_generator.dart';
 import '../../../generators/guilds/names/guild_verb_name_generator.dart';
 import '../guild_type.dart';
-import 'quests/artisans_quest_generator.dart';
-import 'reputation/artisan_reputation_generator.dart';
-import 'specialties/artisans_specialty_generator.dart';
+import 'quests/cult_quest_generator.dart';
+import 'reputation/cult_reputation_generator.dart';
+import 'specialties/cult_specialty_generator.dart';
 
-class ArtisansGuild implements GuildType {
-  const ArtisansGuild();
+/// A class that represents a cult guild type
+class Cult implements GuildType {
+  const Cult();
 
-  static const _guildType = "artisans guild";
-  static const _leaderOccupation = "guild master";
+  static const _guildType = "cult";
+  static const _leaderOccupation = "cult leader";
   static const _membersOccupations = [
-    "artisan",
-    "craftsman",
-    "apprentice",
-    "master artisan",
+    "cultist",
+    "acolyte",
+    "cult fanatic",
   ];
   static const _guildTitles = [
-    "artisans",
-    "craftsmen",
-    "makers",
+    "cult",
+    "cultists",
+    "order",
+    "brotherhood",
+    "sisterhood",
   ];
 
   @override
@@ -53,11 +55,11 @@ class ArtisansGuild implements GuildType {
       ]);
 
   @override
-  IGenerator<String> getQuestGenerator() => ArtisansQuestGenerator();
+  IGenerator<String> getQuestGenerator() => CultQuestGenerator();
 
   @override
-  IGenerator<String> getReputationGenerator() => ArtisansReputationGenerator();
+  IGenerator<String> getReputationGenerator() => CultReputationGenerator();
 
   @override
-  IGenerator<String> getSpecialtyGenerator() => ArtisansSpecialtyGenerator();
+  IGenerator<String> getSpecialtyGenerator() => CultSpecialtyGenerator();
 }

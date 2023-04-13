@@ -24,6 +24,7 @@
   - Mages guilds
   - Druid circles
   - Artisan guilds
+  - Cults
 
 - Added guilds to world entity
 
