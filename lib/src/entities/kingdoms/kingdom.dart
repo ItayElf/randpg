@@ -1,11 +1,10 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-
 import 'dart:convert';
 
 import 'package:collection/collection.dart';
-import 'package:randpg/src/subtypes/races/race_manager.dart';
 
 import '../../subtypes/races/race.dart';
+import '../../subtypes/races/race_manager.dart';
+import '../guilds/guilds.dart';
 import '../npcs/npc.dart';
 import '../settlements/settlement.dart';
 
@@ -35,9 +34,8 @@ class Kingdom {
   final String history;
 
   /// List of guilds that operate in this kingdom
-  ///
-  /// TODO: change to guild class after new guild class is added
-  final List<String> guilds;
+  final List<Guild> guilds;
+
   // A trouble this kingdom have
   final String trouble;
 
@@ -63,7 +61,7 @@ class Kingdom {
     List<Settlement>? importantSettlements,
     String? governmentType,
     String? history,
-    List<String>? guilds,
+    List<Guild>? guilds,
     String? trouble,
   }) {
     return Kingdom(
@@ -111,7 +109,11 @@ class Kingdom {
       ),
       governmentType: map['governmentType'] as String,
       history: map['history'] as String,
-      guilds: List<String>.from((map['guilds'] as List<String>)),
+      guilds: List<Guild>.from(
+        (map['guilds'] as List<Map<String, dynamic>>).map<Guild>(
+          (x) => Guild.fromMap(x),
+        ),
+      ),
       trouble: map['trouble'] as String,
     );
   }
