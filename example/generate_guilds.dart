@@ -1,6 +1,4 @@
 import 'package:randpg/entities/guilds.dart';
-import 'package:randpg/generators/guilds.dart';
-import 'package:randpg/subtypes/guilds.dart';
 
 void main() {
   // Generating each of the active guild types

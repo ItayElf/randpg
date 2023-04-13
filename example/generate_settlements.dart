@@ -1,8 +1,6 @@
+import 'package:randpg/entities/races.dart';
 import 'package:randpg/entities/settlements.dart';
-import 'package:randpg/generators/generators.dart';
-import 'package:randpg/generators/settlements.dart';
-import 'package:randpg/subtypes/races.dart';
-import 'package:randpg/subtypes/settlements.dart';
+import 'package:randpg/generators.dart';
 
 void main() {
   // Generating each of the active settlements

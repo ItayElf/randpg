@@ -26,6 +26,8 @@
   - Artisan guilds
   - Cults
 
+- Made cleaner exports
+
 - Added guilds to world entity
 
 - Added better names for monuments

@@ -1,4 +1,3 @@
-import '../../../../subtypes/guilds.dart';
 import '../../../generators/base/generator.dart';
 import '../../../generators/base/list_item_generator.dart';
 import '../../../generators/base/multiple_generator.dart';
@@ -7,6 +6,7 @@ import '../../../generators/guilds/mottos/guild_motto_generator.dart';
 import '../../../generators/guilds/names/guild_adjective_name_generator.dart';
 import '../../../generators/guilds/names/guild_title_name_generator.dart';
 import '../../../generators/guilds/names/guild_verb_name_generator.dart';
+import '../guild_type.dart';
 import 'quests/mages_quest_generator.dart';
 import 'reputation/mages_reputation_generator.dart';
 import 'specialties/mages_specialty_generator.dart';

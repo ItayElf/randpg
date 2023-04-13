@@ -1,4 +1,3 @@
-import '../../../generators/settlements.dart';
 import '../../entities/settlements/location.dart';
 import '../../subtypes/locations/location_type.dart';
 import '../../subtypes/races/race.dart';
@@ -8,6 +7,7 @@ import '../base/generator.dart';
 import '../base/list_item_generator.dart';
 import '../base/seed_generator.dart';
 import '../base/weighted_generator.dart';
+import 'locations/location_generator.dart';
 
 /// A class that generates locations for settlements
 class SettlementLocationsGenerator implements IGenerator<List<Location>> {

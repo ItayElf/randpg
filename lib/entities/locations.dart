@@ -1,3 +1,4 @@
+
 export '../src/subtypes/locations/location_type.dart' show LocationType;
 export '../src/subtypes/locations/location_manager.dart' show LocationManager;
 

@@ -1,4 +1,4 @@
-import '../../../../generators/generators.dart';
+import '../../base/list_item_generator.dart';
 
 /// A class that generates world truths
 class WorldTruthGenerator extends ListItemGenerator<String> {

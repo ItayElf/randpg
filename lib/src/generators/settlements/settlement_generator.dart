@@ -1,7 +1,12 @@
-import '../../../generators/generators.dart';
 import '../../entities/settlements/settlement.dart';
 import '../../subtypes/races/race.dart';
 import '../../subtypes/settlements/settlement_type.dart';
+import '../base/batch_generator.dart';
+import '../base/future_generator.dart';
+import '../base/generator.dart';
+import '../base/list_item_generator.dart';
+import '../base/seed_generator.dart';
+import '../base/unique_generator.dart';
 import '../fixable.dart';
 import 'important_characters/important_character_generator.dart';
 import 'settlement_locations_generator.dart';
