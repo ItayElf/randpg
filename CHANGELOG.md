@@ -28,6 +28,8 @@
 
 - Added guilds to world entity
 
+- Added better names for monuments
+
 - Added base generators
   - RepeatedGenerator
 
