@@ -1,7 +1,10 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
 import 'package:collection/collection.dart';
+import 'package:randpg/src/subtypes/government_types/govenrment_type_manager.dart';
 
+import '../../subtypes/government_types/government_type.dart';
 import '../../subtypes/races/race.dart';
 import '../../subtypes/races/race_manager.dart';
 import '../guilds/guilds.dart';
@@ -28,7 +31,7 @@ class Kingdom {
   final List<Settlement> importantSettlements;
 
   /// The government type of the kingdom
-  final String governmentType;
+  final GovernmentType governmentType;
 
   /// Something this kingdom is known for
   final String knownFor;
@@ -63,7 +66,7 @@ class Kingdom {
     int? population,
     Settlement? capital,
     List<Settlement>? importantSettlements,
-    String? governmentType,
+    GovernmentType? governmentType,
     String? knownFor,
     String? history,
     List<Guild>? guilds,
@@ -93,7 +96,7 @@ class Kingdom {
       'capital': capital.toMap(),
       'importantSettlements':
           importantSettlements.map((x) => x.toMap()).toList(),
-      'governmentType': governmentType,
+      'governmentType': governmentType.getGovernmentType(),
       'knownFor': knownFor,
       'history': history,
       'guilds': guilds.map((x) => x.toMap()).toList(),
@@ -114,7 +117,8 @@ class Kingdom {
           (x) => Settlement.fromMap(x),
         ),
       ),
-      governmentType: map['governmentType'] as String,
+      governmentType:
+          GovernmentTypeManager.getGovernmentTypeByType(map['governmentType']),
       knownFor: map['knownFor'] as String,
       history: map['history'] as String,
       guilds: List<Guild>.from(
