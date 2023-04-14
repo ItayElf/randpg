@@ -2,7 +2,7 @@
 import 'dart:convert';
 
 import 'package:collection/collection.dart';
-import 'package:randpg/src/subtypes/government_types/govenrment_type_manager.dart';
+import 'package:randpg/src/subtypes/government_types/government_type_manager.dart';
 
 import '../../subtypes/government_types/government_type.dart';
 import '../../subtypes/races/race.dart';
