@@ -9,6 +9,7 @@
 - [Generating landscapes](#generating-landscapes)
 - [Generating deities](#generating-deities)
 - [Generating guilds](#generating-guilds)
+- [Generating kingdoms](#generating-kingdoms)
 - [Generating worlds](#generating-worlds)
 
 ## Generating names
@@ -94,9 +95,20 @@ final Guild guild = guildGenerator.generate();
 print(guild);
 ```
 
+## Generating kingdoms
+
+Generating a kingdom of dwarfs as an example:
+```dart
+final Race race = Dwarf();
+final KingdomType kingdomType = DefaultKingdomType();
+
+final Kingdom kingdom = KingdomGenerator(kingdomType, race).generate();
+print(kingdom);
+```
+
 ## Generating worlds
 
-Generating a world with the default settings
+Generating a world with the default settings:
 ```dart
 final WorldSettings settings = DefaultWorldSettings();
 final worldGenerator = WorldGenerator(settings);
