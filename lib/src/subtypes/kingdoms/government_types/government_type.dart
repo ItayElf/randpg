@@ -1,5 +1,5 @@
-import '../../enums/gender.dart';
-import '../../generators/base/generator.dart';
+import '../../../enums/gender.dart';
+import '../../../generators/base/generator.dart';
 
 /// A class that represents a government type
 abstract class GovernmentType {

@@ -1,6 +1,6 @@
-import '../../../enums/gender.dart';
-import '../../../generators/base/generator.dart';
-import '../../../generators/base/list_item_generator.dart';
+import '../../../../enums/gender.dart';
+import '../../../../generators/base/generator.dart';
+import '../../../../generators/base/list_item_generator.dart';
 import '../government_type.dart';
 
 /// A class that represents the monarchy government type

@@ -2,8 +2,8 @@ import 'dart:convert';
 
 import 'package:collection/collection.dart';
 
-import '../../subtypes/government_types/government_type.dart';
-import '../../subtypes/government_types/government_type_manager.dart';
+import '../../subtypes/kingdoms/government_types/government_type.dart';
+import '../../subtypes/kingdoms/government_types/government_type_manager.dart';
 import '../../subtypes/races/race.dart';
 import '../../subtypes/races/race_manager.dart';
 import '../guilds/guilds.dart';
