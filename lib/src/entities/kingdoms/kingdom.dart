@@ -1,10 +1,9 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
 import 'package:collection/collection.dart';
-import 'package:randpg/src/subtypes/government_types/government_type_manager.dart';
 
 import '../../subtypes/government_types/government_type.dart';
+import '../../subtypes/government_types/government_type_manager.dart';
 import '../../subtypes/races/race.dart';
 import '../../subtypes/races/race_manager.dart';
 import '../guilds/guilds.dart';
@@ -15,8 +14,8 @@ class Kingdom {
   /// The name of the kingdom
   final String name;
 
-  /// The ruler of the kingdom
-  final Npc ruler;
+  /// The rulers of the kingdom
+  final List<Npc> rulers;
 
   /// The race of the kingdom
   final Race race;
@@ -47,7 +46,7 @@ class Kingdom {
 
   const Kingdom({
     required this.name,
-    required this.ruler,
+    required this.rulers,
     required this.race,
     required this.population,
     required this.capital,
@@ -61,7 +60,7 @@ class Kingdom {
 
   Kingdom copyWith({
     String? name,
-    Npc? ruler,
+    List<Npc>? rulers,
     Race? race,
     int? population,
     Settlement? capital,
@@ -74,7 +73,7 @@ class Kingdom {
   }) {
     return Kingdom(
       name: name ?? this.name,
-      ruler: ruler ?? this.ruler,
+      rulers: rulers ?? this.rulers,
       race: race ?? this.race,
       population: population ?? this.population,
       capital: capital ?? this.capital,
@@ -90,7 +89,7 @@ class Kingdom {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'name': name,
-      'ruler': ruler.toMap(),
+      'rulers': rulers.map((x) => x.toMap()).toList(),
       'race': race.getName(),
       'population': population,
       'capital': capital.toMap(),
@@ -107,7 +106,11 @@ class Kingdom {
   factory Kingdom.fromMap(Map<String, dynamic> map) {
     return Kingdom(
       name: map['name'] as String,
-      ruler: Npc.fromMap(map['ruler'] as Map<String, dynamic>),
+      rulers: List<Npc>.from(
+        (map['rulers'] as List<Map<String, dynamic>>).map<Npc>(
+          (x) => Npc.fromMap(x),
+        ),
+      ),
       race: RaceManager.getRaceByName(map['race']),
       population: map['population'] as int,
       capital: Settlement.fromMap(map['capital'] as Map<String, dynamic>),
@@ -137,7 +140,7 @@ class Kingdom {
 
   @override
   String toString() {
-    return 'Kingdom(name: $name, ruler: $ruler, race: $race, population: $population, capital: $capital, importantSettlements: $importantSettlements, governmentType: $governmentType, knownFor: $knownFor, history: $history, guilds: $guilds, trouble: $trouble)';
+    return 'Kingdom(name: $name, rulers: $rulers, race: $race, population: $population, capital: $capital, importantSettlements: $importantSettlements, governmentType: $governmentType, knownFor: $knownFor, history: $history, guilds: $guilds, trouble: $trouble)';
   }
 
   @override
@@ -146,7 +149,7 @@ class Kingdom {
     final listEquals = const DeepCollectionEquality().equals;
 
     return other.name == name &&
-        other.ruler == ruler &&
+        listEquals(other.rulers, rulers) &&
         other.race == race &&
         other.population == population &&
         other.capital == capital &&
@@ -161,7 +164,7 @@ class Kingdom {
   @override
   int get hashCode {
     return name.hashCode ^
-        ruler.hashCode ^
+        rulers.hashCode ^
         race.hashCode ^
         population.hashCode ^
         capital.hashCode ^
