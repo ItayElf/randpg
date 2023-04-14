@@ -1,12 +1,16 @@
 import '../../generators/base/generator.dart';
 import '../guilds/guild_type.dart';
+import '../races/race.dart';
 import '../settlements/settlement_type.dart';
 import 'government_types/government_type.dart';
 
 /// A class that represents a generic kingdom type
 abstract class KingdomType {
   /// Returns a generator for a kingdom's name
-  IGenerator<String> getNameGenerator();
+  IGenerator<String> getNameGenerator(Race race);
+
+  /// Returns the type of the settings kingdom
+  String getKingdomType();
 
   /// Returns a generator for the population of a kingdom
   IGenerator<int> getPopulationGenerator();
@@ -24,7 +28,7 @@ abstract class KingdomType {
   IGenerator<String> getKnownForGenerator();
 
   /// Returns a generator for the history of the kingdom
-  IGenerator<String> getHistoryGenerator();
+  IGenerator<String> getHistoryGenerator(String kingdomName);
 
   /// Returns a generator for the type of the guilds in the kingdom
   IGenerator<GuildType> getGuildTypeGenerator();
