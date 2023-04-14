@@ -30,6 +30,9 @@ class Kingdom {
   /// The government type of the kingdom
   final String governmentType;
 
+  /// Something this kingdom is known for
+  final String knownFor;
+
   /// The history of the kingdom
   final String history;
 
@@ -47,6 +50,7 @@ class Kingdom {
     required this.capital,
     required this.importantSettlements,
     required this.governmentType,
+    required this.knownFor,
     required this.history,
     required this.guilds,
     required this.trouble,
@@ -60,6 +64,7 @@ class Kingdom {
     Settlement? capital,
     List<Settlement>? importantSettlements,
     String? governmentType,
+    String? knownFor,
     String? history,
     List<Guild>? guilds,
     String? trouble,
@@ -72,6 +77,7 @@ class Kingdom {
       capital: capital ?? this.capital,
       importantSettlements: importantSettlements ?? this.importantSettlements,
       governmentType: governmentType ?? this.governmentType,
+      knownFor: knownFor ?? this.knownFor,
       history: history ?? this.history,
       guilds: guilds ?? this.guilds,
       trouble: trouble ?? this.trouble,
@@ -88,8 +94,9 @@ class Kingdom {
       'importantSettlements':
           importantSettlements.map((x) => x.toMap()).toList(),
       'governmentType': governmentType,
+      'knownFor': knownFor,
       'history': history,
-      'guilds': guilds,
+      'guilds': guilds.map((x) => x.toMap()).toList(),
       'trouble': trouble,
     };
   }
@@ -108,6 +115,7 @@ class Kingdom {
         ),
       ),
       governmentType: map['governmentType'] as String,
+      knownFor: map['knownFor'] as String,
       history: map['history'] as String,
       guilds: List<Guild>.from(
         (map['guilds'] as List<Map<String, dynamic>>).map<Guild>(
@@ -125,7 +133,7 @@ class Kingdom {
 
   @override
   String toString() {
-    return 'Kingdom(name: $name, ruler: $ruler, race: $race, population: $population, capital: $capital, importantSettlements: $importantSettlements, governmentType: $governmentType, history: $history, guilds: $guilds, trouble: $trouble)';
+    return 'Kingdom(name: $name, ruler: $ruler, race: $race, population: $population, capital: $capital, importantSettlements: $importantSettlements, governmentType: $governmentType, knownFor: $knownFor, history: $history, guilds: $guilds, trouble: $trouble)';
   }
 
   @override
@@ -140,6 +148,7 @@ class Kingdom {
         other.capital == capital &&
         listEquals(other.importantSettlements, importantSettlements) &&
         other.governmentType == governmentType &&
+        other.knownFor == knownFor &&
         other.history == history &&
         listEquals(other.guilds, guilds) &&
         other.trouble == trouble;
@@ -154,6 +163,7 @@ class Kingdom {
         capital.hashCode ^
         importantSettlements.hashCode ^
         governmentType.hashCode ^
+        knownFor.hashCode ^
         history.hashCode ^
         guilds.hashCode ^
         trouble.hashCode;
