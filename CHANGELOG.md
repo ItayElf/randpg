@@ -20,6 +20,8 @@
 
 - Added kingdoms
 
+- Switched settlements for kingdoms in world entity
+
 - Added government types
   - Federation
   - Monarchy
