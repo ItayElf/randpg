@@ -23,7 +23,7 @@ final nameGenerator = race.getNameGenerator(gender);
 // if you want to seed the generator:
 nameGenerator.seed(1234);
 
-print(nameGenerator.generate()); // expected output: "Cormin Shadowheart"
+print(nameGenerator.generate()); // expected output: "Cormin Copperbrook"
 ```
 *output might be different since dart random seed is different on different machines* 
 
