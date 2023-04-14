@@ -20,3 +20,6 @@ export '../src/subtypes/kingdoms/kingdom_type_manager.dart'
 
 export '../src/subtypes/kingdoms/default_kingdom/default_kingdom_type.dart'
     show DefaultKingdomType;
+
+export '../src/generators/kingdoms/kingdom_generator.dart'
+    show KingdomGenerator;
