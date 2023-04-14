@@ -32,9 +32,9 @@ class WorldGenerator implements IGenerator<World> {
   Map<String, IGenerator> _getBatch() => {
         "name": _worldSettings.getNameGenerator(),
         "worldSettings": ListItemGenerator([_worldSettings.getSettingName()]),
-        "settlements": FutureGenerator(
-          WorldSettlementsGenerator(_worldSettings),
-          (settlements) => settlements.map((e) => e.toMap()).toList(),
+        "kingdoms": FutureGenerator(
+          WorldKingdomsGenerator(_worldSettings),
+          (kingdoms) => kingdoms.map((e) => e.toMap()).toList(),
         ),
         "landscapes": FutureGenerator(
           WorldLandscapeGenerator(_worldSettings),
