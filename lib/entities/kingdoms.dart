@@ -13,3 +13,10 @@ export '../src/subtypes/kingdoms/government_types/theocracy/theocracy.dart'
     show Theocracy;
 
 export '../src/entities/kingdoms/kingdom.dart' show Kingdom;
+
+export '../src/subtypes/kingdoms/kingdom_type.dart' show KingdomType;
+export '../src/subtypes/kingdoms/kingdom_type_manager.dart'
+    show KingdomTypeManager;
+
+export '../src/subtypes/kingdoms/default_kingdom/default_kingdom_type.dart'
+    show DefaultKingdomType;

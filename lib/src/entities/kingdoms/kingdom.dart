@@ -4,6 +4,8 @@ import 'package:collection/collection.dart';
 
 import '../../subtypes/kingdoms/government_types/government_type.dart';
 import '../../subtypes/kingdoms/government_types/government_type_manager.dart';
+import '../../subtypes/kingdoms/kingdom_type.dart';
+import '../../subtypes/kingdoms/kingdom_type_manager.dart';
 import '../../subtypes/races/race.dart';
 import '../../subtypes/races/race_manager.dart';
 import '../guilds/guilds.dart';
@@ -13,6 +15,9 @@ import '../settlements/settlement.dart';
 class Kingdom {
   /// The name of the kingdom
   final String name;
+
+  /// The type of the kingdom generation settings
+  final KingdomType kingdomType;
 
   /// The rulers of the kingdom
   final List<Npc> rulers;
@@ -46,6 +51,7 @@ class Kingdom {
 
   const Kingdom({
     required this.name,
+    required this.kingdomType,
     required this.rulers,
     required this.race,
     required this.population,
@@ -60,6 +66,7 @@ class Kingdom {
 
   Kingdom copyWith({
     String? name,
+    KingdomType? kingdomType,
     List<Npc>? rulers,
     Race? race,
     int? population,
@@ -73,6 +80,7 @@ class Kingdom {
   }) {
     return Kingdom(
       name: name ?? this.name,
+      kingdomType: kingdomType ?? this.kingdomType,
       rulers: rulers ?? this.rulers,
       race: race ?? this.race,
       population: population ?? this.population,
@@ -89,6 +97,7 @@ class Kingdom {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'name': name,
+      'kingdomType': kingdomType.getKingdomType(),
       'rulers': rulers.map((x) => x.toMap()).toList(),
       'race': race.getName(),
       'population': population,
@@ -106,6 +115,7 @@ class Kingdom {
   factory Kingdom.fromMap(Map<String, dynamic> map) {
     return Kingdom(
       name: map['name'] as String,
+      kingdomType: KingdomTypeManager.getKingdomTypeByType(map['kingdomType']),
       rulers: List<Npc>.from(
         (map['rulers'] as List<Map<String, dynamic>>).map<Npc>(
           (x) => Npc.fromMap(x),
@@ -140,7 +150,7 @@ class Kingdom {
 
   @override
   String toString() {
-    return 'Kingdom(name: $name, rulers: $rulers, race: $race, population: $population, capital: $capital, importantSettlements: $importantSettlements, governmentType: $governmentType, knownFor: $knownFor, history: $history, guilds: $guilds, trouble: $trouble)';
+    return 'Kingdom(name: $name, kingdomType: $kingdomType, rulers: $rulers, race: $race, population: $population, capital: $capital, importantSettlements: $importantSettlements, governmentType: $governmentType, knownFor: $knownFor, history: $history, guilds: $guilds, trouble: $trouble)';
   }
 
   @override
@@ -149,6 +159,7 @@ class Kingdom {
     final listEquals = const DeepCollectionEquality().equals;
 
     return other.name == name &&
+        other.kingdomType == kingdomType &&
         listEquals(other.rulers, rulers) &&
         other.race == race &&
         other.population == population &&
@@ -164,6 +175,7 @@ class Kingdom {
   @override
   int get hashCode {
     return name.hashCode ^
+        kingdomType.hashCode ^
         rulers.hashCode ^
         race.hashCode ^
         population.hashCode ^

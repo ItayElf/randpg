@@ -87,3 +87,11 @@ class GovernmentTypeNotFoundException extends RandpgException {
   @override
   String toString() => msg ?? "GovernmentTypeNotFoundException";
 }
+
+/// An exception that is thrown when a not supported kingdomType is being used
+class KingdomTypeNotFoundException extends RandpgException {
+  const KingdomTypeNotFoundException([super.msg]);
+
+  @override
+  String toString() => msg ?? "KingdomTypeNotFoundException";
+}
