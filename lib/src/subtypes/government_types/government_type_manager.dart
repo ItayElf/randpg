@@ -1,13 +1,22 @@
 import 'package:collection/collection.dart';
 
 import '../../randpg_exceptions.dart';
+import 'federation/federation.dart';
 import 'government_type.dart';
+import 'monarchy/monarchy.dart';
+import 'republic/republic.dart';
+import 'theocracy/theocracy.dart';
 
 /// A class that handles the available governmentTypes and using them
 ///
 /// When making a custom governmentType, make sure to register it or else some features might not work
 abstract class GovernmentTypeManager {
-  static final Set<GovernmentType> _governmentTypes = {};
+  static final Set<GovernmentType> _governmentTypes = {
+    Federation(),
+    Monarchy(),
+    Republic(),
+    Theocracy(),
+  };
 
   static final Set<GovernmentType> _activeGovernmentTypes = {
     ..._governmentTypes
