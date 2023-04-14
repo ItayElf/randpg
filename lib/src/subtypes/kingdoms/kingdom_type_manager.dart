@@ -1,13 +1,16 @@
 import 'package:collection/collection.dart';
 
 import '../../randpg_exceptions.dart';
+import 'default_kingdom/default_kingdom_type.dart';
 import 'kingdom_type.dart';
 
 /// A class that handles the available kingdoms and using them
 ///
 /// When making a custom kingdom type, make sure to register it or else some features might not work
 abstract class KingdomTypeManager {
-  static final Set<KingdomType> _kingdomTypes = {};
+  static final Set<KingdomType> _kingdomTypes = {
+    DefaultKingdomType(),
+  };
 
   static final Set<KingdomType> _activeKingdomTypes = {..._kingdomTypes};
 

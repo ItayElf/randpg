@@ -7,6 +7,7 @@ import '../base/batch_generator.dart';
 import '../base/future_generator.dart';
 import '../base/generator.dart';
 import '../base/list_item_generator.dart';
+import '../base/number_generator.dart';
 import '../base/seed_generator.dart';
 import '../base/unique_generator.dart';
 import '../fixable.dart';
@@ -20,6 +21,8 @@ class KingdomGenerator implements IGenerator<Kingdom> {
   final Race _race;
 
   static const _numberOfSettlements = 3;
+  static const _minNumberOfGuilds = 1;
+  static const _maxNumberOfGuilds = 2;
 
   KingdomGenerator(this._kingdomType, this._race) {
     _seed = SeedGenerator.generate();
@@ -39,9 +42,18 @@ class KingdomGenerator implements IGenerator<Kingdom> {
     nameGenerator.seed((_seed + 2) % SeedGenerator.maxSeed);
     final name = nameGenerator.generate();
 
-    final generator =
-        BatchGenerator(_getBatch(numberOfLeaders, governmentType, name));
-    generator.seed((_seed + 3) % SeedGenerator.maxSeed);
+    final numberOfGuildsGenerator =
+        NumberGenerator(_minNumberOfGuilds, _maxNumberOfGuilds + 1);
+    numberOfGuildsGenerator.seed((_seed + 3) % SeedGenerator.maxSeed);
+    final numberOfGuilds = numberOfGuildsGenerator.generate();
+
+    final generator = BatchGenerator(_getBatch(
+      numberOfLeaders,
+      numberOfGuilds,
+      governmentType,
+      name,
+    ));
+    generator.seed((_seed + 4) % SeedGenerator.maxSeed);
     Kingdom kingdom = Kingdom.fromMap(generator.generate());
 
     if (_kingdomType is Fixable<Kingdom>) {
@@ -53,6 +65,7 @@ class KingdomGenerator implements IGenerator<Kingdom> {
 
   Map<String, IGenerator> _getBatch(
     int numberOfLeaders,
+    int numberOfGuilds,
     GovernmentType governmentType,
     String kingdomName,
   ) =>
@@ -65,20 +78,31 @@ class KingdomGenerator implements IGenerator<Kingdom> {
         ),
         "race": ListItemGenerator([_race.getName()]),
         "population": _kingdomType.getPopulationGenerator(),
-        "capital": KingdomSettlementGenerator(
-            _kingdomType.getCapitalTypeGenerator(), _race),
-        "importantSettlements": UniqueGenerator(
+        "capital": FutureGenerator(
           KingdomSettlementGenerator(
-              _kingdomType.getCapitalTypeGenerator(), _race),
-          _numberOfSettlements,
+            _kingdomType.getImportantSettlementsTypesGenerator(),
+            _race,
+          ),
+          (capital) => capital.toMap(),
+        ),
+        "importantSettlements": FutureGenerator(
+          UniqueGenerator(
+            KingdomSettlementGenerator(
+                _kingdomType.getCapitalTypeGenerator(), _race),
+            _numberOfSettlements,
+          ),
+          (settlements) => settlements.map((e) => e.toMap()).toList(),
         ),
         "governmentType":
             ListItemGenerator([governmentType.getGovernmentType()]),
         "knownFor": _kingdomType.getKnownForGenerator(),
         "history": _kingdomType.getHistoryGenerator(kingdomName),
-        "guilds": UniqueGenerator(
-          KingdomGuildGenerator(_kingdomType.getGuildTypeGenerator()),
-          _numberOfSettlements,
+        "guilds": FutureGenerator(
+          UniqueGenerator(
+            KingdomGuildGenerator(_kingdomType.getGuildTypeGenerator()),
+            numberOfGuilds,
+          ),
+          (guilds) => guilds.map((e) => e.toMap()).toList(),
         ),
         "trouble": _kingdomType.getTroubleGenerator(),
       };

@@ -29,12 +29,12 @@ class KingdomHistoryGenerator implements IGenerator<String> {
   }
 
   String _getHistory(Map<String, dynamic> map) =>
-      "${titledEach(_kingdomName)} is ${article(map["time"])} kingdom that rose to power through ${map["rise"]}. "
+      "${titledEach(_kingdomName)} is ${article(map["age"])} kingdom that rose to power through ${map["rise"]}. "
       "${titledEach(_kingdomName)} faced ${map["challenge"]}, which ${map["result"]}. "
       "Today, ${titledEach(_kingdomName)} is ${map["state"]}.";
 
   String _getAlternativeFormatHistory(Map<String, dynamic> map) =>
-      "Having risen to prominence through ${map["rise"]}, ${titledEach(_kingdomName)}, ${article(map["time"])} "
+      "Having risen to prominence through ${map["rise"]}, ${titledEach(_kingdomName)}, ${article(map["age"])} "
       "kingdom, was confronted by ${map["challenge"]}, which ${map["result"]}. "
       "Currently, ${titledEach(_kingdomName)} is ${map["state"]}";
 
