@@ -28,6 +28,11 @@
   - Republic
   - Theocracy
 
+- Added custom settlement names for races
+  - Dwarf
+  - Elf
+  - Orc
+
 ## 0.7.0
 
 - Added guilds

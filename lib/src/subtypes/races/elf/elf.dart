@@ -13,15 +13,17 @@ import '../../../generators/npcs/physical/face/good_looking_face_generator.dart'
 import '../../../generators/npcs/physical/special_features/base_special_feature_generator.dart';
 import '../../../generators/world/opinions/base_opinion_generator.dart';
 import '../race.dart';
+import '../settlement_nameable.dart';
 import 'alignment/elven_alignment_generator.dart';
 import 'hair/elven_hair_generator.dart';
 import 'names/elf_name_generator.dart';
 import 'opinions/elf_opinion_generator.dart';
 import 'quirks/elf_quirks_generator.dart';
+import 'settlement_names/elven_settlement_name_generator.dart';
 import 'skin/elf_skin_generator.dart';
 
 /// A class that represents the elven race
-class Elf implements Race {
+class Elf implements Race, SettlementNameable {
   const Elf();
 
   static const _raceName = "elf";
@@ -90,4 +92,8 @@ class Elf implements Race {
         BaseOpinionGenerator(),
         ElfOpinionGenerator(),
       ]);
+
+  @override
+  IGenerator<String> getSettlementNameGenerator() =>
+      ElvenSettlementNameGenerator();
 }
