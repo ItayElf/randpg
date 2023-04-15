@@ -45,3 +45,7 @@ export '../../src/generators/npcs/personality/traits/personality_trait_generator
 // ---------------------- Opinions ---------------------
 export '../../src/generators/world/opinions/base_opinion_generator.dart'
     show BaseOpinionGenerator;
+
+// ---------------------- SettlementNames ---------------------
+export '../../src/subtypes/races/settlement_nameable.dart'
+    show SettlementNameable;
