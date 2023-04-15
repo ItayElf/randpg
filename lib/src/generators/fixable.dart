@@ -1,5 +1,4 @@
 /// A class that represent an object that needs to be fixed after generation
-
 abstract class Fixable<T> {
   /// Returns the fixed version of [object]
   ///
