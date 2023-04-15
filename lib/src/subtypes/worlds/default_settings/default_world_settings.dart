@@ -1,8 +1,9 @@
+import 'package:collection/collection.dart';
+
 import '../../../entities/deities/deity.dart';
 import '../../../generators/base/generator.dart';
 import '../../../generators/base/list_item_generator.dart';
 import '../../../generators/base/multiple_generator.dart';
-import '../../../generators/base/number_generator.dart';
 import '../../../generators/base/unique_generator.dart';
 import '../../../generators/deities/deity_generator.dart';
 import '../../../generators/npcs/occupation/adventurer_occupation_generator.dart';
@@ -17,10 +18,13 @@ import '../../deities/demon_lords/demon_lord.dart';
 import '../../deities/primordials/primordial.dart';
 import '../../guilds/guild_manager.dart';
 import '../../guilds/guild_type.dart';
-import '../../kingdoms/default_kingdom/default_kingdom_type.dart';
-import '../../kingdoms/kingdom_type.dart';
 import '../../landscapes/landscape_manager.dart';
 import '../../landscapes/landscape_type.dart';
+import '../../settlements/city/city.dart';
+import '../../settlements/hamlet/hamlet.dart';
+import '../../settlements/metropolis/metropolis.dart';
+import '../../settlements/settlement_type.dart';
+import '../../settlements/settlements_manager.dart';
 import '../lore/default_lore/default_lore.dart';
 import '../lore/world_lore_type.dart';
 import '../world_settings.dart';
@@ -34,8 +38,6 @@ class DefaultWorldSettings implements WorldSettings {
   static const _higherDeitiesCount = 3;
   static const _importantPeopleCount = 5;
   static const _worldLore = DefaultLore();
-  static const _minKingdoms = 4;
-  static const _maxKingdoms = 10;
   static const Map<DeityType, int> _lesserDeitiesMap = {
     Archangel(): 1,
     DemonLord(): 1,
@@ -43,6 +45,17 @@ class DefaultWorldSettings implements WorldSettings {
   };
   static const _landscapeTypes = [
     null,
+    null,
+    null,
+    null,
+    null,
+  ];
+  static const _settlementTypes = [
+    Metropolis(),
+    Metropolis(),
+    City(),
+    City(),
+    City(),
     null,
     null,
     null,
@@ -85,11 +98,14 @@ class DefaultWorldSettings implements WorldSettings {
   String getSettingName() => _settingsName;
 
   @override
-  KingdomType getKingdomType() => DefaultKingdomType();
+  IGenerator<SettlementType> getSettlementTypeGenerator() => ListItemGenerator(
+        SettlementManager.activeSettlementTypes
+            .whereNot((element) => element is Hamlet)
+            .toList(),
+      );
 
   @override
-  IGenerator<int> getKingdomsCountGenerator() =>
-      NumberGenerator(_minKingdoms, _maxKingdoms + 1);
+  List<SettlementType?> getSettlementTypes() => _settlementTypes;
 
   @override
   WorldLoreType getWorldLore() => _worldLore;

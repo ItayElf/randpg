@@ -8,7 +8,6 @@ import '../../../generators/settlements/locations/zone/base_zone_generator.dart'
 import '../location_type.dart';
 import 'goods/tavern_goods_generator.dart';
 
-/// A class that represents the tavern location type
 class Tavern implements LocationType {
   const Tavern();
 

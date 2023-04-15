@@ -1,43 +1,64 @@
-import 'dart:convert';
-
-import '../../../entities/kingdoms/kingdom.dart';
+import '../../../entities/settlements/settlement.dart';
+import '../../../subtypes/races/race.dart';
 import '../../../subtypes/races/race_manager.dart';
+import '../../../subtypes/settlements/settlement_type.dart';
 import '../../../subtypes/worlds/world_settings.dart';
 import '../../base/generator.dart';
-import '../../base/list_batch_generator.dart';
 import '../../base/list_item_generator.dart';
-import '../../base/repeated_generator.dart';
 import '../../base/seed_generator.dart';
-import '../../kingdoms/kingdom_generator.dart';
+import '../../settlements/settlement_generator.dart';
 
 /// A class that generates settlements for worlds
-class WorldKingdomsGenerator implements IGenerator<List<Kingdom>> {
+class WorldSettlementsGenerator implements IGenerator<List<Settlement>> {
   late int _seed;
   final WorldSettings _worldSettings;
 
-  WorldKingdomsGenerator(this._worldSettings) {
+  WorldSettlementsGenerator(this._worldSettings) {
     _seed = SeedGenerator.generate();
   }
 
   @override
-  List<Kingdom> generate() {
-    final kingdomsCountGenerator = _worldSettings.getKingdomsCountGenerator();
-    kingdomsCountGenerator.seed(_seed);
-    final kingdomsCount = kingdomsCountGenerator.generate();
-
-    final racesGenerator = RepeatedGenerator(
-        ListItemGenerator(RaceManager.activeRaces), kingdomsCount);
-    racesGenerator.seed((_seed + 1) % SeedGenerator.maxSeed);
-    final races = racesGenerator.generate();
-
-    final generator = ListBatchGenerator(
-      races
-          .map(
-              (race) => KingdomGenerator(_worldSettings.getKingdomType(), race))
-          .toList(),
+  List<Settlement> generate() {
+    final settlements = _worldSettings.getSettlementTypes();
+    final settlementTypes = List.generate(
+      settlements.length,
+      (index) => _getSettlementType(
+        (_seed + index) % SeedGenerator.maxSeed,
+        settlements[index],
+      ),
     );
-    generator.seed((_seed + 2) % SeedGenerator.maxSeed);
+
+    return List.generate(
+      settlementTypes.length,
+      (index) => _generateSettlement(
+        (_seed + index) % SeedGenerator.maxSeed,
+        settlementTypes[index],
+      ),
+    );
+  }
+
+  Settlement _generateSettlement(int seed, SettlementType settlementType) {
+    final race = _generateRace(seed);
+
+    final generator = SettlementGenerator(settlementType, race);
+    generator.seed((seed + 1) % SeedGenerator.maxSeed);
     return generator.generate();
+  }
+
+  SettlementType _getSettlementType(int seed, SettlementType? settlementType) {
+    if (settlementType != null) {
+      return settlementType;
+    }
+
+    final generator = _worldSettings.getSettlementTypeGenerator();
+    generator.seed(seed);
+    return generator.generate();
+  }
+
+  Race _generateRace(int seed) {
+    final raceGenerator = ListItemGenerator(RaceManager.activeRaces);
+    raceGenerator.seed(seed);
+    return raceGenerator.generate();
   }
 
   @override

@@ -19,7 +19,6 @@ import 'names/tiefling_name_generator.dart';
 import 'opinions/tiefling_opinion_generator.dart';
 import 'skin/tiefling_skin_generator.dart';
 
-/// A class that represents the tiefling race
 class Tiefling implements Race {
   const Tiefling();
 

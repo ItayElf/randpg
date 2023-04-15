@@ -8,7 +8,7 @@ class HalfOrc extends Hybrid {
       : super(
           firstRace: const Human(),
           secondRace: const Orc(),
-          raceName: "half-orc",
-          pluralRaceName: "half-orcs",
+          raceName: "Half-orc",
+          pluralRaceName: "Half-orcs",
         );
 }
