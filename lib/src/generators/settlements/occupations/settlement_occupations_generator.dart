@@ -1,6 +1,5 @@
 import '../../base/list_item_generator.dart';
 
-/// A class that generates an occupation for an important figure in the settlement
 class SettlementOccupationsGenerator extends ListItemGenerator<String> {
   static const _settlementOccupations = [
     "mayor",

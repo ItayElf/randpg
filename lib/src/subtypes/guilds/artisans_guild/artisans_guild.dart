@@ -11,7 +11,6 @@ import 'quests/artisans_quest_generator.dart';
 import 'reputation/artisan_reputation_generator.dart';
 import 'specialties/artisans_specialty_generator.dart';
 
-/// A class that represents an artisans guild
 class ArtisansGuild implements GuildType {
   const ArtisansGuild();
 

@@ -13,7 +13,6 @@ import 'resources/steppe_resource_generator.dart';
 import 'size/steppe_size_generator.dart';
 import 'weather/steppe_weather_generator.dart';
 
-/// A class that represents the steppe landscape type
 class Steppe implements LandscapeType {
   const Steppe();
 

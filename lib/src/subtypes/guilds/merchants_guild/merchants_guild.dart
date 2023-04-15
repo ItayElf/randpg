@@ -11,7 +11,6 @@ import 'quests/merchants_quest_generator.dart';
 import 'reputation/merchants_reputation_generator.dart';
 import 'specialties/merchants_specialty_generator.dart';
 
-/// A class that represents a merchants guild
 class MerchantsGuild implements GuildType {
   const MerchantsGuild();
 

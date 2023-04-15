@@ -16,14 +16,12 @@ import '../../../generators/npcs/physical/skin/base_skin_generator.dart';
 import '../../../generators/npcs/physical/special_features/base_special_feature_generator.dart';
 import '../../../generators/world/opinions/base_opinion_generator.dart';
 import '../race.dart';
-import '../settlement_nameable.dart';
 import 'names/dwarf_name_generator.dart';
 import 'opinions/dwarf_opinion_generator.dart';
 import 'quirks/dwarf_quirks_generator.dart';
-import 'settlement_names/dwarven_settlement_name_generator.dart';
 
 /// A class that represents the dwarf race
-class Dwarf implements Race, SettlementNameable {
+class Dwarf implements Race {
   const Dwarf();
 
   static const _raceName = "dwarf";
@@ -91,8 +89,4 @@ class Dwarf implements Race, SettlementNameable {
         BaseOpinionGenerator(),
         DwarfOpinionGenerator(),
       ]);
-
-  @override
-  IGenerator<String> getSettlementNameGenerator() =>
-      DwarvenSettlementNameGenerator();
 }

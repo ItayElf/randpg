@@ -8,9 +8,9 @@ import '../../subtypes/worlds/world_settings.dart';
 import '../../subtypes/worlds/world_settings_manager.dart';
 import '../deities/deity.dart';
 import '../guilds/guilds.dart';
-import '../kingdoms/kingdom.dart';
 import '../landscapes/landscape.dart';
 import '../npcs/npc.dart';
+import '../settlements/settlement.dart';
 import 'world_lore.dart';
 
 /// A class that represents a world
@@ -21,8 +21,8 @@ class World {
   /// The settings of the generated world
   final WorldSettings worldSettings;
 
-  /// List of kingdoms in this world
-  final List<Kingdom> kingdoms;
+  /// Notable settlements in the world
+  final List<Settlement> settlements;
 
   /// Notable landscapes in the world
   final List<Landscape> landscapes;
@@ -51,7 +51,7 @@ class World {
   const World({
     required this.name,
     required this.worldSettings,
-    required this.kingdoms,
+    required this.settlements,
     required this.landscapes,
     required this.opinions,
     required this.importantPeople,
@@ -65,7 +65,7 @@ class World {
   World copyWith({
     String? name,
     WorldSettings? worldSettings,
-    List<Kingdom>? kingdoms,
+    List<Settlement>? settlements,
     List<Landscape>? landscapes,
     Map<Race, String>? opinions,
     List<Npc>? importantPeople,
@@ -78,7 +78,7 @@ class World {
     return World(
       name: name ?? this.name,
       worldSettings: worldSettings ?? this.worldSettings,
-      kingdoms: kingdoms ?? this.kingdoms,
+      settlements: settlements ?? this.settlements,
       landscapes: landscapes ?? this.landscapes,
       opinions: opinions ?? this.opinions,
       importantPeople: importantPeople ?? this.importantPeople,
@@ -94,7 +94,7 @@ class World {
     return <String, dynamic>{
       'name': name,
       'worldSettings': worldSettings.getSettingName(),
-      'kingdoms': kingdoms.map((x) => x.toMap()).toList(),
+      'settlements': settlements.map((x) => x.toMap()).toList(),
       'landscapes': landscapes.map((x) => x.toMap()).toList(),
       'opinions': opinions.map((key, value) => MapEntry(key.getName(), value)),
       'importantPeople': importantPeople.map((x) => x.toMap()).toList(),
@@ -111,9 +111,9 @@ class World {
       name: map['name'] as String,
       worldSettings:
           WorldSettingsManager.getWorldSettingsByName(map['worldSettings']),
-      kingdoms: List<Kingdom>.from(
-        (map['kingdoms'] as List<Map<String, dynamic>>).map<Kingdom>(
-          (x) => Kingdom.fromMap(x),
+      settlements: List<Settlement>.from(
+        (map['settlements'] as List<Map<String, dynamic>>).map<Settlement>(
+          (x) => Settlement.fromMap(x),
         ),
       ),
       landscapes: List<Landscape>.from(
@@ -160,7 +160,7 @@ class World {
 
   @override
   String toString() {
-    return 'World(name: $name, worldSettings: $worldSettings, kingdoms: $kingdoms, landscapes: $landscapes, opinions: $opinions, importantPeople: $importantPeople, guilds: $guilds, deities: $deities, lesserDeities: $lesserDeities, higherDeities: $higherDeities, worldLore: $worldLore)';
+    return 'World(name: $name, worldSettings: $worldSettings, settlements: $settlements, landscapes: $landscapes, opinions: $opinions, importantPeople: $importantPeople, guilds: $guilds, deities: $deities, lesserDeities: $lesserDeities, higherDeities: $higherDeities, worldLore: $worldLore)';
   }
 
   @override
@@ -170,7 +170,7 @@ class World {
 
     return other.name == name &&
         other.worldSettings == worldSettings &&
-        collectionEquals(other.kingdoms, kingdoms) &&
+        collectionEquals(other.settlements, settlements) &&
         collectionEquals(other.landscapes, landscapes) &&
         collectionEquals(other.opinions, opinions) &&
         collectionEquals(other.importantPeople, importantPeople) &&
@@ -185,7 +185,7 @@ class World {
   int get hashCode {
     return name.hashCode ^
         worldSettings.hashCode ^
-        kingdoms.hashCode ^
+        settlements.hashCode ^
         landscapes.hashCode ^
         opinions.hashCode ^
         importantPeople.hashCode ^

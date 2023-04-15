@@ -1,6 +1,5 @@
 import '../../base/list_item_generator.dart';
 
-/// A class that generates settlement trouble
 class SettlementTroubleGenerator extends ListItemGenerator<String> {
   static const _troubles = [
     'outsiders rejected',

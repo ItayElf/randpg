@@ -23,8 +23,8 @@ class Metropolis implements SettlementType {
 
   static const _settlementType = 'metropolis';
   static const _importantPeopleCount = 5;
-  static const _minPopulation = 25000;
-  static const _maxPopulation = 300000;
+  static const _minPopulation = 16000;
+  static const _maxPopulation = 25000;
   static const _settlementLocations = [
     Tavern(),
     GeneralStore(),

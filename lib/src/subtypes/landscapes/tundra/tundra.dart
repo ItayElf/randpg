@@ -13,7 +13,6 @@ import 'resources/tundra_resources_generator.dart';
 import 'size/tundra_size_generator.dart';
 import 'weather/tundra_weather_generator.dart';
 
-/// A class that represents the tundra landscape type
 class Tundra implements LandscapeType {
   const Tundra();
 

@@ -11,7 +11,6 @@ import '../fixable.dart';
 import 'important_characters/important_character_generator.dart';
 import 'settlement_locations_generator.dart';
 
-/// A class that generates settlements based on [_settlementType] and [_dominantRace]
 class SettlementGenerator implements IGenerator<Settlement> {
   late int _seed;
   final SettlementType _settlementType;
