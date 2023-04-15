@@ -6,6 +6,7 @@ import '../../base/seed_generator.dart';
 import '../../npcs/personality/alignment/base_alignment_generator.dart';
 import 'deity_domains_data.dart';
 
+/// A class that generates a deity's domain based on their alignment
 class DeityDomainGenerator implements IGenerator<String> {
   late int _seed;
   final Alignment? _alignment;

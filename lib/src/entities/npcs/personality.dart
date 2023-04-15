@@ -4,6 +4,7 @@ import 'package:collection/collection.dart';
 
 import 'alignment.dart';
 
+/// A class that represents a personality of an npc
 class Personality {
   /// The alignment of the npc
   final Alignment alignment;

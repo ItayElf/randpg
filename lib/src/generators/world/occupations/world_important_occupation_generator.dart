@@ -1,8 +1,8 @@
 import '../../base/list_item_generator.dart';
 
+/// A class that generates occupations for important figures in the world
 class WorldImportantOccupationGenerator extends ListItemGenerator<String> {
   static const _occupations = [
-    "monarch",
     "high priest",
     "archmage",
     "high general",
@@ -12,7 +12,6 @@ class WorldImportantOccupationGenerator extends ListItemGenerator<String> {
     "scholar",
     "high druid",
     "noble",
-    "cult leader",
     "diplomat",
     "chief advisor",
     "legendary hero",

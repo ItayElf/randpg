@@ -13,6 +13,7 @@ import 'occupation/simple_occupation_generator.dart';
 import 'personality/personality_generator.dart';
 import 'physical/physical_description_generator.dart';
 
+/// A class that represents npcs based on [_race]
 class NpcGenerator implements IGenerator<Npc> {
   late int _seed;
   final Race _race;
