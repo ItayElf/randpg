@@ -1,4 +1,3 @@
-
 export '../src/entities/deities/deity.dart' show Deity;
 
 export '../src/generators/deities/deity_generator.dart' show DeityGenerator;

@@ -44,8 +44,8 @@ abstract class RaceManager {
   static Race getRaceByName(String name) {
     return _races.firstWhere(
       (race) => race.getName() == name,
-      orElse: () => throw SettlementTypeNotFoundException(
-          "Race with name $name was not found"),
+      orElse: () =>
+          throw RaceNotFoundException("Race with name $name was not found"),
     );
   }
 

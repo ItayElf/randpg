@@ -79,3 +79,19 @@ class GuildTypeNotFoundException extends RandpgException {
   @override
   String toString() => msg ?? "GuildTypeNotFoundException";
 }
+
+/// An exception that is thrown when a not supported governmentType is being used
+class GovernmentTypeNotFoundException extends RandpgException {
+  const GovernmentTypeNotFoundException([super.msg]);
+
+  @override
+  String toString() => msg ?? "GovernmentTypeNotFoundException";
+}
+
+/// An exception that is thrown when a not supported kingdomType is being used
+class KingdomTypeNotFoundException extends RandpgException {
+  const KingdomTypeNotFoundException([super.msg]);
+
+  @override
+  String toString() => msg ?? "KingdomTypeNotFoundException";
+}

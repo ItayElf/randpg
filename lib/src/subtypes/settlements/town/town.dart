@@ -22,8 +22,8 @@ class Town implements SettlementType {
 
   static const _settlementType = 'town';
   static const _importantPeopleCount = 3;
-  static const _minPopulation = 2000;
-  static const _maxPopulation = 6000;
+  static const _minPopulation = 1000;
+  static const _maxPopulation = 5000;
   static const _settlementLocations = [
     Tavern(),
     GeneralStore(),
