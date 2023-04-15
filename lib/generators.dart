@@ -9,3 +9,5 @@ export 'src/generators/base/repeated_generator.dart' show RepeatedGenerator;
 export 'src/generators/base/seed_generator.dart' show SeedGenerator;
 export 'src/generators/base/unique_generator.dart' show UniqueGenerator;
 export 'src/generators/base/weighted_generator.dart' show WeightedGenerator;
+
+export 'src/generators/fixable.dart' show Fixable;

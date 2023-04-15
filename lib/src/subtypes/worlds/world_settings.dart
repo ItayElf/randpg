@@ -1,8 +1,8 @@
 import '../../entities/deities/deity.dart';
 import '../../generators/base/generator.dart';
 import '../guilds/guild_type.dart';
+import '../kingdoms/kingdom_type.dart';
 import '../landscapes/landscape_type.dart';
-import '../settlements/settlement_type.dart';
 import 'lore/world_lore_type.dart';
 
 /// A class that represents an abstract world settings
@@ -13,11 +13,11 @@ abstract class WorldSettings {
   /// Returns the name of this world settings
   String getSettingName();
 
-  /// Returns a list of settlement types, where null is a random type
-  List<SettlementType?> getSettlementTypes();
+  /// Returns a generator for how many kingdoms to generate
+  IGenerator<int> getKingdomsCountGenerator();
 
-  /// Returns a generator for a random settlement type
-  IGenerator<SettlementType> getSettlementTypeGenerator();
+  /// Returns a kingdom type used for generation
+  KingdomType getKingdomType();
 
   /// Returns a list of landscape types, where null is a random landscape type
   List<LandscapeType?> getLandscapeTypes();
