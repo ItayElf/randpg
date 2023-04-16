@@ -60,12 +60,12 @@ const genericPersonalityTraits = [
   'is non-materialistic',
   'is very cowardly',
   'is very courageous, to a fault',
-  "doesn't care about risks or odds.",
+  "doesn't care about risks or odds",
   'judges people by their actions, not their words',
   'takes everything at face-value',
   'constantly looks for the loophole',
   'is a perfectionist',
-  "can't stand laziness.",
-  "can't keep a secret.",
+  "can't stand laziness",
+  "can't keep a secret",
   'is very good at keeping secrets'
 ];

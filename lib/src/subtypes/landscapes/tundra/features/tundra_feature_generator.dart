@@ -44,7 +44,7 @@ class TundraFeatureGenerator extends ListItemGenerator<String> {
     'is home to a variety of migratory birds that make their way across the tundra each year',
     'is dotted with small, icy ponds and lakes that are home to unique aquatic life',
     'has a stunning, otherworldly beauty that is difficult to capture in words or images',
-    'is a place of extreme isolation and solitude, where only the hardiest of creatures can survive.',
+    'is a place of extreme isolation and solitude, where only the hardiest of creatures can survive',
     'is often shrouded in a thick blanket of snow, making movement difficult and dangerous',
   ];
 
