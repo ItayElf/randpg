@@ -7,3 +7,11 @@ class RandpgException implements Exception {
   @override
   String toString() => msg ?? "RandpgException";
 }
+
+/// An exception that is thrown when there is an error while generating
+class GeneratorException extends RandpgException {
+  const GeneratorException([super.msg]);
+
+  @override
+  String toString() => msg ?? "GeneratorException";
+}
