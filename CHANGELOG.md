@@ -21,6 +21,8 @@
 
 - Changed descriptor generator to be based on alignment
 
+- Added max tries to unique generator
+
 ## 0.8.0
 
 - Added kingdoms

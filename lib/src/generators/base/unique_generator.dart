@@ -1,3 +1,5 @@
+import 'package:randpg/exceptions.dart';
+
 import 'generator.dart';
 import 'seed_generator.dart';
 
@@ -6,6 +8,8 @@ class UniqueGenerator<T> implements IGenerator<List<T>> {
   late int _seed;
   final IGenerator<T> _generator;
   final int _n;
+
+  static const _maxTries = 100;
 
   UniqueGenerator(this._generator, this._n) {
     _seed = SeedGenerator.generate();
@@ -16,6 +20,7 @@ class UniqueGenerator<T> implements IGenerator<List<T>> {
   List<T> generate() {
     final List<T> returnValue = [];
     int tempSeed = _seed;
+    int counter = 0;
 
     while (returnValue.length < _n) {
       _generator.seed(tempSeed % SeedGenerator.maxSeed);
@@ -23,8 +28,18 @@ class UniqueGenerator<T> implements IGenerator<List<T>> {
       final item = _generator.generate();
       if (!returnValue.contains(item)) {
         returnValue.add(item);
+        counter = 0;
       }
+
+      if (counter == _maxTries) {
+        throw GeneratorException(
+          "Unique generator could not generate $_n unique values from generator ${_generator.runtimeType}, "
+          "probably due to lack of unique values.",
+        );
+      }
+
       tempSeed = (tempSeed * tempSeed) + 1;
+      counter += 1;
     }
     return returnValue;
   }
