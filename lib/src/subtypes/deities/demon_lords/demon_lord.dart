@@ -11,7 +11,7 @@ import '../../../generators/deities/names/deity_race_name_generator.dart';
 import '../../../generators/deities/shrines/deity_few_shrines_generator.dart';
 import '../../../generators/deities/worshipers/deity_few_worshipers_generator.dart';
 import '../../../generators/fixable.dart';
-import '../../../randpg_exceptions.dart';
+import '../../../exceptions/not_found_exceptions.dart';
 import '../../races/race.dart';
 import '../deity_type.dart';
 import 'domains/demon_lord_domain_generator.dart';

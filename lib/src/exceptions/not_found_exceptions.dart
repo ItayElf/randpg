@@ -1,12 +1,4 @@
-/// The base exception of the package
-class RandpgException implements Exception {
-  final String? msg;
-
-  const RandpgException([this.msg]);
-
-  @override
-  String toString() => msg ?? "RandpgException";
-}
+import 'base_exceptions.dart';
 
 /// An exception that is thrown when a not supported race is being used
 class RaceNotFoundException extends RandpgException {

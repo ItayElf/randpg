@@ -1,6 +1,6 @@
 import 'package:collection/collection.dart';
 
-import '../../randpg_exceptions.dart';
+import '../../exceptions/not_found_exceptions.dart';
 import 'default_kingdom/default_kingdom_type.dart';
 import 'kingdom_type.dart';
 

@@ -1,6 +1,6 @@
 import 'package:collection/collection.dart';
 
-import '../../randpg_exceptions.dart';
+import '../../exceptions/not_found_exceptions.dart';
 import 'desert/desert.dart';
 import 'forest/forest.dart';
 import 'landscape_type.dart';

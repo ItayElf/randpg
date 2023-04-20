@@ -1,6 +1,6 @@
 import 'package:collection/collection.dart';
 
-import '../../../randpg_exceptions.dart';
+import '../../../exceptions/not_found_exceptions.dart';
 import 'federation/federation.dart';
 import 'government_type.dart';
 import 'monarchy/monarchy.dart';

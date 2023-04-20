@@ -1,6 +1,6 @@
 import '../../../../entities/npcs/hair.dart';
 import '../../../../enums/gender.dart';
-import '../../../../randpg_exceptions.dart';
+import '../../../../exceptions/not_found_exceptions.dart';
 import '../../../base/batch_generator.dart';
 import '../../../base/generator.dart';
 import '../../../base/list_item_generator.dart';

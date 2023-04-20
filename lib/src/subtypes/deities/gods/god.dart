@@ -14,7 +14,7 @@ import '../../../generators/deities/shrines/deity_few_shrines_generator.dart';
 import '../../../generators/deities/shrines/deity_many_shrines_generator.dart';
 import '../../../generators/deities/worshipers/deity_few_worshipers_generator.dart';
 import '../../../generators/deities/worshipers/deity_many_worshipers_generator.dart';
-import '../../../randpg_exceptions.dart';
+import '../../../exceptions/not_found_exceptions.dart';
 import '../../races/race.dart';
 import '../../races/race_manager.dart';
 import '../deity_type.dart';
