@@ -27,6 +27,7 @@ class Dragonborn implements Race {
 
   static const _raceName = "dragonborn";
   static const _pluralRaceName = "dragonborns";
+  static const _raceAdjective = "draconic";
   static const _maxAge = 90;
   static const _minHeight = 168;
   static const _maxHeight = 212;
@@ -90,4 +91,7 @@ class Dragonborn implements Race {
         BaseOpinionGenerator(),
         DragonbornOpinionGenerator(),
       ]);
+
+  @override
+  String getAdjective() => _raceAdjective;
 }

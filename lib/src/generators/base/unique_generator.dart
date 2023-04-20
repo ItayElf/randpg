@@ -1,5 +1,4 @@
-import 'package:randpg/exceptions.dart';
-
+import '../../exceptions/base_exceptions.dart';
 import 'generator.dart';
 import 'seed_generator.dart';
 

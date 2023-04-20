@@ -28,6 +28,7 @@ class Dwarf implements Race, SettlementNameable {
 
   static const _raceName = "dwarf";
   static const _pluralRaceName = "dwarfs";
+  static const _raceAdjective = "dwarven";
   static const _maxAge = 350;
   static const _minHeight = 110;
   static const _maxHeight = 154;
@@ -95,4 +96,7 @@ class Dwarf implements Race, SettlementNameable {
   @override
   IGenerator<String> getSettlementNameGenerator() =>
       DwarvenSettlementNameGenerator();
+
+  @override
+  String getAdjective() => _raceAdjective;
 }

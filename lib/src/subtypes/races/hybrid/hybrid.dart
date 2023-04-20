@@ -19,11 +19,14 @@ class Hybrid implements Race {
   /// The plural name of the hybrid race
   final String pluralRaceName;
 
+  final String raceAdjective;
+
   const Hybrid({
     required this.firstRace,
     required this.secondRace,
     required this.raceName,
     required this.pluralRaceName,
+    required this.raceAdjective,
   });
 
   @override
@@ -116,4 +119,7 @@ class Hybrid implements Race {
         firstRace.getOpinionGenerator(),
         secondRace.getOpinionGenerator(),
       ]);
+
+  @override
+  String getAdjective() => raceAdjective;
 }

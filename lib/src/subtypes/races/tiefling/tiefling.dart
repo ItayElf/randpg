@@ -25,6 +25,7 @@ class Tiefling implements Race {
 
   static const _raceName = "tiefling";
   static const _pluralRaceName = "tieflings";
+  static const _raceAdjective = "tiefling";
   static const _maxAge = 100;
   static const _minHeight = 148;
   static const _maxHeight = 192;
@@ -87,4 +88,7 @@ class Tiefling implements Race {
         BaseOpinionGenerator(),
         TieflingOpinionGenerator(),
       ]);
+
+  @override
+  String getAdjective() => _raceAdjective;
 }

@@ -28,6 +28,7 @@ class Orc implements Race, SettlementNameable {
 
   static const _raceName = "orc";
   static const _pluralRaceName = "orcs";
+  static const _raceAdjective = "orcish";
   static const _maxAge = 100;
   static const _minHeight = 163;
   static const _maxHeight = 207;
@@ -95,4 +96,7 @@ class Orc implements Race, SettlementNameable {
   @override
   IGenerator<String> getSettlementNameGenerator() =>
       OrcishSettlementNameGenerator();
+
+  @override
+  String getAdjective() => _raceAdjective;
 }
