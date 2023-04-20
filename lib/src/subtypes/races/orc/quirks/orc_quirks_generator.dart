@@ -4,7 +4,7 @@ import '../../../../generators/base/list_item_generator.dart';
 class OrcPersonalityQuirkGenerator extends ListItemGenerator<String> {
   static const _orcQuirks = [
     'only respects powerful and competent leaders',
-    "openly mocks human society's structure.",
+    "openly mocks human society's structure",
     'occasionally challenges others to duels to the death',
     'will turn anything into an opportunity for training',
     'enjoys messing with other humanoids with smeller stature',

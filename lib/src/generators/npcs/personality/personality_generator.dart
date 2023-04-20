@@ -1,8 +1,8 @@
-import '../../../entities/npcs/alignment.dart';
 import '../../../entities/npcs/personality.dart';
 import '../../../subtypes/races/race.dart';
 import '../../base/batch_generator.dart';
 import '../../base/generator.dart';
+import '../../base/list_item_generator.dart';
 import '../../base/seed_generator.dart';
 import '../../base/unique_generator.dart';
 import 'descriptors/descriptor_generator.dart';
@@ -23,8 +23,12 @@ class PersonalityGenerator implements IGenerator<Personality> {
   /// Generates a personality based on [_race]
   @override
   Personality generate() {
+    final alignmentGenerator = _race.getAlignmentGenerator();
+    alignmentGenerator.seed(_seed);
+    final alignment = alignmentGenerator.generate();
+
     final generator = BatchGenerator({
-      "alignment": _race.getAlignmentGenerator(),
+      "alignment": ListItemGenerator([alignment.toMap()]),
       "traits": UniqueGenerator(
         _race.getPersonalityTraitGenerator(),
         _numberOfTraits,
@@ -34,15 +38,12 @@ class PersonalityGenerator implements IGenerator<Personality> {
         _numberOfQuirks,
       ),
       "descriptors": UniqueGenerator(
-        DescriptorGenerator(),
+        DescriptorGenerator(alignment),
         _numberOfDescriptors,
       )
     });
-    generator.seed(_seed);
-
+    generator.seed((_seed + 1) % SeedGenerator.maxSeed);
     final result = generator.generate();
-    result["alignment"] = (result["alignment"] as Alignment).toMap();
-
     return Personality.fromMap(result);
   }
 

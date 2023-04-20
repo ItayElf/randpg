@@ -1,7 +1,7 @@
 import '../../../../../enums/gender.dart';
 import '../../../../generators/base/generator.dart';
 import '../../../../generators/base/seed_generator.dart';
-import '../../../../randpg_exceptions.dart';
+import '../../../../exceptions/not_found_exceptions.dart';
 import 'female_orc_name_generator.dart';
 import 'male_orc_name_generator.dart';
 

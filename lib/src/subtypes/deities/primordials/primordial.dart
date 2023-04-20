@@ -7,7 +7,7 @@ import '../../../generators/deities/attributes/deity_negative_attribute_generato
 import '../../../generators/deities/attributes/deity_positive_attribute_generator.dart';
 import '../../../generators/deities/names/deity_race_name_generator.dart';
 import '../../../generators/fixable.dart';
-import '../../../randpg_exceptions.dart';
+import '../../../exceptions/not_found_exceptions.dart';
 import '../../races/race.dart';
 import '../deity_type.dart';
 import 'depictions/primordial_depiction_generator.dart';

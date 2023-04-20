@@ -1,6 +1,6 @@
 import 'package:collection/collection.dart';
 
-import '../../randpg_exceptions.dart';
+import '../../exceptions/not_found_exceptions.dart';
 import 'archangels/archangel.dart';
 import 'deity_type.dart';
 import 'demigods/demigod.dart';

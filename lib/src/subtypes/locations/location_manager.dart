@@ -1,6 +1,6 @@
 import 'package:collection/collection.dart';
 
-import '../../randpg_exceptions.dart';
+import '../../exceptions/not_found_exceptions.dart';
 import 'general_store/general_store.dart';
 import 'library/library.dart';
 import 'location_type.dart';

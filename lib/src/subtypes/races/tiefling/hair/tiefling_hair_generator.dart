@@ -6,7 +6,7 @@ import '../../../../generators/base/list_item_generator.dart';
 import '../../../../generators/base/seed_generator.dart';
 import '../../../../generators/base/weighted_generator.dart';
 import '../../../../generators/npcs/physical/hair/generic_hair_data.dart';
-import '../../../../randpg_exceptions.dart';
+import '../../../../exceptions/not_found_exceptions.dart';
 
 /// A class that generates tiefling hair style based on gender
 class TieflingHairGenerator implements IGenerator<Hair> {

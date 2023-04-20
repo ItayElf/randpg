@@ -2,6 +2,7 @@
 
 ## Table of Contents <!-- omit in toc -->
 
+- [0.8.1](#081)
 - [0.8.0](#080)
 - [0.7.0](#070)
 - [0.6.0](#060)
@@ -15,6 +16,12 @@
 - [0.1.1](#011)
 - [0.1.0](#010)
 - [0.0.0](#000)
+
+## 0.8.1
+
+- Changed descriptor generator to be based on alignment
+
+- Added max tries to unique generator
 
 ## 0.8.0
 
