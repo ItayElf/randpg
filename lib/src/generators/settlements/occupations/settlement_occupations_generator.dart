@@ -14,7 +14,6 @@ class SettlementOccupationsGenerator extends ListItemGenerator<String> {
     "guide",
     "soldier",
     "high priest",
-    "guild leader",
     "adventurer",
     "messenger"
   ];
