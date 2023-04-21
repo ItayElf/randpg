@@ -22,6 +22,8 @@
 
 - Added adjective to races
 
+- Fixed some of the descriptions of some entities
+
 ## 0.8.1
 
 - Changed descriptor generator to be based on alignment
