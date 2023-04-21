@@ -37,14 +37,14 @@ class SettlementDescriptionGenerator implements IGenerator<String> {
     looksTemplateGenerator.seed((_seed + 1) % SeedGenerator.maxSeed);
     final looksTemplate = looksTemplateGenerator.generate();
 
-    final looks =
-        "$name is ${results["look"]} $_settlementType . It ${results["place"]}. $looksTemplate";
+    final brief =
+        "$name is ${results["look"]} $_settlementType. It ${results["place"]}.";
 
     final specialty =
         "$name is known for ${results["specialty"].join(", in addition to ")}. "
         "${titled(results["relationship"])}.";
 
-    return [looks, specialty].join("\n");
+    return [brief, looksTemplate, specialty].join("\n");
   }
 
   List<String> _getLooks(String name, Map<String, dynamic> results) {
