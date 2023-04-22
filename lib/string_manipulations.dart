@@ -1,1 +1,2 @@
-export 'src/strings_manipulations.dart' show titled, titledEach, article;
+export 'src/strings_manipulations.dart'
+    show titled, titledEach, article, toGerund;
