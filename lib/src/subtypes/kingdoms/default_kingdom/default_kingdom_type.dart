@@ -35,10 +35,6 @@ class DefaultKingdomType implements KingdomType, Fixable<Kingdom> {
       ]);
 
   @override
-  IGenerator<GovernmentType> getGovernmentTypeGenerator() =>
-      ListItemGenerator(GovernmentTypeManager.activeGovernmentTypes);
-
-  @override
   IGenerator<GuildType> getGuildTypeGenerator() =>
       ListItemGenerator(GuildManager.activeGuildTypes);
 
