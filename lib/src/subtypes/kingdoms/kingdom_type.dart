@@ -2,7 +2,6 @@ import '../../generators/base/generator.dart';
 import '../guilds/guild_type.dart';
 import '../races/race.dart';
 import '../settlements/settlement_type.dart';
-import 'government_types/government_type.dart';
 
 /// A class that represents a generic kingdom type
 abstract class KingdomType {
