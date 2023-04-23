@@ -2,6 +2,7 @@
 
 ## Table of Contents <!-- omit in toc -->
 
+- [0.8.2](#082)
 - [0.8.1](#081)
 - [0.8.0](#080)
 - [0.7.0](#070)
@@ -16,6 +17,14 @@
 - [0.1.1](#011)
 - [0.1.0](#010)
 - [0.0.0](#000)
+
+## 0.8.2
+
+- Added adjective to races
+
+- Fixed some of the descriptions of some entities
+
+- Added government type as an argument for kingdom generator
 
 ## 0.8.1
 

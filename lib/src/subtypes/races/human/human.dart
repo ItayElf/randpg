@@ -25,6 +25,7 @@ class Human implements Race {
 
   static const _raceName = "human";
   static const _pluralRaceName = "humans";
+  static const _raceAdjective = "human";
   static const _maxAge = 90;
   static const _minHeight = 148;
   static const _maxHeight = 192;
@@ -86,4 +87,7 @@ class Human implements Race {
         BaseOpinionGenerator(),
         HumanOpinionGenerator(),
       ]);
+
+  @override
+  String getAdjective() => _raceAdjective;
 }

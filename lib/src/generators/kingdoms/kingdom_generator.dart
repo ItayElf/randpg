@@ -19,22 +19,19 @@ class KingdomGenerator implements IGenerator<Kingdom> {
   late int _seed;
   final KingdomType _kingdomType;
   final Race _race;
+  final GovernmentType _governmentType;
 
   static const _numberOfSettlements = 3;
   static const _minNumberOfGuilds = 1;
   static const _maxNumberOfGuilds = 2;
 
-  KingdomGenerator(this._kingdomType, this._race) {
+  KingdomGenerator(this._kingdomType, this._race, this._governmentType) {
     _seed = SeedGenerator.generate();
   }
 
   @override
   Kingdom generate() {
-    final governmentGenerator = _kingdomType.getGovernmentTypeGenerator();
-    governmentGenerator.seed(_seed);
-    final governmentType = governmentGenerator.generate();
-
-    final leadersGenerator = governmentType.getNumberOfLeadersGenerator();
+    final leadersGenerator = _governmentType.getNumberOfLeadersGenerator();
     leadersGenerator.seed((_seed + 1) % SeedGenerator.generate());
     final numberOfLeaders = leadersGenerator.generate();
 
@@ -50,7 +47,7 @@ class KingdomGenerator implements IGenerator<Kingdom> {
     final generator = BatchGenerator(_getBatch(
       numberOfLeaders,
       numberOfGuilds,
-      governmentType,
+      _governmentType,
       name,
     ));
     generator.seed((_seed + 4) % SeedGenerator.maxSeed);

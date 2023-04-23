@@ -1,4 +1,5 @@
 import '../../../entities/kingdoms/kingdom.dart';
+import '../../../subtypes/kingdoms/government_types/government_type_manager.dart';
 import '../../../subtypes/races/race_manager.dart';
 import '../../../subtypes/worlds/world_settings.dart';
 import '../../base/generator.dart';
@@ -28,13 +29,21 @@ class WorldKingdomsGenerator implements IGenerator<List<Kingdom>> {
     racesGenerator.seed((_seed + 1) % SeedGenerator.maxSeed);
     final races = racesGenerator.generate();
 
+    final governmentTypeGenerator =
+        ListItemGenerator(GovernmentTypeManager.activeGovernmentTypes);
+    governmentTypeGenerator.seed((_seed + 2) % SeedGenerator.maxSeed);
+    final governmentType = governmentTypeGenerator.generate();
+
     final generator = ListBatchGenerator(
       races
-          .map(
-              (race) => KingdomGenerator(_worldSettings.getKingdomType(), race))
+          .map((race) => KingdomGenerator(
+                _worldSettings.getKingdomType(),
+                race,
+                governmentType,
+              ))
           .toList(),
     );
-    generator.seed((_seed + 2) % SeedGenerator.maxSeed);
+    generator.seed((_seed + 3) % SeedGenerator.maxSeed);
     return generator.generate();
   }
 

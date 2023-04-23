@@ -11,6 +11,9 @@ abstract class Race {
   /// Returns the plural name of the race
   String getPluralName();
 
+  /// Returns the adjective of the race
+  String getAdjective();
+
   /// Returns a generator that generates a name for a character from this race
   IGenerator<String> getNameGenerator(Gender gender);
 

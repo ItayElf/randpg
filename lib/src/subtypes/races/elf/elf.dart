@@ -28,6 +28,7 @@ class Elf implements Race, SettlementNameable {
 
   static const _raceName = "elf";
   static const _pluralRaceName = "elves";
+  static const _raceAdjective = "elven";
   static const _maxAge = 750;
   static const _minHeight = 148;
   static const _maxHeight = 192;
@@ -96,4 +97,7 @@ class Elf implements Race, SettlementNameable {
   @override
   IGenerator<String> getSettlementNameGenerator() =>
       ElvenSettlementNameGenerator();
+
+  @override
+  String getAdjective() => _raceAdjective;
 }

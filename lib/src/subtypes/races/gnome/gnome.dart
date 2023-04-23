@@ -26,6 +26,7 @@ class Gnome implements Race {
 
   static const _raceName = "gnome";
   static const _pluralRaceName = "gnomes";
+  static const _raceAdjective = "gnomish";
   static const _maxAge = 425;
   static const _minHeight = 90;
   static const _maxHeight = 134;
@@ -89,4 +90,7 @@ class Gnome implements Race {
         BaseOpinionGenerator(),
         GnomeOpinionGenerator(),
       ]);
+
+  @override
+  String getAdjective() => _raceAdjective;
 }

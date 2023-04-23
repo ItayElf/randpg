@@ -15,8 +15,6 @@ import '../../settlements/city/city.dart';
 import '../../settlements/metropolis/metropolis.dart';
 import '../../settlements/settlement_type.dart';
 import '../../settlements/town/town.dart';
-import '../government_types/government_type.dart';
-import '../government_types/government_type_manager.dart';
 import '../kingdom_type.dart';
 
 /// A class that represents the default kingdom type
@@ -33,10 +31,6 @@ class DefaultKingdomType implements KingdomType, Fixable<Kingdom> {
         Metropolis(),
         City(),
       ]);
-
-  @override
-  IGenerator<GovernmentType> getGovernmentTypeGenerator() =>
-      ListItemGenerator(GovernmentTypeManager.activeGovernmentTypes);
 
   @override
   IGenerator<GuildType> getGuildTypeGenerator() =>

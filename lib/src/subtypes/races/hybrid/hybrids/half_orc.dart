@@ -6,9 +6,9 @@ import '../hybrid.dart';
 class HalfOrc extends Hybrid {
   const HalfOrc()
       : super(
-          firstRace: const Human(),
-          secondRace: const Orc(),
-          raceName: "half-orc",
-          pluralRaceName: "half-orcs",
-        );
+            firstRace: const Human(),
+            secondRace: const Orc(),
+            raceName: "half-orc",
+            pluralRaceName: "half-orcs",
+            raceAdjective: "half-orcish");
 }

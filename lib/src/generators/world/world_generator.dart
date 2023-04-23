@@ -11,7 +11,7 @@ import 'guilds/world_guilds_generator.dart';
 import 'landscapes/world_landscapes_generator.dart';
 import 'lore/world_lore_generator.dart';
 import 'opinions/world_opinions_generator.dart';
-import 'settlements/world_settlements_generator.dart';
+import 'kingdoms/world_kingdoms_generator.dart';
 
 /// A class that generates worlds
 class WorldGenerator implements IGenerator<World> {

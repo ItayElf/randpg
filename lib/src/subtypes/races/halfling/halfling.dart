@@ -26,6 +26,7 @@ class Halfling implements Race {
 
   static const _raceName = "halfling";
   static const _pluralRaceName = "halflings";
+  static const _raceAdjective = "halfling";
   static const _maxAge = 150;
   static const _minHeight = 85;
   static const _maxHeight = 129;
@@ -89,4 +90,7 @@ class Halfling implements Race {
         BaseOpinionGenerator(),
         HalflingOpinionGenerator(),
       ]);
+
+  @override
+  String getAdjective() => _raceAdjective;
 }

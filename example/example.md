@@ -97,12 +97,13 @@ print(guild);
 
 ## Generating kingdoms
 
-Generating a kingdom of dwarfs as an example:
+Generating a republic of dwarfs as an example:
 ```dart
+final GovernmentType governmentType = Republic();
 final Race race = Dwarf();
 final KingdomType kingdomType = DefaultKingdomType();
 
-final Kingdom kingdom = KingdomGenerator(kingdomType, race).generate();
+final Kingdom kingdom = KingdomGenerator(kingdomType, race, governmentType).generate();
 print(kingdom);
 ```
 
