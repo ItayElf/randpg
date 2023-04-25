@@ -2,7 +2,8 @@ import 'dart:convert';
 
 /// A class that wraps an svg
 ///
-/// **NOTE:** this svg wrapper is designed to be simple and used only for this library, thus it is not recommended to use it when in need for an svg library.
+/// **NOTE:** this svg wrapper is designed to be simple and used only for this library,
+/// thus it is not recommended to use it when in need for an svg library.
 class SvgWrapper {
   /// The name of the svg
   final String name;
