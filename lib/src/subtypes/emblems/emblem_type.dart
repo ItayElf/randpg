@@ -1,3 +1,4 @@
+import '../../entities/emblems/hsl_color.dart';
 import '../../entities/emblems/icon_position.dart';
 import '../../entities/emblems/svg_wrapper.dart';
 import '../../generators/base/generator.dart';
@@ -23,12 +24,12 @@ abstract class EmblemType {
   IGenerator<IconPosition> getIconPositionsGenerator(int iconsCount);
 
   /// Returns a generator for the primary color of the emblem
-  IGenerator<String> getPrimaryColorGenerator();
+  IGenerator<HslColor> getPrimaryColorGenerator();
 
   /// Returns a generator for the secondary color of the emblem
-  IGenerator<String> getSecondaryColorGenerator(String primaryColor);
+  IGenerator<HslColor> getSecondaryColorGenerator(HslColor primaryColor);
 
   /// Returns a generator for the icon color of the emblem
-  IGenerator<String> getIconsColorGenerator(
-      String primaryColor, String secondaryColor);
+  IGenerator<HslColor> getIconsColorGenerator(
+      HslColor primaryColor, HslColor secondaryColor);
 }

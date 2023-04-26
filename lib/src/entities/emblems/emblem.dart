@@ -1,7 +1,9 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
 import 'package:collection/collection.dart';
 
+import 'hsl_color.dart';
 import 'icon_position.dart';
 import 'svg_wrapper.dart';
 
@@ -17,13 +19,13 @@ class Emblem {
   final Map<SvgWrapper, IconPosition> iconsToPositions;
 
   /// The primary color of the svg, in css valid format like "#12a43g" or "red"
-  final String primaryColor;
+  final HslColor primaryColor;
 
   /// The secondary color of the svg, in css valid format like "#12a43g" or "red"
-  final String secondaryColor;
+  final HslColor secondaryColor;
 
   /// The icons color of the svg, in css valid format like "#12a43g" or "red"
-  final String iconsColor;
+  final HslColor iconsColor;
 
   /// The template for the emblem svg
   static const _emblemTemplate =
@@ -52,8 +54,8 @@ class Emblem {
   String buildSvg() {
     String shapeSvg = shape.content;
     String patternSvg = pattern.recolored({
-      _basePrimaryColor: primaryColor,
-      _baseSecondaryColor: secondaryColor
+      _basePrimaryColor: primaryColor.toString(),
+      _baseSecondaryColor: secondaryColor.toString(),
     }).content;
     String icons = _getIconsSvg();
 
@@ -75,7 +77,7 @@ class Emblem {
 
       icons += iconWrapper
           .resized(width: position.size, height: position.size)
-          .recolored({_baseIconsColor: iconsColor})
+          .recolored({_baseIconsColor: iconsColor.toString()})
           .positioned(x: position.x, y: position.y)
           .content;
     }
@@ -87,9 +89,9 @@ class Emblem {
     SvgWrapper? shape,
     SvgWrapper? pattern,
     Map<SvgWrapper, IconPosition>? iconsToPositions,
-    String? primaryColor,
-    String? secondaryColor,
-    String? iconsColor,
+    HslColor? primaryColor,
+    HslColor? secondaryColor,
+    HslColor? iconsColor,
   }) {
     return Emblem(
       shape: shape ?? this.shape,
@@ -105,12 +107,10 @@ class Emblem {
     return <String, dynamic>{
       'shape': shape.toMap(),
       'pattern': pattern.toMap(),
-      'iconsToPositions': iconsToPositions.map(
-        (key, value) => MapEntry(key.toJson(), value.toJson()),
-      ),
-      'primaryColor': primaryColor,
-      'secondaryColor': secondaryColor,
-      'iconsColor': iconsColor,
+      'iconsToPositions': iconsToPositions,
+      'primaryColor': primaryColor.toMap(),
+      'secondaryColor': secondaryColor.toMap(),
+      'iconsColor': iconsColor.toMap(),
     };
   }
 
@@ -124,9 +124,11 @@ class Emblem {
               MapEntry(SvgWrapper.fromJson(key), IconPosition.fromJson(value)),
         ),
       ),
-      primaryColor: map['primaryColor'] as String,
-      secondaryColor: map['secondaryColor'] as String,
-      iconsColor: map['iconsColor'] as String,
+      primaryColor:
+          HslColor.fromMap(map['primaryColor'] as Map<String, dynamic>),
+      secondaryColor:
+          HslColor.fromMap(map['secondaryColor'] as Map<String, dynamic>),
+      iconsColor: HslColor.fromMap(map['iconsColor'] as Map<String, dynamic>),
     );
   }
 
