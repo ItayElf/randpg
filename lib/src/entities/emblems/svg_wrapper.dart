@@ -34,12 +34,37 @@ class SvgWrapper {
     String newContent = content;
 
     if (width != null) {
-      newContent =
-          newContent.replaceFirst(RegExp(r'width="\d+"'), 'width="$width"');
+      newContent = newContent.replaceFirst(
+          RegExp(r'width="[0-9\.\-]+"'), 'width="$width"');
     }
     if (height != null) {
-      newContent =
-          newContent.replaceFirst(RegExp(r'height="\d+"'), 'height="$height"');
+      newContent = newContent.replaceFirst(
+          RegExp(r'height="[0-9\.\-]+"'), 'height="$height"');
+    }
+
+    return SvgWrapper(name: name, content: newContent);
+  }
+
+  /// Returns the svg with x and y values
+  SvgWrapper positioned({double? x, double? y}) {
+    String newContent = content;
+
+    if (x != null) {
+      if (content.contains(' x="')) {
+        newContent =
+            newContent.replaceFirst(RegExp(r' x="[0-9\.\-]+"'), 'x="$x"');
+      } else {
+        newContent = newContent.replaceFirst("<svg ", '<svg x="$x" ');
+      }
+    }
+
+    if (y != null) {
+      if (content.contains(' y="')) {
+        newContent =
+            newContent.replaceFirst(RegExp(r' y="[0-9\.\-]+"'), 'y="$y"');
+      } else {
+        newContent = newContent.replaceFirst("<svg ", '<svg y="$y" ');
+      }
     }
 
     return SvgWrapper(name: name, content: newContent);
@@ -76,14 +101,4 @@ class SvgWrapper {
 
   @override
   String toString() => 'SvgWrapper(name: $name, content: $content)';
-
-  @override
-  bool operator ==(covariant SvgWrapper other) {
-    if (identical(this, other)) return true;
-
-    return other.name == name && other.content == content;
-  }
-
-  @override
-  int get hashCode => name.hashCode ^ content.hashCode;
 }

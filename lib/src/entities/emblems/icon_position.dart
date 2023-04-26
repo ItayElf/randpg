@@ -1,15 +1,16 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
 /// A class that represents a position of an icon in an emblem
 class IconPosition {
   /// The x position of the icon
-  final int x;
+  final double x;
 
   /// The y position of the icon
-  final int y;
+  final double y;
 
   /// The width and height of the icon
-  final int size;
+  final double size;
 
   const IconPosition({
     required this.x,
@@ -18,9 +19,9 @@ class IconPosition {
   });
 
   IconPosition copyWith({
-    int? x,
-    int? y,
-    int? size,
+    double? x,
+    double? y,
+    double? size,
   }) {
     return IconPosition(
       x: x ?? this.x,
@@ -39,9 +40,9 @@ class IconPosition {
 
   factory IconPosition.fromMap(Map<String, dynamic> map) {
     return IconPosition(
-      x: map['x'] as int,
-      y: map['y'] as int,
-      size: map['size'] as int,
+      x: map['x'] as double,
+      y: map['y'] as double,
+      size: map['size'] as double,
     );
   }
 
