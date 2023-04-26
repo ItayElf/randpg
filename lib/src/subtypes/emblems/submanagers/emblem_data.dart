@@ -1,6 +1,6 @@
 // This is an auto generated file
 
-import '../../entities/emblems/svg_wrapper.dart';
+import '../../../entities/emblems/svg_wrapper.dart';
 
 const emblemShapes = [
   SvgWrapper(
