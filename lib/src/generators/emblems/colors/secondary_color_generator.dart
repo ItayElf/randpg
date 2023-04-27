@@ -10,8 +10,8 @@ class SecondaryColorGenerator
   static const minSaturation = 0;
   static const maxSaturation = 50;
 
-  static const minLightness = 30;
-  static const maxLightness = 70;
+  static const minLightness = 10;
+  static const maxLightness = 50;
 
   SecondaryColorGenerator(HslColor primaryColor)
       : super(

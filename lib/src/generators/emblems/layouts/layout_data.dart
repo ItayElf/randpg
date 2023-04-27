@@ -31,9 +31,9 @@ const threeIconsLayouts = [
     IconPosition(x: 80, y: 60, size: 30),
   ],
   [
-    IconPosition(x: 10, y: 60, size: 40),
-    IconPosition(x: 40, y: 25, size: 40),
-    IconPosition(x: 70, y: 60, size: 40),
+    IconPosition(x: 13, y: 65, size: 35),
+    IconPosition(x: 42.5, y: 25, size: 35),
+    IconPosition(x: 78, y: 65, size: 35),
   ],
   [
     IconPosition(x: 10, y: 35, size: 40),

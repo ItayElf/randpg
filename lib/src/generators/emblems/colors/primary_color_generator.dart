@@ -12,8 +12,8 @@ class PrimaryColorGenerator
   static const minSaturation = 0;
   static const maxSaturation = 50;
 
-  static const minLightness = 30;
-  static const maxLightness = 70;
+  static const minLightness = 10;
+  static const maxLightness = 50;
 
   PrimaryColorGenerator()
       : super(
