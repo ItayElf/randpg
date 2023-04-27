@@ -1,6 +1,10 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
 import 'package:collection/collection.dart';
+
+import 'package:randpg/src/subtypes/emblems/emblem_type.dart';
+import 'package:randpg/src/subtypes/emblems/emblem_type_manager.dart';
 
 import 'emblem_icon.dart';
 import 'hsl_color.dart';
@@ -26,6 +30,9 @@ class Emblem {
   /// The icons color of the svg, in css valid format like "#12a43g" or "red"
   final HslColor iconsColor;
 
+  /// The type of the emblem
+  final EmblemType type;
+
   /// The template for the emblem svg
   static const _emblemTemplate =
       """<svg width="120.25" height="150" viewBox="0 0 120.25 150" fill="none" xmlns="http://www.w3.org/2000/svg"><g>
@@ -47,6 +54,7 @@ class Emblem {
     required this.primaryColor,
     required this.secondaryColor,
     required this.iconsColor,
+    required this.type,
   });
 
   /// Builds an svg from the emblem data
@@ -91,6 +99,7 @@ class Emblem {
     HslColor? primaryColor,
     HslColor? secondaryColor,
     HslColor? iconsColor,
+    EmblemType? type,
   }) {
     return Emblem(
       shape: shape ?? this.shape,
@@ -99,6 +108,7 @@ class Emblem {
       primaryColor: primaryColor ?? this.primaryColor,
       secondaryColor: secondaryColor ?? this.secondaryColor,
       iconsColor: iconsColor ?? this.iconsColor,
+      type: type ?? this.type,
     );
   }
 
@@ -110,6 +120,7 @@ class Emblem {
       'primaryColor': primaryColor.toMap(),
       'secondaryColor': secondaryColor.toMap(),
       'iconsColor': iconsColor.toMap(),
+      'type': type.getEmblemType(),
     };
   }
 
@@ -127,6 +138,7 @@ class Emblem {
       secondaryColor:
           HslColor.fromMap(map['secondaryColor'] as Map<String, dynamic>),
       iconsColor: HslColor.fromMap(map['iconsColor'] as Map<String, dynamic>),
+      type: EmblemTypeManager.getEmblemTypeByType(map['type']),
     );
   }
 
@@ -137,7 +149,7 @@ class Emblem {
 
   @override
   String toString() {
-    return 'Emblem(shape: $shape, pattern: $pattern, icons: $icons, primaryColor: $primaryColor, secondaryColor: $secondaryColor, iconsColor: $iconsColor)';
+    return 'Emblem(shape: $shape, pattern: $pattern, icons: $icons, primaryColor: $primaryColor, secondaryColor: $secondaryColor, iconsColor: $iconsColor, type: $type)';
   }
 
   @override
@@ -150,7 +162,8 @@ class Emblem {
         listEquals(other.icons, icons) &&
         other.primaryColor == primaryColor &&
         other.secondaryColor == secondaryColor &&
-        other.iconsColor == iconsColor;
+        other.iconsColor == iconsColor &&
+        other.type == type;
   }
 
   @override
@@ -160,6 +173,7 @@ class Emblem {
         icons.hashCode ^
         primaryColor.hashCode ^
         secondaryColor.hashCode ^
-        iconsColor.hashCode;
+        iconsColor.hashCode ^
+        type.hashCode;
   }
 }

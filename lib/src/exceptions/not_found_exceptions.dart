@@ -96,7 +96,7 @@ class EmblemShapeNotFoundException extends RandpgException {
   String toString() => msg ?? "EmblemShapeNotFoundException";
 }
 
-/// An exception that is thrown when a not supported emblem shape is being used
+/// An exception that is thrown when a not supported emblem pattern is being used
 class EmblemPatternNotFoundException extends RandpgException {
   const EmblemPatternNotFoundException([super.msg]);
 
@@ -104,10 +104,18 @@ class EmblemPatternNotFoundException extends RandpgException {
   String toString() => msg ?? "EmblemPatternNotFoundException";
 }
 
-/// An exception that is thrown when a not supported emblem shape is being used
+/// An exception that is thrown when a not supported emblem icon is being used
 class EmblemIconNotFoundException extends RandpgException {
   const EmblemIconNotFoundException([super.msg]);
 
   @override
   String toString() => msg ?? "EmblemIconNotFoundException";
+}
+
+/// An exception that is thrown when a not supported emblem type is being used
+class EmblemTypeNotFoundException extends RandpgException {
+  const EmblemTypeNotFoundException([super.msg]);
+
+  @override
+  String toString() => msg ?? "EmblemTypeNotFoundException";
 }
