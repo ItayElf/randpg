@@ -1,13 +1,16 @@
 import 'package:collection/collection.dart';
 
 import '../../exceptions/not_found_exceptions.dart';
+import 'default/default_emblem_type.dart';
 import 'emblem_type.dart';
 
 /// A class that handles the available deities and using them
 ///
 /// When making a custom emblem type, make sure to register it or else some features might not work
 abstract class EmblemTypeManager {
-  static final Set<EmblemType> _emblemTypes = {};
+  static final Set<EmblemType> _emblemTypes = {
+    DefaultEmblemType(),
+  };
 
   static final Set<EmblemType> _activeEmblemTypes = {..._emblemTypes};
 

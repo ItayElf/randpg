@@ -5,13 +5,13 @@ import 'package:collection/collection.dart';
 /// A class that represents an hsl color
 class HslColor {
   /// The hue of the color, 0 to 360
-  final double h;
+  final num h;
 
   /// The saturation of the color, 0% to 100%
-  final double s;
+  final num s;
 
   /// The lightness of the color, 0% to 100%
-  final double l;
+  final num l;
 
   const HslColor({
     required this.h,
@@ -20,9 +20,9 @@ class HslColor {
   });
 
   HslColor copyWith({
-    double? h,
-    double? s,
-    double? l,
+    num? h,
+    num? s,
+    num? l,
   }) {
     return HslColor(
       h: h ?? this.h,
@@ -66,9 +66,9 @@ class HslColor {
 
   factory HslColor.fromMap(Map<String, dynamic> map) {
     return HslColor(
-      h: map['h'] as double,
-      s: map['s'] as double,
-      l: map['l'] as double,
+      h: map['h'] as num,
+      s: map['s'] as num,
+      l: map['l'] as num,
     );
   }
 

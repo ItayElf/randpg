@@ -3,9 +3,8 @@ import 'dart:convert';
 
 import 'package:collection/collection.dart';
 
-import 'package:randpg/src/subtypes/emblems/emblem_type.dart';
-import 'package:randpg/src/subtypes/emblems/emblem_type_manager.dart';
-
+import '../../subtypes/emblems/emblem_type.dart';
+import '../../subtypes/emblems/emblem_type_manager.dart';
 import 'emblem_icon.dart';
 import 'hsl_color.dart';
 import 'svg_wrapper.dart';

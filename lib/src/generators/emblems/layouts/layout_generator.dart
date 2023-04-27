@@ -1,8 +1,7 @@
-import 'package:randpg/src/generators/base/list_item_generator.dart';
-import 'package:randpg/src/generators/emblems/layout_data.dart';
-
-import '../../entities/emblems/icon_position.dart';
-import '../../exceptions/base_exceptions.dart';
+import '../../../entities/emblems/icon_position.dart';
+import '../../../exceptions/base_exceptions.dart';
+import '../../base/list_item_generator.dart';
+import 'layout_data.dart';
 
 class LayoutGenerator extends ListItemGenerator<List<IconPosition>> {
   LayoutGenerator(int iconsCount) : super(_getLayout(iconsCount));

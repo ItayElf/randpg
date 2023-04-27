@@ -1,4 +1,4 @@
-import '../../entities/emblems/icon_position.dart';
+import '../../../entities/emblems/icon_position.dart';
 
 const oneIconLayouts = [
   [IconPosition(x: 20, y: 35, size: 80)],
