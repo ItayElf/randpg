@@ -4,6 +4,7 @@ import '../../base/future_generator.dart';
 import '../../base/list_item_generator.dart';
 import '../../base/number_generator.dart';
 
+/// A class that generates icon colors
 class IconsColorGenerator
     extends FutureGenerator<HslColor, Map<String, dynamic>> {
   static const minSaturation = 50;

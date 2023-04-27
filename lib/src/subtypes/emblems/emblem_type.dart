@@ -21,7 +21,7 @@ abstract class EmblemType {
   IGenerator<int> getIconsCountGenerator();
 
   /// Returns a generator for the layout of the icons based on how many there are
-  IGenerator<List<IconPosition>> getIconPositionsGenerator(int iconsCount);
+  IGenerator<List<IconPosition>> getLayoutGenerator(int iconsCount);
 
   /// Returns a generator for the primary color of the emblem
   IGenerator<HslColor> getPrimaryColorGenerator();

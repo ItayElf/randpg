@@ -228,8 +228,7 @@ const emblemPatterns = [
   SvgWrapper(
     name: 'Horizontal Stripe.Svg',
     content:
-        """<svg width="186.478" height="231.78" viewBox="0 0 49.339 61.325" xml:space="preserve"
-  xmlns="http://www.w3.org/2000/svg">
+        """<svg width="120.25" height="150" viewBox="0 0 49.339 61.325" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
   <path style="fill:#000;stroke-width:.824566;paint-order:markers stroke fill"
     d="M-643.794 154.488h49.339V93.163h-49.339z" transform="translate(643.794 -93.163)" />
   <path style="fill:#fff;stroke-width:.476067;paint-order:markers stroke fill"

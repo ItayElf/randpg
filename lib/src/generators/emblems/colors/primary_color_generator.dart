@@ -3,6 +3,7 @@ import '../../base/batch_generator.dart';
 import '../../base/future_generator.dart';
 import '../../base/number_generator.dart';
 
+/// A class that generates primary colors
 class PrimaryColorGenerator
     extends FutureGenerator<HslColor, Map<String, dynamic>> {
   static const minHue = 0;

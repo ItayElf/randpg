@@ -27,7 +27,7 @@ class DefaultEmblemType implements EmblemType {
       ListItemGenerator(EmblemIconsManager.activeSvgWrappers);
 
   @override
-  IGenerator<List<IconPosition>> getIconPositionsGenerator(int iconsCount) =>
+  IGenerator<List<IconPosition>> getLayoutGenerator(int iconsCount) =>
       LayoutGenerator(iconsCount);
 
   @override
