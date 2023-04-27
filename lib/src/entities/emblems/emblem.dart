@@ -128,8 +128,8 @@ class Emblem {
       shape: SvgWrapper.fromMap(map['shape'] as Map<String, dynamic>),
       pattern: SvgWrapper.fromMap(map['pattern'] as Map<String, dynamic>),
       icons: List<EmblemIcon>.from(
-        (map['icons'] as List<int>).map<EmblemIcon>(
-          (x) => EmblemIcon.fromMap(x as Map<String, dynamic>),
+        (map['icons'] as List<Map<String, dynamic>>).map<EmblemIcon>(
+          (x) => EmblemIcon.fromMap(x),
         ),
       ),
       primaryColor:

@@ -9,7 +9,7 @@ class LayoutGenerator extends ListItemGenerator<List<IconPosition>> {
   static List<List<IconPosition>> _getLayout(int iconsCount) {
     switch (iconsCount) {
       case 0:
-        return [];
+        return [[]];
       case 1:
         return oneIconLayouts;
       case 2:

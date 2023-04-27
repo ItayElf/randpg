@@ -10,6 +10,7 @@
 - [Generating deities](#generating-deities)
 - [Generating guilds](#generating-guilds)
 - [Generating kingdoms](#generating-kingdoms)
+- [Generating Emblems](#generating-emblems)
 - [Generating worlds](#generating-worlds)
 
 ## Generating names
@@ -105,6 +106,17 @@ final KingdomType kingdomType = DefaultKingdomType();
 
 final Kingdom kingdom = KingdomGenerator(kingdomType, race, governmentType).generate();
 print(kingdom);
+```
+
+## Generating Emblems
+
+Generating an emblem with the default type:
+```dart
+final EmblemType type = DefaultEmblemType();
+final emblemGenerator = EmblemGenerator(type);
+
+final Emblem emblem = emblemGenerator.generate();
+print(emblem.buildSvg());
 ```
 
 ## Generating worlds
