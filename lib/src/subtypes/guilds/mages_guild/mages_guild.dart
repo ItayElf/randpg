@@ -1,4 +1,6 @@
 import '../../../generators/base/generator.dart';
+import '../../emblems/default/default_emblem_type.dart';
+import '../../emblems/emblem_type.dart';
 import '../../../generators/base/list_item_generator.dart';
 import '../../../generators/base/multiple_generator.dart';
 import '../../../generators/guilds/history/guild_history_generator.dart';
@@ -64,4 +66,7 @@ class MagesGuild implements GuildType {
 
   @override
   IGenerator<String> getSpecialtyGenerator() => MagesSpecialtyGenerator();
+
+  @override
+  EmblemType getEmblemType() => DefaultEmblemType();
 }

@@ -2,6 +2,7 @@
 
 ## Table of Contents <!-- omit in toc -->
 
+- [0.9.0](#090)
 - [0.8.2](#082)
 - [0.8.1](#081)
 - [0.8.0](#080)
@@ -17,6 +18,12 @@
 - [0.1.1](#011)
 - [0.1.0](#010)
 - [0.0.0](#000)
+
+## 0.9.0
+
+- Added emblem generation
+
+- Added emblem to kingdoms and guilds
 
 ## 0.8.2
 
