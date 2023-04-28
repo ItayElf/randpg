@@ -1,5 +1,7 @@
 import 'dart:math';
 
+import 'package:collection/collection.dart';
+
 import '../../../entities/emblems/hsl_color.dart';
 import '../../base/generator.dart';
 import '../../base/seed_generator.dart';
@@ -23,24 +25,41 @@ class IconsColorContrastGenerator implements IGenerator<HslColor> {
     final generator = IconsColorGenerator(_primaryColor);
     int tempSeed = _seed;
     late HslColor color;
+    late HslColor bestColor;
+
+    generator.seed(tempSeed % SeedGenerator.maxSeed);
+    bestColor = generator.generate();
 
     for (int i = 0; i < _maxTries; i++) {
-      generator.seed(tempSeed % SeedGenerator.maxSeed);
       color = generator.generate();
 
       if (_isContrasted(color)) {
         return color;
       }
 
+      if (_calculateAverageContrast(color) >=
+          _calculateAverageContrast(bestColor)) {
+        bestColor = color;
+      }
+
       tempSeed = (tempSeed * tempSeed) + i;
+      generator.seed(tempSeed % SeedGenerator.maxSeed);
     }
-    return color;
+
+    return bestColor;
   }
 
   bool _isContrasted(HslColor color) {
     return _calculateContrast(_primaryColor, color) >= _passableRatio &&
         _calculateContrast(_secondaryColor, color) >= _passableRatio;
   }
+
+  double _calculateAverageContrast(HslColor color) =>
+      [
+        _calculateContrast(_primaryColor, color),
+        _calculateContrast(_secondaryColor, color),
+      ].sum /
+      2;
 
   double _calculateContrast(HslColor background, HslColor foreground) {
     final maxLuminance = max(background.luminance, foreground.luminance);
