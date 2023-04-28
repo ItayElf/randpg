@@ -1,6 +1,5 @@
-import 'package:randpg/entities/emblems.dart';
-
 import '../../generators/base/generator.dart';
+import '../emblems/emblem_type.dart';
 import '../guilds/guild_type.dart';
 import '../races/race.dart';
 import '../settlements/settlement_type.dart';

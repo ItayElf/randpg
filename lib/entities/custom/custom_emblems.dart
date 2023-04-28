@@ -2,6 +2,8 @@
 
 export '../../src/generators/emblems/colors/icons_color_generator.dart'
     show IconsColorGenerator;
+export '../../src/generators/emblems/colors/icons_color_contrast_generator.dart'
+    show IconsColorContrastGenerator;
 export '../../src/generators/emblems/colors/primary_color_generator.dart'
     show PrimaryColorGenerator;
 export '../../src/generators/emblems/colors/secondary_color_generator.dart'

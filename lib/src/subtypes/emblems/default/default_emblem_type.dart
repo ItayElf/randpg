@@ -1,12 +1,10 @@
-import 'package:randpg/src/generators/emblems/colors/icons_color_contrast_generator.dart';
-
 import '../../../entities/emblems/hsl_color.dart';
 import '../../../entities/emblems/icon_position.dart';
 import '../../../entities/emblems/svg_wrapper.dart';
 import '../../../generators/base/generator.dart';
 import '../../../generators/base/list_item_generator.dart';
 import '../../../generators/base/weighted_generator.dart';
-import '../../../generators/emblems/colors/icons_color_generator.dart';
+import '../../../generators/emblems/colors/icons_color_contrast_generator.dart';
 import '../../../generators/emblems/colors/primary_color_generator.dart';
 import '../../../generators/emblems/colors/secondary_color_generator.dart';
 import '../../../generators/emblems/layouts/layout_generator.dart';

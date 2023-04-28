@@ -1,6 +1,5 @@
-import 'package:randpg/entities/emblems.dart';
-
 import '../../generators/base/generator.dart';
+import '../emblems/emblem_type.dart';
 
 /// A class that represents a guild type
 abstract class GuildType {

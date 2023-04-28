@@ -1,5 +1,3 @@
-import 'package:randpg/entities/emblems.dart';
-
 import '../../entities/guilds/guilds.dart';
 import '../../subtypes/guilds/guild_type.dart';
 import '../base/batch_generator.dart';
@@ -9,6 +7,7 @@ import '../base/list_item_generator.dart';
 import '../base/repeated_generator.dart';
 import '../base/seed_generator.dart';
 import '../base/unique_generator.dart';
+import '../emblems/emblem_generator.dart';
 import '../fixable.dart';
 import '../settlements/important_characters/important_character_generator.dart';
 

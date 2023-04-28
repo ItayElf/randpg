@@ -1,5 +1,3 @@
-import 'package:randpg/entities/emblems.dart';
-
 import '../../entities/kingdoms/kingdom.dart';
 import '../../entities/npcs/npc.dart';
 import '../../subtypes/kingdoms/government_types/government_type.dart';
@@ -12,6 +10,7 @@ import '../base/list_item_generator.dart';
 import '../base/number_generator.dart';
 import '../base/seed_generator.dart';
 import '../base/unique_generator.dart';
+import '../emblems/emblem_generator.dart';
 import '../fixable.dart';
 import '../npcs/npc_generator.dart';
 import 'guilds/kingdom_guild_generator.dart';
