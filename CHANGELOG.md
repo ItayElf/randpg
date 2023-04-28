@@ -14,6 +14,14 @@
 
 - Added government type as an argument for kingdom generator
 
+## 0.8.2
+
+- Added adjective to races
+
+- Fixed some of the descriptions of some entities
+
+- Added government type as an argument for kingdom generator
+
 ## 0.8.1
 
 - Changed descriptor generator to be based on alignment
