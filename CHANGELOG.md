@@ -1,5 +1,9 @@
 # Changelog 
 
+## 0.9.1
+
+- Fixed example svg not showing
+
 ## 0.9.0
 
 - Added emblem generation
