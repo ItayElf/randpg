@@ -1,22 +1,10 @@
-# Changelog <!-- omit in toc -->
+# Changelog 
 
-## Table of Contents <!-- omit in toc -->
+## 0.9.0
 
-- [0.8.2](#082)
-- [0.8.1](#081)
-- [0.8.0](#080)
-- [0.7.0](#070)
-- [0.6.0](#060)
-- [0.5.2](#052)
-- [0.5.1](#051)
-- [0.5.0](#050)
-- [0.4.0](#040)
-- [0.3.1](#031)
-- [0.3.0](#030)
-- [0.2.0](#020)
-- [0.1.1](#011)
-- [0.1.0](#010)
-- [0.0.0](#000)
+- Added emblem generation
+
+- Added emblem to kingdoms and guilds
 
 ## 0.8.2
 
@@ -25,6 +13,7 @@
 - Fixed some of the descriptions of some entities
 
 - Added government type as an argument for kingdom generator
+
 
 ## 0.8.1
 

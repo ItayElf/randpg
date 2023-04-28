@@ -6,6 +6,8 @@ import '../../../generators/guilds/mottos/guild_motto_generator.dart';
 import '../../../generators/guilds/names/guild_adjective_name_generator.dart';
 import '../../../generators/guilds/names/guild_title_name_generator.dart';
 import '../../../generators/guilds/names/guild_verb_name_generator.dart';
+import '../../emblems/default/default_emblem_type.dart';
+import '../../emblems/emblem_type.dart';
 import '../guild_type.dart';
 import 'quests/artisans_quest_generator.dart';
 import 'reputation/artisan_reputation_generator.dart';
@@ -61,4 +63,7 @@ class ArtisansGuild implements GuildType {
 
   @override
   IGenerator<String> getSpecialtyGenerator() => ArtisansSpecialtyGenerator();
+
+  @override
+  EmblemType getEmblemType() => DefaultEmblemType();
 }

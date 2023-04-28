@@ -4,6 +4,7 @@ import 'package:collection/collection.dart';
 
 import '../../subtypes/guilds/guild_manager.dart';
 import '../../subtypes/guilds/guild_type.dart';
+import '../emblems/emblem.dart';
 import '../npcs/npc.dart';
 
 /// A class that represents a guild
@@ -23,6 +24,9 @@ class Guild {
   /// A short history of this guild
   final String history;
 
+  /// The emblem of the guild
+  final Emblem emblem;
+
   /// The motto of this guild
   final String motto;
 
@@ -41,6 +45,7 @@ class Guild {
     required this.guildType,
     required this.reputation,
     required this.history,
+    required this.emblem,
     required this.motto,
     required this.specialties,
     required this.quests,
@@ -53,6 +58,7 @@ class Guild {
     GuildType? guildType,
     String? reputation,
     String? history,
+    Emblem? emblem,
     String? motto,
     List<String>? specialties,
     List<String>? quests,
@@ -64,6 +70,7 @@ class Guild {
       guildType: guildType ?? this.guildType,
       reputation: reputation ?? this.reputation,
       history: history ?? this.history,
+      emblem: emblem ?? this.emblem,
       motto: motto ?? this.motto,
       specialties: specialties ?? this.specialties,
       quests: quests ?? this.quests,
@@ -78,6 +85,7 @@ class Guild {
       'guildType': guildType.getGuildType(),
       'reputation': reputation,
       'history': history,
+      'emblem': emblem.toMap(),
       'motto': motto,
       'specialties': specialties,
       'quests': quests,
@@ -92,6 +100,7 @@ class Guild {
       guildType: GuildManager.getGuildTypeByType(map['guildType']),
       reputation: map['reputation'] as String,
       history: map['history'] as String,
+      emblem: Emblem.fromMap(map['emblem'] as Map<String, dynamic>),
       motto: map['motto'] as String,
       specialties: List<String>.from((map['specialties'] as List<String>)),
       quests: List<String>.from((map['quests'] as List<String>)),
@@ -110,7 +119,7 @@ class Guild {
 
   @override
   String toString() {
-    return 'Guild(name: $name, leader: $leader, guildType: $guildType, reputation: $reputation, history: $history, motto: $motto, specialties: $specialties, quests: $quests, notableMembers: $notableMembers)';
+    return 'Guild(name: $name, leader: $leader, guildType: $guildType, reputation: $reputation, history: $history, emblem: $emblem, motto: $motto, specialties: $specialties, quests: $quests, notableMembers: $notableMembers)';
   }
 
   @override
@@ -123,6 +132,7 @@ class Guild {
         other.guildType == guildType &&
         other.reputation == reputation &&
         other.history == history &&
+        other.emblem == emblem &&
         other.motto == motto &&
         listEquals(other.specialties, specialties) &&
         listEquals(other.quests, quests) &&
@@ -136,6 +146,7 @@ class Guild {
         guildType.hashCode ^
         reputation.hashCode ^
         history.hashCode ^
+        emblem.hashCode ^
         motto.hashCode ^
         specialties.hashCode ^
         quests.hashCode ^

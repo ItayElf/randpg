@@ -1,4 +1,5 @@
 import '../../generators/base/generator.dart';
+import '../emblems/emblem_type.dart';
 import '../guilds/guild_type.dart';
 import '../races/race.dart';
 import '../settlements/settlement_type.dart';
@@ -19,6 +20,9 @@ abstract class KingdomType {
 
   /// Returns a generator for the type of other important settlements in the kingdom
   IGenerator<SettlementType> getImportantSettlementsTypesGenerator();
+
+  /// Returns the emblem type used by this kingdom type
+  EmblemType getEmblemType();
 
   /// Returns a generator for something a kingdom is known for
   IGenerator<String> getKnownForGenerator();

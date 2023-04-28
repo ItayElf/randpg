@@ -1,4 +1,5 @@
 import '../../generators/base/generator.dart';
+import '../emblems/emblem_type.dart';
 
 /// A class that represents a guild type
 abstract class GuildType {
@@ -16,6 +17,9 @@ abstract class GuildType {
 
   /// Returns a generator for the history of the guild
   IGenerator<String> getHistoryGenerator(String guildName);
+
+  /// Returns the emblem type for this guild type
+  EmblemType getEmblemType();
 
   /// Returns a generator for a guild motto
   IGenerator<String> getMottoGenerator();

@@ -7,6 +7,7 @@ import '../base/list_item_generator.dart';
 import '../base/repeated_generator.dart';
 import '../base/seed_generator.dart';
 import '../base/unique_generator.dart';
+import '../emblems/emblem_generator.dart';
 import '../fixable.dart';
 import '../settlements/important_characters/important_character_generator.dart';
 
@@ -50,6 +51,10 @@ class GuildGenerator implements IGenerator<Guild> {
         "guildType": ListItemGenerator([_guildType.getGuildType()]),
         "reputation": _guildType.getReputationGenerator(),
         "history": _guildType.getHistoryGenerator(guildName),
+        "emblem": FutureGenerator(
+          EmblemGenerator(_guildType.getEmblemType()),
+          (emblem) => emblem.toMap(),
+        ),
         "motto": _guildType.getMottoGenerator(),
         "specialties": UniqueGenerator(
           _guildType.getSpecialtyGenerator(),

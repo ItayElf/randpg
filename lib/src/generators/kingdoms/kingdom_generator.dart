@@ -10,6 +10,7 @@ import '../base/list_item_generator.dart';
 import '../base/number_generator.dart';
 import '../base/seed_generator.dart';
 import '../base/unique_generator.dart';
+import '../emblems/emblem_generator.dart';
 import '../fixable.dart';
 import '../npcs/npc_generator.dart';
 import 'guilds/kingdom_guild_generator.dart';
@@ -92,6 +93,10 @@ class KingdomGenerator implements IGenerator<Kingdom> {
         ),
         "governmentType":
             ListItemGenerator([governmentType.getGovernmentType()]),
+        "emblem": FutureGenerator(
+          EmblemGenerator(_kingdomType.getEmblemType()),
+          (emblem) => emblem.toMap(),
+        ),
         "knownFor": _kingdomType.getKnownForGenerator(),
         "history": _kingdomType.getHistoryGenerator(kingdomName),
         "guilds": FutureGenerator(

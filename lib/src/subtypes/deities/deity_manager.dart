@@ -23,7 +23,7 @@ abstract class DeityManager {
   static final Set<DeityType> _activeDeityTypes = {..._deityTypes};
 
   /// Returns all the deity types
-  static List<DeityType> get allLocations =>
+  static List<DeityType> get allDeities =>
       _deityTypes.toList()..sortBy((deityType) => deityType.getDeityType());
 
   /// Returns all active deities

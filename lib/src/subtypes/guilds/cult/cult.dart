@@ -1,3 +1,5 @@
+import '../../emblems/default/default_emblem_type.dart';
+import '../../emblems/emblem_type.dart';
 import '../../../generators/base/generator.dart';
 import '../../../generators/base/list_item_generator.dart';
 import '../../../generators/base/multiple_generator.dart';
@@ -62,4 +64,7 @@ class Cult implements GuildType {
 
   @override
   IGenerator<String> getSpecialtyGenerator() => CultSpecialtyGenerator();
+
+  @override
+  EmblemType getEmblemType() => DefaultEmblemType();
 }
