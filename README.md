@@ -28,6 +28,9 @@ Follow the installation instructions on dart packages.
 * Generate settlements
 * Generate landscapes
 * Generate deities
+* Generate guilds
+* Generate kingdoms
+* Generate emblems as svg
 * Generate complete worlds
 
 ## Goals
