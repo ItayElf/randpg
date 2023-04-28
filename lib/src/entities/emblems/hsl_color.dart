@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:math';
 
 import 'package:collection/collection.dart';
 
@@ -13,6 +14,8 @@ class HslColor {
   /// The lightness of the color, 0% to 100%
   final num l;
 
+  static const _linearValueThreshold = 0.03928;
+
   const HslColor({
     required this.h,
     required this.s,
@@ -22,19 +25,30 @@ class HslColor {
   /// Returns the luminance of the color
   double get luminance {
     final rgbMap = getRGBMap();
+    double red = _getLinearValue(rgbMap["r"]! / 255),
+        green = _getLinearValue(rgbMap["g"]! / 255),
+        blue = _getLinearValue(rgbMap["b"]! / 255);
 
-    return 0.2126 * rgbMap["r"]! +
-        0.7152 * rgbMap["g"]! +
-        0.0722 * rgbMap["b"]!;
+    return 0.2126 * red + 0.7152 * green + 0.0722 * blue;
+  }
+
+  double _getLinearValue(double value) {
+    if (value > _linearValueThreshold) {
+      return pow((value + 0.055) / 1.055, 2.4).toDouble();
+    }
+    return value / 12.92;
   }
 
   /// Returns a map with "r", "g", "b" keys that represents the rgb values of the color
   Map<String, int> getRGBMap() {
-    num c = (1 - (2 * l - 1).abs()) * s;
-    num x = c * (1 - ((h / 60) % 2 - 1).abs());
-    num m = l - c / 2;
-    num r, g, b;
+    num percentSaturation = s / 100;
+    num percentLightness = l / 100;
 
+    num c = (1 - (2 * percentLightness - 1).abs()) * percentSaturation;
+    num x = c * (1 - ((h / 60) % 2 - 1).abs());
+    num m = percentLightness - c / 2;
+
+    num r, g, b;
     if (h < 60) {
       r = c;
       g = x;
@@ -98,7 +112,7 @@ class HslColor {
     final s = delta / (1 - (2 * l - 1).abs());
 
     if (delta == 0) {
-      return HslColor(h: 0, s: s, l: l);
+      return HslColor(h: 0, s: 0, l: l);
     }
 
     double h;
@@ -110,7 +124,7 @@ class HslColor {
       h = 60 * ((r / 255 - g / 255) / delta + 4);
     }
 
-    return HslColor(h: h, s: s, l: l);
+    return HslColor(h: h, s: s * 100, l: l * 100);
   }
 
   factory HslColor.fromMap(Map<String, dynamic> map) {

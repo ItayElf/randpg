@@ -1,3 +1,5 @@
+import 'package:randpg/src/generators/emblems/colors/icons_color_contrast_generator.dart';
+
 import '../../../entities/emblems/hsl_color.dart';
 import '../../../entities/emblems/icon_position.dart';
 import '../../../entities/emblems/svg_wrapper.dart';
@@ -33,7 +35,7 @@ class DefaultEmblemType implements EmblemType {
   @override
   IGenerator<HslColor> getIconsColorGenerator(
           HslColor primaryColor, HslColor secondaryColor) =>
-      IconsColorGenerator(primaryColor);
+      IconsColorContrastGenerator(primaryColor, secondaryColor);
 
   @override
   IGenerator<int> getIconsCountGenerator() =>
