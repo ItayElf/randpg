@@ -21,7 +21,9 @@
 
 ## 0.9.0
 
-- Added emblem class
+- Added emblem generation
+
+- Added emblem to kingdoms and guilds
 
 ## 0.8.2
 

@@ -1,3 +1,5 @@
+import '../../emblems/default/default_emblem_type.dart';
+import '../../emblems/emblem_type.dart';
 import '../../../entities/kingdoms/kingdom.dart';
 import '../../../generators/base/future_generator.dart';
 import '../../../generators/base/generator.dart';
@@ -80,4 +82,7 @@ class DefaultKingdomType implements KingdomType, Fixable<Kingdom> {
     }
     return kingdom;
   }
+
+  @override
+  EmblemType getEmblemType() => DefaultEmblemType();
 }

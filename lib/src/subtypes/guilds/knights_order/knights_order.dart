@@ -1,3 +1,5 @@
+import '../../emblems/default/default_emblem_type.dart';
+import '../../emblems/emblem_type.dart';
 import '../../../entities/guilds/guilds.dart';
 import '../../../generators/base/future_generator.dart';
 import '../../../generators/base/generator.dart';
@@ -84,4 +86,7 @@ class KnightsOrder implements GuildType, Fixable<Guild> {
           .toList(),
     );
   }
+
+  @override
+  EmblemType getEmblemType() => DefaultEmblemType();
 }

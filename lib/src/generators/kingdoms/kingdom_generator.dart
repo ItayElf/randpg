@@ -1,3 +1,5 @@
+import 'package:randpg/entities/emblems.dart';
+
 import '../../entities/kingdoms/kingdom.dart';
 import '../../entities/npcs/npc.dart';
 import '../../subtypes/kingdoms/government_types/government_type.dart';
@@ -92,6 +94,10 @@ class KingdomGenerator implements IGenerator<Kingdom> {
         ),
         "governmentType":
             ListItemGenerator([governmentType.getGovernmentType()]),
+        "emblem": FutureGenerator(
+          EmblemGenerator(_kingdomType.getEmblemType()),
+          (emblem) => emblem.toMap(),
+        ),
         "knownFor": _kingdomType.getKnownForGenerator(),
         "history": _kingdomType.getHistoryGenerator(kingdomName),
         "guilds": FutureGenerator(

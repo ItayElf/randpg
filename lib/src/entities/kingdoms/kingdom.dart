@@ -8,6 +8,7 @@ import '../../subtypes/kingdoms/kingdom_type.dart';
 import '../../subtypes/kingdoms/kingdom_type_manager.dart';
 import '../../subtypes/races/race.dart';
 import '../../subtypes/races/race_manager.dart';
+import '../emblems/emblem.dart';
 import '../guilds/guilds.dart';
 import '../npcs/npc.dart';
 import '../settlements/settlement.dart';
@@ -37,6 +38,8 @@ class Kingdom {
   /// The government type of the kingdom
   final GovernmentType governmentType;
 
+  final Emblem emblem;
+
   /// Something this kingdom is known for
   final String knownFor;
 
@@ -48,8 +51,7 @@ class Kingdom {
 
   // A trouble this kingdom have
   final String trouble;
-
-  const Kingdom({
+  Kingdom({
     required this.name,
     required this.kingdomType,
     required this.rulers,
@@ -58,6 +60,7 @@ class Kingdom {
     required this.capital,
     required this.importantSettlements,
     required this.governmentType,
+    required this.emblem,
     required this.knownFor,
     required this.history,
     required this.guilds,
@@ -73,6 +76,7 @@ class Kingdom {
     Settlement? capital,
     List<Settlement>? importantSettlements,
     GovernmentType? governmentType,
+    Emblem? emblem,
     String? knownFor,
     String? history,
     List<Guild>? guilds,
@@ -87,6 +91,7 @@ class Kingdom {
       capital: capital ?? this.capital,
       importantSettlements: importantSettlements ?? this.importantSettlements,
       governmentType: governmentType ?? this.governmentType,
+      emblem: emblem ?? this.emblem,
       knownFor: knownFor ?? this.knownFor,
       history: history ?? this.history,
       guilds: guilds ?? this.guilds,
@@ -105,6 +110,7 @@ class Kingdom {
       'importantSettlements':
           importantSettlements.map((x) => x.toMap()).toList(),
       'governmentType': governmentType.getGovernmentType(),
+      'emblem': emblem.toMap(),
       'knownFor': knownFor,
       'history': history,
       'guilds': guilds.map((x) => x.toMap()).toList(),
@@ -132,6 +138,7 @@ class Kingdom {
       ),
       governmentType:
           GovernmentTypeManager.getGovernmentTypeByType(map['governmentType']),
+      emblem: Emblem.fromMap(map['emblem'] as Map<String, dynamic>),
       knownFor: map['knownFor'] as String,
       history: map['history'] as String,
       guilds: List<Guild>.from(
@@ -150,7 +157,7 @@ class Kingdom {
 
   @override
   String toString() {
-    return 'Kingdom(name: $name, kingdomType: $kingdomType, rulers: $rulers, race: $race, population: $population, capital: $capital, importantSettlements: $importantSettlements, governmentType: $governmentType, knownFor: $knownFor, history: $history, guilds: $guilds, trouble: $trouble)';
+    return 'Kingdom(name: $name, kingdomType: $kingdomType, rulers: $rulers, race: $race, population: $population, capital: $capital, importantSettlements: $importantSettlements, governmentType: $governmentType, emblem: $emblem, knownFor: $knownFor, history: $history, guilds: $guilds, trouble: $trouble)';
   }
 
   @override
@@ -166,6 +173,7 @@ class Kingdom {
         other.capital == capital &&
         listEquals(other.importantSettlements, importantSettlements) &&
         other.governmentType == governmentType &&
+        other.emblem == emblem &&
         other.knownFor == knownFor &&
         other.history == history &&
         listEquals(other.guilds, guilds) &&
@@ -182,6 +190,7 @@ class Kingdom {
         capital.hashCode ^
         importantSettlements.hashCode ^
         governmentType.hashCode ^
+        emblem.hashCode ^
         knownFor.hashCode ^
         history.hashCode ^
         guilds.hashCode ^

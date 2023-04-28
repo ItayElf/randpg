@@ -1,3 +1,5 @@
+import 'package:randpg/entities/emblems.dart';
+
 import '../../entities/guilds/guilds.dart';
 import '../../subtypes/guilds/guild_type.dart';
 import '../base/batch_generator.dart';
@@ -50,6 +52,10 @@ class GuildGenerator implements IGenerator<Guild> {
         "guildType": ListItemGenerator([_guildType.getGuildType()]),
         "reputation": _guildType.getReputationGenerator(),
         "history": _guildType.getHistoryGenerator(guildName),
+        "emblem": FutureGenerator(
+          EmblemGenerator(_guildType.getEmblemType()),
+          (emblem) => emblem.toMap(),
+        ),
         "motto": _guildType.getMottoGenerator(),
         "specialties": UniqueGenerator(
           _guildType.getSpecialtyGenerator(),
