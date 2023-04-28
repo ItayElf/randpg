@@ -19,6 +19,55 @@ class HslColor {
     required this.l,
   });
 
+  /// Returns the luminance of the color
+  double get luminance {
+    final rgbMap = getRGBMap();
+
+    return 0.2126 * rgbMap["r"]! +
+        0.7152 * rgbMap["g"]! +
+        0.0722 * rgbMap["b"]!;
+  }
+
+  /// Returns a map with "r", "g", "b" keys that represents the rgb values of the color
+  Map<String, int> getRGBMap() {
+    num c = (1 - (2 * l - 1).abs()) * s;
+    num x = c * (1 - ((h / 60) % 2 - 1).abs());
+    num m = l - c / 2;
+    num r, g, b;
+
+    if (h < 60) {
+      r = c;
+      g = x;
+      b = 0;
+    } else if (h < 120) {
+      r = x;
+      g = c;
+      b = 0;
+    } else if (h < 180) {
+      r = 0;
+      g = c;
+      b = x;
+    } else if (h < 240) {
+      r = 0;
+      g = x;
+      b = c;
+    } else if (h < 300) {
+      r = x;
+      g = 0;
+      b = c;
+    } else {
+      r = c;
+      g = 0;
+      b = x;
+    }
+
+    int red = ((r + m) * 255).round();
+    int green = ((g + m) * 255).round();
+    int blue = ((b + m) * 255).round();
+
+    return {"r": red, "g": green, "b": blue};
+  }
+
   HslColor copyWith({
     num? h,
     num? s,
