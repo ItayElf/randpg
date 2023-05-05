@@ -4,6 +4,8 @@
 
 - Fixed example svg not showing
 
+- Downgraded the collections package version to work with Flutter
+
 ## 0.9.0
 
 - Added emblem generation
