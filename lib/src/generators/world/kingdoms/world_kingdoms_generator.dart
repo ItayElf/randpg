@@ -1,15 +1,11 @@
 import 'package:randpg/entities/kingdoms.dart';
 
-import '../../../entities/kingdoms/kingdom.dart';
-import '../../../subtypes/kingdoms/government_types/government_type_manager.dart';
 import '../../../subtypes/races/race_manager.dart';
 import '../../../subtypes/worlds/world_settings.dart';
 import '../../base/generator.dart';
-import '../../base/list_batch_generator.dart';
 import '../../base/list_item_generator.dart';
 import '../../base/repeated_generator.dart';
 import '../../base/seed_generator.dart';
-import '../../kingdoms/kingdom_generator.dart';
 
 /// A class that generates settlements for worlds
 class WorldKingdomsGenerator implements IGenerator<List<Kingdom>> {
