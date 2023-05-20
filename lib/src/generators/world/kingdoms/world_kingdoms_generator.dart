@@ -1,13 +1,11 @@
-import '../../../entities/kingdoms/kingdom.dart';
-import '../../../subtypes/kingdoms/government_types/government_type_manager.dart';
+import 'package:randpg/entities/kingdoms.dart';
+
 import '../../../subtypes/races/race_manager.dart';
 import '../../../subtypes/worlds/world_settings.dart';
 import '../../base/generator.dart';
-import '../../base/list_batch_generator.dart';
 import '../../base/list_item_generator.dart';
 import '../../base/repeated_generator.dart';
 import '../../base/seed_generator.dart';
-import '../../kingdoms/kingdom_generator.dart';
 
 /// A class that generates settlements for worlds
 class WorldKingdomsGenerator implements IGenerator<List<Kingdom>> {
@@ -32,19 +30,21 @@ class WorldKingdomsGenerator implements IGenerator<List<Kingdom>> {
     final governmentTypeGenerator =
         ListItemGenerator(GovernmentTypeManager.activeGovernmentTypes);
     governmentTypeGenerator.seed((_seed + 2) % SeedGenerator.maxSeed);
-    final governmentType = governmentTypeGenerator.generate();
+    GovernmentType governmentType;
 
-    final generator = ListBatchGenerator(
-      races
-          .map((race) => KingdomGenerator(
-                _worldSettings.getKingdomType(),
-                race,
-                governmentType,
-              ))
-          .toList(),
-    );
-    generator.seed((_seed + 3) % SeedGenerator.maxSeed);
-    return generator.generate();
+    final List<Kingdom> results = [];
+
+    for (int i = 0; i < kingdomsCount; i++) {
+      governmentType = governmentTypeGenerator.generate();
+      final generator = KingdomGenerator(
+          _worldSettings.getKingdomType(), races[i], governmentType);
+
+      generator.seed(_seed + i * i * i);
+      governmentTypeGenerator.seed(_seed + i * i * i);
+
+      results.add(generator.generate());
+    }
+    return results;
   }
 
   @override

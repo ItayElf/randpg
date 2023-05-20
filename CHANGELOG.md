@@ -1,5 +1,13 @@
 # Changelog 
 
+## 0.9.2
+
+- Fixed capital and important settlement mismatch in the default kingdom type
+
+- Fixed all kingdoms having the same government in world generation
+
+- Added more special features for npcs
+
 ## 0.9.1
 
 - Fixed example svg not showing

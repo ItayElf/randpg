@@ -78,7 +78,7 @@ class KingdomGenerator implements IGenerator<Kingdom> {
         "population": _kingdomType.getPopulationGenerator(),
         "capital": FutureGenerator(
           KingdomSettlementGenerator(
-            _kingdomType.getImportantSettlementsTypesGenerator(),
+            _kingdomType.getCapitalTypeGenerator(),
             _race,
           ),
           (capital) => capital.toMap(),
@@ -86,7 +86,7 @@ class KingdomGenerator implements IGenerator<Kingdom> {
         "importantSettlements": FutureGenerator(
           UniqueGenerator(
             KingdomSettlementGenerator(
-                _kingdomType.getCapitalTypeGenerator(), _race),
+                _kingdomType.getImportantSettlementsTypesGenerator(), _race),
             _numberOfSettlements,
           ),
           (settlements) => settlements.map((e) => e.toMap()).toList(),
