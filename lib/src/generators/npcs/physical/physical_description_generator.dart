@@ -28,8 +28,8 @@ class PhysicalDescriptionGenerator implements IGenerator<PhysicalDescription> {
     generator.seed(_seed);
     final result = generator.generate();
 
-    result["hairStyle"] = (result["hairStyle"] as Hair).toMap();
-    result["beard"] = (result["beard"] as Hair?)?.toMap();
+    result["hairStyle"] = (result["hairStyle"]).toMap();
+    result["beard"] = (result["beard"])?.toMap();
 
     return PhysicalDescription.fromMap(result);
   }
