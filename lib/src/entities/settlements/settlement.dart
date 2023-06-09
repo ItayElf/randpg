@@ -90,28 +90,26 @@ class Settlement {
 
   factory Settlement.fromMap(Map<String, dynamic> map) {
     return Settlement(
-      name: map['name'] as String,
+      name: map['name'],
       settlementType:
           SettlementManager.getSettlementTypeByType(map['settlementType']),
       dominantRace: map['dominantRace'] != null
           ? RaceManager.getRaceByName(map['dominantRace'])
           : null,
       locations: List<Location>.from(
-        (map['locations'] as List<Map<String, dynamic>>).map<Location>(
+        (map['locations']).map<Location>(
           (x) => Location.fromMap(x),
         ),
       ),
-      description: map['description'] as String,
-      dominantOccupation: map['dominantOccupation'] != null
-          ? map['dominantOccupation'] as String
-          : null,
+      description: map['description'],
+      dominantOccupation: map['dominantOccupation'],
       importantCharacters: List<Npc>.from(
-        (map['importantCharacters'] as List<Map<String, dynamic>>).map<Npc>(
+        (map['importantCharacters']).map<Npc>(
           (x) => Npc.fromMap(x),
         ),
       ),
-      population: map['population'] as int,
-      trouble: map['trouble'] as String,
+      population: map['population'],
+      trouble: map['trouble'],
     );
   }
 
