@@ -121,7 +121,7 @@ class World {
           (x) => Landscape.fromMap(x),
         ),
       ),
-      opinions: (map['opinions']).map(
+      opinions: (map['opinions'] as Map).map(
         (key, value) => MapEntry(RaceManager.getRaceByName(key), value),
       ),
       importantPeople: List<Npc>.from(
