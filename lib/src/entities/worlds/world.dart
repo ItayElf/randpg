@@ -108,48 +108,48 @@ class World {
 
   factory World.fromMap(Map<String, dynamic> map) {
     return World(
-      name: map['name'] as String,
+      name: map['name'],
       worldSettings:
           WorldSettingsManager.getWorldSettingsByName(map['worldSettings']),
       kingdoms: List<Kingdom>.from(
-        (map['kingdoms'] as List<Map<String, dynamic>>).map<Kingdom>(
+        (map['kingdoms']).map<Kingdom>(
           (x) => Kingdom.fromMap(x),
         ),
       ),
       landscapes: List<Landscape>.from(
-        (map['landscapes'] as List<Map<String, dynamic>>).map<Landscape>(
+        (map['landscapes']).map<Landscape>(
           (x) => Landscape.fromMap(x),
         ),
       ),
-      opinions: (map['opinions'] as Map<String, String>).map(
+      opinions: (map['opinions']).map(
         (key, value) => MapEntry(RaceManager.getRaceByName(key), value),
       ),
       importantPeople: List<Npc>.from(
-        (map['importantPeople'] as List<Map<String, dynamic>>).map<Npc>(
+        (map['importantPeople']).map<Npc>(
           (x) => Npc.fromMap(x),
         ),
       ),
       guilds: List<Guild>.from(
-        (map['guilds'] as List<Map<String, dynamic>>).map<Guild>(
+        (map['guilds']).map<Guild>(
           (x) => Guild.fromMap(x),
         ),
       ),
       deities: List<Deity>.from(
-        (map['deities'] as List<Map<String, dynamic>>).map<Deity>(
+        (map['deities']).map<Deity>(
           (x) => Deity.fromMap(x),
         ),
       ),
       lesserDeities: List<Deity>.from(
-        (map['lesserDeities'] as List<Map<String, dynamic>>).map<Deity>(
+        (map['lesserDeities']).map<Deity>(
           (x) => Deity.fromMap(x),
         ),
       ),
       higherDeities: List<Deity>.from(
-        (map['higherDeities'] as List<Map<String, dynamic>>).map<Deity>(
+        (map['higherDeities']).map<Deity>(
           (x) => Deity.fromMap(x),
         ),
       ),
-      worldLore: WorldLore.fromMap(map['worldLore'] as Map<String, dynamic>),
+      worldLore: WorldLore.fromMap(map['worldLore']),
     );
   }
 
