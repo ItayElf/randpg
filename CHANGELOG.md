@@ -1,5 +1,9 @@
 # Changelog 
 
+## 0.9.3
+
+- Removed casting in json methods for entities
+
 ## 0.9.2
 
 - Fixed capital and important settlement mismatch in the default kingdom type

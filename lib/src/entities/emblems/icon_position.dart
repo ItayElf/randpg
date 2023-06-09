@@ -40,16 +40,16 @@ class IconPosition {
 
   factory IconPosition.fromMap(Map<String, dynamic> map) {
     return IconPosition(
-      x: map['x'] as double,
-      y: map['y'] as double,
-      size: map['size'] as double,
+      x: map['x'],
+      y: map['y'],
+      size: map['size'],
     );
   }
 
   String toJson() => json.encode(toMap());
 
   factory IconPosition.fromJson(String source) =>
-      IconPosition.fromMap(json.decode(source) as Map<String, dynamic>);
+      IconPosition.fromMap(json.decode(source));
 
   @override
   String toString() => 'IconPosition(x: $x, y: $y, size: $size)';

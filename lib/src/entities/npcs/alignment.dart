@@ -39,7 +39,7 @@ class Alignment {
   String toJson() => json.encode(toMap());
 
   factory Alignment.fromJson(String source) =>
-      Alignment.fromMap(json.decode(source) as Map<String, dynamic>);
+      Alignment.fromMap(json.decode(source));
 
   @override
   String toString() => 'Alignment(ethical: $ethical, moral: $moral)';

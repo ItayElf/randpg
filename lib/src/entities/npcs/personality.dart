@@ -50,11 +50,11 @@ class Personality {
 
   factory Personality.fromMap(Map<String, dynamic> map) {
     return Personality(
-      alignment: Alignment.fromMap(map['alignment'] as Map<String, dynamic>),
-      traits: List<String>.from((map['traits'] as List<String>)),
-      quirks: List<String>.from((map['quirks'] as List<String>)),
+      alignment: Alignment.fromMap(map['alignment']),
+      traits: List<String>.from((map['traits'])),
+      quirks: List<String>.from((map['quirks'])),
       descriptors: List<String>.from(
-        (map['descriptors'] as List<String>),
+        (map['descriptors']),
       ),
     );
   }
@@ -62,7 +62,7 @@ class Personality {
   String toJson() => json.encode(toMap());
 
   factory Personality.fromJson(String source) =>
-      Personality.fromMap(json.decode(source) as Map<String, dynamic>);
+      Personality.fromMap(json.decode(source));
 
   @override
   String toString() {

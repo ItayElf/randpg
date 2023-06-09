@@ -95,17 +95,17 @@ class Guild {
 
   factory Guild.fromMap(Map<String, dynamic> map) {
     return Guild(
-      name: map['name'] as String,
-      leader: Npc.fromMap(map['leader'] as Map<String, dynamic>),
+      name: map['name'],
+      leader: Npc.fromMap(map['leader']),
       guildType: GuildManager.getGuildTypeByType(map['guildType']),
-      reputation: map['reputation'] as String,
-      history: map['history'] as String,
-      emblem: Emblem.fromMap(map['emblem'] as Map<String, dynamic>),
-      motto: map['motto'] as String,
-      specialties: List<String>.from((map['specialties'] as List<String>)),
-      quests: List<String>.from((map['quests'] as List<String>)),
+      reputation: map['reputation'],
+      history: map['history'],
+      emblem: Emblem.fromMap(map['emblem']),
+      motto: map['motto'],
+      specialties: List<String>.from((map['specialties'])),
+      quests: List<String>.from((map['quests'])),
       notableMembers: List<Npc>.from(
-        (map['notableMembers'] as List<Map<String, dynamic>>).map<Npc>(
+        (map['notableMembers']).map<Npc>(
           (x) => Npc.fromMap(x),
         ),
       ),
@@ -114,8 +114,7 @@ class Guild {
 
   String toJson() => json.encode(toMap());
 
-  factory Guild.fromJson(String source) =>
-      Guild.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory Guild.fromJson(String source) => Guild.fromMap(json.decode(source));
 
   @override
   String toString() {
