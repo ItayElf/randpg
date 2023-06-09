@@ -22,16 +22,15 @@ class Hair {
 
   factory Hair.fromMap(Map<String, dynamic> map) {
     return Hair(
-      length: map['length'] as String,
-      type: map['type'] as String,
-      color: map['color'] as String,
+      length: map['length'],
+      type: map['type'],
+      color: map['color'],
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory Hair.fromJson(String source) =>
-      Hair.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory Hair.fromJson(String source) => Hair.fromMap(json.decode(source));
 
   @override
   String toString() => 'Hair(length: $length, type: $type, color: $color)';

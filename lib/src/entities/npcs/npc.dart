@@ -80,16 +80,15 @@ class Npc {
 
   factory Npc.fromMap(Map<String, dynamic> map) {
     return Npc(
-      name: map['name'] as String,
-      age: map['age'] as int,
-      gender: Gender.values.byName(map['gender'] as String),
-      race: RaceManager.getRaceByName(map['race'] as String),
-      occupation: map['occupation'] as String,
-      physicalDescription: PhysicalDescription.fromMap(
-          map['physicalDescription'] as Map<String, dynamic>),
-      personality:
-          Personality.fromMap(map['personality'] as Map<String, dynamic>),
-      goal: map['goal'] as String,
+      name: map['name'],
+      age: map['age'],
+      gender: Gender.values.byName(map['gender']),
+      race: RaceManager.getRaceByName(map['race']),
+      occupation: map['occupation'],
+      physicalDescription:
+          PhysicalDescription.fromMap(map['physicalDescription']),
+      personality: Personality.fromMap(map['personality']),
+      goal: map['goal'],
     );
   }
 

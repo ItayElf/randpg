@@ -78,17 +78,15 @@ class PhysicalDescription {
 
   factory PhysicalDescription.fromMap(Map<String, dynamic> map) {
     return PhysicalDescription(
-      hairStyle: Hair.fromMap(map['hairStyle'] as Map<String, dynamic>),
-      eyes: map['eyes'] as String,
-      skin: map['skin'] as String,
-      height: map['height'] as int,
-      build: map['build'] as String,
-      face: map['face'] as String,
-      beard: map['beard'] != null
-          ? Hair.fromMap(map['beard'] as Map<String, dynamic>)
-          : null,
+      hairStyle: Hair.fromMap(map['hairStyle']),
+      eyes: map['eyes'],
+      skin: map['skin'],
+      height: map['height'],
+      build: map['build'],
+      face: map['face'],
+      beard: map['beard'] != null ? Hair.fromMap(map['beard']) : null,
       specialFeatures: List<String>.from(
-        (map['specialFeatures'] as List<String>),
+        (map['specialFeatures']),
       ),
     );
   }
