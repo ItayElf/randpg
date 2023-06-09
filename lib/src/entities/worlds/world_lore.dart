@@ -91,7 +91,7 @@ class WorldLore {
   String toJson() => json.encode(toMap());
 
   factory WorldLore.fromJson(String source) =>
-      WorldLore.fromMap(json.decode(source) as Map<String, dynamic>);
+      WorldLore.fromMap(json.decode(source));
 
   @override
   String toString() {

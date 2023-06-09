@@ -62,7 +62,7 @@ class Personality {
   String toJson() => json.encode(toMap());
 
   factory Personality.fromJson(String source) =>
-      Personality.fromMap(json.decode(source) as Map<String, dynamic>);
+      Personality.fromMap(json.decode(source));
 
   @override
   String toString() {

@@ -124,8 +124,7 @@ class Deity {
 
   String toJson() => json.encode(toMap());
 
-  factory Deity.fromJson(String source) =>
-      Deity.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory Deity.fromJson(String source) => Deity.fromMap(json.decode(source));
 
   @override
   String toString() {

@@ -155,8 +155,7 @@ class World {
 
   String toJson() => json.encode(toMap());
 
-  factory World.fromJson(String source) =>
-      World.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory World.fromJson(String source) => World.fromMap(json.decode(source));
 
   @override
   String toString() {

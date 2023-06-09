@@ -141,8 +141,7 @@ class Emblem {
 
   String toJson() => json.encode(toMap());
 
-  factory Emblem.fromJson(String source) =>
-      Emblem.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory Emblem.fromJson(String source) => Emblem.fromMap(json.decode(source));
 
   @override
   String toString() {

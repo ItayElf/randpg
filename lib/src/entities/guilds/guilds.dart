@@ -114,8 +114,7 @@ class Guild {
 
   String toJson() => json.encode(toMap());
 
-  factory Guild.fromJson(String source) =>
-      Guild.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory Guild.fromJson(String source) => Guild.fromMap(json.decode(source));
 
   @override
   String toString() {

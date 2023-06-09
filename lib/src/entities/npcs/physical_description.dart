@@ -94,7 +94,7 @@ class PhysicalDescription {
   String toJson() => json.encode(toMap());
 
   factory PhysicalDescription.fromJson(String source) =>
-      PhysicalDescription.fromMap(json.decode(source) as Map<String, dynamic>);
+      PhysicalDescription.fromMap(json.decode(source));
 
   @override
   String toString() {

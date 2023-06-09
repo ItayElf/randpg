@@ -152,7 +152,7 @@ class Kingdom {
   String toJson() => json.encode(toMap());
 
   factory Kingdom.fromJson(String source) =>
-      Kingdom.fromMap(json.decode(source) as Map<String, dynamic>);
+      Kingdom.fromMap(json.decode(source));
 
   @override
   String toString() {

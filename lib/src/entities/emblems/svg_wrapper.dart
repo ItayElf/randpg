@@ -97,7 +97,7 @@ class SvgWrapper {
   String toJson() => json.encode(toMap());
 
   factory SvgWrapper.fromJson(String source) =>
-      SvgWrapper.fromMap(json.decode(source) as Map<String, dynamic>);
+      SvgWrapper.fromMap(json.decode(source));
 
   @override
   String toString() => 'SvgWrapper(name: $name, content: $content)';

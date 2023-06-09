@@ -49,7 +49,7 @@ class IconPosition {
   String toJson() => json.encode(toMap());
 
   factory IconPosition.fromJson(String source) =>
-      IconPosition.fromMap(json.decode(source) as Map<String, dynamic>);
+      IconPosition.fromMap(json.decode(source));
 
   @override
   String toString() => 'IconPosition(x: $x, y: $y, size: $size)';

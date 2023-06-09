@@ -109,7 +109,7 @@ class Landscape {
   String toJson() => json.encode(toMap());
 
   factory Landscape.fromJson(String source) =>
-      Landscape.fromMap(json.decode(source) as Map<String, dynamic>);
+      Landscape.fromMap(json.decode(source));
 
   @override
   String toString() {

@@ -94,8 +94,7 @@ class Npc {
 
   String toJson() => json.encode(toMap());
 
-  factory Npc.fromJson(String source) =>
-      Npc.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory Npc.fromJson(String source) => Npc.fromMap(json.decode(source));
 
   @override
   String toString() {

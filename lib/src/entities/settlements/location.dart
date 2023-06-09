@@ -94,7 +94,7 @@ class Location {
   String toJson() => json.encode(toMap());
 
   factory Location.fromJson(String source) =>
-      Location.fromMap(json.decode(source) as Map<String, dynamic>);
+      Location.fromMap(json.decode(source));
 
   @override
   String toString() {

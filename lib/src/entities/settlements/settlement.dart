@@ -116,7 +116,7 @@ class Settlement {
   String toJson() => json.encode(toMap());
 
   factory Settlement.fromJson(String source) =>
-      Settlement.fromMap(json.decode(source) as Map<String, dynamic>);
+      Settlement.fromMap(json.decode(source));
 
   @override
   String toString() {

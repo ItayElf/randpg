@@ -138,7 +138,7 @@ class HslColor {
   String toJson() => json.encode(toMap());
 
   factory HslColor.fromJson(String source) =>
-      HslColor.fromMap(json.decode(source) as Map<String, dynamic>);
+      HslColor.fromMap(json.decode(source));
 
   @override
   String toString() => 'hsl($h, $s%, $l%)';
