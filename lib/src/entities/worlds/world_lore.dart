@@ -78,20 +78,20 @@ class WorldLore {
   factory WorldLore.fromMap(Map<String, dynamic> map) {
     return WorldLore(
       loreType: WorldLoreManager.getWorldLoreTypeByType(map['loreType']),
-      everybodyKnows: map['everybodyKnows'] as String,
-      fewKnow: map['fewKnow'] as String,
-      nobodyKnows: map['nobodyKnows'] as String,
-      peasantsBelieve: map['peasantsBelieve'] as String,
-      nobilityBelieves: map['nobilityBelieves'] as String,
-      godsPlan: map['godsPlan'] as String,
-      godsFear: map['godsFear'] as String,
+      everybodyKnows: map['everybodyKnows'],
+      fewKnow: map['fewKnow'],
+      nobodyKnows: map['nobodyKnows'],
+      peasantsBelieve: map['peasantsBelieve'],
+      nobilityBelieves: map['nobilityBelieves'],
+      godsPlan: map['godsPlan'],
+      godsFear: map['godsFear'],
     );
   }
 
   String toJson() => json.encode(toMap());
 
   factory WorldLore.fromJson(String source) =>
-      WorldLore.fromMap(json.decode(source) as Map<String, dynamic>);
+      WorldLore.fromMap(json.decode(source));
 
   @override
   String toString() {

@@ -31,7 +31,7 @@ class ImportantCharacterGenerator implements IGenerator<Npc> {
         "occupation": _occupationGenerator,
         "npc": NpcGenerator(race),
       }),
-      (results) => (results["npc"] as Npc).copyWith(
+      (results) => (results["npc"]).copyWith(
         occupation: results["occupation"],
       ),
     );

@@ -40,17 +40,15 @@ class Goods {
 
   factory Goods.fromMap(Map<String, dynamic> map) {
     return Goods(
-      name: map['name'] as String,
-      description:
-          map['description'] != null ? map['description'] as String : null,
-      price: map['price'] != null ? map['price'] as String : null,
+      name: map['name'],
+      description: map['description'],
+      price: map['price'],
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory Goods.fromJson(String source) =>
-      Goods.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory Goods.fromJson(String source) => Goods.fromMap(json.decode(source));
 
   @override
   String toString() =>

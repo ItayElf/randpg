@@ -125,26 +125,23 @@ class Emblem {
 
   factory Emblem.fromMap(Map<String, dynamic> map) {
     return Emblem(
-      shape: SvgWrapper.fromMap(map['shape'] as Map<String, dynamic>),
-      pattern: SvgWrapper.fromMap(map['pattern'] as Map<String, dynamic>),
+      shape: SvgWrapper.fromMap(map['shape']),
+      pattern: SvgWrapper.fromMap(map['pattern']),
       icons: List<EmblemIcon>.from(
-        (map['icons'] as List<Map<String, dynamic>>).map<EmblemIcon>(
+        (map['icons']).map<EmblemIcon>(
           (x) => EmblemIcon.fromMap(x),
         ),
       ),
-      primaryColor:
-          HslColor.fromMap(map['primaryColor'] as Map<String, dynamic>),
-      secondaryColor:
-          HslColor.fromMap(map['secondaryColor'] as Map<String, dynamic>),
-      iconsColor: HslColor.fromMap(map['iconsColor'] as Map<String, dynamic>),
+      primaryColor: HslColor.fromMap(map['primaryColor']),
+      secondaryColor: HslColor.fromMap(map['secondaryColor']),
+      iconsColor: HslColor.fromMap(map['iconsColor']),
       type: EmblemTypeManager.getEmblemTypeByType(map['type']),
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory Emblem.fromJson(String source) =>
-      Emblem.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory Emblem.fromJson(String source) => Emblem.fromMap(json.decode(source));
 
   @override
   String toString() {

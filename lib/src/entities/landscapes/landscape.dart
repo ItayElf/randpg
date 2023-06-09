@@ -92,24 +92,24 @@ class Landscape {
 
   factory Landscape.fromMap(Map<String, dynamic> map) {
     return Landscape(
-      name: map['name'] as String,
-      location: map['location'] as String,
-      weather: map['weather'] as String,
+      name: map['name'],
+      location: map['location'],
+      weather: map['weather'],
       landscapeType:
           LandscapeManager.getLandscapeTypeByType(map['landscapeType']),
-      features: List<String>.from((map['features'] as List<String>)),
-      resources: List<String>.from((map['resources'] as List<String>)),
-      encounters: List<String>.from((map['encounters'] as List<String>)),
-      knownFor: map['knownFor'] as String,
-      size: map['size'] as String,
-      travelRate: map['travelRate'] as String,
+      features: List<String>.from((map['features'])),
+      resources: List<String>.from((map['resources'])),
+      encounters: List<String>.from((map['encounters'])),
+      knownFor: map['knownFor'],
+      size: map['size'],
+      travelRate: map['travelRate'],
     );
   }
 
   String toJson() => json.encode(toMap());
 
   factory Landscape.fromJson(String source) =>
-      Landscape.fromMap(json.decode(source) as Map<String, dynamic>);
+      Landscape.fromMap(json.decode(source));
 
   @override
   String toString() {

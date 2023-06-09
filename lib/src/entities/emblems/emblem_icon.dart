@@ -35,15 +35,15 @@ class EmblemIcon {
 
   factory EmblemIcon.fromMap(Map<String, dynamic> map) {
     return EmblemIcon(
-      svgWrapper: SvgWrapper.fromMap(map['svgWrapper'] as Map<String, dynamic>),
-      position: IconPosition.fromMap(map['position'] as Map<String, dynamic>),
+      svgWrapper: SvgWrapper.fromMap(map['svgWrapper']),
+      position: IconPosition.fromMap(map['position']),
     );
   }
 
   String toJson() => json.encode(toMap());
 
   factory EmblemIcon.fromJson(String source) =>
-      EmblemIcon.fromMap(json.decode(source) as Map<String, dynamic>);
+      EmblemIcon.fromMap(json.decode(source));
 
   @override
   String toString() =>

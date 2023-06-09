@@ -120,40 +120,39 @@ class Kingdom {
 
   factory Kingdom.fromMap(Map<String, dynamic> map) {
     return Kingdom(
-      name: map['name'] as String,
+      name: map['name'],
       kingdomType: KingdomTypeManager.getKingdomTypeByType(map['kingdomType']),
       rulers: List<Npc>.from(
-        (map['rulers'] as List<Map<String, dynamic>>).map<Npc>(
+        (map['rulers']).map<Npc>(
           (x) => Npc.fromMap(x),
         ),
       ),
       race: RaceManager.getRaceByName(map['race']),
-      population: map['population'] as int,
-      capital: Settlement.fromMap(map['capital'] as Map<String, dynamic>),
+      population: map['population'],
+      capital: Settlement.fromMap(map['capital']),
       importantSettlements: List<Settlement>.from(
-        (map['importantSettlements'] as List<Map<String, dynamic>>)
-            .map<Settlement>(
+        (map['importantSettlements']).map<Settlement>(
           (x) => Settlement.fromMap(x),
         ),
       ),
       governmentType:
           GovernmentTypeManager.getGovernmentTypeByType(map['governmentType']),
-      emblem: Emblem.fromMap(map['emblem'] as Map<String, dynamic>),
-      knownFor: map['knownFor'] as String,
-      history: map['history'] as String,
+      emblem: Emblem.fromMap(map['emblem']),
+      knownFor: map['knownFor'],
+      history: map['history'],
       guilds: List<Guild>.from(
-        (map['guilds'] as List<Map<String, dynamic>>).map<Guild>(
+        (map['guilds']).map<Guild>(
           (x) => Guild.fromMap(x),
         ),
       ),
-      trouble: map['trouble'] as String,
+      trouble: map['trouble'],
     );
   }
 
   String toJson() => json.encode(toMap());
 
   factory Kingdom.fromJson(String source) =>
-      Kingdom.fromMap(json.decode(source) as Map<String, dynamic>);
+      Kingdom.fromMap(json.decode(source));
 
   @override
   String toString() {

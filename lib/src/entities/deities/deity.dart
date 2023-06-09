@@ -104,29 +104,27 @@ class Deity {
 
   factory Deity.fromMap(Map<String, dynamic> map) {
     return Deity(
-      name: map['name'] as String,
+      name: map['name'],
       gender:
           map['gender'] != null ? Gender.values.byName(map['gender']) : null,
       deityType: DeityManager.getDeityTypeByType(map['deityType']),
-      domains: List<String>.from((map['domains'] as List<String>)),
-      alignment: map['alignment'] != null
-          ? Alignment.fromMap(map['alignment'] as Map<String, dynamic>)
-          : null,
-      depiction: map['depiction'] as String,
+      domains: List<String>.from((map['domains'])),
+      alignment:
+          map['alignment'] != null ? Alignment.fromMap(map['alignment']) : null,
+      depiction: map['depiction'],
       worshipedBy: map['worshipedBy'] != null
           ? RaceManager.getRaceByName(map['worshipedBy'])
           : null,
-      worshipers: map['worshipers'] as String,
-      shrinesRarity: map['shrinesRarity'] as String,
-      positiveAttribute: map['positiveAttribute'] as String,
-      negativeAttribute: map['negativeAttribute'] as String,
+      worshipers: map['worshipers'],
+      shrinesRarity: map['shrinesRarity'],
+      positiveAttribute: map['positiveAttribute'],
+      negativeAttribute: map['negativeAttribute'],
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory Deity.fromJson(String source) =>
-      Deity.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory Deity.fromJson(String source) => Deity.fromMap(json.decode(source));
 
   @override
   String toString() {
