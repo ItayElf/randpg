@@ -40,10 +40,9 @@ class Goods {
 
   factory Goods.fromMap(Map<String, dynamic> map) {
     return Goods(
-      name: map['name'] as String,
-      description:
-          map['description'] != null ? map['description'] as String : null,
-      price: map['price'] != null ? map['price'] as String : null,
+      name: map['name'],
+      description: map['description'],
+      price: map['price'],
     );
   }
 

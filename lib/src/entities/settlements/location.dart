@@ -75,16 +75,15 @@ class Location {
 
   factory Location.fromMap(Map<String, dynamic> map) {
     return Location(
-      name: map['name'] as String,
-      owner: Npc.fromMap(map['owner'] as Map<String, dynamic>),
+      name: map['name'],
+      owner: Npc.fromMap(map['owner']),
       type: LocationManager.getLocationTypeByType(map['type']),
-      zone: map['zone'] as String,
-      outsideDescription:
-          List<String>.from((map['outsideDescription'] as List<String>)),
-      buildingDescription: map['buildingDescription'] as String,
+      zone: map['zone'],
+      outsideDescription: List<String>.from((map['outsideDescription'])),
+      buildingDescription: map['buildingDescription'],
       goods: map['goods'] != null
           ? List<Goods>.from(
-              (map['goods'] as List<Map<String, dynamic>>).map<Goods?>(
+              (map['goods']).map<Goods?>(
                 (x) => Goods.fromMap(x),
               ),
             )
