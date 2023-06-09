@@ -1,4 +1,3 @@
-import '../../../entities/npcs/hair.dart';
 import '../../../entities/npcs/physical_description.dart';
 import '../../../enums/gender.dart';
 import '../../../subtypes/races/race.dart';
