@@ -89,8 +89,8 @@ class SvgWrapper {
 
   factory SvgWrapper.fromMap(Map<String, dynamic> map) {
     return SvgWrapper(
-      name: map['name'] as String,
-      content: map['content'] as String,
+      name: map['name'],
+      content: map['content'],
     );
   }
 

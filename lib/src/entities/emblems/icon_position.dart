@@ -40,9 +40,9 @@ class IconPosition {
 
   factory IconPosition.fromMap(Map<String, dynamic> map) {
     return IconPosition(
-      x: map['x'] as double,
-      y: map['y'] as double,
-      size: map['size'] as double,
+      x: map['x'],
+      y: map['y'],
+      size: map['size'],
     );
   }
 

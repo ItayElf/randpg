@@ -129,9 +129,9 @@ class HslColor {
 
   factory HslColor.fromMap(Map<String, dynamic> map) {
     return HslColor(
-      h: map['h'] as num,
-      s: map['s'] as num,
-      l: map['l'] as num,
+      h: map['h'],
+      s: map['s'],
+      l: map['l'],
     );
   }
 
