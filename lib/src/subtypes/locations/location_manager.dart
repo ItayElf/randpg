@@ -1,4 +1,5 @@
 import 'package:collection/collection.dart';
+import 'package:randpg/src/subtypes/managers/manager.dart';
 
 import '../../exceptions/not_found_exceptions.dart';
 import 'general_store/general_store.dart';
@@ -12,7 +13,7 @@ import 'temple/temple.dart';
 /// A class that handles the available locations and using them
 ///
 /// When making a custom location type, make sure to register it or else some features might not work
-abstract class LocationManager {
+class LocationManager extends Manager<LocationType> {
   static final Set<LocationType> _locationTypes = {
     GeneralStore(),
     Library(),
@@ -25,16 +26,18 @@ abstract class LocationManager {
   static final Set<LocationType> _activeLocationTypes = {..._locationTypes};
 
   /// Returns all the location types
-  static List<LocationType> get allLocations => _locationTypes.toList()
+  @override
+  List<LocationType> get allTypes => _locationTypes.toList()
     ..sortBy((locationType) => locationType.getLocationType());
 
   /// Returns all active locations
-  static List<LocationType> get activeLocationTypes =>
-      _activeLocationTypes.toList()
-        ..sortBy((locationType) => locationType.getLocationType());
+  @override
+  List<LocationType> get activeTypes => _activeLocationTypes.toList()
+    ..sortBy((locationType) => locationType.getLocationType());
 
   /// Returns the corresponding location type from all locations with type [type]
-  static LocationType getLocationTypeByType(String type) {
+  @override
+  LocationType getType(String type) {
     return _locationTypes.firstWhere(
       (locationType) => locationType.getLocationType() == type,
       orElse: () => throw LocationTypeNotFoundException(
@@ -43,21 +46,22 @@ abstract class LocationManager {
   }
 
   /// Adds [locationType] to the list of all location types and active location types
-  static void registerLocationType(LocationType locationType) {
+  @override
+  void registerType(LocationType locationType) {
     _locationTypes.add(locationType);
     _activeLocationTypes.add(locationType);
   }
 
   /// Removes [locationType] only from the active races
-  static void unregisterLocationType(LocationType locationType) {
-    _activeLocationTypes
-        .remove(getLocationTypeByType(locationType.getLocationType()));
+  @override
+  void unregisterType(LocationType locationType) {
+    _activeLocationTypes.remove(getType(locationType.getLocationType()));
   }
 
   /// Removes [locationType] from the active location types and from all location types list
-  static void deleteLocationType(LocationType locationType) {
-    final foundLocationType =
-        getLocationTypeByType(locationType.getLocationType());
+  @override
+  void deleteType(LocationType locationType) {
+    final foundLocationType = getType(locationType.getLocationType());
     _locationTypes.remove(foundLocationType);
     _activeLocationTypes.remove(foundLocationType);
   }
