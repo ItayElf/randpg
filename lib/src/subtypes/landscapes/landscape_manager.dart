@@ -1,4 +1,5 @@
 import 'package:collection/collection.dart';
+import 'package:randpg/src/subtypes/managers/manager.dart';
 
 import '../../exceptions/not_found_exceptions.dart';
 import 'desert/desert.dart';
@@ -14,7 +15,7 @@ import 'tundra/tundra.dart';
 /// A class that handles the available landscapes and using them
 ///
 /// When making a custom landscape type, make sure to register it or else some features might not work
-abstract class LandscapeManager {
+class LandscapeManager extends Manager<LandscapeType> {
   static final Set<LandscapeType> _landscapeTypes = {
     Forest(),
     Mountains(),
@@ -29,16 +30,18 @@ abstract class LandscapeManager {
   static final Set<LandscapeType> _activeLandscapeTypes = {..._landscapeTypes};
 
   /// Returns all the landscape types
-  static List<LandscapeType> get allLocations => _landscapeTypes.toList()
+  @override
+  List<LandscapeType> get allTypes => _landscapeTypes.toList()
     ..sortBy((landscapeType) => landscapeType.getLandscapeType());
 
   /// Returns all active landscapes
-  static List<LandscapeType> get activeLandscapeTypes =>
-      _activeLandscapeTypes.toList()
-        ..sortBy((landscapeType) => landscapeType.getLandscapeType());
+  @override
+  List<LandscapeType> get activeTypes => _activeLandscapeTypes.toList()
+    ..sortBy((landscapeType) => landscapeType.getLandscapeType());
 
   /// Returns the corresponding landscape type from all landscapes with type [type]
-  static LandscapeType getLandscapeTypeByType(String type) {
+  @override
+  LandscapeType getType(String type) {
     return _landscapeTypes.firstWhere(
       (landscapeType) => landscapeType.getLandscapeType() == type,
       orElse: () => throw LandscapeTypeNotFoundException(
@@ -47,21 +50,22 @@ abstract class LandscapeManager {
   }
 
   /// Adds [landscapeType] to the list of all landscape types and active landscape types
-  static void registerLandscapeType(LandscapeType landscapeType) {
+  @override
+  void registerType(LandscapeType landscapeType) {
     _landscapeTypes.add(landscapeType);
     _activeLandscapeTypes.add(landscapeType);
   }
 
   /// Removes [landscapeType] only from the active races
-  static void unregisterLandscapeType(LandscapeType landscapeType) {
-    _activeLandscapeTypes
-        .remove(getLandscapeTypeByType(landscapeType.getLandscapeType()));
+  @override
+  void unregisterType(LandscapeType landscapeType) {
+    _activeLandscapeTypes.remove(getType(landscapeType.getLandscapeType()));
   }
 
   /// Removes [landscapeType] from the active landscape types and from all landscape types list
-  static void deleteLandscapeType(LandscapeType landscapeType) {
-    final foundLandscapeType =
-        getLandscapeTypeByType(landscapeType.getLandscapeType());
+  @override
+  void deleteType(LandscapeType landscapeType) {
+    final foundLandscapeType = getType(landscapeType.getLandscapeType());
     _landscapeTypes.remove(foundLandscapeType);
     _activeLandscapeTypes.remove(foundLandscapeType);
   }
