@@ -1,6 +1,7 @@
 import 'package:collection/collection.dart';
 
 import '../../exceptions/not_found_exceptions.dart';
+import '../managers/manager.dart';
 import 'race.dart';
 import 'dragonborn/dragonborn.dart';
 import 'dwarf/dwarf.dart';
@@ -16,7 +17,7 @@ import 'tiefling/tiefling.dart';
 /// A class that handles the available races and using them
 ///
 /// When making a custom race, make sure to register it or else some features might not work
-abstract class RaceManager {
+class RaceManager extends Manager<Race> {
   static final Set<Race> _races = {
     Dragonborn(),
     Dwarf(),
@@ -33,15 +34,17 @@ abstract class RaceManager {
   static final Set<Race> _activeRaces = {..._races};
 
   /// Returns all the races
-  static List<Race> get allRaces =>
-      _races.toList()..sortBy((race) => race.getName());
+  @override
+  List<Race> get allTypes => _races.toList()..sortBy((race) => race.getName());
 
   /// Returns all active races
-  static List<Race> get activeRaces =>
+  @override
+  List<Race> get activeTypes =>
       _activeRaces.toList()..sortBy((race) => race.getName());
 
   /// Returns the corresponding race from all races called [name]
-  static Race getRaceByName(String name) {
+  @override
+  Race getType(String name) {
     return _races.firstWhere(
       (race) => race.getName() == name,
       orElse: () =>
@@ -50,19 +53,22 @@ abstract class RaceManager {
   }
 
   /// Adds [race] to the list of all races and active races
-  static void registerRace(Race race) {
+  @override
+  void registerType(Race race) {
     _races.add(race);
     _activeRaces.add(race);
   }
 
   /// Removes [race] only from the active races
-  static void unregisterRace(Race race) {
-    _activeRaces.remove(getRaceByName(race.getName()));
+  @override
+  void unregisterType(Race race) {
+    _activeRaces.remove(getType(race.getName()));
   }
 
   /// Removes [race] from the active races and from all races lists
-  static void deleteRace(Race race) {
-    final foundRace = getRaceByName(race.getName());
+  @override
+  void deleteType(Race race) {
+    final foundRace = getType(race.getName());
     _races.remove(foundRace);
     _activeRaces.remove(foundRace);
   }

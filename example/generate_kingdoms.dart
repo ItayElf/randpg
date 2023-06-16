@@ -7,7 +7,7 @@ void main() {
   for (GovernmentType governmentType
       in GovernmentTypeManager.activeGovernmentTypes) {
     // Generate a random race for the race of the kingdom
-    Race race = ListItemGenerator(RaceManager.activeRaces).generate();
+    Race race = ListItemGenerator(RaceManager().activeTypes).generate();
 
     // generates a random kingdom with the default type, the random race and the government type
     Kingdom kingdom = KingdomGenerator(

@@ -94,7 +94,7 @@ class Settlement {
       settlementType:
           SettlementManager.getSettlementTypeByType(map['settlementType']),
       dominantRace: map['dominantRace'] != null
-          ? RaceManager.getRaceByName(map['dominantRace'])
+          ? RaceManager().getType(map['dominantRace'])
           : null,
       locations: List<Location>.from(
         (map['locations']).map<Location>(

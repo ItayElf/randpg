@@ -18,7 +18,7 @@ class DeityRaceNameGenerator implements IGenerator<String> {
   @override
   String generate() {
     if (_worshipedBy == null) {
-      final raceGenerator = ListItemGenerator(RaceManager.activeRaces);
+      final raceGenerator = ListItemGenerator(RaceManager().activeTypes);
       raceGenerator.seed(_seed);
       _worshipedBy = raceGenerator.generate();
     }

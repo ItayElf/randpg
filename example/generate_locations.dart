@@ -7,7 +7,7 @@ void main() {
   // Generating each of the active locations
   for (LocationType locationType in LocationManager.activeLocationTypes) {
     // Generate a random race for the owner of the location
-    Race race = ListItemGenerator(RaceManager.activeRaces).generate();
+    Race race = ListItemGenerator(RaceManager().activeTypes).generate();
 
     // generates a random location with the given type and race
     Location location = LocationGenerator(locationType, race).generate();

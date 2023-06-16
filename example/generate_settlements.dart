@@ -8,7 +8,7 @@ void main() {
       in SettlementManager.activeSettlementTypes) {
     // Generate a random race (or null) for the dominant race in the settlement
     Race? dominantRace = ListItemGenerator([
-      ...RaceManager.activeRaces,
+      ...RaceManager().activeTypes,
       null,
     ]).generate();
 

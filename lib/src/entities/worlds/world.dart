@@ -122,7 +122,7 @@ class World {
         ),
       ),
       opinions: (map['opinions'] as Map).map(
-        (key, value) => MapEntry(RaceManager.getRaceByName(key), value),
+        (key, value) => MapEntry(RaceManager().getType(key), value),
       ),
       importantPeople: List<Npc>.from(
         (map['importantPeople']).map<Npc>(

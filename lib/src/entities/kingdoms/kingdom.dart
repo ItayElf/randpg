@@ -127,7 +127,7 @@ class Kingdom {
           (x) => Npc.fromMap(x),
         ),
       ),
-      race: RaceManager.getRaceByName(map['race']),
+      race: RaceManager().getType(map['race']),
       population: map['population'],
       capital: Settlement.fromMap(map['capital']),
       importantSettlements: List<Settlement>.from(

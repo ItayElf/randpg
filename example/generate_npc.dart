@@ -4,7 +4,7 @@ import 'package:randpg/generators.dart';
 
 void main() {
   // Generate an npc
-  final randomRace = ListItemGenerator(RaceManager.activeRaces).generate();
+  final randomRace = ListItemGenerator(RaceManager().activeTypes).generate();
   final generator = NpcGenerator(randomRace);
   print(generator.generate().toJson());
 }

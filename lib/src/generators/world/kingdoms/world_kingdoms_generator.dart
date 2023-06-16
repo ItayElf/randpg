@@ -23,7 +23,7 @@ class WorldKingdomsGenerator implements IGenerator<List<Kingdom>> {
     final kingdomsCount = kingdomsCountGenerator.generate();
 
     final racesGenerator = RepeatedGenerator(
-        ListItemGenerator(RaceManager.activeRaces), kingdomsCount);
+        ListItemGenerator(RaceManager().activeTypes), kingdomsCount);
     racesGenerator.seed((_seed + 1) % SeedGenerator.maxSeed);
     final races = racesGenerator.generate();
 
