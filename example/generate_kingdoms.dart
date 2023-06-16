@@ -4,8 +4,7 @@ import 'package:randpg/generators.dart';
 
 void main() {
   // Generate a kingdom for each of the available government types
-  for (GovernmentType governmentType
-      in GovernmentTypeManager.activeGovernmentTypes) {
+  for (GovernmentType governmentType in GovernmentTypeManager().activeTypes) {
     // Generate a random race for the race of the kingdom
     Race race = ListItemGenerator(RaceManager().activeTypes).generate();
 
