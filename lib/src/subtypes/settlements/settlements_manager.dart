@@ -1,4 +1,5 @@
 import 'package:collection/collection.dart';
+import 'package:randpg/src/subtypes/managers/manager.dart';
 
 import '../../exceptions/not_found_exceptions.dart';
 import 'city/city.dart';
@@ -11,7 +12,7 @@ import 'village/village.dart';
 /// A class that handles the available settlements and using them
 ///
 /// When making a custom settlement type, make sure to register it or else some features might not work
-abstract class SettlementManager {
+class SettlementManager extends Manager<SettlementType> {
   static final Set<SettlementType> _settlementTypes = {
     Hamlet(),
     Village(),
@@ -25,16 +26,18 @@ abstract class SettlementManager {
   };
 
   /// Returns all the settlement types
-  static List<SettlementType> get allSettlements => _settlementTypes.toList()
+  @override
+  List<SettlementType> get allTypes => _settlementTypes.toList()
     ..sortBy((settlementType) => settlementType.getSettlementType());
 
   /// Returns all active settlements
-  static List<SettlementType> get activeSettlementTypes =>
-      _activeSettlementTypes.toList()
-        ..sortBy((settlementType) => settlementType.getSettlementType());
+  @override
+  List<SettlementType> get activeTypes => _activeSettlementTypes.toList()
+    ..sortBy((settlementType) => settlementType.getSettlementType());
 
   /// Returns the corresponding settlement type from all settlements from type [type]
-  static SettlementType getSettlementTypeByType(String type) {
+  @override
+  SettlementType getType(String type) {
     return _settlementTypes.firstWhere(
       (settlementType) => settlementType.getSettlementType() == type,
       orElse: () => throw SettlementTypeNotFoundException(
@@ -43,21 +46,22 @@ abstract class SettlementManager {
   }
 
   /// Adds [settlementType] to the list of all location types and active location types
-  static void registerSettlementType(SettlementType settlementType) {
+  @override
+  void registerType(SettlementType settlementType) {
     _settlementTypes.add(settlementType);
     _activeSettlementTypes.add(settlementType);
   }
 
   /// Removes [settlementType] only from the active races
-  static void unregisterSettlementType(SettlementType settlementType) {
-    _activeSettlementTypes
-        .remove(getSettlementTypeByType(settlementType.getSettlementType()));
+  @override
+  void unregisterType(SettlementType settlementType) {
+    _activeSettlementTypes.remove(getType(settlementType.getSettlementType()));
   }
 
   /// Removes [settlementType] from the active location types and from all location types list
-  static void deleteSettlementType(SettlementType settlementType) {
-    final foundSettlementType =
-        getSettlementTypeByType(settlementType.getSettlementType());
+  @override
+  void deleteType(SettlementType settlementType) {
+    final foundSettlementType = getType(settlementType.getSettlementType());
     _settlementTypes.remove(foundSettlementType);
     _activeSettlementTypes.remove(foundSettlementType);
   }
