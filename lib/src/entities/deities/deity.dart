@@ -107,7 +107,7 @@ class Deity {
       name: map['name'],
       gender:
           map['gender'] != null ? Gender.values.byName(map['gender']) : null,
-      deityType: DeityManager.getDeityTypeByType(map['deityType']),
+      deityType: DeityManager().getType(map['deityType']),
       domains: List<String>.from((map['domains'])),
       alignment:
           map['alignment'] != null ? Alignment.fromMap(map['alignment']) : null,

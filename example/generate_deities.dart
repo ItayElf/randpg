@@ -3,7 +3,7 @@ import 'package:randpg/entities/deities.dart';
 
 void main() {
   // Generating each of the active deity types
-  for (DeityType deityType in DeityManager.activeDeityTypes) {
+  for (DeityType deityType in DeityManager().activeTypes) {
     // Generate a random alignment for the deity
     final alignment = BaseAlignmentGenerator().generate();
 

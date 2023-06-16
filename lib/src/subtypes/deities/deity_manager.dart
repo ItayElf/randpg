@@ -1,4 +1,5 @@
 import 'package:collection/collection.dart';
+import 'package:randpg/src/subtypes/managers/manager.dart';
 
 import '../../exceptions/not_found_exceptions.dart';
 import 'archangels/archangel.dart';
@@ -11,7 +12,7 @@ import 'primordials/primordial.dart';
 /// A class that handles the available deities and using them
 ///
 /// When making a custom deity type, make sure to register it or else some features might not work
-abstract class DeityManager {
+class DeityManager extends Manager<DeityType> {
   static final Set<DeityType> _deityTypes = {
     God(),
     Demigod(),
@@ -23,15 +24,18 @@ abstract class DeityManager {
   static final Set<DeityType> _activeDeityTypes = {..._deityTypes};
 
   /// Returns all the deity types
-  static List<DeityType> get allDeities =>
+  @override
+  List<DeityType> get allTypes =>
       _deityTypes.toList()..sortBy((deityType) => deityType.getDeityType());
 
   /// Returns all active deities
-  static List<DeityType> get activeDeityTypes => _activeDeityTypes.toList()
+  @override
+  List<DeityType> get activeTypes => _activeDeityTypes.toList()
     ..sortBy((deityType) => deityType.getDeityType());
 
   /// Returns the corresponding deity type from all deities with type [type]
-  static DeityType getDeityTypeByType(String type) {
+  @override
+  DeityType getType(String type) {
     return _deityTypes.firstWhere(
       (deityType) => deityType.getDeityType() == type,
       orElse: () => throw DeityTypeNotFoundException(
@@ -40,19 +44,22 @@ abstract class DeityManager {
   }
 
   /// Adds [deityType] to the list of all deity types and active deity types
-  static void registerDeityType(DeityType deityType) {
+  @override
+  void registerType(DeityType deityType) {
     _deityTypes.add(deityType);
     _activeDeityTypes.add(deityType);
   }
 
   /// Removes [deityType] only from the active races
-  static void unregisterDeityType(DeityType deityType) {
-    _activeDeityTypes.remove(getDeityTypeByType(deityType.getDeityType()));
+  @override
+  void unregisterType(DeityType deityType) {
+    _activeDeityTypes.remove(getType(deityType.getDeityType()));
   }
 
   /// Removes [deityType] from the active deity types and from all deity types list
-  static void deleteDeityType(DeityType deityType) {
-    final foundDeityType = getDeityTypeByType(deityType.getDeityType());
+  @override
+  void deleteType(DeityType deityType) {
+    final foundDeityType = getType(deityType.getDeityType());
     _deityTypes.remove(foundDeityType);
     _activeDeityTypes.remove(foundDeityType);
   }
