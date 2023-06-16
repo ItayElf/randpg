@@ -96,5 +96,5 @@ class DefaultWorldSettings implements WorldSettings {
 
   @override
   IGenerator<GuildType> getGuildTypeGenerator() =>
-      ListItemGenerator(GuildManager.activeGuildTypes);
+      ListItemGenerator(GuildManager().activeTypes);
 }

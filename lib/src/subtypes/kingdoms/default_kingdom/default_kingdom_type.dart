@@ -36,7 +36,7 @@ class DefaultKingdomType implements KingdomType, Fixable<Kingdom> {
 
   @override
   IGenerator<GuildType> getGuildTypeGenerator() =>
-      ListItemGenerator(GuildManager.activeGuildTypes);
+      ListItemGenerator(GuildManager().activeTypes);
 
   @override
   IGenerator<String> getHistoryGenerator(String kingdomName) =>

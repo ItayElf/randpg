@@ -1,4 +1,5 @@
 import 'package:collection/collection.dart';
+import 'package:randpg/src/subtypes/managers/manager.dart';
 
 import '../../exceptions/not_found_exceptions.dart';
 import 'artisans_guild/artisans_guild.dart';
@@ -13,7 +14,7 @@ import 'thieves_guild/thieves_guild.dart';
 /// A class that handles the available guilds and using them
 ///
 /// When making a custom guild type, make sure to register it or else some features might not work
-abstract class GuildManager {
+class GuildManager extends Manager<GuildType> {
   static final Set<GuildType> _guildTypes = {
     ThievesGuild(),
     MerchantsGuild(),
@@ -27,15 +28,18 @@ abstract class GuildManager {
   static final Set<GuildType> _activeGuildTypes = {..._guildTypes};
 
   /// Returns all the guild types
-  static List<GuildType> get allGuilds =>
+  @override
+  List<GuildType> get allTypes =>
       _guildTypes.toList()..sortBy((guildType) => guildType.getGuildType());
 
   /// Returns all active guilds
-  static List<GuildType> get activeGuildTypes => _activeGuildTypes.toList()
+  @override
+  List<GuildType> get activeTypes => _activeGuildTypes.toList()
     ..sortBy((guildType) => guildType.getGuildType());
 
   /// Returns the corresponding guild type from all guilds with type [type]
-  static GuildType getGuildTypeByType(String type) {
+  @override
+  GuildType getType(String type) {
     return _guildTypes.firstWhere(
       (guildType) => guildType.getGuildType() == type,
       orElse: () => throw GuildTypeNotFoundException(
@@ -44,19 +48,22 @@ abstract class GuildManager {
   }
 
   /// Adds [guildType] to the list of all guild types and active guild types
-  static void registerGuildType(GuildType guildType) {
+  @override
+  void registerType(GuildType guildType) {
     _guildTypes.add(guildType);
     _activeGuildTypes.add(guildType);
   }
 
   /// Removes [guildType] only from the active guild types
-  static void unregisterGuildType(GuildType guildType) {
-    _activeGuildTypes.remove(getGuildTypeByType(guildType.getGuildType()));
+  @override
+  void unregisterType(GuildType guildType) {
+    _activeGuildTypes.remove(getType(guildType.getGuildType()));
   }
 
   /// Removes [guildType] from the active guild types and from all guild types list
-  static void deleteGuildType(GuildType guildType) {
-    final foundGuildType = getGuildTypeByType(guildType.getGuildType());
+  @override
+  void deleteType(GuildType guildType) {
+    final foundGuildType = getType(guildType.getGuildType());
     _guildTypes.remove(foundGuildType);
     _activeGuildTypes.remove(foundGuildType);
   }
