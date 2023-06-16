@@ -1,4 +1,5 @@
 import 'package:collection/collection.dart';
+import 'package:randpg/src/subtypes/managers/manager.dart';
 import '../../../entities/emblems/svg_wrapper.dart';
 import '../../../exceptions/not_found_exceptions.dart';
 import './emblem_data.dart';
@@ -6,21 +7,24 @@ import './emblem_data.dart';
 /// A class that handles the available deities and using them
 ///
 /// When making a custom emblemPattern type, make sure to register it or else some features might not work
-abstract class EmblemPatternsManager {
+class EmblemPatternsManager extends Manager<SvgWrapper> {
   static final Set<SvgWrapper> _emblemPatterns = {...emblemPatterns};
 
   static final Set<SvgWrapper> _activeSvgWrappers = {..._emblemPatterns};
 
   /// Returns all the emblemPattern types
-  static List<SvgWrapper> get allPatterns =>
+  @override
+  List<SvgWrapper> get allTypes =>
       _emblemPatterns.toList()..sortBy((emblemPattern) => emblemPattern.name);
 
   /// Returns all active deities
-  static List<SvgWrapper> get activeSvgWrappers => _activeSvgWrappers.toList()
+  @override
+  List<SvgWrapper> get activeTypes => _activeSvgWrappers.toList()
     ..sortBy((emblemPattern) => emblemPattern.name);
 
   /// Returns the corresponding emblemPattern from all deities with type [name]
-  static SvgWrapper getSvgWrapperByName(String name) {
+  @override
+  SvgWrapper getType(String name) {
     return _emblemPatterns.firstWhere(
       (emblemPattern) => emblemPattern.name == name,
       orElse: () => throw EmblemPatternNotFoundException(
@@ -29,19 +33,22 @@ abstract class EmblemPatternsManager {
   }
 
   /// Adds [emblemPattern] to the list of all emblemPattern types and active emblemPattern types
-  static void registerSvgWrapper(SvgWrapper emblemPattern) {
+  @override
+  void registerType(SvgWrapper emblemPattern) {
     _emblemPatterns.add(emblemPattern);
     _activeSvgWrappers.add(emblemPattern);
   }
 
   /// Removes [emblemPattern] only from the active races
-  static void unregisterSvgWrapper(SvgWrapper emblemPattern) {
-    _activeSvgWrappers.remove(getSvgWrapperByName(emblemPattern.name));
+  @override
+  void unregisterType(SvgWrapper emblemPattern) {
+    _activeSvgWrappers.remove(getType(emblemPattern.name));
   }
 
   /// Removes [emblemPattern] from the active emblemPattern types and from all emblemPattern types list
-  static void deleteSvgWrapper(SvgWrapper emblemPattern) {
-    final foundSvgWrapper = getSvgWrapperByName(emblemPattern.name);
+  @override
+  void deleteType(SvgWrapper emblemPattern) {
+    final foundSvgWrapper = getType(emblemPattern.name);
     _emblemPatterns.remove(foundSvgWrapper);
     _activeSvgWrappers.remove(foundSvgWrapper);
   }
