@@ -16,6 +16,8 @@ import 'tundra/tundra.dart';
 ///
 /// When making a custom landscape type, make sure to register it or else some features might not work
 class LandscapeManager extends Manager<LandscapeType> {
+  const LandscapeManager();
+
   static final Set<LandscapeType> _landscapeTypes = {
     Forest(),
     Mountains(),

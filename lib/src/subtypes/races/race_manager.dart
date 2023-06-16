@@ -18,6 +18,8 @@ import 'tiefling/tiefling.dart';
 ///
 /// When making a custom race, make sure to register it or else some features might not work
 class RaceManager extends Manager<Race> {
+  const RaceManager();
+
   static final Set<Race> _races = {
     Dragonborn(),
     Dwarf(),

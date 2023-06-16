@@ -13,6 +13,8 @@ import 'village/village.dart';
 ///
 /// When making a custom settlement type, make sure to register it or else some features might not work
 class SettlementManager extends Manager<SettlementType> {
+  const SettlementManager();
+
   static final Set<SettlementType> _settlementTypes = {
     Hamlet(),
     Village(),

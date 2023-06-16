@@ -15,6 +15,8 @@ import 'thieves_guild/thieves_guild.dart';
 ///
 /// When making a custom guild type, make sure to register it or else some features might not work
 class GuildManager extends Manager<GuildType> {
+  const GuildManager();
+
   static final Set<GuildType> _guildTypes = {
     ThievesGuild(),
     MerchantsGuild(),

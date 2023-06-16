@@ -8,6 +8,8 @@ import './emblem_data.dart';
 ///
 /// When making a custom emblemPattern type, make sure to register it or else some features might not work
 class EmblemPatternsManager extends Manager<SvgWrapper> {
+  const EmblemPatternsManager();
+
   static final Set<SvgWrapper> _emblemPatterns = {...emblemPatterns};
 
   static final Set<SvgWrapper> _activeSvgWrappers = {..._emblemPatterns};

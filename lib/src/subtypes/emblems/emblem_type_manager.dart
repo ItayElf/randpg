@@ -9,6 +9,8 @@ import 'emblem_type.dart';
 ///
 /// When making a custom emblem type, make sure to register it or else some features might not work
 class EmblemTypeManager extends Manager<EmblemType> {
+  const EmblemTypeManager();
+
   static final Set<EmblemType> _emblemTypes = {
     DefaultEmblemType(),
   };

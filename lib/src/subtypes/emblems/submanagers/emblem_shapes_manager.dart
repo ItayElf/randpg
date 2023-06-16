@@ -8,6 +8,8 @@ import 'emblem_data.dart';
 ///
 /// When making a custom emblemShape type, make sure to register it or else some features might not work
 class EmblemShapesManager extends Manager<SvgWrapper> {
+  const EmblemShapesManager();
+
   static final Set<SvgWrapper> _emblemShapes = {...emblemShapes};
 
   static final Set<SvgWrapper> _activeSvgWrappers = {..._emblemShapes};

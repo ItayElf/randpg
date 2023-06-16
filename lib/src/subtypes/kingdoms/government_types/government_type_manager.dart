@@ -12,6 +12,8 @@ import 'theocracy/theocracy.dart';
 ///
 /// When making a custom governmentType, make sure to register it or else some features might not work
 class GovernmentTypeManager extends Manager<GovernmentType> {
+  const GovernmentTypeManager();
+
   static final Set<GovernmentType> _governmentTypes = {
     Federation(),
     Monarchy(),

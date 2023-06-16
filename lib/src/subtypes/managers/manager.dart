@@ -2,6 +2,8 @@
 ///
 /// It is advised that classes that extends this class would act like a singleton.
 abstract class Manager<T> {
+  const Manager();
+
   /// Returns all the types
   List<T> get allTypes;
 

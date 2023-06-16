@@ -13,6 +13,8 @@ import 'primordials/primordial.dart';
 ///
 /// When making a custom deity type, make sure to register it or else some features might not work
 class DeityManager extends Manager<DeityType> {
+  const DeityManager();
+
   static final Set<DeityType> _deityTypes = {
     God(),
     Demigod(),

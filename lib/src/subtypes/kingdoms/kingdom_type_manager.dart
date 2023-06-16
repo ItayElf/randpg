@@ -9,6 +9,8 @@ import 'kingdom_type.dart';
 ///
 /// When making a custom kingdom type, make sure to register it or else some features might not work
 class KingdomTypeManager extends Manager<KingdomType> {
+  const KingdomTypeManager();
+
   static final Set<KingdomType> _kingdomTypes = {
     DefaultKingdomType(),
   };

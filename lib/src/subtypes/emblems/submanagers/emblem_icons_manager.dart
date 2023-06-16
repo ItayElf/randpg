@@ -9,6 +9,8 @@ import 'emblem_data.dart';
 ///
 /// When making a custom emblemIcon type, make sure to register it or else some features might not work
 class EmblemIconsManager extends Manager<SvgWrapper> {
+  const EmblemIconsManager();
+
   static final Set<SvgWrapper> _emblemIcons = {...emblemIcons};
 
   static final Set<SvgWrapper> _activeSvgWrappers = {..._emblemIcons};

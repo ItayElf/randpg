@@ -9,6 +9,8 @@ import 'world_settings.dart';
 ///
 /// When making a custom world settings, make sure to register it or else some features might not work
 class WorldSettingsManager extends Manager<WorldSettings> {
+  const WorldSettingsManager();
+
   static final Set<WorldSettings> _worldSettingsPool = {
     DefaultWorldSettings(),
   };

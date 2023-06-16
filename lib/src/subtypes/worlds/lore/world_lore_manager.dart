@@ -9,6 +9,8 @@ import 'world_lore_type.dart';
 ///
 /// When making a custom worldLore type, make sure to register it or else some features might not work
 class WorldLoreManager extends Manager<WorldLoreType> {
+  const WorldLoreManager();
+
   static final Set<WorldLoreType> _worldLoreTypes = {
     DefaultLore(),
   };

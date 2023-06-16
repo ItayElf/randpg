@@ -14,6 +14,8 @@ import 'temple/temple.dart';
 ///
 /// When making a custom location type, make sure to register it or else some features might not work
 class LocationManager extends Manager<LocationType> {
+  const LocationManager();
+
   static final Set<LocationType> _locationTypes = {
     GeneralStore(),
     Library(),
