@@ -83,7 +83,7 @@ class Npc {
       name: map['name'],
       age: map['age'],
       gender: Gender.values.byName(map['gender']),
-      race: RaceManager.getRaceByName(map['race']),
+      race: RaceManager().getType(map['race']),
       occupation: map['occupation'],
       physicalDescription:
           PhysicalDescription.fromMap(map['physicalDescription']),

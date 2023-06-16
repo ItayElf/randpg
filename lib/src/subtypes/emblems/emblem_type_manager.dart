@@ -1,4 +1,5 @@
 import 'package:collection/collection.dart';
+import 'package:randpg/src/subtypes/managers/manager.dart';
 
 import '../../exceptions/not_found_exceptions.dart';
 import 'default/default_emblem_type.dart';
@@ -7,7 +8,9 @@ import 'emblem_type.dart';
 /// A class that handles the available deities and using them
 ///
 /// When making a custom emblem type, make sure to register it or else some features might not work
-abstract class EmblemTypeManager {
+class EmblemTypeManager extends Manager<EmblemType> {
+  const EmblemTypeManager();
+
   static final Set<EmblemType> _emblemTypes = {
     DefaultEmblemType(),
   };
@@ -15,15 +18,18 @@ abstract class EmblemTypeManager {
   static final Set<EmblemType> _activeEmblemTypes = {..._emblemTypes};
 
   /// Returns all the emblem types
-  static List<EmblemType> get allDeities =>
+  @override
+  List<EmblemType> get allTypes =>
       _emblemTypes.toList()..sortBy((emblemType) => emblemType.getEmblemType());
 
   /// Returns all active deities
-  static List<EmblemType> get activeEmblemTypes => _activeEmblemTypes.toList()
+  @override
+  List<EmblemType> get activeTypes => _activeEmblemTypes.toList()
     ..sortBy((emblemType) => emblemType.getEmblemType());
 
   /// Returns the corresponding emblem type from all deities with type [type]
-  static EmblemType getEmblemTypeByType(String type) {
+  @override
+  EmblemType getType(String type) {
     return _emblemTypes.firstWhere(
       (emblemType) => emblemType.getEmblemType() == type,
       orElse: () => throw EmblemTypeNotFoundException(
@@ -32,19 +38,22 @@ abstract class EmblemTypeManager {
   }
 
   /// Adds [emblemType] to the list of all emblem types and active emblem types
-  static void registerEmblemType(EmblemType emblemType) {
+  @override
+  void registerType(EmblemType emblemType) {
     _emblemTypes.add(emblemType);
     _activeEmblemTypes.add(emblemType);
   }
 
   /// Removes [emblemType] only from the active races
-  static void unregisterEmblemType(EmblemType emblemType) {
-    _activeEmblemTypes.remove(getEmblemTypeByType(emblemType.getEmblemType()));
+  @override
+  void unregisterType(EmblemType emblemType) {
+    _activeEmblemTypes.remove(getType(emblemType.getEmblemType()));
   }
 
   /// Removes [emblemType] from the active emblem types and from all emblem types list
-  static void deleteEmblemType(EmblemType emblemType) {
-    final foundEmblemType = getEmblemTypeByType(emblemType.getEmblemType());
+  @override
+  void deleteType(EmblemType emblemType) {
+    final foundEmblemType = getType(emblemType.getEmblemType());
     _emblemTypes.remove(foundEmblemType);
     _activeEmblemTypes.remove(foundEmblemType);
   }

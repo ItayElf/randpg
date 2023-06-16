@@ -69,7 +69,7 @@ class DefaultWorldSettings implements WorldSettings {
 
   @override
   IGenerator<LandscapeType> getLandscapeTypeGenerator() =>
-      ListItemGenerator(LandscapeManager.activeLandscapeTypes);
+      ListItemGenerator(LandscapeManager().activeTypes);
 
   @override
   List<LandscapeType?> getLandscapeTypes() => _landscapeTypes;
@@ -96,5 +96,5 @@ class DefaultWorldSettings implements WorldSettings {
 
   @override
   IGenerator<GuildType> getGuildTypeGenerator() =>
-      ListItemGenerator(GuildManager.activeGuildTypes);
+      ListItemGenerator(GuildManager().activeTypes);
 }

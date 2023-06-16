@@ -24,7 +24,7 @@ class DefaultEmblemType implements EmblemType {
 
   @override
   IGenerator<SvgWrapper> getIconGenerator() =>
-      ListItemGenerator(EmblemIconsManager.activeSvgWrappers);
+      ListItemGenerator(EmblemIconsManager().activeTypes);
 
   @override
   IGenerator<List<IconPosition>> getLayoutGenerator(int iconsCount) =>
@@ -41,7 +41,7 @@ class DefaultEmblemType implements EmblemType {
 
   @override
   IGenerator<SvgWrapper> getPatternGenerator() =>
-      ListItemGenerator(EmblemPatternsManager.activeSvgWrappers);
+      ListItemGenerator(EmblemPatternsManager().activeTypes);
 
   @override
   IGenerator<HslColor> getPrimaryColorGenerator() => PrimaryColorGenerator();
@@ -52,5 +52,5 @@ class DefaultEmblemType implements EmblemType {
 
   @override
   IGenerator<SvgWrapper> getShapeGenerator() =>
-      ListItemGenerator(EmblemShapesManager.activeSvgWrappers);
+      ListItemGenerator(EmblemShapesManager().activeTypes);
 }

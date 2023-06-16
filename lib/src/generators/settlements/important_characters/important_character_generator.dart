@@ -40,7 +40,7 @@ class ImportantCharacterGenerator implements IGenerator<Npc> {
   }
 
   Race _generateRace(int seed) {
-    final raceGenerator = ListItemGenerator(RaceManager.activeRaces);
+    final raceGenerator = ListItemGenerator(RaceManager().activeTypes);
     raceGenerator.seed(seed);
     final race = raceGenerator.generate();
 

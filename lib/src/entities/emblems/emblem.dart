@@ -135,7 +135,7 @@ class Emblem {
       primaryColor: HslColor.fromMap(map['primaryColor']),
       secondaryColor: HslColor.fromMap(map['secondaryColor']),
       iconsColor: HslColor.fromMap(map['iconsColor']),
-      type: EmblemTypeManager.getEmblemTypeByType(map['type']),
+      type: EmblemTypeManager().getType(map['type']),
     );
   }
 

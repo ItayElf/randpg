@@ -15,9 +15,9 @@ class WorldOpinionsGenerator implements IGenerator<Map<Race, String>> {
   Map<Race, String> generate() {
     final generator = BatchGenerator(
       Map.fromEntries(
-        RaceManager.activeRaces.map(
-          (race) => MapEntry(race.getName(), race.getOpinionGenerator()),
-        ),
+        RaceManager().activeTypes.map(
+              (race) => MapEntry(race.getName(), race.getOpinionGenerator()),
+            ),
       ),
     );
     generator.seed(_seed);
@@ -25,7 +25,7 @@ class WorldOpinionsGenerator implements IGenerator<Map<Race, String>> {
 
     return results.map(
       (key, value) => MapEntry(
-        RaceManager.getRaceByName(key),
+        RaceManager().getType(key),
         value,
       ),
     );

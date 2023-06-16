@@ -95,8 +95,7 @@ class Landscape {
       name: map['name'],
       location: map['location'],
       weather: map['weather'],
-      landscapeType:
-          LandscapeManager.getLandscapeTypeByType(map['landscapeType']),
+      landscapeType: LandscapeManager().getType(map['landscapeType']),
       features: List<String>.from((map['features'])),
       resources: List<String>.from((map['resources'])),
       encounters: List<String>.from((map['encounters'])),

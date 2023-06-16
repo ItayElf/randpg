@@ -1,4 +1,5 @@
 import 'package:collection/collection.dart';
+import 'package:randpg/src/subtypes/managers/manager.dart';
 
 import '../../../entities/emblems/svg_wrapper.dart';
 import '../../../exceptions/not_found_exceptions.dart';
@@ -7,21 +8,26 @@ import 'emblem_data.dart';
 /// A class that handles the available deities and using them
 ///
 /// When making a custom emblemIcon type, make sure to register it or else some features might not work
-abstract class EmblemIconsManager {
+class EmblemIconsManager extends Manager<SvgWrapper> {
+  const EmblemIconsManager();
+
   static final Set<SvgWrapper> _emblemIcons = {...emblemIcons};
 
   static final Set<SvgWrapper> _activeSvgWrappers = {..._emblemIcons};
 
   /// Returns all the emblemIcon types
-  static List<SvgWrapper> get allIcons =>
+  @override
+  List<SvgWrapper> get allTypes =>
       _emblemIcons.toList()..sortBy((emblemIcon) => emblemIcon.name);
 
   /// Returns all active deities
-  static List<SvgWrapper> get activeSvgWrappers =>
+  @override
+  List<SvgWrapper> get activeTypes =>
       _activeSvgWrappers.toList()..sortBy((emblemIcon) => emblemIcon.name);
 
   /// Returns the corresponding emblemIcon from all deities with type [name]
-  static SvgWrapper getSvgWrapperByName(String name) {
+  @override
+  SvgWrapper getType(String name) {
     return _emblemIcons.firstWhere(
       (emblemIcon) => emblemIcon.name == name,
       orElse: () => throw EmblemIconNotFoundException(
@@ -30,19 +36,22 @@ abstract class EmblemIconsManager {
   }
 
   /// Adds [emblemIcon] to the list of all emblemIcon types and active emblemIcon types
-  static void registerSvgWrapper(SvgWrapper emblemIcon) {
+  @override
+  void registerType(SvgWrapper emblemIcon) {
     _emblemIcons.add(emblemIcon);
     _activeSvgWrappers.add(emblemIcon);
   }
 
   /// Removes [emblemIcon] only from the active races
-  static void unregisterSvgWrapper(SvgWrapper emblemIcon) {
-    _activeSvgWrappers.remove(getSvgWrapperByName(emblemIcon.name));
+  @override
+  void unregisterType(SvgWrapper emblemIcon) {
+    _activeSvgWrappers.remove(getType(emblemIcon.name));
   }
 
   /// Removes [emblemIcon] from the active emblemIcon types and from all emblemIcon types list
-  static void deleteSvgWrapper(SvgWrapper emblemIcon) {
-    final foundSvgWrapper = getSvgWrapperByName(emblemIcon.name);
+  @override
+  void deleteType(SvgWrapper emblemIcon) {
+    final foundSvgWrapper = getType(emblemIcon.name);
     _emblemIcons.remove(foundSvgWrapper);
     _activeSvgWrappers.remove(foundSvgWrapper);
   }

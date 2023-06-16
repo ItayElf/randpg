@@ -1,4 +1,5 @@
 import 'package:collection/collection.dart';
+import 'package:randpg/src/subtypes/managers/manager.dart';
 
 import '../../exceptions/not_found_exceptions.dart';
 import 'default_kingdom/default_kingdom_type.dart';
@@ -7,7 +8,9 @@ import 'kingdom_type.dart';
 /// A class that handles the available kingdoms and using them
 ///
 /// When making a custom kingdom type, make sure to register it or else some features might not work
-abstract class KingdomTypeManager {
+class KingdomTypeManager extends Manager<KingdomType> {
+  const KingdomTypeManager();
+
   static final Set<KingdomType> _kingdomTypes = {
     DefaultKingdomType(),
   };
@@ -15,16 +18,18 @@ abstract class KingdomTypeManager {
   static final Set<KingdomType> _activeKingdomTypes = {..._kingdomTypes};
 
   /// Returns all the kingdom types
-  static List<KingdomType> get allLocations => _kingdomTypes.toList()
+  @override
+  List<KingdomType> get allTypes => _kingdomTypes.toList()
     ..sortBy((kingdomType) => kingdomType.getKingdomType());
 
   /// Returns all active kingdoms
-  static List<KingdomType> get activeKingdomTypes =>
-      _activeKingdomTypes.toList()
-        ..sortBy((kingdomType) => kingdomType.getKingdomType());
+  @override
+  List<KingdomType> get activeTypes => _activeKingdomTypes.toList()
+    ..sortBy((kingdomType) => kingdomType.getKingdomType());
 
   /// Returns the corresponding kingdom type from all kingdoms with type [type]
-  static KingdomType getKingdomTypeByType(String type) {
+  @override
+  KingdomType getType(String type) {
     return _kingdomTypes.firstWhere(
       (kingdomType) => kingdomType.getKingdomType() == type,
       orElse: () => throw KingdomTypeNotFoundException(
@@ -33,20 +38,22 @@ abstract class KingdomTypeManager {
   }
 
   /// Adds [kingdomType] to the list of all kingdom types and active kingdom types
-  static void registerKingdomType(KingdomType kingdomType) {
+  @override
+  void registerType(KingdomType kingdomType) {
     _kingdomTypes.add(kingdomType);
     _activeKingdomTypes.add(kingdomType);
   }
 
   /// Removes [kingdomType] only from the active races
-  static void unregisterKingdomType(KingdomType kingdomType) {
-    _activeKingdomTypes
-        .remove(getKingdomTypeByType(kingdomType.getKingdomType()));
+  @override
+  void unregisterType(KingdomType kingdomType) {
+    _activeKingdomTypes.remove(getType(kingdomType.getKingdomType()));
   }
 
   /// Removes [kingdomType] from the active kingdom types and from all kingdom types list
-  static void deleteKingdomType(KingdomType kingdomType) {
-    final foundKingdomType = getKingdomTypeByType(kingdomType.getKingdomType());
+  @override
+  void deleteType(KingdomType kingdomType) {
+    final foundKingdomType = getType(kingdomType.getKingdomType());
     _kingdomTypes.remove(foundKingdomType);
     _activeKingdomTypes.remove(foundKingdomType);
   }

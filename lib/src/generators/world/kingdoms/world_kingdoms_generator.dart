@@ -23,12 +23,12 @@ class WorldKingdomsGenerator implements IGenerator<List<Kingdom>> {
     final kingdomsCount = kingdomsCountGenerator.generate();
 
     final racesGenerator = RepeatedGenerator(
-        ListItemGenerator(RaceManager.activeRaces), kingdomsCount);
+        ListItemGenerator(RaceManager().activeTypes), kingdomsCount);
     racesGenerator.seed((_seed + 1) % SeedGenerator.maxSeed);
     final races = racesGenerator.generate();
 
     final governmentTypeGenerator =
-        ListItemGenerator(GovernmentTypeManager.activeGovernmentTypes);
+        ListItemGenerator(GovernmentTypeManager().activeTypes);
     governmentTypeGenerator.seed((_seed + 2) % SeedGenerator.maxSeed);
     GovernmentType governmentType;
 

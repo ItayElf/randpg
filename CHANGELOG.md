@@ -1,5 +1,9 @@
 # Changelog 
 
+## 0.9.4
+
+- Made all managers conform to the `Manager<T>` class
+
 ## 0.9.3
 
 - Removed casting in json methods for entities

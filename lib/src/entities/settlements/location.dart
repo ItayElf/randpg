@@ -77,7 +77,7 @@ class Location {
     return Location(
       name: map['name'],
       owner: Npc.fromMap(map['owner']),
-      type: LocationManager.getLocationTypeByType(map['type']),
+      type: LocationManager().getType(map['type']),
       zone: map['zone'],
       outsideDescription: List<String>.from((map['outsideDescription'])),
       buildingDescription: map['buildingDescription'],
