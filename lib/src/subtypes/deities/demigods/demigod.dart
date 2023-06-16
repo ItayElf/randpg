@@ -68,7 +68,7 @@ class Demigod implements DeityType {
 
   @override
   IGenerator<Race?> getWorshipedByGenerator() => ListItemGenerator([
-        ...RaceManager.activeRaces,
+        ...RaceManager().activeTypes,
         null,
       ]);
 

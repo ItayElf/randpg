@@ -97,7 +97,7 @@ class Guild {
     return Guild(
       name: map['name'],
       leader: Npc.fromMap(map['leader']),
-      guildType: GuildManager.getGuildTypeByType(map['guildType']),
+      guildType: GuildManager().getType(map['guildType']),
       reputation: map['reputation'],
       history: map['history'],
       emblem: Emblem.fromMap(map['emblem']),

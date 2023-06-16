@@ -4,11 +4,10 @@ import 'package:randpg/generators.dart';
 
 void main() {
   // Generating each of the active settlements
-  for (SettlementType settlementType
-      in SettlementManager.activeSettlementTypes) {
+  for (SettlementType settlementType in SettlementManager().activeTypes) {
     // Generate a random race (or null) for the dominant race in the settlement
     Race? dominantRace = ListItemGenerator([
-      ...RaceManager.activeRaces,
+      ...RaceManager().activeTypes,
       null,
     ]).generate();
 

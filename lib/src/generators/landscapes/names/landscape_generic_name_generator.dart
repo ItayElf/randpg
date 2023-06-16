@@ -15,7 +15,7 @@ class LandscapeGenericNameGenerator implements IGenerator<String> {
 
   @override
   String generate() {
-    final raceGenerator = ListItemGenerator(RaceManager.activeRaces);
+    final raceGenerator = ListItemGenerator(RaceManager().activeTypes);
     raceGenerator.seed(_seed);
     final race = raceGenerator.generate();
 

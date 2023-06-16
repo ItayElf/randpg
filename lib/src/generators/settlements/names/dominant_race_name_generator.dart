@@ -26,7 +26,7 @@ class DominantRaceNameGenerator implements IGenerator<String> {
     final isDominant = _dominantRace == null;
 
     if (_dominantRace == null) {
-      final raceGenerator = ListItemGenerator(RaceManager.activeRaces);
+      final raceGenerator = ListItemGenerator(RaceManager().activeTypes);
       raceGenerator.seed((_seed + 1) % SeedGenerator.maxSeed);
       _dominantRace = raceGenerator.generate();
     }

@@ -77,7 +77,7 @@ class WorldLore {
 
   factory WorldLore.fromMap(Map<String, dynamic> map) {
     return WorldLore(
-      loreType: WorldLoreManager.getWorldLoreTypeByType(map['loreType']),
+      loreType: WorldLoreManager().getType(map['loreType']),
       everybodyKnows: map['everybodyKnows'],
       fewKnow: map['fewKnow'],
       nobodyKnows: map['nobodyKnows'],

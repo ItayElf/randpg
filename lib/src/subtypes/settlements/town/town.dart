@@ -53,7 +53,7 @@ class Town implements SettlementType {
 
   @override
   IGenerator<LocationType> getLocationsTypeGenerator() =>
-      ListItemGenerator(LocationManager.activeLocationTypes);
+      ListItemGenerator(LocationManager().activeTypes);
 
   @override
   IGenerator<String> getNameGenerator(Race? dominantRace) => MultipleGenerator([

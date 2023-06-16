@@ -121,13 +121,13 @@ class Kingdom {
   factory Kingdom.fromMap(Map<String, dynamic> map) {
     return Kingdom(
       name: map['name'],
-      kingdomType: KingdomTypeManager.getKingdomTypeByType(map['kingdomType']),
+      kingdomType: KingdomTypeManager().getType(map['kingdomType']),
       rulers: List<Npc>.from(
         (map['rulers']).map<Npc>(
           (x) => Npc.fromMap(x),
         ),
       ),
-      race: RaceManager.getRaceByName(map['race']),
+      race: RaceManager().getType(map['race']),
       population: map['population'],
       capital: Settlement.fromMap(map['capital']),
       importantSettlements: List<Settlement>.from(
@@ -135,8 +135,7 @@ class Kingdom {
           (x) => Settlement.fromMap(x),
         ),
       ),
-      governmentType:
-          GovernmentTypeManager.getGovernmentTypeByType(map['governmentType']),
+      governmentType: GovernmentTypeManager().getType(map['governmentType']),
       emblem: Emblem.fromMap(map['emblem']),
       knownFor: map['knownFor'],
       history: map['history'],

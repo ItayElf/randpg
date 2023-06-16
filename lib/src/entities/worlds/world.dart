@@ -109,8 +109,7 @@ class World {
   factory World.fromMap(Map<String, dynamic> map) {
     return World(
       name: map['name'],
-      worldSettings:
-          WorldSettingsManager.getWorldSettingsByName(map['worldSettings']),
+      worldSettings: WorldSettingsManager().getType(map['worldSettings']),
       kingdoms: List<Kingdom>.from(
         (map['kingdoms']).map<Kingdom>(
           (x) => Kingdom.fromMap(x),
@@ -122,7 +121,7 @@ class World {
         ),
       ),
       opinions: (map['opinions'] as Map).map(
-        (key, value) => MapEntry(RaceManager.getRaceByName(key), value),
+        (key, value) => MapEntry(RaceManager().getType(key), value),
       ),
       importantPeople: List<Npc>.from(
         (map['importantPeople']).map<Npc>(
