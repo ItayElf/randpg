@@ -1,8 +1,8 @@
 import 'package:collection/collection.dart';
-import 'package:randpg/src/subtypes/races/goblin/goblin.dart';
 
 import '../../exceptions/not_found_exceptions.dart';
 import '../managers/manager.dart';
+import 'goblin/goblin.dart';
 import 'race.dart';
 import 'dragonborn/dragonborn.dart';
 import 'dwarf/dwarf.dart';
@@ -13,6 +13,7 @@ import 'human/human.dart';
 import 'hybrid/hybrids/half_elf.dart';
 import 'hybrid/hybrids/half_orc.dart';
 import 'orc/orc.dart';
+import 'shifter/shifter.dart';
 import 'tiefling/tiefling.dart';
 
 /// A class that handles the available races and using them
@@ -33,6 +34,7 @@ class RaceManager extends Manager<Race> {
     Orc(),
     Tiefling(),
     Goblin(),
+    Shifter()
   };
 
   static final Set<Race> _activeRaces = {..._races};
