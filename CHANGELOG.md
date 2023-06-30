@@ -1,4 +1,10 @@
-# Changelog 
+# Changelog
+
+## 0.9.6
+
+- Added races:
+  - Goblins
+  - Shifters
 
 ## 0.9.5 (Hotfix)
 
@@ -40,7 +46,6 @@
 
 - Added government type as an argument for kingdom generator
 
-
 ## 0.8.1
 
 - Changed descriptor generator to be based on alignment
@@ -54,6 +59,7 @@
 - Switched settlements for kingdoms in world entity
 
 - Added government types
+
   - Federation
   - Monarchy
   - Republic
@@ -67,6 +73,7 @@
 ## 0.7.0
 
 - Added guilds
+
   - Thieves guilds
   - Merchants guilds
   - Knights orders
@@ -91,6 +98,7 @@
 - Added opinions to race interface
 
 - Added deities
+
   - Primordials
 
 - Improved the seeding of the base generators
@@ -108,6 +116,7 @@
 ## 0.5.0
 
 - Added deities
+
   - Gods
   - Demigods
   - Demon Lords
@@ -119,6 +128,7 @@
 ## 0.4.0
 
 - Added landscapes
+
   - Forests
   - Mountains
   - Swamps
@@ -137,6 +147,7 @@
 ## 0.3.0
 
 - Added settlements
+
   - Hamlets
   - Villages
   - Towns
@@ -144,6 +155,7 @@
   - Metropolises
 
 - Added locations
+
   - General Shops
   - Taverns
   - Smithies
@@ -169,16 +181,16 @@
 ## 0.1.0
 
 - Added name generation for:
-    - Dwarfs
-    - Dragonborns
-    - Elves
-    - Gnomes
-    - Half-Elves
-    - Halflings
-    - Humans
-    - Orcs
-    - Tieflings
+  - Dwarfs
+  - Dragonborns
+  - Elves
+  - Gnomes
+  - Half-Elves
+  - Halflings
+  - Humans
+  - Orcs
+  - Tieflings
 
 ## 0.0.0
 
-- Started working on the package 
+- Started working on the package
