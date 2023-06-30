@@ -1,4 +1,5 @@
 import 'package:collection/collection.dart';
+import 'package:randpg/src/subtypes/races/goblin/goblin.dart';
 
 import '../../exceptions/not_found_exceptions.dart';
 import '../managers/manager.dart';
@@ -31,6 +32,7 @@ class RaceManager extends Manager<Race> {
     Human(),
     Orc(),
     Tiefling(),
+    Goblin(),
   };
 
   static final Set<Race> _activeRaces = {..._races};

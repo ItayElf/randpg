@@ -22,6 +22,5 @@ const lightBuild = [
   'skinny',
   'lean',
   'athletic',
-  'muscular',
-  'regular'
+  'regular',
 ];
