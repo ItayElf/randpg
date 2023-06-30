@@ -11,5 +11,7 @@ export '../src/subtypes/races/halfling/halfling.dart' show Halfling;
 export '../src/subtypes/races/human/human.dart' show Human;
 export '../src/subtypes/races/orc/orc.dart' show Orc;
 export '../src/subtypes/races/tiefling/tiefling.dart' show Tiefling;
+export '../src/subtypes/races/goblin/goblin.dart' show Goblin;
+export '../src/subtypes/races/shifter/shifter.dart' show Shifter;
 
 export '../src/subtypes/races/hybrid/hybrid.dart' show Hybrid;
