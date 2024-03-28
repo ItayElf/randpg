@@ -19,7 +19,7 @@ class GeneralStore implements LocationType {
   static const _ownerOccupation = "vendor";
 
   @override
-  IGenerator<String> getBuildingDescriptionGenerator(
+  Generator<String> getBuildingDescriptionGenerator(
           String locationType, String locationName, Npc owner) =>
       MultipleGenerator([
         BaseDescriptionGenerator(locationType, locationName),
@@ -27,24 +27,24 @@ class GeneralStore implements LocationType {
       ]);
 
   @override
-  IGenerator<List<Goods>?> getGoodsGenerator() => StoreGoodsGenerator();
+  Generator<List<Goods>?> getGoodsGenerator() => StoreGoodsGenerator();
 
   @override
   String getLocationType() => _locationType;
 
   @override
-  IGenerator<String> getNameGenerator(Npc owner) => MultipleGenerator([
+  Generator<String> getNameGenerator(Npc owner) => MultipleGenerator([
         DescriptionLocationNameGenerator(),
         OwnerBuildingNameGenerator(owner.name, _locationType),
       ]);
 
   @override
-  IGenerator<String> getOutsideDescription() =>
+  Generator<String> getOutsideDescription() =>
       BaseOutsideDescriptionGenerator();
 
   @override
   String getOwnerOccupation() => _ownerOccupation;
 
   @override
-  IGenerator<String> getZoneGenerator() => BaseZoneGenerator();
+  Generator<String> getZoneGenerator() => BaseZoneGenerator();
 }

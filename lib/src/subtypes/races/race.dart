@@ -15,44 +15,44 @@ abstract class Race {
   String getAdjective();
 
   /// Returns a generator that generates a name for a character from this race
-  IGenerator<String> getNameGenerator(Gender gender);
+  Generator<String> getNameGenerator(Gender gender);
 
   /// Returns a generator for an age for a character from this race
-  IGenerator<int> getAgeGenerator(Gender gender);
+  Generator<int> getAgeGenerator(Gender gender);
 
   /// Returns a generator for an hairstyle for a character from this race
-  IGenerator<Hair> getHairGenerator(Gender gender);
+  Generator<Hair> getHairGenerator(Gender gender);
 
   /// Returns a generator for eyes for a character from this race
-  IGenerator<String> getEyesGenerator(Gender gender);
+  Generator<String> getEyesGenerator(Gender gender);
 
   /// Returns a generator for a skin for a character from this race
-  IGenerator<String> getSkinGenerator(Gender gender);
+  Generator<String> getSkinGenerator(Gender gender);
 
   /// Returns a generator for a height for a character from this race
-  IGenerator<int> getHeightGenerator(Gender gender);
+  Generator<int> getHeightGenerator(Gender gender);
 
   /// Returns a generator for a build for a character from this race
-  IGenerator<String> getBuildGenerator(Gender gender);
+  Generator<String> getBuildGenerator(Gender gender);
 
   /// Returns a generator for a face for a character from this race
-  IGenerator<String> getFaceGenerator(Gender gender);
+  Generator<String> getFaceGenerator(Gender gender);
 
   /// Returns a generator for a beard for a character from this race
-  IGenerator<Hair?> getBeardGenerator(Gender gender);
+  Generator<Hair?> getBeardGenerator(Gender gender);
 
   /// Returns a generator for a special feature for a character from this race
-  IGenerator<String> getSpecialFeatureGenerator(Gender gender);
+  Generator<String> getSpecialFeatureGenerator(Gender gender);
 
   /// Returns a generator for an alignment for a character from this race
-  IGenerator<Alignment> getAlignmentGenerator();
+  Generator<Alignment> getAlignmentGenerator();
 
   /// Returns a generator for a personality trait for a character from this race
-  IGenerator<String> getPersonalityTraitGenerator();
+  Generator<String> getPersonalityTraitGenerator();
 
   /// Returns a generator for a personality quirk for a character from this race
-  IGenerator<String> getPersonalityQuirkGenerator();
+  Generator<String> getPersonalityQuirkGenerator();
 
   /// Returns a generator for opinions about the race
-  IGenerator<String> getOpinionGenerator();
+  Generator<String> getOpinionGenerator();
 }

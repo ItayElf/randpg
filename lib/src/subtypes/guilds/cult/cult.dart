@@ -36,34 +36,34 @@ class Cult implements GuildType {
   String getGuildType() => _guildType;
 
   @override
-  IGenerator<String> getHistoryGenerator(String guildName) =>
+  Generator<String> getHistoryGenerator(String guildName) =>
       GuildHistoryGenerator(_guildType, guildName);
 
   @override
   String getLeaderOccupation() => _leaderOccupation;
 
   @override
-  IGenerator<String> getMemberOccupationGenerator() =>
+  Generator<String> getMemberOccupationGenerator() =>
       ListItemGenerator(_membersOccupations);
 
   @override
-  IGenerator<String> getMottoGenerator() => GuildMottoGenerator();
+  Generator<String> getMottoGenerator() => GuildMottoGenerator();
 
   @override
-  IGenerator<String> getNameGenerator() => MultipleGenerator([
+  Generator<String> getNameGenerator() => MultipleGenerator([
         GuildAdjectiveNameGenerator(),
         GuildVerbNameGenerator(),
         GuildTitleNameGenerator(ListItemGenerator(_guildTitles)),
       ]);
 
   @override
-  IGenerator<String> getQuestGenerator() => CultQuestGenerator();
+  Generator<String> getQuestGenerator() => CultQuestGenerator();
 
   @override
-  IGenerator<String> getReputationGenerator() => CultReputationGenerator();
+  Generator<String> getReputationGenerator() => CultReputationGenerator();
 
   @override
-  IGenerator<String> getSpecialtyGenerator() => CultSpecialtyGenerator();
+  Generator<String> getSpecialtyGenerator() => CultSpecialtyGenerator();
 
   @override
   EmblemType getEmblemType() => DefaultEmblemType();

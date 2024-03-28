@@ -6,7 +6,7 @@ import '../../base/seed_generator.dart';
 import 'deity_depiction_data.dart';
 
 /// A class that generates race depictions of deities
-class DeityRaceDepictionGenerator implements IGenerator<String> {
+class DeityRaceDepictionGenerator implements Generator<String> {
   late int _seed;
   final Race _worshipedBy;
 

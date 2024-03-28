@@ -4,7 +4,7 @@ import '../../base/batch_generator.dart';
 import '../../base/generator.dart';
 import '../../base/seed_generator.dart';
 
-class WorldOpinionsGenerator implements IGenerator<Map<Race, String>> {
+class WorldOpinionsGenerator implements Generator<Map<Race, String>> {
   late int _seed;
 
   WorldOpinionsGenerator() {

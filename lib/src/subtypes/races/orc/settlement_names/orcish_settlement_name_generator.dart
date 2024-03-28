@@ -8,7 +8,7 @@ import 'orcish_settlement_names_data.dart';
 /// A class that generates orcish settlement names
 class OrcishSettlementNameGenerator
     extends FutureGenerator<String, List<String>> {
-  static final List<IGenerator<String>> _generatorsTemplate = [
+  static final List<Generator<String>> _generatorsTemplate = [
     ListItemGenerator(orcSettlementNamePrefix),
     ListItemGenerator(orcSettlementNameVowels),
     ListItemGenerator(orcSettlementNameMiddle),

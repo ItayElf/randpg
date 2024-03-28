@@ -9,7 +9,7 @@ import '../../../../generators/npcs/physical/hair/generic_hair_data.dart';
 import '../../../../exceptions/not_found_exceptions.dart';
 
 /// A class that generates tiefling hair style based on gender
-class TieflingHairGenerator implements IGenerator<Hair> {
+class TieflingHairGenerator implements Generator<Hair> {
   late int _seed;
   final Gender _gender;
 
@@ -44,7 +44,7 @@ class TieflingHairGenerator implements IGenerator<Hair> {
   }
 
   /// Returns a hair length generator based on the gender
-  static IGenerator<String> _getHairLengthGenerator(Gender gender) {
+  static Generator<String> _getHairLengthGenerator(Gender gender) {
     switch (gender) {
       case Gender.male:
         return WeightedGenerator(genericMaleHairLength);

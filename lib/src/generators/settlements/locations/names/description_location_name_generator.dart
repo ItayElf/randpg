@@ -8,7 +8,7 @@ import 'description_names_data.dart';
 /// A class that generates a location name by combining an adjective and a noun
 class DescriptionLocationNameGenerator
     extends FutureGenerator<String, List<String>> {
-  static final List<IGenerator<String>> _generatorsTemplate = [
+  static final List<Generator<String>> _generatorsTemplate = [
     ListItemGenerator(["the"]),
     ListItemGenerator(descriptionNamePrefix),
     ListItemGenerator(descriptionNameSuffix),

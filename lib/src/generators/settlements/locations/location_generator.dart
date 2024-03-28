@@ -12,7 +12,7 @@ import '../../fixable.dart';
 import '../../npcs/npc_generator.dart';
 
 /// A class that generates locations based on [_locationType]
-class LocationGenerator implements IGenerator<Location> {
+class LocationGenerator implements Generator<Location> {
   late int _seed;
   final LocationType _locationType;
   final Race _ownerRace;
@@ -48,7 +48,7 @@ class LocationGenerator implements IGenerator<Location> {
     return location;
   }
 
-  Map<String, IGenerator> _getBatch(
+  Map<String, Generator> _getBatch(
           LocationType locationType, String locationName, Npc owner) =>
       {
         "name": ListItemGenerator([locationName]),

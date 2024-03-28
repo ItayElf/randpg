@@ -15,7 +15,7 @@ class MaleDragonbornNameGenerator
           (results) => titledEach(results.join()),
         );
 
-  static final List<IGenerator<String>> _generatorsTemplate = [
+  static final List<Generator<String>> _generatorsTemplate = [
     ListItemGenerator(dragonbornMaleNamePrefix),
     ListItemGenerator(dragonbornMaleNameSuffix),
     ListItemGenerator([" "]),

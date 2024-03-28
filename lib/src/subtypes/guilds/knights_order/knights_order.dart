@@ -40,21 +40,21 @@ class KnightsOrder implements GuildType, Fixable<Guild> {
   String getGuildType() => _guildType;
 
   @override
-  IGenerator<String> getHistoryGenerator(String guildName) =>
+  Generator<String> getHistoryGenerator(String guildName) =>
       GuildHistoryGenerator(_guildType, guildName);
 
   @override
   String getLeaderOccupation() => _leaderOccupation;
 
   @override
-  IGenerator<String> getMemberOccupationGenerator() =>
+  Generator<String> getMemberOccupationGenerator() =>
       ListItemGenerator(_membersOccupations);
 
   @override
-  IGenerator<String> getMottoGenerator() => GuildMottoGenerator();
+  Generator<String> getMottoGenerator() => GuildMottoGenerator();
 
   @override
-  IGenerator<String> getNameGenerator() => MultipleGenerator([
+  Generator<String> getNameGenerator() => MultipleGenerator([
         FutureGenerator(
           GuildAdjectiveNameGenerator(),
           (name) => "Knights Of $name",
@@ -64,13 +64,13 @@ class KnightsOrder implements GuildType, Fixable<Guild> {
       ]);
 
   @override
-  IGenerator<String> getQuestGenerator() => KnightsQuestGenerator();
+  Generator<String> getQuestGenerator() => KnightsQuestGenerator();
 
   @override
-  IGenerator<String> getReputationGenerator() => KnightsReputationGenerator();
+  Generator<String> getReputationGenerator() => KnightsReputationGenerator();
 
   @override
-  IGenerator<String> getSpecialtyGenerator() => KnightsSpecialtyGenerator();
+  Generator<String> getSpecialtyGenerator() => KnightsSpecialtyGenerator();
 
   @override
   Guild getFixed(Guild guild) {

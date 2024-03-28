@@ -6,7 +6,7 @@ import '../../../../generators/base/unique_generator.dart';
 import 'library_books_data.dart';
 
 /// A class that generates books
-class LibraryBooksGenerator implements IGenerator<List<Goods>> {
+class LibraryBooksGenerator implements Generator<List<Goods>> {
   late int _seed;
 
   static const _minBooks = 2;

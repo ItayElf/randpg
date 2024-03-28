@@ -30,49 +30,49 @@ class Hybrid implements Race {
   });
 
   @override
-  IGenerator<int> getAgeGenerator(Gender gender) => MultipleGenerator([
+  Generator<int> getAgeGenerator(Gender gender) => MultipleGenerator([
         firstRace.getAgeGenerator(gender),
         secondRace.getAgeGenerator(gender),
       ]);
 
   @override
-  IGenerator<Alignment> getAlignmentGenerator() => MultipleGenerator([
+  Generator<Alignment> getAlignmentGenerator() => MultipleGenerator([
         firstRace.getAlignmentGenerator(),
         secondRace.getAlignmentGenerator(),
       ]);
 
   @override
-  IGenerator<Hair?> getBeardGenerator(Gender gender) => MultipleGenerator([
+  Generator<Hair?> getBeardGenerator(Gender gender) => MultipleGenerator([
         firstRace.getBeardGenerator(gender),
         secondRace.getBeardGenerator(gender),
       ]);
 
   @override
-  IGenerator<String> getBuildGenerator(Gender gender) => MultipleGenerator([
+  Generator<String> getBuildGenerator(Gender gender) => MultipleGenerator([
         firstRace.getBuildGenerator(gender),
         secondRace.getBuildGenerator(gender),
       ]);
 
   @override
-  IGenerator<String> getEyesGenerator(Gender gender) => MultipleGenerator([
+  Generator<String> getEyesGenerator(Gender gender) => MultipleGenerator([
         firstRace.getEyesGenerator(gender),
         secondRace.getEyesGenerator(gender),
       ]);
 
   @override
-  IGenerator<String> getFaceGenerator(Gender gender) => MultipleGenerator([
+  Generator<String> getFaceGenerator(Gender gender) => MultipleGenerator([
         firstRace.getFaceGenerator(gender),
         secondRace.getFaceGenerator(gender),
       ]);
 
   @override
-  IGenerator<Hair> getHairGenerator(Gender gender) => MultipleGenerator([
+  Generator<Hair> getHairGenerator(Gender gender) => MultipleGenerator([
         firstRace.getHairGenerator(gender),
         secondRace.getHairGenerator(gender),
       ]);
 
   @override
-  IGenerator<int> getHeightGenerator(Gender gender) => MultipleGenerator([
+  Generator<int> getHeightGenerator(Gender gender) => MultipleGenerator([
         firstRace.getHeightGenerator(gender),
         secondRace.getHeightGenerator(gender),
       ]);
@@ -81,19 +81,19 @@ class Hybrid implements Race {
   String getName() => raceName;
 
   @override
-  IGenerator<String> getNameGenerator(Gender gender) => MultipleGenerator([
+  Generator<String> getNameGenerator(Gender gender) => MultipleGenerator([
         firstRace.getNameGenerator(gender),
         secondRace.getNameGenerator(gender),
       ]);
 
   @override
-  IGenerator<String> getPersonalityQuirkGenerator() => MultipleGenerator([
+  Generator<String> getPersonalityQuirkGenerator() => MultipleGenerator([
         firstRace.getPersonalityQuirkGenerator(),
         secondRace.getPersonalityQuirkGenerator(),
       ]);
 
   @override
-  IGenerator<String> getPersonalityTraitGenerator() => MultipleGenerator([
+  Generator<String> getPersonalityTraitGenerator() => MultipleGenerator([
         firstRace.getPersonalityTraitGenerator(),
         secondRace.getPersonalityTraitGenerator(),
       ]);
@@ -102,20 +102,20 @@ class Hybrid implements Race {
   String getPluralName() => pluralRaceName;
 
   @override
-  IGenerator<String> getSkinGenerator(Gender gender) => MultipleGenerator([
+  Generator<String> getSkinGenerator(Gender gender) => MultipleGenerator([
         firstRace.getSkinGenerator(gender),
         secondRace.getSkinGenerator(gender),
       ]);
 
   @override
-  IGenerator<String> getSpecialFeatureGenerator(Gender gender) =>
+  Generator<String> getSpecialFeatureGenerator(Gender gender) =>
       MultipleGenerator([
         firstRace.getSpecialFeatureGenerator(gender),
         secondRace.getSpecialFeatureGenerator(gender),
       ]);
 
   @override
-  IGenerator<String> getOpinionGenerator() => MultipleGenerator([
+  Generator<String> getOpinionGenerator() => MultipleGenerator([
         firstRace.getOpinionGenerator(),
         secondRace.getOpinionGenerator(),
       ]);

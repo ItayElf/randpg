@@ -13,7 +13,7 @@ class TempleNameGenerator extends FutureGenerator<String, List<String>> {
           (result) => titledEach(result.join(" ")),
         );
 
-  static final List<IGenerator<String>> _generatorsTemplate = [
+  static final List<Generator<String>> _generatorsTemplate = [
     ListItemGenerator(["the"]),
     ListItemGenerator(templeNamesPrefix),
     ListItemGenerator(templeNamesSuffix),

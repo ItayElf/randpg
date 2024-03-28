@@ -6,7 +6,7 @@ import '../../../../strings_manipulations.dart';
 import 'primordial_depiction_data.dart';
 
 /// A class that generates depictions for primordials
-class PrimordialDepictionGenerator implements IGenerator<String> {
+class PrimordialDepictionGenerator implements Generator<String> {
   late int _seed;
 
   PrimordialDepictionGenerator() {

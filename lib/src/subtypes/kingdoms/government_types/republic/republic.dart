@@ -17,6 +17,6 @@ class Republic implements GovernmentType {
   String getLeaderOccupation(Gender gender) => "councilor";
 
   @override
-  IGenerator<int> getNumberOfLeadersGenerator() =>
+  Generator<int> getNumberOfLeadersGenerator() =>
       NumberGenerator(_minCouncilSize, _maxCouncilSize + 1);
 }

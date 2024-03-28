@@ -8,7 +8,7 @@ import 'dwarven_settlement_names_data.dart';
 /// A class that generates dwarven settlement names
 class DwarvenSettlementNameGenerator
     extends FutureGenerator<String, List<String>> {
-  static final List<IGenerator<String>> _generatorsTemplate = [
+  static final List<Generator<String>> _generatorsTemplate = [
     ListItemGenerator(dwarfSettlementNamePrefix),
     ListItemGenerator(dwarfSettlementNameMiddle),
     ListItemGenerator(dwarfSettlementNameSuffix),

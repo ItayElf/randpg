@@ -9,7 +9,7 @@ import '../../../../generators/base/unique_generator.dart';
 import 'tavern_goods_data.dart';
 
 /// A class that generates wine goods
-class WineGenerator implements IGenerator<Goods> {
+class WineGenerator implements Generator<Goods> {
   late int _seed;
 
   static const _wineDescriptions = 2;
@@ -46,7 +46,7 @@ class WineGenerator implements IGenerator<Goods> {
     return max((baseCost * multiplier).toInt(), 1);
   }
 
-  Map<String, IGenerator> _getBatch(String wineColor) => {
+  Map<String, Generator> _getBatch(String wineColor) => {
         "type": ListItemGenerator(
           wineColor == "red" ? tavernRedWineTypes : tavernWhiteWineTypes,
         ),

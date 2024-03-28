@@ -8,7 +8,7 @@ import '../../base/repeated_generator.dart';
 import '../../base/seed_generator.dart';
 
 /// A class that generates settlements for worlds
-class WorldKingdomsGenerator implements IGenerator<List<Kingdom>> {
+class WorldKingdomsGenerator implements Generator<List<Kingdom>> {
   late int _seed;
   final WorldSettings _worldSettings;
 

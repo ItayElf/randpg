@@ -5,7 +5,7 @@ import '../races/race.dart';
 /// A class that represents an abstract settlement type
 abstract class SettlementType {
   /// Returns the name of the town
-  IGenerator<String> getNameGenerator(Race? dominantRace);
+  Generator<String> getNameGenerator(Race? dominantRace);
 
   /// Returns the settlement type
   String getSettlementType();
@@ -16,24 +16,24 @@ abstract class SettlementType {
   List<LocationType?> getSettlementsLocations();
 
   /// Returns a generator for random location types for this settlement type
-  IGenerator<LocationType> getLocationsTypeGenerator();
+  Generator<LocationType> getLocationsTypeGenerator();
 
   /// Returns a generator for the settlement description
-  IGenerator<String> getDescriptionGenerator(
+  Generator<String> getDescriptionGenerator(
       String settlementName, Race? dominantRace);
 
   /// Returns a generator for dominant occupations for this settlement type
-  IGenerator<String> getDominantOccupationGenerator();
+  Generator<String> getDominantOccupationGenerator();
 
   /// Returns how many important people are there in this settlement type
   int getImportantPeopleCount();
 
   /// Returns a generator for important characters' occupations
-  IGenerator<String> getImportantOccupationGenerator();
+  Generator<String> getImportantOccupationGenerator();
 
   /// Returns a generator for the settlement type population
-  IGenerator<int> getPopulationGenerator();
+  Generator<int> getPopulationGenerator();
 
   /// Returns a generator for a trouble this settlement type might have
-  IGenerator<String> getTroubleGenerator();
+  Generator<String> getTroubleGenerator();
 }

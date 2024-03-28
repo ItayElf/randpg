@@ -3,9 +3,9 @@ import 'list_item_generator.dart';
 import 'seed_generator.dart';
 
 /// A class that generates one value from multiple generators
-class MultipleGenerator<T> implements IGenerator<T> {
+class MultipleGenerator<T> implements Generator<T> {
   late int _seed;
-  final List<IGenerator<T>> _pool;
+  final List<Generator<T>> _pool;
 
   MultipleGenerator(this._pool) {
     _seed = SeedGenerator.generate();

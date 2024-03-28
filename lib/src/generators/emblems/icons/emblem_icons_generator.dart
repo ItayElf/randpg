@@ -5,7 +5,7 @@ import '../../base/repeated_generator.dart';
 import '../../base/seed_generator.dart';
 
 /// A class that generates emblem icons
-class EmblemIconsGenerator implements IGenerator<List<EmblemIcon>> {
+class EmblemIconsGenerator implements Generator<List<EmblemIcon>> {
   late int _seed;
   final EmblemType _emblemType;
   final int _iconsCount;

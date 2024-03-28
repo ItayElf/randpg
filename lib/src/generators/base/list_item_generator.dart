@@ -4,7 +4,7 @@ import 'generator.dart';
 import 'seed_generator.dart';
 
 /// A class that generates a random item from a list
-class ListItemGenerator<T> implements IGenerator<T> {
+class ListItemGenerator<T> implements Generator<T> {
   late int _seed;
   final List<T> _pool;
 

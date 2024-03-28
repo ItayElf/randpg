@@ -16,27 +16,27 @@ class Library implements LocationType {
   static const _ownerOccupation = "librarian";
 
   @override
-  IGenerator<String> getBuildingDescriptionGenerator(
+  Generator<String> getBuildingDescriptionGenerator(
           String locationType, String locationName, Npc owner) =>
       BaseDescriptionGenerator(_locationType, locationName);
 
   @override
-  IGenerator<List<Goods>?> getGoodsGenerator() => LibraryBooksGenerator();
+  Generator<List<Goods>?> getGoodsGenerator() => LibraryBooksGenerator();
 
   @override
   String getLocationType() => _locationType;
 
   @override
-  IGenerator<String> getNameGenerator(Npc owner) =>
+  Generator<String> getNameGenerator(Npc owner) =>
       OwnerBuildingNameGenerator(owner.name, _locationType);
 
   @override
-  IGenerator<String> getOutsideDescription() =>
+  Generator<String> getOutsideDescription() =>
       BaseOutsideDescriptionGenerator();
 
   @override
   String getOwnerOccupation() => _ownerOccupation;
 
   @override
-  IGenerator<String> getZoneGenerator() => BaseZoneGenerator();
+  Generator<String> getZoneGenerator() => BaseZoneGenerator();
 }

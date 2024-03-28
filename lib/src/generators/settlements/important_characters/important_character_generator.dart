@@ -10,9 +10,9 @@ import '../../base/weighted_generator.dart';
 import '../../npcs/npc_generator.dart';
 
 /// A class that generates important characters for settlements
-class ImportantCharacterGenerator implements IGenerator<Npc> {
+class ImportantCharacterGenerator implements Generator<Npc> {
   late int _seed;
-  final IGenerator<String> _occupationGenerator;
+  final Generator<String> _occupationGenerator;
   final Race? _dominantRace;
 
   static const _dominantRaceWeight = 7;

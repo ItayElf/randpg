@@ -3,7 +3,7 @@ import '../../../base/list_item_generator.dart';
 import '../../../base/seed_generator.dart';
 
 /// A class that generates scales colors and texture
-class ScalesSkinGenerator implements IGenerator<String> {
+class ScalesSkinGenerator implements Generator<String> {
   late int _seed;
 
   static const _scaleTexture = [

@@ -6,7 +6,7 @@ import 'female_human_name_generator.dart';
 import 'male_human_name_generator.dart';
 
 /// A generator for human names
-class HumanNameGenerator implements IGenerator<String> {
+class HumanNameGenerator implements Generator<String> {
   late int _seed;
   final Gender _gender;
 
@@ -22,7 +22,7 @@ class HumanNameGenerator implements IGenerator<String> {
     return generator.generate();
   }
 
-  IGenerator<String> _getGenerator(Gender gender) {
+  Generator<String> _getGenerator(Gender gender) {
     switch (gender) {
       case Gender.male:
         return MaleHumanNameGenerator();

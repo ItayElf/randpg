@@ -6,7 +6,7 @@ import 'female_gnome_name_generator.dart';
 import 'male_gnome_name_generator.dart';
 
 /// A generator for gnome names
-class GnomeNameGenerator implements IGenerator<String> {
+class GnomeNameGenerator implements Generator<String> {
   late int _seed;
   final Gender _gender;
 
@@ -22,7 +22,7 @@ class GnomeNameGenerator implements IGenerator<String> {
     return generator.generate();
   }
 
-  IGenerator<String> _getGenerator(Gender gender) {
+  Generator<String> _getGenerator(Gender gender) {
     switch (gender) {
       case Gender.male:
         return MaleGnomeNameGenerator();

@@ -13,7 +13,7 @@ class MaleHalflingNameGenerator extends FutureGenerator<String, List<String>> {
           (results) => titledEach(results.join()),
         );
 
-  static final List<IGenerator<String>> _generatorsTemplate = [
+  static final List<Generator<String>> _generatorsTemplate = [
     ListItemGenerator(halflingMaleNamePrefix),
     ListItemGenerator(halflingMaleNameSuffix),
     ListItemGenerator([" "]),

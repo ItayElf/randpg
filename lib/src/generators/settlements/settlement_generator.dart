@@ -12,7 +12,7 @@ import 'important_characters/important_character_generator.dart';
 import 'settlement_locations_generator.dart';
 
 /// A class that generates settlements based on [_settlementType] and [_dominantRace]
-class SettlementGenerator implements IGenerator<Settlement> {
+class SettlementGenerator implements Generator<Settlement> {
   late int _seed;
   final SettlementType _settlementType;
   final Race? _dominantRace;
@@ -39,7 +39,7 @@ class SettlementGenerator implements IGenerator<Settlement> {
     return settlement;
   }
 
-  Map<String, IGenerator> _getBatch(String settlementName) => {
+  Map<String, Generator> _getBatch(String settlementName) => {
         "name": ListItemGenerator([settlementName]),
         "settlementType": FutureGenerator(
           ListItemGenerator([_settlementType]),

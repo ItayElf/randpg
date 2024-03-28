@@ -8,7 +8,7 @@ import '../../../base/seed_generator.dart';
 /// A class that generates a good from [_pool] and randomizes its price a bit
 ///
 /// The map needs to be formatted as `{"name": "10 gp"}`, meaning the name of the goods is the key and the price the value
-class BaseGoodsGenerator implements IGenerator<Goods> {
+class BaseGoodsGenerator implements Generator<Goods> {
   late int _seed;
   final Map<String, String> _pool;
 

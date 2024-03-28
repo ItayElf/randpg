@@ -6,7 +6,7 @@ import '../../../../generators/base/generator.dart';
 import '../../../../generators/base/seed_generator.dart';
 import '../../../../strings_manipulations.dart';
 
-class ShifterNameGenerator implements IGenerator<String> {
+class ShifterNameGenerator implements Generator<String> {
   late int _seed;
   final Gender gender;
 

@@ -7,7 +7,7 @@ import '../../base/seed_generator.dart';
 import '../../guilds/guild_generator.dart';
 
 /// A class that generates guilds for worlds
-class WorldGuildsGenerator implements IGenerator<List<Guild>> {
+class WorldGuildsGenerator implements Generator<List<Guild>> {
   late int _seed;
   final WorldSettings _worldSettings;
 

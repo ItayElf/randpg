@@ -16,7 +16,7 @@ import '../npcs/npc_generator.dart';
 import 'guilds/kingdom_guild_generator.dart';
 import 'settlements/kingdom_settlement_generator.dart';
 
-class KingdomGenerator implements IGenerator<Kingdom> {
+class KingdomGenerator implements Generator<Kingdom> {
   late int _seed;
   final KingdomType _kingdomType;
   final Race _race;
@@ -61,7 +61,7 @@ class KingdomGenerator implements IGenerator<Kingdom> {
     return kingdom;
   }
 
-  Map<String, IGenerator> _getBatch(
+  Map<String, Generator> _getBatch(
     int numberOfLeaders,
     int numberOfGuilds,
     GovernmentType governmentType,
@@ -109,7 +109,7 @@ class KingdomGenerator implements IGenerator<Kingdom> {
         "trouble": _kingdomType.getTroubleGenerator(),
       };
 
-  IGenerator<List<Npc>> _getLeadersGenerator(
+  Generator<List<Npc>> _getLeadersGenerator(
     int numberOfLeaders,
     GovernmentType governmentType,
   ) =>

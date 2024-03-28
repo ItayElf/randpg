@@ -2,9 +2,9 @@ import 'generator.dart';
 import 'seed_generator.dart';
 
 /// A class that generates a value from each of the given [_pool]
-class ListBatchGenerator<T> implements IGenerator<List<T>> {
+class ListBatchGenerator<T> implements Generator<List<T>> {
   late int _seed;
-  final List<IGenerator<T>> _pool;
+  final List<Generator<T>> _pool;
 
   ListBatchGenerator(this._pool) {
     _seed = SeedGenerator.generate();

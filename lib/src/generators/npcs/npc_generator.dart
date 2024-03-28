@@ -14,7 +14,7 @@ import 'personality/personality_generator.dart';
 import 'physical/physical_description_generator.dart';
 
 /// A class that represents npcs based on [_race]
-class NpcGenerator implements IGenerator<Npc> {
+class NpcGenerator implements Generator<Npc> {
   late int _seed;
   final Race _race;
 
@@ -34,7 +34,7 @@ class NpcGenerator implements IGenerator<Npc> {
     return Npc.fromMap(result);
   }
 
-  Map<String, IGenerator> _getBatch(Race race, Gender gender) => {
+  Map<String, Generator> _getBatch(Race race, Gender gender) => {
         "name": race.getNameGenerator(gender),
         "age": race.getAgeGenerator(gender),
         "gender": ListItemGenerator([gender.name]),

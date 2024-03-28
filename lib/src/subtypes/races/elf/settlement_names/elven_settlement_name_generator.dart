@@ -8,7 +8,7 @@ import 'elven_settlement_names_data.dart';
 /// A class that generates elven settlement names
 class ElvenSettlementNameGenerator
     extends FutureGenerator<String, List<String>> {
-  static final List<IGenerator<String>> _generatorsTemplate = [
+  static final List<Generator<String>> _generatorsTemplate = [
     ListItemGenerator(elfSettlementNamePrefix),
     ListItemGenerator(elfSettlementNameMiddle),
     ListItemGenerator(elfSettlementNameSuffix),

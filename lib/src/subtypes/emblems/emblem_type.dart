@@ -9,27 +9,27 @@ abstract class EmblemType {
   String getEmblemType();
 
   /// Returns a generator for a shape of an emblem
-  IGenerator<SvgWrapper> getShapeGenerator();
+  Generator<SvgWrapper> getShapeGenerator();
 
   /// Returns a generator for a pattern of an emblem
-  IGenerator<SvgWrapper> getPatternGenerator();
+  Generator<SvgWrapper> getPatternGenerator();
 
   /// Returns a generator for an icon for this generator
-  IGenerator<SvgWrapper> getIconGenerator();
+  Generator<SvgWrapper> getIconGenerator();
 
   /// Returns a generator for how many icons an emblem has
-  IGenerator<int> getIconsCountGenerator();
+  Generator<int> getIconsCountGenerator();
 
   /// Returns a generator for the layout of the icons based on how many there are
-  IGenerator<List<IconPosition>> getLayoutGenerator(int iconsCount);
+  Generator<List<IconPosition>> getLayoutGenerator(int iconsCount);
 
   /// Returns a generator for the primary color of the emblem
-  IGenerator<HslColor> getPrimaryColorGenerator();
+  Generator<HslColor> getPrimaryColorGenerator();
 
   /// Returns a generator for the secondary color of the emblem
-  IGenerator<HslColor> getSecondaryColorGenerator(HslColor primaryColor);
+  Generator<HslColor> getSecondaryColorGenerator(HslColor primaryColor);
 
   /// Returns a generator for the icon color of the emblem
-  IGenerator<HslColor> getIconsColorGenerator(
+  Generator<HslColor> getIconsColorGenerator(
       HslColor primaryColor, HslColor secondaryColor);
 }

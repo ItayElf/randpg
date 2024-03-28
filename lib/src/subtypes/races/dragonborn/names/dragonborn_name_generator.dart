@@ -6,7 +6,7 @@ import 'female_dragonborn_name_generator.dart';
 import 'male_dragonborn_name_generator.dart';
 
 /// A generator for dragonborn names
-class DragonbornNameGenerator implements IGenerator<String> {
+class DragonbornNameGenerator implements Generator<String> {
   late int _seed;
   final Gender _gender;
 
@@ -23,7 +23,7 @@ class DragonbornNameGenerator implements IGenerator<String> {
   }
 
   /// Returns the correct generator based on the gender
-  IGenerator<String> _getGenerator(Gender gender) {
+  Generator<String> _getGenerator(Gender gender) {
     switch (gender) {
       case Gender.male:
         return MaleDragonbornNameGenerator();

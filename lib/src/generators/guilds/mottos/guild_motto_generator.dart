@@ -7,7 +7,7 @@ import '../../base/unique_generator.dart';
 import 'guild_motto_data.dart';
 
 /// A class that generates guild mottos
-class GuildMottoGenerator implements IGenerator<String> {
+class GuildMottoGenerator implements Generator<String> {
   late int _seed;
 
   static const _numberOfTraits = 2;
@@ -40,7 +40,7 @@ class GuildMottoGenerator implements IGenerator<String> {
   String _getAbstractMotto(Map<String, dynamic> map) =>
       "${toGerund(map["goal"].split(" ").first)} ${map["goal"].split(" ").sublist(1).join(" ")} with ${map["traits"].join(" and ")}";
 
-  Map<String, IGenerator> _getBatch() => {
+  Map<String, Generator> _getBatch() => {
         "traits": UniqueGenerator(
           ListItemGenerator(guildTraits),
           _numberOfTraits,

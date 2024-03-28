@@ -9,7 +9,7 @@ import 'beer_generator.dart';
 import 'meal_generator.dart';
 import 'wine_generator.dart';
 
-class TavernGoodsGenerator implements IGenerator<List<Goods>> {
+class TavernGoodsGenerator implements Generator<List<Goods>> {
   late int _seed;
 
   static const _minNumberOfDrinks = 2;
@@ -42,7 +42,7 @@ class TavernGoodsGenerator implements IGenerator<List<Goods>> {
     ];
   }
 
-  Map<String, IGenerator> _getBatch(int drinks, int meals) => {
+  Map<String, Generator> _getBatch(int drinks, int meals) => {
         "drinks": UniqueGenerator(
           MultipleGenerator([
             WineGenerator(),

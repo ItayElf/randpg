@@ -29,36 +29,36 @@ class Desert implements LandscapeType {
   ];
 
   @override
-  IGenerator<String> getEncounterGenerator() => DesertEncounterGenerator();
+  Generator<String> getEncounterGenerator() => DesertEncounterGenerator();
 
   @override
-  IGenerator<String> getFeatureGenerator() => DesertFeatureGenerator();
+  Generator<String> getFeatureGenerator() => DesertFeatureGenerator();
 
   @override
-  IGenerator<String> getKnownForGenerator() => LandscapeKnownForGenerator();
+  Generator<String> getKnownForGenerator() => LandscapeKnownForGenerator();
 
   @override
   String getLandscapeType() => _landscapeType;
 
   @override
-  IGenerator<String> getLocationGenerator() => LandscapeLocationGenerator();
+  Generator<String> getLocationGenerator() => LandscapeLocationGenerator();
 
   @override
-  IGenerator<String> getNameGenerator() => MultipleGenerator([
+  Generator<String> getNameGenerator() => MultipleGenerator([
         LandscapeAdjectiveNameGenerator(_adjectiveLandscapeTitles),
         LandscapeRaceNameGenerator(_landscapeTitles),
         LandscapeGenericNameGenerator(),
       ]);
 
   @override
-  IGenerator<String> getResourceGenerator() => DesertResourceGenerator();
+  Generator<String> getResourceGenerator() => DesertResourceGenerator();
 
   @override
-  IGenerator<String> getSizeGenerator() => DesertSizeGenerator();
+  Generator<String> getSizeGenerator() => DesertSizeGenerator();
 
   @override
-  IGenerator<String> getTravelRateGenerator() => LandscapeTravelRateGenerator();
+  Generator<String> getTravelRateGenerator() => LandscapeTravelRateGenerator();
 
   @override
-  IGenerator<String> getWeatherGenerator() => DesertWeatherGenerator();
+  Generator<String> getWeatherGenerator() => DesertWeatherGenerator();
 }

@@ -23,34 +23,34 @@ class DefaultEmblemType implements EmblemType {
   String getEmblemType() => _emblemType;
 
   @override
-  IGenerator<SvgWrapper> getIconGenerator() =>
+  Generator<SvgWrapper> getIconGenerator() =>
       ListItemGenerator(EmblemIconsManager().activeTypes);
 
   @override
-  IGenerator<List<IconPosition>> getLayoutGenerator(int iconsCount) =>
+  Generator<List<IconPosition>> getLayoutGenerator(int iconsCount) =>
       LayoutGenerator(iconsCount);
 
   @override
-  IGenerator<HslColor> getIconsColorGenerator(
+  Generator<HslColor> getIconsColorGenerator(
           HslColor primaryColor, HslColor secondaryColor) =>
       IconsColorContrastGenerator(primaryColor, secondaryColor);
 
   @override
-  IGenerator<int> getIconsCountGenerator() =>
+  Generator<int> getIconsCountGenerator() =>
       WeightedGenerator({0: 1, 1: 3, 2: 3, 3: 3, 4: 3});
 
   @override
-  IGenerator<SvgWrapper> getPatternGenerator() =>
+  Generator<SvgWrapper> getPatternGenerator() =>
       ListItemGenerator(EmblemPatternsManager().activeTypes);
 
   @override
-  IGenerator<HslColor> getPrimaryColorGenerator() => PrimaryColorGenerator();
+  Generator<HslColor> getPrimaryColorGenerator() => PrimaryColorGenerator();
 
   @override
-  IGenerator<HslColor> getSecondaryColorGenerator(HslColor primaryColor) =>
+  Generator<HslColor> getSecondaryColorGenerator(HslColor primaryColor) =>
       SecondaryColorGenerator(primaryColor);
 
   @override
-  IGenerator<SvgWrapper> getShapeGenerator() =>
+  Generator<SvgWrapper> getShapeGenerator() =>
       ListItemGenerator(EmblemShapesManager().activeTypes);
 }

@@ -6,7 +6,7 @@ import '../../deities/deity_generator.dart';
 import '../../npcs/personality/alignment/base_alignment_generator.dart';
 
 /// A class that generates world deities by type and count
-class WorldDeitiesBatchGenerator implements IGenerator<List<Deity>> {
+class WorldDeitiesBatchGenerator implements Generator<List<Deity>> {
   late int _seed;
   final Map<DeityType, int> _pool;
 

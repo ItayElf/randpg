@@ -31,60 +31,60 @@ class Tiefling implements Race {
   static const _maxHeight = 192;
 
   @override
-  IGenerator<int> getAgeGenerator(Gender gender) =>
+  Generator<int> getAgeGenerator(Gender gender) =>
       NumberGenerator(14, _maxAge + 1);
 
   @override
-  IGenerator<Alignment> getAlignmentGenerator() => TieflingAlignmentGenerator();
+  Generator<Alignment> getAlignmentGenerator() => TieflingAlignmentGenerator();
 
   @override
-  IGenerator<Hair?> getBeardGenerator(Gender gender) =>
+  Generator<Hair?> getBeardGenerator(Gender gender) =>
       BaseBeardGenerator(gender);
 
   @override
-  IGenerator<String> getBuildGenerator(Gender gender) => LightBuildGenerator();
+  Generator<String> getBuildGenerator(Gender gender) => LightBuildGenerator();
 
   @override
-  IGenerator<String> getEyesGenerator(Gender gender) => BaseEyesGenerator();
+  Generator<String> getEyesGenerator(Gender gender) => BaseEyesGenerator();
 
   @override
-  IGenerator<String> getFaceGenerator(Gender gender) => BaseFaceGenerator();
+  Generator<String> getFaceGenerator(Gender gender) => BaseFaceGenerator();
 
   @override
-  IGenerator<Hair> getHairGenerator(Gender gender) =>
+  Generator<Hair> getHairGenerator(Gender gender) =>
       TieflingHairGenerator(gender);
 
   @override
-  IGenerator<int> getHeightGenerator(Gender gender) =>
+  Generator<int> getHeightGenerator(Gender gender) =>
       NumberGenerator(_minHeight, _maxHeight + 1);
 
   @override
   String getName() => _raceName;
 
   @override
-  IGenerator<String> getNameGenerator(Gender gender) =>
+  Generator<String> getNameGenerator(Gender gender) =>
       TieflingNameGenerator(gender);
 
   @override
-  IGenerator<String> getPersonalityQuirkGenerator() =>
+  Generator<String> getPersonalityQuirkGenerator() =>
       BasePersonalityQuirkGenerator();
 
   @override
-  IGenerator<String> getPersonalityTraitGenerator() =>
+  Generator<String> getPersonalityTraitGenerator() =>
       BasePersonalityTraitGenerator();
 
   @override
   String getPluralName() => _pluralRaceName;
 
   @override
-  IGenerator<String> getSkinGenerator(Gender gender) => TieflingSkinGenerator();
+  Generator<String> getSkinGenerator(Gender gender) => TieflingSkinGenerator();
 
   @override
-  IGenerator<String> getSpecialFeatureGenerator(Gender gender) =>
+  Generator<String> getSpecialFeatureGenerator(Gender gender) =>
       BaseSpecialFeatureGenerator();
 
   @override
-  IGenerator<String> getOpinionGenerator() => MultipleGenerator([
+  Generator<String> getOpinionGenerator() => MultipleGenerator([
         BaseOpinionGenerator(),
         TieflingOpinionGenerator(),
       ]);

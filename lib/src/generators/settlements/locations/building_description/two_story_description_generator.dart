@@ -6,7 +6,7 @@ import 'base_description_generator.dart';
 import 'building_description_data.dart';
 
 /// A class that generates a description for two story buildings
-class TwoStoryDescriptionGenerator implements IGenerator<String> {
+class TwoStoryDescriptionGenerator implements Generator<String> {
   late int _seed;
   final String _locationType;
   final String _locationName;
@@ -43,7 +43,7 @@ class TwoStoryDescriptionGenerator implements IGenerator<String> {
     ].join("\n");
   }
 
-  IGenerator<String> _getFloorDescriptionGenerator(String floorSize) {
+  Generator<String> _getFloorDescriptionGenerator(String floorSize) {
     if (floorSize.contains("smaller")) {
       return ListItemGenerator(smallerFloorDescription);
     } else if (floorSize.contains("bigger")) {

@@ -6,7 +6,7 @@ import '../../../../generators/base/seed_generator.dart';
 import '../../../../generators/base/weighted_generator.dart';
 
 /// A class that generates an elven alignment
-class ElvenAlignmentGenerator implements IGenerator<Alignment> {
+class ElvenAlignmentGenerator implements Generator<Alignment> {
   late int _seed;
 
   static const _ethicalMap = {

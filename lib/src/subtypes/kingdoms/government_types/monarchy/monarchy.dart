@@ -21,5 +21,5 @@ class Monarchy implements GovernmentType {
   }
 
   @override
-  IGenerator<int> getNumberOfLeadersGenerator() => ListItemGenerator([1]);
+  Generator<int> getNumberOfLeadersGenerator() => ListItemGenerator([1]);
 }

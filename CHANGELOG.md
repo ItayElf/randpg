@@ -3,6 +3,7 @@
 ## 0.10.0
 
 - Changed README.md
+- Renamed `IGenerator` to `Generator`
 
 ## 0.9.6
 

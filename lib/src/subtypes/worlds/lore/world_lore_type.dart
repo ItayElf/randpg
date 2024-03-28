@@ -6,23 +6,23 @@ abstract class WorldLoreType {
   String getLoreType();
 
   /// Returns a generator for something everybody knows
-  IGenerator<String> getEverybodyKnowsGenerator();
+  Generator<String> getEverybodyKnowsGenerator();
 
   /// Returns a generator for something only few know
-  IGenerator<String> getFewKnowGenerator();
+  Generator<String> getFewKnowGenerator();
 
   /// Returns a generator for something nobody knows
-  IGenerator<String> getNobodyKnowsGenerator();
+  Generator<String> getNobodyKnowsGenerator();
 
   /// Returns a generator for something peasants believe
-  IGenerator<String> getPeasantsBelieveGenerator();
+  Generator<String> getPeasantsBelieveGenerator();
 
   /// Returns a generator for something the nobility believes
-  IGenerator<String> getNobilityBelievesGenerator();
+  Generator<String> getNobilityBelievesGenerator();
 
   /// Returns a generator for something the gods plan
-  IGenerator<String> getGodsPlanGenerator();
+  Generator<String> getGodsPlanGenerator();
 
   /// Returns a generator for something the gods fear
-  IGenerator<String> getGodsFearGenerator();
+  Generator<String> getGodsFearGenerator();
 }

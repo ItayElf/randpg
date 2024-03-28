@@ -26,35 +26,35 @@ class Mountains implements LandscapeType {
   ];
 
   @override
-  IGenerator<String> getEncounterGenerator() => MountainEncounterGenerator();
+  Generator<String> getEncounterGenerator() => MountainEncounterGenerator();
 
   @override
-  IGenerator<String> getFeatureGenerator() => MountainFeatureGenerator();
+  Generator<String> getFeatureGenerator() => MountainFeatureGenerator();
 
   @override
-  IGenerator<String> getKnownForGenerator() => LandscapeKnownForGenerator();
+  Generator<String> getKnownForGenerator() => LandscapeKnownForGenerator();
 
   @override
   String getLandscapeType() => _landscapeType;
 
   @override
-  IGenerator<String> getLocationGenerator() => LandscapeLocationGenerator();
+  Generator<String> getLocationGenerator() => LandscapeLocationGenerator();
 
   @override
-  IGenerator<String> getNameGenerator() => MultipleGenerator([
+  Generator<String> getNameGenerator() => MultipleGenerator([
         LandscapeAdjectiveNameGenerator(_landscapeTitles),
         LandscapeRaceNameGenerator(_landscapeTitles),
       ]);
 
   @override
-  IGenerator<String> getResourceGenerator() => MountainResourceGenerator();
+  Generator<String> getResourceGenerator() => MountainResourceGenerator();
 
   @override
-  IGenerator<String> getSizeGenerator() => MountainSizeGenerator();
+  Generator<String> getSizeGenerator() => MountainSizeGenerator();
 
   @override
-  IGenerator<String> getTravelRateGenerator() => LandscapeTravelRateGenerator();
+  Generator<String> getTravelRateGenerator() => LandscapeTravelRateGenerator();
 
   @override
-  IGenerator<String> getWeatherGenerator() => MountainsWeatherGenerator();
+  Generator<String> getWeatherGenerator() => MountainsWeatherGenerator();
 }

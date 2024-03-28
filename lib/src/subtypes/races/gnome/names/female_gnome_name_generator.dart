@@ -14,7 +14,7 @@ class FemaleGnomeNameGenerator extends FutureGenerator<String, List<String>> {
           (results) => titledEach(results.join()),
         );
 
-  static final List<IGenerator<String>> _generatorsTemplate = [
+  static final List<Generator<String>> _generatorsTemplate = [
     ListItemGenerator(gnomeFemaleNamePrefix),
     WeightedGenerator(gnomeNameVowel),
     ListItemGenerator(gnomeFemaleNameMiddle),

@@ -35,34 +35,34 @@ class ArtisansGuild implements GuildType {
   String getGuildType() => _guildType;
 
   @override
-  IGenerator<String> getHistoryGenerator(String guildName) =>
+  Generator<String> getHistoryGenerator(String guildName) =>
       GuildHistoryGenerator(_guildType, guildName);
 
   @override
   String getLeaderOccupation() => _leaderOccupation;
 
   @override
-  IGenerator<String> getMemberOccupationGenerator() =>
+  Generator<String> getMemberOccupationGenerator() =>
       ListItemGenerator(_membersOccupations);
 
   @override
-  IGenerator<String> getMottoGenerator() => GuildMottoGenerator();
+  Generator<String> getMottoGenerator() => GuildMottoGenerator();
 
   @override
-  IGenerator<String> getNameGenerator() => MultipleGenerator([
+  Generator<String> getNameGenerator() => MultipleGenerator([
         GuildAdjectiveNameGenerator(),
         GuildVerbNameGenerator(),
         GuildTitleNameGenerator(ListItemGenerator(_guildTitles)),
       ]);
 
   @override
-  IGenerator<String> getQuestGenerator() => ArtisansQuestGenerator();
+  Generator<String> getQuestGenerator() => ArtisansQuestGenerator();
 
   @override
-  IGenerator<String> getReputationGenerator() => ArtisansReputationGenerator();
+  Generator<String> getReputationGenerator() => ArtisansReputationGenerator();
 
   @override
-  IGenerator<String> getSpecialtyGenerator() => ArtisansSpecialtyGenerator();
+  Generator<String> getSpecialtyGenerator() => ArtisansSpecialtyGenerator();
 
   @override
   EmblemType getEmblemType() => DefaultEmblemType();

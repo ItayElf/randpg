@@ -6,7 +6,7 @@ import 'female_goblin_name_generator.dart';
 import 'male_goblin_name_generator.dart';
 
 /// A generator for goblin names
-class GoblinNameGenerator implements IGenerator<String> {
+class GoblinNameGenerator implements Generator<String> {
   late int _seed;
   final Gender _gender;
 
@@ -22,7 +22,7 @@ class GoblinNameGenerator implements IGenerator<String> {
     return generator.generate();
   }
 
-  IGenerator<String> _getGenerator(Gender gender) {
+  Generator<String> _getGenerator(Gender gender) {
     switch (gender) {
       case Gender.male:
         return MaleGoblinNameGenerator();

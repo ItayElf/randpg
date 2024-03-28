@@ -4,7 +4,7 @@ import 'generator.dart';
 import 'seed_generator.dart';
 
 /// A class that generates random number inside a range, not including the maximum
-class NumberGenerator implements IGenerator<int> {
+class NumberGenerator implements Generator<int> {
   late int _seed;
   final int _minimum;
   final int _maximum;

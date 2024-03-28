@@ -10,7 +10,7 @@ import '../base/weighted_generator.dart';
 import 'locations/location_generator.dart';
 
 /// A class that generates locations for settlements
-class SettlementLocationsGenerator implements IGenerator<List<Location>> {
+class SettlementLocationsGenerator implements Generator<List<Location>> {
   late int _seed;
   final SettlementType _settlementType;
   final Race? _dominantRace;

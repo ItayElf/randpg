@@ -2,9 +2,9 @@ import 'generator.dart';
 import 'seed_generator.dart';
 
 /// A class that takes a map of labeled generators and returns the map with the generated values
-class BatchGenerator implements IGenerator<Map<String, dynamic>> {
+class BatchGenerator implements Generator<Map<String, dynamic>> {
   late int _seed;
-  final Map<String, IGenerator> _pool;
+  final Map<String, Generator> _pool;
 
   BatchGenerator(this._pool) {
     _seed = SeedGenerator.generate();
@@ -13,7 +13,7 @@ class BatchGenerator implements IGenerator<Map<String, dynamic>> {
   /// Generates each generator in [_pool]
   @override
   Map<String, dynamic> generate() {
-    final newPool = Map<String, IGenerator>.from(_pool);
+    final newPool = Map<String, Generator>.from(_pool);
 
     int counter = 0;
     for (final generator in newPool.values) {

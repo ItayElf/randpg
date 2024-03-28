@@ -16,27 +16,27 @@ class Tavern implements LocationType {
   static const _ownerOccupation = "innkeeper";
 
   @override
-  IGenerator<String> getBuildingDescriptionGenerator(
+  Generator<String> getBuildingDescriptionGenerator(
           String locationType, String locationName, Npc owner) =>
       TwoStoryDescriptionGenerator(locationType, locationName);
 
   @override
-  IGenerator<List<Goods>?> getGoodsGenerator() => TavernGoodsGenerator();
+  Generator<List<Goods>?> getGoodsGenerator() => TavernGoodsGenerator();
 
   @override
   String getLocationType() => _locationType;
 
   @override
-  IGenerator<String> getNameGenerator(Npc owner) =>
+  Generator<String> getNameGenerator(Npc owner) =>
       DescriptionLocationNameGenerator();
 
   @override
-  IGenerator<String> getOutsideDescription() =>
+  Generator<String> getOutsideDescription() =>
       BaseOutsideDescriptionGenerator();
 
   @override
   String getOwnerOccupation() => _ownerOccupation;
 
   @override
-  IGenerator<String> getZoneGenerator() => BaseZoneGenerator();
+  Generator<String> getZoneGenerator() => BaseZoneGenerator();
 }

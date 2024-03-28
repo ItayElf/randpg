@@ -6,7 +6,7 @@ import '../../../../strings_manipulations.dart';
 import 'monument_description_data.dart';
 
 /// A class that generates monuments descriptions
-class MonumentDescriptionGenerator implements IGenerator<String> {
+class MonumentDescriptionGenerator implements Generator<String> {
   late int _seed;
   final String _ownerName;
 
@@ -40,7 +40,7 @@ class MonumentDescriptionGenerator implements IGenerator<String> {
     return [purpose, design, materials].join("\n");
   }
 
-  Map<String, IGenerator> _getBatch() => {
+  Map<String, Generator> _getBatch() => {
         "time": ListItemGenerator(monumentBuildTime),
         "purpose": ListItemGenerator(monumentPurpose),
         "representing": ListItemGenerator(monumentRepresenting),

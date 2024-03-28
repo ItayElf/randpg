@@ -6,7 +6,7 @@ import '../../base/seed_generator.dart';
 import '../../landscapes/landscape_generator.dart';
 
 /// A class that generates landscapes for worlds
-class WorldLandscapeGenerator implements IGenerator<List<Landscape>> {
+class WorldLandscapeGenerator implements Generator<List<Landscape>> {
   late int _seed;
   final WorldSettings _worldSettings;
 

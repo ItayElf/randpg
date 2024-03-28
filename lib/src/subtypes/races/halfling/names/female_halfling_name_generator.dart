@@ -14,7 +14,7 @@ class FemaleHalflingNameGenerator
           (results) => titledEach(results.join()),
         );
 
-  static final List<IGenerator<String>> _generatorsTemplate = [
+  static final List<Generator<String>> _generatorsTemplate = [
     ListItemGenerator(halflingFemaleNamePrefix),
     ListItemGenerator(halflingFemaleNameSuffix),
     ListItemGenerator([" "]),

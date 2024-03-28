@@ -25,36 +25,36 @@ class Forest implements LandscapeType {
   ];
 
   @override
-  IGenerator<String> getEncounterGenerator() => ForestEncounterGenerator();
+  Generator<String> getEncounterGenerator() => ForestEncounterGenerator();
 
   @override
-  IGenerator<String> getFeatureGenerator() => ForestFeatureGenerator();
+  Generator<String> getFeatureGenerator() => ForestFeatureGenerator();
 
   @override
-  IGenerator<String> getKnownForGenerator() => LandscapeKnownForGenerator();
+  Generator<String> getKnownForGenerator() => LandscapeKnownForGenerator();
 
   @override
   String getLandscapeType() => _landscapeType;
 
   @override
-  IGenerator<String> getLocationGenerator() => LandscapeLocationGenerator();
+  Generator<String> getLocationGenerator() => LandscapeLocationGenerator();
 
   @override
-  IGenerator<String> getNameGenerator() => MultipleGenerator([
+  Generator<String> getNameGenerator() => MultipleGenerator([
         LandscapeAdjectiveNameGenerator(_landscapeTitles),
         LandscapeRaceNameGenerator(_landscapeTitles),
         LandscapeGenericNameGenerator(),
       ]);
 
   @override
-  IGenerator<String> getResourceGenerator() => ForestResourceGenerator();
+  Generator<String> getResourceGenerator() => ForestResourceGenerator();
 
   @override
-  IGenerator<String> getSizeGenerator() => ForestSizeGenerator();
+  Generator<String> getSizeGenerator() => ForestSizeGenerator();
 
   @override
-  IGenerator<String> getTravelRateGenerator() => LandscapeTravelRateGenerator();
+  Generator<String> getTravelRateGenerator() => LandscapeTravelRateGenerator();
 
   @override
-  IGenerator<String> getWeatherGenerator() => ForestWeatherGenerator();
+  Generator<String> getWeatherGenerator() => ForestWeatherGenerator();
 }

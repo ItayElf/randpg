@@ -6,7 +6,7 @@ import 'female_dwarf_name_generator.dart';
 import 'male_dwarf_name_generator.dart';
 
 /// A generator for dwarf names
-class DwarfNameGenerator implements IGenerator<String> {
+class DwarfNameGenerator implements Generator<String> {
   late int _seed;
   final Gender _gender;
 
@@ -22,7 +22,7 @@ class DwarfNameGenerator implements IGenerator<String> {
     return generator.generate();
   }
 
-  IGenerator<String> _getGenerator(Gender gender) {
+  Generator<String> _getGenerator(Gender gender) {
     switch (gender) {
       case Gender.male:
         return MaleDwarfNameGenerator();

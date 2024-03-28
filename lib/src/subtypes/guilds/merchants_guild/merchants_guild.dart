@@ -39,34 +39,34 @@ class MerchantsGuild implements GuildType {
   String getGuildType() => _guildType;
 
   @override
-  IGenerator<String> getHistoryGenerator(String guildName) =>
+  Generator<String> getHistoryGenerator(String guildName) =>
       GuildHistoryGenerator(_guildType, guildName);
 
   @override
   String getLeaderOccupation() => _leaderOccupation;
 
   @override
-  IGenerator<String> getMemberOccupationGenerator() =>
+  Generator<String> getMemberOccupationGenerator() =>
       ListItemGenerator(_membersOccupations);
 
   @override
-  IGenerator<String> getMottoGenerator() => GuildMottoGenerator();
+  Generator<String> getMottoGenerator() => GuildMottoGenerator();
 
   @override
-  IGenerator<String> getNameGenerator() => MultipleGenerator([
+  Generator<String> getNameGenerator() => MultipleGenerator([
         GuildAdjectiveNameGenerator(),
         GuildVerbNameGenerator(),
         GuildTitleNameGenerator(ListItemGenerator(_guildTitles)),
       ]);
 
   @override
-  IGenerator<String> getQuestGenerator() => MerchantsQuestGenerator();
+  Generator<String> getQuestGenerator() => MerchantsQuestGenerator();
 
   @override
-  IGenerator<String> getReputationGenerator() => MerchantsReputationGenerator();
+  Generator<String> getReputationGenerator() => MerchantsReputationGenerator();
 
   @override
-  IGenerator<String> getSpecialtyGenerator() => MerchantsSpecialtyGenerator();
+  Generator<String> getSpecialtyGenerator() => MerchantsSpecialtyGenerator();
 
   @override
   EmblemType getEmblemType() => DefaultEmblemType();

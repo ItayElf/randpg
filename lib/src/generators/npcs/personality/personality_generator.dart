@@ -8,7 +8,7 @@ import '../../base/unique_generator.dart';
 import 'descriptors/descriptor_generator.dart';
 
 /// A class that generates personalities
-class PersonalityGenerator implements IGenerator<Personality> {
+class PersonalityGenerator implements Generator<Personality> {
   late int _seed;
   final Race _race;
 

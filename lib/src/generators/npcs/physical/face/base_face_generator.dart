@@ -4,7 +4,7 @@ import '../../../base/seed_generator.dart';
 import 'face_data.dart';
 
 /// A class that generates good looking faces
-class BaseFaceGenerator implements IGenerator<String> {
+class BaseFaceGenerator implements Generator<String> {
   late int _seed;
 
   BaseFaceGenerator() {

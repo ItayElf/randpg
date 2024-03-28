@@ -11,26 +11,26 @@ class DefaultLore implements WorldLoreType {
   static const _loreType = "default";
 
   @override
-  IGenerator<String> getEverybodyKnowsGenerator() => WorldTruthGenerator();
+  Generator<String> getEverybodyKnowsGenerator() => WorldTruthGenerator();
 
   @override
-  IGenerator<String> getFewKnowGenerator() => WorldTruthGenerator();
+  Generator<String> getFewKnowGenerator() => WorldTruthGenerator();
 
   @override
-  IGenerator<String> getGodsFearGenerator() => GodsFearGenerator();
+  Generator<String> getGodsFearGenerator() => GodsFearGenerator();
 
   @override
-  IGenerator<String> getGodsPlanGenerator() => GodsPlanGenerator();
+  Generator<String> getGodsPlanGenerator() => GodsPlanGenerator();
 
   @override
   String getLoreType() => _loreType;
 
   @override
-  IGenerator<String> getNobilityBelievesGenerator() => WorldTruthGenerator();
+  Generator<String> getNobilityBelievesGenerator() => WorldTruthGenerator();
 
   @override
-  IGenerator<String> getNobodyKnowsGenerator() => WorldTruthGenerator();
+  Generator<String> getNobodyKnowsGenerator() => WorldTruthGenerator();
 
   @override
-  IGenerator<String> getPeasantsBelieveGenerator() => WorldTruthGenerator();
+  Generator<String> getPeasantsBelieveGenerator() => WorldTruthGenerator();
 }

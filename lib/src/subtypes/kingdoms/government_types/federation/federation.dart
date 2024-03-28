@@ -14,5 +14,5 @@ class Federation implements GovernmentType {
   String getLeaderOccupation(Gender gender) => "president";
 
   @override
-  IGenerator<int> getNumberOfLeadersGenerator() => ListItemGenerator([1]);
+  Generator<int> getNumberOfLeadersGenerator() => ListItemGenerator([1]);
 }

@@ -8,7 +8,7 @@ import '../../base/seed_generator.dart';
 import '../../base/unique_generator.dart';
 
 /// A class that generates physical descriptions for npcs
-class PhysicalDescriptionGenerator implements IGenerator<PhysicalDescription> {
+class PhysicalDescriptionGenerator implements Generator<PhysicalDescription> {
   late int _seed;
   final Gender _gender;
   final Race _race;
@@ -33,7 +33,7 @@ class PhysicalDescriptionGenerator implements IGenerator<PhysicalDescription> {
     return PhysicalDescription.fromMap(result);
   }
 
-  Map<String, IGenerator> _makeBatch(Gender gender, Race race) {
+  Map<String, Generator> _makeBatch(Gender gender, Race race) {
     final generator =
         NumberGenerator(_minSpecialFeatures, _maxSpecialFeatures + 1);
     generator.seed(_seed);

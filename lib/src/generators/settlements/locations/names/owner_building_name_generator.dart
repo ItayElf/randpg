@@ -11,7 +11,7 @@ class OwnerBuildingNameGenerator extends FutureGenerator<String, List<String>> {
           (results) => titledEach(results.join(" ")),
         );
 
-  static List<IGenerator<String>> _generatorsTemplate(
+  static List<Generator<String>> _generatorsTemplate(
     String ownerName,
     String locationType,
   ) =>

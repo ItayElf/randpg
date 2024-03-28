@@ -6,14 +6,14 @@ import '../../../../strings_manipulations.dart';
 import 'human_name_data.dart';
 
 /// A class used to generate female human names
-class FemaleHumanNameGenerator implements IGenerator<String> {
+class FemaleHumanNameGenerator implements Generator<String> {
   late int _seed;
 
   FemaleHumanNameGenerator() {
     _seed = SeedGenerator.generate();
   }
 
-  static final List<IGenerator<String>> _classicSurnameTemplate = [
+  static final List<Generator<String>> _classicSurnameTemplate = [
     ListItemGenerator(humanFemaleNamePrefix),
     ListItemGenerator(humanFemaleVowel),
     ListItemGenerator(humanFemaleNameMiddle),
@@ -24,7 +24,7 @@ class FemaleHumanNameGenerator implements IGenerator<String> {
     ListItemGenerator(humanSurnameSuffix)
   ];
 
-  static final List<IGenerator<String>> _uniqueSurnameTemplate = [
+  static final List<Generator<String>> _uniqueSurnameTemplate = [
     ListItemGenerator(humanFemaleNamePrefix),
     ListItemGenerator(humanFemaleVowel),
     ListItemGenerator(humanFemaleNameMiddle),
@@ -46,7 +46,7 @@ class FemaleHumanNameGenerator implements IGenerator<String> {
     templateGenerator.seed(_seed);
     final template = templateGenerator.generate();
 
-    List<IGenerator<String>> generators = List.from(template);
+    List<Generator<String>> generators = List.from(template);
 
     for (int i = 0; i < generators.length; i++) {
       generators[i].seed((_seed + i) % SeedGenerator.maxSeed);

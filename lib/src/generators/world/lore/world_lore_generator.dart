@@ -4,7 +4,7 @@ import '../../base/generator.dart';
 import '../../base/seed_generator.dart';
 
 /// A class that generates world lores
-class WorldLoreGenerator implements IGenerator<WorldLore> {
+class WorldLoreGenerator implements Generator<WorldLore> {
   late int _seed;
   final WorldLoreType _loreType;
 
@@ -47,7 +47,7 @@ class WorldLoreGenerator implements IGenerator<WorldLore> {
   }
 
   String _getUniqueResult(
-    IGenerator<String> generator,
+    Generator<String> generator,
     Map<String, dynamic> map,
     int seed,
   ) {

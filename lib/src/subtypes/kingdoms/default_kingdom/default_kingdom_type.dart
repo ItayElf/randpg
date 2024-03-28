@@ -29,41 +29,41 @@ class DefaultKingdomType implements KingdomType, Fixable<Kingdom> {
   static const _populationBarrier = 25000;
 
   @override
-  IGenerator<SettlementType> getCapitalTypeGenerator() => ListItemGenerator([
+  Generator<SettlementType> getCapitalTypeGenerator() => ListItemGenerator([
         Metropolis(),
         City(),
       ]);
 
   @override
-  IGenerator<GuildType> getGuildTypeGenerator() =>
+  Generator<GuildType> getGuildTypeGenerator() =>
       ListItemGenerator(GuildManager().activeTypes);
 
   @override
-  IGenerator<String> getHistoryGenerator(String kingdomName) =>
+  Generator<String> getHistoryGenerator(String kingdomName) =>
       KingdomHistoryGenerator(kingdomName);
 
   @override
-  IGenerator<SettlementType> getImportantSettlementsTypesGenerator() =>
+  Generator<SettlementType> getImportantSettlementsTypesGenerator() =>
       ListItemGenerator([
         City(),
         Town(),
       ]);
 
   @override
-  IGenerator<String> getKnownForGenerator() => KingdomKnownForGenerator();
+  Generator<String> getKnownForGenerator() => KingdomKnownForGenerator();
 
   @override
-  IGenerator<String> getNameGenerator(Race race) =>
+  Generator<String> getNameGenerator(Race race) =>
       DominantRaceNameGenerator(race);
 
   @override
-  IGenerator<int> getPopulationGenerator() => FutureGenerator(
+  Generator<int> getPopulationGenerator() => FutureGenerator(
         NumberGenerator(_minPopulation, _maxPopulation),
         (population) => population ~/ 1000 * 1000,
       );
 
   @override
-  IGenerator<String> getTroubleGenerator() => KingdomTroubleGenerator();
+  Generator<String> getTroubleGenerator() => KingdomTroubleGenerator();
 
   @override
   String getKingdomType() => _kingdomType;

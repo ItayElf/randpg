@@ -36,38 +36,36 @@ class Primordial implements DeityType, Fixable<Deity> {
   String getDeityType() => _deityType;
 
   @override
-  IGenerator<String> getDepictionGenerator(Race? worshipedBy) =>
+  Generator<String> getDepictionGenerator(Race? worshipedBy) =>
       PrimordialDepictionGenerator();
 
   @override
-  IGenerator<String> getDomainGenerator(Alignment? alignment) =>
+  Generator<String> getDomainGenerator(Alignment? alignment) =>
       PrimordialDomainGenerator();
 
   @override
-  IGenerator<Gender?> getGenderGenerator() => ListItemGenerator([null]);
+  Generator<Gender?> getGenderGenerator() => ListItemGenerator([null]);
 
   @override
-  IGenerator<String> getNameGenerator(Gender? gender, Race? worshipedBy) =>
+  Generator<String> getNameGenerator(Gender? gender, Race? worshipedBy) =>
       DeityRaceNameGenerator(gender, worshipedBy);
 
   @override
-  IGenerator<String> getNegativeAttributeGenerator() =>
+  Generator<String> getNegativeAttributeGenerator() =>
       DeityNegativeAttributeGenerator();
 
   @override
-  IGenerator<String> getPositiveAttributeGenerator() =>
+  Generator<String> getPositiveAttributeGenerator() =>
       DeityPositiveAttributeGenerator();
 
   @override
-  IGenerator<String> getShrinesRarityGenerator() =>
-      PrimordialShrinesGenerator();
+  Generator<String> getShrinesRarityGenerator() => PrimordialShrinesGenerator();
 
   @override
-  IGenerator<Race?> getWorshipedByGenerator() => ListItemGenerator([null]);
+  Generator<Race?> getWorshipedByGenerator() => ListItemGenerator([null]);
 
   @override
-  IGenerator<String> getWorshipersGenerator() =>
-      PrimordialWorshipersGenerator();
+  Generator<String> getWorshipersGenerator() => PrimordialWorshipersGenerator();
 
   @override
   Deity getFixed(Deity deity) {

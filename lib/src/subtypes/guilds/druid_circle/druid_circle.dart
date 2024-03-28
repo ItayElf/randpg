@@ -37,21 +37,21 @@ class DruidCircle implements GuildType {
   String getGuildType() => _guildType;
 
   @override
-  IGenerator<String> getHistoryGenerator(String guildName) =>
+  Generator<String> getHistoryGenerator(String guildName) =>
       GuildHistoryGenerator(_guildType, guildName);
 
   @override
   String getLeaderOccupation() => _leaderOccupation;
 
   @override
-  IGenerator<String> getMemberOccupationGenerator() =>
+  Generator<String> getMemberOccupationGenerator() =>
       ListItemGenerator(_membersOccupations);
 
   @override
-  IGenerator<String> getMottoGenerator() => GuildMottoGenerator();
+  Generator<String> getMottoGenerator() => GuildMottoGenerator();
 
   @override
-  IGenerator<String> getNameGenerator() => MultipleGenerator([
+  Generator<String> getNameGenerator() => MultipleGenerator([
         FutureGenerator(
           GuildAdjectiveNameGenerator(),
           (name) => "Circle Of $name",
@@ -61,13 +61,13 @@ class DruidCircle implements GuildType {
       ]);
 
   @override
-  IGenerator<String> getQuestGenerator() => DruidsQuestGenerator();
+  Generator<String> getQuestGenerator() => DruidsQuestGenerator();
 
   @override
-  IGenerator<String> getReputationGenerator() => DruidsReputationGenerator();
+  Generator<String> getReputationGenerator() => DruidsReputationGenerator();
 
   @override
-  IGenerator<String> getSpecialtyGenerator() => DruidsSpecialtyGenerator();
+  Generator<String> getSpecialtyGenerator() => DruidsSpecialtyGenerator();
 
   @override
   EmblemType getEmblemType() => DefaultEmblemType();

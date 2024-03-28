@@ -16,27 +16,27 @@ class Monument implements LocationType {
   static const _ownerOccupation = "artist";
 
   @override
-  IGenerator<String> getBuildingDescriptionGenerator(
+  Generator<String> getBuildingDescriptionGenerator(
           String locationType, String locationName, Npc owner) =>
       MonumentDescriptionGenerator(owner.name);
 
   @override
-  IGenerator<List<Goods>?> getGoodsGenerator() => ListItemGenerator([null]);
+  Generator<List<Goods>?> getGoodsGenerator() => ListItemGenerator([null]);
 
   @override
   String getLocationType() => _locationType;
 
   @override
-  IGenerator<String> getNameGenerator(Npc owner) =>
+  Generator<String> getNameGenerator(Npc owner) =>
       DescriptionLocationNameGenerator();
 
   @override
-  IGenerator<String> getOutsideDescription() =>
+  Generator<String> getOutsideDescription() =>
       MonumentOutsideDescriptionGenerator();
 
   @override
   String getOwnerOccupation() => _ownerOccupation;
 
   @override
-  IGenerator<String> getZoneGenerator() => ListItemGenerator(monumentLocation);
+  Generator<String> getZoneGenerator() => ListItemGenerator(monumentLocation);
 }

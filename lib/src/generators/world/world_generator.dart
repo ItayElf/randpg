@@ -14,7 +14,7 @@ import 'opinions/world_opinions_generator.dart';
 import 'kingdoms/world_kingdoms_generator.dart';
 
 /// A class that generates worlds
-class WorldGenerator implements IGenerator<World> {
+class WorldGenerator implements Generator<World> {
   late int _seed;
   final WorldSettings _worldSettings;
 
@@ -29,7 +29,7 @@ class WorldGenerator implements IGenerator<World> {
     return World.fromMap(generator.generate());
   }
 
-  Map<String, IGenerator> _getBatch() => {
+  Map<String, Generator> _getBatch() => {
         "name": _worldSettings.getNameGenerator(),
         "worldSettings": ListItemGenerator([_worldSettings.getSettingName()]),
         "kingdoms": FutureGenerator(

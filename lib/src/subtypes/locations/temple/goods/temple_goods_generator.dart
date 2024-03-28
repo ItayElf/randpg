@@ -6,7 +6,7 @@ import '../../../../generators/settlements/locations/goods/base_goods_generator.
 import 'temple_goods_data.dart';
 
 /// A class that generates temple services
-class TempleServicesGenerator implements IGenerator<List<Goods>> {
+class TempleServicesGenerator implements Generator<List<Goods>> {
   late int _seed;
 
   static const _minServices = 1;

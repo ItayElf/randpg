@@ -14,7 +14,7 @@ class FemaleGoblinNameGenerator extends FutureGenerator<String, List<String>> {
           (results) => titledEach(results.join()),
         );
 
-  static final List<IGenerator<String>> _generatorsTemplate = [
+  static final List<Generator<String>> _generatorsTemplate = [
     ListItemGenerator(goblinFemaleNamePrefix),
     WeightedGenerator(goblinNameVowel),
     ListItemGenerator(goblinFemaleNameSuffix),
