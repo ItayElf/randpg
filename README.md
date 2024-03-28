@@ -36,10 +36,10 @@ Follow the installation instructions on [dart packages](https://pub.dev/packages
 ## Goals
 
 - Waypoint Generator
+- Companion Generator
 
 ### In the Future
 
-- Companion Generator
 - Holiday Generator
 
 ## Usage

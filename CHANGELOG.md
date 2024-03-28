@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.9.7
+## 0.10.0
 
 - Changed README.md
 
