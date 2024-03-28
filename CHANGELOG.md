@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.9.7
+
+- Changed README.md
+
 ## 0.9.6
 
 - Added races:
