@@ -119,3 +119,11 @@ class EmblemTypeNotFoundException extends RandpgException {
   @override
   String toString() => msg ?? "EmblemTypeNotFoundException";
 }
+
+/// An exception that is thrown when a not supported companionType is being used
+class CompanionTypeNotFoundException extends RandpgException {
+  const CompanionTypeNotFoundException([super.msg]);
+
+  @override
+  String toString() => msg ?? "CompanionTypeNotFoundException";
+}
