@@ -1,7 +1,7 @@
 import '../../../../generators/base/list_item_generator.dart';
 
 /// A class that generates adjectives for dogs
-class DogAdjectiveGenerator extends ListItemGenerator<String> {
+class DogAppearanceAdjectiveGenerator extends ListItemGenerator<String> {
   static const _adjectives = [
     'formidable',
     'fierce',
@@ -43,5 +43,5 @@ class DogAdjectiveGenerator extends ListItemGenerator<String> {
     'loyal',
   ];
 
-  DogAdjectiveGenerator() : super(_adjectives);
+  DogAppearanceAdjectiveGenerator() : super(_adjectives);
 }

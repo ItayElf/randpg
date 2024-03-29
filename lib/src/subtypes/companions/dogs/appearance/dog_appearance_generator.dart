@@ -1,13 +1,12 @@
-import 'package:randpg/src/subtypes/companions/dogs/appearance/dog_eye_color_generator.dart';
-
 import '../../../../enums/gender.dart';
 import '../../../../generators/base/batch_generator.dart';
 import '../../../../generators/base/generator.dart';
 import '../../../../generators/base/list_item_generator.dart';
 import '../../../../generators/base/seed_generator.dart';
 import '../../../../strings_manipulations.dart';
-import 'dog_adjectives_generator.dart';
+import 'dog_appearance_adjectives_generator.dart';
 import 'dog_breed_generator.dart';
+import 'dog_eye_color_generator.dart';
 import 'dog_fur_color_generator.dart';
 import 'dog_physique_generator.dart';
 
@@ -41,11 +40,11 @@ class DogAppearanceGenerator implements Generator<String> {
 
   String _getSecondSyntax(Map<String, dynamic> map) =>
       "${titled(_name)}, ${article(map["adjective"])} ${_gender.name} ${titledEach(map["breed"])}, has ${article(map["fur"])} "
-      "colored fur with ${map["furAccent"]} spots. ${titled(_name)}'s body is ${map["physique"]} and its eyes are ${map["eyes"]}.";
+      "colored fur with ${map["furAccent"]} spots. ${titled(_name)}'s body is ${map["physique"]} and their eyes are ${map["eyes"]}.";
 
   Map<String, Generator> _getBatch() => {
         "breed": DogBreedGenerator(),
-        "adjective": DogAdjectiveGenerator(),
+        "adjective": DogAppearanceAdjectiveGenerator(),
         "fur": DogFurColorGenerator(),
         "furAccent": DogFurColorGenerator(),
         "physique": DogPhysiqueGenerator(),

@@ -1,5 +1,6 @@
 import 'package:randpg/src/subtypes/companions/dogs/names/female_dog_name_generator.dart';
 import 'package:randpg/src/subtypes/companions/dogs/names/male_dog_name_generator.dart';
+import 'package:randpg/src/subtypes/companions/dogs/personality/dog_personality_generator.dart';
 
 import '../../../enums/gender.dart';
 import '../../../generators/base/generator.dart';
@@ -27,10 +28,8 @@ class Dog implements CompanionType {
   }
 
   @override
-  Generator<String> getPersonalityGenerator(String name, Gender gender) {
-    // TODO: implement getPersonalityGenerator
-    throw UnimplementedError();
-  }
+  Generator<String> getPersonalityGenerator(String name, Gender gender) =>
+      DogPersonalityGenerator(name);
 
   @override
   Generator<List<String>> getQuirksGenerator() {
