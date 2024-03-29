@@ -12,6 +12,7 @@
 - [Generating kingdoms](#generating-kingdoms)
 - [Generating emblems](#generating-emblems)
 - [Generating worlds](#generating-worlds)
+- [Generating companions](#generating-companions)
 
 ## Generating names
 
@@ -27,11 +28,13 @@ nameGenerator.seed(1234);
 
 print(nameGenerator.generate()); // expected output: "Cormin Copperbrook"
 ```
-*output might be different since dart random seed is different on different machines* 
+
+_output might be different since dart random seed is different on different machines_
 
 ## Generating npcs
 
 Generating an elf npc as an example:
+
 ```dart
 final Race race = Elf();
 final npcGenerator = NpcGenerator(race);
@@ -42,6 +45,7 @@ print(npcGenerator.generate());
 ## Generating locations\buildings
 
 Generating a tavern whose owner is a dwarf as an example:
+
 ```dart
 final LocationType locationType = Tavern();
 final Race ownerRace = Dwarf();
@@ -53,6 +57,7 @@ print(locationGenerator.generate());
 ## Generating settlements
 
 Generating a town of mostly orcs as an example:
+
 ```dart
 final SettlementType settlementType = Town();
 final Race dominantRace = Orc();
@@ -64,6 +69,7 @@ print(settlementGenerator.generate());
 ## Generating landscapes
 
 Generating a swamp as an example:
+
 ```dart
 final LandscapeType landscapeType = Swamp();
 
@@ -74,6 +80,7 @@ print(landscapeGenerator.generate());
 ## Generating deities
 
 Generating a lawful good god/goddess as an example:
+
 ```dart
 final Alignment alignment = Alignment(
   ethical: EthicalAlignment.lawful,
@@ -88,6 +95,7 @@ print(deityGenerator.generate());
 ## Generating guilds
 
 Generating a thieves guild as an example:
+
 ```dart
 final GuildType guildType = ThievesGuild();
 final guildGenerator = GuildGenerator(guildType);
@@ -99,6 +107,7 @@ print(guild);
 ## Generating kingdoms
 
 Generating a republic of dwarfs as an example:
+
 ```dart
 final GovernmentType governmentType = Republic();
 final Race race = Dwarf();
@@ -111,6 +120,7 @@ print(kingdom);
 ## Generating emblems
 
 Generating an emblem with the default type:
+
 ```dart
 final EmblemType type = DefaultEmblemType();
 final emblemGenerator = EmblemGenerator(type);
@@ -128,10 +138,23 @@ Expected results:
 ## Generating worlds
 
 Generating a world with the default settings:
+
 ```dart
 final WorldSettings settings = DefaultWorldSettings();
 final worldGenerator = WorldGenerator(settings);
 
 final World world = worldGenerator.generate();
 print(world);
+```
+
+## Generating companions
+
+Generating a dog companion as an example:
+
+```dart
+final CompanionType companionType = Dog();
+final Gender gender = Gender.female;
+final companionGenerator = CompanionGenerator(companionType, gender);
+
+print(companionGenerator.generate());
 ```

@@ -1,11 +1,13 @@
-import 'package:randpg/src/subtypes/companions/dogs/names/female_dog_name_generator.dart';
-import 'package:randpg/src/subtypes/companions/dogs/names/male_dog_name_generator.dart';
-import 'package:randpg/src/subtypes/companions/dogs/personality/dog_personality_generator.dart';
-
 import '../../../enums/gender.dart';
 import '../../../generators/base/generator.dart';
+import '../../../generators/base/unique_generator.dart';
 import '../companion_type.dart';
 import 'appearance/dog_appearance_generator.dart';
+import 'names/female_dog_name_generator.dart';
+import 'names/male_dog_name_generator.dart';
+import 'personality/dog_personality_generator.dart';
+import 'quirks/dog_quirk_generator.dart';
+import 'skills/dog_skill_generator.dart';
 
 class Dog implements CompanionType {
   static const _companionType = "dog";
@@ -32,14 +34,10 @@ class Dog implements CompanionType {
       DogPersonalityGenerator(name);
 
   @override
-  Generator<List<String>> getQuirksGenerator() {
-    // TODO: implement getQuirksGenerator
-    throw UnimplementedError();
-  }
+  Generator<List<String>> getQuirksGenerator() =>
+      UniqueGenerator(DogQuirkGenerator(), 2);
 
   @override
-  Generator<List<String>> getSkillsGenerator() {
-    // TODO: implement getSkillsGenerator
-    throw UnimplementedError();
-  }
+  Generator<List<String>> getSkillsGenerator() =>
+      UniqueGenerator(DogSkillGenerator(), 2);
 }

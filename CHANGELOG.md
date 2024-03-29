@@ -4,6 +4,8 @@
 
 - Changed README.md
 - Renamed `IGenerator` to `Generator`
+- Added companions
+  - Dogs
 
 ## 0.9.6
 

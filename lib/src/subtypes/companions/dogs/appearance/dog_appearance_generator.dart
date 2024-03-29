@@ -35,7 +35,7 @@ class DogAppearanceGenerator implements Generator<String> {
   }
 
   String _getFirstSyntax(Map<String, dynamic> map) =>
-      "${titled(_name)} is ${article(map["adjective"])} ${_gender.name} ${titledEach(map["breed"])} with ${map["fur"]} fur."
+      "${titled(_name)} is ${article(map["adjective"])} ${_gender.name} ${titledEach(map["breed"])} with ${map["fur"]} fur. "
       "${titled(_name)} has ${article(map["physique"])} build and ${map["eyes"]} eyes.";
 
   String _getSecondSyntax(Map<String, dynamic> map) =>
