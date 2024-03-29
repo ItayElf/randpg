@@ -3,6 +3,7 @@ import 'package:collection/collection.dart';
 import '../../exceptions/not_found_exceptions.dart';
 import '../managers/manager.dart';
 import 'companion_type.dart';
+import 'dogs/dog.dart';
 
 /// A class that handles the available deities and using them
 ///
@@ -10,7 +11,9 @@ import 'companion_type.dart';
 class CompanionManager extends Manager<CompanionType> {
   const CompanionManager();
 
-  static final Set<CompanionType> _companionTypes = {};
+  static final Set<CompanionType> _companionTypes = {
+    Dog(),
+  };
 
   static final Set<CompanionType> _activeCompanionTypes = {..._companionTypes};
 

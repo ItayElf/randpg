@@ -10,10 +10,10 @@ abstract class CompanionType {
   String getCompanionType();
 
   /// Returns a generator for the appearance of the companion
-  Generator<String> getAppearanceGenerator(String name);
+  Generator<String> getAppearanceGenerator(String name, Gender gender);
 
   /// Returns a generator for the personality of the companion
-  Generator<String> getPersonalityGenerator(String name);
+  Generator<String> getPersonalityGenerator(String name, Gender gender);
 
   /// Returns a generator for the skills of the companion
   Generator<List<String>> getSkillsGenerator();

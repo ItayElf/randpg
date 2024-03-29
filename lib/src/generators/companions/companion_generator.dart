@@ -38,8 +38,8 @@ class CompanionGenerator implements Generator<Companion> {
         "name": ListItemGenerator([name]),
         "gender": ListItemGenerator([_gender.name]),
         "companionType": ListItemGenerator([_companionType.getCompanionType()]),
-        "appearance": _companionType.getAppearanceGenerator(name),
-        "personality": _companionType.getPersonalityGenerator(name),
+        "appearance": _companionType.getAppearanceGenerator(name, _gender),
+        "personality": _companionType.getPersonalityGenerator(name, _gender),
         "skills": _companionType.getSkillsGenerator(),
         "quirks": _companionType.getQuirksGenerator(),
       };
