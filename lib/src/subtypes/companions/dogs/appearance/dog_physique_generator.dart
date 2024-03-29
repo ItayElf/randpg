@@ -22,7 +22,9 @@ class DogPhysiqueGenerator extends ListItemGenerator<String> {
     'slim',
     'chunky',
     'petite',
-    'compact'
+    'compact',
+    'agile',
+    'nimble',
   ];
 
   DogPhysiqueGenerator() : super(_physique);

@@ -8,6 +8,7 @@
 - 
 - Added companions
   - Dogs
+  - Cats
   
 - Added companions to npcs
 

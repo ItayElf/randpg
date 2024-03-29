@@ -12,6 +12,7 @@ class DogEyeColorGenerator extends ListItemGenerator<String> {
     'black',
     'gold',
     'red',
+    'yellow',
     'bi-colored',
     'parti-colored'
   ];

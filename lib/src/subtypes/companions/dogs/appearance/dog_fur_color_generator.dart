@@ -2,7 +2,7 @@ import '../../../../generators/base/list_item_generator.dart';
 
 /// A class that generates fur color of dogs
 class DogFurColorGenerator extends ListItemGenerator<String> {
-  static const _adjectives = [
+  static const _colors = [
     'black',
     'brown',
     'white',
@@ -21,5 +21,5 @@ class DogFurColorGenerator extends ListItemGenerator<String> {
     'cinnamon',
   ];
 
-  DogFurColorGenerator() : super(_adjectives);
+  DogFurColorGenerator() : super(_colors);
 }

@@ -1,8 +1,7 @@
-import 'package:randpg/src/enums/gender.dart';
-
-import 'package:randpg/src/generators/base/generator.dart';
-
+import '../../../enums/gender.dart';
+import '../../../generators/base/generator.dart';
 import '../companion_type.dart';
+import 'appearance/cat_appearance_generator.dart';
 import 'names/female_cat_names_generator.dart';
 import 'names/male_cat_names_generator.dart';
 
@@ -11,10 +10,8 @@ class Cat implements CompanionType {
   static const _companionType = "cat";
 
   @override
-  Generator<String> getAppearanceGenerator(String name, Gender gender) {
-    // TODO: implement getAppearanceGenerator
-    throw UnimplementedError();
-  }
+  Generator<String> getAppearanceGenerator(String name, Gender gender) =>
+      CatAppearanceGenerator(name, gender);
 
   @override
   String getCompanionType() => _companionType;

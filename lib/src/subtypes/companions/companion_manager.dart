@@ -2,6 +2,7 @@ import 'package:collection/collection.dart';
 
 import '../../exceptions/not_found_exceptions.dart';
 import '../managers/manager.dart';
+import 'cats/cat.dart';
 import 'companion_type.dart';
 import 'dogs/dog.dart';
 
@@ -13,6 +14,7 @@ class CompanionManager extends Manager<CompanionType> {
 
   static final Set<CompanionType> _companionTypes = {
     Dog(),
+    Cat(),
   };
 
   static final Set<CompanionType> _activeCompanionTypes = {..._companionTypes};
