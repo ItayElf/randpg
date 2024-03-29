@@ -2,6 +2,8 @@ import '../../../enums/gender.dart';
 import '../../../generators/base/generator.dart';
 import '../companion_type.dart';
 import 'appearance/bird_appearance_generator.dart';
+import 'names/female_bird_name_generator.dart';
+import 'names/male_bird_name_generator.dart';
 
 /// A bird companion
 class Bird implements CompanionType {
@@ -16,8 +18,12 @@ class Bird implements CompanionType {
 
   @override
   Generator<String> getNameGenerator(Gender gender) {
-    // TODO: implement getNameGenerator
-    throw UnimplementedError();
+    switch (gender) {
+      case Gender.male:
+        return MaleBirdNameGenerator();
+      case Gender.female:
+        return FemaleBirdNameGenerator();
+    }
   }
 
   @override
