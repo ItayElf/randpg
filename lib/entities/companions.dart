@@ -9,3 +9,4 @@ export '../src/subtypes/companions/companion_manager.dart'
 
 export '../src/subtypes/companions/dogs/dog.dart' show Dog;
 export '../src/subtypes/companions/cats/cat.dart' show Cat;
+export '../src/subtypes/companions/birds/bird.dart' show Bird;

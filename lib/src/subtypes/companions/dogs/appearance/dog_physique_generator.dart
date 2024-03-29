@@ -1,6 +1,6 @@
 import '../../../../generators/base/list_item_generator.dart';
 
-/// A class that generates fur color of dogs
+/// A class that generates body types of dogs
 class DogPhysiqueGenerator extends ListItemGenerator<String> {
   static const _physique = [
     'small',

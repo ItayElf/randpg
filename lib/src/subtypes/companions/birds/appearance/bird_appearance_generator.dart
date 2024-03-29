@@ -5,19 +5,19 @@ import '../../../../generators/base/list_item_generator.dart';
 import '../../../../generators/base/seed_generator.dart';
 import '../../../../generators/base/unique_generator.dart';
 import '../../../../strings_manipulations.dart';
-import 'dog_appearance_adjectives_generator.dart';
-import 'dog_breed_generator.dart';
-import 'dog_eye_color_generator.dart';
-import 'dog_fur_color_generator.dart';
-import 'dog_physique_generator.dart';
+import '../../dogs/appearance/dog_appearance_adjectives_generator.dart';
+import 'bird_eye_color_generator.dart';
+import 'bird_feathers_color_generator.dart';
+import 'bird_physique_generator.dart';
+import 'bird_specie_generator.dart';
 
-/// A class that generates descriptions of dog appearances
-class DogAppearanceGenerator implements Generator<String> {
+/// A class that generates descriptions of bird appearances
+class BirdAppearanceGenerator implements Generator<String> {
   late int _seed;
   final String _name;
   final Gender _gender;
 
-  DogAppearanceGenerator(this._name, this._gender) {
+  BirdAppearanceGenerator(this._name, this._gender) {
     _seed = SeedGenerator.generate();
   }
 
@@ -36,19 +36,19 @@ class DogAppearanceGenerator implements Generator<String> {
   }
 
   String _getFirstSyntax(Map<String, dynamic> map) =>
-      "${titled(_name)} is ${article(map["adjective"])} ${_gender.name} ${titledEach(map["breed"])} with ${map["fur"].first} fur. "
+      "${titled(_name)} is ${article(map["adjective"])} ${_gender.name} ${titledEach(map["specie"])} with ${map["feathers"].first} feathers. "
       "${titled(_name)} has ${article(map["physique"])} build and ${map["eyes"]} eyes.";
 
   String _getSecondSyntax(Map<String, dynamic> map) =>
-      "${titled(_name)}, ${article(map["adjective"])} ${_gender.name} ${titledEach(map["breed"])}, has ${article(map["fur"].first)} "
-      "colored fur with ${map["fur"].last} spots. ${titled(_name)}'s body is ${map["physique"]} and its eyes are ${map["eyes"]}.";
+      "${titled(_name)}, ${article(map["adjective"])} ${_gender.name} ${titledEach(map["specie"])}, has ${article(map["feathers"].first)} "
+      "colored feathers with ${article(map["feathers"].last)} accents. ${titled(_name)}'s body is ${map["physique"]} and its eyes are ${map["eyes"]}.";
 
   Map<String, Generator> _getBatch() => {
-        "breed": DogBreedGenerator(),
+        "specie": BirdSpecieGenerator(),
         "adjective": DogAppearanceAdjectiveGenerator(),
-        "fur": UniqueGenerator(DogFurColorGenerator(), 2),
-        "physique": DogPhysiqueGenerator(),
-        "eyes": DogEyeColorGenerator(),
+        "feathers": UniqueGenerator(BirdFeathersColorGenerator(), 2),
+        "physique": BirdPhysiqueGenerator(),
+        "eyes": BirdEyeColorGenerator(),
       };
 
   @override
