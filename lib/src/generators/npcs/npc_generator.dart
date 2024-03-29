@@ -33,7 +33,7 @@ class NpcGenerator implements Generator<Npc> {
     genderGenerator.seed(_seed);
     final gender = genderGenerator.generate();
 
-    final companionsNumberGenerator = WeightedGenerator({0: 10, 1: 5, 2: 1});
+    final companionsNumberGenerator = WeightedGenerator({0: 15, 1: 5, 2: 1});
     companionsNumberGenerator.seed((_seed + 1) % SeedGenerator.maxSeed);
     final companionsNumber = companionsNumberGenerator.generate();
 
