@@ -35,14 +35,21 @@ class CompanionPersonalityGenerator implements Generator<String> {
   }
 
   String _getFirstSyntax(Map<String, dynamic> map) =>
-      "${titled(_name)} is ${article(map["adjectives"].first)} and ${map["adjectives"].last} dog. ${titled(_name)} "
+      "${titled(_name)} is ${article(map["adjectives"].first)} and ${map["adjectives"].last}. ${titled(_name)} "
       "likes to ${map["activities"].first} and to ${map["activities"].last}.";
 
   String _getSecondSyntax(Map<String, dynamic> map) =>
       "${titled(_name)}'s most prominent trait is being ${map["adjectives"].first}. It is also ${map["adjectives"].last} "
-      "when it is around people it knows. ${titled(toGerund(map["activities"].first.split(" ").first))} "
-      "${map["activities"].first.split(" ").sublist(1).join(" ")} is ${titled(_name)}'s "
-      "favorite activity. It also likes to ${map["activities"].last}.";
+      "when it is around people it knows. ${titled(_getActivityAsGerund(map["activities"].first))} "
+      "is ${titled(_name)}'s favorite activity. It also likes to ${map["activities"].last}.";
+
+  String _getActivityAsGerund(String activity) {
+    final parts = activity.split(" ");
+    if (parts.length == 1) return toGerund(activity);
+
+    parts[0] = toGerund(parts[0]);
+    return parts.join(" ");
+  }
 
   Map<String, Generator> _getBatch() => {
         "adjectives": UniqueGenerator(_adjectiveGenerator, 2),

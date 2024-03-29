@@ -1,5 +1,6 @@
 import '../../../enums/gender.dart';
 import '../../../generators/base/generator.dart';
+import '../../../generators/base/unique_generator.dart';
 import '../../../generators/companions/personality/companion_personality_generator.dart';
 import '../companion_type.dart';
 import '../dogs/personality/dog_personality_adjective_generator.dart';
@@ -7,6 +8,8 @@ import 'appearance/cat_appearance_generator.dart';
 import 'names/female_cat_names_generator.dart';
 import 'names/male_cat_names_generator.dart';
 import 'personality/cat_activity_generator.dart';
+import 'quirks/cat_quirk_generator.dart';
+import 'skills/cat_skills_generator.dart';
 
 /// A cat companion
 class Cat implements CompanionType {
@@ -38,14 +41,10 @@ class Cat implements CompanionType {
       );
 
   @override
-  Generator<List<String>> getQuirksGenerator() {
-    // TODO: implement getQuirksGenerator
-    throw UnimplementedError();
-  }
+  Generator<List<String>> getQuirksGenerator() =>
+      UniqueGenerator(CatQuirkGenerator(), 2);
 
   @override
-  Generator<List<String>> getSkillsGenerator() {
-    // TODO: implement getSkillsGenerator
-    throw UnimplementedError();
-  }
+  Generator<List<String>> getSkillsGenerator() =>
+      UniqueGenerator(CatSkillGenerator(), 2);
 }

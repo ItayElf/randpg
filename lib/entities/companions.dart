@@ -8,3 +8,4 @@ export '../src/subtypes/companions/companion_manager.dart'
     show CompanionManager;
 
 export '../src/subtypes/companions/dogs/dog.dart' show Dog;
+export '../src/subtypes/companions/cats/cat.dart' show Cat;
