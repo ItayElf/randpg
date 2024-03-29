@@ -32,7 +32,6 @@ class BirdSpecieGenerator extends ListItemGenerator<String> {
     'swift',
     'swallow',
     'cardinal',
-    'rooster',
   ];
 
   BirdSpecieGenerator() : super(_species);

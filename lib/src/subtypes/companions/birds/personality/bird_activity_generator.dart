@@ -37,7 +37,7 @@ class BirdActivityGenerator extends ListItemGenerator<String> {
     'groom',
     'watch',
     'watch over their territory with vigilance',
-    'blend into their surroundings with camouflage',
+    'blend into the surroundings with camouflage',
     'soar',
     'chirp joyfully to communicate',
     'glide',

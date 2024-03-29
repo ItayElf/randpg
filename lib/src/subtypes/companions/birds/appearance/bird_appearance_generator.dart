@@ -41,7 +41,7 @@ class BirdAppearanceGenerator implements Generator<String> {
 
   String _getSecondSyntax(Map<String, dynamic> map) =>
       "${titled(_name)}, ${article(map["adjective"])} ${_gender.name} ${titledEach(map["specie"])}, has ${article(map["feathers"].first)} "
-      "colored feathers with ${article(map["feathers"].last)} accents. ${titled(_name)}'s body is ${map["physique"]} and its eyes are ${map["eyes"]}.";
+      "colored feathers with ${map["feathers"].last} accents. ${titled(_name)}'s body is ${map["physique"]} and its eyes are ${map["eyes"]}.";
 
   Map<String, Generator> _getBatch() => {
         "specie": BirdSpecieGenerator(),
