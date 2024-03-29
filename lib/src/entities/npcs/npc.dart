@@ -3,6 +3,7 @@ import 'dart:convert';
 import '../../enums/gender.dart';
 import '../../subtypes/races/race.dart';
 import '../../subtypes/races/race_manager.dart';
+import '../companions/companion.dart';
 import 'personality.dart';
 import 'physical_description.dart';
 
@@ -32,6 +33,9 @@ class Npc {
   /// The goal of the npc
   final String goal;
 
+  /// A list of the companions the npc has
+  final List<Companion> companions;
+
   const Npc({
     required this.name,
     required this.age,
@@ -41,6 +45,7 @@ class Npc {
     required this.physicalDescription,
     required this.personality,
     required this.goal,
+    required this.companions,
   });
 
   Npc copyWith({
@@ -52,6 +57,7 @@ class Npc {
     PhysicalDescription? physicalDescription,
     Personality? personality,
     String? goal,
+    List<Companion>? companions,
   }) {
     return Npc(
       name: name ?? this.name,
@@ -62,6 +68,7 @@ class Npc {
       physicalDescription: physicalDescription ?? this.physicalDescription,
       personality: personality ?? this.personality,
       goal: goal ?? this.goal,
+      companions: companions ?? this.companions,
     );
   }
 
@@ -75,21 +82,24 @@ class Npc {
       'physicalDescription': physicalDescription.toMap(),
       'personality': personality.toMap(),
       'goal': goal,
+      'companions': companions.map((x) => x.toMap()).toList(),
     };
   }
 
   factory Npc.fromMap(Map<String, dynamic> map) {
     return Npc(
-      name: map['name'],
-      age: map['age'],
-      gender: Gender.values.byName(map['gender']),
-      race: RaceManager().getType(map['race']),
-      occupation: map['occupation'],
-      physicalDescription:
-          PhysicalDescription.fromMap(map['physicalDescription']),
-      personality: Personality.fromMap(map['personality']),
-      goal: map['goal'],
-    );
+        name: map['name'],
+        age: map['age'],
+        gender: Gender.values.byName(map['gender']),
+        race: RaceManager().getType(map['race']),
+        occupation: map['occupation'],
+        physicalDescription:
+            PhysicalDescription.fromMap(map['physicalDescription']),
+        personality: Personality.fromMap(map['personality']),
+        goal: map['goal'],
+        companions: List<Companion>.from((map['companions']).map<Companion>(
+          (x) => Companion.fromMap(x),
+        )));
   }
 
   String toJson() => json.encode(toMap());
@@ -98,7 +108,7 @@ class Npc {
 
   @override
   String toString() {
-    return 'Npc(name: $name, age: $age, gender: $gender, race: $race, occupation: $occupation, physicalDescription: $physicalDescription, personality: $personality, goal: $goal)';
+    return 'Npc(name: $name, age: $age, gender: $gender, race: $race, occupation: $occupation, physicalDescription: $physicalDescription, personality: $personality, goal: $goal, companions: $companions)';
   }
 
   @override
@@ -112,7 +122,8 @@ class Npc {
         other.occupation == occupation &&
         other.physicalDescription == physicalDescription &&
         other.personality == personality &&
-        other.goal == goal;
+        other.goal == goal &&
+        other.companions == companions;
   }
 
   @override
@@ -124,6 +135,7 @@ class Npc {
         occupation.hashCode ^
         physicalDescription.hashCode ^
         personality.hashCode ^
-        goal.hashCode;
+        goal.hashCode ^
+        companions.hashCode;
   }
 }
