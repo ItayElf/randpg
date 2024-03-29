@@ -3,6 +3,8 @@ import 'dart:convert';
 import 'package:collection/collection.dart';
 
 import '../../enums/gender.dart';
+import '../../subtypes/companions/companion_manager.dart';
+import '../../subtypes/companions/companion_type.dart';
 
 /// A class that represents a companion or a familiar
 class Companion {
@@ -11,6 +13,9 @@ class Companion {
 
   /// The gender of the companion
   final Gender gender;
+
+  /// The companion type
+  final CompanionType companionType;
 
   /// The appearance of the companion
   final String appearance;
@@ -27,6 +32,7 @@ class Companion {
   const Companion({
     required this.name,
     required this.gender,
+    required this.companionType,
     required this.appearance,
     required this.personality,
     required this.skills,
@@ -36,6 +42,7 @@ class Companion {
   Companion copyWith({
     String? name,
     Gender? gender,
+    CompanionType? companionType,
     String? appearance,
     String? personality,
     List<String>? skills,
@@ -44,6 +51,7 @@ class Companion {
     return Companion(
       name: name ?? this.name,
       gender: gender ?? this.gender,
+      companionType: companionType ?? this.companionType,
       appearance: appearance ?? this.appearance,
       personality: personality ?? this.personality,
       skills: skills ?? this.skills,
@@ -55,6 +63,7 @@ class Companion {
     return <String, dynamic>{
       'name': name,
       'gender': gender.name,
+      'companionType': companionType.getCompanionType(),
       'appearance': appearance,
       'personality': personality,
       'skills': skills,
@@ -66,6 +75,7 @@ class Companion {
     return Companion(
       name: map['name'] as String,
       gender: Gender.values.byName(map['gender']),
+      companionType: CompanionManager().getType(map["companionType"]),
       appearance: map['appearance'] as String,
       personality: map['personality'] as String,
       skills: List<String>.from(map['skills']),
@@ -76,11 +86,11 @@ class Companion {
   String toJson() => json.encode(toMap());
 
   factory Companion.fromJson(String source) =>
-      Companion.fromMap(json.decode(source));
+      Companion.fromMap(json.decode(source) as Map<String, dynamic>);
 
   @override
   String toString() {
-    return 'Companion(name: $name, gender: $gender, appearance: $appearance, personality: $personality, skills: $skills, quirks: $quirks)';
+    return 'Companion(name: $name, gender: $gender, companionType: $companionType, appearance: $appearance, personality: $personality, skills: $skills, quirks: $quirks)';
   }
 
   @override
@@ -90,6 +100,7 @@ class Companion {
 
     return other.name == name &&
         other.gender == gender &&
+        other.companionType == companionType &&
         other.appearance == appearance &&
         other.personality == personality &&
         listEquals(other.skills, skills) &&
@@ -100,6 +111,7 @@ class Companion {
   int get hashCode {
     return name.hashCode ^
         gender.hashCode ^
+        companionType.hashCode ^
         appearance.hashCode ^
         personality.hashCode ^
         skills.hashCode ^

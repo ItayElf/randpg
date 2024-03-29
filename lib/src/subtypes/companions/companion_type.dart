@@ -6,9 +6,6 @@ abstract class CompanionType {
   /// Returns a generator for the name of the companion
   Generator<String> getNameGenerator(Gender gender);
 
-  /// Returns a generator for the gender of the companion
-  Generator<Gender> getGenderGenerator();
-
   /// Returns the name of the companion type
   String getCompanionType();
 
