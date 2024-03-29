@@ -9,6 +9,7 @@ import 'personality/dog_personality_generator.dart';
 import 'quirks/dog_quirk_generator.dart';
 import 'skills/dog_skill_generator.dart';
 
+/// A dog companion
 class Dog implements CompanionType {
   static const _companionType = "dog";
 
