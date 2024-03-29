@@ -1,18 +1,22 @@
-import '../../../../generators/base/batch_generator.dart';
-import '../../../../generators/base/generator.dart';
-import '../../../../generators/base/list_item_generator.dart';
-import '../../../../generators/base/seed_generator.dart';
-import '../../../../generators/base/unique_generator.dart';
-import '../../../../strings_manipulations.dart';
-import 'dog_activity_generator.dart';
-import 'dog_personality_adjective_generator.dart';
+import '../../../strings_manipulations.dart';
+import '../../base/batch_generator.dart';
+import '../../base/generator.dart';
+import '../../base/list_item_generator.dart';
+import '../../base/seed_generator.dart';
+import '../../base/unique_generator.dart';
 
-/// A class that generates descriptions of dog personalities
-class DogPersonalityGenerator implements Generator<String> {
+/// A class that generates descriptions of companions personalities
+class CompanionPersonalityGenerator implements Generator<String> {
   late int _seed;
   final String _name;
+  final Generator<String> _adjectiveGenerator;
+  final Generator<String> _activityGenerator;
 
-  DogPersonalityGenerator(this._name) {
+  CompanionPersonalityGenerator(
+    this._name,
+    this._adjectiveGenerator,
+    this._activityGenerator,
+  ) {
     _seed = SeedGenerator.generate();
   }
 
@@ -41,8 +45,8 @@ class DogPersonalityGenerator implements Generator<String> {
       "favorite activity. It also likes to ${map["activities"].last}.";
 
   Map<String, Generator> _getBatch() => {
-        "adjectives": UniqueGenerator(DogPersonalityAdjectiveGenerator(), 2),
-        "activities": UniqueGenerator(DogActivityGenerator(), 2),
+        "adjectives": UniqueGenerator(_adjectiveGenerator, 2),
+        "activities": UniqueGenerator(_activityGenerator, 2),
       };
 
   @override
