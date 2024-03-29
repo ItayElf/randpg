@@ -40,7 +40,7 @@ class DogAppearanceGenerator implements Generator<String> {
 
   String _getSecondSyntax(Map<String, dynamic> map) =>
       "${titled(_name)}, ${article(map["adjective"])} ${_gender.name} ${titledEach(map["breed"])}, has ${article(map["fur"])} "
-      "colored fur with ${map["furAccent"]} spots. ${titled(_name)}'s body is ${map["physique"]} and their eyes are ${map["eyes"]}.";
+      "colored fur with ${map["furAccent"]} spots. ${titled(_name)}'s body is ${map["physique"]} and its eyes are ${map["eyes"]}.";
 
   Map<String, Generator> _getBatch() => {
         "breed": DogBreedGenerator(),

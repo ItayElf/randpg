@@ -3,9 +3,13 @@
 ## 0.10.0
 
 - Changed README.md
+- 
 - Renamed `IGenerator` to `Generator`
+- 
 - Added companions
   - Dogs
+  
+- Added companions to npcs
 
 ## 0.9.6
 

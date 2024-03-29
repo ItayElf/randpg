@@ -55,11 +55,6 @@ const genericPersonalityQuirks = [
   'collects sea shells',
   'collects tiny animal skulls',
   'secretly wants to become the ruler of the city',
-  'has a dragon hatchling companion',
-  'has a pigeon companion',
-  'has a mouse companion',
-  'has a fox companion',
-  'has a parrot companion',
   'likes to swim',
   'has a beautiful singing voice',
   'frequently thinks aloud'

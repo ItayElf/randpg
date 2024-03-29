@@ -1,3 +1,6 @@
+import 'package:randpg/entities/companions.dart';
+import 'package:randpg/src/generators/base/list_batch_generator.dart';
+
 import '../../entities/npcs/npc.dart';
 import '../../enums/gender.dart';
 import '../../subtypes/races/race.dart';
@@ -6,7 +9,9 @@ import '../base/future_generator.dart';
 import '../base/generator.dart';
 import '../base/list_item_generator.dart';
 import '../base/multiple_generator.dart';
+import '../base/repeated_generator.dart';
 import '../base/seed_generator.dart';
+import '../base/weighted_generator.dart';
 import 'goal/goal_generator.dart';
 import 'occupation/adventurer_occupation_generator.dart';
 import 'occupation/simple_occupation_generator.dart';
@@ -28,13 +33,40 @@ class NpcGenerator implements Generator<Npc> {
     genderGenerator.seed(_seed);
     final gender = genderGenerator.generate();
 
-    final generator = BatchGenerator(_getBatch(_race, gender));
-    generator.seed(_seed);
+    final companionsNumberGenerator = WeightedGenerator({0: 10, 1: 5, 2: 1});
+    companionsNumberGenerator.seed((_seed + 1) % SeedGenerator.maxSeed);
+    final companionsNumber = companionsNumberGenerator.generate();
+
+    final companionArgsGenerator = RepeatedGenerator(
+      BatchGenerator({
+        "type": ListItemGenerator(CompanionManager().activeTypes),
+        "gender": ListItemGenerator(Gender.values),
+      }),
+      companionsNumber,
+    );
+    companionArgsGenerator.seed((_seed + 2) % SeedGenerator.maxSeed);
+    final companionArgs = companionArgsGenerator.generate();
+
+    final companionsGenerator = ListBatchGenerator(
+      companionArgs
+          .map((e) => CompanionGenerator(e["type"], e["gender"]))
+          .toList(),
+    );
+    companionsGenerator.seed((_seed + 3) % SeedGenerator.maxSeed);
+    final companions = companionsGenerator.generate();
+
+    final generator = BatchGenerator(_getBatch(_race, gender, companions));
+    generator.seed((_seed + 4) % SeedGenerator.maxSeed);
     final result = generator.generate();
     return Npc.fromMap(result);
   }
 
-  Map<String, Generator> _getBatch(Race race, Gender gender) => {
+  Map<String, Generator> _getBatch(
+    Race race,
+    Gender gender,
+    List<Companion> companions,
+  ) =>
+      {
         "name": race.getNameGenerator(gender),
         "age": race.getAgeGenerator(gender),
         "gender": ListItemGenerator([gender.name]),
@@ -52,6 +84,10 @@ class NpcGenerator implements Generator<Npc> {
           (personality) => personality.toMap(),
         ),
         "goal": GoalGenerator(),
+        "companions": FutureGenerator(
+          ListItemGenerator([companions]),
+          (companions) => companions.map((e) => e.toMap()).toList(),
+        ),
       };
 
   @override
