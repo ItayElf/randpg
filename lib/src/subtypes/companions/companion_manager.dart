@@ -6,6 +6,7 @@ import 'birds/bird.dart';
 import 'cats/cat.dart';
 import 'companion_type.dart';
 import 'dogs/dog.dart';
+import 'imps/imp.dart';
 
 /// A class that handles the available companions and using them
 ///
@@ -17,6 +18,7 @@ class CompanionManager extends Manager<CompanionType> {
     Dog(),
     Cat(),
     Bird(),
+    Imp(),
   };
 
   static final Set<CompanionType> _activeCompanionTypes = {..._companionTypes};

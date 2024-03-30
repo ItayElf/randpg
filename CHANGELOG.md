@@ -10,6 +10,7 @@
   - Dogs
   - Cats
   - Birds
+  - Imps
   
 - Added companions to npcs
 
