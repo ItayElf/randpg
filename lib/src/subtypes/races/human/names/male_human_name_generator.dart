@@ -38,11 +38,32 @@ class MaleHumanNameGenerator implements Generator<String> {
     WeightedGenerator(humanFemaleNameSuffix),
   ];
 
+  static final List<Generator<String>> _preMadeFirstNameClassicTemplate = [
+    ListItemGenerator(humanMaleFirstNames),
+    ListItemGenerator([" "]),
+    ListItemGenerator(humanSurnamePrefix),
+    ListItemGenerator(humanSurnameSuffix)
+  ];
+
+  static final List<Generator<String>> _preMadeFirstNameUniqueTemplate = [
+    ListItemGenerator(humanMaleFirstNames),
+    ListItemGenerator([" "]),
+    ListItemGenerator(humanFemaleNamePrefix),
+    ListItemGenerator(humanFemaleVowel),
+    ListItemGenerator(humanFemaleNameMiddle),
+    ListItemGenerator(humanFemaleVowel),
+    WeightedGenerator(humanFemaleNameSuffix),
+  ];
+
   /// Generates a name of a male human
   @override
   String generate() {
-    final templateGenerator =
-        ListItemGenerator([_classicSurnameTemplate, _uniqueSurnameTemplate]);
+    final templateGenerator = ListItemGenerator([
+      _classicSurnameTemplate,
+      _uniqueSurnameTemplate,
+      _preMadeFirstNameClassicTemplate,
+      _preMadeFirstNameUniqueTemplate,
+    ]);
     templateGenerator.seed(_seed);
     final template = templateGenerator.generate();
 

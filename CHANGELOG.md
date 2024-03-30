@@ -14,6 +14,8 @@
   
 - Added companions to npcs
 
+- Expanded the names of human npcs
+
 ## 0.9.6
 
 - Added races:
