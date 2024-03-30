@@ -7,7 +7,7 @@ import '../../../base/seed_generator.dart';
 import 'beard_data.dart';
 
 /// A class that generates long beards
-class LongBeardGenerator implements IGenerator<Hair?> {
+class LongBeardGenerator implements Generator<Hair?> {
   late int _seed;
   final Gender _gender;
 

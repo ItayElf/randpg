@@ -8,7 +8,7 @@ import '../base/unique_generator.dart';
 import '../fixable.dart';
 
 /// A class that generates landscapes
-class LandscapeGenerator implements IGenerator<Landscape> {
+class LandscapeGenerator implements Generator<Landscape> {
   late int _seed;
   final LandscapeType _landscapeType;
 
@@ -32,7 +32,7 @@ class LandscapeGenerator implements IGenerator<Landscape> {
     return landscape;
   }
 
-  Map<String, IGenerator> _getBatch() => {
+  Map<String, Generator> _getBatch() => {
         "name": _landscapeType.getNameGenerator(),
         "location": _landscapeType.getLocationGenerator(),
         "weather": _landscapeType.getWeatherGenerator(),

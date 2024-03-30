@@ -10,5 +10,5 @@ abstract class GovernmentType {
   String getLeaderOccupation(Gender gender);
 
   /// Returns a generator for how many leaders there are
-  IGenerator<int> getNumberOfLeadersGenerator();
+  Generator<int> getNumberOfLeadersGenerator();
 }

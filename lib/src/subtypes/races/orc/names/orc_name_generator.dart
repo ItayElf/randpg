@@ -6,7 +6,7 @@ import 'female_orc_name_generator.dart';
 import 'male_orc_name_generator.dart';
 
 /// A generator for orc names
-class OrcNameGenerator implements IGenerator<String> {
+class OrcNameGenerator implements Generator<String> {
   late int _seed;
   final Gender _gender;
 
@@ -22,7 +22,7 @@ class OrcNameGenerator implements IGenerator<String> {
     return generator.generate();
   }
 
-  IGenerator<String> _getGenerator(Gender gender) {
+  Generator<String> _getGenerator(Gender gender) {
     switch (gender) {
       case Gender.male:
         return MaleOrcNameGenerator();

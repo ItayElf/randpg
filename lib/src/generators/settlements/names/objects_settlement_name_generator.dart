@@ -7,7 +7,7 @@ import '../../base/seed_generator.dart';
 import 'settlement_name_data.dart';
 
 /// A class that generates settlement name from objects and adjectives
-class ObjectSettlementNameGenerator implements IGenerator<String> {
+class ObjectSettlementNameGenerator implements Generator<String> {
   late int _seed;
 
   ObjectSettlementNameGenerator() {

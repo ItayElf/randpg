@@ -5,7 +5,7 @@ import '../../../../generators/base/seed_generator.dart';
 import '../../../../generators/base/weighted_generator.dart';
 
 /// A class that generates elven hair style based on gender
-class ElvenHairGenerator implements IGenerator<Hair> {
+class ElvenHairGenerator implements Generator<Hair> {
   late int _seed;
 
   static const _elfHairLength = {

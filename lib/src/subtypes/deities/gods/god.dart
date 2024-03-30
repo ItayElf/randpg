@@ -41,7 +41,7 @@ class God implements DeityType {
   String getDeityType() => _deityType;
 
   @override
-  IGenerator<String> getDepictionGenerator(Race? worshipedBy) =>
+  Generator<String> getDepictionGenerator(Race? worshipedBy) =>
       MultipleGenerator([
         DeityAnimalDepictionGenerator(),
         DeityBeingDepictionGenerator(worshipedBy),
@@ -49,38 +49,38 @@ class God implements DeityType {
       ]);
 
   @override
-  IGenerator<String> getDomainGenerator(Alignment? alignment) =>
+  Generator<String> getDomainGenerator(Alignment? alignment) =>
       DeityDomainGenerator(alignment);
 
   @override
-  IGenerator<Gender> getGenderGenerator() => ListItemGenerator(Gender.values);
+  Generator<Gender> getGenderGenerator() => ListItemGenerator(Gender.values);
 
   @override
-  IGenerator<String> getNameGenerator(Gender? gender, Race? worshipedBy) =>
+  Generator<String> getNameGenerator(Gender? gender, Race? worshipedBy) =>
       DeityRaceNameGenerator(gender, worshipedBy);
 
   @override
-  IGenerator<String> getNegativeAttributeGenerator() =>
+  Generator<String> getNegativeAttributeGenerator() =>
       DeityNegativeAttributeGenerator();
 
   @override
-  IGenerator<String> getPositiveAttributeGenerator() =>
+  Generator<String> getPositiveAttributeGenerator() =>
       DeityPositiveAttributeGenerator();
 
   @override
-  IGenerator<String> getShrinesRarityGenerator() => MultipleGenerator([
+  Generator<String> getShrinesRarityGenerator() => MultipleGenerator([
         DeityFewShrinesGenerator(),
         DeityManyShrinesGenerator(),
       ]);
 
   @override
-  IGenerator<Race?> getWorshipedByGenerator() => ListItemGenerator([
+  Generator<Race?> getWorshipedByGenerator() => ListItemGenerator([
         ...RaceManager().activeTypes,
         null,
       ]);
 
   @override
-  IGenerator<String> getWorshipersGenerator() => MultipleGenerator([
+  Generator<String> getWorshipersGenerator() => MultipleGenerator([
         DeityFewWorshipersGenerator(),
         DeityManyWorshipersGenerator(),
       ]);

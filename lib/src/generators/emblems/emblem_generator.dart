@@ -8,7 +8,7 @@ import '../base/list_item_generator.dart';
 import '../base/seed_generator.dart';
 import 'icons/emblem_icons_generator.dart';
 
-class EmblemGenerator implements IGenerator<Emblem> {
+class EmblemGenerator implements Generator<Emblem> {
   late int _seed;
   final EmblemType _emblemType;
 
@@ -38,7 +38,7 @@ class EmblemGenerator implements IGenerator<Emblem> {
     return Emblem.fromMap(generator.generate());
   }
 
-  Map<String, IGenerator> _getBatch(
+  Map<String, Generator> _getBatch(
           HslColor primaryColor, HslColor secondaryColor, int iconCount) =>
       {
         "shape": FutureGenerator(

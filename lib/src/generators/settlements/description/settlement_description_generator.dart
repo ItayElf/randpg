@@ -9,7 +9,7 @@ import '../../base/unique_generator.dart';
 import 'settlement_description_data.dart';
 
 /// A class that generates settlements descriptions
-class SettlementDescriptionGenerator implements IGenerator<String> {
+class SettlementDescriptionGenerator implements Generator<String> {
   late int _seed;
   final String _settlementName;
   final Race? _dominantRace;
@@ -59,7 +59,7 @@ class SettlementDescriptionGenerator implements IGenerator<String> {
     ];
   }
 
-  Map<String, IGenerator> _getBatch() => {
+  Map<String, Generator> _getBatch() => {
         "look": ListItemGenerator(settlementLook),
         "place": ListItemGenerator(settlementPlace),
         "roof": ListItemGenerator(settlementRoof),

@@ -9,7 +9,8 @@ bool _isConsonantVowelConsonant(String verb) {
 
   return !vowels.contains(lastLetters[0]) &&
       vowels.contains(lastLetters[1]) &&
-      !vowels.contains(lastLetters[2]);
+      !vowels.contains(lastLetters[2]) &&
+      lastLetters[2] != "y";
 }
 
 /// Returns the string with the first character in upper case

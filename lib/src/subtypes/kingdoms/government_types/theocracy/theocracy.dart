@@ -24,6 +24,6 @@ class Theocracy implements GovernmentType {
   }
 
   @override
-  IGenerator<int> getNumberOfLeadersGenerator() =>
+  Generator<int> getNumberOfLeadersGenerator() =>
       NumberGenerator(_minCouncilSize, _maxCouncilSize + 1);
 }

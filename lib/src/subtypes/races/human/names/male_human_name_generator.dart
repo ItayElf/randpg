@@ -6,14 +6,14 @@ import '../../../../strings_manipulations.dart';
 import 'human_name_data.dart';
 
 /// A class used to generate male human names
-class MaleHumanNameGenerator implements IGenerator<String> {
+class MaleHumanNameGenerator implements Generator<String> {
   late int _seed;
 
   MaleHumanNameGenerator() {
     _seed = SeedGenerator.generate();
   }
 
-  static final List<IGenerator<String>> _classicSurnameTemplate = [
+  static final List<Generator<String>> _classicSurnameTemplate = [
     ListItemGenerator(humanMaleNamePrefix),
     WeightedGenerator(humanMaleVowel),
     ListItemGenerator(humanMaleNameMiddle),
@@ -24,7 +24,7 @@ class MaleHumanNameGenerator implements IGenerator<String> {
     ListItemGenerator(humanSurnameSuffix)
   ];
 
-  static final List<IGenerator<String>> _uniqueSurnameTemplate = [
+  static final List<Generator<String>> _uniqueSurnameTemplate = [
     ListItemGenerator(humanMaleNamePrefix),
     WeightedGenerator(humanMaleVowel),
     ListItemGenerator(humanMaleNameMiddle),
@@ -38,15 +38,36 @@ class MaleHumanNameGenerator implements IGenerator<String> {
     WeightedGenerator(humanFemaleNameSuffix),
   ];
 
+  static final List<Generator<String>> _preMadeFirstNameClassicTemplate = [
+    ListItemGenerator(humanMaleFirstNames),
+    ListItemGenerator([" "]),
+    ListItemGenerator(humanSurnamePrefix),
+    ListItemGenerator(humanSurnameSuffix)
+  ];
+
+  static final List<Generator<String>> _preMadeFirstNameUniqueTemplate = [
+    ListItemGenerator(humanMaleFirstNames),
+    ListItemGenerator([" "]),
+    ListItemGenerator(humanFemaleNamePrefix),
+    ListItemGenerator(humanFemaleVowel),
+    ListItemGenerator(humanFemaleNameMiddle),
+    ListItemGenerator(humanFemaleVowel),
+    WeightedGenerator(humanFemaleNameSuffix),
+  ];
+
   /// Generates a name of a male human
   @override
   String generate() {
-    final templateGenerator =
-        ListItemGenerator([_classicSurnameTemplate, _uniqueSurnameTemplate]);
+    final templateGenerator = ListItemGenerator([
+      _classicSurnameTemplate,
+      _uniqueSurnameTemplate,
+      _preMadeFirstNameClassicTemplate,
+      _preMadeFirstNameUniqueTemplate,
+    ]);
     templateGenerator.seed(_seed);
     final template = templateGenerator.generate();
 
-    List<IGenerator<String>> generators = List.from(template);
+    List<Generator<String>> generators = List.from(template);
 
     for (int i = 0; i < generators.length; i++) {
       generators[i].seed((_seed + i) % SeedGenerator.maxSeed);

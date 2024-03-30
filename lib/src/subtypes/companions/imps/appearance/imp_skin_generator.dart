@@ -1,0 +1,52 @@
+import '../../../../generators/base/list_item_generator.dart';
+
+/// A class that generates skin color or texture of imp
+class ImpSkinGenerator extends ListItemGenerator<String> {
+  static const skin = [
+    'fiery',
+    'bumpy',
+    'warty',
+    'inky',
+    'rusty',
+    'oozing',
+    'singed',
+    'blistering',
+    'rotting',
+    'lustrous',
+    'blazing',
+    'translucent',
+    'veiny',
+    'withered',
+    'gritty',
+    'fuming',
+    'furry',
+    'decaying',
+    'crackling',
+    'rough',
+    'tarnished',
+    'stenchy',
+    'corrupted',
+    'scaly',
+    'mottled',
+    'crimson',
+    'luminous',
+    'blistered',
+    'wrinkled',
+    'slimy',
+    'vibrant',
+    'charred',
+    'foul-smelling',
+    'ashen',
+    'spiked',
+    'iridescent',
+    'glowing',
+    'glistening',
+    'flaking',
+    'crystalline',
+    'scorched',
+    'toxic',
+    'pitted',
+  ];
+
+  ImpSkinGenerator() : super(skin);
+}

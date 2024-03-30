@@ -5,7 +5,7 @@ import '../../generators/base/generator.dart';
 /// A class that represent an abstract location type
 abstract class LocationType {
   /// Returns the name generator for this location type
-  IGenerator<String> getNameGenerator(Npc owner);
+  Generator<String> getNameGenerator(Npc owner);
 
   /// Returns the occupation of the owner
   String getOwnerOccupation();
@@ -14,18 +14,18 @@ abstract class LocationType {
   String getLocationType();
 
   /// Returns the zone generator for this location type
-  IGenerator<String> getZoneGenerator();
+  Generator<String> getZoneGenerator();
 
   /// Returns the outside description generator for this location type
-  IGenerator<String> getOutsideDescription();
+  Generator<String> getOutsideDescription();
 
   /// Returns the building description generator
-  IGenerator<String> getBuildingDescriptionGenerator(
+  Generator<String> getBuildingDescriptionGenerator(
     String locationType,
     String locationName,
     Npc owner,
   );
 
   /// Returns the goods generator for this location type
-  IGenerator<List<Goods>?> getGoodsGenerator();
+  Generator<List<Goods>?> getGoodsGenerator();
 }

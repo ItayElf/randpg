@@ -7,7 +7,7 @@ import '../../base/seed_generator.dart';
 import '../../deities/deity_generator.dart';
 
 /// A class that generates a god for each alignment
-class FullAlignmentGodsGenerator implements IGenerator<List<Deity>> {
+class FullAlignmentGodsGenerator implements Generator<List<Deity>> {
   late int _seed;
 
   FullAlignmentGodsGenerator() {

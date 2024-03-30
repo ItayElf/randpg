@@ -12,7 +12,7 @@ import '../base/unique_generator.dart';
 import '../fixable.dart';
 
 /// A class that generates deities
-class DeityGenerator implements IGenerator<Deity> {
+class DeityGenerator implements Generator<Deity> {
   late int _seed;
   final DeityType _deityType;
   final Alignment? _alignment;
@@ -53,7 +53,7 @@ class DeityGenerator implements IGenerator<Deity> {
     return deity;
   }
 
-  Map<String, IGenerator> _getBatch(
+  Map<String, Generator> _getBatch(
     Gender? gender,
     Race? worshipedBy,
     Alignment? alignment,

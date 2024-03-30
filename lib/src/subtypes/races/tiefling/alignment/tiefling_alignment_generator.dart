@@ -6,7 +6,7 @@ import '../../../../generators/base/seed_generator.dart';
 import '../../../../generators/base/weighted_generator.dart';
 
 /// A class that generates a tiefling alignment
-class TieflingAlignmentGenerator implements IGenerator<Alignment> {
+class TieflingAlignmentGenerator implements Generator<Alignment> {
   late int _seed;
 
   static const _ethicalMap = {

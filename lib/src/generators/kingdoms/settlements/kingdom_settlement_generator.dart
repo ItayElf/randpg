@@ -6,9 +6,9 @@ import '../../base/seed_generator.dart';
 import '../../settlements/settlement_generator.dart';
 
 /// Generates a settlement for a kingdom
-class KingdomSettlementGenerator implements IGenerator<Settlement> {
+class KingdomSettlementGenerator implements Generator<Settlement> {
   late int _seed;
-  final IGenerator<SettlementType> _settlementTypeGenerator;
+  final Generator<SettlementType> _settlementTypeGenerator;
   final Race _race;
 
   KingdomSettlementGenerator(this._settlementTypeGenerator, this._race) {

@@ -6,7 +6,7 @@ import '../../base/list_item_generator.dart';
 import '../../base/seed_generator.dart';
 
 /// A class that generates landscape name from race names
-class LandscapeGenericNameGenerator implements IGenerator<String> {
+class LandscapeGenericNameGenerator implements Generator<String> {
   late int _seed;
 
   LandscapeGenericNameGenerator() {

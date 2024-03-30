@@ -6,7 +6,7 @@ import '../../../base/seed_generator.dart';
 import 'descriptors_data.dart';
 
 /// A generator for characters descriptors
-class DescriptorGenerator implements IGenerator<String> {
+class DescriptorGenerator implements Generator<String> {
   late int _seed;
   final Alignment _alignment;
 

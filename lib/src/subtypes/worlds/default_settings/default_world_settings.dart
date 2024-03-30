@@ -50,16 +50,16 @@ class DefaultWorldSettings implements WorldSettings {
   ];
 
   @override
-  IGenerator<List<Deity>> getDeitiesGenerator() => FullAlignmentGodsGenerator();
+  Generator<List<Deity>> getDeitiesGenerator() => FullAlignmentGodsGenerator();
 
   @override
-  IGenerator<List<Deity>> getHigherDeitiesGenerator() => UniqueGenerator(
+  Generator<List<Deity>> getHigherDeitiesGenerator() => UniqueGenerator(
         DeityGenerator(_higherDeityType, null),
         _higherDeitiesCount,
       );
 
   @override
-  IGenerator<String> getImportantOccupationGenerator() => MultipleGenerator([
+  Generator<String> getImportantOccupationGenerator() => MultipleGenerator([
         WorldImportantOccupationGenerator(),
         AdventurerOccupationGenerator(),
       ]);
@@ -68,18 +68,18 @@ class DefaultWorldSettings implements WorldSettings {
   int getImportantPeopleCount() => _importantPeopleCount;
 
   @override
-  IGenerator<LandscapeType> getLandscapeTypeGenerator() =>
+  Generator<LandscapeType> getLandscapeTypeGenerator() =>
       ListItemGenerator(LandscapeManager().activeTypes);
 
   @override
   List<LandscapeType?> getLandscapeTypes() => _landscapeTypes;
 
   @override
-  IGenerator<List<Deity>> getLesserDeitiesGenerator() =>
+  Generator<List<Deity>> getLesserDeitiesGenerator() =>
       WorldDeitiesBatchGenerator(_lesserDeitiesMap);
 
   @override
-  IGenerator<String> getNameGenerator() => DominantRaceNameGenerator(null);
+  Generator<String> getNameGenerator() => DominantRaceNameGenerator(null);
 
   @override
   String getSettingName() => _settingsName;
@@ -88,13 +88,13 @@ class DefaultWorldSettings implements WorldSettings {
   KingdomType getKingdomType() => DefaultKingdomType();
 
   @override
-  IGenerator<int> getKingdomsCountGenerator() =>
+  Generator<int> getKingdomsCountGenerator() =>
       NumberGenerator(_minKingdoms, _maxKingdoms + 1);
 
   @override
   WorldLoreType getWorldLore() => _worldLore;
 
   @override
-  IGenerator<GuildType> getGuildTypeGenerator() =>
+  Generator<GuildType> getGuildTypeGenerator() =>
       ListItemGenerator(GuildManager().activeTypes);
 }

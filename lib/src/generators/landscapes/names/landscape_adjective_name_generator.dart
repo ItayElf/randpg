@@ -16,8 +16,7 @@ class LandscapeAdjectiveNameGenerator
           (results) => titledEach(results.join(" ")),
         );
 
-  static List<IGenerator<String>> _getTemplate(List<String> landscapeTitles) =>
-      [
+  static List<Generator<String>> _getTemplate(List<String> landscapeTitles) => [
         ListItemGenerator(["the"]),
         ListItemGenerator(landscapeAdjectives),
         ListItemGenerator(landscapeTitles),

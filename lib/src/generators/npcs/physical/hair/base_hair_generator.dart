@@ -9,7 +9,7 @@ import '../../../base/weighted_generator.dart';
 import 'generic_hair_data.dart';
 
 /// A class that generates generic hair style based on gender
-class BaseHairGenerator implements IGenerator<Hair> {
+class BaseHairGenerator implements Generator<Hair> {
   late int _seed;
   final Gender _gender;
 
@@ -36,7 +36,7 @@ class BaseHairGenerator implements IGenerator<Hair> {
   }
 
   /// Returns a hair length generator based on the gender
-  static IGenerator<String> _getHairLengthGenerator(Gender gender) {
+  static Generator<String> _getHairLengthGenerator(Gender gender) {
     switch (gender) {
       case Gender.male:
         return WeightedGenerator(genericMaleHairLength);

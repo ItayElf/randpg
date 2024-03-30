@@ -6,7 +6,7 @@ import 'female_halfling_name_generator.dart';
 import 'male_halfling_name_generator.dart';
 
 /// A generator for halfling names
-class HalflingNameGenerator implements IGenerator<String> {
+class HalflingNameGenerator implements Generator<String> {
   late int _seed;
   final Gender _gender;
 
@@ -22,7 +22,7 @@ class HalflingNameGenerator implements IGenerator<String> {
     return generator.generate();
   }
 
-  IGenerator<String> _getGenerator(Gender gender) {
+  Generator<String> _getGenerator(Gender gender) {
     switch (gender) {
       case Gender.male:
         return MaleHalflingNameGenerator();

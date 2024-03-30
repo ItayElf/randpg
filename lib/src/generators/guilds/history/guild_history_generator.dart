@@ -7,7 +7,7 @@ import '../../base/unique_generator.dart';
 import 'guild_history_data.dart';
 
 /// A class that generates guild histories
-class GuildHistoryGenerator implements IGenerator<String> {
+class GuildHistoryGenerator implements Generator<String> {
   late int _seed;
   final String _guildType;
   final String _guildName;
@@ -42,7 +42,7 @@ class GuildHistoryGenerator implements IGenerator<String> {
       "that have encountered challenges like ${map["challenges"].join(" and ")}.\n"
       "Nevertheless, they persists to be ${map["quality"]}.\nCurrently, ${titledEach(_guildName)} play ${article(map["importance"])} role in society.";
 
-  Map<String, IGenerator> _getBatch() => {
+  Map<String, Generator> _getBatch() => {
         "time": ListItemGenerator(guildFoundTime),
         "challenges": UniqueGenerator(
           ListItemGenerator(guildChallenges),

@@ -6,7 +6,7 @@ import 'female_tiefling_name_generator.dart';
 import 'male_tiefling_name_generator.dart';
 
 /// A generator for tiefling names
-class TieflingNameGenerator implements IGenerator<String> {
+class TieflingNameGenerator implements Generator<String> {
   late int _seed;
   final Gender _gender;
 
@@ -22,7 +22,7 @@ class TieflingNameGenerator implements IGenerator<String> {
     return generator.generate();
   }
 
-  IGenerator<String> _getGenerator(Gender gender) {
+  Generator<String> _getGenerator(Gender gender) {
     switch (gender) {
       case Gender.male:
         return MaleTieflingNameGenerator();

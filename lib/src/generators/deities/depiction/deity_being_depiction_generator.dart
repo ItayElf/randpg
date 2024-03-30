@@ -7,7 +7,7 @@ import '../../base/unique_generator.dart';
 import 'deity_depiction_data.dart';
 
 /// A class that generates humanoid depictions for deities
-class DeityBeingDepictionGenerator implements IGenerator<String> {
+class DeityBeingDepictionGenerator implements Generator<String> {
   late int _seed;
   final Race? _worshipedBy;
 

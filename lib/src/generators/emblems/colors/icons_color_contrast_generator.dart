@@ -8,7 +8,7 @@ import '../../base/seed_generator.dart';
 import 'icons_color_generator.dart';
 
 /// A class that generates better contrasted colors for icons
-class IconsColorContrastGenerator implements IGenerator<HslColor> {
+class IconsColorContrastGenerator implements Generator<HslColor> {
   late int _seed;
   final HslColor _primaryColor;
   final HslColor _secondaryColor;

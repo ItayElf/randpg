@@ -4,7 +4,7 @@ import 'generator.dart';
 import 'seed_generator.dart';
 
 /// A class that generates random value based on a probability map
-class WeightedGenerator<T> implements IGenerator<T> {
+class WeightedGenerator<T> implements Generator<T> {
   late int _seed;
 
   /// A map containing the values with their respective probabilities as integers

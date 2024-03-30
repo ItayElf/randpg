@@ -2,9 +2,9 @@ import 'generator.dart';
 import 'seed_generator.dart';
 
 /// A class that generates [_count] items from [_generator]
-class RepeatedGenerator<T> implements IGenerator<List<T>> {
+class RepeatedGenerator<T> implements Generator<List<T>> {
   late int _seed;
-  final IGenerator<T> _generator;
+  final Generator<T> _generator;
   final int _count;
 
   RepeatedGenerator(this._generator, this._count) {

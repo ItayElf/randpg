@@ -8,7 +8,7 @@ import '../../../../generators/base/seed_generator.dart';
 import 'tavern_goods_data.dart';
 
 /// A class that generates beers
-class BeerGenerator implements IGenerator<Goods> {
+class BeerGenerator implements Generator<Goods> {
   late int _seed;
 
   BeerGenerator() {
@@ -38,7 +38,7 @@ class BeerGenerator implements IGenerator<Goods> {
     return max((baseCost * multiplier).toInt(), 1);
   }
 
-  Map<String, IGenerator> _getBatch() => {
+  Map<String, Generator> _getBatch() => {
         "namePrefix": ListItemGenerator(tavernBeverageNamePrefix),
         "nameSuffix": ListItemGenerator(tavernBeverageNameSuffix),
         "type": ListItemGenerator(tavernBeerType),

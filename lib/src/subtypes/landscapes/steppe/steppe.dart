@@ -26,36 +26,36 @@ class Steppe implements LandscapeType {
   ];
 
   @override
-  IGenerator<String> getEncounterGenerator() => SteppeEncounterGenerator();
+  Generator<String> getEncounterGenerator() => SteppeEncounterGenerator();
 
   @override
-  IGenerator<String> getFeatureGenerator() => TundraFeatureGenerator();
+  Generator<String> getFeatureGenerator() => TundraFeatureGenerator();
 
   @override
-  IGenerator<String> getKnownForGenerator() => LandscapeKnownForGenerator();
+  Generator<String> getKnownForGenerator() => LandscapeKnownForGenerator();
 
   @override
   String getLandscapeType() => _landscapeType;
 
   @override
-  IGenerator<String> getLocationGenerator() => LandscapeLocationGenerator();
+  Generator<String> getLocationGenerator() => LandscapeLocationGenerator();
 
   @override
-  IGenerator<String> getNameGenerator() => MultipleGenerator([
+  Generator<String> getNameGenerator() => MultipleGenerator([
         LandscapeAdjectiveNameGenerator(_landscapeTitles),
         LandscapeRaceNameGenerator(_landscapeTitles),
         LandscapeGenericNameGenerator(),
       ]);
 
   @override
-  IGenerator<String> getResourceGenerator() => SteppeResourceGenerator();
+  Generator<String> getResourceGenerator() => SteppeResourceGenerator();
 
   @override
-  IGenerator<String> getSizeGenerator() => SteppeSizeGenerator();
+  Generator<String> getSizeGenerator() => SteppeSizeGenerator();
 
   @override
-  IGenerator<String> getTravelRateGenerator() => LandscapeTravelRateGenerator();
+  Generator<String> getTravelRateGenerator() => LandscapeTravelRateGenerator();
 
   @override
-  IGenerator<String> getWeatherGenerator() => SteppeWeatherGenerator();
+  Generator<String> getWeatherGenerator() => SteppeWeatherGenerator();
 }

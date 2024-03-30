@@ -1,5 +1,5 @@
 /// An interface for generator objects
-abstract class IGenerator<T> {
+abstract class Generator<T> {
   /// Generates an item of type [T]
   T generate();
 

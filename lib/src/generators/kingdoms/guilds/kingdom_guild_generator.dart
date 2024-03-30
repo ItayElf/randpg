@@ -5,9 +5,9 @@ import '../../base/seed_generator.dart';
 import '../../guilds/guild_generator.dart';
 
 /// Generates a guild for a kingdom
-class KingdomGuildGenerator implements IGenerator<Guild> {
+class KingdomGuildGenerator implements Generator<Guild> {
   late int _seed;
-  final IGenerator<GuildType> _guildTypeGenerator;
+  final Generator<GuildType> _guildTypeGenerator;
 
   KingdomGuildGenerator(this._guildTypeGenerator) {
     _seed = SeedGenerator.generate();

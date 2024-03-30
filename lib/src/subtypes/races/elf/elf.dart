@@ -34,68 +34,67 @@ class Elf implements Race, SettlementNameable {
   static const _maxHeight = 192;
 
   @override
-  IGenerator<int> getAgeGenerator(Gender gender) =>
+  Generator<int> getAgeGenerator(Gender gender) =>
       NumberGenerator(74, _maxAge + 1);
 
   @override
-  IGenerator<Alignment> getAlignmentGenerator() => ElvenAlignmentGenerator();
+  Generator<Alignment> getAlignmentGenerator() => ElvenAlignmentGenerator();
 
   @override
-  IGenerator<Hair?> getBeardGenerator(Gender gender) =>
+  Generator<Hair?> getBeardGenerator(Gender gender) =>
       ListItemGenerator([null]);
 
   @override
-  IGenerator<String> getBuildGenerator(Gender gender) => LightBuildGenerator();
+  Generator<String> getBuildGenerator(Gender gender) => LightBuildGenerator();
 
   @override
-  IGenerator<String> getEyesGenerator(Gender gender) => BaseEyesGenerator();
+  Generator<String> getEyesGenerator(Gender gender) => BaseEyesGenerator();
 
   @override
-  IGenerator<String> getFaceGenerator(Gender gender) =>
+  Generator<String> getFaceGenerator(Gender gender) =>
       GoodLookingFaceGenerator();
 
   @override
-  IGenerator<Hair> getHairGenerator(Gender gender) => ElvenHairGenerator();
+  Generator<Hair> getHairGenerator(Gender gender) => ElvenHairGenerator();
 
   @override
-  IGenerator<int> getHeightGenerator(Gender gender) =>
+  Generator<int> getHeightGenerator(Gender gender) =>
       NumberGenerator(_minHeight, _maxHeight + 1);
 
   @override
   String getName() => _raceName;
 
   @override
-  IGenerator<String> getNameGenerator(Gender gender) =>
-      ElfNameGenerator(gender);
+  Generator<String> getNameGenerator(Gender gender) => ElfNameGenerator(gender);
 
   @override
-  IGenerator<String> getPersonalityQuirkGenerator() => MultipleGenerator([
+  Generator<String> getPersonalityQuirkGenerator() => MultipleGenerator([
         BasePersonalityQuirkGenerator(),
         ElfPersonalityQuirkGenerator(),
       ]);
 
   @override
-  IGenerator<String> getPersonalityTraitGenerator() =>
+  Generator<String> getPersonalityTraitGenerator() =>
       BasePersonalityTraitGenerator();
 
   @override
   String getPluralName() => _pluralRaceName;
 
   @override
-  IGenerator<String> getSkinGenerator(Gender gender) => ElfSkinGenerator();
+  Generator<String> getSkinGenerator(Gender gender) => ElfSkinGenerator();
 
   @override
-  IGenerator<String> getSpecialFeatureGenerator(Gender gender) =>
+  Generator<String> getSpecialFeatureGenerator(Gender gender) =>
       BaseSpecialFeatureGenerator();
 
   @override
-  IGenerator<String> getOpinionGenerator() => MultipleGenerator([
+  Generator<String> getOpinionGenerator() => MultipleGenerator([
         BaseOpinionGenerator(),
         ElfOpinionGenerator(),
       ]);
 
   @override
-  IGenerator<String> getSettlementNameGenerator() =>
+  Generator<String> getSettlementNameGenerator() =>
       ElvenSettlementNameGenerator();
 
   @override

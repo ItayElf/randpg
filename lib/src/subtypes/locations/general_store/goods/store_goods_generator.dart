@@ -5,7 +5,7 @@ import '../../../../generators/base/unique_generator.dart';
 import '../../../../generators/settlements/locations/goods/base_goods_generator.dart';
 import 'store_goods_data.dart';
 
-class StoreGoodsGenerator implements IGenerator<List<Goods>> {
+class StoreGoodsGenerator implements Generator<List<Goods>> {
   late int _seed;
 
   static const _minGoods = 3;

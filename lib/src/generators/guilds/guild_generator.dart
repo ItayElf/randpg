@@ -12,7 +12,7 @@ import '../fixable.dart';
 import '../settlements/important_characters/important_character_generator.dart';
 
 /// A class that generates guilds
-class GuildGenerator implements IGenerator<Guild> {
+class GuildGenerator implements Generator<Guild> {
   late int _seed;
   final GuildType _guildType;
 
@@ -41,7 +41,7 @@ class GuildGenerator implements IGenerator<Guild> {
     return guild;
   }
 
-  Map<String, IGenerator> _getBatch(String guildName) => {
+  Map<String, Generator> _getBatch(String guildName) => {
         "name": ListItemGenerator([guildName]),
         "leader": FutureGenerator(
           ImportantCharacterGenerator(

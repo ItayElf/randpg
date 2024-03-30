@@ -7,7 +7,7 @@ import 'guild_names_data.dart';
 
 /// A class that generates guild names from titles
 class GuildTitleNameGenerator extends FutureGenerator<String, List<String>> {
-  GuildTitleNameGenerator(IGenerator<String> titleGenerator)
+  GuildTitleNameGenerator(Generator<String> titleGenerator)
       : super(
           ListBatchGenerator([
             ListItemGenerator(["The"]),

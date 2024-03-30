@@ -6,7 +6,7 @@ import '../../base/seed_generator.dart';
 import 'kingdom_history_data.dart';
 
 /// A class that generates histories for kingdoms
-class KingdomHistoryGenerator implements IGenerator<String> {
+class KingdomHistoryGenerator implements Generator<String> {
   late int _seed;
   final String _kingdomName;
 
@@ -38,7 +38,7 @@ class KingdomHistoryGenerator implements IGenerator<String> {
       "kingdom, was confronted by ${map["challenge"]}, which ${map["result"]}.\n"
       "Currently, ${titledEach(_kingdomName)} is ${map["state"]}";
 
-  Map<String, IGenerator> _getBatch() => {
+  Map<String, Generator> _getBatch() => {
         "age": ListItemGenerator(kingdomAge),
         "rise": ListItemGenerator(kingdomRise),
         "challenge": ListItemGenerator(kingdomChallenge),

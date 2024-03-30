@@ -26,7 +26,7 @@ class Hamlet implements SettlementType {
   static const _settlementLocations = [Tavern(), null];
 
   @override
-  IGenerator<String> getDescriptionGenerator(
+  Generator<String> getDescriptionGenerator(
     String settlementName,
     Race? dominantRace,
   ) =>
@@ -37,28 +37,28 @@ class Hamlet implements SettlementType {
       );
 
   @override
-  IGenerator<String> getDominantOccupationGenerator() =>
+  Generator<String> getDominantOccupationGenerator() =>
       DominantOccupationsGenerator();
 
   @override
-  IGenerator<String> getImportantOccupationGenerator() =>
+  Generator<String> getImportantOccupationGenerator() =>
       SettlementOccupationsGenerator();
 
   @override
   int getImportantPeopleCount() => _importantPeopleCount;
 
   @override
-  IGenerator<LocationType> getLocationsTypeGenerator() =>
+  Generator<LocationType> getLocationsTypeGenerator() =>
       ListItemGenerator(LocationManager().activeTypes);
 
   @override
-  IGenerator<String> getNameGenerator(Race? dominantRace) => MultipleGenerator([
+  Generator<String> getNameGenerator(Race? dominantRace) => MultipleGenerator([
         ObjectSettlementNameGenerator(),
         DominantRaceNameGenerator(dominantRace),
       ]);
 
   @override
-  IGenerator<int> getPopulationGenerator() => FutureGenerator(
+  Generator<int> getPopulationGenerator() => FutureGenerator(
         NumberGenerator(_minPopulation, _maxPopulation + 1),
         (result) => result ~/ 10 * 10,
       );
@@ -70,5 +70,5 @@ class Hamlet implements SettlementType {
   List<LocationType?> getSettlementsLocations() => _settlementLocations;
 
   @override
-  IGenerator<String> getTroubleGenerator() => SettlementTroubleGenerator();
+  Generator<String> getTroubleGenerator() => SettlementTroubleGenerator();
 }

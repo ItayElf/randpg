@@ -6,7 +6,7 @@ import '../../../../generators/base/seed_generator.dart';
 import '../../../../generators/base/weighted_generator.dart';
 
 /// A class that generates an orcish alignment
-class OrcAlignmentGenerator implements IGenerator<Alignment> {
+class OrcAlignmentGenerator implements Generator<Alignment> {
   late int _seed;
 
   static const _ethicalMap = {

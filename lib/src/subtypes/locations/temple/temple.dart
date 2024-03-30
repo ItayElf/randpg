@@ -16,26 +16,26 @@ class Temple implements LocationType {
   static const _ownerOccupation = "priest";
 
   @override
-  IGenerator<String> getBuildingDescriptionGenerator(
+  Generator<String> getBuildingDescriptionGenerator(
           String locationType, String locationName, Npc owner) =>
       BaseDescriptionGenerator(locationType, locationName);
 
   @override
-  IGenerator<List<Goods>?> getGoodsGenerator() => TempleServicesGenerator();
+  Generator<List<Goods>?> getGoodsGenerator() => TempleServicesGenerator();
 
   @override
   String getLocationType() => _locationType;
 
   @override
-  IGenerator<String> getNameGenerator(Npc owner) => TempleNameGenerator();
+  Generator<String> getNameGenerator(Npc owner) => TempleNameGenerator();
 
   @override
-  IGenerator<String> getOutsideDescription() =>
+  Generator<String> getOutsideDescription() =>
       BaseOutsideDescriptionGenerator();
 
   @override
   String getOwnerOccupation() => _ownerOccupation;
 
   @override
-  IGenerator<String> getZoneGenerator() => BaseZoneGenerator();
+  Generator<String> getZoneGenerator() => BaseZoneGenerator();
 }

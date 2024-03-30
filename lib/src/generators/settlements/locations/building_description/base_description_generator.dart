@@ -6,7 +6,7 @@ import '../../../base/seed_generator.dart';
 import 'building_description_data.dart';
 
 /// A class that generates basic building description
-class BaseDescriptionGenerator implements IGenerator<String> {
+class BaseDescriptionGenerator implements Generator<String> {
   late int _seed;
   final String _locationType;
   final String _locationName;
@@ -32,7 +32,7 @@ class BaseDescriptionGenerator implements IGenerator<String> {
     return [outerDescription, roofDescription].join("\n");
   }
 
-  Map<String, IGenerator> _getBatch() => {
+  Map<String, Generator> _getBatch() => {
         "feeling": ListItemGenerator(buildingFeeling),
         "material": ListItemGenerator(buildingMaterial),
         "windowSize": ListItemGenerator(windowsSize),

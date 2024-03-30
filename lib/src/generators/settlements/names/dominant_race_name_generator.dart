@@ -9,7 +9,7 @@ import '../../base/list_item_generator.dart';
 import '../../base/seed_generator.dart';
 
 /// A class that generates town names based on race names
-class DominantRaceNameGenerator implements IGenerator<String> {
+class DominantRaceNameGenerator implements Generator<String> {
   late int _seed;
   Race? _dominantRace;
 
@@ -36,7 +36,7 @@ class DominantRaceNameGenerator implements IGenerator<String> {
     return titledEach(generator.generate());
   }
 
-  IGenerator<String> _getNameGenerator(bool isDominant, Gender gender) {
+  Generator<String> _getNameGenerator(bool isDominant, Gender gender) {
     if (isDominant && _dominantRace is SettlementNameable) {
       return (_dominantRace as SettlementNameable).getSettlementNameGenerator();
     }

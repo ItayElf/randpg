@@ -6,7 +6,7 @@ import '../../../base/seed_generator.dart';
 import '../../../base/weighted_generator.dart';
 
 /// A class that generates an alignment without a bias
-class BaseAlignmentGenerator implements IGenerator<Alignment> {
+class BaseAlignmentGenerator implements Generator<Alignment> {
   late int _seed;
 
   static const _ethicalMap = {

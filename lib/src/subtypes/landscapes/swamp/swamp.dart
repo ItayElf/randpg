@@ -27,36 +27,36 @@ class Swamp implements LandscapeType {
   ];
 
   @override
-  IGenerator<String> getEncounterGenerator() => SwampEncounterGenerator();
+  Generator<String> getEncounterGenerator() => SwampEncounterGenerator();
 
   @override
-  IGenerator<String> getFeatureGenerator() => SwampFeatureGenerator();
+  Generator<String> getFeatureGenerator() => SwampFeatureGenerator();
 
   @override
-  IGenerator<String> getKnownForGenerator() => LandscapeKnownForGenerator();
+  Generator<String> getKnownForGenerator() => LandscapeKnownForGenerator();
 
   @override
   String getLandscapeType() => _landscapeType;
 
   @override
-  IGenerator<String> getLocationGenerator() => LandscapeLocationGenerator();
+  Generator<String> getLocationGenerator() => LandscapeLocationGenerator();
 
   @override
-  IGenerator<String> getNameGenerator() => MultipleGenerator([
+  Generator<String> getNameGenerator() => MultipleGenerator([
         LandscapeAdjectiveNameGenerator(_landscapeTitles),
         LandscapeRaceNameGenerator(_landscapeTitles),
         LandscapeGenericNameGenerator(),
       ]);
 
   @override
-  IGenerator<String> getResourceGenerator() => SwampResourceGenerator();
+  Generator<String> getResourceGenerator() => SwampResourceGenerator();
 
   @override
-  IGenerator<String> getSizeGenerator() => SwampSizeGenerator();
+  Generator<String> getSizeGenerator() => SwampSizeGenerator();
 
   @override
-  IGenerator<String> getTravelRateGenerator() => LandscapeTravelRateGenerator();
+  Generator<String> getTravelRateGenerator() => LandscapeTravelRateGenerator();
 
   @override
-  IGenerator<String> getWeatherGenerator() => SwampWeatherGenerator();
+  Generator<String> getWeatherGenerator() => SwampWeatherGenerator();
 }

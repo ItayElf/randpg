@@ -4,7 +4,7 @@ import '../emblems/emblem_type.dart';
 /// A class that represents a guild type
 abstract class GuildType {
   /// Returns a generator for a guild name
-  IGenerator<String> getNameGenerator();
+  Generator<String> getNameGenerator();
 
   /// Returns the occupation of the guild leader
   String getLeaderOccupation();
@@ -13,23 +13,23 @@ abstract class GuildType {
   String getGuildType();
 
   /// Returns a generator for the reputation of a guild
-  IGenerator<String> getReputationGenerator();
+  Generator<String> getReputationGenerator();
 
   /// Returns a generator for the history of the guild
-  IGenerator<String> getHistoryGenerator(String guildName);
+  Generator<String> getHistoryGenerator(String guildName);
 
   /// Returns the emblem type for this guild type
   EmblemType getEmblemType();
 
   /// Returns a generator for a guild motto
-  IGenerator<String> getMottoGenerator();
+  Generator<String> getMottoGenerator();
 
   /// Returns a generator for a specialty of the guild
-  IGenerator<String> getSpecialtyGenerator();
+  Generator<String> getSpecialtyGenerator();
 
   /// Returns a generator for a quest of the guild
-  IGenerator<String> getQuestGenerator();
+  Generator<String> getQuestGenerator();
 
   /// Returns a generator for an occupation of a guild member
-  IGenerator<String> getMemberOccupationGenerator();
+  Generator<String> getMemberOccupationGenerator();
 }
