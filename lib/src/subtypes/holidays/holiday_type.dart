@@ -20,6 +20,6 @@ abstract class HolidayType {
   /// Returns a generator for who celebrates this holiday
   Generator<String> getCelebratorsGenerator();
 
-  /// Returns a generator for traditions of the holiday
-  Generator<List<String>> getTraditionsGenerator();
+  /// Returns a generator for a tradition of a holiday
+  Generator<String> getTraditionGenerator();
 }
