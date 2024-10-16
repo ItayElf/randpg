@@ -34,7 +34,7 @@ class HolidayGenerator implements Generator<Holiday> {
 
   Map<String, Generator> _getBatch() => {
         "name": _holidayType.getNameGenerator(),
-        "holidayType": ListItemGenerator([_holidayType]),
+        "holidayType": ListItemGenerator([_holidayType.getHolidayType()]),
         "date": _holidayType.getDateGenerator(),
         "duration": _holidayType.getDurationGenerator(),
         "origin": _holidayType.getOriginGenerator(),

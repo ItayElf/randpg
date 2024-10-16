@@ -37,7 +37,7 @@ class Celebration implements HolidayType, Fixable<Holiday> {
   @override
   Holiday getFixed(Holiday holiday) {
     for (final time in celebratoryTime) {
-      if (holiday.name.contains(" $time")) {
+      if (holiday.name.toLowerCase().contains(" $time")) {
         return holiday.copyWith(duration: "one $time");
       }
     }

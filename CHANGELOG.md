@@ -1,6 +1,10 @@
 # Changelog
 
-## 0.10.1
+## 0.11.0
+
+- Added Holidays:
+
+  - Celebration
 
 - Added companions:
   - Monkeys
@@ -10,10 +14,12 @@
 - Changed README.md
 - Renamed `IGenerator` to `Generator`
 - Added companions:
+
   - Dogs
   - Cats
   - Birds
   - Imps
+
 - Added companions to npcs
 
 - Expanded the names of human npcs
@@ -21,6 +27,7 @@
 ## 0.9.6
 
 - Added races:
+
   - Goblins
   - Shifters
 

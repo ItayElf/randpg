@@ -13,6 +13,7 @@
 - [Generating emblems](#generating-emblems)
 - [Generating worlds](#generating-worlds)
 - [Generating companions](#generating-companions)
+- [Generating holidays](#generating-holidays)
 
 ## Generating names
 
@@ -157,4 +158,13 @@ final Gender gender = Gender.female;
 final companionGenerator = CompanionGenerator(companionType, gender);
 
 print(companionGenerator.generate());
+```
+
+## Generating holidays
+
+```dart
+final HolidayType holidayType = Celebration();
+final holidayGenerator = HolidayGenerator(holidayType);
+
+print(holidayGenerator.generate());
 ```
