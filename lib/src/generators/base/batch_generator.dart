@@ -11,21 +11,22 @@ class BatchGenerator implements Generator<Map<String, dynamic>> {
   }
 
   /// Generates each generator in [_pool]
+  ///
+  /// NOTE: this seeds the given generators
   @override
   Map<String, dynamic> generate() {
-    final newPool = Map<String, Generator>.from(_pool);
+    final generatedValues = <String, dynamic>{};
+    int currentSeed = _seed;
 
     int counter = 0;
-    for (final generator in newPool.values) {
-      generator.seed((_seed + counter * _seed) % SeedGenerator.maxSeed);
+    for (final entry in _pool.entries) {
+      final generator = entry.value;
+      generator.seed((currentSeed + counter * _seed) % SeedGenerator.maxSeed);
+      generatedValues[entry.key] = generator.generate();
       counter++;
     }
 
-    return Map<String, dynamic>.fromEntries(
-      newPool.entries.map(
-        (entry) => MapEntry(entry.key, entry.value.generate()),
-      ),
-    );
+    return generatedValues;
   }
 
   @override

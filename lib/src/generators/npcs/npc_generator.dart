@@ -1,17 +1,18 @@
-import 'package:randpg/entities/companions.dart';
-import 'package:randpg/src/generators/base/list_batch_generator.dart';
-
+import '../../entities/companions/companion.dart';
 import '../../entities/npcs/npc.dart';
 import '../../enums/gender.dart';
+import '../../subtypes/companions/companion_manager.dart';
 import '../../subtypes/races/race.dart';
 import '../base/batch_generator.dart';
 import '../base/future_generator.dart';
 import '../base/generator.dart';
+import '../base/list_batch_generator.dart';
 import '../base/list_item_generator.dart';
 import '../base/multiple_generator.dart';
 import '../base/repeated_generator.dart';
 import '../base/seed_generator.dart';
 import '../base/weighted_generator.dart';
+import '../companions/companion_generator.dart';
 import 'goal/goal_generator.dart';
 import 'occupation/adventurer_occupation_generator.dart';
 import 'occupation/simple_occupation_generator.dart';
