@@ -2,6 +2,7 @@ import 'package:collection/collection.dart';
 
 import '../../exceptions/not_found_exceptions.dart';
 import '../managers/manager.dart';
+import 'celebration/celebration.dart';
 import 'holiday_type.dart';
 
 /// A class that handles the available holidays and using them
@@ -10,7 +11,9 @@ import 'holiday_type.dart';
 class HolidayManager extends Manager<HolidayType> {
   const HolidayManager();
 
-  static final Set<HolidayType> _holidaysTypes = {};
+  static final Set<HolidayType> _holidaysTypes = {
+    Celebration(),
+  };
 
   static final Set<HolidayType> _activeHolidayTypes = {..._holidaysTypes};
 

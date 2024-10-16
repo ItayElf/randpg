@@ -5,3 +5,5 @@ export '../src/generators/holidays/holiday_generator.dart'
 
 export '../src/subtypes/holidays/holiday_type.dart' show HolidayType;
 export '../src/subtypes/holidays/holiday_manager.dart' show HolidayManager;
+
+export '../src/subtypes/holidays/celebration/celebration.dart' show Celebration;
