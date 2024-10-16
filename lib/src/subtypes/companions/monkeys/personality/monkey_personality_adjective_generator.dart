@@ -1,0 +1,58 @@
+import '../../../../generators/base/list_item_generator.dart';
+
+/// A class that generates personalities adjectives for monkeys
+class MonkeyPersonalityAdjectiveGenerator extends ListItemGenerator<String> {
+  static const _adjectives = [
+    'adventurous',
+    'affectionate',
+    'agile',
+    'boisterous',
+    'bold',
+    'bouncy',
+    'chatty',
+    'cheeky',
+    'cheerful',
+    'clever',
+    'crafty',
+    'curious',
+    'daring',
+    'energetic',
+    'enthusiastic',
+    'excitable',
+    'expressive',
+    'fearless',
+    'feisty',
+    'gregarious',
+    'impish',
+    'impulsive',
+    'inquisitive',
+    'inventive',
+    'jovial',
+    'jumpy',
+    'lively',
+    'mischievous',
+    'nimble',
+    'observant',
+    'perceptive',
+    'persistent',
+    'playful',
+    'prankish',
+    'quick-witted',
+    'resourceful',
+    'restless',
+    'rowdy',
+    'sharp',
+    'shrewd',
+    'sneaky',
+    'sociable',
+    'spirited',
+    'spunky',
+    'tenacious',
+    'vibrant',
+    'vivacious',
+    'wily',
+    'zippy'
+  ];
+
+  MonkeyPersonalityAdjectiveGenerator() : super(_adjectives);
+}

@@ -1,17 +1,19 @@
 # Changelog
 
+## 0.10.1
+
+- Added companions:
+  - Monkeys
+
 ## 0.10.0
 
 - Changed README.md
-  
 - Renamed `IGenerator` to `Generator`
-  
-- Added companions
+- Added companions:
   - Dogs
   - Cats
   - Birds
   - Imps
-  
 - Added companions to npcs
 
 - Expanded the names of human npcs

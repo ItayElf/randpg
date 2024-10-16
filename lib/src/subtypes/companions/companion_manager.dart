@@ -1,4 +1,5 @@
 import 'package:collection/collection.dart';
+import 'package:randpg/src/subtypes/companions/monkeys/monkey.dart';
 
 import '../../exceptions/not_found_exceptions.dart';
 import '../managers/manager.dart';
@@ -19,6 +20,7 @@ class CompanionManager extends Manager<CompanionType> {
     Cat(),
     Bird(),
     Imp(),
+    Monkey(),
   };
 
   static final Set<CompanionType> _activeCompanionTypes = {..._companionTypes};

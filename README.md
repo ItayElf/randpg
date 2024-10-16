@@ -24,6 +24,7 @@ Follow the installation instructions on [dart packages](https://pub.dev/packages
 
 - Generating names for various races
 - Generate npcs
+- Generate companions
 - Generate locations and buildings inside settlements
 - Generate settlements
 - Generate landscapes
@@ -35,12 +36,11 @@ Follow the installation instructions on [dart packages](https://pub.dev/packages
 
 ## Goals
 
-- Waypoint Generator
-- Companion Generator
+- Holiday Generator
 
 ### In the Future
 
-- Holiday Generator
+- Waypoint Generator
 
 ## Usage
 
