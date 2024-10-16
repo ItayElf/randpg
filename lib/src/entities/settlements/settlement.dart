@@ -112,6 +112,20 @@ class Settlement {
     );
   }
 
+  factory Settlement.fromShallowMap(Map<String, dynamic> map) {
+    return Settlement(
+      name: map["name"],
+      settlementType: map["settlementType"],
+      dominantRace: map["dominantRace"],
+      locations: map["locations"],
+      description: map["description"],
+      dominantOccupation: map["dominantOccupation"],
+      importantCharacters: map["importantCharacters"],
+      population: map["population"],
+      trouble: map["trouble"],
+    );
+  }
+
   String toJson() => json.encode(toMap());
 
   factory Settlement.fromJson(String source) =>

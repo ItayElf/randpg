@@ -102,6 +102,20 @@ class Npc {
         )));
   }
 
+  factory Npc.fromShallowMap(Map<String, dynamic> map) {
+    return Npc(
+      name: map["name"],
+      age: map["age"],
+      gender: map["gender"],
+      race: map["race"],
+      occupation: map["occupation"],
+      physicalDescription: map["physicalDescription"],
+      personality: map["personality"],
+      goal: map["goal"],
+      companions: map["companions"],
+    );
+  }
+
   String toJson() => json.encode(toMap());
 
   factory Npc.fromJson(String source) => Npc.fromMap(json.decode(source));

@@ -5,7 +5,6 @@ import '../../subtypes/companions/companion_manager.dart';
 import '../../subtypes/races/race.dart';
 import '../base/batch_generator.dart';
 import '../base/constant_generator.dart ';
-import '../base/future_generator.dart';
 import '../base/generator.dart';
 import '../base/list_batch_generator.dart';
 import '../base/list_item_generator.dart';
@@ -60,7 +59,7 @@ class NpcGenerator implements Generator<Npc> {
     final generator = BatchGenerator(_getBatch(_race, gender, companions));
     generator.seed((_seed + 4) % SeedGenerator.maxSeed);
     final result = generator.generate();
-    return Npc.fromMap(result);
+    return Npc.fromShallowMap(result);
   }
 
   Map<String, Generator> _getBatch(
@@ -71,25 +70,16 @@ class NpcGenerator implements Generator<Npc> {
       {
         "name": race.getNameGenerator(gender),
         "age": race.getAgeGenerator(gender),
-        "gender": ConstantGenerator(gender.name),
-        "race": ConstantGenerator(race.getName()),
+        "gender": ConstantGenerator(gender),
+        "race": ConstantGenerator(race),
         "occupation": MultipleGenerator([
           SimpleOccupationGenerator(),
           AdventurerOccupationGenerator(),
         ]),
-        "physicalDescription": FutureGenerator(
-          PhysicalDescriptionGenerator(gender, race),
-          (physicalDescription) => physicalDescription.toMap(),
-        ),
-        "personality": FutureGenerator(
-          PersonalityGenerator(race),
-          (personality) => personality.toMap(),
-        ),
+        "physicalDescription": PhysicalDescriptionGenerator(gender, race),
+        "personality": PersonalityGenerator(race),
         "goal": GoalGenerator(),
-        "companions": FutureGenerator(
-          ConstantGenerator(companions),
-          (companions) => companions.map((e) => e.toMap()).toList(),
-        ),
+        "companions": ConstantGenerator(companions),
       };
 
   @override

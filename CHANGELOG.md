@@ -17,6 +17,8 @@
 
   - ConstantGenerator
 
+- Increased performance thanks to generators using the new `fromShallowMap` function
+
 ## 0.10.0
 
 - Changed README.md

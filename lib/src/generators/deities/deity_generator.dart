@@ -45,7 +45,7 @@ class DeityGenerator implements Generator<Deity> {
       domainCount,
     ));
     generator.seed((_seed + 3) % SeedGenerator.maxSeed);
-    Deity deity = Deity.fromMap(generator.generate());
+    Deity deity = Deity.fromShallowMap(generator.generate());
 
     if (_deityType is Fixable<Deity>) {
       deity = (_deityType as Fixable).getFixed(deity);
@@ -61,15 +61,15 @@ class DeityGenerator implements Generator<Deity> {
   ) =>
       {
         "name": _deityType.getNameGenerator(gender, worshipedBy),
-        "gender": ConstantGenerator(gender?.name),
-        "deityType": ConstantGenerator(_deityType.getDeityType()),
+        "gender": ConstantGenerator(gender),
+        "deityType": ConstantGenerator(_deityType),
         "domains": UniqueGenerator(
           _deityType.getDomainGenerator(alignment),
           domainCount,
         ),
-        "alignment": ConstantGenerator(alignment?.toMap()),
+        "alignment": ConstantGenerator(alignment),
         "depiction": _deityType.getDepictionGenerator(worshipedBy),
-        "worshipedBy": ConstantGenerator(worshipedBy?.getName()),
+        "worshipedBy": ConstantGenerator(worshipedBy),
         "worshipers": _deityType.getWorshipersGenerator(),
         "shrinesRarity": _deityType.getShrinesRarityGenerator(),
         "positiveAttribute": _deityType.getPositiveAttributeGenerator(),

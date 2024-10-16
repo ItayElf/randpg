@@ -82,6 +82,18 @@ class Holiday {
     );
   }
 
+  factory Holiday.fromShallowMap(Map<String, dynamic> map) {
+    return Holiday(
+      name: map["name"],
+      holidayType: map["holidayType"],
+      date: map["date"],
+      duration: map["duration"],
+      origin: map["origin"],
+      celebratedBy: map["celebratedBy"],
+      traditions: map["traditions"],
+    );
+  }
+
   String toJson() => json.encode(toMap());
 
   factory Holiday.fromJson(String source) =>

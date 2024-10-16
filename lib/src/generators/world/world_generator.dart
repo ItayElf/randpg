@@ -3,7 +3,6 @@ import '../../subtypes/holidays/holiday_type.dart';
 import '../../subtypes/worlds/world_settings.dart';
 import '../base/batch_generator.dart';
 import '../base/constant_generator.dart ';
-import '../base/future_generator.dart';
 import '../base/generator.dart';
 import '../base/list_batch_generator.dart';
 import '../base/number_generator.dart';
@@ -43,61 +42,29 @@ class WorldGenerator implements Generator<World> {
 
     final generator = BatchGenerator(_getBatch(holidayTypes));
     generator.seed((_seed + 2) % SeedGenerator.maxSeed);
-    return World.fromMap(generator.generate());
+    return World.fromShallowMap(generator.generate());
   }
 
   Map<String, Generator> _getBatch(List<HolidayType> holidayTypes) => {
         "name": _worldSettings.getNameGenerator(),
-        "worldSettings": ConstantGenerator(_worldSettings.getSettingName()),
-        "kingdoms": FutureGenerator(
-          WorldKingdomsGenerator(_worldSettings),
-          (kingdoms) => kingdoms.map((e) => e.toMap()).toList(),
-        ),
-        "landscapes": FutureGenerator(
-          WorldLandscapeGenerator(_worldSettings),
-          (landscapes) => landscapes.map((e) => e.toMap()).toList(),
-        ),
-        "opinions": FutureGenerator(
-          WorldOpinionsGenerator(),
-          (map) => map.map(
-            (key, value) => MapEntry(key.getName(), value),
+        "worldSettings": ConstantGenerator(_worldSettings),
+        "kingdoms": WorldKingdomsGenerator(_worldSettings),
+        "landscapes": WorldLandscapeGenerator(_worldSettings),
+        "opinions": WorldOpinionsGenerator(),
+        "importantPeople": UniqueGenerator(
+          ImportantCharacterGenerator(
+            _worldSettings.getImportantOccupationGenerator(),
+            null,
           ),
+          _worldSettings.getImportantPeopleCount(),
         ),
-        "importantPeople": FutureGenerator(
-          UniqueGenerator(
-            ImportantCharacterGenerator(
-              _worldSettings.getImportantOccupationGenerator(),
-              null,
-            ),
-            _worldSettings.getImportantPeopleCount(),
-          ),
-          (people) => people.map((e) => e.toMap()).toList(),
-        ),
-        "guilds": FutureGenerator(
-          WorldGuildsGenerator(_worldSettings),
-          (guilds) => guilds.map((e) => e.toMap()).toList(),
-        ),
-        "deities": FutureGenerator(
-          _worldSettings.getDeitiesGenerator(),
-          (deities) => deities.map((e) => e.toMap()).toList(),
-        ),
-        "lesserDeities": FutureGenerator(
-          _worldSettings.getLesserDeitiesGenerator(),
-          (deities) => deities.map((e) => e.toMap()).toList(),
-        ),
-        "higherDeities": FutureGenerator(
-          _worldSettings.getHigherDeitiesGenerator(),
-          (deities) => deities.map((e) => e.toMap()).toList(),
-        ),
-        "worldLore": FutureGenerator(
-          WorldLoreGenerator(_worldSettings.getWorldLore()),
-          (lore) => lore.toMap(),
-        ),
-        "holidays": FutureGenerator(
-          ListBatchGenerator(
-            holidayTypes.map((x) => HolidayGenerator(x)).toList(),
-          ),
-          (holidays) => holidays.map((x) => x.toMap()).toList(),
+        "guilds": WorldGuildsGenerator(_worldSettings),
+        "deities": _worldSettings.getDeitiesGenerator(),
+        "lesserDeities": _worldSettings.getLesserDeitiesGenerator(),
+        "higherDeities": _worldSettings.getHigherDeitiesGenerator(),
+        "worldLore": WorldLoreGenerator(_worldSettings.getWorldLore()),
+        "holidays": ListBatchGenerator(
+          holidayTypes.map((x) => HolidayGenerator(x)).toList(),
         ),
       };
 

@@ -112,6 +112,21 @@ class Guild {
     );
   }
 
+  factory Guild.fromShallowMap(Map<String, dynamic> map) {
+    return Guild(
+      name: map["name"],
+      leader: map["leader"],
+      guildType: map["guildType"],
+      reputation: map["reputation"],
+      history: map["history"],
+      emblem: map["emblem"],
+      motto: map["motto"],
+      specialties: map["specialties"],
+      quests: map["quests"],
+      notableMembers: map["notableMembers"],
+    );
+  }
+
   String toJson() => json.encode(toMap());
 
   factory Guild.fromJson(String source) => Guild.fromMap(json.decode(source));

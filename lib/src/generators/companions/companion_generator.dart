@@ -25,7 +25,7 @@ class CompanionGenerator implements Generator<Companion> {
 
     final generator = BatchGenerator(_getBatch(name));
     generator.seed((_seed + 1) % SeedGenerator.maxSeed);
-    Companion companion = Companion.fromMap(generator.generate());
+    Companion companion = Companion.fromShallowMap(generator.generate());
 
     if (_companionType is Fixable<Companion>) {
       companion = (_companionType as Fixable).getFixed(companion);
@@ -36,8 +36,8 @@ class CompanionGenerator implements Generator<Companion> {
 
   Map<String, Generator> _getBatch(String name) => {
         "name": ConstantGenerator(name),
-        "gender": ConstantGenerator(_gender.name),
-        "companionType": ConstantGenerator(_companionType.getCompanionType()),
+        "gender": ConstantGenerator(_gender),
+        "companionType": ConstantGenerator(_companionType),
         "appearance": _companionType.getAppearanceGenerator(name, _gender),
         "personality": _companionType.getPersonalityGenerator(name, _gender),
         "skills": _companionType.getSkillsGenerator(),

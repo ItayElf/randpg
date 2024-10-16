@@ -122,6 +122,22 @@ class Deity {
     );
   }
 
+  factory Deity.fromShallowMap(Map<String, dynamic> map) {
+    return Deity(
+      name: map["name"],
+      gender: map["gender"],
+      deityType: map["deityType"],
+      domains: map["domains"],
+      alignment: map["alignment"],
+      depiction: map["depiction"],
+      worshipedBy: map["worshipedBy"],
+      worshipers: map["worshipers"],
+      shrinesRarity: map["shrinesRarity"],
+      positiveAttribute: map["positiveAttribute"],
+      negativeAttribute: map["negativeAttribute"],
+    );
+  }
+
   String toJson() => json.encode(toMap());
 
   factory Deity.fromJson(String source) => Deity.fromMap(json.decode(source));

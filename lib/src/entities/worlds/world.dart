@@ -165,6 +165,23 @@ class World {
     );
   }
 
+  factory World.fromShallowMap(Map<String, dynamic> map) {
+    return World(
+      name: map["name"],
+      worldSettings: map["worldSettings"],
+      kingdoms: map["kingdoms"],
+      landscapes: map["landscapes"],
+      opinions: map["opinions"],
+      importantPeople: map["importantPeople"],
+      guilds: map["guilds"],
+      deities: map["deities"],
+      lesserDeities: map["lesserDeities"],
+      higherDeities: map["higherDeities"],
+      worldLore: map["worldLore"],
+      holidays: map["holidays"],
+    );
+  }
+
   String toJson() => json.encode(toMap());
 
   factory World.fromJson(String source) => World.fromMap(json.decode(source));

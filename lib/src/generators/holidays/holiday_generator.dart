@@ -22,7 +22,7 @@ class HolidayGenerator implements Generator<Holiday> {
   Holiday generate() {
     final generator = BatchGenerator(_getBatch());
     generator.seed(_seed);
-    Holiday holiday = Holiday.fromMap(generator.generate());
+    Holiday holiday = Holiday.fromShallowMap(generator.generate());
 
     if (_holidayType is Fixable<Holiday>) {
       holiday = (_holidayType as Fixable).getFixed(holiday);
@@ -33,7 +33,7 @@ class HolidayGenerator implements Generator<Holiday> {
 
   Map<String, Generator> _getBatch() => {
         "name": _holidayType.getNameGenerator(),
-        "holidayType": ConstantGenerator(_holidayType.getHolidayType()),
+        "holidayType": ConstantGenerator(_holidayType),
         "date": _holidayType.getDateGenerator(),
         "duration": _holidayType.getDurationGenerator(),
         "origin": _holidayType.getOriginGenerator(),

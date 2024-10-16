@@ -163,6 +163,25 @@ class Kingdom {
     );
   }
 
+  factory Kingdom.fromShallowMap(Map<String, dynamic> map) {
+    return Kingdom(
+      name: map["name"],
+      kingdomType: map["kingdomType"],
+      rulers: map["rulers"],
+      race: map["race"],
+      population: map["population"],
+      capital: map["capital"],
+      importantSettlements: map["importantSettlements"],
+      governmentType: map["governmentType"],
+      emblem: map["emblem"],
+      knownFor: map["knownFor"],
+      history: map["history"],
+      guilds: map["guilds"],
+      trouble: map["trouble"],
+      holidays: map["holidays"],
+    );
+  }
+
   String toJson() => json.encode(toMap());
 
   factory Kingdom.fromJson(String source) =>

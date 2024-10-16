@@ -69,7 +69,7 @@ class KingdomGenerator implements Generator<Kingdom> {
     ));
 
     generator.seed((_seed + 6) % SeedGenerator.maxSeed);
-    Kingdom kingdom = Kingdom.fromMap(generator.generate());
+    Kingdom kingdom = Kingdom.fromShallowMap(generator.generate());
 
     if (_kingdomType is Fixable<Kingdom>) {
       kingdom = (_kingdomType as Fixable).getFixed(kingdom);
@@ -87,48 +87,30 @@ class KingdomGenerator implements Generator<Kingdom> {
   ) =>
       {
         "name": ConstantGenerator(kingdomName),
-        "kingdomType": ConstantGenerator(_kingdomType.getKingdomType()),
-        "rulers": FutureGenerator(
-          _getLeadersGenerator(numberOfLeaders, governmentType),
-          (leaders) => leaders.map((e) => e.toMap()).toList(),
-        ),
-        "race": ConstantGenerator(_race.getName()),
+        "kingdomType": ConstantGenerator(_kingdomType),
+        "rulers": _getLeadersGenerator(numberOfLeaders, governmentType),
+        "race": ConstantGenerator(_race),
         "population": _kingdomType.getPopulationGenerator(),
-        "capital": FutureGenerator(
+        "capital": KingdomSettlementGenerator(
+          _kingdomType.getCapitalTypeGenerator(),
+          _race,
+        ),
+        "importantSettlements": UniqueGenerator(
           KingdomSettlementGenerator(
-            _kingdomType.getCapitalTypeGenerator(),
-            _race,
-          ),
-          (capital) => capital.toMap(),
+              _kingdomType.getImportantSettlementsTypesGenerator(), _race),
+          _numberOfSettlements,
         ),
-        "importantSettlements": FutureGenerator(
-          UniqueGenerator(
-            KingdomSettlementGenerator(
-                _kingdomType.getImportantSettlementsTypesGenerator(), _race),
-            _numberOfSettlements,
-          ),
-          (settlements) => settlements.map((e) => e.toMap()).toList(),
-        ),
-        "governmentType": ConstantGenerator(governmentType.getGovernmentType()),
-        "emblem": FutureGenerator(
-          EmblemGenerator(_kingdomType.getEmblemType()),
-          (emblem) => emblem.toMap(),
-        ),
+        "governmentType": ConstantGenerator(governmentType),
+        "emblem": EmblemGenerator(_kingdomType.getEmblemType()),
         "knownFor": _kingdomType.getKnownForGenerator(),
         "history": _kingdomType.getHistoryGenerator(kingdomName),
-        "guilds": FutureGenerator(
-          UniqueGenerator(
-            KingdomGuildGenerator(_kingdomType.getGuildTypeGenerator()),
-            numberOfGuilds,
-          ),
-          (guilds) => guilds.map((e) => e.toMap()).toList(),
+        "guilds": UniqueGenerator(
+          KingdomGuildGenerator(_kingdomType.getGuildTypeGenerator()),
+          numberOfGuilds,
         ),
         "trouble": _kingdomType.getTroubleGenerator(),
-        "holidays": FutureGenerator(
-          ListBatchGenerator(
-            holidayTypes.map((x) => HolidayGenerator(x)).toList(),
-          ),
-          (holidays) => holidays.map((x) => x.toMap()).toList(),
+        "holidays": ListBatchGenerator(
+          holidayTypes.map((x) => HolidayGenerator(x)).toList(),
         ),
       };
 

@@ -39,7 +39,7 @@ class LocationGenerator implements Generator<Location> {
     generator.seed(_seed);
     final result = generator.generate();
 
-    Location location = Location.fromMap(result);
+    Location location = Location.fromShallowMap(result);
 
     if (_locationType is Fixable<Location>) {
       location = (_locationType as Fixable).getFixed(location);
@@ -52,9 +52,8 @@ class LocationGenerator implements Generator<Location> {
           LocationType locationType, String locationName, Npc owner) =>
       {
         "name": ConstantGenerator(locationName),
-        "owner":
-            FutureGenerator(ConstantGenerator(owner), (owner) => owner.toMap()),
-        "type": ConstantGenerator(locationType.getLocationType()),
+        "owner": ConstantGenerator(owner),
+        "type": ConstantGenerator(locationType),
         "zone": locationType.getZoneGenerator(),
         "outsideDescription": UniqueGenerator(
           locationType.getOutsideDescription(),

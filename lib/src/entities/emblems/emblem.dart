@@ -139,6 +139,18 @@ class Emblem {
     );
   }
 
+  factory Emblem.fromShallowMap(Map<String, dynamic> map) {
+    return Emblem(
+      shape: map["shape"],
+      pattern: map["pattern"],
+      icons: map["icons"],
+      primaryColor: map["primaryColor"],
+      secondaryColor: map["secondaryColor"],
+      iconsColor: map["iconsColor"],
+      type: map["type"],
+    );
+  }
+
   String toJson() => json.encode(toMap());
 
   factory Emblem.fromJson(String source) => Emblem.fromMap(json.decode(source));
