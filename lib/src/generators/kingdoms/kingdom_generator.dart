@@ -4,9 +4,9 @@ import '../../subtypes/kingdoms/government_types/government_type.dart';
 import '../../subtypes/kingdoms/kingdom_type.dart';
 import '../../subtypes/races/race.dart';
 import '../base/batch_generator.dart';
+import '../base/constant_generator.dart ';
 import '../base/future_generator.dart';
 import '../base/generator.dart';
-import '../base/list_item_generator.dart';
 import '../base/number_generator.dart';
 import '../base/seed_generator.dart';
 import '../base/unique_generator.dart';
@@ -68,13 +68,13 @@ class KingdomGenerator implements Generator<Kingdom> {
     String kingdomName,
   ) =>
       {
-        "name": ListItemGenerator([kingdomName]),
-        "kingdomType": ListItemGenerator([_kingdomType.getKingdomType()]),
+        "name": ConstantGenerator(kingdomName),
+        "kingdomType": ConstantGenerator(_kingdomType.getKingdomType()),
         "rulers": FutureGenerator(
           _getLeadersGenerator(numberOfLeaders, governmentType),
           (leaders) => leaders.map((e) => e.toMap()).toList(),
         ),
-        "race": ListItemGenerator([_race.getName()]),
+        "race": ConstantGenerator(_race.getName()),
         "population": _kingdomType.getPopulationGenerator(),
         "capital": FutureGenerator(
           KingdomSettlementGenerator(
@@ -91,8 +91,7 @@ class KingdomGenerator implements Generator<Kingdom> {
           ),
           (settlements) => settlements.map((e) => e.toMap()).toList(),
         ),
-        "governmentType":
-            ListItemGenerator([governmentType.getGovernmentType()]),
+        "governmentType": ConstantGenerator(governmentType.getGovernmentType()),
         "emblem": FutureGenerator(
           EmblemGenerator(_kingdomType.getEmblemType()),
           (emblem) => emblem.toMap(),

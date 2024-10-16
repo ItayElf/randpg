@@ -1,3 +1,4 @@
+import '../../../../generators/base/constant_generator.dart ';
 import '../../../../generators/base/future_generator.dart';
 import '../../../../generators/base/generator.dart';
 import '../../../../generators/base/list_batch_generator.dart';
@@ -18,7 +19,7 @@ class MaleGoblinNameGenerator extends FutureGenerator<String, List<String>> {
     ListItemGenerator(goblinMaleNamePrefix),
     WeightedGenerator(goblinNameVowel),
     ListItemGenerator(goblinMaleNameSuffix),
-    ListItemGenerator([" "]),
+    ConstantGenerator(" "),
     ListItemGenerator(goblinFemaleNamePrefix),
     WeightedGenerator(goblinNameVowel),
     ListItemGenerator(goblinFemaleNameSuffix),

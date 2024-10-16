@@ -1,3 +1,4 @@
+import '../../../../generators/base/constant_generator.dart ';
 import '../../../../generators/base/future_generator.dart';
 import '../../../../generators/base/generator.dart';
 import '../../../../generators/base/list_batch_generator.dart';
@@ -14,7 +15,7 @@ class TempleNameGenerator extends FutureGenerator<String, List<String>> {
         );
 
   static final List<Generator<String>> _generatorsTemplate = [
-    ListItemGenerator(["the"]),
+    ConstantGenerator("the"),
     ListItemGenerator(templeNamesPrefix),
     ListItemGenerator(templeNamesSuffix),
   ];

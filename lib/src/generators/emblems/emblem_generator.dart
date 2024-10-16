@@ -2,9 +2,9 @@ import '../../entities/emblems/emblem.dart';
 import '../../entities/emblems/hsl_color.dart';
 import '../../subtypes/emblems/emblem_type.dart';
 import '../base/batch_generator.dart';
+import '../base/constant_generator.dart ';
 import '../base/future_generator.dart';
 import '../base/generator.dart';
-import '../base/list_item_generator.dart';
 import '../base/seed_generator.dart';
 import 'icons/emblem_icons_generator.dart';
 
@@ -53,13 +53,13 @@ class EmblemGenerator implements Generator<Emblem> {
           EmblemIconsGenerator(_emblemType, iconCount),
           (icons) => icons.map((e) => e.toMap()).toList(),
         ),
-        "primaryColor": ListItemGenerator([primaryColor.toMap()]),
-        "secondaryColor": ListItemGenerator([secondaryColor.toMap()]),
+        "primaryColor": ConstantGenerator(primaryColor.toMap()),
+        "secondaryColor": ConstantGenerator(secondaryColor.toMap()),
         "iconsColor": FutureGenerator(
           _emblemType.getIconsColorGenerator(primaryColor, secondaryColor),
           (color) => color.toMap(),
         ),
-        "type": ListItemGenerator([_emblemType.getEmblemType()])
+        "type": ConstantGenerator(_emblemType.getEmblemType())
       };
 
   @override

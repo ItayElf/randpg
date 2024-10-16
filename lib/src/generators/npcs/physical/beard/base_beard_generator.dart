@@ -1,6 +1,7 @@
 import '../../../../entities/npcs/hair.dart';
 import '../../../../enums/gender.dart';
 import '../../../base/batch_generator.dart';
+import '../../../base/constant_generator.dart ';
 import '../../../base/generator.dart';
 import '../../../base/list_item_generator.dart';
 import '../../../base/seed_generator.dart';
@@ -25,7 +26,7 @@ class BaseBeardGenerator implements Generator<Hair?> {
     final generator = BatchGenerator({
       "length": ListItemGenerator(beardLength),
       "type": ListItemGenerator(beardShape),
-      "color": ListItemGenerator([""]),
+      "color": ConstantGenerator(""),
     });
 
     generator.seed(_seed);

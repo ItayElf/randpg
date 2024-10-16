@@ -4,6 +4,7 @@ import '../../enums/gender.dart';
 import '../../subtypes/companions/companion_manager.dart';
 import '../../subtypes/races/race.dart';
 import '../base/batch_generator.dart';
+import '../base/constant_generator.dart ';
 import '../base/future_generator.dart';
 import '../base/generator.dart';
 import '../base/list_batch_generator.dart';
@@ -70,8 +71,8 @@ class NpcGenerator implements Generator<Npc> {
       {
         "name": race.getNameGenerator(gender),
         "age": race.getAgeGenerator(gender),
-        "gender": ListItemGenerator([gender.name]),
-        "race": ListItemGenerator([race.getName()]),
+        "gender": ConstantGenerator(gender.name),
+        "race": ConstantGenerator(race.getName()),
         "occupation": MultipleGenerator([
           SimpleOccupationGenerator(),
           AdventurerOccupationGenerator(),
@@ -86,7 +87,7 @@ class NpcGenerator implements Generator<Npc> {
         ),
         "goal": GoalGenerator(),
         "companions": FutureGenerator(
-          ListItemGenerator([companions]),
+          ConstantGenerator(companions),
           (companions) => companions.map((e) => e.toMap()).toList(),
         ),
       };

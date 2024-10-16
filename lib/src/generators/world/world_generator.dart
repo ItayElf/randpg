@@ -1,9 +1,9 @@
 import '../../entities/worlds/world.dart';
 import '../../subtypes/worlds/world_settings.dart';
 import '../base/batch_generator.dart';
+import '../base/constant_generator.dart ';
 import '../base/future_generator.dart';
 import '../base/generator.dart';
-import '../base/list_item_generator.dart';
 import '../base/seed_generator.dart';
 import '../base/unique_generator.dart';
 import '../settlements/important_characters/important_character_generator.dart';
@@ -31,7 +31,7 @@ class WorldGenerator implements Generator<World> {
 
   Map<String, Generator> _getBatch() => {
         "name": _worldSettings.getNameGenerator(),
-        "worldSettings": ListItemGenerator([_worldSettings.getSettingName()]),
+        "worldSettings": ConstantGenerator(_worldSettings.getSettingName()),
         "kingdoms": FutureGenerator(
           WorldKingdomsGenerator(_worldSettings),
           (kingdoms) => kingdoms.map((e) => e.toMap()).toList(),

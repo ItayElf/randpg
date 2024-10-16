@@ -1,11 +1,10 @@
-import 'package:randpg/src/generators/base/unique_generator.dart';
-
 import '../../entities/holidays/holiday.dart';
 import '../../subtypes/holidays/holiday_type.dart';
 import '../base/batch_generator.dart';
+import '../base/constant_generator.dart ';
 import '../base/generator.dart';
-import '../base/list_item_generator.dart';
 import '../base/seed_generator.dart';
+import '../base/unique_generator.dart';
 import '../fixable.dart';
 
 /// A class that generates holidays
@@ -34,7 +33,7 @@ class HolidayGenerator implements Generator<Holiday> {
 
   Map<String, Generator> _getBatch() => {
         "name": _holidayType.getNameGenerator(),
-        "holidayType": ListItemGenerator([_holidayType.getHolidayType()]),
+        "holidayType": ConstantGenerator(_holidayType.getHolidayType()),
         "date": _holidayType.getDateGenerator(),
         "duration": _holidayType.getDurationGenerator(),
         "origin": _holidayType.getOriginGenerator(),

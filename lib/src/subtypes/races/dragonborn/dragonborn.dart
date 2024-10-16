@@ -2,8 +2,8 @@ import '../../../../entities/races.dart';
 import '../../../entities/npcs/alignment.dart';
 import '../../../entities/npcs/hair.dart';
 import '../../../enums/gender.dart';
+import '../../../generators/base/constant_generator.dart ';
 import '../../../generators/base/generator.dart';
-import '../../../generators/base/list_item_generator.dart';
 import '../../../generators/base/multiple_generator.dart';
 import '../../../generators/base/number_generator.dart';
 import '../../../generators/npcs/personality/alignment/base_alignment_generator.dart';
@@ -40,8 +40,7 @@ class Dragonborn implements Race {
   Generator<Alignment> getAlignmentGenerator() => BaseAlignmentGenerator();
 
   @override
-  Generator<Hair?> getBeardGenerator(Gender gender) =>
-      ListItemGenerator([null]);
+  Generator<Hair?> getBeardGenerator(Gender gender) => ConstantGenerator(null);
 
   @override
   Generator<String> getBuildGenerator(Gender gender) => StrongBuildGenerator();

@@ -1,8 +1,8 @@
 import '../../../entities/npcs/alignment.dart';
 import '../../../entities/npcs/hair.dart';
 import '../../../enums/gender.dart';
+import '../../../generators/base/constant_generator.dart ';
 import '../../../generators/base/generator.dart';
-import '../../../generators/base/list_item_generator.dart';
 import '../../../generators/base/multiple_generator.dart';
 import '../../../generators/base/number_generator.dart';
 import '../../../generators/npcs/personality/quirks/base_personality_quirk_generator.dart';
@@ -41,8 +41,7 @@ class Goblin implements Race {
   Generator<Alignment> getAlignmentGenerator() => GoblinAlignmentGenerator();
 
   @override
-  Generator<Hair?> getBeardGenerator(Gender gender) =>
-      ListItemGenerator([null]);
+  Generator<Hair?> getBeardGenerator(Gender gender) => ConstantGenerator(null);
 
   @override
   Generator<String> getBuildGenerator(Gender gender) => LightBuildGenerator();

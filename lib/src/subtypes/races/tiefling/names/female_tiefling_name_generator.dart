@@ -1,3 +1,4 @@
+import '../../../../generators/base/constant_generator.dart ';
 import '../../../../generators/base/future_generator.dart';
 import '../../../../generators/base/generator.dart';
 import '../../../../generators/base/list_batch_generator.dart';
@@ -17,7 +18,7 @@ class FemaleTieflingNameGenerator
   static final List<Generator<String>> _generatorsTemplate = [
     ListItemGenerator(tieflingFemaleNamePrefix),
     ListItemGenerator(tieflingFemaleNameSuffix),
-    ListItemGenerator([" "]),
+    ConstantGenerator(" "),
     ListItemGenerator(tieflingMaleNamePrefix),
     ListItemGenerator(tieflingMaleNameSuffix)
   ];

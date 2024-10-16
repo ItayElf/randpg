@@ -1,3 +1,4 @@
+import '../../../../generators/base/constant_generator.dart ';
 import '../../../../generators/base/future_generator.dart';
 import '../../../../generators/base/generator.dart';
 import '../../../../generators/base/list_batch_generator.dart';
@@ -18,7 +19,7 @@ class FemaleDragonbornNameGenerator
   static final List<Generator<String>> _generatorsTemplate = [
     ListItemGenerator(dragonbornFemaleNamePrefix),
     ListItemGenerator(dragonbornFemaleNameSuffix),
-    ListItemGenerator([" "]),
+    ConstantGenerator(" "),
     ListItemGenerator(dragonbornSurnamePrefix),
     WeightedGenerator(dragonbornSurnameVowel),
     ListItemGenerator(dragonbornSurnameMiddle),

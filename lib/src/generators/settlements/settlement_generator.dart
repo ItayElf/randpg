@@ -2,9 +2,9 @@ import '../../entities/settlements/settlement.dart';
 import '../../subtypes/races/race.dart';
 import '../../subtypes/settlements/settlement_type.dart';
 import '../base/batch_generator.dart';
+import '../base/constant_generator.dart ';
 import '../base/future_generator.dart';
 import '../base/generator.dart';
-import '../base/list_item_generator.dart';
 import '../base/seed_generator.dart';
 import '../base/unique_generator.dart';
 import '../fixable.dart';
@@ -40,13 +40,13 @@ class SettlementGenerator implements Generator<Settlement> {
   }
 
   Map<String, Generator> _getBatch(String settlementName) => {
-        "name": ListItemGenerator([settlementName]),
+        "name": ConstantGenerator(settlementName),
         "settlementType": FutureGenerator(
-          ListItemGenerator([_settlementType]),
+          ConstantGenerator(_settlementType),
           (type) => type.getSettlementType(),
         ),
         "dominantRace": FutureGenerator(
-            ListItemGenerator([_dominantRace]), (race) => race?.getName()),
+            ConstantGenerator(_dominantRace), (race) => race?.getName()),
         "description": _settlementType.getDescriptionGenerator(
             settlementName, _dominantRace),
         "dominantOccupation": _settlementType.getDominantOccupationGenerator(),

@@ -1,4 +1,5 @@
 import '../../../strings_manipulations.dart';
+import '../../base/constant_generator.dart ';
 import '../../base/future_generator.dart';
 import '../../base/list_batch_generator.dart';
 import '../../base/list_item_generator.dart';
@@ -10,7 +11,7 @@ class GuildAdjectiveNameGenerator
   GuildAdjectiveNameGenerator()
       : super(
           ListBatchGenerator([
-            ListItemGenerator(["The"]),
+            ConstantGenerator("The"),
             ListItemGenerator(guildNameAdjective),
             ListItemGenerator(guildNameNoun),
           ]),

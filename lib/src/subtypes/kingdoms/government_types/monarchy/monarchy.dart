@@ -1,6 +1,6 @@
 import '../../../../enums/gender.dart';
+import '../../../../generators/base/constant_generator.dart ';
 import '../../../../generators/base/generator.dart';
-import '../../../../generators/base/list_item_generator.dart';
 import '../government_type.dart';
 
 /// A class that represents the monarchy government type
@@ -21,5 +21,5 @@ class Monarchy implements GovernmentType {
   }
 
   @override
-  Generator<int> getNumberOfLeadersGenerator() => ListItemGenerator([1]);
+  Generator<int> getNumberOfLeadersGenerator() => ConstantGenerator(1);
 }

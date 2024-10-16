@@ -1,5 +1,6 @@
 import 'package:randpg/src/generators/base/list_item_generator.dart';
 
+import '../../../../generators/base/constant_generator.dart ';
 import '../../../../generators/base/future_generator.dart';
 import '../../../../generators/base/list_batch_generator.dart';
 import '../../../../generators/base/multiple_generator.dart';
@@ -25,9 +26,9 @@ class CelebrationNameGenerator extends FutureGenerator<String, List<String>> {
       ]);
 
   static ListBatchGenerator<String> get _secondTemplate => ListBatchGenerator([
-        ListItemGenerator(["the"]),
+        ConstantGenerator("the"),
         ListItemGenerator(celebratoryNouns),
-        ListItemGenerator(["of"]),
+        ConstantGenerator("of"),
         ListItemGenerator(celebratoryEtherealNouns),
       ]);
 

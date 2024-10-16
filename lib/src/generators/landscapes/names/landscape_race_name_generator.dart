@@ -1,6 +1,7 @@
 import '../../../enums/gender.dart';
 import '../../../strings_manipulations.dart';
 import '../../../subtypes/races/race_manager.dart';
+import '../../base/constant_generator.dart ';
 import '../../base/future_generator.dart';
 import '../../base/generator.dart';
 import '../../base/list_batch_generator.dart';
@@ -31,10 +32,8 @@ class LandscapeRaceNameGenerator implements Generator<String> {
     final raceName = raceNameGenerator.generate().split(" ").first;
 
     final generator = FutureGenerator(
-      ListBatchGenerator([
-        ListItemGenerator([raceName]),
-        ListItemGenerator(_landscapeTitles)
-      ]),
+      ListBatchGenerator(
+          [ConstantGenerator(raceName), ListItemGenerator(_landscapeTitles)]),
       (results) => titledEach(results.join(" ")),
     );
     generator.seed((_seed + 3) % SeedGenerator.maxSeed);

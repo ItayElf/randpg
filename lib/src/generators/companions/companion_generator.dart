@@ -2,8 +2,8 @@ import '../../entities/companions/companion.dart';
 import '../../enums/gender.dart';
 import '../../subtypes/companions/companion_type.dart';
 import '../base/batch_generator.dart';
+import '../base/constant_generator.dart ';
 import '../base/generator.dart';
-import '../base/list_item_generator.dart';
 import '../base/seed_generator.dart';
 import '../fixable.dart';
 
@@ -35,9 +35,9 @@ class CompanionGenerator implements Generator<Companion> {
   }
 
   Map<String, Generator> _getBatch(String name) => {
-        "name": ListItemGenerator([name]),
-        "gender": ListItemGenerator([_gender.name]),
-        "companionType": ListItemGenerator([_companionType.getCompanionType()]),
+        "name": ConstantGenerator(name),
+        "gender": ConstantGenerator(_gender.name),
+        "companionType": ConstantGenerator(_companionType.getCompanionType()),
         "appearance": _companionType.getAppearanceGenerator(name, _gender),
         "personality": _companionType.getPersonalityGenerator(name, _gender),
         "skills": _companionType.getSkillsGenerator(),

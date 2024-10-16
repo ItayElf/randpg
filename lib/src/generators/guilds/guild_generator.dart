@@ -1,9 +1,9 @@
 import '../../entities/guilds/guilds.dart';
 import '../../subtypes/guilds/guild_type.dart';
 import '../base/batch_generator.dart';
+import '../base/constant_generator.dart ';
 import '../base/future_generator.dart';
 import '../base/generator.dart';
-import '../base/list_item_generator.dart';
 import '../base/repeated_generator.dart';
 import '../base/seed_generator.dart';
 import '../base/unique_generator.dart';
@@ -42,13 +42,13 @@ class GuildGenerator implements Generator<Guild> {
   }
 
   Map<String, Generator> _getBatch(String guildName) => {
-        "name": ListItemGenerator([guildName]),
+        "name": ConstantGenerator(guildName),
         "leader": FutureGenerator(
           ImportantCharacterGenerator(
-              ListItemGenerator([_guildType.getLeaderOccupation()]), null),
+              ConstantGenerator(_guildType.getLeaderOccupation()), null),
           (leader) => leader.toMap(),
         ),
-        "guildType": ListItemGenerator([_guildType.getGuildType()]),
+        "guildType": ConstantGenerator(_guildType.getGuildType()),
         "reputation": _guildType.getReputationGenerator(),
         "history": _guildType.getHistoryGenerator(guildName),
         "emblem": FutureGenerator(

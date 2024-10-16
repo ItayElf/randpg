@@ -1,4 +1,5 @@
 import '../../../../strings_manipulations.dart';
+import '../../../base/constant_generator.dart ';
 import '../../../base/future_generator.dart';
 import '../../../base/generator.dart';
 import '../../../base/list_batch_generator.dart';
@@ -17,6 +18,6 @@ class OwnerBuildingNameGenerator extends FutureGenerator<String, List<String>> {
   ) =>
       [
         ListItemGenerator(ownerName.split(" ").map((e) => "$e's").toList()),
-        ListItemGenerator([locationType]),
+        ConstantGenerator(locationType),
       ];
 }

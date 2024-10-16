@@ -3,9 +3,9 @@ import '../../../entities/settlements/location.dart';
 import '../../../subtypes/locations/location_type.dart';
 import '../../../subtypes/races/race.dart';
 import '../../base/batch_generator.dart';
+import '../../base/constant_generator.dart ';
 import '../../base/future_generator.dart';
 import '../../base/generator.dart';
-import '../../base/list_item_generator.dart';
 import '../../base/seed_generator.dart';
 import '../../base/unique_generator.dart';
 import '../../fixable.dart';
@@ -51,10 +51,10 @@ class LocationGenerator implements Generator<Location> {
   Map<String, Generator> _getBatch(
           LocationType locationType, String locationName, Npc owner) =>
       {
-        "name": ListItemGenerator([locationName]),
-        "owner": FutureGenerator(
-            ListItemGenerator([owner]), (owner) => owner.toMap()),
-        "type": ListItemGenerator([locationType.getLocationType()]),
+        "name": ConstantGenerator(locationName),
+        "owner":
+            FutureGenerator(ConstantGenerator(owner), (owner) => owner.toMap()),
+        "type": ConstantGenerator(locationType.getLocationType()),
         "zone": locationType.getZoneGenerator(),
         "outsideDescription": UniqueGenerator(
           locationType.getOutsideDescription(),

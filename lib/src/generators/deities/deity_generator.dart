@@ -4,8 +4,8 @@ import '../../enums/gender.dart';
 import '../../subtypes/deities/deity_type.dart';
 import '../../subtypes/races/race.dart';
 import '../base/batch_generator.dart';
+import '../base/constant_generator.dart ';
 import '../base/generator.dart';
-import '../base/list_item_generator.dart';
 import '../base/number_generator.dart';
 import '../base/seed_generator.dart';
 import '../base/unique_generator.dart';
@@ -61,15 +61,15 @@ class DeityGenerator implements Generator<Deity> {
   ) =>
       {
         "name": _deityType.getNameGenerator(gender, worshipedBy),
-        "gender": ListItemGenerator([gender?.name]),
-        "deityType": ListItemGenerator([_deityType.getDeityType()]),
+        "gender": ConstantGenerator(gender?.name),
+        "deityType": ConstantGenerator(_deityType.getDeityType()),
         "domains": UniqueGenerator(
           _deityType.getDomainGenerator(alignment),
           domainCount,
         ),
-        "alignment": ListItemGenerator([alignment?.toMap()]),
+        "alignment": ConstantGenerator(alignment?.toMap()),
         "depiction": _deityType.getDepictionGenerator(worshipedBy),
-        "worshipedBy": ListItemGenerator([worshipedBy?.getName()]),
+        "worshipedBy": ConstantGenerator(worshipedBy?.getName()),
         "worshipers": _deityType.getWorshipersGenerator(),
         "shrinesRarity": _deityType.getShrinesRarityGenerator(),
         "positiveAttribute": _deityType.getPositiveAttributeGenerator(),
