@@ -5,6 +5,7 @@
 - Added Holidays:
 
   - Celebration
+  - Tragedy
 
 - Added holidays to kingdoms and world
 
