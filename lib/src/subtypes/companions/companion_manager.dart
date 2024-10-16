@@ -1,5 +1,4 @@
 import 'package:collection/collection.dart';
-import 'package:randpg/src/subtypes/companions/monkeys/monkey.dart';
 
 import '../../exceptions/not_found_exceptions.dart';
 import '../managers/manager.dart';
@@ -8,6 +7,7 @@ import 'cats/cat.dart';
 import 'companion_type.dart';
 import 'dogs/dog.dart';
 import 'imps/imp.dart';
+import 'monkeys/monkey.dart';
 
 /// A class that handles the available companions and using them
 ///

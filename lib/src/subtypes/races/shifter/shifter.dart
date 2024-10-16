@@ -1,9 +1,3 @@
-import 'package:randpg/src/generators/npcs/physical/eyes/base_eyes_generator.dart';
-import 'package:randpg/src/generators/npcs/physical/face/base_face_generator.dart';
-import 'package:randpg/src/generators/npcs/physical/hair/base_hair_generator.dart';
-import 'package:randpg/src/subtypes/races/shifter/names/shifter_name_generator.dart';
-import 'package:randpg/src/subtypes/races/shifter/skin/shifter_skin_generator.dart';
-
 import '../../../entities/npcs/alignment.dart';
 import '../../../entities/npcs/hair.dart';
 import '../../../enums/gender.dart';
@@ -15,11 +9,16 @@ import '../../../generators/npcs/personality/quirks/base_personality_quirk_gener
 import '../../../generators/npcs/personality/traits/personality_trait_generator.dart';
 import '../../../generators/npcs/physical/beard/base_beard_generator.dart';
 import '../../../generators/npcs/physical/build/base_build_generator.dart';
+import '../../../generators/npcs/physical/eyes/base_eyes_generator.dart';
+import '../../../generators/npcs/physical/face/base_face_generator.dart';
+import '../../../generators/npcs/physical/hair/base_hair_generator.dart';
 import '../../../generators/npcs/physical/special_features/base_special_feature_generator.dart';
 import '../../../generators/world/opinions/base_opinion_generator.dart';
 import '../race.dart';
+import 'names/shifter_name_generator.dart';
 import 'opinions/shifter_opinion_generator.dart';
 import 'quirks/shifter_quirks_generator.dart';
+import 'skin/shifter_skin_generator.dart';
 
 class Shifter implements Race {
   const Shifter();

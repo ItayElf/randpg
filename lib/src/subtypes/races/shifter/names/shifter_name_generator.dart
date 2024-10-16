@@ -1,10 +1,9 @@
-import 'package:randpg/src/subtypes/races/shifter/names/female_shifter_name_generator.dart';
-import 'package:randpg/src/subtypes/races/shifter/names/male_shifter_name_generator.dart';
-
 import '../../../../enums/gender.dart';
 import '../../../../generators/base/generator.dart';
 import '../../../../generators/base/seed_generator.dart';
 import '../../../../strings_manipulations.dart';
+import 'female_shifter_name_generator.dart';
+import 'male_shifter_name_generator.dart';
 
 class ShifterNameGenerator implements Generator<String> {
   late int _seed;

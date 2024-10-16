@@ -1,5 +1,3 @@
-import 'package:randpg/src/subtypes/companions/cats/appearance/cat_breed_generator.dart';
-
 import '../../../../enums/gender.dart';
 import '../../../../generators/base/batch_generator.dart';
 import '../../../../generators/base/generator.dart';
@@ -9,6 +7,7 @@ import '../../../../strings_manipulations.dart';
 import '../../dogs/appearance/dog_appearance_adjectives_generator.dart';
 import '../../dogs/appearance/dog_eye_color_generator.dart';
 import '../../dogs/appearance/dog_physique_generator.dart';
+import 'cat_breed_generator.dart';
 import 'cat_fur_color_generator.dart';
 
 /// A class that generates descriptions of cat appearances

@@ -1,6 +1,3 @@
-import 'package:randpg/src/subtypes/companions/dogs/personality/dog_activity_generator.dart';
-import 'package:randpg/src/subtypes/companions/dogs/personality/dog_personality_adjective_generator.dart';
-
 import '../../../enums/gender.dart';
 import '../../../generators/base/generator.dart';
 import '../../../generators/base/unique_generator.dart';
@@ -9,6 +6,8 @@ import '../companion_type.dart';
 import 'appearance/dog_appearance_generator.dart';
 import 'names/female_dog_name_generator.dart';
 import 'names/male_dog_name_generator.dart';
+import 'personality/dog_activity_generator.dart';
+import 'personality/dog_personality_adjective_generator.dart';
 import 'quirks/dog_quirk_generator.dart';
 import 'skills/dog_skill_generator.dart';
 
