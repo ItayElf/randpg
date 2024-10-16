@@ -6,8 +6,15 @@
 
   - Celebration
 
+- Added holidays to kingdoms and world
+
 - Added companions:
+
   - Monkeys
+
+- Added base generators:
+
+  - ConstantGenerator
 
 ## 0.10.0
 

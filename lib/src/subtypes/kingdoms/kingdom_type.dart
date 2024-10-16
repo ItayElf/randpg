@@ -1,6 +1,7 @@
 import '../../generators/base/generator.dart';
 import '../emblems/emblem_type.dart';
 import '../guilds/guild_type.dart';
+import '../holidays/holiday_type.dart';
 import '../races/race.dart';
 import '../settlements/settlement_type.dart';
 
@@ -35,4 +36,7 @@ abstract class KingdomType {
 
   /// Returns a generator for a trouble a kingdom has
   Generator<String> getTroubleGenerator();
+
+  /// Returns a generator for a type of holiday that exist in the kingdom
+  Generator<HolidayType> getHolidayTypeGenerator();
 }

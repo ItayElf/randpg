@@ -12,6 +12,8 @@ import '../../../generators/kingdoms/trouble/kingdom_trouble_generator.dart';
 import '../../../generators/settlements/names/dominant_race_name_generator.dart';
 import '../../guilds/guild_manager.dart';
 import '../../guilds/guild_type.dart';
+import '../../holidays/holiday_manager.dart';
+import '../../holidays/holiday_type.dart';
 import '../../races/race.dart';
 import '../../settlements/city/city.dart';
 import '../../settlements/metropolis/metropolis.dart';
@@ -69,6 +71,13 @@ class DefaultKingdomType implements KingdomType, Fixable<Kingdom> {
   String getKingdomType() => _kingdomType;
 
   @override
+  EmblemType getEmblemType() => DefaultEmblemType();
+
+  @override
+  Generator<HolidayType> getHolidayTypeGenerator() =>
+      ListItemGenerator(HolidayManager().activeTypes);
+
+  @override
   Kingdom getFixed(Kingdom kingdom) {
     final populations = [
       ...kingdom.importantSettlements.map((e) => e.population),
@@ -82,7 +91,4 @@ class DefaultKingdomType implements KingdomType, Fixable<Kingdom> {
     }
     return kingdom;
   }
-
-  @override
-  EmblemType getEmblemType() => DefaultEmblemType();
 }
