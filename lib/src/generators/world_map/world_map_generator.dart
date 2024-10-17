@@ -15,18 +15,33 @@ class WorldMapGenerator implements Generator<WorldMap> {
   final WorldMapSettings _settings;
   final int _width;
   final int _height;
+  bool _useTiles = false;
 
   static const _tileSize = 16;
 
   WorldMapGenerator(this._settings, this._width, this._height) {
     _seed = SeedGenerator.generate();
-    if (_width % _tileSize != 0 || _height % _tileSize != 0) {
-      throw ArgumentError("Width and height must be divisible by $_tileSize");
+  }
+
+  /// NOTE: This feature is experimental and might not work
+  factory WorldMapGenerator.withTiles(
+      WorldMapSettings settings, int width, int height) {
+    if (width % _tileSize != 0 || height % _tileSize != 0) {
+      throw ArgumentError(
+          "Width and height must be divisible by $_tileSize when using tiles");
     }
+    final generator = WorldMapGenerator(settings, width, height);
+    generator._useTiles = true;
+    return generator;
   }
 
   @override
   WorldMap generate() {
+    if (_useTiles) return _generateWithTiles();
+    return _generatePixels();
+  }
+
+  WorldMap _generateWithTiles() {
     final noiseGenerator =
         PerlinMapGenerator(_width ~/ _tileSize + 1, _height ~/ _tileSize + 1)
           ..seed(_seed);
@@ -46,6 +61,23 @@ class WorldMapGenerator implements Generator<WorldMap> {
       }
     }
 
+    return WorldMap(settings: _settings, image: image);
+  }
+
+  WorldMap _generatePixels() {
+    final noiseGenerator = PerlinMapGenerator(_width, _height)..seed(_seed);
+    final noise = _normalizeArray(noiseGenerator.generate());
+    final image = Image(width: _width, height: _height);
+    for (int x = 0; x < _width; x++) {
+      for (int y = 0; y < _height; y++) {
+        final terrain = _settings.getTerrainFromHeight(noise[y][x]);
+        image.setPixel(
+          x,
+          y,
+          _getColorFromTerrain(terrain),
+        );
+      }
+    }
     return WorldMap(settings: _settings, image: image);
   }
 
@@ -85,6 +117,27 @@ class WorldMapGenerator implements Generator<WorldMap> {
         Pixel stampPixel = stamp.getPixel(stampX, stampY);
         target.setPixel(x + stampX, y + stampY, stampPixel);
       }
+    }
+  }
+
+  static ColorFloat16 _getColorFromTerrain(Terrain terrain) {
+    switch (terrain) {
+      case Terrain.deepSea:
+        return ColorFloat16.rgb(0, 0, 128);
+      case Terrain.sea:
+        return ColorFloat16.rgb(0, 128, 255);
+      case Terrain.shore:
+        return ColorFloat16.rgb(255, 255, 0);
+      case Terrain.grassland:
+        return ColorFloat16.rgb(0, 255, 0);
+      case Terrain.hills:
+        return ColorFloat16.rgb(139, 69, 19);
+      case Terrain.mountains:
+        return ColorFloat16.rgb(128, 128, 128);
+      case Terrain.snow:
+        return ColorFloat16.rgb(255, 255, 255);
+      default:
+        return ColorFloat16.rgb(0, 0, 0);
     }
   }
 
