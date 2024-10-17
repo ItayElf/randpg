@@ -31,12 +31,13 @@ Follow the installation instructions on [dart packages](https://pub.dev/packages
 - Generate deities
 - Generate guilds
 - Generate kingdoms
+- Generate holidays
 - Generate emblems as svg
 - Generate complete worlds
 
 ## Goals
 
-- Holiday Generator
+- World Map Generator
 
 ### In the Future
 
