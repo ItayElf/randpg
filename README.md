@@ -38,6 +38,7 @@ Follow the installation instructions on [dart packages](https://pub.dev/packages
 ## Goals
 
 - Waypoint Generator
+- Improve tiles for world map generator
 
 ## Usage
 
