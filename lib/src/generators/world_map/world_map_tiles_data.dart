@@ -210,7 +210,7 @@ final worldMapTile51 = decodePng(
 )!;
 final worldMapTile52 = decodePng(
   base64.decode(
-      'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAJ5JREFUOI3Nk8EKgzAQRMcSSK7Bi+bmt/Tb+iv9rdxMLyUnSQxKPIhLGzQNiNC57GX3MTCz1eN5jzih25njawFKMox+KgcoyehISUYLvyC0qY1HU3MAgAsRr/eIrhUAgN4eQ8gBFwx2mGk2NYcLEdr4Mgep7DATOKc/jvESwGe8RYC9bqS9yAK08XBh/bUt0q4VX06ygJJu5ENOtNeNBd2bR7JNx8EkAAAAAElFTkSuQmCC'),
+      'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAB1JREFUOI1jbF3m/J+BAsBEieZRA0YNGDVgMBkAABngAo3pFkWtAAAAAElFTkSuQmCC'),
 )!;
 final worldMapTile53 = decodePng(
   base64.decode(
@@ -224,101 +224,152 @@ final worldMapTile55 = decodePng(
   base64.decode(
       'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAB1JREFUOI1j/P///38GCgATJZpHDRg1YNSAwWQAAGvKBByn4XVTAAAAAElFTkSuQmCC'),
 )!;
+final worldMapTile56 = decodePng(
+  base64.decode(
+      'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAExJREFUOI1jPLIp+D8DBYCJEs2jBowaMIgM+PL3G0UGsDz98Y9BmgNhCA8zF2kuYGBgYHj64x9ZmhkYGBhYXvz/A2H9YGGQ5vhGsiEAFk0R5W6QObkAAAAASUVORK5CYII='),
+)!;
+final worldMapTile57 = decodePng(
+  base64.decode(
+      'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAEFJREFUOI1jPLIp+D8DBYCJEs2jBowaMEwM+PL3GwMLOZpg4OmPf6S7gIeZC66ZgYGBPBc8/fGP4cX/PwwMDAwMACD9Fy6abi9IAAAAAElFTkSuQmCC'),
+)!;
+final worldMapTile58 = decodePng(
+  base64.decode(
+      'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAE5JREFUOI1jbF3m/J+BgYFBgpGFQZqDiYGHmYuBFMAiwcjCwMDAQJZmBgYGBiaYZgYGBoYvf7+RbAALuTbDXUCJZgYGqBdGDRg1YOgbAACwtQaq2148cQAAAABJRU5ErkJggg=='),
+)!;
+final worldMapTile59 = decodePng(
+  base64.decode(
+      'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAFxJREFUOI3t0LENgDAQQ9FPoDghNrix2JQZWAWJAaJTCkIoEA3dBdHFvZ8sd+syFxyJ2djSyV4OAAZPGWDqR1QM0l0NXiBmA0Al1C94omL+BW/sEwAVHzSgAb8AF+ShEhbFYu8VAAAAAElFTkSuQmCC'),
+)!;
+final worldMapTile60 = decodePng(
+  base64.decode(
+      'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAHdJREFUOI3t07sNgDAMRdEbcIEQAyBlLDZlBlaJxABRlAISiohPiRVKXLl5R6+wzTJPGcX4PeBiAmDNG40mDDC0PbYrsdEIogVuJADoGzyRKuBEqoDqBj/wFeD3UAWIi+k6S7gv7HUD4PoubRhA1ryVLQq2C2rkADOHHEtKvR7fAAAAAElFTkSuQmCC'),
+)!;
+final worldMapTile61 = decodePng(
+  base64.decode(
+      'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAGNJREFUOI3t0rENwjAYBeEvPy4ixABIGSezsQqbWWKAKHIBDlXSxy7h+nu64g2P57zdhwSmMdwuV2eIHhnSNAY0yRA9MkSPfBT8B356YPmsUou0k0s9X7A/N5cKbQW5VK/tDb71WRf7NvNVaAAAAABJRU5ErkJggg=='),
+)!;
+final worldMapTile62 = decodePng(
+  base64.decode(
+      'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAetJREFUOI1tk81u2kAUhT+CCTY4dm2MLYOzKCpK1l1020WegIfqq3RrqY+RriM1bRUpwonkYKAmBg80iC6Mx3HUK41G83POPXPvmcaXr1cHAKvbZLneU8bb9dvw8gkAJ+WGdtpgYCm0NjYDS0E7bUii14ByjrWQWAs5aW1sAGYPRi3D7MGgtbHJ7j2sbpNYC7G6TXbOt9o9ZTHdYZ/XSSTZRsU0TdJ7GIyfAHhcvtSUKOVFANM0AUjTFIAgGKLrnYL0F9ARtAC9nxIT1msQBEN835XSTNOUYN93JbneT2uFVJJkVQOUJN+vb3CcKe9H5/i+i++7pD9Sshn87SyqGgixJYpmFEQ38kCI7XFvCsDZmS7PBpZCvjsQE6Isk0KS5ZioahuAP/NClaq2ayQAF2MBID2i+IGLEFvEuhgA73oGjlN0Iopm/L6N+HAR1Dt0fIZSZgIQ620NnCQrlknK56uPBMGQ5+es6FBHVEUs5QLkuYB58f6S0A9cLi/HAKzylP7RD/vHCbEWHn1Qgl/NgJRdRuOlyXYxAmCuFT5QRp8Kr8d3Osk0kySapmL3DBbzFVm2qckv2+jlk0qBNzrgjboy29119ROj6AEAo6fTtp+Aqo3Sif+LxXxFkqz4eRth9Cof5LsDy/UeL5/wD7gb4n2WreGZAAAAAElFTkSuQmCC'),
+)!;
+final worldMapTile63 = decodePng(
+  base64.decode(
+      'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAflJREFUOI11ks9u2kAQhz+wATs2dg0Gy4EcGikVbaT21Bx66TPwbj22z2CpfYmqPecAilpFIYpcDMTGf1ERPTheQGrmsjOj/c18s7O1z18+7QB81eM5szSJVbL9b1z3VU+InWx8dFqaBIDarHFqyTTSDqeWjNqsiWL1w04b+yuWJuGrHpYmEd86NNIO83vjiKiKG2mHupONRcdVshXd4lsH0zQhVY5Eh+Ll3Qa5wrc0iXhuMk+BVME0TVy3T7utM5vdA5QFgTAMK+aSoDK9F4qLrtsvc/qJEAK4bp/hcCBiuXJWyZZG2oFUwR2V4oeHP/z+dUcQRLy/uhRF1+uY5SIiCKJyBEuTUJu1Eh+I45T1OhbiPC/4+eMauBad87zYE5SPJ9MbREy+b1guIgCCoDzzpCBPCl50DSFeBeHxCPtVbQC4mcxQtBbDYQ/bNgiCiMenwgCWbaIoreNHJFV4eX7G23evufrwhlUQCgrbNgSBorVQlFZJ4KseTjZGGnwDIoqljq6fMBpdMJ3MeFxEYt48KciyXPhiBF/16C5fAVD7Kwkg2zawbYObyQxAiLMsR1XLDyY72Rhf9VjUpmKNAO22DkDnCbsSA9hnOs75bj9CtUasiGJpEy7Cg99W2uVH7SDaCa/uZGNWyZZss08aXZ3pZEYQRGKlz9k/JqvoWL1KOXQAAAAASUVORK5CYII='),
+)!;
+final worldMapTile64 = decodePng(
+  base64.decode(
+      'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAcBJREFUOI2FksFu01AQRU9cx7GNm7TNM0GtpaoSJaqQ2gULEFmyR8ofseFX2OYb2CEkkEACOURFLNxULmkTuxg7jk1ZGD/qkJa7e3fmzsydebWXr55dsYR4GvPtPTiOzVa7WZBmAoBlB0yjXOYqy+LrmExCLs5D+bZ3QgytVsm5tUClyE+d9loPgO1NFYBO3EddJUrnGdsP4dPrQHJPe48A+D66C2ZCHfDNweoCWkMlnWdsiha63kCIpoy1Wi2CAKxdH23Sv9nC17c5ut7gQdeR3OnpGVCIAXxjcHOBjXaz0tl1RwAEQWGrvMR/lwjFIj9+OCYIAuz9M3mJTnyLhRJfhh5JMsdxbOz9wkKcXkkLK5cIMDsPSZI58PdDjdyQjXVRJJgXAKiXQ0uOWUIIm/vdghOiyVa7ySz3AFj8EZZQD48O8LwTuk8Shm90Do8OZNDzTuRPNO9o1KysIu7EfdYe9/ZeLMSYdUNBOBmf381YZClheIm165MrOff2In78yirCqO4S1V2UVK8uxtpJWIixvHXNymSsFPvGgE7cB0Apx5pGOeNpVhmzvLU2eS6562KguEJJ+MbgH3HZcXmCEr8B9BvA5UFWrqIAAAAASUVORK5CYII='),
+)!;
+final worldMapTile65 = decodePng(
+  base64.decode(
+      'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAbJJREFUOI2Nk0FT2lAUhb9ghKRmiEAiVp6jG8SZ7rpyxqX7zvij+le69X90p4tqy9SOM08YkoAmIgSIYxfPF0CH1rfKeTf35Jxzb4yv306eeTmVjTWGoavAyAJg0E+QMmT/M9gVm9ensAjsooHfSHI86CdEUfKmaYmgPj4FYKdiAlBbO4aR9a5mgELPPmN9VCW8LRO2twA4PGwSRQldGdCVATufMqaTbLUCx49hZOG6bl7wvDIfxRYVT90VS+ZqBQDOXg+AbjfIiwctgWWVuP7+tNoCwN2jeiGOYwCurtpLSjZr5dUEOkS7aOA3A+I45uL897sCXLIwnqp18JsBQvik6YRfP+V/CfJkhqHLELh/iKjW1DSkDJEyJH2csE3p3wSzDwP18AD3T5JqTQAQRQlC+GQB/Pkxt+V5KhezPj5F2wDYqBd4HpqQKnzQEgjRyOsX55e0jlLCdhkhGpi6eZHIcDL83YCpBU59jLxRzYN+QutIMc+8DlK+jFE364noUA1HbZ+z12PmdXAaaV4DmFrB/Gd6baUYfQHmO6KVde6y/M5wMkXQs8/eKFjEiyT6Y7r2FwvswtiqrtFCAAAAAElFTkSuQmCC'),
+)!;
+final worldMapTile66 = decodePng(
+  base64.decode(
+      'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAeJJREFUOI2Fk81u00AUhb/UbjyuHTtK3EQ0DougSpWQkEDQLiuRJ+CN2PAqbFmwBqmLIoHEAiRE0lJgYShNnKQ2cjwOFmFhdZqWBM5m5t6Zc+7V/Sk9edqdcw3Rj598/6ADIJMMYRn4/ia1ugMbklppH4Az8xlr18mLkElGmkomYXTpnArG8wO0rec000foy4hlQ1dkgBt+g1rdwXXd4r0xAGA8P1idgeXpmKZgv3sPAN9vUanY6n143ICpWC2QhDnVuoPvt5TPtjeoVGxmg+0ig1G8WqBad/A8R9nv331UIlEUMR7FhGG8vAaLCIJvAIRhzKvDt8ofhjHA/wWO+gFSZgB86gcACMsoTmGsFjgfxeru+5sq6vkoZhJGmKZAJtm/u3AaDJAyU+l6nkO17mCaAmEZpKlk7cvh76UCzc4c0xQASJkRBEMltAj9YXePly9eqwgFbHBP//osZXZlwExToN3tWo9vP9DQTI37d/Zo39wimSbISZnqrYTh11/o5cu9AMjznDzPWV/X0Ut2Dui02tDrHbOzs62G56gf09lN+PwmU1mkqcRr2zQ7xQ6qLqSzOTMxoNcrxtZ1XTwvJjyBzm6yWF7KhqastQvy+KwEwEwM1PBc1GV8YgHFkpWNq53/A/aBv7xpIpoiAAAAAElFTkSuQmCC'),
+)!;
+final worldMapTile67 = decodePng(
+  base64.decode(
+      'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAbtJREFUOI19ks1u00AUhT8nVjLGP6mIUze1u7FUKGLXRVgikSfoQ/EqvABP0EXYIUQ3FKoWpDqq6jhua0j8owizcO0kYHNXM3N1zj1z7pHevhvnVnwCQJifwlIQziM8b0aySBFqF4D9lyt6ezp/l2zFJ7T33zObGrAUVeMueKjOJUldyWF+ygAY2BGZb1WNobPLjecTxwkAnW49SYulYHaxWz3ouobj2AC8Hh+jKALVlBsVtMJ5BEDmH6LrGpr2pGo6js1O32ARrJq/EATRWvawUHL2+Uv1ZprG4ymtJwAoST5MPrJ597xp4+QtgiRJq7XB2vVvX70NBQ0E948exHGCogh2+kYFCoKIIIi4n0fs0bCFOE4QarcWnCQpN57/3y380ymBZSmKwHLzWvD3yW9kRREki7QIzLw5dSt/wE9/PQTgzfhVoaBMG7CV/2SR4o7atB6GPO0bHB0dAnD2Y4J9AFfXn5DdURtQub2SCK5/USoCcEdtwkuVZ8+NKp3n5xfYBQ+StkLudAsbDl6A5apbssNLFdM06PV6FTgTPnGWo3QkAFqbgE5XpiQswWV53pRMFCaEtxJxVhj7B+yntjzJQiaDAAAAAElFTkSuQmCC'),
+)!;
+final worldMapTile68 = decodePng(
+  base64.decode(
+      'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAFtJREFUOI1jZFmw5T8DBYCJEs2jBgwaA3jZ/zHwsv+j3AXkGsLEy/OXgZfnL9mGIFyAZAgpBjGxc/yFc2CGkOIaJgYGBgZchhBlABsnRAM2Q4hxBUo6QDaEWAAASqwWx2U+d1IAAAAASUVORK5CYII='),
+)!;
+final worldMapTile69 = decodePng(
+  base64.decode(
+      'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAFBJREFUOI1jZFmw5T8DBYCJEs2jBgwWA1jI1cjL/o98F8A0k+UCmGZenr+kGYBsK0wzAwORXsClmZ3jL2lhgK6ZKBeg+xlZMxsniS5A1gwDAL86E5M42GxcAAAAAElFTkSuQmCC'),
+)!;
+final worldMapTile70 = decodePng(
+  base64.decode(
+      'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAFlJREFUOI1j1D6y8v+v78wMMPDzB4T9+QuU/snEgA+gyMI0kwKYYLYjaybWdrgLsGkm2gW4NBNjOwMDAwMLumZiNcINIMdWZADXQY5miAvI1IjhglEDhrIBAIGRKWcPI9PUAAAAAElFTkSuQmCC'),
+)!;
+final worldMapTile71 = decodePng(
+  base64.decode(
+      'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAHJJREFUOI1jZFmw5T8DHsDL/g9C8/xlYGBgYGDn+AuXY+P8y8CETzM28PMHMwqfoAGff0KUfP6C0Agz5Nd3ZtJcgM0QogyAuQKbIUS74PNPJqzeYSHWAGSDeNn/wQ0hORZghpDtAnRDyHIBMhg1YDAYAAD7yCilgDOWggAAAABJRU5ErkJggg=='),
+)!;
+final worldMapTile72 = decodePng(
+  base64.decode(
+      'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAJpJREFUOI2d09EKgzAMBdC7KHaC/f9XP8I/q+A6qNuDJKZYXLK8iNUcrqZ99PPywU3FsB/XqQAAwrPIs2EsoLvmVuVXV93/BFI+Xknr2cjIe+t8CVqICeAULcScIGVqfk5vBTQUwy6IewqMSAKes170INLFkLcoTkV22T/ImUAhHoj03mbEk4aA+oBoxAQM4/WUef5JNTuNWOsLOsk90btYl7YAAAAASUVORK5CYII='),
+)!;
+final worldMapTile73 = decodePng(
+  base64.decode(
+      'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAIRJREFUOI2d0FkKgDAMBNBxwQX0JJ7ce3gjBa3g8lFTYrGSJD8tlNeZNhum8drXAjRu8/t5eVaX429ep4Q1k1M6x9L00OALixuksCQdAMoYS2G4wJLKJwgL9g2MsK/PdwMLBtgnanHfHboLeCphQPiEFK6bQ/cHMRY1iN/McdUqG3BMcwN9EDqBMeda8gAAAABJRU5ErkJggg=='),
+)!;
+final worldMapTile74 = decodePng(
+  base64.decode(
+      'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAK1JREFUOI1j1D6y8j8DBYCJEs3DxQAZhi9wjgzDFzgmyQXYNBFrCBMrww8GdEyKIUysjN8wBEkxhImBgYGBlfEbA7pBxBrCpCvlzMDLo82AzSBkQ/C6wFFSHW4IzCB0Q3C5gsn1VDPD/uc3MQwhFjDxC0oxZD/cgGEItsDF6QVODlaG1BuzGfY/v8mgwCdBkkuYvv/4zfD9x28GNk5RhtQbsxkYGBgYFPgkiDYAANQENyAsRmodAAAAAElFTkSuQmCC'),
+)!;
+final worldMapTile75 = decodePng(
+  base64.decode(
+      'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAJ5JREFUOI1j1D6y8j8DBYCJEs3DxAAWYhXKMHyBs58w8MDFiDIAWTM6n6AByIpZGX5gyOMNA0KaWRm/4XYBPs2sjN/gbIJeQNaMrJGXR5tBgU8CuxdgtuPT7CipTpwL0AFM8/7nNxlSb8wmzgCY7ciasx9uYOAUlCI+JcL8DLOZk4OVNC8o8EkwMDAwMKTemM3AxinK8P3HbwYGBgYGALnQLBbSsi+iAAAAAElFTkSuQmCC'),
+)!;
+final worldMapTile76 = decodePng(
+  base64.decode(
+      'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAMVJREFUOI3dkL0KggAYRY+ioCU0O0WTPkG7b9BL2FvUWzT5Fq0RzS0t0dBUQ5jgEFlg6GCLhflPbZ35nvtdPmE9HyekRKHPYjgBYOsuiZMOADEKACc08oiqIqMqMlHo45g2AMfAKwSrEAHCR4xj2li6wTHwuN137QuuF5dZf4SlG6zO+7f8mt+EMD1skkG39yHnC2p/AHwtA0hbd1kqZuU6pDIxL1ddBxB/kQGkuplNMqRPPKEVwm1kACkbbCsVFvzCHxQ8ActeVBKhNlaMAAAAAElFTkSuQmCC'),
+)!;
+final worldMapTile77 = decodePng(
+  base64.decode(
+      'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAOJJREFUOI3dkrEKglAUQI+RoRFtDUbQaBB9hER7P9FnNPUNTX5B39DQ0tQaDm0NkUJDlKKRgw3yRCz1zd3l8S7vnXfevVcZ7zcJhRgQAKDySlclZNKfAjA7rGjpvexso3i5LM5PDwB7tOAd3dA1FV1T5QF+4HB+eliGiT1aEL1ieYM4aWeQnXvCMkzWwzmP+5WmrEHeZOeCZZhsu8vfBhc66ctoXxZ5E6DeIEbLuiEgqhLiBw7HwCmvgbAomgiQgFUWsQoiQLVfuNDJBusXRKqNeROxFznpNhYhIic9iWXxB4APRCxP3dWRdHUAAAAASUVORK5CYII='),
+)!;
+final worldMapTile78 = decodePng(
+  base64.decode(
+      'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAASlJREFUOI2Vkr1Kw1AUgL9cmpJIjTgUmiDYLYXShwiluPoSmXwGpz6DU/AB3NwdsnTqLrRbBTEFB7GWJJihDuGGy00C8UC4OffnO9/lXGO6ejqhxRVHAEzycjRSZt4cgMV6Sd8eVnuFfrgtdoc9ANEk5Df7xLZMbMvsDvg5vrI77Alcn2gSkuVFd4PidFZB4mRL4Po8XN/y/fVBr6uBahInELg+L859s8E7g7IyVs1CNQEwblaPtS7oIbtR5UZa/ff0Rb2yzNV90sY0UoRK0yvKqzRBJUhIkg5qg+ifmHlzzgdT2kA6ROZyTkDZEgmRoCaIelDOicV6WT0OFdI1xMWlx93bcw3SZNEIALAtk3ATESdbxs7oXyYiywuyvKBvDwk3EQBjZ9QZ8AclQXHPAnaQ9QAAAABJRU5ErkJggg=='),
+)!;
+final worldMapTile79 = decodePng(
+  base64.decode(
+      'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAARpJREFUOI2dkrFKw1AUhr+EXEm0RhyERATjlIK7e97Al4iLz6Bv4ZSXEFcpnV1citBOrSBpoYO01iY0QxxqwjW9NdF/ulzO9//nHI729HCV861VMuXx4gaAXtwhy3cByDABeKNFVbplCixTsEqmRO0QgNF8slG4TTpAkmZE7ZDA9RnNJ3wsXpobzN5j7k4vCVyf7nhQwkX7ddJuh8/52d7BD7hq8OsOgH/DAEYv7ihBGQY4YaE2UIFVuJAg3fjT6+CidRUstCWGKqkOFtqyfBtyoTynamkyuN86x7MdDLlw26ZVcOD6DD9n6w7+ogLujgeE/aiZQZEuw9ev91iHx+tDaprs2U6ZbJkCoPkInu0AEPYjdqwjkjQD4Atry3UEx26+PwAAAABJRU5ErkJggg=='),
+)!;
+final worldMapTile80 = decodePng(
+  base64.decode(
+      'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAG1JREFUOI1jZFmw5T8DBYCJEs2jBowaQDUDWCR1xOGc51deku6Cb/z8DN/4+RkYGBgYkA0j2oDyg9UMv5dtYnA5uYSBgYGBQV6BmzQDfnO9Y+hX281gI3SDPC9IMLIwMDAwMLz4/4dkzQwMDAwAZu8YK9CjzNYAAAAASUVORK5CYII='),
+)!;
+final worldMapTile81 = decodePng(
+  base64.decode(
+      'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAGBJREFUOI1jZFmw5T8DBYCJEs2jBowaQDUDWMjRJKkjTr4BMM3f+PlJN0BegZvhFwMDg8vJJQxr38gy1EifJN0Fz6+8ZLARusFgI3SD4cX/P+QF4ov/fxgYGBgYJBhZGAD4bRUpLW/pAgAAAABJRU5ErkJggg=='),
+)!;
+final worldMapTile82 = decodePng(
+  base64.decode(
+      'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAHdJREFUOI1jnLvc/T8DAwPDi/9/GOp/FTLIK3AzPHzwlYFYwPTi/x8GBgYGBglGFqI1oRjA+k2IofCWK8ORdxoMkjriJBvAKHz71n8GBgYGro8fGRgYGBieX3lJkgEsMI3kaGZgYGBgIUcTMmCiSPeoAaMGUMsAAEYrINgLdHHyAAAAAElFTkSuQmCC'),
+)!;
+final worldMapTile83 = decodePng(
+  base64.decode(
+      'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAHZJREFUOI1jZFmw5T8DkUBegZvh4YOvDI1s/QwSjCwMDAwMDEzEakYGMM0v/v8h3QBJHXGGI+80GApvuTKwfhNiYCTFCzADGBgYGL7x8zMwMJDhhedXXjIwMDAwcH38yMD18SMDC6kGIBtClgvQwagBowZQxQAAEIIbZRx3vcYAAAAASUVORK5CYII='),
+)!;
+final worldMapTile84 = decodePng(
+  base64.decode(
+      'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAKtJREFUOI3tk7EKglAYRs+V25KDYENFhI4NPYJj0fO4Bz1JW9DUW7S4O4gtNakQgUMOcuE2CbZ5b2vffg4fP98vjuedBii14tDGBKHL4/5maJxSKwBmQg6GvgSjxifOt1xfK+brqbFATG65BhjXNQBFWhkJZAfawADSBurH+Yn+CwCwml9/cMaCDm48z1wQhC4tsElOXJ5L9ovEvEGRVkR+RuRnlFrZHbH/wR9+7TOKcAPj8QAAAABJRU5ErkJggg=='),
+)!;
+final worldMapTile85 = decodePng(
+  base64.decode(
+      'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAK9JREFUOI1jZFmw5T8DkUBegZvh4YOvDI1s/QwSjCwMDAwMDEzEakYGMM0v/v8h3QBJHXGGI+80GApvuTKwfhNiYCTFCzADGBgYGL7x8zMwMJDhhedXXjIwMDAwcH38yMD18SMDC6kGIBtClgvQwagBDAwssHhlYEANXaJd8I2fH54okA0j2oDyg9UMv5dtYnA5uYSBgQGSYUgy4DfXO4Z+td0MNkI3yPMCcs4iBwAAt7cxGe1+uRsAAAAASUVORK5CYII='),
+)!;
+final worldMapTile86 = decodePng(
+  base64.decode(
+      'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAdVJREFUOI1tkr+LE1EQxz8bbLzbZS0OY2DLa5aoIAdyINfYaatwEtTi8sPiwEuwE9RcJShHREx1Sf6WAwu1E1zQws6FzYYg+9i9eiw27yXvzDTvzXsz35nvd8YREQFQSuH7Ptou+hdtPBmWF1lYFEUSRZEcdZvmLiKSZZmIiIzGn6xTW6XbawFwOhpYFU5HA7q9Fp1nT1BK0Tw4RCnFwwePrTin3WnIxsbltW0myQzf91Aq5/WrtwDU63WLgtPuNESpHADf9xb8l361ukWazlEqp1a7CsBx/8ToU9HVdPA6v1rdMuDH/RNLyEocT83nanAcT0nTOWk6N+9JMuNN/4U1HWdv77YAuJ5r8S/yAtdzCYJr5k3TaLd6BEGA7/tlB3E8pcgLExjHCdlChzieWrTard7iXnbh3Lt/V4q8MAkAQVAzlX/9/E2mcnZ3bwGgJ/ZhMFqK6HouVxY6rCbr7sJw24AnycwS0blxM5Ql73Ncb9OAZSonCGrs7FwH4NF+xyR//XZG8+BwCVDk5+bT9TYBTNt6nGk65+j5S2C5UE7j6R3TwZfPfyyQMNy2RqynoPmPJ0MbYNV+fP9rAPRm6nUutSrHeGldsja9UADv3338L3k8GfIPp3Xvxhx5mfQAAAAASUVORK5CYII='),
+)!;
+final worldMapTile87 = decodePng(
+  base64.decode(
+      'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAbdJREFUOI11krGLE1EQxn8n15nlBTmMgdhdYQiCrYV/gpWijdVtrA7MhqBwVcId2CuxkcTKQkH/jzTHNRsOjgObB7t3WLzH5nLlWMQ32dXcNLsz877vzffNQ0RkMh3LZDqWm+LfXjlnUzPUnHMiIpKmqaRpKr0k1n8lKDM65xTknJMXL59KL4kVWP6KiPSSWLZERACmXz4R7+0zn88BODw6wJgI7wuazbtsiuXymq3JdCzx3j7ee4ajAQBZdokxEQCNxg5nZ78AtOZ9oblO4L0HYDgasFxeKxjg4uI33hcYE9Fo7FTyW2EcYwzD0YAsu/wPbG2u4PX5CGtztsPt1lpthhEBrM1ZFAuszbE21/qiWACsJvjx8ysAr7t9jIlUawA4X2BtVgEHQvUg6XfVWYDZ7IS6iXjQ3lWyMkndRNSi2tqD4H6Idnu3MnardY9Wq1kBA6s1Pn/2quLBt++fATg+TrE2o/5XkvMFi+KKWnRbz6qE8IA+fHxf2UCQs9J+pcBAsh0KnU6HpN+tbADWGymDHz+5v55gk4TDowMAfcqnp+c8fHSHTVF5iWWSt+/eqHmz2cmNBH8AeHV7tExOyoIAAAAASUVORK5CYII='),
+)!;
+final worldMapTile88 = decodePng(
+  base64.decode(
+      'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAY9JREFUOI19kjFrG0EQhb8Ip5KO64wEa4TBhQTp3PhPiHQSuLTsNIHI6RJD4jgpAglBJliFZEmNm+R3pEhryKoxBoGzIMnIYcUplYtJ4dyyJ3R6ze7M7ns7b2YfvTp+KizgZjjl9/CeUnmL2SwCoFBYB+Dk3RfCMHR3M4tkH8aMCcPAxQf7LzHGJO6sFPBFRqNbvn3vADAYDADo9VuspRE3Nh/z88e1i7e3nwDw/sNrZ+e02U0XAFAqTy7IoVTe5eJqOu0Lev1WuoVfl3/IBTmCIOtyk8kUgE77AoD63vN0AaUKiZevroYAbirxJFZaiGHMmHk0B+Dtm48YYwjDcHUTY0TRX+bRnFJ5i8aLo//VKWchVcCYkXs1/lDn3aY7P212HyzcjbKuzBhKFdnZKWLMGKXyzGZRYnQ+MvDQmM+fvqJUPtE4fwLLyL1+C6q1ioiIaK1Fay0Hz3alWqtItVYRa600DuuitRYf3d6Z29M4rIuIiLVWtNbix9Zat18kxyuSgmUkP04I+IlFLCP7+AddilbCHNi2bwAAAABJRU5ErkJggg=='),
+)!;
+final worldMapTile89 = decodePng(
+  base64.decode(
+      'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAaNJREFUOI2NkjtrG0EUhT8Zp7KWJcGFAuOAwIikCKR1kZ+gVoKUWjuNCsukduI0CdgEP5CKGK2aNPGPMQrsCKlQOWS1woQdVLm6aTIbrSwJn+bO3Jlz7rMgIsI/WGv5dPIBgDieAuD7HqPhmJ3yE16Ut1nEBkDY6wBgjOFg/yh79H0PYyYPSA8EAAaDAQA/b66J4+mjyACbAFHUJ4r6xPGUSqVMpVLm9lYzGo4B2Hu7sz6DzyffsqgOSpV4+WoXpUrrS3D1X3//AUCS3JEkdwB43hZFr0j0689qgaDRxPd9AKyd5azLRKnn60sIex2MMXw8/oq1M+LfyaMaCFBwe2CtxRgDwOXVF0bDMUWviFIljJnwdPt+6R4URETCXoco6mdO11A3hdTOeP3m2WqBeUfraD8nYswkm8R8Wc6X20SAi/NuLoLnbeVISpU4O7363+hu2JZl0FrLYSuQNE2lVq9KrV6Vg/fvRGstWmsREanVq4KISDdsy6JQmqaZdefDViBa69w9E3BYlpEjLP7phm3ZAAgazdWDhmzR5nsV9joEjSZ/AQD9PdrefBmVAAAAAElFTkSuQmCC'),
+)!;
+final worldMapTile90 = decodePng(
+  base64.decode(
+      'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAbhJREFUOI2FkkFLG1EUhT9DF9bJMDEEk4FXihBCZhHITl0U/Af+Cf0B4qZdWVrool2Uum1/jMuICyNDUEQIbR9MIkHyuG+g0sV0ofNMbCe9MHDfY86555x3l14f7mQ8qR/DCT+HvwGYGqES+LSjJsYIYbjG3u4+vZNjNje2KT0F5zU1wtQIVlK0Hrn7JLnh67fPbG5s0zs55lkRAYCVFMBNDwIfgL3dfQDi+KyYoNOtEvchipqIpA6c17v3bwCKLcT9W5QKHbBer1Gv1wD4cvQBgCDwiwmUClGq4c7j8cQR5Xa0Hi3OAMAYAZgLMgcD/ycQSbFiAej1zgCoBD5lv7yYQOvE9e2o6VRcXlxjJaXse8CCEDvd6sPP1slVqkE7alL2PSqBj1IhpfNTKZSfT7Fiuby4nsvBWVCqwfnp4wQAb9kj/fX9L0IrdmY77y2WVlae8+njEa3WuntrYwRv+SWdbpWpeVQ42+dbupRlWTYYDID77Wq11hmPJxgjiKSs1u6I+7dzwK1XL9zZvYJSijBc4+pqSBD47tN6RKdbnTEy2z8oMMZw+PbAXSbJzdzuaz1itXb3j5jhDyJKw9cM6DYsAAAAAElFTkSuQmCC'),
+)!;
+final worldMapTile91 = decodePng(
+  base64.decode(
+      'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAahJREFUOI2Fkk9LG0EYxn9KRM1mGA0hm4WxISCihNBc+o9S8HP00FP7AYqnHqqi0EJ70k8keKjSgy0bsIRCDh3YJKSaYXbP9rDumk3z54G5LPN79nmfdxZardbdxeUZAL5/RRD0kVLw6/o3Q2NZkwKAjdoSj2olxrV4cXnG82e7KZxI6y6hjRga+x+UMfD9KwDevX2PlAIpBcZYtnc2AeaaLAZBn6PjD5mP8j72k6ePKQiHRrM43SC5fHL6CQDXfZhTSoFSHv6Pm+kGWnfT2KNwIqUqKOVNN4C4MCkFvd6AXm+A1l0AzJwCAXIAoQ3TtQHp6pIxZhpoHRCbRBSEg1IeSlVIksUnYL00uchcaKMUGIdDG6J1lxevNmaPMKoETFQQzlT453dLriAchsYS2gitg8z8o3JWqvwNHn4SJ67EWwhtlF4cfXVDY2k0izgr1XTNrltia6vG1y+n5POrLLx+8/IuAb6d/8lEbjSL3A6WEcJBSoHrlmi3O+x//AxAvV7PdjBe1u1gOS0VoN3u4HlllFJorYH7hzRJ47AxFs8rA3BwuIdSCoB/ktiyMR6L0a0AAAAASUVORK5CYII='),
+)!;
 
 final patternToTile = {
-  // [Terrain.snow, Terrain.snow, Terrain.mountains, Terrain.mountains]:
-  //     worldMapTile45,
-  // [Terrain.mountains, Terrain.mountains, Terrain.mountains, Terrain.mountains]:
-  //     worldMapTile54,
-  // [Terrain.mountains, Terrain.mountains, Terrain.hills, Terrain.hills]:
-  //     worldMapTile37,
-  // [Terrain.hills, Terrain.hills, Terrain.grassland, Terrain.grassland]:
-  //     worldMapTile37,
-  // [Terrain.grassland, Terrain.grassland, Terrain.grassland, Terrain.grassland]:
-  //     worldMapTile52,
-  // [Terrain.grassland, Terrain.grassland, Terrain.mountains, Terrain.mountains]:
-  //     worldMapTile40,
-  // [Terrain.snow, Terrain.snow, Terrain.mountains, Terrain.snow]: worldMapTile55,
-  // [Terrain.mountains, Terrain.snow, Terrain.mountains, Terrain.mountains]:
-  //     worldMapTile41,
-  // [Terrain.grassland, Terrain.grassland, Terrain.grassland, Terrain.hills]:
-  //     worldMapTile35,
-  // [Terrain.grassland, Terrain.hills, Terrain.mountains, Terrain.mountains]:
-  //     worldMapTile40,
-  // [Terrain.snow, Terrain.snow, Terrain.snow, Terrain.mountains]: worldMapTile55,
-  // [Terrain.snow, Terrain.mountains, Terrain.mountains, Terrain.mountains]:
-  //     worldMapTile42,
-  // [Terrain.mountains, Terrain.mountains, Terrain.hills, Terrain.mountains]:
-  //     worldMapTile54,
-  // [Terrain.hills, Terrain.mountains, Terrain.grassland, Terrain.hills]:
-  //     worldMapTile53,
-  // [Terrain.grassland, Terrain.hills, Terrain.grassland, Terrain.grassland]:
-  //     worldMapTile33,
-  // [Terrain.grassland, Terrain.hills, Terrain.grassland, Terrain.hills]:
-  //     worldMapTile38,
-  // [Terrain.grassland, Terrain.hills, Terrain.hills, Terrain.mountains]:
-  //     worldMapTile40,
-  // [Terrain.hills, Terrain.mountains, Terrain.mountains, Terrain.mountains]:
-  //     worldMapTile54,
-  // [Terrain.hills, Terrain.hills, Terrain.grassland, Terrain.hills]:
-  //     worldMapTile53,
-  // [Terrain.grassland, Terrain.hills, Terrain.hills, Terrain.hills]:
-  //     worldMapTile53,
-  // [Terrain.hills, Terrain.hills, Terrain.hills, Terrain.hills]: worldMapTile53,
-  // [Terrain.hills, Terrain.hills, Terrain.mountains, Terrain.mountains]:
-  //     worldMapTile40,
-  // [Terrain.mountains, Terrain.mountains, Terrain.mountains, Terrain.snow]:
-  //     worldMapTile43,
-  // [Terrain.mountains, Terrain.hills, Terrain.mountains, Terrain.hills]:
-  //     worldMapTile39,
-  // [Terrain.mountains, Terrain.hills, Terrain.mountains, Terrain.grassland]:
-  //     worldMapTile39,
-  // [Terrain.mountains, Terrain.grassland, Terrain.mountains, Terrain.hills]:
-  //     worldMapTile39,
-  // [Terrain.mountains, Terrain.hills, Terrain.hills, Terrain.hills]:
-  //     worldMapTile34,
-  // [Terrain.hills, Terrain.hills, Terrain.mountains, Terrain.hills]:
-  //     worldMapTile53,
-  // [Terrain.mountains, Terrain.hills, Terrain.snow, Terrain.mountains]:
-  //     worldMapTile44,
-  // [Terrain.hills, Terrain.shore, Terrain.hills, Terrain.shore]: worldMapTile32,
-  // [Terrain.hills, Terrain.shore, Terrain.grassland, Terrain.shore]:
-  //     worldMapTile32,
-  // [Terrain.grassland, Terrain.shore, Terrain.hills, Terrain.grassland]:
-  //     worldMapTile25,
-  // [Terrain.hills, Terrain.grassland, Terrain.hills, Terrain.grassland]:
-  //     worldMapTile39,
-  // [Terrain.hills, Terrain.grassland, Terrain.mountains, Terrain.hills]:
-  //     worldMapTile35,
-  // [Terrain.shore, Terrain.deepSea, Terrain.shore, Terrain.deepSea]:
-  //     worldMapTile16,
-  // [Terrain.shore, Terrain.deepSea, Terrain.shore, Terrain.sea]: worldMapTile14,
-  // [Terrain.shore, Terrain.sea, Terrain.grassland, Terrain.sea]: worldMapTile14,
-  // [Terrain.grassland, Terrain.sea, Terrain.grassland, Terrain.shore]:
-  //     worldMapTile6,
-  // [Terrain.grassland, Terrain.shore, Terrain.grassland, Terrain.sea]:
-  //     worldMapTile1,
-  // [Terrain.grassland, Terrain.shore, Terrain.grassland, Terrain.shore]:
-  //     worldMapTile30,
-  // [Terrain.deepSea, Terrain.deepSea, Terrain.deepSea, Terrain.deepSea]:
-  //     worldMapTile49,
-  // [Terrain.deepSea, Terrain.deepSea, Terrain.sea, Terrain.deepSea]:
-  //     worldMapTile49,
-  // [Terrain.sea, Terrain.deepSea, Terrain.sea, Terrain.deepSea]: worldMapTile22,
-  // [Terrain.sea, Terrain.deepSea, Terrain.shore, Terrain.deepSea]:
-  //     worldMapTile22,
-  // [Terrain.shore, Terrain.deepSea, Terrain.sea, Terrain.deepSea]:
-  //     worldMapTile22,
-  // [Terrain.sea, Terrain.deepSea, Terrain.shore, Terrain.sea]: worldMapTile17,
-  // [Terrain.shore, Terrain.sea, Terrain.sea, Terrain.sea]: worldMapTile50,
-  // [Terrain.sea, Terrain.sea, Terrain.shore, Terrain.sea]: worldMapTile50,
-  // [Terrain.shore, Terrain.sea, Terrain.shore, Terrain.sea]: worldMapTile50,
-  // [Terrain.shore, Terrain.sea, Terrain.grassland, Terrain.shore]: worldMapTile9,
-  // [Terrain.sea, Terrain.deepSea, Terrain.sea, Terrain.sea]: worldMapTile17,
-  // [Terrain.sea, Terrain.sea, Terrain.sea, Terrain.sea]: worldMapTile50,
-  // [Terrain.deepSea, Terrain.deepSea, Terrain.sea, Terrain.sea]: worldMapTile21,
-  // [Terrain.sea, Terrain.sea, Terrain.sea, Terrain.deepSea]: worldMapTile19
-
   // Grass to sea
   [Terrain.grassland, Terrain.grassland, Terrain.grassland, Terrain.sea]:
       worldMapTile1,
@@ -336,6 +387,14 @@ final patternToTile = {
       worldMapTile7,
   [Terrain.grassland, Terrain.grassland, Terrain.sea, Terrain.sea]:
       worldMapTile8,
+  [Terrain.sea, Terrain.sea, Terrain.grassland, Terrain.sea]: worldMapTile80,
+  [Terrain.sea, Terrain.sea, Terrain.sea, Terrain.grassland]: worldMapTile81,
+  [Terrain.grassland, Terrain.sea, Terrain.sea, Terrain.sea]: worldMapTile82,
+  [Terrain.sea, Terrain.grassland, Terrain.sea, Terrain.sea]: worldMapTile83,
+  [Terrain.grassland, Terrain.sea, Terrain.sea, Terrain.grassland]:
+      worldMapTile84,
+  [Terrain.sea, Terrain.grassland, Terrain.grassland, Terrain.sea]:
+      worldMapTile85,
 
   // Shore to sea
   [Terrain.shore, Terrain.sea, Terrain.shore, Terrain.shore]: worldMapTile9,
@@ -346,6 +405,12 @@ final patternToTile = {
   [Terrain.shore, Terrain.sea, Terrain.shore, Terrain.sea]: worldMapTile14,
   [Terrain.sea, Terrain.shore, Terrain.sea, Terrain.shore]: worldMapTile15,
   [Terrain.shore, Terrain.shore, Terrain.sea, Terrain.sea]: worldMapTile16,
+  [Terrain.sea, Terrain.sea, Terrain.shore, Terrain.sea]: worldMapTile74,
+  [Terrain.sea, Terrain.sea, Terrain.sea, Terrain.shore]: worldMapTile75,
+  [Terrain.shore, Terrain.sea, Terrain.sea, Terrain.sea]: worldMapTile76,
+  [Terrain.sea, Terrain.shore, Terrain.sea, Terrain.sea]: worldMapTile77,
+  [Terrain.sea, Terrain.shore, Terrain.shore, Terrain.sea]: worldMapTile78,
+  [Terrain.shore, Terrain.sea, Terrain.sea, Terrain.shore]: worldMapTile79,
 
   // Shore to deep sea
   [Terrain.shore, Terrain.deepSea, Terrain.shore, Terrain.shore]: worldMapTile9,
@@ -363,6 +428,18 @@ final patternToTile = {
       worldMapTile15,
   [Terrain.shore, Terrain.shore, Terrain.deepSea, Terrain.deepSea]:
       worldMapTile16,
+  [Terrain.deepSea, Terrain.deepSea, Terrain.shore, Terrain.deepSea]:
+      worldMapTile74,
+  [Terrain.deepSea, Terrain.deepSea, Terrain.deepSea, Terrain.shore]:
+      worldMapTile75,
+  [Terrain.shore, Terrain.deepSea, Terrain.deepSea, Terrain.deepSea]:
+      worldMapTile76,
+  [Terrain.deepSea, Terrain.shore, Terrain.deepSea, Terrain.deepSea]:
+      worldMapTile77,
+  [Terrain.deepSea, Terrain.shore, Terrain.shore, Terrain.deepSea]:
+      worldMapTile78,
+  [Terrain.shore, Terrain.deepSea, Terrain.deepSea, Terrain.shore]:
+      worldMapTile79,
 
   // Sea to deep sea
   [Terrain.sea, Terrain.deepSea, Terrain.sea, Terrain.sea]: worldMapTile17,
@@ -373,6 +450,16 @@ final patternToTile = {
   [Terrain.sea, Terrain.deepSea, Terrain.sea, Terrain.deepSea]: worldMapTile22,
   [Terrain.deepSea, Terrain.sea, Terrain.deepSea, Terrain.sea]: worldMapTile23,
   [Terrain.sea, Terrain.sea, Terrain.deepSea, Terrain.deepSea]: worldMapTile24,
+  [Terrain.deepSea, Terrain.deepSea, Terrain.sea, Terrain.deepSea]:
+      worldMapTile68,
+  [Terrain.deepSea, Terrain.deepSea, Terrain.deepSea, Terrain.sea]:
+      worldMapTile69,
+  [Terrain.sea, Terrain.deepSea, Terrain.deepSea, Terrain.deepSea]:
+      worldMapTile70,
+  [Terrain.deepSea, Terrain.sea, Terrain.deepSea, Terrain.deepSea]:
+      worldMapTile71,
+  [Terrain.deepSea, Terrain.sea, Terrain.sea, Terrain.deepSea]: worldMapTile72,
+  [Terrain.sea, Terrain.deepSea, Terrain.deepSea, Terrain.sea]: worldMapTile73,
 
   // Grass to shore
   [Terrain.grassland, Terrain.shore, Terrain.grassland, Terrain.grassland]:
@@ -391,6 +478,18 @@ final patternToTile = {
       worldMapTile31,
   [Terrain.grassland, Terrain.grassland, Terrain.shore, Terrain.shore]:
       worldMapTile32,
+  [Terrain.shore, Terrain.shore, Terrain.grassland, Terrain.shore]:
+      worldMapTile56,
+  [Terrain.shore, Terrain.shore, Terrain.shore, Terrain.grassland]:
+      worldMapTile57,
+  [Terrain.grassland, Terrain.shore, Terrain.shore, Terrain.shore]:
+      worldMapTile58,
+  [Terrain.shore, Terrain.grassland, Terrain.shore, Terrain.shore]:
+      worldMapTile59,
+  [Terrain.grassland, Terrain.shore, Terrain.shore, Terrain.grassland]:
+      worldMapTile60,
+  [Terrain.shore, Terrain.grassland, Terrain.grassland, Terrain.shore]:
+      worldMapTile61,
 
   // Grass to hills
   [Terrain.grassland, Terrain.hills, Terrain.grassland, Terrain.grassland]:
@@ -409,6 +508,18 @@ final patternToTile = {
       worldMapTile39,
   [Terrain.grassland, Terrain.grassland, Terrain.hills, Terrain.hills]:
       worldMapTile40,
+  [Terrain.hills, Terrain.hills, Terrain.grassland, Terrain.hills]:
+      worldMapTile62,
+  [Terrain.hills, Terrain.hills, Terrain.hills, Terrain.grassland]:
+      worldMapTile63,
+  [Terrain.grassland, Terrain.hills, Terrain.hills, Terrain.hills]:
+      worldMapTile64,
+  [Terrain.hills, Terrain.grassland, Terrain.hills, Terrain.hills]:
+      worldMapTile65,
+  [Terrain.grassland, Terrain.hills, Terrain.hills, Terrain.grassland]:
+      worldMapTile66,
+  [Terrain.hills, Terrain.grassland, Terrain.grassland, Terrain.hills]:
+      worldMapTile67,
 
   // Hills to mountains
   [Terrain.hills, Terrain.mountains, Terrain.hills, Terrain.hills]:
@@ -427,6 +538,18 @@ final patternToTile = {
       worldMapTile39,
   [Terrain.hills, Terrain.hills, Terrain.mountains, Terrain.mountains]:
       worldMapTile40,
+  [Terrain.mountains, Terrain.mountains, Terrain.hills, Terrain.mountains]:
+      worldMapTile62,
+  [Terrain.mountains, Terrain.mountains, Terrain.mountains, Terrain.hills]:
+      worldMapTile63,
+  [Terrain.hills, Terrain.mountains, Terrain.mountains, Terrain.mountains]:
+      worldMapTile64,
+  [Terrain.mountains, Terrain.hills, Terrain.mountains, Terrain.mountains]:
+      worldMapTile65,
+  [Terrain.hills, Terrain.mountains, Terrain.mountains, Terrain.hills]:
+      worldMapTile66,
+  [Terrain.mountains, Terrain.hills, Terrain.hills, Terrain.mountains]:
+      worldMapTile67,
 
   // Mountains to snow
   [Terrain.mountains, Terrain.snow, Terrain.mountains, Terrain.mountains]:
@@ -445,6 +568,14 @@ final patternToTile = {
       worldMapTile47,
   [Terrain.mountains, Terrain.mountains, Terrain.snow, Terrain.snow]:
       worldMapTile48,
+  [Terrain.snow, Terrain.snow, Terrain.mountains, Terrain.snow]: worldMapTile86,
+  [Terrain.snow, Terrain.snow, Terrain.snow, Terrain.mountains]: worldMapTile87,
+  [Terrain.mountains, Terrain.snow, Terrain.snow, Terrain.snow]: worldMapTile88,
+  [Terrain.snow, Terrain.mountains, Terrain.snow, Terrain.snow]: worldMapTile89,
+  [Terrain.mountains, Terrain.snow, Terrain.snow, Terrain.mountains]:
+      worldMapTile90,
+  [Terrain.snow, Terrain.mountains, Terrain.mountains, Terrain.snow]:
+      worldMapTile91,
 
   // Single tiles
   [Terrain.deepSea, Terrain.deepSea, Terrain.deepSea, Terrain.deepSea]:
@@ -459,98 +590,60 @@ final patternToTile = {
   [Terrain.snow, Terrain.snow, Terrain.snow, Terrain.snow]: worldMapTile55,
 
   // Extras
-  [Terrain.snow, Terrain.mountains, Terrain.snow, Terrain.snow]: worldMapTile55,
-  [Terrain.snow, Terrain.snow, Terrain.snow, Terrain.mountains]: worldMapTile55,
   [Terrain.hills, Terrain.hills, Terrain.shore, Terrain.shore]: worldMapTile32,
   [Terrain.mountains, Terrain.mountains, Terrain.hills, Terrain.grassland]:
       worldMapTile37,
   [Terrain.hills, Terrain.grassland, Terrain.shore, Terrain.shore]:
       worldMapTile32,
   [Terrain.shore, Terrain.shore, Terrain.deepSea, Terrain.sea]: worldMapTile16,
-  [Terrain.deepSea, Terrain.sea, Terrain.deepSea, Terrain.deepSea]:
-      worldMapTile49,
   [Terrain.mountains, Terrain.mountains, Terrain.grassland, Terrain.hills]:
-      worldMapTile37,
+      worldMapTile62,
   [Terrain.grassland, Terrain.hills, Terrain.shore, Terrain.grassland]:
       worldMapTile33,
   [Terrain.shore, Terrain.grassland, Terrain.sea, Terrain.sea]: worldMapTile16,
-  [Terrain.mountains, Terrain.hills, Terrain.mountains, Terrain.mountains]:
-      worldMapTile54,
   [Terrain.grassland, Terrain.grassland, Terrain.sea, Terrain.shore]:
       worldMapTile12,
   [Terrain.sea, Terrain.shore, Terrain.deepSea, Terrain.deepSea]:
-      worldMapTile24,
+      worldMapTile77,
   [Terrain.hills, Terrain.grassland, Terrain.mountains, Terrain.hills]:
-      worldMapTile36,
+      worldMapTile65,
   [Terrain.grassland, Terrain.grassland, Terrain.shore, Terrain.sea]:
       worldMapTile11,
   [Terrain.shore, Terrain.sea, Terrain.deepSea, Terrain.deepSea]:
-      worldMapTile22,
-  [Terrain.hills, Terrain.grassland, Terrain.hills, Terrain.hills]:
-      worldMapTile52,
-  [Terrain.sea, Terrain.shore, Terrain.deepSea, Terrain.sea]: worldMapTile20,
-  [Terrain.grassland, Terrain.hills, Terrain.hills, Terrain.hills]:
-      worldMapTile52,
-  [Terrain.shore, Terrain.sea, Terrain.sea, Terrain.sea]: worldMapTile50,
-  [Terrain.sea, Terrain.shore, Terrain.sea, Terrain.sea]: worldMapTile50,
+      worldMapTile76,
+  [Terrain.sea, Terrain.shore, Terrain.deepSea, Terrain.sea]: worldMapTile77,
   [Terrain.grassland, Terrain.hills, Terrain.hills, Terrain.mountains]:
-      worldMapTile35,
+      worldMapTile64,
   [Terrain.grassland, Terrain.mountains, Terrain.grassland, Terrain.mountains]:
       worldMapTile38,
   [Terrain.grassland, Terrain.mountains, Terrain.hills, Terrain.mountains]:
-      worldMapTile38,
-  [Terrain.hills, Terrain.mountains, Terrain.mountains, Terrain.mountains]:
-      worldMapTile54,
+      worldMapTile64,
   [Terrain.mountains, Terrain.snow, Terrain.hills, Terrain.mountains]:
       worldMapTile41,
   [Terrain.hills, Terrain.mountains, Terrain.grassland, Terrain.hills]:
-      worldMapTile33,
+      worldMapTile63,
   [Terrain.shore, Terrain.grassland, Terrain.sea, Terrain.shore]:
       worldMapTile12,
   [Terrain.mountains, Terrain.hills, Terrain.snow, Terrain.mountains]:
       worldMapTile41,
-  [Terrain.snow, Terrain.snow, Terrain.mountains, Terrain.snow]: worldMapTile55,
-  [Terrain.hills, Terrain.hills, Terrain.hills, Terrain.grassland]:
-      worldMapTile52,
   [Terrain.shore, Terrain.sea, Terrain.grassland, Terrain.shore]: worldMapTile9,
   [Terrain.grassland, Terrain.grassland, Terrain.hills, Terrain.mountains]:
       worldMapTile35,
-  [Terrain.mountains, Terrain.snow, Terrain.snow, Terrain.snow]: worldMapTile55,
-  [Terrain.sea, Terrain.sea, Terrain.shore, Terrain.sea]: worldMapTile50,
   [Terrain.shore, Terrain.sea, Terrain.grassland, Terrain.grassland]:
       worldMapTile9,
   [Terrain.grassland, Terrain.grassland, Terrain.mountains, Terrain.hills]:
       worldMapTile36,
-  [Terrain.sea, Terrain.deepSea, Terrain.deepSea, Terrain.deepSea]:
-      worldMapTile49,
-  [Terrain.deepSea, Terrain.deepSea, Terrain.sea, Terrain.deepSea]:
-      worldMapTile49,
   [Terrain.sea, Terrain.sea, Terrain.grassland, Terrain.shore]: worldMapTile13,
   [Terrain.grassland, Terrain.shore, Terrain.hills, Terrain.grassland]:
       worldMapTile25,
-  [Terrain.sea, Terrain.deepSea, Terrain.shore, Terrain.sea]: worldMapTile17,
-  [Terrain.hills, Terrain.hills, Terrain.grassland, Terrain.hills]:
-      worldMapTile52,
+  [Terrain.sea, Terrain.deepSea, Terrain.shore, Terrain.sea]: worldMapTile74,
   [Terrain.shore, Terrain.grassland, Terrain.sea, Terrain.grassland]:
       worldMapTile12,
   [Terrain.sea, Terrain.grassland, Terrain.sea, Terrain.shore]: worldMapTile15,
-  [Terrain.shore, Terrain.shore, Terrain.shore, Terrain.grassland]:
-      worldMapTile51,
-  [Terrain.shore, Terrain.shore, Terrain.grassland, Terrain.shore]:
-      worldMapTile51,
-  [Terrain.shore, Terrain.grassland, Terrain.shore, Terrain.shore]:
-      worldMapTile51,
-  [Terrain.grassland, Terrain.shore, Terrain.shore, Terrain.shore]:
-      worldMapTile51,
-  [Terrain.mountains, Terrain.mountains, Terrain.hills, Terrain.mountains]:
-      worldMapTile54,
-  [Terrain.sea, Terrain.sea, Terrain.sea, Terrain.shore]: worldMapTile50,
   [Terrain.sea, Terrain.shore, Terrain.shore, Terrain.grassland]:
       worldMapTile10,
   [Terrain.sea, Terrain.sea, Terrain.shore, Terrain.grassland]: worldMapTile15,
-  [Terrain.deepSea, Terrain.deepSea, Terrain.deepSea, Terrain.sea]:
-      worldMapTile49,
-  [Terrain.deepSea, Terrain.sea, Terrain.sea, Terrain.shore]: worldMapTile18,
+  [Terrain.deepSea, Terrain.sea, Terrain.sea, Terrain.shore]: worldMapTile75,
   [Terrain.sea, Terrain.shore, Terrain.grassland, Terrain.grassland]:
       worldMapTile10,
   [Terrain.hills, Terrain.mountains, Terrain.grassland, Terrain.grassland]:
@@ -560,18 +653,63 @@ final patternToTile = {
   [Terrain.mountains, Terrain.mountains, Terrain.grassland, Terrain.grassland]:
       worldMapTile37,
   [Terrain.hills, Terrain.grassland, Terrain.mountains, Terrain.mountains]:
-      worldMapTile40,
-  [Terrain.snow, Terrain.mountains, Terrain.mountains, Terrain.snow]:
-      worldMapTile55,
+      worldMapTile65,
   [Terrain.mountains, Terrain.snow, Terrain.grassland, Terrain.hills]:
-      worldMapTile37,
+      worldMapTile62,
   [Terrain.snow, Terrain.mountains, Terrain.hills, Terrain.mountains]:
-      worldMapTile54,
+      worldMapTile63,
   [Terrain.grassland, Terrain.hills, Terrain.hills, Terrain.snow]:
-      worldMapTile35,
+      worldMapTile64,
   [Terrain.hills, Terrain.hills, Terrain.snow, Terrain.snow]: worldMapTile38,
   [Terrain.hills, Terrain.grassland, Terrain.snow, Terrain.hills]:
-      worldMapTile36,
+      worldMapTile65,
   [Terrain.grassland, Terrain.shore, Terrain.shore, Terrain.sea]:
       worldMapTile11,
+  [Terrain.grassland, Terrain.hills, Terrain.grassland, Terrain.mountains]:
+      worldMapTile35,
+  [Terrain.hills, Terrain.mountains, Terrain.hills, Terrain.snow]:
+      worldMapTile38,
+  [Terrain.hills, Terrain.snow, Terrain.mountains, Terrain.mountains]:
+      worldMapTile54,
+  [Terrain.snow, Terrain.snow, Terrain.mountains, Terrain.hills]:
+      worldMapTile47,
+  [Terrain.mountains, Terrain.hills, Terrain.snow, Terrain.hills]:
+      worldMapTile47,
+  [Terrain.snow, Terrain.hills, Terrain.hills, Terrain.grassland]:
+      worldMapTile34,
+  [Terrain.grassland, Terrain.shore, Terrain.grassland, Terrain.sea]:
+      worldMapTile11,
+  [Terrain.grassland, Terrain.sea, Terrain.shore, Terrain.shore]: worldMapTile9,
+  [Terrain.hills, Terrain.grassland, Terrain.grassland, Terrain.shore]:
+      worldMapTile34,
+  [Terrain.hills, Terrain.hills, Terrain.hills, Terrain.snow]: worldMapTile43,
+  [Terrain.hills, Terrain.snow, Terrain.mountains, Terrain.snow]:
+      worldMapTile64,
+  [Terrain.hills, Terrain.hills, Terrain.snow, Terrain.mountains]:
+      worldMapTile38,
+  [Terrain.snow, Terrain.mountains, Terrain.mountains, Terrain.hills]:
+      worldMapTile42,
+  [Terrain.mountains, Terrain.hills, Terrain.hills, Terrain.grassland]:
+      worldMapTile34,
+  [Terrain.shore, Terrain.sea, Terrain.grassland, Terrain.sea]: worldMapTile14,
+  [Terrain.grassland, Terrain.sea, Terrain.grassland, Terrain.shore]:
+      worldMapTile9,
+  [Terrain.shore, Terrain.sea, Terrain.sea, Terrain.deepSea]: worldMapTile76,
+  [Terrain.grassland, Terrain.hills, Terrain.mountains, Terrain.mountains]:
+      worldMapTile64,
+  [Terrain.sea, Terrain.shore, Terrain.sea, Terrain.grassland]: worldMapTile15,
+  [Terrain.sea, Terrain.grassland, Terrain.shore, Terrain.grassland]:
+      worldMapTile10,
+  [Terrain.mountains, Terrain.hills, Terrain.mountains, Terrain.grassland]:
+      worldMapTile63,
+  [Terrain.mountains, Terrain.grassland, Terrain.hills, Terrain.grassland]:
+      worldMapTile39,
+  [Terrain.hills, Terrain.grassland, Terrain.mountains, Terrain.grassland]:
+      worldMapTile39,
+  [Terrain.mountains, Terrain.grassland, Terrain.mountains, Terrain.grassland]:
+      worldMapTile39,
+  [Terrain.snow, Terrain.mountains, Terrain.snow, Terrain.hills]:
+      worldMapTile47,
+  [Terrain.snow, Terrain.hills, Terrain.mountains, Terrain.hills]:
+      worldMapTile42
 };

@@ -15,6 +15,7 @@
 - [Generating companions](#generating-companions)
 - [Generating holidays](#generating-holidays)
 - [Generate world map](#generate-world-map)
+  - [Generate world map with tiles (experimental)](#generate-world-map-with-tiles-experimental)
 
 ## Generating names
 
@@ -184,3 +185,18 @@ print(worldMap.toMap()["image"]) // Prints the image as base64
 Expected results:
 
 ![expected output](https://raw.githubusercontent.com/ItayElf/randpg/refs/heads/main/example/island_setting.png)
+
+### Generate world map with tiles (experimental)
+
+```dart
+final WorldMapSettings worldMapSettings = IslandsWorldMapSettings();
+final worldMapGenerator = WorldMapGenerator.withTiles(worldMapSettings, 16 * 100, 16 * 100); // 16 is the tile size
+worldMapGenerator.seed(1664)
+
+final worldMap = worldMapGenerator.generate(); // Note: this class is currently experimental and this method might throw `UnimplementedError`
+print(worldMap.toMap()["image"]) // Prints the image as base64
+```
+
+Expected results:
+
+![expected output](https://raw.githubusercontent.com/ItayElf/randpg/refs/heads/main/example/normal_setting.png)
