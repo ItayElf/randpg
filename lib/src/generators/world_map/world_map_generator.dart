@@ -123,13 +123,13 @@ class WorldMapGenerator implements Generator<WorldMap> {
   static ColorFloat16 _getColorFromTerrain(Terrain terrain) {
     switch (terrain) {
       case Terrain.deepSea:
-        return ColorFloat16.rgb(0, 0, 128);
+        return ColorFloat16.rgb(4, 160, 180);
       case Terrain.sea:
-        return ColorFloat16.rgb(0, 128, 255);
+        return ColorFloat16.rgb(43, 196, 169);
       case Terrain.shore:
-        return ColorFloat16.rgb(255, 255, 0);
+        return ColorFloat16.rgb(201, 178, 102);
       case Terrain.grassland:
-        return ColorFloat16.rgb(0, 255, 0);
+        return ColorFloat16.rgb(133, 166, 67);
       case Terrain.hills:
         return ColorFloat16.rgb(139, 69, 19);
       case Terrain.mountains:
