@@ -3,10 +3,10 @@ import 'dart:convert';
 
 import 'package:image/image.dart';
 
-import 'package:randpg/src/subtypes/world_map/world_map_settings.dart';
-
+import '../../subtypes/world_map/world_map_settings.dart';
 import '../../subtypes/world_map/world_map_settings_manager.dart';
 
+/// A class that represents a world map
 class WorldMap {
   /// The settings of the world map
   final WorldMapSettings settings;

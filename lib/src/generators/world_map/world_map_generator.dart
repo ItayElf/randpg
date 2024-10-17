@@ -7,6 +7,7 @@ import '../base/generator.dart';
 import '../base/seed_generator.dart';
 import 'perlin_map_generator.dart';
 
+/// A class that generates world maps
 class WorldMapGenerator implements Generator<WorldMap> {
   late int _seed;
   final WorldMapSettings _settings;

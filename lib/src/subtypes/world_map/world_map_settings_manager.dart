@@ -2,6 +2,11 @@ import 'package:collection/collection.dart';
 
 import '../../exceptions/not_found_exceptions.dart';
 import '../managers/manager.dart';
+import 'flatlands/flatlands_world_map_settings.dart';
+import 'islands/islands_world_map_settings.dart';
+import 'mountainous/mountainous_world_map_settings.dart';
+import 'normal/normal_world_map_settings.dart';
+import 'rocky/rocky_world_map_settings.dart';
 import 'world_map_settings.dart';
 
 /// A class that handles the available world map settings and using them
@@ -10,7 +15,13 @@ import 'world_map_settings.dart';
 class WorldMapSettingsManager extends Manager<WorldMapSettings> {
   const WorldMapSettingsManager();
 
-  static final Set<WorldMapSettings> _worldMapSettingsPool = {};
+  static final Set<WorldMapSettings> _worldMapSettingsPool = {
+    NormalWorldMapSettings(),
+    IslandsWorldMapSettings(),
+    MountainousWorldMapSettings(),
+    FlatlandsWorldMapSettings(),
+    RockyWorldMapSettings(),
+  };
 
   static final Set<WorldMapSettings> _activeWorldMapSettings = {
     ..._worldMapSettingsPool

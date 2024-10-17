@@ -1,4 +1,4 @@
-import 'package:randpg/src/enums/terrain.dart';
+import '../../enums/terrain.dart';
 
 abstract class WorldMapSettings {
   /// Returns the name of the setting

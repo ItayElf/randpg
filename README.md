@@ -13,7 +13,6 @@ To view the changelog, [click here](./CHANGELOG.md)
 - [Installation](#installation)
 - [Features](#features)
 - [Goals](#goals)
-  - [In the Future](#in-the-future)
 - [Usage](#usage)
 
 ## Installation
@@ -34,12 +33,9 @@ Follow the installation instructions on [dart packages](https://pub.dev/packages
 - Generate holidays
 - Generate emblems as svg
 - Generate complete worlds
+- Generate world maps
 
 ## Goals
-
-- World Map Generator
-
-### In the Future
 
 - Waypoint Generator
 
