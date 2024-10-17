@@ -8,7 +8,7 @@ class IslandsWorldMapSettings implements WorldMapSettings {
 
   @override
   Terrain getTerrainFromHeight(double height) {
-    if (height < -0.2) {
+    if (height < -0.3) {
       return Terrain.deepSea;
     } else if (height < 0.2) {
       return Terrain.sea;
