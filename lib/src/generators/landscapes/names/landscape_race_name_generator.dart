@@ -1,7 +1,7 @@
 import '../../../enums/gender.dart';
 import '../../../strings_manipulations.dart';
 import '../../../subtypes/races/race_manager.dart';
-import '../../base/constant_generator.dart ';
+import '../../base/constant_generator.dart';
 import '../../base/future_generator.dart';
 import '../../base/generator.dart';
 import '../../base/list_batch_generator.dart';

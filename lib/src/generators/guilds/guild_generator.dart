@@ -1,7 +1,7 @@
 import '../../entities/guilds/guilds.dart';
 import '../../subtypes/guilds/guild_type.dart';
 import '../base/batch_generator.dart';
-import '../base/constant_generator.dart ';
+import '../base/constant_generator.dart';
 import '../base/generator.dart';
 import '../base/repeated_generator.dart';
 import '../base/seed_generator.dart';

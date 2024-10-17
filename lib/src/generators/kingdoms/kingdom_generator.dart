@@ -5,7 +5,7 @@ import '../../subtypes/kingdoms/government_types/government_type.dart';
 import '../../subtypes/kingdoms/kingdom_type.dart';
 import '../../subtypes/races/race.dart';
 import '../base/batch_generator.dart';
-import '../base/constant_generator.dart ';
+import '../base/constant_generator.dart';
 import '../base/future_generator.dart';
 import '../base/generator.dart';
 import '../base/list_batch_generator.dart';

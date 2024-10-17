@@ -4,7 +4,7 @@ import '../../enums/gender.dart';
 import '../../subtypes/companions/companion_manager.dart';
 import '../../subtypes/races/race.dart';
 import '../base/batch_generator.dart';
-import '../base/constant_generator.dart ';
+import '../base/constant_generator.dart';
 import '../base/generator.dart';
 import '../base/list_batch_generator.dart';
 import '../base/list_item_generator.dart';

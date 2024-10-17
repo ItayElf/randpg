@@ -1,5 +1,5 @@
 import '../../../../enums/gender.dart';
-import '../../../../generators/base/constant_generator.dart ';
+import '../../../../generators/base/constant_generator.dart';
 import '../../../../generators/base/generator.dart';
 import '../government_type.dart';
 

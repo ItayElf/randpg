@@ -1,7 +1,7 @@
 import '../../entities/holidays/holiday.dart';
 import '../../subtypes/holidays/holiday_type.dart';
 import '../base/batch_generator.dart';
-import '../base/constant_generator.dart ';
+import '../base/constant_generator.dart';
 import '../base/generator.dart';
 import '../base/seed_generator.dart';
 import '../base/unique_generator.dart';

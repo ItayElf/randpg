@@ -2,7 +2,7 @@ import '../../entities/emblems/emblem.dart';
 import '../../entities/emblems/hsl_color.dart';
 import '../../subtypes/emblems/emblem_type.dart';
 import '../base/batch_generator.dart';
-import '../base/constant_generator.dart ';
+import '../base/constant_generator.dart';
 import '../base/generator.dart';
 import '../base/seed_generator.dart';
 import 'icons/emblem_icons_generator.dart';

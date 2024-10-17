@@ -1,6 +1,6 @@
 import '../../../entities/emblems/hsl_color.dart';
 import '../../base/batch_generator.dart';
-import '../../base/constant_generator.dart ';
+import '../../base/constant_generator.dart';
 import '../../base/future_generator.dart';
 import '../../base/number_generator.dart';
 

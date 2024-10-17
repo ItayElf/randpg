@@ -1,7 +1,7 @@
 import '../../../entities/npcs/alignment.dart';
 import '../../../entities/npcs/hair.dart';
 import '../../../enums/gender.dart';
-import '../../../generators/base/constant_generator.dart ';
+import '../../../generators/base/constant_generator.dart';
 import '../../../generators/base/generator.dart';
 import '../../../generators/base/multiple_generator.dart';
 import '../../../generators/base/number_generator.dart';

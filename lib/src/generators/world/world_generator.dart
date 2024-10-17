@@ -2,7 +2,7 @@ import '../../entities/worlds/world.dart';
 import '../../subtypes/holidays/holiday_type.dart';
 import '../../subtypes/worlds/world_settings.dart';
 import '../base/batch_generator.dart';
-import '../base/constant_generator.dart ';
+import '../base/constant_generator.dart';
 import '../base/generator.dart';
 import '../base/list_batch_generator.dart';
 import '../base/number_generator.dart';

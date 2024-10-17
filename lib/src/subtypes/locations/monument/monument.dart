@@ -1,6 +1,6 @@
 import '../../../entities/npcs/npc.dart';
 import '../../../entities/settlements/goods.dart';
-import '../../../generators/base/constant_generator.dart ';
+import '../../../generators/base/constant_generator.dart';
 import '../../../generators/base/generator.dart';
 import '../../../generators/base/list_item_generator.dart';
 import '../../../generators/settlements/locations/names/description_location_name_generator.dart';

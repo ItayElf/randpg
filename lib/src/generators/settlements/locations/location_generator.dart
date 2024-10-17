@@ -3,7 +3,7 @@ import '../../../entities/settlements/location.dart';
 import '../../../subtypes/locations/location_type.dart';
 import '../../../subtypes/races/race.dart';
 import '../../base/batch_generator.dart';
-import '../../base/constant_generator.dart ';
+import '../../base/constant_generator.dart';
 import '../../base/future_generator.dart';
 import '../../base/generator.dart';
 import '../../base/seed_generator.dart';

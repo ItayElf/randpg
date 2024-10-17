@@ -1,7 +1,7 @@
 import '../../entities/landscapes/landscape.dart';
 import '../../subtypes/landscapes/landscape_type.dart';
 import '../base/batch_generator.dart';
-import '../base/constant_generator.dart ';
+import '../base/constant_generator.dart';
 import '../base/generator.dart';
 import '../base/seed_generator.dart';
 import '../base/unique_generator.dart';

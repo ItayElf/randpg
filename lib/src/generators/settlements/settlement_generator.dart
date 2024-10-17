@@ -2,7 +2,7 @@ import '../../entities/settlements/settlement.dart';
 import '../../subtypes/races/race.dart';
 import '../../subtypes/settlements/settlement_type.dart';
 import '../base/batch_generator.dart';
-import '../base/constant_generator.dart ';
+import '../base/constant_generator.dart';
 import '../base/generator.dart';
 import '../base/seed_generator.dart';
 import '../base/unique_generator.dart';

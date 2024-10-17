@@ -2,7 +2,7 @@ import '../../entities/companions/companion.dart';
 import '../../enums/gender.dart';
 import '../../subtypes/companions/companion_type.dart';
 import '../base/batch_generator.dart';
-import '../base/constant_generator.dart ';
+import '../base/constant_generator.dart';
 import '../base/generator.dart';
 import '../base/seed_generator.dart';
 import '../fixable.dart';
