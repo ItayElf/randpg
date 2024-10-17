@@ -1,4 +1,5 @@
 import '../../../strings_manipulations.dart';
+import '../../base/constant_generator.dart';
 import '../../base/future_generator.dart';
 import '../../base/generator.dart';
 import '../../base/list_batch_generator.dart';
@@ -17,7 +18,7 @@ class LandscapeAdjectiveNameGenerator
         );
 
   static List<Generator<String>> _getTemplate(List<String> landscapeTitles) => [
-        ListItemGenerator(["the"]),
+        ConstantGenerator("the"),
         ListItemGenerator(landscapeAdjectives),
         ListItemGenerator(landscapeTitles),
       ];

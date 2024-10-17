@@ -1,6 +1,6 @@
 import '../../../../enums/gender.dart';
+import '../../../../generators/base/constant_generator.dart';
 import '../../../../generators/base/generator.dart';
-import '../../../../generators/base/list_item_generator.dart';
 import '../government_type.dart';
 
 /// A class that represents the confederacy government type
@@ -14,5 +14,5 @@ class Federation implements GovernmentType {
   String getLeaderOccupation(Gender gender) => "president";
 
   @override
-  Generator<int> getNumberOfLeadersGenerator() => ListItemGenerator([1]);
+  Generator<int> getNumberOfLeadersGenerator() => ConstantGenerator(1);
 }

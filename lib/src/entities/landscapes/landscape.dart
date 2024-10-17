@@ -105,6 +105,21 @@ class Landscape {
     );
   }
 
+  factory Landscape.fromShallowMap(Map<String, dynamic> map) {
+    return Landscape(
+      name: map["name"],
+      location: map["location"],
+      weather: map["weather"],
+      landscapeType: map["landscapeType"],
+      features: map["features"],
+      resources: map["resources"],
+      encounters: map["encounters"],
+      knownFor: map["knownFor"],
+      size: map["size"],
+      travelRate: map["travelRate"],
+    );
+  }
+
   String toJson() => json.encode(toMap());
 
   factory Landscape.fromJson(String source) =>

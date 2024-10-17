@@ -10,6 +10,7 @@ import '../../subtypes/races/race.dart';
 import '../../subtypes/races/race_manager.dart';
 import '../emblems/emblem.dart';
 import '../guilds/guilds.dart';
+import '../holidays/holiday.dart';
 import '../npcs/npc.dart';
 import '../settlements/settlement.dart';
 
@@ -38,6 +39,7 @@ class Kingdom {
   /// The government type of the kingdom
   final GovernmentType governmentType;
 
+  /// The emblem of the kingdom
   final Emblem emblem;
 
   /// Something this kingdom is known for
@@ -49,8 +51,12 @@ class Kingdom {
   /// List of guilds that operate in this kingdom
   final List<Guild> guilds;
 
-  // A trouble this kingdom have
+  /// A trouble this kingdom have
   final String trouble;
+
+  /// The holidays that exist in the kingdom
+  final List<Holiday> holidays;
+
   Kingdom({
     required this.name,
     required this.kingdomType,
@@ -65,6 +71,7 @@ class Kingdom {
     required this.history,
     required this.guilds,
     required this.trouble,
+    required this.holidays,
   });
 
   Kingdom copyWith({
@@ -81,6 +88,7 @@ class Kingdom {
     String? history,
     List<Guild>? guilds,
     String? trouble,
+    List<Holiday>? holidays,
   }) {
     return Kingdom(
       name: name ?? this.name,
@@ -96,6 +104,7 @@ class Kingdom {
       history: history ?? this.history,
       guilds: guilds ?? this.guilds,
       trouble: trouble ?? this.trouble,
+      holidays: holidays ?? this.holidays,
     );
   }
 
@@ -115,6 +124,7 @@ class Kingdom {
       'history': history,
       'guilds': guilds.map((x) => x.toMap()).toList(),
       'trouble': trouble,
+      'holidays': holidays.map((x) => x.toMap()).toList()
     };
   }
 
@@ -145,6 +155,30 @@ class Kingdom {
         ),
       ),
       trouble: map['trouble'],
+      holidays: List<Holiday>.from(
+        (map['holidays']).map<Holiday>(
+          (x) => Holiday.fromMap(x),
+        ),
+      ),
+    );
+  }
+
+  factory Kingdom.fromShallowMap(Map<String, dynamic> map) {
+    return Kingdom(
+      name: map["name"],
+      kingdomType: map["kingdomType"],
+      rulers: map["rulers"],
+      race: map["race"],
+      population: map["population"],
+      capital: map["capital"],
+      importantSettlements: map["importantSettlements"],
+      governmentType: map["governmentType"],
+      emblem: map["emblem"],
+      knownFor: map["knownFor"],
+      history: map["history"],
+      guilds: map["guilds"],
+      trouble: map["trouble"],
+      holidays: map["holidays"],
     );
   }
 
@@ -155,7 +189,7 @@ class Kingdom {
 
   @override
   String toString() {
-    return 'Kingdom(name: $name, kingdomType: $kingdomType, rulers: $rulers, race: $race, population: $population, capital: $capital, importantSettlements: $importantSettlements, governmentType: $governmentType, emblem: $emblem, knownFor: $knownFor, history: $history, guilds: $guilds, trouble: $trouble)';
+    return 'Kingdom(name: $name, kingdomType: $kingdomType, rulers: $rulers, race: $race, population: $population, capital: $capital, importantSettlements: $importantSettlements, governmentType: $governmentType, emblem: $emblem, knownFor: $knownFor, history: $history, guilds: $guilds, trouble: $trouble, holidays: $holidays)';
   }
 
   @override
@@ -175,7 +209,8 @@ class Kingdom {
         other.knownFor == knownFor &&
         other.history == history &&
         listEquals(other.guilds, guilds) &&
-        other.trouble == trouble;
+        other.trouble == trouble &&
+        listEquals(other.holidays, holidays);
   }
 
   @override
@@ -192,6 +227,7 @@ class Kingdom {
         knownFor.hashCode ^
         history.hashCode ^
         guilds.hashCode ^
-        trouble.hashCode;
+        trouble.hashCode ^
+        holidays.hashCode;
   }
 }

@@ -1,5 +1,6 @@
 import '../../../entities/npcs/alignment.dart';
 import '../../../enums/alignment.dart';
+import '../../base/constant_generator.dart';
 import '../../base/generator.dart';
 import '../../base/list_item_generator.dart';
 import '../../base/seed_generator.dart';
@@ -19,7 +20,7 @@ class DeityDomainGenerator implements Generator<String> {
   String generate() {
     final alignmentGenerator = _alignment == null
         ? BaseAlignmentGenerator()
-        : ListItemGenerator([_alignment as Alignment]);
+        : ConstantGenerator(_alignment as Alignment);
     alignmentGenerator.seed(_seed);
     final alignment = alignmentGenerator.generate();
 

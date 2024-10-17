@@ -2,8 +2,8 @@ import '../../entities/companions/companion.dart';
 import '../../enums/gender.dart';
 import '../../subtypes/companions/companion_type.dart';
 import '../base/batch_generator.dart';
+import '../base/constant_generator.dart';
 import '../base/generator.dart';
-import '../base/list_item_generator.dart';
 import '../base/seed_generator.dart';
 import '../fixable.dart';
 
@@ -25,7 +25,7 @@ class CompanionGenerator implements Generator<Companion> {
 
     final generator = BatchGenerator(_getBatch(name));
     generator.seed((_seed + 1) % SeedGenerator.maxSeed);
-    Companion companion = Companion.fromMap(generator.generate());
+    Companion companion = Companion.fromShallowMap(generator.generate());
 
     if (_companionType is Fixable<Companion>) {
       companion = (_companionType as Fixable).getFixed(companion);
@@ -35,9 +35,9 @@ class CompanionGenerator implements Generator<Companion> {
   }
 
   Map<String, Generator> _getBatch(String name) => {
-        "name": ListItemGenerator([name]),
-        "gender": ListItemGenerator([_gender.name]),
-        "companionType": ListItemGenerator([_companionType.getCompanionType()]),
+        "name": ConstantGenerator(name),
+        "gender": ConstantGenerator(_gender),
+        "companionType": ConstantGenerator(_companionType),
         "appearance": _companionType.getAppearanceGenerator(name, _gender),
         "personality": _companionType.getPersonalityGenerator(name, _gender),
         "skills": _companionType.getSkillsGenerator(),

@@ -83,6 +83,18 @@ class Companion {
     );
   }
 
+  factory Companion.fromShallowMap(Map<String, dynamic> map) {
+    return Companion(
+      name: map["name"],
+      gender: map["gender"],
+      companionType: map["companionType"],
+      appearance: map["appearance"],
+      personality: map["personality"],
+      skills: map["skills"],
+      quirks: map["quirks"],
+    );
+  }
+
   String toJson() => json.encode(toMap());
 
   factory Companion.fromJson(String source) =>

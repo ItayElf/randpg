@@ -1,8 +1,8 @@
 import '../../entities/landscapes/landscape.dart';
 import '../../subtypes/landscapes/landscape_type.dart';
 import '../base/batch_generator.dart';
+import '../base/constant_generator.dart';
 import '../base/generator.dart';
-import '../base/list_item_generator.dart';
 import '../base/seed_generator.dart';
 import '../base/unique_generator.dart';
 import '../fixable.dart';
@@ -24,7 +24,7 @@ class LandscapeGenerator implements Generator<Landscape> {
   Landscape generate() {
     final generator = BatchGenerator(_getBatch());
     generator.seed(_seed);
-    Landscape landscape = Landscape.fromMap(generator.generate());
+    Landscape landscape = Landscape.fromShallowMap(generator.generate());
 
     if (_landscapeType is Fixable<Landscape>) {
       landscape = (_landscapeType as Fixable).getFixed(landscape);
@@ -36,7 +36,7 @@ class LandscapeGenerator implements Generator<Landscape> {
         "name": _landscapeType.getNameGenerator(),
         "location": _landscapeType.getLocationGenerator(),
         "weather": _landscapeType.getWeatherGenerator(),
-        "landscapeType": ListItemGenerator([_landscapeType.getLandscapeType()]),
+        "landscapeType": ConstantGenerator(_landscapeType),
         "features": UniqueGenerator(
           _landscapeType.getFeatureGenerator(),
           _numberOfFeatures,

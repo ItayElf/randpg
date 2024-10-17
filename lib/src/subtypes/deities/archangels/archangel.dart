@@ -2,6 +2,7 @@ import '../../../entities/deities/deity.dart';
 import '../../../entities/npcs/alignment.dart';
 import '../../../enums/alignment.dart';
 import '../../../enums/gender.dart';
+import '../../../generators/base/constant_generator.dart';
 import '../../../generators/base/generator.dart';
 import '../../../generators/base/list_item_generator.dart';
 import '../../../generators/deities/attributes/deity_negative_attribute_generator.dart';
@@ -58,7 +59,7 @@ class Archangel implements DeityType, Fixable<Deity> {
   Generator<String> getShrinesRarityGenerator() => DeityFewShrinesGenerator();
 
   @override
-  Generator<Race?> getWorshipedByGenerator() => ListItemGenerator([null]);
+  Generator<Race?> getWorshipedByGenerator() => ConstantGenerator(null);
 
   @override
   Generator<String> getWorshipersGenerator() => DeityFewWorshipersGenerator();

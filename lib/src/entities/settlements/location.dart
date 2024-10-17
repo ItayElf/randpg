@@ -91,6 +91,20 @@ class Location {
     );
   }
 
+  factory Location.fromShallowMap(Map<String, dynamic> map) {
+    return Location(
+      name: map["name"],
+      owner: map["owner"],
+      type: map["type"],
+      zone: map["zone"],
+      outsideDescription: map["outsideDescription"],
+      buildingDescription: map["buildingDescription"],
+      goods: map["goods"] != null
+          ? (map["goods"] as List).map<Goods>((x) => Goods.fromMap(x)).toList()
+          : null,
+    );
+  }
+
   String toJson() => json.encode(toMap());
 
   factory Location.fromJson(String source) =>

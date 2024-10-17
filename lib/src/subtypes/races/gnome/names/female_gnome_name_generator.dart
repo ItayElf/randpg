@@ -1,3 +1,4 @@
+import '../../../../generators/base/constant_generator.dart';
 import '../../../../generators/base/future_generator.dart';
 import '../../../../generators/base/generator.dart';
 import '../../../../generators/base/list_batch_generator.dart';
@@ -20,7 +21,7 @@ class FemaleGnomeNameGenerator extends FutureGenerator<String, List<String>> {
     ListItemGenerator(gnomeFemaleNameMiddle),
     WeightedGenerator(gnomeNameVowel),
     ListItemGenerator(gnomeFemaleNameSuffix),
-    ListItemGenerator([" "]),
+    ConstantGenerator(" "),
     ListItemGenerator(gnomeMaleNamePrefix),
     WeightedGenerator(gnomeNameVowel),
     ListItemGenerator(gnomeMaleNameMiddle),

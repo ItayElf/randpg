@@ -127,3 +127,11 @@ class CompanionTypeNotFoundException extends RandpgException {
   @override
   String toString() => msg ?? "CompanionTypeNotFoundException";
 }
+
+/// An exception that is thrown when a not supported holidayType is being used
+class HolidayTypeNotFoundException extends RandpgException {
+  const HolidayTypeNotFoundException([super.msg]);
+
+  @override
+  String toString() => msg ?? "HolidayTypeNotFoundException";
+}

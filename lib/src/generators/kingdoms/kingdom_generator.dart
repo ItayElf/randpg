@@ -1,17 +1,21 @@
 import '../../entities/kingdoms/kingdom.dart';
 import '../../entities/npcs/npc.dart';
+import '../../subtypes/holidays/holiday_type.dart';
 import '../../subtypes/kingdoms/government_types/government_type.dart';
 import '../../subtypes/kingdoms/kingdom_type.dart';
 import '../../subtypes/races/race.dart';
 import '../base/batch_generator.dart';
+import '../base/constant_generator.dart';
 import '../base/future_generator.dart';
 import '../base/generator.dart';
-import '../base/list_item_generator.dart';
+import '../base/list_batch_generator.dart';
 import '../base/number_generator.dart';
+import '../base/repeated_generator.dart';
 import '../base/seed_generator.dart';
 import '../base/unique_generator.dart';
 import '../emblems/emblem_generator.dart';
 import '../fixable.dart';
+import '../holidays/holiday_generator.dart';
 import '../npcs/npc_generator.dart';
 import 'guilds/kingdom_guild_generator.dart';
 import 'settlements/kingdom_settlement_generator.dart';
@@ -25,6 +29,8 @@ class KingdomGenerator implements Generator<Kingdom> {
   static const _numberOfSettlements = 3;
   static const _minNumberOfGuilds = 1;
   static const _maxNumberOfGuilds = 2;
+  static const _minNumberOfHolidays = 1;
+  static const _maxNumberOfHolidays = 3;
 
   KingdomGenerator(this._kingdomType, this._race, this._governmentType) {
     _seed = SeedGenerator.generate();
@@ -45,14 +51,25 @@ class KingdomGenerator implements Generator<Kingdom> {
     numberOfGuildsGenerator.seed((_seed + 3) % SeedGenerator.maxSeed);
     final numberOfGuilds = numberOfGuildsGenerator.generate();
 
+    final numberOfHolidaysGenerator =
+        NumberGenerator(_minNumberOfHolidays, _maxNumberOfHolidays)
+          ..seed((_seed + 4) % SeedGenerator.maxSeed);
+    final holidayTypesGenerator = RepeatedGenerator(
+      _kingdomType.getHolidayTypeGenerator(),
+      numberOfHolidaysGenerator.generate(),
+    )..seed((_seed + 5) % SeedGenerator.maxSeed);
+    final holidayTypes = holidayTypesGenerator.generate();
+
     final generator = BatchGenerator(_getBatch(
       numberOfLeaders,
       numberOfGuilds,
       _governmentType,
       name,
+      holidayTypes,
     ));
-    generator.seed((_seed + 4) % SeedGenerator.maxSeed);
-    Kingdom kingdom = Kingdom.fromMap(generator.generate());
+
+    generator.seed((_seed + 6) % SeedGenerator.maxSeed);
+    Kingdom kingdom = Kingdom.fromShallowMap(generator.generate());
 
     if (_kingdomType is Fixable<Kingdom>) {
       kingdom = (_kingdomType as Fixable).getFixed(kingdom);
@@ -66,47 +83,35 @@ class KingdomGenerator implements Generator<Kingdom> {
     int numberOfGuilds,
     GovernmentType governmentType,
     String kingdomName,
+    List<HolidayType> holidayTypes,
   ) =>
       {
-        "name": ListItemGenerator([kingdomName]),
-        "kingdomType": ListItemGenerator([_kingdomType.getKingdomType()]),
-        "rulers": FutureGenerator(
-          _getLeadersGenerator(numberOfLeaders, governmentType),
-          (leaders) => leaders.map((e) => e.toMap()).toList(),
-        ),
-        "race": ListItemGenerator([_race.getName()]),
+        "name": ConstantGenerator(kingdomName),
+        "kingdomType": ConstantGenerator(_kingdomType),
+        "rulers": _getLeadersGenerator(numberOfLeaders, governmentType),
+        "race": ConstantGenerator(_race),
         "population": _kingdomType.getPopulationGenerator(),
-        "capital": FutureGenerator(
+        "capital": KingdomSettlementGenerator(
+          _kingdomType.getCapitalTypeGenerator(),
+          _race,
+        ),
+        "importantSettlements": UniqueGenerator(
           KingdomSettlementGenerator(
-            _kingdomType.getCapitalTypeGenerator(),
-            _race,
-          ),
-          (capital) => capital.toMap(),
+              _kingdomType.getImportantSettlementsTypesGenerator(), _race),
+          _numberOfSettlements,
         ),
-        "importantSettlements": FutureGenerator(
-          UniqueGenerator(
-            KingdomSettlementGenerator(
-                _kingdomType.getImportantSettlementsTypesGenerator(), _race),
-            _numberOfSettlements,
-          ),
-          (settlements) => settlements.map((e) => e.toMap()).toList(),
-        ),
-        "governmentType":
-            ListItemGenerator([governmentType.getGovernmentType()]),
-        "emblem": FutureGenerator(
-          EmblemGenerator(_kingdomType.getEmblemType()),
-          (emblem) => emblem.toMap(),
-        ),
+        "governmentType": ConstantGenerator(governmentType),
+        "emblem": EmblemGenerator(_kingdomType.getEmblemType()),
         "knownFor": _kingdomType.getKnownForGenerator(),
         "history": _kingdomType.getHistoryGenerator(kingdomName),
-        "guilds": FutureGenerator(
-          UniqueGenerator(
-            KingdomGuildGenerator(_kingdomType.getGuildTypeGenerator()),
-            numberOfGuilds,
-          ),
-          (guilds) => guilds.map((e) => e.toMap()).toList(),
+        "guilds": UniqueGenerator(
+          KingdomGuildGenerator(_kingdomType.getGuildTypeGenerator()),
+          numberOfGuilds,
         ),
         "trouble": _kingdomType.getTroubleGenerator(),
+        "holidays": ListBatchGenerator(
+          holidayTypes.map((x) => HolidayGenerator(x)).toList(),
+        ),
       };
 
   Generator<List<Npc>> _getLeadersGenerator(

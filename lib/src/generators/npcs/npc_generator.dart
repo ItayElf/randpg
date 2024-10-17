@@ -1,17 +1,18 @@
-import 'package:randpg/entities/companions.dart';
-import 'package:randpg/src/generators/base/list_batch_generator.dart';
-
+import '../../entities/companions/companion.dart';
 import '../../entities/npcs/npc.dart';
 import '../../enums/gender.dart';
+import '../../subtypes/companions/companion_manager.dart';
 import '../../subtypes/races/race.dart';
 import '../base/batch_generator.dart';
-import '../base/future_generator.dart';
+import '../base/constant_generator.dart';
 import '../base/generator.dart';
+import '../base/list_batch_generator.dart';
 import '../base/list_item_generator.dart';
 import '../base/multiple_generator.dart';
 import '../base/repeated_generator.dart';
 import '../base/seed_generator.dart';
 import '../base/weighted_generator.dart';
+import '../companions/companion_generator.dart';
 import 'goal/goal_generator.dart';
 import 'occupation/adventurer_occupation_generator.dart';
 import 'occupation/simple_occupation_generator.dart';
@@ -58,7 +59,7 @@ class NpcGenerator implements Generator<Npc> {
     final generator = BatchGenerator(_getBatch(_race, gender, companions));
     generator.seed((_seed + 4) % SeedGenerator.maxSeed);
     final result = generator.generate();
-    return Npc.fromMap(result);
+    return Npc.fromShallowMap(result);
   }
 
   Map<String, Generator> _getBatch(
@@ -69,25 +70,16 @@ class NpcGenerator implements Generator<Npc> {
       {
         "name": race.getNameGenerator(gender),
         "age": race.getAgeGenerator(gender),
-        "gender": ListItemGenerator([gender.name]),
-        "race": ListItemGenerator([race.getName()]),
+        "gender": ConstantGenerator(gender),
+        "race": ConstantGenerator(race),
         "occupation": MultipleGenerator([
           SimpleOccupationGenerator(),
           AdventurerOccupationGenerator(),
         ]),
-        "physicalDescription": FutureGenerator(
-          PhysicalDescriptionGenerator(gender, race),
-          (physicalDescription) => physicalDescription.toMap(),
-        ),
-        "personality": FutureGenerator(
-          PersonalityGenerator(race),
-          (personality) => personality.toMap(),
-        ),
+        "physicalDescription": PhysicalDescriptionGenerator(gender, race),
+        "personality": PersonalityGenerator(race),
         "goal": GoalGenerator(),
-        "companions": FutureGenerator(
-          ListItemGenerator([companions]),
-          (companions) => companions.map((e) => e.toMap()).toList(),
-        ),
+        "companions": ConstantGenerator(companions),
       };
 
   @override

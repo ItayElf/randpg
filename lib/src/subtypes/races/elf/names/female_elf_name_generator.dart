@@ -1,3 +1,4 @@
+import '../../../../generators/base/constant_generator.dart';
 import '../../../../generators/base/future_generator.dart';
 import '../../../../generators/base/generator.dart';
 import '../../../../generators/base/list_batch_generator.dart';
@@ -15,7 +16,7 @@ class FemaleElfNameGenerator extends FutureGenerator<String, List<String>> {
 
   static final List<Generator<String>> _generatorsTemplate = [
     ListItemGenerator(elfFemaleName),
-    ListItemGenerator([" "]),
+    ConstantGenerator(" "),
     ListItemGenerator(elfSurnamePrefix),
     ListItemGenerator(elfSurnameSuffix)
   ];

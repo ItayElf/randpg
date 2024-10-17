@@ -1,7 +1,7 @@
 import 'package:collection/collection.dart';
-import 'package:randpg/src/subtypes/managers/manager.dart';
 
 import '../../exceptions/not_found_exceptions.dart';
+import '../managers/manager.dart';
 import 'city/city.dart';
 import 'hamlet/hamlet.dart';
 import 'metropolis/metropolis.dart';

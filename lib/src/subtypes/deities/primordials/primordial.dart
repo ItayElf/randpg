@@ -1,8 +1,8 @@
 import '../../../entities/deities/deity.dart';
 import '../../../entities/npcs/alignment.dart';
 import '../../../enums/gender.dart';
+import '../../../generators/base/constant_generator.dart';
 import '../../../generators/base/generator.dart';
-import '../../../generators/base/list_item_generator.dart';
 import '../../../generators/deities/attributes/deity_negative_attribute_generator.dart';
 import '../../../generators/deities/attributes/deity_positive_attribute_generator.dart';
 import '../../../generators/deities/names/deity_race_name_generator.dart';
@@ -44,7 +44,7 @@ class Primordial implements DeityType, Fixable<Deity> {
       PrimordialDomainGenerator();
 
   @override
-  Generator<Gender?> getGenderGenerator() => ListItemGenerator([null]);
+  Generator<Gender?> getGenderGenerator() => ConstantGenerator(null);
 
   @override
   Generator<String> getNameGenerator(Gender? gender, Race? worshipedBy) =>
@@ -62,7 +62,7 @@ class Primordial implements DeityType, Fixable<Deity> {
   Generator<String> getShrinesRarityGenerator() => PrimordialShrinesGenerator();
 
   @override
-  Generator<Race?> getWorshipedByGenerator() => ListItemGenerator([null]);
+  Generator<Race?> getWorshipedByGenerator() => ConstantGenerator(null);
 
   @override
   Generator<String> getWorshipersGenerator() => PrimordialWorshipersGenerator();

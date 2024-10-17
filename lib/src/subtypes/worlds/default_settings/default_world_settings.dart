@@ -17,6 +17,8 @@ import '../../deities/demon_lords/demon_lord.dart';
 import '../../deities/primordials/primordial.dart';
 import '../../guilds/guild_manager.dart';
 import '../../guilds/guild_type.dart';
+import '../../holidays/holiday_manager.dart';
+import '../../holidays/holiday_type.dart';
 import '../../kingdoms/default_kingdom/default_kingdom_type.dart';
 import '../../kingdoms/kingdom_type.dart';
 import '../../landscapes/landscape_manager.dart';
@@ -97,4 +99,8 @@ class DefaultWorldSettings implements WorldSettings {
   @override
   Generator<GuildType> getGuildTypeGenerator() =>
       ListItemGenerator(GuildManager().activeTypes);
+
+  @override
+  Generator<HolidayType> getHolidayTypeGenerator() =>
+      ListItemGenerator(HolidayManager().activeTypes);
 }

@@ -1,3 +1,4 @@
+import '../../../../generators/base/constant_generator.dart';
 import '../../../../generators/base/future_generator.dart';
 import '../../../../generators/base/generator.dart';
 import '../../../../generators/base/list_batch_generator.dart';
@@ -17,7 +18,7 @@ class FemaleDwarfNameGenerator extends FutureGenerator<String, List<String>> {
     ListItemGenerator(dwarfFemaleNamePrefix),
     ListItemGenerator(dwarfFemaleNameMiddle),
     ListItemGenerator(dwarfFemaleNameSuffix),
-    ListItemGenerator([" "]),
+    ConstantGenerator(" "),
     ListItemGenerator(dwarfSurnamePrefix),
     ListItemGenerator(dwarfSurnameSuffix),
   ];

@@ -2,9 +2,8 @@ import '../../entities/settlements/settlement.dart';
 import '../../subtypes/races/race.dart';
 import '../../subtypes/settlements/settlement_type.dart';
 import '../base/batch_generator.dart';
-import '../base/future_generator.dart';
+import '../base/constant_generator.dart';
 import '../base/generator.dart';
-import '../base/list_item_generator.dart';
 import '../base/seed_generator.dart';
 import '../base/unique_generator.dart';
 import '../fixable.dart';
@@ -30,7 +29,7 @@ class SettlementGenerator implements Generator<Settlement> {
     final generator = BatchGenerator(_getBatch(name));
     generator.seed((_seed + 1) % SeedGenerator.maxSeed);
     final results = generator.generate();
-    Settlement settlement = Settlement.fromMap(results);
+    Settlement settlement = Settlement.fromShallowMap(results);
 
     if (_settlementType is Fixable<Settlement>) {
       settlement = (_settlementType as Fixable).getFixed(settlement);
@@ -40,31 +39,26 @@ class SettlementGenerator implements Generator<Settlement> {
   }
 
   Map<String, Generator> _getBatch(String settlementName) => {
-        "name": ListItemGenerator([settlementName]),
-        "settlementType": FutureGenerator(
-          ListItemGenerator([_settlementType]),
-          (type) => type.getSettlementType(),
-        ),
-        "dominantRace": FutureGenerator(
-            ListItemGenerator([_dominantRace]), (race) => race?.getName()),
+        "name": ConstantGenerator(settlementName),
+        "settlementType": ConstantGenerator(_settlementType),
+        "dominantRace": ConstantGenerator(_dominantRace),
         "description": _settlementType.getDescriptionGenerator(
-            settlementName, _dominantRace),
+          settlementName,
+          _dominantRace,
+        ),
         "dominantOccupation": _settlementType.getDominantOccupationGenerator(),
         "population": _settlementType.getPopulationGenerator(),
         "trouble": _settlementType.getTroubleGenerator(),
-        "importantCharacters": FutureGenerator(
-          UniqueGenerator(
-            ImportantCharacterGenerator(
-              _settlementType.getImportantOccupationGenerator(),
-              _dominantRace,
-            ),
-            _settlementType.getImportantPeopleCount(),
+        "importantCharacters": UniqueGenerator(
+          ImportantCharacterGenerator(
+            _settlementType.getImportantOccupationGenerator(),
+            _dominantRace,
           ),
-          (characters) => characters.map((e) => e.toMap()).toList(),
+          _settlementType.getImportantPeopleCount(),
         ),
-        "locations": FutureGenerator(
-          SettlementLocationsGenerator(_settlementType, _dominantRace),
-          (locations) => locations.map((e) => e.toMap()).toList(),
+        "locations": SettlementLocationsGenerator(
+          _settlementType,
+          _dominantRace,
         ),
       };
 

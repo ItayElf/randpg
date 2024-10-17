@@ -1,4 +1,5 @@
 export 'src/generators/base/batch_generator.dart' show BatchGenerator;
+export 'src/generators/base/constant_generator.dart' show ConstantGenerator;
 export 'src/generators/base/future_generator.dart' show FutureGenerator;
 export 'src/generators/base/generator.dart' show Generator;
 export 'src/generators/base/list_batch_generator.dart' show ListBatchGenerator;

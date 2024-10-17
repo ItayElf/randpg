@@ -1,7 +1,7 @@
 import 'package:collection/collection.dart';
-import 'package:randpg/src/subtypes/managers/manager.dart';
 
 import '../../exceptions/not_found_exceptions.dart';
+import '../managers/manager.dart';
 import 'artisans_guild/artisans_guild.dart';
 import 'cult/cult.dart';
 import 'druid_circle/druid_circle.dart';

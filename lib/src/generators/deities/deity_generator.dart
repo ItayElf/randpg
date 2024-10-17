@@ -4,8 +4,8 @@ import '../../enums/gender.dart';
 import '../../subtypes/deities/deity_type.dart';
 import '../../subtypes/races/race.dart';
 import '../base/batch_generator.dart';
+import '../base/constant_generator.dart';
 import '../base/generator.dart';
-import '../base/list_item_generator.dart';
 import '../base/number_generator.dart';
 import '../base/seed_generator.dart';
 import '../base/unique_generator.dart';
@@ -45,7 +45,7 @@ class DeityGenerator implements Generator<Deity> {
       domainCount,
     ));
     generator.seed((_seed + 3) % SeedGenerator.maxSeed);
-    Deity deity = Deity.fromMap(generator.generate());
+    Deity deity = Deity.fromShallowMap(generator.generate());
 
     if (_deityType is Fixable<Deity>) {
       deity = (_deityType as Fixable).getFixed(deity);
@@ -61,15 +61,15 @@ class DeityGenerator implements Generator<Deity> {
   ) =>
       {
         "name": _deityType.getNameGenerator(gender, worshipedBy),
-        "gender": ListItemGenerator([gender?.name]),
-        "deityType": ListItemGenerator([_deityType.getDeityType()]),
+        "gender": ConstantGenerator(gender),
+        "deityType": ConstantGenerator(_deityType),
         "domains": UniqueGenerator(
           _deityType.getDomainGenerator(alignment),
           domainCount,
         ),
-        "alignment": ListItemGenerator([alignment?.toMap()]),
+        "alignment": ConstantGenerator(alignment),
         "depiction": _deityType.getDepictionGenerator(worshipedBy),
-        "worshipedBy": ListItemGenerator([worshipedBy?.getName()]),
+        "worshipedBy": ConstantGenerator(worshipedBy),
         "worshipers": _deityType.getWorshipersGenerator(),
         "shrinesRarity": _deityType.getShrinesRarityGenerator(),
         "positiveAttribute": _deityType.getPositiveAttributeGenerator(),

@@ -1,9 +1,8 @@
 import '../../entities/guilds/guilds.dart';
 import '../../subtypes/guilds/guild_type.dart';
 import '../base/batch_generator.dart';
-import '../base/future_generator.dart';
+import '../base/constant_generator.dart';
 import '../base/generator.dart';
-import '../base/list_item_generator.dart';
 import '../base/repeated_generator.dart';
 import '../base/seed_generator.dart';
 import '../base/unique_generator.dart';
@@ -32,7 +31,7 @@ class GuildGenerator implements Generator<Guild> {
 
     final generator = BatchGenerator(_getBatch(name));
     generator.seed((_seed + 1) % SeedGenerator.maxSeed);
-    Guild guild = Guild.fromMap(generator.generate());
+    Guild guild = Guild.fromShallowMap(generator.generate());
 
     if (_guildType is Fixable<Guild>) {
       guild = (_guildType as Fixable).getFixed(guild);
@@ -42,19 +41,15 @@ class GuildGenerator implements Generator<Guild> {
   }
 
   Map<String, Generator> _getBatch(String guildName) => {
-        "name": ListItemGenerator([guildName]),
-        "leader": FutureGenerator(
-          ImportantCharacterGenerator(
-              ListItemGenerator([_guildType.getLeaderOccupation()]), null),
-          (leader) => leader.toMap(),
+        "name": ConstantGenerator(guildName),
+        "leader": ImportantCharacterGenerator(
+          ConstantGenerator(_guildType.getLeaderOccupation()),
+          null,
         ),
-        "guildType": ListItemGenerator([_guildType.getGuildType()]),
+        "guildType": ConstantGenerator(_guildType),
         "reputation": _guildType.getReputationGenerator(),
         "history": _guildType.getHistoryGenerator(guildName),
-        "emblem": FutureGenerator(
-          EmblemGenerator(_guildType.getEmblemType()),
-          (emblem) => emblem.toMap(),
-        ),
+        "emblem": EmblemGenerator(_guildType.getEmblemType()),
         "motto": _guildType.getMottoGenerator(),
         "specialties": UniqueGenerator(
           _guildType.getSpecialtyGenerator(),
@@ -64,14 +59,11 @@ class GuildGenerator implements Generator<Guild> {
           _guildType.getQuestGenerator(),
           _numberOfQuests,
         ),
-        "notableMembers": FutureGenerator(
-          RepeatedGenerator(
-            ImportantCharacterGenerator(
-                _guildType.getMemberOccupationGenerator(), null),
-            _numberOfNotables,
-          ),
-          (notables) => notables.map((e) => e.toMap()).toList(),
-        )
+        "notableMembers": RepeatedGenerator(
+          ImportantCharacterGenerator(
+              _guildType.getMemberOccupationGenerator(), null),
+          _numberOfNotables,
+        ),
       };
 
   @override

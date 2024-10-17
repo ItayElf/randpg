@@ -17,17 +17,19 @@ class UniqueGenerator<T> implements Generator<List<T>> {
   /// Generates [_n] unique items from the generator [_generator]
   @override
   List<T> generate() {
-    final List<T> returnValue = [];
+    final Set<T> uniqueItems = {};
     int tempSeed = _seed;
     int counter = 0;
 
-    while (returnValue.length < _n) {
+    while (uniqueItems.length < _n) {
       _generator.seed(tempSeed % SeedGenerator.maxSeed);
 
       final item = _generator.generate();
-      if (!returnValue.contains(item)) {
-        returnValue.add(item);
+      // Returns false if the item is already inside the set
+      if (uniqueItems.add(item)) {
         counter = 0;
+      } else {
+        counter++;
       }
 
       if (counter == _maxTries) {
@@ -40,7 +42,7 @@ class UniqueGenerator<T> implements Generator<List<T>> {
       tempSeed = (tempSeed * tempSeed) + 1;
       counter += 1;
     }
-    return returnValue;
+    return uniqueItems.toList();
   }
 
   @override

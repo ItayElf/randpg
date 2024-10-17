@@ -1,8 +1,8 @@
 import '../../../entities/npcs/personality.dart';
 import '../../../subtypes/races/race.dart';
 import '../../base/batch_generator.dart';
+import '../../base/constant_generator.dart';
 import '../../base/generator.dart';
-import '../../base/list_item_generator.dart';
 import '../../base/seed_generator.dart';
 import '../../base/unique_generator.dart';
 import 'descriptors/descriptor_generator.dart';
@@ -28,7 +28,7 @@ class PersonalityGenerator implements Generator<Personality> {
     final alignment = alignmentGenerator.generate();
 
     final generator = BatchGenerator({
-      "alignment": ListItemGenerator([alignment.toMap()]),
+      "alignment": ConstantGenerator(alignment.toMap()),
       "traits": UniqueGenerator(
         _race.getPersonalityTraitGenerator(),
         _numberOfTraits,

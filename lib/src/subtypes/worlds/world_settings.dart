@@ -1,6 +1,7 @@
 import '../../entities/deities/deity.dart';
 import '../../generators/base/generator.dart';
 import '../guilds/guild_type.dart';
+import '../holidays/holiday_type.dart';
 import '../kingdoms/kingdom_type.dart';
 import '../landscapes/landscape_type.dart';
 import 'lore/world_lore_type.dart';
@@ -45,4 +46,7 @@ abstract class WorldSettings {
 
   /// Returns the world lore type object for generating a lore for this world settings
   WorldLoreType getWorldLore();
+
+  /// Returns a generator for a type of holiday that the world has
+  Generator<HolidayType> getHolidayTypeGenerator();
 }

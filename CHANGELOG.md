@@ -1,17 +1,35 @@
 # Changelog
 
+## 0.11.0
+
+- Added Holidays:
+
+  - Celebration
+  - Tragedy
+
+- Added holidays to kingdoms and world
+
+- Added companions:
+
+  - Monkeys
+
+- Added base generators:
+
+  - ConstantGenerator
+
+- Increased performance thanks to generators using the new `fromShallowMap` function
+
 ## 0.10.0
 
 - Changed README.md
-  
 - Renamed `IGenerator` to `Generator`
-  
-- Added companions
+- Added companions:
+
   - Dogs
   - Cats
   - Birds
   - Imps
-  
+
 - Added companions to npcs
 
 - Expanded the names of human npcs
@@ -19,6 +37,7 @@
 ## 0.9.6
 
 - Added races:
+
   - Goblins
   - Shifters
 

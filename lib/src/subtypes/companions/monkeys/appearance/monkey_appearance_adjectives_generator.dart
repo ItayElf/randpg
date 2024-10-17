@@ -1,0 +1,45 @@
+import '../../../../generators/base/list_item_generator.dart';
+
+class MonkeyAppearanceAdjectiveGenerator extends ListItemGenerator<String> {
+  static const _adjectives = [
+    'playful',
+    'curious',
+    'agile',
+    'sociable',
+    'mischievous',
+    'intelligent',
+    'whimsical',
+    'cheerful',
+    'energetic',
+    'affectionate',
+    'endearing',
+    'alert',
+    'enthusiastic',
+    'spirited',
+    'vigilant',
+    'social',
+    'adaptable',
+    'inventive',
+    'charming',
+    'dynamic',
+    'gregarious',
+    'expressive',
+    'friendly',
+    'lively',
+    'inquisitive',
+    'playful',
+    'resourceful',
+    'thoughtful',
+    'observant',
+    'imaginative',
+    'cunning',
+    'daring',
+    'bold',
+    'charming',
+    'delightful',
+    'confident',
+    'quick-witted',
+  ];
+
+  MonkeyAppearanceAdjectiveGenerator() : super(_adjectives);
+}

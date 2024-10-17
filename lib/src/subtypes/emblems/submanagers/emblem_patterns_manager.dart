@@ -1,7 +1,7 @@
 import 'package:collection/collection.dart';
-import 'package:randpg/src/subtypes/managers/manager.dart';
 import '../../../entities/emblems/svg_wrapper.dart';
 import '../../../exceptions/not_found_exceptions.dart';
+import '../../managers/manager.dart';
 import './emblem_data.dart';
 
 /// A class that handles the available deities and using them

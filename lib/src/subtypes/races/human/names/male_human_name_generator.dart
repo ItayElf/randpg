@@ -1,3 +1,4 @@
+import '../../../../generators/base/constant_generator.dart';
 import '../../../../generators/base/generator.dart';
 import '../../../../generators/base/list_item_generator.dart';
 import '../../../../generators/base/seed_generator.dart';
@@ -19,7 +20,7 @@ class MaleHumanNameGenerator implements Generator<String> {
     ListItemGenerator(humanMaleNameMiddle),
     WeightedGenerator(humanMaleVowel),
     ListItemGenerator(humanMaleNameSuffix),
-    ListItemGenerator([" "]),
+    ConstantGenerator(" "),
     ListItemGenerator(humanSurnamePrefix),
     ListItemGenerator(humanSurnameSuffix)
   ];
@@ -30,7 +31,7 @@ class MaleHumanNameGenerator implements Generator<String> {
     ListItemGenerator(humanMaleNameMiddle),
     WeightedGenerator(humanMaleVowel),
     ListItemGenerator(humanMaleNameSuffix),
-    ListItemGenerator([" "]),
+    ConstantGenerator(" "),
     ListItemGenerator(humanFemaleNamePrefix),
     ListItemGenerator(humanFemaleVowel),
     ListItemGenerator(humanFemaleNameMiddle),
@@ -40,14 +41,14 @@ class MaleHumanNameGenerator implements Generator<String> {
 
   static final List<Generator<String>> _preMadeFirstNameClassicTemplate = [
     ListItemGenerator(humanMaleFirstNames),
-    ListItemGenerator([" "]),
+    ConstantGenerator(" "),
     ListItemGenerator(humanSurnamePrefix),
     ListItemGenerator(humanSurnameSuffix)
   ];
 
   static final List<Generator<String>> _preMadeFirstNameUniqueTemplate = [
     ListItemGenerator(humanMaleFirstNames),
-    ListItemGenerator([" "]),
+    ConstantGenerator(" "),
     ListItemGenerator(humanFemaleNamePrefix),
     ListItemGenerator(humanFemaleVowel),
     ListItemGenerator(humanFemaleNameMiddle),
