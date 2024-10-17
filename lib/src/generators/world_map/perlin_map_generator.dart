@@ -5,7 +5,7 @@ import 'package:fast_noise/fast_noise.dart';
 import '../base/generator.dart';
 import '../base/seed_generator.dart';
 
-class PerlinMapGenerator implements Generator<Iterable<Iterable<double>>> {
+class PerlinMapGenerator implements Generator<List<List<double>>> {
   late int _seed;
   final int width;
   final int height;
@@ -32,7 +32,8 @@ class PerlinMapGenerator implements Generator<Iterable<Iterable<double>>> {
           height,
           seed: _seed + o,
           octaves: o,
-          noiseType: NoiseType.perlin,
+          noiseType: NoiseType.perlinFractal,
+          frequency: 0.04,
         ).map(
           (row) => row.map((v) => v * scaler),
         );
