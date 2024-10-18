@@ -19,8 +19,8 @@ class PerlinMapGenerator implements Generator<List<List<double>>> {
   @override
   generate() {
     final results = List.generate(
-      width,
-      (_) => List.generate(height, (_) => 0.0),
+      height,
+      (_) => List.generate(width, (_) => 0.0),
     );
 
     // Go over each item in the generated noise and scale it by (1/2**index)
@@ -28,8 +28,8 @@ class PerlinMapGenerator implements Generator<List<List<double>>> {
       (o) {
         final scaler = pow(2, -_octaves.indexOf(o));
         return noise2(
-          width,
           height,
+          width,
           seed: _seed + o,
           octaves: o,
           noiseType: NoiseType.perlinFractal,
@@ -42,10 +42,10 @@ class PerlinMapGenerator implements Generator<List<List<double>>> {
 
     for (var noise in noises) {
       var rowIter = noise.iterator;
-      for (int i = 0; rowIter.moveNext(); i++) {
+      for (int y = 0; rowIter.moveNext(); y++) {
         var colIter = rowIter.current.iterator;
-        for (int j = 0; colIter.moveNext(); j++) {
-          results[i][j] += colIter.current;
+        for (int x = 0; colIter.moveNext(); x++) {
+          results[y][x] += colIter.current;
         }
       }
     }

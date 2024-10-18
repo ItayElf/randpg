@@ -46,10 +46,10 @@ class WorldMapGenerator implements Generator<WorldMap> {
           ..seed(_seed);
     final noise = _normalizeArray(noiseGenerator.generate());
     final terrainMap = List.generate(
-      _width ~/ _tileSize + 1,
-      (x) => List.generate(
-        _height ~/ _tileSize + 1,
-        (y) => _settings.getTerrainFromHeight(noise[y][x]),
+      _height ~/ _tileSize + 1,
+      (y) => List.generate(
+        _width ~/ _tileSize + 1,
+        (x) => _settings.getTerrainFromHeight(noise[y][x]),
       ),
     );
     final image = Image(width: _width, height: _height);
