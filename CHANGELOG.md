@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.12.0
+
+- Added world map generation
+
+- Added world map settings:
+
+  - Normal
+  - Islands
+  - Mountainous
+  - Flatlands
+  - Rocky
+
+- Added world map to world entity
+
 ## 0.11.0
 
 - Added Holidays:

@@ -12,6 +12,7 @@ import '../holidays/holiday.dart';
 import '../kingdoms/kingdom.dart';
 import '../landscapes/landscape.dart';
 import '../npcs/npc.dart';
+import '../world_map/world_map.dart';
 import 'world_lore.dart';
 
 /// A class that represents a world
@@ -52,6 +53,9 @@ class World {
   /// The holidays that exist in the world
   final List<Holiday> holidays;
 
+  /// The map of the world
+  final WorldMap worldMap;
+
   const World({
     required this.name,
     required this.worldSettings,
@@ -65,6 +69,7 @@ class World {
     required this.higherDeities,
     required this.worldLore,
     required this.holidays,
+    required this.worldMap,
   });
 
   World copyWith({
@@ -80,6 +85,7 @@ class World {
     List<Deity>? higherDeities,
     WorldLore? worldLore,
     List<Holiday>? holidays,
+    WorldMap? worldMap,
   }) {
     return World(
       name: name ?? this.name,
@@ -94,6 +100,7 @@ class World {
       higherDeities: higherDeities ?? this.higherDeities,
       worldLore: worldLore ?? this.worldLore,
       holidays: holidays ?? this.holidays,
+      worldMap: worldMap ?? this.worldMap,
     );
   }
 
@@ -110,7 +117,8 @@ class World {
       'lesserDeities': lesserDeities.map((x) => x.toMap()).toList(),
       'higherDeities': higherDeities.map((x) => x.toMap()).toList(),
       'worldLore': worldLore.toMap(),
-      'holidays': holidays.map((x) => x.toMap()).toList()
+      'holidays': holidays.map((x) => x.toMap()).toList(),
+      'worldMap': worldMap.toMap(),
     };
   }
 
@@ -162,6 +170,7 @@ class World {
           (x) => Holiday.fromMap(x),
         ),
       ),
+      worldMap: WorldMap.fromMap(map["worldMap"]),
     );
   }
 
@@ -179,6 +188,7 @@ class World {
       higherDeities: map["higherDeities"],
       worldLore: map["worldLore"],
       holidays: map["holidays"],
+      worldMap: map["worldMap"],
     );
   }
 
@@ -188,7 +198,7 @@ class World {
 
   @override
   String toString() {
-    return 'World(name: $name, worldSettings: $worldSettings, kingdoms: $kingdoms, landscapes: $landscapes, opinions: $opinions, importantPeople: $importantPeople, guilds: $guilds, deities: $deities, lesserDeities: $lesserDeities, higherDeities: $higherDeities, worldLore: $worldLore, holidays: $holidays)';
+    return 'World(name: $name, worldSettings: $worldSettings, kingdoms: $kingdoms, landscapes: $landscapes, opinions: $opinions, importantPeople: $importantPeople, guilds: $guilds, deities: $deities, lesserDeities: $lesserDeities, higherDeities: $higherDeities, worldLore: $worldLore, holidays: $holidays, worldMap: $worldMap)';
   }
 
   @override
@@ -207,7 +217,8 @@ class World {
         collectionEquals(other.lesserDeities, lesserDeities) &&
         collectionEquals(other.higherDeities, higherDeities) &&
         other.worldLore == worldLore &&
-        collectionEquals(other.holidays, holidays);
+        collectionEquals(other.holidays, holidays) &&
+        other.worldMap == worldMap;
   }
 
   @override
@@ -223,6 +234,7 @@ class World {
         lesserDeities.hashCode ^
         higherDeities.hashCode ^
         worldLore.hashCode ^
-        holidays.hashCode;
+        holidays.hashCode ^
+        worldMap.hashCode;
   }
 }
