@@ -1,6 +1,6 @@
 import 'base_exceptions.dart';
 
-/// An exception that is thrown when a not supported race is being used
+/// An exception that is thrown when a not supported Race is being used
 class RaceNotFoundException extends RandpgException {
   const RaceNotFoundException([super.msg]);
 
@@ -8,7 +8,7 @@ class RaceNotFoundException extends RandpgException {
   String toString() => msg ?? "RaceNotFoundException";
 }
 
-/// An exception that is thrown when a not supported gender is being used
+/// An exception that is thrown when a not supported Gender is being used
 class GenderNotSupportedException extends RandpgException {
   const GenderNotSupportedException([super.msg]);
 
@@ -16,7 +16,7 @@ class GenderNotSupportedException extends RandpgException {
   String toString() => msg ?? "GenderNotSupportedException";
 }
 
-/// An exception that is thrown when a not supported locationType is being used
+/// An exception that is thrown when a not supported LocationType is being used
 class LocationTypeNotFoundException extends RandpgException {
   const LocationTypeNotFoundException([super.msg]);
 
@@ -24,7 +24,7 @@ class LocationTypeNotFoundException extends RandpgException {
   String toString() => msg ?? "LocationTypeNotFoundException";
 }
 
-/// An exception that is thrown when a not supported settlementType is being used
+/// An exception that is thrown when a not supported SettlementType is being used
 class SettlementTypeNotFoundException extends RandpgException {
   const SettlementTypeNotFoundException([super.msg]);
 
@@ -32,7 +32,7 @@ class SettlementTypeNotFoundException extends RandpgException {
   String toString() => msg ?? "SettlementTypeNotFoundException";
 }
 
-/// An exception that is thrown when a not supported landscapeType is being used
+/// An exception that is thrown when a not supported LandscapeType is being used
 class LandscapeTypeNotFoundException extends RandpgException {
   const LandscapeTypeNotFoundException([super.msg]);
 
@@ -40,7 +40,7 @@ class LandscapeTypeNotFoundException extends RandpgException {
   String toString() => msg ?? "LandscapeTypeNotFoundException";
 }
 
-/// An exception that is thrown when a not supported deityType is being used
+/// An exception that is thrown when a not supported DeityType is being used
 class DeityTypeNotFoundException extends RandpgException {
   const DeityTypeNotFoundException([super.msg]);
 
@@ -48,7 +48,7 @@ class DeityTypeNotFoundException extends RandpgException {
   String toString() => msg ?? "DeityTypeNotFoundException";
 }
 
-/// An exception that is thrown when a not supported loreType is being used
+/// An exception that is thrown when a not supported LoreType is being used
 class WorldLoreTypeNotFoundException extends RandpgException {
   const WorldLoreTypeNotFoundException([super.msg]);
 
@@ -56,7 +56,7 @@ class WorldLoreTypeNotFoundException extends RandpgException {
   String toString() => msg ?? "WorldLoreTypeNotFoundException";
 }
 
-/// An exception that is thrown when a not supported loreType is being used
+/// An exception that is thrown when a not supported WorldSettings is being used
 class WorldSettingsNotFoundException extends RandpgException {
   const WorldSettingsNotFoundException([super.msg]);
 
@@ -64,7 +64,7 @@ class WorldSettingsNotFoundException extends RandpgException {
   String toString() => msg ?? "WorldSettingsNotFoundException";
 }
 
-/// An exception that is thrown when a not supported guildType is being used
+/// An exception that is thrown when a not supported GuildType is being used
 class GuildTypeNotFoundException extends RandpgException {
   const GuildTypeNotFoundException([super.msg]);
 
@@ -72,7 +72,7 @@ class GuildTypeNotFoundException extends RandpgException {
   String toString() => msg ?? "GuildTypeNotFoundException";
 }
 
-/// An exception that is thrown when a not supported governmentType is being used
+/// An exception that is thrown when a not supported GovernmentType is being used
 class GovernmentTypeNotFoundException extends RandpgException {
   const GovernmentTypeNotFoundException([super.msg]);
 
@@ -80,7 +80,7 @@ class GovernmentTypeNotFoundException extends RandpgException {
   String toString() => msg ?? "GovernmentTypeNotFoundException";
 }
 
-/// An exception that is thrown when a not supported kingdomType is being used
+/// An exception that is thrown when a not supported KingdomType is being used
 class KingdomTypeNotFoundException extends RandpgException {
   const KingdomTypeNotFoundException([super.msg]);
 
@@ -88,7 +88,7 @@ class KingdomTypeNotFoundException extends RandpgException {
   String toString() => msg ?? "KingdomTypeNotFoundException";
 }
 
-/// An exception that is thrown when a not supported emblem shape is being used
+/// An exception that is thrown when a not supported EmblemShape is being used
 class EmblemShapeNotFoundException extends RandpgException {
   const EmblemShapeNotFoundException([super.msg]);
 
@@ -96,7 +96,7 @@ class EmblemShapeNotFoundException extends RandpgException {
   String toString() => msg ?? "EmblemShapeNotFoundException";
 }
 
-/// An exception that is thrown when a not supported emblem pattern is being used
+/// An exception that is thrown when a not supported EmblemPattern is being used
 class EmblemPatternNotFoundException extends RandpgException {
   const EmblemPatternNotFoundException([super.msg]);
 
@@ -104,7 +104,7 @@ class EmblemPatternNotFoundException extends RandpgException {
   String toString() => msg ?? "EmblemPatternNotFoundException";
 }
 
-/// An exception that is thrown when a not supported emblem icon is being used
+/// An exception that is thrown when a not supported EmblemIcon is being used
 class EmblemIconNotFoundException extends RandpgException {
   const EmblemIconNotFoundException([super.msg]);
 
@@ -112,7 +112,7 @@ class EmblemIconNotFoundException extends RandpgException {
   String toString() => msg ?? "EmblemIconNotFoundException";
 }
 
-/// An exception that is thrown when a not supported emblem type is being used
+/// An exception that is thrown when a not supported EmblemType is being used
 class EmblemTypeNotFoundException extends RandpgException {
   const EmblemTypeNotFoundException([super.msg]);
 
@@ -120,7 +120,7 @@ class EmblemTypeNotFoundException extends RandpgException {
   String toString() => msg ?? "EmblemTypeNotFoundException";
 }
 
-/// An exception that is thrown when a not supported companionType is being used
+/// An exception that is thrown when a not supported CompanionType is being used
 class CompanionTypeNotFoundException extends RandpgException {
   const CompanionTypeNotFoundException([super.msg]);
 
@@ -128,10 +128,18 @@ class CompanionTypeNotFoundException extends RandpgException {
   String toString() => msg ?? "CompanionTypeNotFoundException";
 }
 
-/// An exception that is thrown when a not supported holidayType is being used
+/// An exception that is thrown when a not supported HolidayType is being used
 class HolidayTypeNotFoundException extends RandpgException {
   const HolidayTypeNotFoundException([super.msg]);
 
   @override
   String toString() => msg ?? "HolidayTypeNotFoundException";
+}
+
+/// An exception that is thrown when a not supported WorldMapSetting is being used
+class WorldMapSettingsNotFoundException extends RandpgException {
+  const WorldMapSettingsNotFoundException([super.msg]);
+
+  @override
+  String toString() => msg ?? "WorldMapSettingsNotFoundException";
 }
