@@ -12,6 +12,8 @@
   - Flatlands
   - Rocky
 
+- Added world map to world entity
+
 ## 0.11.0
 
 - Added Holidays:

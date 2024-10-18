@@ -369,7 +369,7 @@ final worldMapTile91 = decodePng(
       'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAahJREFUOI2Fkk9LG0EYxn9KRM1mGA0hm4WxISCihNBc+o9S8HP00FP7AYqnHqqi0EJ70k8keKjSgy0bsIRCDh3YJKSaYXbP9rDumk3z54G5LPN79nmfdxZardbdxeUZAL5/RRD0kVLw6/o3Q2NZkwKAjdoSj2olxrV4cXnG82e7KZxI6y6hjRga+x+UMfD9KwDevX2PlAIpBcZYtnc2AeaaLAZBn6PjD5mP8j72k6ePKQiHRrM43SC5fHL6CQDXfZhTSoFSHv6Pm+kGWnfT2KNwIqUqKOVNN4C4MCkFvd6AXm+A1l0AzJwCAXIAoQ3TtQHp6pIxZhpoHRCbRBSEg1IeSlVIksUnYL00uchcaKMUGIdDG6J1lxevNmaPMKoETFQQzlT453dLriAchsYS2gitg8z8o3JWqvwNHn4SJ67EWwhtlF4cfXVDY2k0izgr1XTNrltia6vG1y+n5POrLLx+8/IuAb6d/8lEbjSL3A6WEcJBSoHrlmi3O+x//AxAvV7PdjBe1u1gOS0VoN3u4HlllFJorYH7hzRJ47AxFs8rA3BwuIdSCoB/ktiyMR6L0a0AAAAASUVORK5CYII='),
 )!;
 
-final patternToTile = {
+final _patternToTile = {
   // Grass to sea
   [Terrain.grassland, Terrain.grassland, Terrain.grassland, Terrain.sea]:
       worldMapTile1,
@@ -712,4 +712,15 @@ final patternToTile = {
       worldMapTile47,
   [Terrain.snow, Terrain.hills, Terrain.mountains, Terrain.hills]:
       worldMapTile42
+};
+
+int getTerrainPatternCode(List<Terrain> pattern) =>
+    pattern[0].index +
+    (pattern[1].index << 8) +
+    (pattern[2].index << 16) +
+    (pattern[3].index << 24);
+
+final patternToTile = {
+  for (final entry in _patternToTile.entries)
+    getTerrainPatternCode(entry.key): entry.value,
 };

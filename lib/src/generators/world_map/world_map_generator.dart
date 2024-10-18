@@ -1,4 +1,3 @@
-import 'package:collection/collection.dart';
 import 'package:image/image.dart';
 
 import '../../entities/world_map/world_map.dart';
@@ -56,7 +55,8 @@ class WorldMapGenerator implements Generator<WorldMap> {
     final image = Image(width: _width, height: _height);
     for (int x = 0; x < _width ~/ _tileSize; x++) {
       for (int y = 0; y < _height ~/ _tileSize; y++) {
-        final matchingImage = _getMatchingImage(x, y, terrainMap);
+        final pattern = _getPattern(x, y, terrainMap);
+        final matchingImage = _getMatchingImage(pattern);
         _putImage(image, matchingImage, x * _tileSize, y * _tileSize);
       }
     }
@@ -94,19 +94,22 @@ class WorldMapGenerator implements Generator<WorldMap> {
     }).toList();
   }
 
-  static Image _getMatchingImage(int x, int y, List<List<Terrain>> terrains) {
-    final pattern = [
-      terrains[y][x],
-      terrains[y][x + 1],
-      terrains[y + 1][x],
-      terrains[y + 1][x + 1],
-    ];
-    final listEquals = const DeepCollectionEquality().equals;
+  static List<Terrain> _getPattern(
+    int x,
+    int y,
+    List<List<Terrain>> terrains,
+  ) =>
+      [
+        terrains[y][x],
+        terrains[y][x + 1],
+        terrains[y + 1][x],
+        terrains[y + 1][x + 1],
+      ];
 
-    for (final key in patternToTile.keys) {
-      if (listEquals(pattern, key)) {
-        return patternToTile[key]!;
-      }
+  static Image _getMatchingImage(List<Terrain> pattern) {
+    final key = getTerrainPatternCode(pattern);
+    if (patternToTile.containsKey(key)) {
+      return patternToTile[key]!;
     }
     throw UnimplementedError("Unimplemented pattern: $pattern");
   }
