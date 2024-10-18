@@ -10,9 +10,9 @@ class RockyWorldMapSettings implements WorldMapSettings {
   Terrain getTerrainFromHeight(double height) {
     if (height < -0.8) {
       return Terrain.sea;
-    } else if (height < -0.6) {
+    } else if (height < -0.7) {
       return Terrain.shore;
-    } else if (height < -0.1) {
+    } else if (height < -0.2) {
       return Terrain.grassland; // Limited shore
     } else if (height < 0.3) {
       return Terrain.hills; // Dominantly grassland

@@ -12,7 +12,7 @@ class MountainousWorldMapSettings implements WorldMapSettings {
       return Terrain.deepSea;
     } else if (height < -0.3) {
       return Terrain.sea;
-    } else if (height < 0) {
+    } else if (height < -0.2) {
       return Terrain.shore;
     } else if (height < 0.3) {
       return Terrain.grassland;

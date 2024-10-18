@@ -12,7 +12,7 @@ class FlatlandsWorldMapSettings implements WorldMapSettings {
       return Terrain.deepSea;
     } else if (height < -0.2) {
       return Terrain.sea;
-    } else if (height < 0) {
+    } else if (height < -0.1) {
       return Terrain.shore; // Limited shore
     } else if (height < 0.7) {
       return Terrain.grassland; // Dominantly grassland

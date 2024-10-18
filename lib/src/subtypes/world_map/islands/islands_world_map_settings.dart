@@ -12,7 +12,7 @@ class IslandsWorldMapSettings implements WorldMapSettings {
       return Terrain.deepSea;
     } else if (height < 0.2) {
       return Terrain.sea;
-    } else if (height < 0.4) {
+    } else if (height < 0.3) {
       return Terrain.shore;
     } else if (height < 0.8) {
       return Terrain.grassland;
