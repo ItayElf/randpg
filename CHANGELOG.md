@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.12.1
+
+- Fixed `RockyWorldMapSettings` does not have the proper `getSettingName` value
+
 ## 0.12.0
 
 - Added world map generation

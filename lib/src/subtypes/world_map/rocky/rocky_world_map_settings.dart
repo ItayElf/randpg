@@ -4,7 +4,7 @@ import '../world_map_settings.dart';
 /// A setting that generates maps with almost no water and a lot of mountains and snow
 class RockyWorldMapSettings implements WorldMapSettings {
   @override
-  String getSettingName() => "flatlands";
+  String getSettingName() => "rocky";
 
   @override
   Terrain getTerrainFromHeight(double height) {
