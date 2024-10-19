@@ -6,6 +6,8 @@
 
 - Bugfix in the `Holiday.fromMap` method
 
+- Bugfix in the seed of the `MultipleGenerator`
+
 ## 0.12.0
 
 - Added world map generation

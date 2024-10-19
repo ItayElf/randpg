@@ -17,7 +17,8 @@ class MultipleGenerator<T> implements Generator<T> {
     for (int i = 0; i < _pool.length; i++) {
       _pool[i].seed((_seed + i * i) % SeedGenerator.maxSeed);
     }
-    return ListItemGenerator(_pool).generate().generate();
+    final listGenerator = ListItemGenerator(_pool)..seed(_seed);
+    return listGenerator.generate().generate();
   }
 
   @override
