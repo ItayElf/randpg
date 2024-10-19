@@ -4,6 +4,8 @@
 
 - Fixed `RockyWorldMapSettings` does not have the proper `getSettingName` value
 
+- Bugfix in the `Holiday.fromMap` method
+
 ## 0.12.0
 
 - Added world map generation

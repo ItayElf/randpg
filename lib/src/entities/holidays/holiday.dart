@@ -78,7 +78,7 @@ class Holiday {
       duration: map['duration'] as String,
       origin: map['origin'] as String,
       celebratedBy: map['celebratedBy'] as String,
-      traditions: List<String>.from((map['traditions'] as List<String>)),
+      traditions: List<String>.from((map['traditions'])),
     );
   }
 
